@@ -11,7 +11,6 @@ local ADDON_NAME, ns = ...
 
 local HandyNotes = LibStub("AceAddon-3.0"):GetAddon("HandyNotes", true)
 if not HandyNotes then return end
-local HandyNotes = HandyNotes
 
 local ADDON_NAME = "HandyNotes_MapNotes"
 local COLORED_ADDON_NAME = "|cffff0000Map|r|cff00ccffNotes|r"
@@ -100,47 +99,38 @@ TextIconDF = TextIcon("Interface/CharacterFrame/TemporaryPortrait-Male-Dracthyr"
 
 function MapNotesMiniButton:OnInitialize()
 
-  SLASH_INFO1, SLASH_INFO2, SLASH_INFO3, SLASH_INFO4, SLASH_INFO5, SLASH_INFO6, SLASH_INFO7, SLASH_INFO8 , SLASH_INFO09 = "/mn", "/MN", "/mapnotes", "/MAPNOTES", "/mnhelp", "/MNHELP", "/mnh", "/MNH", "/handynotes_mapnotes";
-  function SlashCmdList.INFO(msg, editbox)
-    print("|cff00ccff".."------------------------------------------------------------------------------------------")
-    print("|cffffff00~~"..COLORED_ADDON_NAME .. "|cffffff00~~") 
-    print("|cffffff00".. L["Chat commands:"])
-    print("|cffffff00                      • ".. L["to open MapNotes menu: /mno, /MNO"])
-    print("|cffffff00                      • ".. L["to close MapNotes menu: /mnc, /MNC"])
-    print("|cffffff00                      • ".. L["to show minimap button: /mnb or /MNB"])
-    print("|cffffff00                      • ".. L["to hide minimap button: /mnbh or /MNBH"])
-    print("|cffffff00~~"..COLORED_ADDON_NAME .. "|cffffff00~~") 
-    print("|cff00ccff".."------------------------------------------------------------------------------------------")
-  end
-  
-  SLASH_OPEN1, SLASH_OPEN2 = "/mno", "/MNO";
-  function SlashCmdList.OPEN(msg, editbox)
-    LibStub("AceConfigDialog-3.0"):Open("MNMiniMapButton") 
-    print(COLORED_ADDON_NAME.."|cffffff00  ".. L["MapNotes menu window"], "|cff00ff00" .. L["is activated"])
-  end
-  
-  SLASH_CLOSE1, SLASH_CLOSE2 = "/mnc", "/MNC";
-  function SlashCmdList.CLOSE(msg, editbox)
-    LibStub("AceConfigDialog-3.0"):Close("MNMiniMapButton") 
-    print(COLORED_ADDON_NAME.."|cffffff00  ".. L["MapNotes menu window"], "|cffff0000" .. L["is deactivated"])
-  end
-  
-  SLASH_MMBSHOW1, SLASH_MMBSHOW2 = "/mnb", "/MNB";
-  function SlashCmdList.MMBSHOW(msg, editbox)
-    MNMMBIcon:Show("MNMiniMapButton")
-    db.show.HideMMB = false
-    print(COLORED_ADDON_NAME .. "|cffffff00  " .. L["-> MiniMapButton <-"], "|cff00ff00" .. L["is activated"])
-  end
-  
-  SLASH_MMBHIDE1, SLASH_MMBHIDE2 = "/mnbh", "/MNBH";
-  function SlashCmdList.MMBHIDE(msg, editbox)
-    MNMMBIcon:Hide("MNMiniMapButton")
-    db.show.HideMMB = true
-    print(COLORED_ADDON_NAME .. "|cffffff00  " .. L["-> MiniMapButton <-"], "|cffff0000" .. L["is deactivated"])
-  end
+  local miniButton = {
+  text = COLORED_ADDON_NAME,
+  type = "data source",
+  icon = iconLink .. "MN_Logo",
+  OnTooltipShow = function(tooltip)
+    if not tooltip or not tooltip.AddLine then return end
+    tooltip:AddLine(COLORED_ADDON_NAME)
+    tooltip:AddLine(" ")
+    tooltip:AddLine(L["Left-click => Open/Close"] .. " " .. COLORED_ADDON_NAME,1,1,1)
+    tooltip:AddLine(L["Shift + Right-click => hide"] .. "|cffff0000  " .. L["-> MiniMapButton <-"],1,1,1)
+    tooltip:AddLine("|cffffff00" .. L["(also opens MapNotes if hiding was unwanted)"],1,1,1,1)       
+    end,
+  OnClick = function(self, button)
+    if IsShiftKeyDown() and button == "RightButton" then
+      MNMMBIcon:Hide("MNMiniMapButton")
+      db.show.HideMMB = true  
+      LibStub("AceConfigDialog-3.0"):Open("MNMiniMapButton")
+      print(COLORED_ADDON_NAME .. "|cffffff00  " .. L["-> MiniMapButton <-"], "|cffff0000" .. L["is deactivated"]) 
+      print(COLORED_ADDON_NAME.."|cffffff00  ".. L["MapNotes menu window"], "|cff00ff00" .. L["is activated"])  
+      
+    end
+    if button == "LeftButton" then
+      if not LibStub("AceConfigDialog-3.0"):Close("MNMiniMapButton") then
+        LibStub("AceConfigDialog-3.0"):Open("MNMiniMapButton") 
+        print(COLORED_ADDON_NAME.."|cffffff00  ".. L["MapNotes menu window"], "|cff00ff00" .. L["is activated"])
+      end 
+    end
+          end 
+                  } 
 
   self.db = LibStub("AceDB-3.0"):New("MNMiniMapButtonDB", { profile = { minimap = { hide = false, }, }, }) 
-  MNMMBIcon:Register("MNMiniMapButton", ns.miniButton, self.db.profile.minimap)
+  MNMMBIcon:Register("MNMiniMapButton", miniButton, self.db.profile.minimap)
   
 end
 
@@ -401,6 +391,7 @@ function pluginHandler:OnClick(button, pressed, uiMapId, coord)
 end
 
 local Addon = CreateFrame("Frame")
+ns.Addon = Addon
 Addon:RegisterEvent("PLAYER_LOGIN")
 Addon:SetScript("OnEvent", function(self, event, ...) return self[event](self, ...)end)
 

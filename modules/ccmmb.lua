@@ -1,6 +1,6 @@
 local ADDON_NAME, ns = ...
 
-local db = NS.Addon.db
+local db = ns.Addon.db
 
 local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
 local COLORED_ADDON_NAME = "|cffff0000Map|r|cff00ccffNotes|r"
