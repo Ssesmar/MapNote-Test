@@ -1076,6 +1076,7 @@ function Addon:PLAYER_LOGIN()
   
   HandyNotes:RegisterPluginDB("MapNotes", pluginHandler, options)
   self.db = LibStub("AceDB-3.0"):New(ADDON_NAME .. "DB", ns.defaults, true)
+  print(self.db, ns.Addon.db) --prints this table: 00000201767AB680 table: 00000201767AB680
   db = self.db.profile
   Addon:RegisterEvent("PLAYER_ENTERING_WORLD")
   LibStub("AceConfigRegistry-3.0"):RegisterOptionsTable("MNMiniMapButton", options)
