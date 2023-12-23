@@ -391,7 +391,7 @@ function pluginHandler:OnClick(button, pressed, uiMapId, coord)
 end
 
 local Addon = CreateFrame("Frame")
-ns.Addon = Addon
+ns.Addon = Addon --Fizzlemizz changes
 Addon:RegisterEvent("PLAYER_LOGIN")
 Addon:SetScript("OnEvent", function(self, event, ...) return self[event](self, ...)end)
 
@@ -1076,7 +1076,7 @@ function Addon:PLAYER_LOGIN()
   
   HandyNotes:RegisterPluginDB("MapNotes", pluginHandler, options)
   self.db = LibStub("AceDB-3.0"):New(ADDON_NAME .. "DB", ns.defaults, true)
-  print(self.db, ns.Addon.db) --prints this table: 00000201767AB680 table: 00000201767AB680
+  --print(self.db, ns.Addon.db) --Fizzlemizz changes printing working well
   db = self.db.profile
   Addon:RegisterEvent("PLAYER_ENTERING_WORLD")
   LibStub("AceConfigRegistry-3.0"):RegisterOptionsTable("MNMiniMapButton", options)
