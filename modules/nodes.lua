@@ -1,6 +1,5 @@
 local ADDON_NAME, ns = ...
 local db = ns.Addon
-local self = ns.Addon
 
 local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
 
