@@ -14,5 +14,6 @@ libs\LibDBIcon-1.0\lib.xml
 
 modules\textIcons.lua
 modules\defaults.lua
-main.lua
+modules\core.lua
 modules\ccmmb.lua
+modules\mmb.lua

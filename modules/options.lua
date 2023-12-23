@@ -1,4 +1,8 @@
+
 local ADDON_NAME, ns = ...
+
+local db = ns.Addon
+local self = ns.Addon
 
 local HandyNotes = LibStub("AceAddon-3.0"):GetAddon("HandyNotes", true)
 if not HandyNotes then return end
@@ -7,8 +11,6 @@ local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
 local COLORED_ADDON_NAME = "|cffff0000Map|r|cff00ccffNotes|r"
 local MNMMBIcon = LibStub("LibDBIcon-1.0", true)
 local iconLink = "Interface\\Addons\\" .. ADDON_NAME .. "\\images\\"
-
-local db = { }
 
 TextIcon = TextIcon
 TextIconPortal = TextIcon(iconLink .. "portal.tga", 64, 64, 10, 50, 50, 1)
@@ -75,7 +77,7 @@ ns.options = {
             order = 1,
             },
           mapnoteScale = {
-            disabled = function() return db.show["HideMapNote"] end,
+            disabled = function() return ns.Addon.db.profile.show["HideMapNote"] end,
             type = "range",
             name = L["symbol size"],
             desc = L["Resizes symbols on the azeroth, continent, zone, dungeon and minimap"],
@@ -83,7 +85,7 @@ ns.options = {
             order = 1.1,
             },
           mapnoteAlpha = {
-            disabled = function() return db.show["HideMapNote"] end,
+            disabled = function() return ns.Addon.db.profile.show["HideMapNote"] end,
             type = "range",
             name = L["symbol visibility"],
             desc = L["Changes the visibility of the symbols"],
@@ -100,10 +102,10 @@ ns.options = {
             name = "|cffff0000" .. L["hide MapNotes!"] .."\n",
             desc = L["Disable MapNotes, all icons will be hidden on each map and all categories will be disabled"],
             order = 5.1,
-            get = function() return db.show["HideMapNote"] end,
-            set = function(info, v) db.show["HideMapNote"] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
-                  if db.show["HideMapNote"] then print(COLORED_ADDON_NAME .. "|cffff0000", L["All MapNotes symbols have been hidden"]) else
-                  if not db.show["HideMapNote"] then print(COLORED_ADDON_NAME .. "|cff00ff00", L["All set symbols have been restored"]) end end end,
+            get = function() return ns.Addon.db.profile.show["HideMapNote"] end,
+            set = function(info, v) ns.Addon.db.profile.show["HideMapNote"] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
+                  if ns.Addon.db.profile.show["HideMapNote"] then print(COLORED_ADDON_NAME .. "|cffff0000", L["All MapNotes symbols have been hidden"]) else
+                  if not ns.Addon.db.profile.show["HideMapNote"] then print(COLORED_ADDON_NAME .. "|cff00ff00", L["All set symbols have been restored"]) end end end,
             },  
           hideMMB = {
             type = "toggle",
@@ -111,10 +113,10 @@ ns.options = {
             desc = L["Hide the minimap button on the minimap"],
             order = 5.2,
             width = 1.89,
-            get = function() return db.show.HideMMB end,
-            set = function(info, v) db.show.HideMMB = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
-              if not db.show.HideMMB then MNMMBIcon:Show("MNMiniMapButton") print(COLORED_ADDON_NAME .. "|cffffff00", L["-> MiniMapButton <-"], "|cff00ff00" .. L["is activated"]) else
-              if db.show.HideMMB then MNMMBIcon:Hide("MNMiniMapButton") print(COLORED_ADDON_NAME .. "|cffffff00", L["-> MiniMapButton <-"], "|cffff0000" .. L["is deactivated"]) end end end,
+            get = function() return ns.Addon.db.profile.show.HideMMB end,
+            set = function(info, v) ns.Addon.db.profile.show.HideMMB = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
+              if not ns.Addon.db.profile.show.HideMMB then MNMMBIcon:Show("MNMiniMapButton") print(COLORED_ADDON_NAME .. "|cffffff00", L["-> MiniMapButton <-"], "|cff00ff00" .. L["is activated"]) else
+              if ns.Addon.db.profile.show.HideMMB then MNMMBIcon:Hide("MNMiniMapButton") print(COLORED_ADDON_NAME .. "|cffffff00", L["-> MiniMapButton <-"], "|cffff0000" .. L["is deactivated"]) end end end,
             },
           GeneralHeader = {
             type = "header",
@@ -122,7 +124,7 @@ ns.options = {
             order = 10,
             },
           journal = {
-            disabled = function() return db.show["HideMapNote"] end,
+            disabled = function() return ns.Addon.db.profile.show["HideMapNote"] end,
             type = "toggle",
             name = TextIconJournal:GetIconString() .. " " .. L["Adventure guide"],
             desc = L["Left-clicking on a MapNotes raid (green), dungeon (blue) or multiple icon (green&blue) on the map opens the corresponding dungeon or raid map in the Adventure Guide (the map must not be open in full screen)"],
@@ -132,7 +134,7 @@ ns.options = {
                   if not self.db.profile.journal then print(COLORED_ADDON_NAME.."|cffffff00 ".. L["Adventure guide"], "|cffff0000" .. L["is deactivated"]) end end end,
             },    
           tomtom = {
-            disabled = function() return db.show["HideMapNote"] end,
+            disabled = function() return ns.Addon.db.profile.show["HideMapNote"] end,
             type = "toggle",
             name = TextIconTomTom:GetIconString() .. " " .. L["TomTom waypoints"],
             desc = L["Shift+right click on a raid, dungeon, multiple symbol, portal, ship, zeppelin, passage or exit from MapNotes on the continent or dungeon map creates a TomTom waypoint to this point (but the TomTom add-on must be installed for this)"],
@@ -142,7 +144,7 @@ ns.options = {
                   if not self.db.profile.tomtom then print(COLORED_ADDON_NAME.."|cffffff00 ".. L["TomTom waypoints"], "|cffff0000" ..  L["is deactivated"]) end end end,
             },
           assignedID = {
-            disabled = function() return db.show["HideMapNote"] end,
+            disabled = function() return ns.Addon.db.profile.show["HideMapNote"] end,
             type = "toggle",
             name = TextIconKilledBosses:GetIconString() .. " " .. L["killed Bosses"],
             desc = L["For dungeons and raids in which you have killed bosses and have therefore been assigned an ID, this symbol on the Azeroth and continent map will show you the number of killed or remaining bosses as soon as you hover over this dungeon or raid symbol (for example 2/8 mythic, 4/7 heroic etc)"],
@@ -152,7 +154,7 @@ ns.options = {
               if not self.db.profile.assignedID then print(COLORED_ADDON_NAME.."|cffffff00 ".. L["killed Bosses"], "|cffff0000" ..  L["is deactivated"]) end end end,
             },
           assignedgray = {
-            disabled = function() return db.show["HideMapNote"] end,
+            disabled = function() return ns.Addon.db.profile.show["HideMapNote"] end,
             type = "toggle",
             name = TextIconLocked:GetIconString() .. " " .. L["gray symbols"],
             desc = L["If you are assigned to a dungeon or raid and have an ID, this option will turn the dungeon or raid icon gray until this ID is reset so that you can see which dungeon or raid you have started or completed"],
@@ -162,7 +164,7 @@ ns.options = {
               if not self.db.profile.assignedgray then print(COLORED_ADDON_NAME.."|cffffff00 ".. L["gray symbols"], "|cffff0000" ..  L["is deactivated"]) end end end,
             },
           graymultipleID = {
-            disabled = function() return db.show["HideMapNote"] end,
+            disabled = function() return ns.Addon.db.profile.show["HideMapNote"] end,
             type = "toggle",
             name = TextIconMultiple:GetIconString() .. " " .. TextIconLocked:GetIconString() .. " " .. L["multiple points"],
             desc = L["Colors multi-points of dungeons and/or raids in gray if you are assigned to any dungeon or raid of this multi-point and have an ID so that you can see that you have started or completed any dungeon or raid of the multi-point"],
@@ -172,15 +174,15 @@ ns.options = {
               if not self.db.profile.graymultipleID then print(COLORED_ADDON_NAME.."|cffffff00 ".. L["multiple points"], "|cffff0000" ..  L["is deactivated"]) end end end,
             },
           showEnemyFaction = {
-            disabled = function() return db.show["HideMapNote"] end,
+            disabled = function() return ns.Addon.db.profile.show["HideMapNote"] end,
             type = "toggle",
             name = TextIconHordeAlliance:GetIconString() .. " " .. L["enemy faction"],
             desc = L["Shows enemy faction (horde/alliance) symbols"],
             order = 10.6,
-            get = function() return db.show["EnemyFaction"] end,
-            set = function(info, v) db.show["EnemyFaction"] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
-                  if db.show["EnemyFaction"] then print(COLORED_ADDON_NAME.."|cffffff00 ".. L["enemy faction"], "|cff00ff00" .. L["is activated"]) else 
-                  if not db.show["EnemyFaction"] then print(COLORED_ADDON_NAME.."|cffffff00 ".. L["enemy faction"], "|cffff0000" ..  L["is deactivated"]) end end end,
+            get = function() return ns.Addon.db.profile.show["EnemyFaction"] end,
+            set = function(info, v) ns.Addon.db.profile.show["EnemyFaction"] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
+                  if ns.Addon.db.profile.show["EnemyFaction"] then print(COLORED_ADDON_NAME.."|cffffff00 ".. L["enemy faction"], "|cff00ff00" .. L["is activated"]) else 
+                  if not ns.Addon.db.profile.show["EnemyFaction"] then print(COLORED_ADDON_NAME.."|cffffff00 ".. L["enemy faction"], "|cffff0000" ..  L["is deactivated"]) end end end,
            },
           InfoHeader = {
             type = "header",
@@ -220,7 +222,7 @@ ns.options = {
         }
       },
       AzerothTab = {
-        disabled = function() return db.show["HideMapNote"] end,
+        disabled = function() return ns.Addon.db.profile.show["HideMapNote"] end,
         type = "group",
         name = L["Azeroth map"],
         desc = L["Azeroth map settings. Certain symbols can be displayed or not displayed. If the option (Activate symbols) has been activated in this category"],
@@ -236,13 +238,13 @@ ns.options = {
             name = L["Activate symbols"],
             desc = L["Activates the display of all possible symbols on the Azeroth map"],
             order = 20.1,
-            get = function() return db.show["Azeroth"] end,
-            set = function(info, v) db.show["Azeroth"] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
-                  if db.show["Azeroth"] then print(COLORED_ADDON_NAME.."|cffffff00 ".. L["Azeroth map"], "|cff00ff00" .. L["is activated"]) else 
-                  if not db.show["Azeroth"] then print(COLORED_ADDON_NAME.."|cffffff00 ".. L["Azeroth map"], "|cffff0000" .. L["is deactivated"]) end end end,
+            get = function() return ns.Addon.db.profile.show["Azeroth"] end,
+            set = function(info, v) ns.Addon.db.profile.show["Azeroth"] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
+                  if ns.Addon.db.profile.show["Azeroth"] then print(COLORED_ADDON_NAME.."|cffffff00 ".. L["Azeroth map"], "|cff00ff00" .. L["is activated"]) else 
+                  if not ns.Addon.db.profile.show["Azeroth"] then print(COLORED_ADDON_NAME.."|cffffff00 ".. L["Azeroth map"], "|cffff0000" .. L["is deactivated"]) end end end,
             },
           --[[azerothScale = {
-            disabled = function() return not db.show["Azeroth"] end,
+            disabled = function() return not ns.Addon.db.profile.show["Azeroth"] end,
             type = "range",
             name = L["symbol size"],
             desc = L["Resizes symbols on the continent map"],
@@ -255,7 +257,7 @@ ns.options = {
             order = 21
             },
           showAzerothRaid = {
-            disabled = function() return not db.show["Azeroth"] end,
+            disabled = function() return not ns.Addon.db.profile.show["Azeroth"] end,
             type = "toggle",
             name = TextIconRaid:GetIconString() .. " " .. L["Raids"],
             desc = L["Show symbols of raids on the Azeroth map"],
@@ -265,7 +267,7 @@ ns.options = {
                   if not self.db.profile.showAzerothRaid then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Azeroth map"], L["Raids"], "|cffff0000" .. L["are hidden"])end end end,
             },
           showAzerothDungeon = {
-            disabled = function() return not db.show["Azeroth"] end,
+            disabled = function() return not ns.Addon.db.profile.show["Azeroth"] end,
             type = "toggle",
             name = TextIconDungeon:GetIconString() .. " " .. L["Dungeons"],
             desc = L["Show symbols of dungeons on the Azeroth map"],
@@ -275,7 +277,7 @@ ns.options = {
               if not self.db.profile.showAzerothDungeon then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Azeroth map"], L["Dungeons"], "|cffff0000" .. L["are hidden"])end end end,
             },
           showAzerothMultiple = {
-            disabled = function() return not db.show["Azeroth"] end,
+            disabled = function() return not ns.Addon.db.profile.show["Azeroth"] end,
             type = "toggle",
             name = TextIconMultiple:GetIconString() .. " " .. L["Multiple"],
             desc = L["Show symbols of multiple on the Azeroth map"],
@@ -285,7 +287,7 @@ ns.options = {
                   if not self.db.profile.showAzerothMultiple then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Azeroth map"], L["Multiple"], "|cffff0000" .. L["are hidden"])end end end,
             },
           showAzerothPortals = {
-            disabled = function() return not db.show["Azeroth"] end,
+            disabled = function() return not ns.Addon.db.profile.show["Azeroth"] end,
             type = "toggle",
             name = TextIconPortal:GetIconString() .. " " .. TextIconHPortal:GetIconString() .. " " .. TextIconAPortal:GetIconString() .. " " .. L["Portals"],
             desc = L["Show symbols of portals on the Azeroth map"],
@@ -295,7 +297,7 @@ ns.options = {
                   if not self.db.profile.showAzerothPortals then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Azeroth map"], L["Portals"], "|cffff0000" .. L["are hidden"])end end end,
             },
           showAzerothZeppelins = {
-            disabled = function() return not db.show["Azeroth"] end,
+            disabled = function() return not ns.Addon.db.profile.show["Azeroth"] end,
             type = "toggle",
             name = TextIconZeppelin:GetIconString() .. " " .. TextIconHZeppelin:GetIconString() .. " " .. L["Zeppelins"],
             desc = L["Show symbols of zeppelins on the Azeroth map"],
@@ -305,7 +307,7 @@ ns.options = {
                   if not self.db.profile.showAzerothZeppelins then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Azeroth map"], L["Zeppelins"], "|cffff0000" .. L["are hidden"])end end end,
             },
           showAzerothShips = {
-            disabled = function() return not db.show["Azeroth"] end,
+            disabled = function() return not ns.Addon.db.profile.show["Azeroth"] end,
             type = "toggle",
             name = TextIconShip:GetIconString() .. " " .. TextIconHShip:GetIconString() .. " " .. TextIconAShip:GetIconString() .. " " .. L["Ships"],
             desc = L["Show symbols of ships on the Azeroth map"],
@@ -315,7 +317,7 @@ ns.options = {
                   if not self.db.profile.showAzerothShips then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Azeroth map"], L["Ships"], "|cffff0000" .. L["are hidden"])end end end,
             },
           showAzerothOldVanilla = {
-            disabled = function() return not db.show["Azeroth"] end,
+            disabled = function() return not ns.Addon.db.profile.show["Azeroth"] end,
             type = "toggle",
             name = TextIconVRaid:GetIconString() .. " " .. TextIconVKey1:GetIconString() .. " " .. L["Old Instances"],
             desc = L["Show vanilla versions of dungeons and raids such as Naxxramas, Scholomance or Scarlet Monastery, which require achievements or other things"],
@@ -330,7 +332,7 @@ ns.options = {
             order = 22
             },
           showAzerothKalimdor = {
-            disabled = function() return not db.show["Azeroth"] end,
+            disabled = function() return not ns.Addon.db.profile.show["Azeroth"] end,
             type = "toggle",
             name = TextIconKalimdor:GetIconString() .. " " .. L["Kalimdor"],
             desc = L["Show all Kalimdor MapNotes dungeon, raid, portal, zeppelin and ship symbols on the Azeroth map"],
@@ -340,7 +342,7 @@ ns.options = {
                   if not self.db.profile.showAzerothKalimdor then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Azeroth map"], L["Kalimdor"], L["symbols"], "|cffff0000" .. L["are hidden"])end end end,
             },
           showAzerothEasternKingdom = {
-            disabled = function() return not db.show["Azeroth"] end,
+            disabled = function() return not ns.Addon.db.profile.show["Azeroth"] end,
             type = "toggle",
             name = TextIconEK:GetIconString() .. " " .. L["Eastern Kingdom"],
             desc = L["Show all Eastern Kingdom MapNotes dungeon, raid, portal, zeppelin and ship symbols on the Azeroth map"],
@@ -350,7 +352,7 @@ ns.options = {
                   if not self.db.profile.showAzerothEasternKingdom then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Azeroth map"], L["Eastern Kingdom"], L["symbols"], "|cffff0000" .. L["are hidden"])end end end,
             },
           showAzerothNorthrend = {
-            disabled = function() return not db.show["Azeroth"] end,
+            disabled = function() return not ns.Addon.db.profile.show["Azeroth"] end,
             type = "toggle",
             name = TextIconNorthrend:GetIconString() .. " " .. L["Northrend"],
             desc = L["Show all Northrend MapNotes dungeon, raid, portal, zeppelin and ship symbols on the Azeroth map"],
@@ -360,7 +362,7 @@ ns.options = {
                   if not self.db.profile.showAzerothNorthrend then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Azeroth map"], L["Northrend"], L["symbols"],  "|cffff0000" .. L["are hidden"])end end end,
             },
           showAzerothPandaria = {
-            disabled = function() return not db.show["Azeroth"] end,
+            disabled = function() return not ns.Addon.db.profile.show["Azeroth"] end,
             type = "toggle",
             name = TextIconPandaria:GetIconString() .. " " .. L["Pandaria"],
             desc = L["Show all Pandaria MapNotes dungeon, raid, portal, zeppelin and ship symbols on the Azeroth map"],
@@ -370,7 +372,7 @@ ns.options = {
                   if not self.db.profile.showAzerothPandaria then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Azeroth map"], L["Pandaria"], L["symbols"],  "|cffff0000" .. L["are hidden"])end end end,
             },
           showAzerothBrokenIsles = {
-            disabled = function() return not db.show["Azeroth"] end,
+            disabled = function() return not ns.Addon.db.profile.show["Azeroth"] end,
             type = "toggle",
             name = TextIconLegion:GetIconString() .. " " .. L["Broken Isles"],
             desc = L["Show all Broken Isles MapNotes dungeon, raid, portal, zeppelin and ship symbols on the Azeroth map"],
@@ -380,7 +382,7 @@ ns.options = {
                   if not self.db.profile.showAzerothBrokenIsles then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Azeroth map"], L["Broken Isles"], L["symbols"],  "|cffff0000" .. L["are hidden"])end end end,
             },  
           showAzerothZandalar = {
-            disabled = function() return not db.show["Azeroth"] end,
+            disabled = function() return not ns.Addon.db.profile.show["Azeroth"] end,
             type = "toggle",
             name = TextIconZandalar:GetIconString() .. " " .. L["Zandalar"],
             desc = L["Show all Zandalar MapNotes dungeon, raid, portal, zeppelin and ship symbols on the Azeroth map"],
@@ -390,7 +392,7 @@ ns.options = {
                   if not self.db.profile.showAzerothZandalar then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Azeroth map"], L["Zandalar"], L["symbols"],  "|cffff0000" .. L["are hidden"])end end end,
             },
           showAzerothKulTiras = {
-            disabled = function() return not db.show["Azeroth"] end,
+            disabled = function() return not ns.Addon.db.profile.show["Azeroth"] end,
             type = "toggle",
             name = TextIconKT:GetIconString() .. " " .. L["Kul Tiras"],
             desc = L["Show all Kul Tiras MapNotes dungeon, raid, portal, zeppelin and ship symbols on the Azeroth map"],
@@ -400,7 +402,7 @@ ns.options = {
                   if not self.db.profile.showAzerothKulTiras then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Azeroth map"], L["Kul Tiras"], L["symbols"],  "|cffff0000" .. L["are hidden"])end end end,
             },
           showAzerothDragonIsles = {
-            disabled = function() return not db.show["Azeroth"] end,
+            disabled = function() return not ns.Addon.db.profile.show["Azeroth"] end,
             type = "toggle",
             name = TextIconDF:GetIconString() .. " " .. L["Dragon Isles"],
             desc = L["Show all Dragon Isles MapNotes dungeon, raid, portal, zeppelin and ship symbols on the Azeroth map"],
@@ -422,7 +424,7 @@ ns.options = {
         }
       },
       ContinentTab = {
-        disabled = function() return db.show["HideMapNote"] end,
+        disabled = function() return ns.Addon.db.profile.show["HideMapNote"] end,
         type = "group",
         name = L["Continent map"],
         desc = L["Continent map settings. Certain symbols can be displayed or not displayed. If the option (Activate symbols) has been activated in this category"],
@@ -438,13 +440,13 @@ ns.options = {
             name = L["Activate symbols"],
             desc = L["Activates the display of all possible symbols on the continent map"],
             order = 30.1,
-            get = function() return db.show["Continent"] end,
-            set = function(info, v) db.show["Continent"] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
-                  if db.show["Continent"] then print(COLORED_ADDON_NAME.."|cffffff00 ".. L["Continent map"], "|cff00ff00" .. L["is activated"]) else 
-                  if not db.show["Continent"] then print(COLORED_ADDON_NAME.."|cffffff00 ".. L["Continent map"], "|cffff0000" .. L["is deactivated"]) end end end,
+            get = function() return ns.Addon.db.profile.show["Continent"] end,
+            set = function(info, v) ns.Addon.db.profile.show["Continent"] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
+                  if ns.Addon.db.profile.show["Continent"] then print(COLORED_ADDON_NAME.."|cffffff00 ".. L["Continent map"], "|cff00ff00" .. L["is activated"]) else 
+                  if not ns.Addon.db.profile.show["Continent"] then print(COLORED_ADDON_NAME.."|cffffff00 ".. L["Continent map"], "|cffff0000" .. L["is deactivated"]) end end end,
             },
           --[[continentScale = {
-            disabled = function() return not db.show["Continent"] end,
+            disabled = function() return not ns.Addon.db.profile.show["Continent"] end,
             type = "range",
             name = L["symbol size"],
             desc = L["Resizes symbols on the continent map"],
@@ -457,7 +459,7 @@ ns.options = {
             order = 30.3,
             },
           showContinentRaids = {
-            disabled = function() return not db.show["Continent"] end,
+            disabled = function() return not ns.Addon.db.profile.show["Continent"] end,
             type = "toggle",
             name = TextIconRaid:GetIconString() .. " " .. L["Raids"],
             desc = L["Show symbols of raids on the continant map and minimap"],
@@ -467,7 +469,7 @@ ns.options = {
                   if not self.db.profile.showContinentRaids then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Continent map"], L["Raids"], "|cffff0000" .. L["are hidden"])end end end,
             },
           showContinentDungeons = {
-            disabled = function() return not db.show["Continent"] end,
+            disabled = function() return not ns.Addon.db.profile.show["Continent"] end,
             type = "toggle",
             name = TextIconDungeon:GetIconString() .. " " .. L["Dungeons"],
             desc = L["Show symbols of dungeons on the continant map and minimap"],
@@ -477,7 +479,7 @@ ns.options = {
                   if not self.db.profile.showContinentDungeons then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Continent map"], L["Dungeons"], "|cffff0000" .. L["are hidden"])end end end,
             },
           showContinentMultiple = {
-            disabled = function() return not db.show["Continent"] end,
+            disabled = function() return not ns.Addon.db.profile.show["Continent"] end,
             type = "toggle",
             name = TextIconMultiple:GetIconString() .. " " .. L["Multiple"],
             desc = L["Show symbols of multiple (dungeons,raids) on the continant map and minimap"],
@@ -487,7 +489,7 @@ ns.options = {
                   if not self.db.profile.showContinentMultiple then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Continent map"], L["Multiple"], "|cffff0000" .. L["are hidden"])end end end,
             },
           showContinentPortals = {
-            disabled = function() return not db.show["Continent"] end,
+            disabled = function() return not ns.Addon.db.profile.show["Continent"] end,
             type = "toggle",
             name = TextIconPortal:GetIconString() .. " " .. TextIconHPortal:GetIconString() .. " " .. TextIconAPortal:GetIconString() .. " " .. L["Portals"],
             desc = L["Show symbols of portals on the continant map and minimap"],
@@ -497,7 +499,7 @@ ns.options = {
                   if not self.db.profile.showContinentPortals then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Continent map"], L["Portals"], "|cffff0000" .. L["are hidden"])end end end,
             },
           showContinentZeppelins = {
-            disabled = function() return not db.show["Continent"] end,
+            disabled = function() return not ns.Addon.db.profile.show["Continent"] end,
             type = "toggle",
             name = TextIconZeppelin:GetIconString() .. " " .. TextIconHZeppelin:GetIconString() .. " " .. L["Zeppelins"],
             desc = L["Show symbols of zeppelins on the continant map and minimap"],
@@ -507,7 +509,7 @@ ns.options = {
                   if not self.db.profile.showContinentZeppelins then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Continent map"], L["Zeppelins"], "|cffff0000" .. L["are hidden"])end end end,
             },
           showContinentShips = {
-            disabled = function() return not db.show["Continent"] end,
+            disabled = function() return not ns.Addon.db.profile.show["Continent"] end,
             type = "toggle",
             name = TextIconShip:GetIconString() .. " " .. TextIconHShip:GetIconString() .. " " .. TextIconAShip:GetIconString() .. " " .. L["Ships"],
             desc = L["Show symbols of ships on the continant map and minimap"],
@@ -517,7 +519,7 @@ ns.options = {
                   if not self.db.profile.showContinentShips then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Continent map"], L["Ships"], "|cffff0000" .. L["are hidden"])end end end,
             },
           showContinentOldVanilla = {
-            disabled = function() return not db.show["Continent"] end,
+            disabled = function() return not ns.Addon.db.profile.show["Continent"] end,
             type = "toggle",
             name = TextIconVRaid:GetIconString() .. " " .. TextIconVKey1:GetIconString() .. " " .. L["Old Instances"],
             desc = L["Show vanilla versions of dungeons and raids such as Naxxramas, Scholomance or Scarlet Monastery, which require achievements or other things"],
@@ -527,7 +529,7 @@ ns.options = {
                   if not self.db.profile.showContinentOldVanilla then print(COLORED_ADDON_NAME.."|cffffff00 ".. L["Old Instances"], "|cffff0000" ..  L["is deactivated"]) end end end,
             },
           showContinentOgreWaygates = {
-            disabled = function() return not db.show["Continent"] end,
+            disabled = function() return not ns.Addon.db.profile.show["Continent"] end,
             type = "toggle",
             name = TextIconOgreWaygate:GetIconString() .. " " .. L["Ogre Waygate"],
             desc = L["Show Ogre Waygate symbols from Garrison on the Draenor continent and zone map"],
@@ -542,7 +544,7 @@ ns.options = {
             order = 32
             },
           showContinentKalimdor= {
-            disabled = function() return not db.show["Continent"] end,
+            disabled = function() return not ns.Addon.db.profile.show["Continent"] end,
             type = "toggle",
             name = TextIconKalimdor:GetIconString() .. " " .. L["Kalimdor"],
             desc = L["Show all Kalimdor MapNotes dungeon, raid, portal, zeppelin and ship symbols on the continent map"],
@@ -552,7 +554,7 @@ ns.options = {
                   if not self.db.profile.showContinentKalimdor then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Continent map"], L["Kalimdor"], L["symbols"], "|cffff0000" .. L["are hidden"])end end end,
             },
           showContinentEasternKingdom = {
-            disabled = function() return not db.show["Continent"] end,
+            disabled = function() return not ns.Addon.db.profile.show["Continent"] end,
             type = "toggle",
             name = TextIconEK:GetIconString() .. " " .. L["Eastern Kingdom"],
             desc = L["Show all Eastern Kingdom MapNotes dungeon, raid, portal, zeppelin and ship symbols on the continent map"],
@@ -562,7 +564,7 @@ ns.options = {
                   if not self.db.profile.showContinentEasternKingdom then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Continent map"], L["Eastern Kingdom"], L["symbols"], "|cffff0000" .. L["are hidden"])end end end,
             },
           showContinentOutland = {
-            disabled = function() return not db.show["Continent"] end,
+            disabled = function() return not ns.Addon.db.profile.show["Continent"] end,
             type = "toggle",
             name = TextIconBC:GetIconString() .. " " .. L["Outland"],
             desc = L["Show all Outland MapNotes dungeon, raid, portal, zeppelin and ship symbols on the continent map"],
@@ -572,7 +574,7 @@ ns.options = {
                   if not self.db.profile.showContinentOutland then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Continent map"], L["Outland"], L["symbols"], "|cffff0000" .. L["are hidden"])end end end,
             },
           showContinentNorthrend = {
-            disabled = function() return not db.show["Continent"] end,
+            disabled = function() return not ns.Addon.db.profile.show["Continent"] end,
             type = "toggle",
             name = TextIconNorthrend:GetIconString() .. " " .. L["Northrend"],
             desc = L["Show all Northrend MapNotes dungeon, raid, portal, zeppelin and ship symbols on the continent map"],
@@ -582,7 +584,7 @@ ns.options = {
                   if not self.db.profile.showContinentNorthrend then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Continent map"], L["Northrend"], L["symbols"], "|cffff0000" .. L["are hidden"])end end end,
             },
           showContinentPandaria = {
-            disabled = function() return not db.show["Continent"] end,
+            disabled = function() return not ns.Addon.db.profile.show["Continent"] end,
             type = "toggle",
             name = TextIconPandaria:GetIconString() .. " " .. L["Pandaria"],
             desc = L["Show all Pandaria MapNotes dungeon, raid, portal, zeppelin and ship symbols on the continent map"],
@@ -592,7 +594,7 @@ ns.options = {
                     if not self.db.profile.showContinentPandaria then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Continent map"], L["Pandaria"], L["symbols"], "|cffff0000" .. L["are hidden"])end end end,
             },
           showContinentDraenor = {
-            disabled = function() return not db.show["Continent"] end,
+            disabled = function() return not ns.Addon.db.profile.show["Continent"] end,
             type = "toggle",
             name = TextIconDraenor:GetIconString() .. " " .. L["Draenor"],
             desc = L["Show all Draenor MapNotes dungeon, raid, portal, zeppelin and ship symbols on the continent map"],
@@ -602,7 +604,7 @@ ns.options = {
                   if not self.db.profile.showContinentDraenor then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Continent map"], L["Draenor"], L["symbols"], "|cffff0000" .. L["are hidden"])end end end,
             },
           showContinentBrokenIsles = {
-            disabled = function() return not db.show["Continent"] end,
+            disabled = function() return not ns.Addon.db.profile.show["Continent"] end,
             type = "toggle",
             name = TextIconLegion:GetIconString() .. " " .. L["Broken Isles"],
             desc = L["Show all Broken Isles MapNotes dungeon, raid, portal, zeppelin and ship symbols on the continent map"],
@@ -612,7 +614,7 @@ ns.options = {
                   if not self.db.profile.showContinentBrokenIsles then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Continent map"], L["Broken Isles"], L["symbols"], "|cffff0000" .. L["are hidden"])end end end,
             },
           showContinentZandalar = {
-            disabled = function() return not db.show["Continent"] end,
+            disabled = function() return not ns.Addon.db.profile.show["Continent"] end,
             type = "toggle",
             name = TextIconZandalar:GetIconString() .. " " .. L["Zandalar"],
             desc = L["Show all Zandalar MapNotes dungeon, raid, portal, zeppelin and ship symbols on the continent map"],
@@ -622,7 +624,7 @@ ns.options = {
                   if not self.db.profile.showContinentZandalar then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Continent map"], L["Zandalar"], L["symbols"], "|cffff0000" .. L["are hidden"])end end end,
             },
           showContinentKulTiras = {
-            disabled = function() return not db.show["Continent"] end,
+            disabled = function() return not ns.Addon.db.profile.show["Continent"] end,
             type = "toggle",
             name = TextIconKT:GetIconString() .. " " .. L["Kul Tiras"],
             desc = L["Show all Kul Tiras MapNotes dungeon, raid, portal, zeppelin and ship symbols on the continent map"],
@@ -632,7 +634,7 @@ ns.options = {
                   if not self.db.profile.showContinentKulTiras then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Continent map"], L["Kul Tiras"], L["symbols"], "|cffff0000" .. L["are hidden"])end end end,
             },
           showContinentShadowlands = {
-            disabled = function() return not db.show["Continent"] end,
+            disabled = function() return not ns.Addon.db.profile.show["Continent"] end,
             type = "toggle",
             name = TextIconSL:GetIconString() .. " " .. L["Shadowlands"],
             desc = L["Show all Shadowlands MapNotes dungeon, raid, portal, zeppelin and ship symbols on the continent map"],
@@ -642,7 +644,7 @@ ns.options = {
                   if not self.db.profile.showContinentShadowlands then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Continent map"], L["Shadowlands"], L["symbols"], "|cffff0000" .. L["are hidden"])end end end,
             },
           showContinentDragonIsles = {
-            disabled = function() return not db.show["Continent"] end,
+            disabled = function() return not ns.Addon.db.profile.show["Continent"] end,
             type = "toggle",
             name = TextIconDF:GetIconString() .. " " .. L["Dragon Isles"],
             desc = L["Show all Dragon Isles MapNotes dungeon, raid, portal, zeppelin and ship symbols on the continent map"],
@@ -654,7 +656,7 @@ ns.options = {
         }
       },
       DungeonMapTab = {
-        disabled = function() return db.show["HideMapNote"] end,
+        disabled = function() return ns.Addon.db.profile.show["HideMapNote"] end,
         type = "group",
         name = L["Dungeon map"],
         desc = L["Dungeon map settings. Certain symbols can be displayed or not displayed. If the option (Activate symbols) has been activated in this category. Shows MapNotes exit and passage points on the dungeon map (these symbols are for orientation purposes only and nothing happens when you click on them)"],
@@ -670,10 +672,10 @@ ns.options = {
             name = L["Activate symbols"],
             desc = L["Enables the display of all possible symbols on the dungeon map (these symbols are for orientation purposes only and nothing happens when you click on them)"],
             order = 40.1,
-            get = function() return db.show["DungeonMap"] end,
-            set = function(info, v) db.show["DungeonMap"] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
-                  if db.show["DungeonMap"] then print(COLORED_ADDON_NAME.."|cffffff00 ".. L["Dungeon map"], "|cff00ff00" .. L["is activated"]) else 
-                  if not db.show["DungeonMap"] then print(COLORED_ADDON_NAME.."|cffffff00 ".. L["Dungeon map"], "|cffff0000" .. L["is deactivated"]) end end end,
+            get = function() return ns.Addon.db.profile.show["DungeonMap"] end,
+            set = function(info, v) ns.Addon.db.profile.show["DungeonMap"] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
+                  if ns.Addon.db.profile.show["DungeonMap"] then print(COLORED_ADDON_NAME.."|cffffff00 ".. L["Dungeon map"], "|cff00ff00" .. L["is activated"]) else 
+                  if not ns.Addon.db.profile.show["DungeonMap"] then print(COLORED_ADDON_NAME.."|cffffff00 ".. L["Dungeon map"], "|cffff0000" .. L["is deactivated"]) end end end,
             },
           DungeonMapheader2 = {
             type = "header",
@@ -681,7 +683,7 @@ ns.options = {
             order = 41.0,
             },
           showDungeonExit = {
-            disabled = function() return not db.show["DungeonMap"] end,
+            disabled = function() return not ns.Addon.db.profile.show["DungeonMap"] end,
             type = "toggle",
             name = TextIconExit:GetIconString() .. " " .. L["Exits"] .. "\n",
             desc = L["Show symbols of MapNotes dungeon exit on the dungeon map"],
@@ -691,7 +693,7 @@ ns.options = {
                   if not self.db.profile.showDungeonExit then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Dungeon map"], L["Exits"], "|cffff0000" .. L["are hidden"])end end end,
             },
           showDungeonPortal = {
-            disabled = function() return not db.show["DungeonMap"] end,
+            disabled = function() return not ns.Addon.db.profile.show["DungeonMap"] end,
             type = "toggle",
             name = TextIconPortal:GetIconString() .. " " .. TextIconHPortal:GetIconString() .. " " .. TextIconAPortal:GetIconString() .. " " .. L["Portals"] .. "\n",
             desc = L["Show symbols of portals on the dungeon map"],
@@ -701,7 +703,7 @@ ns.options = {
                   if not self.db.profile.showDungeonPortal then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Dungeon map"], L["Portals"], "|cffff0000" .. L["are hidden"])end end end,
             },            
           showDungeonPassage = {
-            disabled = function() return not db.show["DungeonMap"] end,
+            disabled = function() return not ns.Addon.db.profile.show["DungeonMap"] end,
             type = "toggle",
             name = TextIconPassageup:GetIconString() .. " " .. TextIconPassagedown:GetIconString() .. " " .. TextIconPassageright:GetIconString() .. " " .. TextIconPassageleft:GetIconString() .. " " .. L["Passages"] .. "\n",
             desc = L["Show symbols of passage on the dungeon map"],
