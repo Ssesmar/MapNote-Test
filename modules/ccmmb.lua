@@ -1,6 +1,7 @@
 local ADDON_NAME, ns = ...
 
 local db = ns.Addon.db
+print(db)
 
 local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
 local COLORED_ADDON_NAME = "|cffff0000Map|r|cff00ccffNotes|r"
@@ -34,13 +35,13 @@ end
 SLASH_MMBSHOW1, SLASH_MMBSHOW2 = "/mnb", "/MNB";
 function SlashCmdList.MMBSHOW(msg, editbox)
   MNMMBIcon:Show("MNMiniMapButton")
-  db.show.HideMMB = false
+  db.profile.show.HideMMB = false
   print(COLORED_ADDON_NAME .. "|cffffff00  " .. L["-> MiniMapButton <-"], "|cff00ff00" .. L["is activated"])
 end
 
 SLASH_MMBHIDE1, SLASH_MMBHIDE2 = "/mnbh", "/MNBH";
 function SlashCmdList.MMBHIDE(msg, editbox)
   MNMMBIcon:Hide("MNMiniMapButton")
-  db.show.HideMMB = true
+  db.profile.show.HideMMB = true
   print(COLORED_ADDON_NAME .. "|cffffff00  " .. L["-> MiniMapButton <-"], "|cffff0000" .. L["is deactivated"])
 end
