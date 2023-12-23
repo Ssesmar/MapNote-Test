@@ -1,5 +1,6 @@
 local ADDON_NAME, ns = ...
 local db = ns.Addon
+local self = ns.Addon
 
 local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
 
@@ -368,7 +369,7 @@ local nodes = { }
     nodes[2112] = { } -- Valdrakken
     nodes[2200] = { } -- The Emerald Dream
     
-    if not db.show["HideMapNote"] then
+    if not ns.Addon.db.show["HideMapNote"] then
     
       --Inside Dungeon MapNotes
       if db.show["DungeonMap"] then
