@@ -1,37 +1,6 @@
--- TextIcon.lua
--- Written by KyrosKrane Sylvanblade (kyros@kyros.info)
--- Copyright (c) 2018 KyrosKrane Sylvanblade
--- Licensed under the MIT License, as per the included file.
-
--- File revision: @file-abbreviated-hash@
--- File last updated: @file-date-iso@
-
-
---#########################################
---# Description
---#########################################
-
--- This file creates a class that can be used to store information on icons.
--- Methods are available to get a text string to display those icons inline with text.
-
--- The normal way of handling icons is to create a texture, load the icon file into that, set the region you want, and done.
--- However, we need to embed icons into a text string; for example, to display in an LDB label.
--- So, we create a custom object to hold icon information, and give it a method to create a text string to display that icon.
--- That text string can then be embedded in the LDB label to show the icon.
-
-
---#########################################
---# Global to local references
---#########################################
-
 -- Get local references to globals
 local setmetatable = setmetatable
 local string = string
-
-
---#########################################
---# Icon class setup
---#########################################
 
 -- Create the object class
 -- Adapted from http://lua-users.org/wiki/ObjectOrientationTutorial
@@ -43,11 +12,6 @@ setmetatable(TextIcon, {
 		return cls.new(...)
 	end,
 })
-
-
---#########################################
---# Constructor
---#########################################
 
 -- Create the constructor
 function TextIcon.new(iconfile, IconFileX, IconFileY, StartX, EndX, StartY, EndY)
@@ -77,10 +41,6 @@ function TextIcon.new(iconfile, IconFileX, IconFileY, StartX, EndX, StartY, EndY
 	return self
 end -- TextIcon.new()
 
-
---#########################################
---# Methods
---#########################################
 
 -- Gets the display string without the control codes that make WoW display it as an icon.
 -- Useful for debugging or when there's additional text that needs to be added or modified before the control codes are added.
@@ -126,13 +86,3 @@ function TextIcon:GetIconString()
 	-- This function wraps the icon string in the control code that causes it to display as an icon
 	return string.format("\124T%s\124t", self:GetIconStringInner())
 end -- TextIcon:GetIconString()
-
-
--- @TODO: Add method to get the TexCoords of an icon for inclusion in the LDB object's iconCoords parameter.
--- See:
---	https://wow.gamepedia.com/API_Texture_SetTexCoord
---	https://github.com/tekkub/libdatabroker-1-1/wiki/Data-Specifications
---	https://us.battle.net/forums/en/wow/topic/20752506801
-
--- Escape sequence reference:
---	http://wowwiki.wikia.com/wiki/UI_escape_sequences#Grammar

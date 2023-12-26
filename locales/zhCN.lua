@@ -21,6 +21,7 @@ L["are shown"] = "显示"
 L["are hidden"] = "被隐藏"
 L["symbols"] = "符号"
 L["Left-click => Open/Close"] = "左键单击=>打开/关闭"
+L["Right-click => Open/Close"] = "右键单击=>打开/关闭"
 L["Shift + Right-click => hide"] = "Shift + 右键单击​​ => 隐藏"
 L["(also opens MapNotes if hiding was unwanted)"] = "（如果不需要隐藏，则打开 MapNotes）"
 
@@ -249,9 +250,9 @@ L["These portals are only active in the game if your faction is currently occupy
 --7 old dungeons/raids
 L["Old version of Scarlet Monastery Armory (need to activate the old keychain at 48.33 55.88 inside the Scarlet Monastery)"] = "旧版血色修道院军械库（需要在血色修道院内于48.33 55.88激活旧钥匙串）"
 L["Old version of Naxxramas - Secret Entrance (Wards of the Dread Citadel - Achievement)"] = "旧版本的纳克萨玛斯 - 秘密入口（恐惧城堡的守卫 - 成就）"
-L["Old keychain - use the old keychain to activate the old versions of Scarlet Monastery dungeons (you need to get first (The Scarlet Key) from Hallow's End world event or buy from auction house)"] = "旧钥匙扣 - 使用旧钥匙扣激活旧版本的血色修道院地下城（你需要从万圣节世界活动中获得第一把（血色钥匙）或从拍卖行购买）"
 L["Old version of Scarlet Monastery Cathedral (need to activate the old keychain at 48.33 55.88 inside the Scarlet Monastery)"] = "旧版血色修道院大教堂（需要在血色修道院内于48.33 55.88激活旧钥匙串）"
 L["Old version of Scarlet Monastery Graveyard (need to activate the old keychain at 48.33 55.88 inside the Scarlet Monastery)"] = "旧版血色修道院墓地（需要在血色修道院内于48.33 55.88激活旧钥匙扣）"
 L["Old version of Scarlet Monastery Library (need to activate the old keychain at 48.33 55.88 inside the Scarlet Monastery)"] = "旧版血色修道院图书馆（需要在血色修道院内于48.33 55.88激活旧钥匙串）"
 L["Old version of Scarlet Monastery Armory (need to activate the old keychain at 48.33 55.88 inside the Scarlet Monastery)"] = "旧版血色修道院军械库（需要在血色修道院内于48.33 55.88激活旧钥匙串）"
 L["Old version of Scholomance - Secret Entrance (Memory of Scholomance - Achievement)"] = "旧版通灵学院 - 秘密入口（通灵学院的记忆 - 成就）"
+L["Old keychain - use the old keychain to activate the old versions of Scarlet Monastery dungeons (you need to get first (The Scarlet Key) from Hallow's End world event or buy from auction house)"] = "旧钥匙扣 - 使用旧钥匙扣激活旧版本的血色修道院地下城（你需要从万圣节世界活动中获得第一把（血色钥匙）或从拍卖行购买）"

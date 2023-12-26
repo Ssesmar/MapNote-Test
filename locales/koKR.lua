@@ -21,6 +21,7 @@ L["are shown"] = "표시됩니다"
 L["are hidden"] = "숨겨져 있다"
 L["symbols"] = "기호"
 L["Left-click => Open/Close"] = "왼쪽 클릭 => 열기/닫기"
+L["Right-click => Open/Close"] = "마우스 오른쪽 버튼을 클릭하십시오 => 열고 닫습니다"
 L["Shift + Right-click => hide"] = "Shift + 마우스 오른쪽 버튼 클릭 => 숨기기"
 L["(also opens MapNotes if hiding was unwanted)"] = "(숨기기를 원치 않는 경우 MapNotes가 열립니다)"
 
@@ -249,9 +250,9 @@ L["These portals are only active in the game if your faction is currently occupy
 --7 old dungeons/raids
 L["Old version of Scarlet Monastery Armory (need to activate the old keychain at 48.33 55.88 inside the Scarlet Monastery)"] = "붉은십자군 수도원 무기고의 이전 버전(붉은십자군 수도원 내부 48.33 55.88에서 이전 키체인을 활성화해야 함)"
 L["Old version of Naxxramas - Secret Entrance (Wards of the Dread Citadel - Achievement)"] = "이전 버전의 낙스라마스 - 비밀 입구(공포의 성채의 수호물 - 업적)"
-L["Old keychain - use the old keychain to activate the old versions of Scarlet Monastery dungeons (you need to get first (The Scarlet Key) from Hallow's End world event or buy from auction house)"] = "오래된 열쇠고리 - 오래된 열쇠고리를 사용하여 붉은십자군 수도원 던전의 이전 버전을 활성화합니다(할로윈엔드 월드 이벤트에서 먼저 (주홍빛 열쇠)를 얻거나 경매장에서 구매해야 합니다)"
 L["Old version of Scarlet Monastery Cathedral (need to activate the old keychain at 48.33 55.88 inside the Scarlet Monastery)"] = "Scarlet Monastery Cathedral의 이전 버전(Scarlet Monastery 내부 48.33 55.88에서 이전 키체인을 활성화해야 함)"
 L["Old version of Scarlet Monastery Graveyard (need to activate the old keychain at 48.33 55.88 inside the Scarlet Monastery)"] = "Scarlet Monastery Graveyard의 이전 버전(Scarlet Monastery 내부 48.33 55.88에서 이전 키체인을 활성화해야 함)"
 L["Old version of Scarlet Monastery Library (need to activate the old keychain at 48.33 55.88 inside the Scarlet Monastery)"] = "Scarlet Monastery Library의 이전 버전(Scarlet Monastery 내부 48.33 55.88에서 이전 키체인을 활성화해야 함)"
 L["Old version of Scarlet Monastery Armory (need to activate the old keychain at 48.33 55.88 inside the Scarlet Monastery)"] = "붉은십자군 수도원 무기고의 이전 버전(붉은십자군 수도원 내부 48.33 55.88에서 이전 키체인을 활성화해야 함)"
 L["Old version of Scholomance - Secret Entrance (Memory of Scholomance - Achievement)"] = "이전 버전의 스칼로맨스 - 비밀 입구(스칼로맨스의 기억 - 업적)"
+L["Old keychain - use the old keychain to activate the old versions of Scarlet Monastery dungeons (you need to get first (The Scarlet Key) from Hallow's End world event or buy from auction house)"] = "오래된 열쇠고리 - 오래된 열쇠고리를 사용하여 붉은십자군 수도원 던전의 이전 버전을 활성화합니다(할로윈엔드 월드 이벤트에서 먼저 (주홍빛 열쇠)를 얻거나 경매장에서 구매해야 합니다)"

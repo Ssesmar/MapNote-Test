@@ -21,6 +21,7 @@ L["are shown"] = "werden angezeigt"
 L["are hidden"] = "werden ausgeblendet"
 L["symbols"] = "Symbole"
 L["Left-click => Open/Close"] = "Linksclick => Öffnen/Schließen"
+L["Right-click => Open/Close"] = "Rechtsclick => Öffne/Schließen"
 L["Shift + Right-click => hide"] = "Shift + Rechtsklick => verstecke"
 L["(also opens MapNotes if hiding was unwanted)"] = "(öffnet gleichzeitig MapNotes, falls das Ausblenden ungewollt war)"
 
@@ -249,9 +250,9 @@ L["These portals are only active in the game if your faction is currently occupy
 --7 old dungeons/raids
 L["Old version of Scarlet Monastery Armory (need to activate the old keychain at 48.33 55.88 inside the Scarlet Monastery)"] = "Alte Version der Waffenkammer des Scharlachroten Klosters (der alte Schlüsselbund muss bei 48,33 55,88 im Scharlachroten Kloster aktiviert werden)"
 L["Old version of Naxxramas - Secret Entrance (Wards of the Dread Citadel - Achievement)"] = "Alte Version von Naxxramas – Geheimer Eingang (Schutze der Zitadelle des Schreckens – Erfolg)"
-L["Old keychain - use the old keychain to activate the old versions of Scarlet Monastery dungeons (you need to get first (The Scarlet Key) from Hallow's End world event or buy from auction house)"] = "Alter Schlüsselbund – Verwenden Sie den alten Schlüsselbund, um die alten Versionen der Dungeons des Scharlachroten Klosters zu aktivieren (Sie müssen zuerst (den Scharlachroten Schlüssel) beim Weltereignis „Kopflose Reiter“ erhalten oder im Auktionshaus kaufen)"
 L["Old version of Scarlet Monastery Cathedral (need to activate the old keychain at 48.33 55.88 inside the Scarlet Monastery)"] = "Alte Version der Kathedrale des Scharlachroten Klosters (der alte Schlüsselbund muss bei 48,33 55,88 im Scharlachroten Kloster aktiviert werden)"
 L["Old version of Scarlet Monastery Graveyard (need to activate the old keychain at 48.33 55.88 inside the Scarlet Monastery)"] = "Alte Version der Friedhof des Scharlachroten Klosters (der alte Schlüsselbund muss bei 48,33 55,88 im Scharlachroten Kloster aktiviert werden)"
 L["Old version of Scarlet Monastery Library (need to activate the old keychain at 48.33 55.88 inside the Scarlet Monastery)"] = "Alte Version der Bibliothek des Scharlachroten Klosters (der alte Schlüsselbund muss bei 48,33 55,88 im Scharlachroten Kloster aktiviert werden)"
 L["Old version of Scarlet Monastery Armory (need to activate the old keychain at 48.33 55.88 inside the Scarlet Monastery)"] = "Alte Version der Waffenkammer des Scharlachroten Klosters (der alte Schlüsselbund muss bei 48,33 55,88 im Scharlachroten Kloster aktiviert werden)"
 L["Old version of Scholomance - Secret Entrance (Memory of Scholomance - Achievement)"] = "Alte Version von Scholomance – Geheimer Eingang (Erinnerung an Scholomance – Erfolg)"
+L["Old keychain - use the old keychain to activate the old versions of Scarlet Monastery dungeons (you need to get first (The Scarlet Key) from Hallow's End world event or buy from auction house)"] = "Alter Schlüsselbund – Verwenden Sie den alten Schlüsselbund, um die alten Versionen der Dungeons des Scharlachroten Klosters zu aktivieren (Sie müssen zuerst (den Scharlachroten Schlüssel) beim Weltereignis „Kopflose Reiter“ erhalten oder im Auktionshaus kaufen)"

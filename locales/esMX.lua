@@ -21,6 +21,7 @@ L["are shown"] = "se muestran"
 L["are hidden"] = "están ocultos"
 L["symbols"] = "Símbolos"
 L["Left-click => Open/Close"] = "Clic izquierdo = > Abrir/Cerrar"
+L["Right-click => Open/Close"] = "Botón derecho => Abrir/Cerrar"
 L["Shift + Right-click => hide"] = "Mayús clic derecho = > ocultar"
 L["(also opens MapNotes if hiding was unwanted)"] = "abre MapNotes si no se desea ocultar)"
 
@@ -249,9 +250,9 @@ L["These portals are only active in the game if your faction is currently occupy
 --7 old dungeons/raids
 L["Old version of Scarlet Monastery Armory (need to activate the old keychain at 48.33 55.88 inside the Scarlet Monastery)"] = "Versión antigua de la Armería del Monasterio Escarlata (es necesario activar el llavero antiguo en 48.33 55.88 dentro del Monasterio Escarlata)"
 L["Old version of Naxxramas - Secret Entrance (Wards of the Dread Citadel - Achievement)"] = "Versión antigua de Naxxramas - Entrada secreta (Guardianes de la Ciudadela del Terror - Logro)"
-L["Old keychain - use the old keychain to activate the old versions of Scarlet Monastery dungeons (you need to get first (The Scarlet Key) from Hallow's End world event or buy from auction house)"] = "Llavero antiguo : usa el llavero antiguo para activar las versiones antiguas de las mazmorras del Monasterio Escarlata (debes obtener primero (La Llave Escarlata) del evento mundial de Halloween o comprar en la casa de subastas)"
 L["Old version of Scarlet Monastery Cathedral (need to activate the old keychain at 48.33 55.88 inside the Scarlet Monastery)"] = "Versión antigua de la Catedral del Monasterio Escarlata (es necesario activar el llavero antiguo en 48.33, 55.88 dentro del Monasterio Escarlata)"
 L["Old version of Scarlet Monastery Graveyard (need to activate the old keychain at 48.33 55.88 inside the Scarlet Monastery)"] = "Versión antigua del Cementerio del Monasterio Escarlata (es necesario activar el llavero antiguo en 48.33, 55.88 dentro del Monasterio Escarlata)"
 L["Old version of Scarlet Monastery Library (need to activate the old keychain at 48.33 55.88 inside the Scarlet Monastery)"] = "Versión antigua de la Biblioteca del Monasterio Escarlata (es necesario activar el llavero antiguo en 48.33 55.88 dentro del Monasterio Escarlata)"
 L["Old version of Scarlet Monastery Armory (need to activate the old keychain at 48.33 55.88 inside the Scarlet Monastery)"] = "Versión antigua de la Armería del Monasterio Escarlata (es necesario activar el llavero antiguo en 48.33 55.88 dentro del Monasterio Escarlata)"
 L["Old version of Scholomance - Secret Entrance (Memory of Scholomance - Achievement)"] = "Versión antigua de Scholomance - Secret Entry (Memoria de Scholomance - Logro)"
+L["Old keychain - use the old keychain to activate the old versions of Scarlet Monastery dungeons (you need to get first (The Scarlet Key) from Hallow's End world event or buy from auction house)"] = "Llavero antiguo : usa el llavero antiguo para activar las versiones antiguas de las mazmorras del Monasterio Escarlata (debes obtener primero (La Llave Escarlata) del evento mundial de Halloween o comprar en la casa de subastas)"

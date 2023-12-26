@@ -5,7 +5,7 @@
 ## Author: BadBoyBarny
 ## RequiredDeps: HandyNotes
 ## X-Curse-Project-ID: 912524
-## IconTexture: Interface\AddOns\HandyNotes_MapNotes\Images\MN_Logo
+## IconTexture: Interface\AddOns\HandyNotes_MapNotes\Images\MNL4
 ## SavedVariables: HandyNotes_MapNotesDB, MNMiniMapButtonDB
 
 locales\Locales.xml

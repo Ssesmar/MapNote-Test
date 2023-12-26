@@ -21,6 +21,7 @@ L["are shown"] = "показаны"
 L["are hidden"] = "скрыты"
 L["symbols"] = "символы"
 L["Left-click => Open/Close"] = "Клик левой кнопкой мыши => Открыть/Закрыть"
+L["Right-click => Open/Close"] = "Щелкните правой кнопкой мыши => открыть/закройте"
 L["Shift + Right-click => hide"] = "Shift + щелчок правой кнопкой мыши => скрыть"
 L["(also opens MapNotes if hiding was unwanted)"] = "(открывает MapNotes, если скрытие было нежелательным)"
 
@@ -249,9 +250,9 @@ L["These portals are only active in the game if your faction is currently occupy
 --7 old dungeons/raids
 L["Old version of Scarlet Monastery Armory (need to activate the old keychain at 48.33 55.88 inside the Scarlet Monastery)"] = "Старая версия Оружейной палаты Монастыря Алого ордена (необходимо активировать старый брелок по координатам 48.33 55.88 внутри Монастыря Алого ордена)"
 L["Old version of Naxxramas - Secret Entrance (Wards of the Dread Citadel - Achievement)"] = "Старая версия Наксрамаса — Тайный вход (Защиты Цитадели Ужаса — Достижение)"
-L["Old keychain - use the old keychain to activate the old versions of Scarlet Monastery dungeons (you need to get first (The Scarlet Key) from Hallow's End world event or buy from auction house)"] = "Старый брелок — используйте старый брелок для активации старых версий подземелий Монастыря Алого ордена (вам нужно сначала получить (Алый ключ) на мировом событии «Конец Хэллоуина» или купить на аукционе)"
 L["Old version of Scarlet Monastery Cathedral (need to activate the old keychain at 48.33 55.88 inside the Scarlet Monastery)"] = "Старая версия Собора Монастыря Алого ордена (необходимо активировать старый брелок по координатам 48.33 55.88 внутри Монастыря Алого ордена)"
 L["Old version of Scarlet Monastery Graveyard (need to activate the old keychain at 48.33 55.88 inside the Scarlet Monastery)"] = "Старая версия Кладбища Монастыря Алого ордена (необходимо активировать старый брелок по координатам 48.33 55.88 внутри Монастыря Алого ордена)"
 L["Old version of Scarlet Monastery Library (need to activate the old keychain at 48.33 55.88 inside the Scarlet Monastery)"] = "Старая версия библиотеки Монастыря Алого ордена (необходимо активировать старый брелок по координатам 48.33 55.88 внутри Монастыря Алого ордена)"
 L["Old version of Scarlet Monastery Armory (need to activate the old keychain at 48.33 55.88 inside the Scarlet Monastery)"] = "Старая версия Оружейной палаты Монастыря Алого ордена (необходимо активировать старый брелок по координатам 48.33 55.88 внутри Монастыря Алого ордена)"
 L["Old version of Scholomance - Secret Entrance (Memory of Scholomance - Achievement)"] = "Старая версия Некроситета – Тайный вход (Память о Некроситете – Достижение)"
+L["Old keychain - use the old keychain to activate the old versions of Scarlet Monastery dungeons (you need to get first (The Scarlet Key) from Hallow's End world event or buy from auction house)"] = "Старый брелок — используйте старый брелок для активации старых версий подземелий Монастыря Алого ордена (вам нужно сначала получить (Алый ключ) на мировом событии «Конец Хэллоуина» или купить на аукционе)"

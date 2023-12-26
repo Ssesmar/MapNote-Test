@@ -21,6 +21,7 @@ L["are shown"] = true
 L["are hidden"] = true
 L["symbols"] = true
 L["Left-click => Open/Close"] = true
+L["Right-click => Open/Close"] = true
 L["Shift + Right-click => hide"] = true
 L["(also opens MapNotes if hiding was unwanted)"] = true
 
@@ -254,4 +255,4 @@ L["Old version of Scarlet Monastery Graveyard (need to activate the old keychain
 L["Old version of Scarlet Monastery Library (need to activate the old keychain at 48.33 55.88 inside the Scarlet Monastery)"] = true
 L["Old version of Scarlet Monastery Armory (need to activate the old keychain at 48.33 55.88 inside the Scarlet Monastery)"] = true
 L["Old version of Scholomance - Secret Entrance (Memory of Scholomance - Achievement)"] = true
-L["Old version of Old keychain - use the old keychain to activate the old versions of Scarlet Monastery dungeons (you need to get first (The Scarlet Key) from Hallow's End world event or buy from auction house)"] = true
+L["Old keychain - use the old keychain to activate the old versions of Scarlet Monastery dungeons (you need to get first (The Scarlet Key) from Hallow's End world event or buy from auction house)"] = true

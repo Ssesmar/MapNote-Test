@@ -21,6 +21,7 @@ L["are shown"] = "顯示"
 L["are hidden"] = "被隱藏"
 L["symbols"] = "符號"
 L["Left-click => Open/Close"] = "左键单击=>打开/关闭"
+L["Right-click => Open/Close"] = "右鍵單擊=>打開/關閉"
 L["Shift + Right-click => hide"] = "Shift + 右键单击​​ => 隐藏"
 L["(also opens MapNotes if hiding was unwanted)"] = "（如果不需要隐藏，则打开 MapNotes）"
 
@@ -249,9 +250,9 @@ L["These portals are only active in the game if your faction is currently occupy
 --7 old dungeons/raids
 L["Old version of Scarlet Monastery Armory (need to activate the old keychain at 48.33 55.88 inside the Scarlet Monastery)"] = "舊版血色修道院軍械庫（需在血色修道院內於48.33 55.88啟動舊鑰匙圈）"
 L["Old version of Naxxramas - Secret Entrance (Wards of the Dread Citadel - Achievement)"] = "舊版的納克薩瑪斯 - 秘密入口（恐懼城堡的守衛 - 成就）"
-L["Old keychain - use the old keychain to activate the old versions of Scarlet Monastery dungeons (you need to get first (The Scarlet Key) from Hallow's End world event or buy from auction house)"] = "舊鑰匙圈 - 使用舊鑰匙圈啟動舊版的血色修道院地下城（你需要從萬聖節世界活動中獲得第一把（血色鑰匙）或從拍賣行購買）"
 L["Old version of Scarlet Monastery Cathedral (need to activate the old keychain at 48.33 55.88 inside the Scarlet Monastery)"] = "舊版血色修道院大教堂（需在血色修道院內於48.33 55.88啟動舊鑰匙圈）"
 L["Old version of Scarlet Monastery Graveyard (need to activate the old keychain at 48.33 55.88 inside the Scarlet Monastery)"] = "舊版血色修道院墓地（需在血色修道院內於48.33 55.88啟動舊鑰匙圈）"
 L["Old version of Scarlet Monastery Library (need to activate the old keychain at 48.33 55.88 inside the Scarlet Monastery)"] = "舊版血色修道院圖書館（需在血色修道院內於48.33 55.88啟動舊鑰匙圈）"
 L["Old version of Scarlet Monastery Armory (need to activate the old keychain at 48.33 55.88 inside the Scarlet Monastery)"] = "舊版血色修道院軍械庫（需在血色修道院內於48.33 55.88啟動舊鑰匙圈）"
 L["Old version of Scholomance - Secret Entrance (Memory of Scholomance - Achievement)"] = "舊版通靈學院 - 秘密入口（通靈學院的記憶 - 成就）"
+L["Old keychain - use the old keychain to activate the old versions of Scarlet Monastery dungeons (you need to get first (The Scarlet Key) from Hallow's End world event or buy from auction house)"] = "舊鑰匙圈 - 使用舊鑰匙圈啟動舊版的血色修道院地下城（你需要從萬聖節世界活動中獲得第一把（血色鑰匙）或從拍賣行購買）"
