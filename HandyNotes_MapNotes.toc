@@ -12,8 +12,8 @@ locales\Locales.xml
 libs\LibDBIcon-1.0\embeds.xml
 libs\LibDBIcon-1.0\lib.xml
 
-modules\textIcons.lua
-modules\defaults.lua
-modules\core.lua
-modules\ccmmb.lua
-modules\mmb.lua
+core\defaults.lua
+core\IconClass.lua
+core\core.lua
+core\ccmmb.lua
+core\mmb.lua
