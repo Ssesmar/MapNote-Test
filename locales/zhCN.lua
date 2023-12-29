@@ -23,7 +23,6 @@ L["symbols"] = "符号"
 L["Left-click => Open/Close"] = "左键单击=>打开/关闭"
 L["Right-click => Open/Close"] = "右键单击=>打开/关闭"
 L["Shift + Right-click => hide"] = "Shift + 右键单击​​ => 隐藏"
-L["(also opens MapNotes if hiding was unwanted)"] = "（如果不需要隐藏，则打开 MapNotes）"
 
 
 --1

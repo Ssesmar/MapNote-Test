@@ -23,7 +23,6 @@ L["symbols"] = "기호"
 L["Left-click => Open/Close"] = "왼쪽 클릭 => 열기/닫기"
 L["Right-click => Open/Close"] = "마우스 오른쪽 버튼을 클릭하십시오 => 열고 닫습니다"
 L["Shift + Right-click => hide"] = "Shift + 마우스 오른쪽 버튼 클릭 => 숨기기"
-L["(also opens MapNotes if hiding was unwanted)"] = "(숨기기를 원치 않는 경우 MapNotes가 열립니다)"
 
 
 --1

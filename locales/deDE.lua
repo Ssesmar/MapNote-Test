@@ -23,7 +23,6 @@ L["symbols"] = "Symbole"
 L["Left-click => Open/Close"] = "Linksclick => Öffnen/Schließen"
 L["Right-click => Open/Close"] = "Rechtsclick => Öffne/Schließen"
 L["Shift + Right-click => hide"] = "Shift + Rechtsklick => verstecke"
-L["(also opens MapNotes if hiding was unwanted)"] = "(öffnet gleichzeitig MapNotes, falls das Ausblenden ungewollt war)"
 
 
 --1 General tab

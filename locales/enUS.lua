@@ -23,7 +23,6 @@ L["symbols"] = true
 L["Left-click => Open/Close"] = true
 L["Right-click => Open/Close"] = true
 L["Shift + Right-click => hide"] = true
-L["(also opens MapNotes if hiding was unwanted)"] = true
 
 
 --1 General tab

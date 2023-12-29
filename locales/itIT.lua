@@ -23,7 +23,6 @@ L["symbols"] = "simboli"
 L["Left-click => Open/Close"] = "Clic sinistro => Apri/Chiudi"
 L["Right-click => Open/Close"] = "Clicca destro sul tasto destro => Apri/Chiudi"
 L["Shift + Right-click => hide"] = "Maiusc + clic con il tasto destro => nascondi"
-L["(also opens MapNotes if hiding was unwanted)"] = "(apre MapNotes se nasconderlo era indesiderato)"
 
 
 --1

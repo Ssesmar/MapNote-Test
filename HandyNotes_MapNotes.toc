@@ -12,8 +12,9 @@ locales\Locales.xml
 libs\LibDBIcon-1.0\embeds.xml
 libs\LibDBIcon-1.0\lib.xml
 
-nodes\nodes.lua
+nodes\nodesInfo.lua
 nodes\locations.lua
+
 
 core\defaults.lua
 core\IconClass.lua
