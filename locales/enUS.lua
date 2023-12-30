@@ -164,6 +164,8 @@ L["Passages"] = true
 L["Show symbols of passage on the dungeon map"] = true
 L["Portals"] = true
 L["Show symbols of portals on the dungeon map"] = true
+L["Transport"] = true
+L["Show symbols of other transport possibilities on the dungeon map"] = true
 
 
 --5 Entrance/Exit/Passage nodes

@@ -83,5 +83,6 @@ ns.defaults = {
         showDungeonExit = true,
         showDungeonPassage = true,
         showDungeonPortal = true,
+        showDungeonTransport = true,
     },
 }

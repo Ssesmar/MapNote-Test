@@ -1620,33 +1620,49 @@ if not db.show.HideMapNote then
         --################################
         --#### Inside Dungeon Passage ####
         --################################
-    
           if self.db.profile.showDungeonPassage then
-    
+
         --##########################
         --#### Kalimdor Passage ####
         --##########################
+          --Mauradon
             nodes[280][13585809] = { mnID = 281, name = L["Passage"], type = "PassageLeftL", showInZone = true } -- Maraudon passage to Zaetar's Grave
             nodes[281][29120410] = { mnID = 280, name = L["Passage"], type = "PassageRightL", showInZone = true } -- Maraudon passage to Zaetar's Grave
+          --Blackfathom Deeps
+            nodes[221][61467332] = { mnID = 222, name = L["Passage"], type = "PassageDownL", showInZone = true } -- The Pool of Ask'Ar
+            nodes[222][33682913] = { mnID = 221, name = L["Passage"], type = "PassageLeftL", showInZone = true } -- Moonshrine Sanctum
+            nodes[222][45767732] = { mnID = 223, name = L["Passage"], type = "PassageRightL", showInZone = true } -- Moonshrine Sanctum
+            nodes[223][40426226] = { mnID = 222, name = L["Passage"], type = "PassageLeftL", showInZone = true } -- The Forgotten Pool
+          --Firelands
+            nodes[367][49532089] = { mnID = 369, name = L["Passage"], type = "PassageUpL", showInZone = true } -- Firelands
+            nodes[369][50949145] = { mnID = 367, name = L["Passage"], type = "PassageDownL", showInZone = true } -- Sulfuron Keep
+          --The Culling of Stratholme
+            nodes[130][47331948] = { mnID = 131, name = L["Passage"], type = "PassageUpL", showInZone = true } -- The Culling of Stratholme
+            nodes[131][50477779] = { mnID = 130, name = L["Passage"], type = "PassageDownL", showInZone = true } -- Stratholme City
+          --Hour of Twillight
+            nodes[399][49847285] = { mnID = 400, name = L["Passage"], type = "PassageDownL", showInZone = true } -- Hour of Twillight
+            nodes[400][43881265] = { mnID = 399, name = L["Passage"], type = "PassageUpL", showInZone = true } -- Wyrmrest Temple
+
+
         --#################################
         --#### Eastern Kingdom Passage ####
         --#################################
-        nodes[306][66643330] = { mnID = 307, name = L["Passage"], type = "PassageUpL", showInZone = true } -- The Reliquary
-        nodes[307][29083252] = { mnID = 308, name = L["Passage"], type = "PassageRightL", showInZone = true } -- Chamber of Summoning
-        nodes[307][62092937] = { mnID = 306, name = L["Passage"], type = "PassageDownL", showInZone = true } -- Chamber of Summoning
-        nodes[307][29638662] = { mnID = 308, name = L["Passage"], type = "PassageUpL", showInZone = true } -- Chamber of Summoning
-        nodes[307][63505338] = { mnID = 308, name = L["Passage"], type = "PassageRightL", showInZone = true } -- Chamber of Summoning
-        nodes[307][41058886] = { mnID = 309, name = L["Passage"], type = "PassageLeftL", showInZone = true } -- Chamber of Summoning
-        nodes[308][28812372] = { mnID = 307, name = L["Passage"], type = "PassageLeftL", showInZone = true } -- The Upper Study
-        nodes[308][28812372] = { mnID = 307, name = L["Passage"], type = "PassageLeftL", showInZone = true } -- The Upper Study
-        nodes[308][35408274] = { mnID = 307, name = L["Passage"], type = "PassageUpL", showInZone = true } -- The Upper Study
-        nodes[308][58956226] = { mnID = 307, name = L["Passage"], type = "PassageLeftL", showInZone = true } -- The Upper Study
-        nodes[309][48275691] = { mnID = 307, name = L["Passage"], type = "PassageUpL", showInZone = true } -- Headmaster's Study
-        
+          --Old Scholomance
+            nodes[306][66643330] = { mnID = 307, name = L["Passage"], type = "PassageUpL", showInZone = true } -- The Reliquary
+            nodes[307][29083252] = { mnID = 308, name = L["Passage"], type = "PassageRightL", showInZone = true } -- Chamber of Summoning
+            nodes[307][62092937] = { mnID = 306, name = L["Passage"], type = "PassageDownL", showInZone = true } -- Chamber of Summoning
+            nodes[307][29638662] = { mnID = 308, name = L["Passage"], type = "PassageUpL", showInZone = true } -- Chamber of Summoning
+            nodes[307][63505338] = { mnID = 308, name = L["Passage"], type = "PassageRightL", showInZone = true } -- Chamber of Summoning
+            nodes[307][41058886] = { mnID = 309, name = L["Passage"], type = "PassageLeftL", showInZone = true } -- Chamber of Summoning
+            nodes[308][28812372] = { mnID = 307, name = L["Passage"], type = "PassageLeftL", showInZone = true } -- The Upper Study
+            nodes[308][28812372] = { mnID = 307, name = L["Passage"], type = "PassageLeftL", showInZone = true } -- The Upper Study
+            nodes[308][35408274] = { mnID = 307, name = L["Passage"], type = "PassageUpL", showInZone = true } -- The Upper Study
+            nodes[308][58956226] = { mnID = 307, name = L["Passage"], type = "PassageLeftL", showInZone = true } -- The Upper Study
+            nodes[309][48275691] = { mnID = 307, name = L["Passage"], type = "PassageUpL", showInZone = true } -- Headmaster's Study                
         --##########################
         --#### Outland Passage #####
         --##########################
-        --Black Temple
+          --Black Temple
             nodes[339][28657991] = { mnID = 340, name = L["Passage"], type = "PassageDownL", showInZone = true } -- 
             nodes[339][76054672] = { mnID = 341, name = L["Passage"], type = "PassageRightL", showInZone = true } --       
             nodes[340][27240693] = { mnID = 339, name = L["Passage"], type = "PassageUpL", showInZone = true } -- 
@@ -1676,23 +1692,59 @@ if not db.show.HideMapNote then
         --##############################
         --#### Borken Isles Passage ####
         --##############################
+
+        --###################################
+        --#### Northrend Dungeon Portals ####
+        --###################################        
           end
-    
-    
+
+
+        --##################################
+        --#### Inside Dungeon Transport ####
+        --##################################
+          if self.db.profile.showDungeonTransport then
+
+        --####################################
+        --#### Kalimdor Dungeon Transport ####
+        --####################################
+          --Dragon Soul
+            nodes[409][49145903] = { mnID = 410, name = L["Transport"], type = "TravelM", showInZone = true } -- Dragon Soul
+            nodes[409][51055925] = { mnID = 411, name = L["Transport"], type = "TravelM", showInZone = true } -- Dragon Soul
+            nodes[409][50145769] = { mnID = 411, name = L["Transport"], type = "TravelM", showInZone = true } -- Dragon Soul
+          end
+
+
+
         --################################
         --#### Inside Dungeon Portals ####
         --################################
-    
           if self.db.profile.showDungeonPortal then
-    
-    
+
+        --###################################
+        --#### Kalimdor Dungeon Portals #####
+        --###################################
+          --Dragon Soul
+            nodes[411][57698846] = { mnID = 409, name = L["Portal"], type = "Portal", showInZone = true } -- Maw of Shu'ma
+            nodes[410][23324020] = { mnID = 409, name = L["Portal"], type = "Portal", showInZone = true } -- Maw of Go'rath
+            nodes[409][49696016] = { mnID = 412, name = L["Portal"], type = "Portal", showInZone = true } -- Dragon Soul to Eye of Eternity
+            nodes[412][49696016] = { mnID = 409, name = L["Portal"], type = "Portal", showInZone = true } -- Eye of Eternity
+            nodes[409][50706060] = { mnID = 409, name = L["Portal"], type = "Portal", showInZone = true } -- Dragon Soul
+        --##########################################
+        --#### Eastern Kingdom Dungeon Portals #####
+        --##########################################
+          --Old Naxxramas
+            nodes[166][55844846] = { mnID = 23, name = L["Portal"] .. " - " .. L["Eastern Plaguelands"].. "\n" .. L["Old version of Naxxramas - Secret Entrance \n (Wards of the Dread Citadel - Achievement)"] , type = "Portal", showInZone = true } -- IcecrownGlacier
         --###################################
         --#### Northrend Dungeon Portals ####
         --###################################
-    
-            nodes[166][55844846] = { mnID = 23, name = L["Portal"] .. " - " .. L["Eastern Plaguelands"].. "\n" .. L["Old version of Naxxramas - Secret Entrance \n (Wards of the Dread Citadel - Achievement)"] , type = "Portal", showInZone = true } -- IcecrownGlacier
+          --Icecrown Citadel
             nodes[186][33822342] = { mnID = 125, name = L["Portal"] .. " - " .. L["Dalaran"], type = "Portal", showInZone = true } -- IcecrownGlacier
+        --###################################
+        --#### Pandaria Dungeon Portals ####
+        --###################################
+
           end
+
         end
       end 
     end 

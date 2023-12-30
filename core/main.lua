@@ -25,6 +25,8 @@ local icons = {
 ["PassageRaidM"] = iconLink .. "passageRaidM",
 ["PassageDungeonL"] = iconLink .. "PassageDungeonL",
 ["PassageRaidL"] = iconLink .. "passageRaidL",
+["TravelL"] = iconLink .. "travelL",
+["TravelM"] = iconLink .. "travelm",
 ["VDungeon"] = iconLink .. "vanilladungeons",
 ["VRaid"] = iconLink .. "vanilladungeons",
 ["VKey1"] = iconLink .. "vkey1",
@@ -58,7 +60,6 @@ TextIcon = IconClass
 TextIconMNL4 = TextIcon(iconLink .. "MNL4") 
 TextIconPassageDungeonM = TextIcon(iconLink .. "PassageDungeonM", 64, 64, 10, 50, 50, 1)
 TextIconPassageRaidM = TextIcon(iconLink .. "PassageRaidM", 64, 64, 10, 50, 50, 1)
-TextIconPortal = TextIcon(iconLink .. "portal", 64, 64, 10, 50, 50, 1)
 TextIconPortal = TextIcon(iconLink .. "portal", 64, 64, 10, 50, 50, 1) --(0, 0, 0, 0, 0, 0 = horizontal reflection?, ?, skalierung?, y achse,? )
 TextIconHPortal = TextIcon("Interface/Minimap/Vehicle-HordeMagePortal", 64, 64, 10, 50, 50, 1)
 TextIconAPortal = TextIcon("Interface/Minimap/Vehicle-AllianceMagePortal", 64, 64, 10, 50, 50, 1)
@@ -82,6 +83,7 @@ TextIconPassageup = TextIcon(iconLink .. "PassageUpL")
 TextIconPassagedown = TextIcon(iconLink .. "PassageDownL")
 TextIconPassageright = TextIcon(iconLink .. "PassageRightL")
 TextIconPassageleft = TextIcon(iconLink .. "PassageLeftL")
+TextIconTravelL = TextIcon(iconLink .. "travelL")
 TextIconTransportHelper = TextIcon(iconLink .. "tport", 64, 64, 10, 50, 50, 1)
 TextIconOgreWaygate = TextIcon("Interface/Minimap/Vehicle-AllianceWarlockPortal", 64, 64, 10, 50, 50, 1)
 TextIconCheck = TextIcon("Interface/Buttons/UI-CheckBox-Up", 64, 64, 10, 50, 50, 1)
@@ -342,35 +344,35 @@ end
 
 
 function pluginHandler:OnClick(button, pressed, uiMapId, coord)
-    if (not pressed) then return end
-    if IsShiftKeyDown() and (button == "RightButton" and db.tomtom and TomTom) then
-        setWaypoint(uiMapId, coord)
-        return
+  if (not pressed) then return end
+  if IsShiftKeyDown() and (button == "RightButton" and db.tomtom and TomTom) then
+      setWaypoint(uiMapId, coord)
+      return
+  end
+  if IsShiftKeyDown() and (button == "LeftButton" and db.journal) then
+    if (not EncounterJournal_OpenJournal) then 
+      UIParentLoadAddOn('Blizzard_EncounterJournal')
     end
-    if IsShiftKeyDown() and (button == "LeftButton" and db.journal) then
-        if (not EncounterJournal_OpenJournal) then 
-          UIParentLoadAddOn('Blizzard_EncounterJournal')
-        end
-        
-        local dungeonID
-        if (type(nodes[uiMapId][coord].id) == "table") then
-            dungeonID = nodes[uiMapId][coord].id[1]
-        else
-            dungeonID = nodes[uiMapId][coord].id
-        end
+    
+    if nodes[uiMapId] and nodes[uiMapId][coord] and nodes[uiMapId][coord].mnID then
+      WorldMapFrame:SetMapID(nodes[uiMapId][coord].mnID) end
 
-        if nodes[uiMapId] and nodes[uiMapId][coord] and nodes[uiMapId][coord].mnID then
-          WorldMapFrame:SetMapID(nodes[uiMapId][coord].mnID) end
-
-        if (not dungeonID) then return end
-
-        local name, _, _, _, _, _, _, link = EJ_GetInstanceInfo(dungeonID)
-        if not link then return end
-        local difficulty = string.match(link, 'journal:.-:.-:(.-)|h') 
-        if (not dungeonID or not difficulty) then return end
-        EncounterJournal_OpenJournal(difficulty, dungeonID)
-        _G.EncounterJournal:SetScript("OnShow", BBBEncounterJournal_OnShow) 
+    local dungeonID
+    if (type(nodes[uiMapId][coord].id) == "table") then
+        dungeonID = nodes[uiMapId][coord].id[1]
+    else
+        dungeonID = nodes[uiMapId][coord].id
     end
+
+    if (not dungeonID) then return end
+
+    local name, _, _, _, _, _, _, link = EJ_GetInstanceInfo(dungeonID)
+    if not link then return end
+    local difficulty = string.match(link, 'journal:.-:.-:(.-)|h') 
+    if (not dungeonID or not difficulty) then return end
+    EncounterJournal_OpenJournal(difficulty, dungeonID)
+    _G.EncounterJournal:SetScript("OnShow", BBBEncounterJournal_OnShow) 
+  end
 end
 
 local Addon = CreateFrame("Frame")
@@ -1071,6 +1073,16 @@ function Addon:PLAYER_LOGIN()
             set = function(info, v) db[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
                   if self.db.profile.showDungeonPassage then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Dungeon map"], L["Passages"], "|cff00ff00" .. L["are shown"]) else 
                   if not self.db.profile.showDungeonPassage then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Dungeon map"], L["Passages"], "|cffff0000" .. L["are hidden"])end end end,
+            },
+            showDungeonTransport = {
+            disabled = function() return not db.show["DungeonMap"] end,
+            type = "toggle",
+            name = TextIconTravelL:GetIconString() .. " " .. L["Transport"] .. "\n",
+            desc = L["Show symbols of other transport possibilities on the dungeon map"],
+            order = 41.4,
+            set = function(info, v) db[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
+                  if self.db.profile.showDungeonTransport then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Dungeon map"], L["Transport"], "|cff00ff00" .. L["are shown"]) else 
+                  if not self.db.profile.showDungeonTransport then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Dungeon map"], L["Transport"], "|cffff0000" .. L["are hidden"])end end end,
             },
         }
       }
