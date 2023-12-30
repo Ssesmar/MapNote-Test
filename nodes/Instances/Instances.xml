@@ -1,0 +1,14 @@
+This XML file does not appear to have any style information associated with it. The document tree is shown below.
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/..\FrameXML\UI.xsd">
+<Script file="Outland\Kalimdor.xml"/>
+<Script file="EasternKingdom\EasternKingdom.xml"/>
+<Script file="Outland\Outland.xml"/>
+<Script file="Northrend\Northrend.xml"/>
+<Script file="Pandaria\Pandaria.xml"/>
+<Script file="Draenor\Draenor.xml"/>
+<Script file="BrokenIsles\BrokenIsles.xml"/>
+<Script file="Zandalar\Zandalar.xml"/>
+<Script file="KulTiras\KulTiras.xml"/>
+<Script file="Shadowlands\Shadowlands.xml"/>
+<Script file="DragonIsles\DragonIsles.xml"/>
+</Ui>
