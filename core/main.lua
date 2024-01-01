@@ -170,8 +170,15 @@ function pluginHandler:OnEnter(uiMapId, coord)
 	  else
 	    tooltip:AddLine(v, nil, nil, nil, false)
 	  end
-	end
-	tooltip:Show()
+
+    if nodeData.mnID then
+      local mnIDnames = C_Map.GetMapInfo(nodeData.mnID).name
+      if mnIDnames then
+          tooltip:AddDoubleLine("=>  " .. mnIDnames, nil, nil, false)
+      end
+    end
+     	tooltip:Show()
+  end
 end
 
 function pluginHandler:OnLeave(uiMapID, coord)
@@ -216,7 +223,7 @@ do
 			
 			local allLocked = true
 			local anyLocked = false
-			if value.name == nil then value.name = value.id end
+			if value.name == nil then value.name = value.id or value.mnID end
 			local instances = { strsplit("\n", value.name) }
 			for i, v in pairs(instances) do
 				if (not assignedIDs[v] and not assignedIDs[lfgIDs[v]]) then
@@ -327,6 +334,7 @@ local waypoints = {}
 local function setWaypoint(uiMapID, coord)
 	local dungeon = nodes[uiMapID][coord]
 
+
 	local waypoint = nodes[dungeon]
 	if waypoint and TomTom:IsValidWaypoint(waypoint) then
 		return
@@ -334,7 +342,7 @@ local function setWaypoint(uiMapID, coord)
 
 	local title = dungeon.name
 	local x, y = HandyNotes:getXY(coord)
-	waypoints[dungeon] = TomTom:AddWaypoint(uiMapID, x, y, {
+	waypoints[dungeon] = TomTom:AddWaypoint(uiMapID , x, y, {
 		title = dungeon.name,
 		persistent = nil,
 		minimap = true,
@@ -343,35 +351,75 @@ local function setWaypoint(uiMapID, coord)
 end
 
 
+
 function pluginHandler:OnClick(button, pressed, uiMapId, coord)
-  if (not pressed) then return end
-  if IsShiftKeyDown() and (button == "RightButton" and db.tomtom and TomTom) then
-      setWaypoint(uiMapId, coord)
-      return
+  if db.show.ShiftWorld then   
+    if (not pressed) then return end
+
+    if IsShiftKeyDown() and (button == "RightButton" and db.tomtom and TomTom) then
+        setWaypoint(uiMapId, coord)
+        return
+    end
+    if IsShiftKeyDown() and (button == "LeftButton" and db.journal) then
+      if (not EncounterJournal_OpenJournal) then 
+        UIParentLoadAddOn('Blizzard_EncounterJournal')
+      end
+
+      local mapIDs
+      if (nodes[uiMapId] and nodes[uiMapId][coord] and nodes[uiMapId][coord].mnID) then
+        WorldMapFrame:SetMapID(nodes[uiMapId][coord].mnID)
+      end
+
+      local dungeonID
+      if (type(nodes[uiMapId][coord].id) == "table") then
+          dungeonID = nodes[uiMapId][coord].id[1]
+      else
+          dungeonID = nodes[uiMapId][coord].id
+      end
+
+      if (not dungeonID) then return end
+
+      local name, _, _, _, _, _, _, link = EJ_GetInstanceInfo(dungeonID)
+      if not link then return end
+      local difficulty = string.match(link, 'journal:.-:.-:(.-)|h') 
+      if (not dungeonID or not difficulty) then return end
+      EncounterJournal_OpenJournal(difficulty, dungeonID)
+      _G.EncounterJournal:SetScript("OnShow", nil)
+    end
   end
-  if IsShiftKeyDown() and (button == "LeftButton" and db.journal) then
-    if (not EncounterJournal_OpenJournal) then 
-      UIParentLoadAddOn('Blizzard_EncounterJournal')
+
+  if not db.show.ShiftWorld then   
+    if (not pressed) then return end
+
+    if (button == "RightButton" and db.tomtom and TomTom) then
+        setWaypoint(uiMapId, coord)
+        return
     end
-    
-    if nodes[uiMapId] and nodes[uiMapId][coord] and nodes[uiMapId][coord].mnID then
-      WorldMapFrame:SetMapID(nodes[uiMapId][coord].mnID) end
+    if (button == "LeftButton" and db.journal) then
+      if (not EncounterJournal_OpenJournal) then 
+        UIParentLoadAddOn('Blizzard_EncounterJournal')
+      end
 
-    local dungeonID
-    if (type(nodes[uiMapId][coord].id) == "table") then
-        dungeonID = nodes[uiMapId][coord].id[1]
-    else
-        dungeonID = nodes[uiMapId][coord].id
+      if (nodes[uiMapId] and nodes[uiMapId][coord] and nodes[uiMapId][coord].mnID) then
+        WorldMapFrame:SetMapID(nodes[uiMapId][coord].mnID)
+      end
+
+      local dungeonID
+      if (type(nodes[uiMapId][coord].id) == "table") then
+          dungeonID = nodes[uiMapId][coord].id[1]
+      else
+          dungeonID = nodes[uiMapId][coord].id
+      end
+
+      if (not dungeonID) then return end
+
+      local name, _, _, _, _, _, _, link = EJ_GetInstanceInfo(dungeonID)
+      if not link then return end
+      local difficulty = string.match(link, 'journal:.-:.-:(.-)|h') 
+      if (not dungeonID or not difficulty) then return end
+      EncounterJournal_OpenJournal(difficulty, dungeonID) 
+      _G.EncounterJournal:SetScript("OnShow", nil)
     end
-
-    if (not dungeonID) then return end
-
-    local name, _, _, _, _, _, _, link = EJ_GetInstanceInfo(dungeonID)
-    if not link then return end
-    local difficulty = string.match(link, 'journal:.-:.-:(.-)|h') 
-    if (not dungeonID or not difficulty) then return end
-    EncounterJournal_OpenJournal(difficulty, dungeonID)
-    _G.EncounterJournal:SetScript("OnShow", BBBEncounterJournal_OnShow) 
   end
 end
 
@@ -413,10 +461,36 @@ function Addon:PLAYER_LOGIN()
         desc = L["General settings that apply to Azeroth / Continent / Dungeon map at the same time"],
         order = 0,
         args = {
-          hideMapNotesMMB = {
+          Description = {
+            type = "header",
+            name = L["Description"],
+            order = 0.1,
+            },
+          DescriptionText = {
+            name = "|cffffff00" .. L["Show different symbols on different maps. All symbols are clickable (except on the minimap) and have a function Map symbols work with or without the shift key. Simply change the Shift function!"],
+            type = "description",
+            order = 0.2,
+            },          
+          General = {
             type = "header",
             name = L["General"],
             order = 1,
+            },
+          ShiftWorld = {
+            type = "toggle",
+            name = "|cff00ff00" .. "" .. L["Shift function!"],
+            desc = L["When enabled, you must press Shift before left- or right-clicking to interact with MapNotes icons. But this has an advantage because there are so many symbols in the game, including from other addons, so you don't accidentally click on a symbol and change the map, or mistakenly create a TomTom point."],
+            order = 1.1,
+            width = 1.89,
+            get = function() return db.show.ShiftWorld end,
+            set = function(info, v) db.show.ShiftWorld = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
+              if not db.show.ShiftWorld then MNMMBIcon:Show("MNMiniMapButton") print(COLORED_ADDON_NAME .. "|cffffff00", L["Shift function"], "|cffff0000" .. L["is deactivated"]) else
+              if db.show.ShiftWorld then MNMMBIcon:Hide("MNMiniMapButton") print(COLORED_ADDON_NAME .. "|cffffff00", L["Shift function"], "|cff00ff00" .. L["is activated"]) end end end,
+            },
+            General2 = {
+            type = "header",
+            name = "",
+            order = 2,
             },
           mapnoteScale = {
             disabled = function() return db.show["HideMapNote"] end,
@@ -424,7 +498,7 @@ function Addon:PLAYER_LOGIN()
             name = L["symbol size"],
             desc = L["Resizes symbols on the azeroth, continent, zone, dungeon and minimap"],
             min = 0.5, max = 2, step = 0.1,
-            order = 1.1,
+            order = 2.1,
             },
           mapnoteAlpha = {
             disabled = function() return db.show["HideMapNote"] end,
@@ -432,13 +506,13 @@ function Addon:PLAYER_LOGIN()
             name = L["symbol visibility"],
             desc = L["Changes the visibility of the symbols"],
             min = 0, max = 1, step = 0.1,
-            order = 1.2,
+            order = 2.2,
            },
-           ScaleHeader = {
-            type = "header",
-            name = "",
-            order = 5,
-            },
+          ScaleHeader = {
+           type = "header",
+           name = "",
+           order = 5,
+           },
           hideAddon = {
             type = "toggle",
             name = "|cffff0000" .. L["hide MapNotes!"] .."\n",
@@ -531,11 +605,6 @@ function Addon:PLAYER_LOGIN()
             name = L["Informations"],
             order = 19,
             },
-          infoChatCommands = {
-  					name = L["Chat commands:"],
-  					type = "description",
-  					order = 19.2,
-          },
           infoChat = {
   					name = "|cff00ccff" .. "" .. L["to show MapNotes info in chat: /mn, /MN, /mnh, /MNH, /mapnotes, /MAPNOTES, /mnhelp, /MNHELP"].. "\n",
   					type = "description",
@@ -567,7 +636,7 @@ function Addon:PLAYER_LOGIN()
         disabled = function() return db.show["HideMapNote"] end,
         type = "group",
         name = L["Azeroth map"],
-        desc = L["Azeroth map settings. Certain symbols can be displayed or not displayed. If the option (Activate symbols) has been activated in this category"],
+        desc = L["Certain symbols can be displayed or not displayed. If the option (Activate symbols) has been activated in this category"],
         order = 2,
         args = {
           Azerothheader1 = {
@@ -621,12 +690,12 @@ function Addon:PLAYER_LOGIN()
           showAzerothPassage = {
             disabled = function() return not db.show["Azeroth"] end,
             type = "toggle",
-            name = TextIconPassageRaidM:GetIconString() .. " " .. TextIconPassageDungeonM:GetIconString() .. " " .. L["Passage"],
+            name = TextIconPassageRaidM:GetIconString() .. " " .. TextIconPassageDungeonM:GetIconString() .. " " .. L["Passages"],
             desc = L["Show symbols of passage to raids and dungeons on the Azeroth map"],
             order = 21.3,
             set = function(info, v) db[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
-              if self.db.profile.showAzerothPassage then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Azeroth map"], L["Passage"], "|cff00ff00" .. L["are shown"]) else 
-              if not self.db.profile.showAzerothPassage then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Azeroth map"], L["Passage"], "|cffff0000" .. L["are hidden"])end end end,
+              if self.db.profile.showAzerothPassage then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Azeroth map"], L["Passages"], "|cff00ff00" .. L["are shown"]) else 
+              if not self.db.profile.showAzerothPassage then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Azeroth map"], L["Passages"], "|cffff0000" .. L["are hidden"])end end end,
             },
           showAzerothMultiple = {
             disabled = function() return not db.show["Azeroth"] end,
@@ -668,12 +737,22 @@ function Addon:PLAYER_LOGIN()
                   if self.db.profile.showAzerothShips then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Azeroth map"], L["Ships"], "|cff00ff00" .. L["are shown"]) else 
                   if not self.db.profile.showAzerothShips then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Azeroth map"], L["Ships"], "|cffff0000" .. L["are hidden"])end end end,
             },
+          showAzerothTransport = {
+            disabled = function() return not db.show["DungeonMap"] end,
+            type = "toggle",
+            name = TextIconTravelL:GetIconString() .. " " .. TextIconTransportHelper:GetIconString() .. " " .. L["Transport"] .. "\n",
+            desc = L["Show symbols of other transport possibilities on the Azeroth map"],
+            order = 21.8,
+            set = function(info, v) db[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
+                  if self.db.profile.showAzerothTransport then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Azeroth map"], L["Transport"], "|cff00ff00" .. L["are shown"]) else 
+                  if not self.db.profile.showAzerothTransport then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Azeroth map"], L["Transport"], "|cffff0000" .. L["are hidden"])end end end,
+            },
           showAzerothOldVanilla = {
             disabled = function() return not db.show["Azeroth"] end,
             type = "toggle",
             name = TextIconVRaid:GetIconString() .. " " .. TextIconVKey1:GetIconString() .. " " .. L["Old Instances"],
             desc = L["Show vanilla versions of dungeons and raids such as Naxxramas, Scholomance or Scarlet Monastery, which require achievements or other things"],
-            order = 21.8,
+            order = 21.9,
             set = function(info, v) db[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
                   if self.db.profile.showAzerothOldVanilla then print(COLORED_ADDON_NAME.."|cffffff00 ".. L["Old Instances"], "|cff00ff00" .. L["is activated"]) else 
                   if not self.db.profile.showAzerothOldVanilla then print(COLORED_ADDON_NAME.."|cffffff00 ".. L["Old Instances"], "|cffff0000" ..  L["is deactivated"]) end end end,
@@ -681,14 +760,14 @@ function Addon:PLAYER_LOGIN()
           Azerothheader3 = {
             type = "header",
             name = L["Show all MapNotes for a specific map"],
-            order = 22
+            order = 23
             },
           showAzerothKalimdor = {
             disabled = function() return not db.show["Azeroth"] end,
             type = "toggle",
             name = TextIconKalimdor:GetIconString() .. " " .. L["Kalimdor"],
             desc = L["Show all Kalimdor MapNotes dungeon, raid, portal, zeppelin and ship symbols on the Azeroth map"],
-            order = 22.1,
+            order = 23.1,
             set = function(info, v) db[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
                   if self.db.profile.showAzerothKalimdor then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Azeroth map"], L["Kalimdor"], L["symbols"], "|cff00ff00" .. L["are shown"]) else 
                   if not self.db.profile.showAzerothKalimdor then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Azeroth map"], L["Kalimdor"], L["symbols"], "|cffff0000" .. L["are hidden"])end end end,
@@ -698,7 +777,7 @@ function Addon:PLAYER_LOGIN()
             type = "toggle",
             name = TextIconEK:GetIconString() .. " " .. L["Eastern Kingdom"],
             desc = L["Show all Eastern Kingdom MapNotes dungeon, raid, portal, zeppelin and ship symbols on the Azeroth map"],
-            order = 22.2,
+            order = 23.2,
             set = function(info, v) db[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
                   if self.db.profile.showAzerothEasternKingdom then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Azeroth map"], L["Eastern Kingdom"], L["symbols"], "|cff00ff00" .. L["are shown"]) else 
                   if not self.db.profile.showAzerothEasternKingdom then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Azeroth map"], L["Eastern Kingdom"], L["symbols"], "|cffff0000" .. L["are hidden"])end end end,
@@ -708,7 +787,7 @@ function Addon:PLAYER_LOGIN()
             type = "toggle",
             name = TextIconNorthrend:GetIconString() .. " " .. L["Northrend"],
             desc = L["Show all Northrend MapNotes dungeon, raid, portal, zeppelin and ship symbols on the Azeroth map"],
-            order = 22.3,
+            order = 23.3,
             set = function(info, v) db[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
                   if self.db.profile.showAzerothNorthrend then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Azeroth map"], L["Northrend"], L["symbols"],  "|cff00ff00" .. L["are shown"]) else 
                   if not self.db.profile.showAzerothNorthrend then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Azeroth map"], L["Northrend"], L["symbols"],  "|cffff0000" .. L["are hidden"])end end end,
@@ -718,7 +797,7 @@ function Addon:PLAYER_LOGIN()
             type = "toggle",
             name = TextIconPandaria:GetIconString() .. " " .. L["Pandaria"],
             desc = L["Show all Pandaria MapNotes dungeon, raid, portal, zeppelin and ship symbols on the Azeroth map"],
-            order = 22.4,
+            order = 23.4,
             set = function(info, v) db[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
                   if self.db.profile.showAzerothPandaria then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Azeroth map"], L["Pandaria"], L["symbols"],  "|cff00ff00" .. L["are shown"]) else 
                   if not self.db.profile.showAzerothPandaria then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Azeroth map"], L["Pandaria"], L["symbols"],  "|cffff0000" .. L["are hidden"])end end end,
@@ -728,7 +807,7 @@ function Addon:PLAYER_LOGIN()
             type = "toggle",
             name = TextIconLegion:GetIconString() .. " " .. L["Broken Isles"],
             desc = L["Show all Broken Isles MapNotes dungeon, raid, portal, zeppelin and ship symbols on the Azeroth map"],
-            order = 22.5,
+            order = 23.5,
             set = function(info, v) db[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
                   if self.db.profile.showAzerothBrokenIsles then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Azeroth map"], L["Broken Isles"], L["symbols"],  "|cff00ff00" .. L["are shown"]) else 
                   if not self.db.profile.showAzerothBrokenIsles then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Azeroth map"], L["Broken Isles"], L["symbols"],  "|cffff0000" .. L["are hidden"])end end end,
@@ -738,7 +817,7 @@ function Addon:PLAYER_LOGIN()
             type = "toggle",
             name = TextIconZandalar:GetIconString() .. " " .. L["Zandalar"],
             desc = L["Show all Zandalar MapNotes dungeon, raid, portal, zeppelin and ship symbols on the Azeroth map"],
-            order = 22.6,
+            order = 23.6,
             set = function(info, v) db[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
                   if self.db.profile.showAzerothZandalar then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Azeroth map"], L["Zandalar"], L["symbols"],  "|cff00ff00" .. L["are shown"]) else 
                   if not self.db.profile.showAzerothZandalar then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Azeroth map"], L["Zandalar"], L["symbols"],  "|cffff0000" .. L["are hidden"])end end end,
@@ -748,7 +827,7 @@ function Addon:PLAYER_LOGIN()
             type = "toggle",
             name = TextIconKT:GetIconString() .. " " .. L["Kul Tiras"],
             desc = L["Show all Kul Tiras MapNotes dungeon, raid, portal, zeppelin and ship symbols on the Azeroth map"],
-            order = 22.7,
+            order = 23.7,
             set = function(info, v) db[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
                   if self.db.profile.showAzerothKulTiras then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Azeroth map"], L["Kul Tiras"], L["symbols"],  "|cff00ff00" .. L["are shown"]) else 
                   if not self.db.profile.showAzerothKulTiras then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Azeroth map"], L["Kul Tiras"], L["symbols"],  "|cffff0000" .. L["are hidden"])end end end,
@@ -758,7 +837,7 @@ function Addon:PLAYER_LOGIN()
             type = "toggle",
             name = TextIconDF:GetIconString() .. " " .. L["Dragon Isles"],
             desc = L["Show all Dragon Isles MapNotes dungeon, raid, portal, zeppelin and ship symbols on the Azeroth map"],
-            order = 22.8,
+            order = 23.8,
             set = function(info, v) db[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
                   if self.db.profile.showAzerothDragonIsles then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Azeroth map"], L["Dragon Isles"], L["symbols"],  "|cff00ff00" .. L["are shown"]) else 
                   if not self.db.profile.showAzerothDragonIsles then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Azeroth map"], L["Dragon Isles"], L["symbols"],  "|cffff0000" .. L["are hidden"])end end end,
@@ -779,7 +858,7 @@ function Addon:PLAYER_LOGIN()
         disabled = function() return db.show["HideMapNote"] end,
         type = "group",
         name = L["Continent map"],
-        desc = L["Continent map settings. Certain symbols can be displayed or not displayed. If the option (Activate symbols) has been activated in this category"],
+        desc = L["Certain symbols can be displayed or not displayed. If the option (Activate symbols) has been activated in this category"],
         order = 3,
         args = {
           continentheader1 = {
@@ -833,12 +912,12 @@ function Addon:PLAYER_LOGIN()
           showContinentPassage = {
             disabled = function() return not db.show["Continent"] end,
             type = "toggle",
-            name = TextIconPassageRaidM:GetIconString() .. " " .. TextIconPassageDungeonM:GetIconString() .. " " .. L["Passage"],
+            name = TextIconPassageRaidM:GetIconString() .. " " .. TextIconPassageDungeonM:GetIconString() .. " " .. L["Passages"],
             desc = L["Show symbols of passage to raids and dungeons on the continent map"],
             order = 30.6,
             set = function(info, v) db[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
-              if self.db.profile.showContinentPassage then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Continent map"], L["Passage"], "|cff00ff00" .. L["are shown"]) else 
-              if not self.db.profile.showContinentPassage then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Continent map"], L["Passage"], "|cffff0000" .. L["are hidden"])end end end,
+              if self.db.profile.showContinentPassage then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Continent map"], L["Passages"], "|cff00ff00" .. L["are shown"]) else 
+              if not self.db.profile.showContinentPassage then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Continent map"], L["Passages"], "|cffff0000" .. L["are hidden"])end end end,
             },
           showContinentMultiple = {
             disabled = function() return not db.show["Continent"] end,
@@ -880,12 +959,22 @@ function Addon:PLAYER_LOGIN()
                   if self.db.profile.showContinentShips then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Continent map"], L["Ships"], "|cff00ff00" .. L["are shown"]) else 
                   if not self.db.profile.showContinentShips then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Continent map"], L["Ships"], "|cffff0000" .. L["are hidden"])end end end,
             },
+          showContinentTransport = {
+            disabled = function() return not db.show["DungeonMap"] end,
+            type = "toggle",
+            name = TextIconTravelL:GetIconString() .. " " .. TextIconTransportHelper:GetIconString() .. " " .. L["Transport"] .. "\n",
+            desc = L["Show symbols of other transport possibilities on the continent and minimap"],
+            order = 31.1,
+            set = function(info, v) db[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
+                  if self.db.profile.showContinentTransport then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Azeroth map"], L["Transport"], "|cff00ff00" .. L["are shown"]) else 
+                  if not self.db.profile.showContinentTransport then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Azeroth map"], L["Transport"], "|cffff0000" .. L["are hidden"])end end end,
+            },
           showContinentOldVanilla = {
             disabled = function() return not db.show["Continent"] end,
             type = "toggle",
             name = TextIconVRaid:GetIconString() .. " " .. TextIconVKey1:GetIconString() .. " " .. L["Old Instances"],
             desc = L["Show vanilla versions of dungeons and raids such as Naxxramas, Scholomance or Scarlet Monastery, which require achievements or other things"],
-            order = 31.1,
+            order = 31.2,
             set = function(info, v) db[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
                   if self.db.profile.showContinentOldVanilla then print(COLORED_ADDON_NAME.."|cffffff00 ".. L["Old Instances"], "|cff00ff00" .. L["is activated"]) else 
                   if not self.db.profile.showContinentOldVanilla then print(COLORED_ADDON_NAME.."|cffffff00 ".. L["Old Instances"], "|cffff0000" ..  L["is deactivated"]) end end end,
@@ -895,7 +984,7 @@ function Addon:PLAYER_LOGIN()
             type = "toggle",
             name = TextIconOgreWaygate:GetIconString() .. " " .. L["Ogre Waygate"],
             desc = L["Show Ogre Waygate symbols from Garrison on the Draenor continent and zone map"],
-            order = 31.2,
+            order = 31.3,
             set = function(info, v) db[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
                   if self.db.profile.showContinentOgreWaygates then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Continent map"], L["Ogre Waygate"], "|cff00ff00" .. L["are shown"]) else 
                   if not self.db.profile.showContinentOgreWaygates then print(COLORED_ADDON_NAME, "|cffffff00" .. L["Continent map"], L["Ogre Waygate"], "|cffff0000" .. L["are hidden"])end end end,
@@ -1021,7 +1110,7 @@ function Addon:PLAYER_LOGIN()
         disabled = function() return db.show["HideMapNote"] end,
         type = "group",
         name = L["Dungeon map"],
-        desc = L["Dungeon map settings. Certain symbols can be displayed or not displayed. If the option (Activate symbols) has been activated in this category. Shows MapNotes exit and passage points on the dungeon map (these symbols are for orientation purposes only and nothing happens when you click on them)"],
+        desc = L["Certain symbols can be displayed or not displayed. If the option (Activate symbols) has been activated in this category"],
         order = 4,
         args = {
           DungeonMapheader1 = {
@@ -1032,7 +1121,7 @@ function Addon:PLAYER_LOGIN()
           showDungeonMap = {
             type = "toggle",
             name = L["Activate symbols"],
-            desc = L["Enables the display of all possible symbols on the dungeon map (these symbols are for orientation purposes only and nothing happens when you click on them)"],
+            desc = L["Enables the display of all possible symbols on the dungeon map"],
             order = 40.1,
             get = function() return db.show["DungeonMap"] end,
             set = function(info, v) db.show["DungeonMap"] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
@@ -1077,7 +1166,7 @@ function Addon:PLAYER_LOGIN()
             showDungeonTransport = {
             disabled = function() return not db.show["DungeonMap"] end,
             type = "toggle",
-            name = TextIconTravelL:GetIconString() .. " " .. L["Transport"] .. "\n",
+            name = TextIconTravelL:GetIconString() .. " " .. TextIconTransportHelper:GetIconString() .. " " .. L["Transport"] .. "\n",
             desc = L["Show symbols of other transport possibilities on the dungeon map"],
             order = 41.4,
             set = function(info, v) db[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
@@ -1127,10 +1216,9 @@ function Addon:PopulateTable()
   --ns.LoadInstancesMapNodesInfo
 end
 
-
 function Addon:UpdateInstanceNames(node)
   local dungeonInfo = EJ_GetInstanceInfo
-    local id = node.id
+    local id = node.id 
 
       if (node.lfgid) then
         dungeonInfo = GetLFGDungeonInfo

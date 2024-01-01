@@ -23,6 +23,7 @@ ns.defaults = {
         },
   
       --1
+        ShiftWorld = false,
         mapnoteScale = 1.2,
         mapnoteAlpha = 1,    
         hideAddon = false,
@@ -44,6 +45,7 @@ ns.defaults = {
         showAzerothPortals = true,
         showAzerothZeppelins = true,
         showAzerothShips = true,
+        showAzerothTransport = true,
         showAzerothOldVanilla = true,
         showAzerothKalimdor = true,
         showAzerothEasternKingdom = true,
@@ -64,6 +66,7 @@ ns.defaults = {
         showContinentPortals = true,
         showContinentZeppelins = true,
         showContinentShips = true,
+        showContinentTransport = true,
         showContinentOldVanilla = true,
         showContinentOgreWaygates = true,
         showContinentKalimdor = true,

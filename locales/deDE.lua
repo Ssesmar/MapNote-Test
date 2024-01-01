@@ -1,257 +1,182 @@
 local L = LibStub("AceLocale-3.0"):NewLocale("HandyNotes_MapNotes", "deDE")
 if not L then return end
 
--- 0 = basics
--- 1 = General tab
--- 2 = Azeroth tab
--- 3 = Continent tab
--- 4 = Dungeon tab
+-- 1 = General tab specific
+-- 2 = Azeroth tab specific
+-- 3 = Continent tab specific
+-- 4 = Dungeon tab specific
+-- 5 = Map Tabs together
 -- 5 = Entrance/Exit/Passage nodes
--- 6 = Transport basics
--- 7 = dungeons/raids
-
---0 basics
-L["Shows locations of raids, dungeons, portals ,ship and zeppelins symbols on different maps"] = "Zeigt die Positionen von Schlachtzügen, Portalen, Schiffe und Zeppeline-symbolen auf verschiedenen Karten an"
-L["MapNotes menu window"] = "MapNotes Menüfenster"
-L["All set symbols have been restored"] = "Alle eingestellten Symbole wurden wiederhergestellt"
-L["All MapNotes symbols have been hidden"] = "Alle MapNotes Symbole wurden ausgeblendet"
-L["is activated"] = "ist aktiviert"
-L["is deactivated"] = "ist deaktiviert"
-L["are shown"] = "werden angezeigt"
-L["are hidden"] = "werden ausgeblendet"
-L["symbols"] = "Symbole"
-L["Left-click => Open/Close"] = "Linksclick => Öffnen/Schließen"
-L["Right-click => Open/Close"] = "Rechtsclick => Öffne/Schließen"
-L["Shift + Right-click => hide"] = "Shift + Rechtsklick => verstecke"
+-- 6 = Core specific
+-- 7 = Specific
 
 
 --1 General tab
-L["General"] = "Allgemein"  
-L["General settings that apply to Azeroth / Continent / Dungeon map at the same time"] = "Allgemeine Einstellungen die für Azeroth / Continent / Dungeon Karte gleichzeitig gelten"
-L["General settings / Additional functions"] = "Allgemeine einstellung / Zusatz Funktionen"
-L["-> MiniMapButton <-"] = "Minikarten Knopf"
-L["hide minimap button"] = "verstecke Minikarten Knopf"
-L["Show the minimap button on the minimap"] = "Zeigt den Minimapknopf auf der Minimap an"
-L["Hide the minimap button on the minimap"] = "Versteckt den Minimapknopf auf der Minimap an"
-L["hide MapNotes!"] = "verstecke MapNotes!"
-L["-> Hide all MapNotes symbols <-"] = "-> Verstecke alle MapNotes Symbole <-"
-L["Disable MapNotes, all icons will be hidden on each map and all categories will be disabled"] = "Alle Symbole werden auf jeder Karte ausgeblendet und alle Kategorien werden deaktiviert"
+L["Description"] = "Beschreibung"
+L["Show different symbols on different maps. All symbols are clickable (except on the minimap) and have a function Map symbols work with or without the shift key. Simply change the Shift function!"] = "Zeigt verschiedene Symbole auf verschiedenen Karten an. Alle Symbole sind anklickbar (außer auf der Minikarte) und haben eine Funktion. Kartensymbole funktionieren mit oder ohne Shift. Wechseln Sie einfach die Shift-Funktion!"
+L["General"] = "Allgemein"
+L["General settings that apply to Azeroth / Continent / Dungeon map at the same time"] = "Allgemeine Einstellungen, die gleichzeitig für die Azeroth-/Kontinent-/Dungeon-Karte gelten"
+L["General settings / Additional functions"] = "Allgemeine Einstellungen / Zusatzfunktionen"
+L["Shift function!"] = "Shift-Funktion!"
+L["When enabled, you must press Shift before left- or right-clicking to interact with MapNotes icons. But this has an advantage because there are so many symbols in the game, including from other addons, so you don't accidentally click on a symbol and change the map, or mistakenly create a TomTom point."] = "Wenn diese Option aktiviert ist, müssen Sie die Shifttaste drücken, bevor Sie mit der linken oder rechten Maustaste klicken, um mit MapNotes-Symbolen zu interagieren.  Dies hat jedoch einen Vorteil, da es so viele Symbole im Spiel gibt, auch aus anderen Add-ons, sodass Sie nicht versehentlich auf ein Symbol klicken und die Karte ändern oder versehentlich einen TomTom-Punkt erstellen."
+L["symbol size"] = "Symbolgröße"
 L["Resizes symbols on the azeroth, continent, zone, dungeon and minimap"] = "Ändert die Größe der Symbole auf Azeroth, Kontinent, Zone, Dungeon und Minikarte"
-L["symbol visibility"] = "Symbolsichtbarkeit"
-L["Changes the visibility of the symbols"] = "Verändert die Sichbarkeit der Symbole"
+L["symbol visibility"] = "Sichtbarkeit des Symbols"
+L["Changes the visibility of the symbols"] = "Ändert die Sichtbarkeit der Symbole"
+L["hide minimap button"] = "Minikarten-Schaltfläche ausblenden"
+L["Hide the minimap button on the minimap"] = "Blenden Sie die Minikarten-Schaltfläche auf der Minikarte aus"
+L["hide MapNotes!"] = "MapNotes ausblenden!"
+L["-> Hide all MapNotes symbols <-"] = "-> Alle MapNotes-Symbole ausblenden <-"
+L["Disable MapNotes, all icons will be hidden on each map and all categories will be disabled"] = "Deaktivieren Sie MapNotes. Alle Symbole werden auf jeder Karte ausgeblendet und alle Kategorien werden deaktiviert"
 L["Adventure guide"] = "Abenteuerführer"
-L["Left-clicking on a MapNotes raid (green), dungeon (blue) or multiple icon (green&blue) on the map opens the corresponding dungeon or raid map in the Adventure Guide (the map must not be open in full screen)"] = "Linksklick auf ein Schlachtzug (grün), Dungeon (blau) oder Mehrfachsymbol (grün&blau) von MapNotes auf der Karte öffnet die dazugehörige Karte des Dungeons oder Schlachtzug im Abenteuerführers (die Karte darf nicht im Vollbild geöffnet sein)"
-L["TomTom waypoints"] = "Wegpunkte"
-L["Shift+right click on a raid, dungeon, multiple symbol, portal, ship, zeppelin, passage or exit from MapNotes on the continent or dungeon map creates a TomTom waypoint to this point (but the TomTom add-on must be installed for this)"] = "Shift+Rechtsklick auf ein Schlachtzug, Dungeon, Mehrfachsymbol, Portale, Schiffe, Zeppeline, Durchgänge oder Ausgänge von MapNotes auf der Kontinent oder Dungeonkarte erzeugt einen TomTom wegpunkt zu diesem Punkt (dafür muss aber das Addon TomTom installiert sein)"
-L["killed Bosses"] = "getötete Bosse"
-L["For dungeons and raids in which you have killed bosses and have therefore been assigned an ID, this symbol on the Azeroth and continent map will show you the number of killed or remaining bosses as soon as you hover over this dungeon or raid symbol (for example 2/8 mythic, 4/7 heroic etc)"] = "Bei Dungeons und Schlachtzüge bei denen du Bosse getötet hast und somit eine ID zugewiesen wurde, wird dir bei diesem Symbol auf der Azeroth und Kontinentkarte die Anzahl der getötteten bzw noch übrigen Bosse angezeigt, sobald du mit der Maus über dieses Dungeon oder Schlachtzugsymbol darüber gehst (zum beispiel 2/8 Mythisch, 4/7 Heroisch usw)"
+L["Left-clicking on a MapNotes raid (green), dungeon (blue) or multiple icon (green&blue) on the map opens the corresponding dungeon or raid map in the Adventure Guide (the map must not be open in full screen)"] = "Wenn Sie mit der linken Maustaste auf einen MapNotes-Raid (grün), Dungeon (blau) oder mehrere Symbole (grün und blau) auf der Karte klicken, wird die entsprechende Dungeon- oder Raid-Karte im Abenteuerführer geöffnet (die Karte darf nicht im Vollbildmodus geöffnet sein)."
+L["TomTom waypoints"] = "TomTom-Wegpunkte"
+L["Shift+right click on a raid, dungeon, multiple symbol, portal, ship, zeppelin, passage or exit from MapNotes on the continent or dungeon map creates a TomTom waypoint to this point (but the TomTom add-on must be installed for this)"] = "Umschalt+Rechtsklick auf einen Raid, Dungeon, mehrere Symbole, ein Portal, ein Schiff, einen Zeppelin, eine Passage oder einen Ausgang aus MapNotes auf der Kontinent- oder Dungeonkarte erstellt einen TomTom-Wegpunkt zu diesem Punkt (hierfür muss jedoch das TomTom-Add-on installiert sein)"
+L["killed Bosses"] = "Bosse getötet"
+L["For dungeons and raids in which you have killed bosses and have therefore been assigned an ID, this symbol on the Azeroth and continent map will show you the number of killed or remaining bosses as soon as you hover over this dungeon or raid symbol (for example 2/8 mythic, 4/7 heroic etc)"] = "Bei Dungeons und Raids, in denen du Bosse getötet hast und dir daher eine ID zugewiesen wurde, zeigt dir dieses Symbol auf der Azeroth- und Kontinentkarte die Anzahl der getöteten oder verbleibenden Bosse an, sobald du mit der Maus über dieses Dungeon- oder Raid-Symbol fährst (z. B 2/8 mythisch, 4/7 heroisch usw.)"
 L["gray symbols"] = "graue Symbole"
-L["If you are assigned to a dungeon or raid and have an ID, this option will turn the dungeon or raid icon gray until this ID is reset so that you can see which dungeon or raid you have started or completed"] = "Bist du bei einem Dungeon oder Schlachtzug zugewiesen also hast eine ID, färbt diese Option das Symbol des Dungeons oder Raids in grau ein bis diese ID zurückgesetzt wurde , damit du siehst, welchen Dungeon oder Schlachtzug du angefangen bzw erledigt hast"
-L["multiple points"] = "Mehrfache"
-L["Colors multi-points of dungeons and/or raids in gray if you are assigned to any dungeon or raid of this multi-point and have an ID so that you can see that you have started or completed any dungeon or raid of the multi-point"] = "Färbt Mehrfachpunkte von Dungeons und oder Schlachtzügen in grau ein, wenn du bei irgendeinem Dungeon oder Schlachtzug dieses Mehrfachpunktes zugewiesen bist also eine ID hast, damit du siehst, dass du irgendeinem Dungeon oder Schlachtzug des Mehrfachpunktes angefangen bzw erledigt hast"
-L["enemy faction"] = "Fraktionen"
-L["Shows enemy faction (horde/alliance) symbols"] = "Zeige die Symbole der gegnerischen Fraktion (Horde/Allianz) an"
-L["Old Instances"] = "Alte Instanzen"
-L["Show vanilla versions of dungeons and raids such as Naxxramas, Scholomance or Scarlet Monastery, which require achievements or other things"] = "Zeige Vanilla Versionen von Dungeons und Schlachtzügen an wie zum beispiel Naxxramas, Scholomance oder das Scharlachrote Kloster wofür Erfolge oder andere Sachen vorrausgesetzt werden"
+L["If you are assigned to a dungeon or raid and have an ID, this option will turn the dungeon or raid icon gray until this ID is reset so that you can see which dungeon or raid you have started or completed"] = "Wenn Sie einem Dungeon oder Raid zugewiesen sind und über eine ID verfügen, wird mit dieser Option das Dungeon- oder Raid-Symbol grau angezeigt, bis diese ID zurückgesetzt wird, sodass Sie sehen können, welchen Dungeon oder Raid Sie begonnen oder abgeschlossen haben"
+L["multiple points"]= "mehrere Punkte"
+L["Colors multi-points of dungeons and/or raids in gray if you are assigned to any dungeon or raid of this multi-point and have an ID so that you can see that you have started or completed any dungeon or raid of the multi-point"] = "Färbt Multipunkte von Dungeons und/oder Raids in Grau, wenn du einem Dungeon oder Raid dieses Multipunkts zugeordnet bist und über eine ID verfügst, sodass du sehen kannst, dass du einen beliebigen Dungeon oder Raid des Multipunkts begonnen oder abgeschlossen hast"
+L["enemy faction"] = "feindliche Fraktion"
+L["Shows enemy faction (horde/alliance) symbols"] = "Zeigt Symbole der feindlichen Fraktion (Horde/Allianz)."
 L["Informations"] = "Informationen"
-L["Chat commands:"] = "Chat Befehle:"
-L["to show MapNotes info in chat: /mn, /MN, /mnh, /MNH, /mapnotes, /MAPNOTES, /mnhelp, /MNHELP"] = "Zum Informationen im Chat anzuzeigen: /mn, /MN, /mnh, /MNH, /mapnotes, /MAPNOTES, /mnhelp, /MNHELP"
-L["to open MapNotes menu: /mno, /MNO"] = "zum öffnen des MapNotes menüs: /mno, /MNO"
-L["to close MapNotes menu: /mnc, /MNC"] = "zum schließen des MapNotes menüs: /mnc, /MNC"
-L["to show minimap button: /mnb or /MNB"] = "zum anzeigen des Minikarten Knopfs: /mnb oder /MNB"
-L["to hide minimap button: /mnbh or /MNBH"] = "zum verstecken des Minikarten knopfs: /mnbh oder /MNBH"
-
-
---2 Azeroth tab
-L["Information: Individual Azeroth symbols that are too close to other symbols on the Azeroth map are not 100% accurately placed on the Azeroth map! For precise coordination, please use the points on the continent map or zone map"] = "Information: Einzelne Azeroth Symbole die zunah an anderen Symbolen auf der Azerothkarte sind, sind auf der Azerothkarte nicht 100% genau plaziert!"
-L["Azeroth map"] = "Azeroth Karte" 
-L["Azeroth map settings. Certain symbols can be displayed or not displayed. If the option (Activate symbols) has been activated in this category"] = "Einstellungen für die Azeroth Karte. Hier können bestimmte Symbole angezeigt oder nicht angezeigt werden. Solange die Option (Azeroth Symbole aktivieren) aktiviert wurde"
-L["Activate symbols"] = "Symbole aktivieren"
-L["Activates the display of all possible symbols on the Azeroth map"] = "Aktiviert die Anzeige aller MapNotes Symbole auf der Azeroth Karte"
-L["symbol size"] = "Symbolgröße"
-L["Resizes symbols on the zone map, azeroth map and minimap"] = "Verändert die Größe von MapNotes Symbolen auf der Zonenkarte, Azeroth Karte und Minikarte"
-L["Show individual symbols"] = "einzelne MapNotes Symbole anzeigen"
-L["Raids"] = "Schlachtzüge"  -- Schlachtzüge anzeigen
-L["Show symbols of raids on the Azeroth map"] = "Zeigt alle MapNotes Schlachtzugsymbole auf der Azeroth Karte an"
-L["Dungeons"] = "Dungeons"  -- Dungeon anzeigen
-L["Show symbols of dungeons on the Azeroth map"] = "Zeigt alle MapNotes Dungeonsymbole auf der Azeroth Karte an"
-L["Multiple"] = "Mehrfach"  -- Gemischte anzeigen
-L["Show symbols of multiple on the Azeroth map"] = "Zeigt alle MapNotes Mehrfachsymbole auf der Azeroth Karte an"
-L["Portals"] = "Portale"  -- Portale anzeigen
-L["Show symbols of portals on the Azeroth map"] = "Zeigt alle MapNotes Portalsymbole auf der Azeroth Karte an"
-L["Zeppelins"] = "Zeppeline"  -- Zeppeline anzeigen
-L["Show symbols of zeppelins on the Azeroth map"] = "Zeigt alle MapNotes Zeppelinsymbole auf der Azeroth Karte an"
-L["Ships"] = "Schiffe"  -- Schiffe anzeigen
-L["Show symbols of ships on the Azeroth map"] = "Zeigt alle MapNotes Schiffsymbole auf der Azeroth Karte an"
-L["Show all MapNotes for a specific map"] = "Alle Kartenpunkte für eine bestimmte Karte anzeigen"
-L["Kalimdor"] = "Kalimdor"  -- Kalimdor anzeigen
-L["Show all Kalimdor MapNotes dungeon, raid, portal, zeppelin and ship symbols on the Azeroth map"] = "Zeigt alle Kalimdor MapNotes Dungeon, Schlachtzüge, Portale, Zeppelin und Schiff Anzeigen auf der Azerothkarte an"
-L["Eastern Kingdom"] = "Östliche Königreiche"  -- Östliche Königreiche anzeigen
-L["Show all Eastern Kingdom MapNotes dungeon, raid, portal, zeppelin and ship symbols on the Azeroth map"] = "Zeigt alle Östliche Königreich MapNotes Dungeon, Schlachtzüge, Portale, Zeppelin und Schiff Anzeigen auf der Azerothkarte an"
-L["Northrend"] = "Nordend"  -- Nordend anzeigen
-L["Show all Northrend MapNotes dungeon, raid, portal, zeppelin and ship symbols on the Azeroth map"] = "Zeigt alle Nordend MapNotes Dungeon, Schlachtzüge, Portale, Zeppelin und Schiff Anzeigen auf der Azerothkarte an"
-L["Pandaria"] = "Pandaria"  -- Pandaria anzeigen
-L["Show all Pandaria MapNotes dungeon, raid, portal, zeppelin and ship symbols on the Azeroth map"] = "Zeigt alle Pandaria MapNotes Dungeon, Schlachtzüge, Portale, Zeppelin und Schiff Anzeigen auf der Azerothkarte an"
-L["Zandalar"] = "Zandalar"  -- Zandalar anzeigen
-L["Show all Zandalar MapNotes dungeon, raid, portal, zeppelin and ship symbols on the Azeroth map"] = "Zeigt alle Zandalar MapNotes Dungeon, Schlachtzüge, Portale, Zeppelin und Schiff Anzeigen auf der Azerothkarte an"
-L["Kul Tiras"] = "Kul Tiras"  -- Kul Tiras anzeigen
-L["Show all Kul Tiras MapNotes dungeon, raid, portal, zeppelin and ship symbols on the Azeroth map"] = "Zeigt alle Kul Tiras MapNotes Dungeon, Schlachtzüge, Portale, Zeppelin und Schiff Anzeigen auf der Azerothkarte an"
-L["Broken Isles"] = "Verheerten Inseln"  -- Verheerten Inseln anzeigen
-L["Show all Broken Isles MapNotes dungeon, raid, portal, zeppelin and ship symbols on the Azeroth map"] = "Zeigt alle Verheerten Inseln MapNotes Dungeon, Schlachtzüge, Portale, Zeppelin und Schiff Anzeigen auf der Azerothkarte an"
-L["Dragon Isles"] = "Dracheninseln"  -- Dracheninseln anzeigen
-L["Show all Dragon Isles MapNotes dungeon, raid, portal, zeppelin and ship symbols on the Azeroth map"] = "Zeigt alle Dracheninsel MapNotes Dungeon, Schlachtzüge, Portale, Zeppelin und Schiff Anzeigen auf der Azerothkarte an"
-
-
---3 Continent tab
-L["Continent map"] = "Kontinent Karte" 
-L["Continent map settings. Certain symbols can be displayed or not displayed. If the option (Activate symbols) has been activated in this category"] = "Kontinentkarteneinstellungen. Bestimmte Symbole können angezeigt oder nicht angezeigt werden. Sofern in dieser Kategorie die Option (Symbole aktivieren) aktiviert wurde"
-L["Activate symbols"] = "Symbole aktivieren"
-L["Activates the display of all possible symbols on the continent map"] = "Aktiviert die Anzeige aller MapNotes Symbole auf der Kontinent Karte"
-L["symbol size"] = "Symbolgröße"
-L["Resizes symbols on the continent map"] = "Verändert die Größe von MapNotes Symbolen auf der Kontinent Karte"
-L["Show individual symbols"] = "einzelne MapNotes Symbole anzeigen"
-L["Raids"] = "Schlachtzüge"  -- Schlachtzüge anzeigen
-L["Show symbols of raids on the continant map and minimap"] = "Zeigt alle MapNotes Schlachtzugsymbole auf der Kontinent Karte und Minikarte an"
-L["Dungeons"] = "Dungeons"  -- Dungeon anzeigen
-L["Show symbols of dungeons on the continant map and minimap"] = "Zeigt alle MapNotes Dungeonsymbole auf der Kontinent Karte und Minikarte an"
-L["Multiple"] = "Mehrfach"  -- Gemischte anzeigen
-L["Show symbols of multiple (dungeons,raids) on the continant map and minimap"] = "Zeigt alle MapNotes Mehrfachsymbole auf der Kontinent Karte und Minikarte an"
-L["Portals"] = "Portale"  -- Portale anzeigen
-L["Show symbols of portals on the continant map and minimap"] = "Zeigt alle MapNotes Portalsymbole auf der Kontinent Karte und Minikarte an"
-L["Zeppelins"] = "Zeppeline"  -- Zeppeline anzeigen
-L["Show symbols of zeppelins on the continant map and minimap"] = "Zeigt alle MapNotes Zeppelinsymbole auf der Kontinent Karte und Minikarte an"
-L["Ships"] = "Schiffe"  -- Schiffe anzeigen
-L["Show symbols of ships on the continant map and minimap"] = "Zeigt alle MapNotes Schiffsymbole auf der Kontinent Karte und Minikarte an"
-L["Ogre Waygate"] = "Ogerportale"
-L["Show Ogre Waygate symbols from Garrison on the Draenor continent and zone map"] = "Zeigt Ogerportale der Garnison auf der Draenor Kontinent und Zonenkarte an"
-L["Show all MapNotes for a specific map"] = "Alle Kartenpunkte für eine bestimmte Karte anzeigen"
-L["Kalimdor"] = "Kalimdor"  -- Kalimdor anzeigen
-L["Show all Kalimdor MapNotes dungeon, raid, portal, zeppelin and ship symbols on the continent map"] = "Zeigt alle Kalimdor MapNotes Dungeon, Schlachtzüge, Portale, Zeppelin und Schiff Anzeigen auf der Kontinentkarte an"
-L["Eastern Kingdom"] = "Östliche Königreiche"  -- Östliche Königreiche anzeigen
-L["Show all Eastern Kingdom MapNotes dungeon, raid, portal, zeppelin and ship symbols on the continent map"] = "Zeigt alle Östliche Königreiche MapNotes Dungeon, Schlachtzüge, Portale, Zeppelin und Schiff Anzeigen auf der Kontinentkarte an"
-L["Outland"] = "Scherbenwelt"  -- Scherbenwelt anzeigen
-L["Show all Outland MapNotes dungeon, raid, portal, zeppelin and ship symbols on the continent map"] = "Zeigt alle Scherbenwelt MapNotes Dungeon, Schlachtzüge, Portale, Zeppelin und Schiff Anzeigen auf der Kontinentkarte an"
-L["Northrend"] = "Nordend"  -- Northrend anzeigen
-L["Show all Northrend MapNotes dungeon, raid, portal, zeppelin and ship symbols on the continent map"] = "Zeigt alle Northend MapNotes Dungeon, Schlachtzüge, Portale, Zeppelin und Schiff Anzeigen auf der Kontinentkarte an"
-L["Pandaria"] = "Pandaria"  -- Pandaria anzeigen
-L["Show all Pandaria MapNotes dungeon, raid, portal, zeppelin and ship symbols on the continent map"] = "Zeigt alle Pandaria MapNotes Dungeon, Schlachtzüge, Portale, Zeppelin und Schiff Anzeigen auf der Kontinentkarte an"
-L["Draenor"] = "Draenor"  -- Draenor anzeigen
-L["Show all Draenor MapNotes dungeon, raid, portal, zeppelin and ship symbols on the continent map"] = "Zeigt alle Draenor MapNotes Dungeon, Schlachtzüge, Portale, Zeppelin und Schiff Anzeigen auf der Kontinentkarte an"
-L["Broken Isles"] = "Verheerten Inseln"  -- Verheerten Inseln anzeigen
-L["Show all Broken Isles MapNotes dungeon, raid, portal, zeppelin and ship symbols on the continent map"] = "Zeigt alle Verheerten Inseln MapNotes Dungeon, Schlachtzüge, Portale, Zeppelin und Schiff Anzeigen auf der Kontinentkarte an"
-L["Zandalar"] = "Zandalar"  -- Zandalar anzeigen
-L["Show all Zandalar MapNotes dungeon, raid, portal, zeppelin and ship symbols on the continent map"] = "Zeigt alle Zandalar MapNotes Dungeon, Schlachtzüge, Portale, Zeppelin und Schiff Anzeigen auf der Kontinentkarte an"
-L["Kul Tiras"] = "Kul Tiras"  -- Kul Tiras anzeigen
-L["Show all Kul Tiras MapNotes dungeon, raid, portal, zeppelin and ship symbols on the continent map"] = "Zeigt alle Kul Tiras MapNotes Dungeon, Schlachtzüge, Portale, Zeppelin und Schiff Anzeigen auf der Kontinentkarte an"
-L["Shadowlands"] = "Schattenlande"  -- Schattendlande anzeigen
-L["Show all Shadowlands MapNotes dungeon, raid, portal, zeppelin and ship symbols on the continent map"] = "Zeigt alle Schattenlande MapNotes Dungeon, Schlachtzüge, Portale, Zeppelin und Schiff Anzeigen auf der Kontinentkarte an"
-L["Dragon Isles"] = "Dracheninseln"  -- Dragonflight anzeigen
-L["Show all Dragon Isles MapNotes dungeon, raid, portal, zeppelin and ship symbols on the continent map"] = "Zeigt alle Dracheninsel MapNotes Dungeon, Schlachtzüge, Portale, Zeppelin und Schiff Anzeigen auf der Kontinentkarte an"
-
-
---4 DungeonMap Tab
-L["Dungeon map"] = "Dungeon Karte" 
-L["Dungeon map settings. Certain symbols can be displayed or not displayed. If the option (Activate symbols) has been activated in this category. Shows MapNotes exit and passage points on the dungeon map (these symbols are for orientation purposes only and nothing happens when you click on them)"] = "Dungeon-Karteneinstellungen. Bestimmte Symbole können angezeigt oder nicht angezeigt werden. Sofern in dieser Kategorie die Option (Symbole aktivieren) aktiviert wurde. Zeigt MapNotes-Ausgangs- und Durchgangspunkte auf der Dungeon-Karte an (diese Symbole dienen lediglich der Orientierung und es passiert nichts, wenn man darauf klickt)"
-L["Activate symbols"] = "Symbole aktivieren"
-L["Enables the display of all possible symbols on the dungeon map (these symbols are for orientation purposes only and nothing happens when you click on them)"] = "Aktiviert die Anzeige aller möglichen Symbole auf der Dungeon Karte (diese Symbole dienen lediglich der Orientierung und es passiert nichts, wenn man darauf klickt)"
+L["Chat commands:"] = "Chat-Befehle:"
+L["to show MapNotes info in chat: /mn, /MN, /mnh, /MNH, /mapnotes, /MAPNOTES, /mnhelp, /MNHELP"] = "um MapNotes-Informationen im Chat anzuzeigen: /mn, /MN, /mnh, /MNH, /mapnotes, /MAPNOTES, /mnhelp, /MNHELP"
+L["to open MapNotes menu: /mno, /MNO"] = "So öffnen Sie das MapNotes-Menü: /mno, /MNO"
+L["to close MapNotes menu: /mnc, /MNC"] = "um das MapNotes-Menü zu schließen: /mnc, /MNC"
+L["to show minimap button: /mnb or /MNB"] = "um die Minikarten-Schaltfläche anzuzeigen: /mnb oder /MNB"
+L["to hide minimap button: /mnbh or /MNBH"] = "Minikarten-Schaltfläche ausblenden: /mnbh oder /MNBH"
+--2 Azeroth tab specific
+L["Information: Individual Azeroth symbols that are too close to other symbols on the Azeroth map are not 100% accurately placed on the Azeroth map! For precise coordination, please use the points on the continent map or zone map"] = "Information: Einzelne Azeroth-Symbole, die zu nahe an anderen Symbolen auf der Azeroth-Karte liegen, werden nicht 100 % genau auf der Azeroth-Karte platziert!  Zur genauen Koordination nutzen Sie bitte die Punkte auf der Kontinentkarte bzw. Zonenkarte"
+L["Azeroth map"] = "Azeroth-Karte"
+L["Certain symbols can be displayed or not displayed. If the option (Activate symbols) has been activated in this category"] = "Azeroth-Karteneinstellungen.  Bestimmte Symbole können angezeigt oder nicht angezeigt werden.  Sofern in dieser Kategorie die Option (Symbole aktivieren) aktiviert wurde"
+L["Activates the display of all possible symbols on the Azeroth map"] = "Aktiviert die Anzeige aller möglichen Symbole auf der Azeroth-Karte"
+L["Resizes symbols on the zone map, azeroth map and minimap"] = "Ändert die Größe der Symbole auf der Zonenkarte, der Azeroth-Karte und der Minikarte"
+L["Show symbols of raids on the Azeroth map"] = "Symbole von Raids auf der Karte von Azeroth anzeigen"
+L["Show symbols of dungeons on the Azeroth map"] = "Zeigt Symbole von Dungeons auf der Azeroth-Karte an"
+L["Show symbols of passage to raids and dungeons on the Azeroth map"] = "Zeigen Sie Symbole für den Durchgang zu Raids und Dungeons auf der Karte von Azeroth an"
+L["Show symbols of multiple on the Azeroth map"] = "Zeigt mehrere Symbole auf der Karte von Azeroth an"
+L["Show symbols of portals on the Azeroth map"] = "Symbole von Portalen auf der Azeroth-Karte anzeigen"
+L["Show symbols of zeppelins on the Azeroth map"] = "Zeppelinsymbole auf der Karte von Azeroth anzeigen"
+L["Show symbols of ships on the Azeroth map"] = "Symbole von Schiffen auf der Azeroth-Karte anzeigen"
+L["Show symbols of other transport possibilities on the Azeroth map"] = "Symbole anderer Transportmöglichkeiten auf der Azeroth-Karte anzeigen"
+L["Show all MapNotes for a specific map"] = "Alle MapNotes für eine bestimmte Karte anzeigen"
+L["Show all Kalimdor MapNotes dungeon, raid, portal, zeppelin and ship symbols on the Azeroth map"] = "Alle Dungeon-, Raid-, Portal-, Zeppelin- und Schiffssymbole von Kalimdor MapNotes auf der Azeroth-Karte anzeigen"
+L["Show all Eastern Kingdom MapNotes dungeon, raid, portal, zeppelin and ship symbols on the Azeroth map"] = "Alle Dungeon-, Raid-, Portal-, Zeppelin- und Schiffssymbole des Östlichen Königreichs MapNotes auf der Karte von Azeroth anzeigen"
+L["Show all Northrend MapNotes dungeon, raid, portal, zeppelin and ship symbols on the Azeroth map"] = "Alle Dungeon-, Raid-, Portal-, Zeppelin- und Schiffssymbole von Nordend MapNotes auf der Azeroth-Karte anzeigen"
+L["Show all Pandaria MapNotes dungeon, raid, portal, zeppelin and ship symbols on the Azeroth map"] = "Alle Dungeon-, Raid-, Portal-, Zeppelin- und Schiffssymbole von Pandaria MapNotes auf der Azeroth-Karte anzeigen"
+L["Show all Zandalar MapNotes dungeon, raid, portal, zeppelin and ship symbols on the Azeroth map"] = "Alle Dungeon-, Raid-, Portal-, Zeppelin- und Schiffssymbole von Zandalar MapNotes auf der Azeroth-Karte anzeigen"
+L["Show all Kul Tiras MapNotes dungeon, raid, portal, zeppelin and ship symbols on the Azeroth map"] = "Alle Kul Tiras MapNotes-Dungeon-, Raid-, Portal-, Zeppelin- und Schiffssymbole auf der Azeroth-Karte anzeigen"
+L["Show all Broken Isles MapNotes dungeon, raid, portal, zeppelin and ship symbols on the Azeroth map"] = "Alle Dungeon-, Raid-, Portal-, Zeppelin- und Schiffssymbole der Broken Isles MapNotes auf der Karte von Azeroth anzeigen"
+L["Show all Dragon Isles MapNotes dungeon, raid, portal, zeppelin and ship symbols on the Azeroth map"] = "Alle Dragon Isles MapNotes-Dungeon-, Raid-, Portal-, Zeppelin- und Schiffssymbole auf der Azeroth-Karte anzeigen"
+--3 Continent tab specific
+L["Continent map"] = "Kontinent-Karte"
+L["Certain symbols can be displayed or not displayed. If the option (Activate symbols) has been activated in this category"] = "Kontinentkarteneinstellungen.  Bestimmte Symbole können angezeigt oder nicht angezeigt werden.  Sofern in dieser Kategorie die Option (Symbole aktivieren) aktiviert wurde"
+L["Activates the display of all possible symbols on the continent map"] = "Aktiviert die Anzeige aller möglichen Symbole auf der Kontinentkarte"
+L["Show symbols of raids on the continant map and minimap"] = "Symbole von Schlachtzügen auf der Kontinentkarte und der Minikarte anzeigen"
+L["Show symbols of dungeons on the continant map and minimap"] = "Zeigt Symbole von Dungeons auf der Kontinentkarte und der Minikarte an"
+L["Show symbols of passage to raids and dungeons on the continent map"] = "Zeigen Sie Symbole für den Durchgang zu Raids und Dungeons auf der Kontinentkarte an"
+L["Show symbols of multiple (dungeons,raids) on the continant map and minimap"] = "Zeigt Symbole mehrerer (Dungeons, Raids) auf der Kontinentkarte und der Minikarte an"
+L["Show symbols of portals on the continant map and minimap"] = "Symbole von Portalen auf der Kontinentkarte und der Minikarte anzeigen"
+L["Show symbols of zeppelins on the continant map and minimap"] = "Symbole von Zeppelinen auf der Kontinentkarte und der Minikarte anzeigen"
+L["Show symbols of ships on the continant map and minimap"] = "Zeigen Sie Symbole von Schiffen auf der Kontinentkarte und der Minikarte an"
+L["Show symbols of other transport possibilities on the continent and minimap"] = "Symbole weiterer Transportmöglichkeiten auf dem Kontinent und Minikarte anzeigen"
+L["Show Ogre Waygate symbols from Garrison on the Draenor continent and zone map"] = "Zeigt Oger-Portalsymbole von Garrison auf der Kontinent- und Zonenkarte von Draenor an"
+L["Show all Kalimdor MapNotes dungeon, raid, portal, zeppelin and ship symbols on the continent map"] = "Alle Dungeon-, Raid-, Portal-, Zeppelin- und Schiffssymbole von Kalimdor MapNotes auf der Kontinentkarte anzeigen"
+L["Show all Eastern Kingdom MapNotes dungeon, raid, portal, zeppelin and ship symbols on the continent map"] = "Alle Dungeon-, Raid-, Portal-, Zeppelin- und Schiffssymbole des Östlichen Königreichs MapNotes auf der Kontinentkarte anzeigen"
+L["Show all Outland MapNotes dungeon, raid, portal, zeppelin and ship symbols on the continent map"] = "Alle Dungeon-, Raid-, Portal-, Zeppelin- und Schiffssymbole der Outland MapNotes auf der Kontinentkarte anzeigen"
+L["Show all Northrend MapNotes dungeon, raid, portal, zeppelin and ship symbols on the continent map"] = "Alle Dungeon-, Raid-, Portal-, Zeppelin- und Schiffssymbole von Nordend MapNotes auf der Kontinentkarte anzeigen"
+L["Show all Pandaria MapNotes dungeon, raid, portal, zeppelin and ship symbols on the continent map"] = "Alle Dungeon-, Raid-, Portal-, Zeppelin- und Schiffssymbole von Pandaria MapNotes auf der Kontinentkarte anzeigen"
+L["Show all Draenor MapNotes dungeon, raid, portal, zeppelin and ship symbols on the continent map"] = "Alle Dungeon-, Raid-, Portal-, Zeppelin- und Schiffssymbole von Draenor MapNotes auf der Kontinentkarte anzeigen"
+L["Show all Broken Isles MapNotes dungeon, raid, portal, zeppelin and ship symbols on the continent map"] = "Alle Dungeon-, Raid-, Portal-, Zeppelin- und Schiffssymbole der Broken Isles MapNotes auf der Kontinentkarte anzeigen"
+L["Show all Zandalar MapNotes dungeon, raid, portal, zeppelin and ship symbols on the continent map"] = "Alle Dungeon-, Raid-, Portal-, Zeppelin- und Schiffssymbole von Zandalar MapNotes auf der Kontinentkarte anzeigen"
+L["Show all Kul Tiras MapNotes dungeon, raid, portal, zeppelin and ship symbols on the continent map"] = "Alle Kul Tiras MapNotes-Dungeon-, Raid-, Portal-, Zeppelin- und Schiffssymbole auf der Kontinentkarte anzeigen"
+L["Show all Shadowlands MapNotes dungeon, raid, portal, zeppelin and ship symbols on the continent map"] = "Alle Dungeon-, Raid-, Portal-, Zeppelin- und Schiffssymbole von Shadowlands MapNotes auf der Kontinentkarte anzeigen"
+L["Show all Dragon Isles MapNotes dungeon, raid, portal, zeppelin and ship symbols on the continent map"] = "Alle Dragon Isles MapNotes-Dungeon-, Raid-, Portal-, Zeppelin- und Schiffssymbole auf der Kontinentkarte anzeigen"
+--4 DungeonMap Tab specific
+L["Dungeon map"] =  "Dungeon-Karte"
+L["Certain symbols can be displayed or not displayed. If the option (Activate symbols) has been activated in this category"] = "Bestimmte Symbole können angezeigt oder nicht angezeigt werden. Sofern in dieser Kategorie die Option (Symbole aktivieren) aktiviert wurde"
+L["Enables the display of all possible symbols on the dungeon map"] = "Ermöglicht die Anzeige aller möglichen Symbole auf der Dungeon-Karte"
 L["Exits"] = "Ausgänge"
-L["Show symbols of MapNotes dungeon exit on the dungeon map"] = "Zeige Ausgänge auf der Dungeonkarte"
-L["Passages"] = "Durchgänge"
-L["Show symbols of passage on the dungeon map"] = "Zeige Durchgänge auf der Dungeonkarte"
-L["Portals"] = "Portale"  -- Portale anzeigen
-L["Show symbols of portals on the dungeon map"] = "Zeige Portale auf der Dungeonkarte"
-
-
---5 Entrance/Exit/passage nodes
+L["Show symbols of MapNotes dungeon exit on the dungeon map"] = "Zeigt Symbole des MapNotes-Dungeon-Ausgangs auf der Dungeon-Karte an"
+L["Show symbols of passage on the dungeon map"] = "Zeigen Sie Durchgangssymbole auf der Dungeon-Karte an"
+L["Show symbols of portals on the dungeon map"] = "Symbole von Portalen auf der Dungeon-Karte anzeigen"
+L["Show symbols of other transport possibilities on the dungeon map"] = "Symbole anderer Transportmöglichkeiten auf der Dungeon-Karte anzeigen"
+--5 Map Tabs together
+L["Activate symbols"] = "Symbole aktivieren"
+L["Show individual symbols"] = "Einzelne Symbole anzeigen"
+L["Raids"] = "Schlachtzügen"
+L["Dungeons"] = "Dungeons"
+L["Passages"] = "Passagen"
+L["Multiple"] = "Mehrere"
+L["Portals"] = "Portale"
+L["Zeppelins"] = "Zeppeline"
+L["Ships"] = "Schiffe"
+L["Transport"] = "Transport"
+L["Ogre Waygate"] = "Oger-Portale"
+L["Old Instances"] = "Alte Instanzen"
+L["Show vanilla versions of dungeons and raids such as Naxxramas, Scholomance or Scarlet Monastery, which require achievements or other things"] = "Zeigen Sie Vanilla-Versionen von Dungeons und Raids wie Naxxramas, Scholomance oder Scarlet Monastery, die Erfolge oder andere Dinge erfordern"
+--Maps
+L["Kalimdor"] = "Kalimdor"
+L["Eastern Kingdom"] = "Östliches Königreich"
+L["Outland"] = "Scherbenwelt"
+L["Northrend"] = "Nordend"
+L["Pandaria"] = "Pandaria"
+L["Draenor"] = "Draenor"
+L["Broken Isles"] = "Verheerte Inseln"
+L["Zandalar"] = "Zandalar"
+L["Kul Tiras"] = "Kul Tiras"
+L["Shadowlands"] = "Schattenlande"
+L["Dragon Isles"] = "Dracheninseln"
+--6 Core specific 
+L["Shift function"] = "Shift-Funktion"
+L["-> MiniMapButton <-"] = "-> MiniMapButton <-"
+L["MapNotes menu window"] = "MapNotes-Menüfenster"
+L["All set symbols have been restored"] = "Alle eingestellten Symbole wurden wiederhergestellt"
+L["All MapNotes symbols have been hidden"] = "Alle MapNotes-Symbole wurden ausgeblendet"
+L["is activated"] = "ist aktiviert"
+L["is deactivated"] = "ist deaktiviert"
+L["are shown"] = "werden gezeigt"
+L["are hidden"] = "sind versteckt"
+L["Left-click => Open/Close"] = "Linksklick => Öffnen/Schließen"
+L["Right-click => Open/Close"] = "Rechtsklick => Öffnen/Schließen"
+L["Shift + Right-click => hide"] = "Umschalt + Rechtsklick => Ausblenden"
+--transport
+L["symbols"] = "Symbole"
 L["Exit"] = "Ausgang"
 L["Entrance"] = "Eingang"
-L["Passage"] = "Durchgang"
-
-
---6 Transport basics
+L["Passage"] = "Passage"
 L["Portal"] = "Portal"
-L["Ship"] = "Schiff"
-L["Zeppelin"] = "Zeppelin"
 L["Portalroom"] = "Portalraum"
-L["(inside building)"] = "(im Gebäude)"
-L["(at basement)"] = "(im Keller)"
-L["(inside portal chamber)"] = "(in der Portalkammer)"
-L["(on the tower)"] = "(auf dem Turm)"
--- Transport places
-L["Ashran"] = "Ashran"
-L["Azsuna"] = "Azsuna"
-L["Boralus"] = "Boralus"
-L["Boralus Harbor, Tiragarde Sound"] = "Hafen von Boralus, Tiragardesund"
-L["Booty Bay, Stranglethorn Vale"] = "Beutebucht, Schlingendorntal"
-L["Caverns of Time"] = "Höhlen der Zeit"
-L["Drustvar"] = "Drustvar"
-L["Deepholm"] = "Exodar"
-L["Dalaran"] = "Dalaran"
-L["Dalaran, Crystalsong Forest"] = "Dalaran, Kristallsangwald"
-L["Dazar'alor"] = "Dazar'alor"
-L["Exodar"] = "Exodar"
-L["Eastern Plaguelands"] = "Östliche Pestländer"
-L["Echo Isles, Durotar"] = "Echo Inseln, Durotar"
-L["Hellfire Peninsula"] = "Höllenfeuerhalbinsel"
-L["Howling Fjord"] = "Heulender Fjord"
-L["Hyjal"] = "Hyjal"
-L["Ironforge"] = "Eisenschmiede"
-L["Isle of Thunder"] = "Insel des Donners"
-L["Isle of Quel'Danas"] = "Insel von Quel'Danas"
-L["Lion's Watch"] = "Löwenwacht"
-L["Mechagon"] = "Mechagon"
-L["Menethil Harbor, Wetlands"] = "Hafen von Menethil, Sumpfland"
-L["Nazjatar"] = "Nazjatar"
-L["Nazmir"] = "Nazmir"
-L["Ogre Waygate to Garrison"] = "Ogerportal zur Garnison"
-L["Ohn'ahran Plains"] = "Ebenen von Ohn'ahra"
-L["Orgrimmar"] = "Orgrimmar"
-L["Oribos"] = "Oribos"
-L["Ruins of Lordaeron, Undercity"] = "Ruinen von Lordaeron, Unterstadt"
-L["Ratchet, Northern Barrens"] = "Ratschet, Nördliches Brachland"
-L["Stormsong Valley"] = "Sturmsangtal"
-L["Stormwind City"] = "Sturmwind"
-L["Silithus"] = "Silithus"
-L["Stranglethorn"] = "Schlingendorntal"
-L["Shado-Pan Garrison, TownlongWastes"] = "Shado-Pan Garnison, Tonlongsteppe"
-L["Silvermoon City"] = "Silbermond"
-L["Stormshield, Ashran"] = "Sturmschild, Ashran"
-L["Shattrath"] = "Shattrath"
 L["The Dark Portal"] = "Das Dunkle Portal"
-L["The Emerald Dream"] = "Der Smaragdgrüne Traum"
-L["Tol Barad"] = "Tol Barad"
-L["Tiragarde Sound"] = "Tiragardesund"
-L["Twilight Highlands"] = "Schattenhochland"
-L["Thunderbluff"] = "Donnerfels"
-L["The Timeways"] = "die Zeitwege"
-L["Jade Forest"] = "Jadewald"
-L["Uldum"] = "Uldum"
-L["Vol'Dun"] = "Vol'Dun"
+L["Captain Krooz"] = "Kapitän Krooz"
+L["Use the Old Keyring"] = "Verwenden Sie den alten Schlüsselring"
+L["Travel"] = "Reisen"
+L["Old Keyring"] = "Alter Schlüsselanhänger"
+L["Old Version"] = "Alte Version"
+L["Secret Portal"] = "Geheimes Portal"
+L["Secret Entrance"]  = "Geheimer Eingang“"
+L["Ogre Waygate to Garrison"] = "Oger-Portale zur Garnison"
+L["in the basement"] = "im Keller"
+L["(on the tower)"] = "(auf dem Turm)"
+L["(inside portal chamber)"] = "(in der Portalkammer)"
+L["(inside building)"] = "(im Gebäude)"
+--places
+L["Graveyard"] = "Friedhof"
+L["Library"] = "Bibliothek"
+L["Cathedral"] = "Kathedrale"
+L["Armory"] = "Arsenal"
+L["Ashran"] = "Ashran"
+L["The Timeways"] = "Die Zeitwege"
 L["Vol'mar"] = "Vol'mar"
-L["Vashj'ir"] = "Vashj'ir"
-L["Valdrakken"] = "Valdrakken"
-L["Valiance Keep, Borean Tundra"] = "Valianzfeste, Boreanische Tundra"
-L["Badlands"] = "Ödland"
-L["Warspear, Ashran"] = "Kriegsspeer, Ashran"
-L["Waking Shores, Dragon Isles"] = "Küste des Erwachens, Dracheninseln"
-L["Zuldazar"] = "Zuldazar"
-L["Zandalar"] = "Zandalar"
---9 other transports
-L["Back to Zuldazar"] = "Zurück nach Zuldazar"
-L["Back to Boralus"] = "Zurück nach Boralus"
-L["(Captain Krooz) will take you to Mechagon"] = "(Kapitänin Kruus) bringt dich nach Mechagon"
-L["(Captain Krooz) will take you back to Zuldazar"] = "(Kapitänin Kruus) bringt dich zurück nach Zuldazar"
-L["(Grand Admiral Jes-Tereth) will take you to Vol'Dun, Nazmir or Zuldazar"] = "(Großadmiral Jes-Tereth) bringt dich nach Vol'Dun, Nazmir oder Zuldazar"
-L["(its only shown up ingame if your faction is currently occupying Bashal'Aran)"] = "(Es wird nur im Spiel angezeigt, wenn Ihre Fraktion derzeit Bashal'Aran besetzt)"
-L["(Dread-Admiral Tattersail) will take you to Drustvar, Tiragarde Sound or Stormsong Valley"] = "(Schreckensadmiralin Segelriss) bringt dich nach Drustvar, Tiragardesund oder Sturmsangtal"
-L["This Arathi Highlands portal is only active if your faction is currently occupying Ar'gorok"] = "Dieses Arathihochland Portal ist nur aktiv, wenn eure Fraktion gerade Ar'gorok besetzt"
-L["This Darkshore portal is only active if your faction is currently occupying Bashal'Aran"] = "Dieses Dunkelküste Portal ist nur aktiv, wenn eure Fraktion gerade Bashal'Aran besetzt"
-
---7 old dungeons/raids
-L["Old version of Naxxramas - Secret Entrance \n (Wards of the Dread Citadel - Achievement)"] = "Alte Version von Naxxramas Geheimer Eingang \n (Schutze der Zitadelle des Schreckens – Erfolg)"
-L["Old version of Scarlet Monastery Cathedral \n (need to activate the [Old Keychain] at 48.33 55.88 inside the Scarlet Monastery)"] = "Alte Version der Kathedrale des Scharlachroten Klosters \n (der alte Schlüsselbund muss bei 48,33 55,88 im Scharlachroten Kloster aktiviert werden)"
-L["Old version of Scarlet Monastery Graveyard \n (need to activate the [Old Keychain] at 48.33 55.88 inside the Scarlet Monastery)"] = "Alte Version der Friedhof des Scharlachroten Klosters \n (der alte Schlüsselbund muss bei 48,33 55,88 im Scharlachroten Kloster aktiviert werden)"
-L["Old version of Scarlet Monastery Library \n (need to activate the [Old Keychain] at 48.33 55.88 inside the Scarlet Monastery)"] = "Alte Version der Bibliothek des Scharlachroten Klosters \n (der alte Schlüsselbund muss bei 48,33 55,88 im Scharlachroten Kloster aktiviert werden)"
-L["Old version of Scarlet Monastery Armory \n (need to activate the [Old Keychain] at 48.33 55.88 inside the Scarlet Monastery)"] = "Alte Version der Waffenkammer des Scharlachroten Klosters \n (der alte Schlüsselbund muss bei 48,33 55,88 im Scharlachroten Kloster aktiviert werden)"
-L["Old version of Scholomance - Secret Entrance \n (Memory of Scholomance - Achievement)"] = "Alte Version von Scholomance – Geheimer Eingang \n (Erinnerung an Scholomance – Erfolg)"
-L["Old Keychain \n You get the Scarlet Key in the \n [Loot-Filled Pumpkin] from [Hallow's End Event] or from the [Auction House] \n now you can activate the [Old Keychain] here \n to activate old dungeonversions from the Scarlet Monastery"] = "Alter Schlüsselbund \n Den Scharlachroten Schlüssel erhältst du im \n [Beutegefüllter Kürbis] beim [Schlotternächte Event] oder im [Auktionshaus] \n jetzt kannst du den [Alten Schlüsselbund] hier aktivieren \n um alte Dungeonversionen zu aktivieren aus dem Scharlachroten Kloster"
+--7 Specific
+L["Shows locations of raids, dungeons, portals ,ship and zeppelins symbols on different maps"] = "Zeigt Orte von Raids, Dungeons, Portalen, Schiffs- und Zeppelinsymbolen auf verschiedenen Karten an"
+L["(Wards of the Dread Citadel - Achievement)"] = "(Schutzzauber der Schreckenszitadelle – Erfolg)"
+L["(Memory of Scholomance - Achievement)"] = "(Erinnerung an Scholomance – Leistung)"
+L["(its only shown up ingame if your faction is currently occupying Bashal'Aran)"] = "(Es wird nur im Spiel angezeigt, wenn Ihre Fraktion derzeit Bashal'Aran besetzt.)"
+L["This Arathi Highlands portal is only active if your faction is currently occupying Ar'gorok"] = "Dieses Portal im Arathi-Hochland ist nur aktiv, wenn Ihre Fraktion derzeit Ar'gorok besetzt"
+L["This Darkshore portal is only active if your faction is currently occupying Bashal'Aran"] = "Dieses Dunkelküstenportal ist nur aktiv, wenn Ihre Fraktion derzeit Bashal'Aran besetzt"
+L["(Grand Admiral Jes-Tereth) will take you to Vol'Dun, Nazmir or Zuldazar"] = "(Großadmiral Jes-Tereth) bringt Sie nach Vol'Dun, Nazmir oder Zuldazar"
+L["(Dread-Admiral Tattersail) will take you to Drustvar, Tiragarde Sound or Stormsong Valley"] = "(Dread-Admiral Flickensegel) bringt Sie nach Drustvar, zum Tiragarde-Sund oder ins Sturmsangtal"
+L["Old Keyring \n You get the Scarlet Key in the \n [Loot-Filled Pumpkin] from [Hallow's End Event] or from the [Auction House] \n now you can activate the [Old Keyring] here \n to activate old dungeonversions from the Scarlet Monastery"] = "Alter Schlüsselring \n Den Scharlachroten Schlüssel erhalten Sie im \n [Beutegefüllter Kürbis] beim [Hallow's End Event] oder im [Auktionshaus] \n Jetzt können Sie den [Alten Schlüsselring] hier aktivieren, \n um alte Dungeonversionen zu aktivieren aus dem Scharlachroten Kloster "
