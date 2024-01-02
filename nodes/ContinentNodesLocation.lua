@@ -60,8 +60,7 @@ if not db.show.HideMapNote then
     
 
           if self.db.profile.showContinentPassage then
-            nodes[71][64864997] = { id = { 187, 750, 279, 255, 251, 184, 185, 186, }, type = "PassageDungeonM", showInZone = true, hideOnContinent = false } -- Dragon Soul, The Battle for Mount Hyjal, The Culling of Stratholme, Black Morass, Old Hillsbrad Foothills, End Time, Well of Eternity, Hour of Twilight Heroic
-            nodes[74][30857356] = { id = { 187, 750, 279, 255, 251, 184, 185, 186, }, type = "PassageDungeonM", showInZone = true, hideOnContinent = false } -- Dragon Soul, The Battle for Mount Hyjal, The Culling of Stratholme, Black Morass, Old Hillsbrad Foothills, End Time, Well of Eternity, Hour of Twilight Heroic
+
             nodes[10][38916921] = { id = 240, type = "PassageDungeonM", showInZone = true, hideOnContinent = true } -- Wailing Caverns 
             nodes[66][29106256] = { id = 232, type = "PassageDungeonL", showInZone = true, hideOnContinent = true } -- Maraudon Outside
             nodes[63][14181414] = { id = 227, type = "PassageDungeonL", showInZone = true, hideOnContinent = true } -- Blackfathom Deeps
@@ -73,7 +72,8 @@ if not db.show.HideMapNote then
 
         --Kalimdor Multiple
           if self.db.profile.showContinentMultiple then
-
+            nodes[71][64864997] = { id = { 187, 750, 279, 255, 251, 184, 185, 186, }, type = "MultipleM", showInZone = true, hideOnContinent = false } -- Dragon Soul, The Battle for Mount Hyjal, The Culling of Stratholme, Black Morass, Old Hillsbrad Foothills, End Time, Well of Eternity, Hour of Twilight Heroic
+            nodes[74][30857356] = { id = { 187, 750, 279, 255, 251, 184, 185, 186, }, type = "MultipleM", showInZone = true, hideOnContinent = false } -- Dragon Soul, The Battle for Mount Hyjal, The Culling of Stratholme, Black Morass, Old Hillsbrad Foothills, End Time, Well of Eternity, Hour of Twilight Heroic
           end
     
     
@@ -86,7 +86,7 @@ if not db.show.HideMapNote then
                 nodes[71][65984960] = { mnID = 85, name = "", type = "HPortal", showInZone = true, hideOnContinent = true } -- Portal from Tanaris to Orgrimmar 
                 nodes[74][58152676] = { mnID = 85, name = "", type = "HPortal", showInZone = true, hideOnContinent = false } -- Portal from Tanaris to Orgrimmar 
                 nodes[12][59898422] = { mnID = 85, name = "", type = "HPortal", showInZone = true, hideOnContinent = false } -- Portal from Tanaris to Orgrimmar 
-                nodes[12][56122725] = { mnID = 85, name = "", type = "HPortal", showInZone = true, hideOnContinent = false } -- Portal Tol Orgrimmar from Hyjal
+                nodes[12][56122725] = { eoID = 85, mnID = 85, name = "", type = "HPortal", showInZone = true, hideOnContinent = false } -- Portal To Orgrimmar from Hyjal
               end
     
               if self.faction == "Alliance" then --was additionally added without the showEnemyFaction option because the two points would be on top of each other when showing EnemyFaction and would therefore not be clickable for one of the two factions

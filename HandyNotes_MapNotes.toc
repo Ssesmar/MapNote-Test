@@ -17,10 +17,11 @@ nodes\AzerothNodeslocation.lua
 nodes\ContinentNodesLocation.lua
 nodes\InsideDungeonNodesLocation.lua
 
-core\defaults.lua
+
 core\IconClass.lua
+core\defaults.lua
+core\options.lua
 core\main.lua
 core\ccmmb.lua
 core\mmb.lua
-
 

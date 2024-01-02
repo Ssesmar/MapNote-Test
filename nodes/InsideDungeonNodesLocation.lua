@@ -342,7 +342,7 @@ if not db.show.HideMapNote then
           --Dragon Soul
             nodes[409][49145903] = { mnID = 410, name = "", type = "TravelM", showInZone = true } -- Dragon Soul
             nodes[409][51055925] = { mnID = 411, name = "", type = "TravelM", showInZone = true } -- Dragon Soul
-            nodes[409][50145769] = { mnID = 411, name = "", type = "TravelM", showInZone = true } -- Dragon Soul
+            nodes[409][50145769] = { name = L["(on the tower)"], type = "TravelM", showInZone = true } -- Dragon Soul
           end
 
 
@@ -356,10 +356,11 @@ if not db.show.HideMapNote then
         --#### Kalimdor Dungeon Portals #####
         --###################################
           --Dragon Soul
-            nodes[411][57698846] = { mnID = 409, name = "", type = "Portal", showInZone = true } -- Maw of Shu'ma
-            nodes[410][23324020] = { mnID = 409, name = "", type = "Portal", showInZone = true } -- Maw of Go'rath
-            nodes[412][49696016] = { mnID = 409, name = "", type = "Portal", showInZone = true } -- Eye of Eternity
-            nodes[409][50706060] = { mnID = 412, name = "", type = "Portal", showInZone = true } -- Dragon Soul o Eye of Eternity
+            nodes[411][57698846] = { eoID = 409, mnID = 409, name = "", type = "Portal", showInZone = true } -- Maw of Shu'ma
+            nodes[410][23324020] = { eoID = 409, mnID = 409, name = "", type = "Portal", showInZone = true } -- Maw of Go'rath
+            nodes[412][52181359] = { eoID = 409, mnID = 409, name = "", type = "Portal", showInZone = true } -- Eye of Eternity
+            nodes[409][52786486] = { eoID = 409, mnID = 412, name = "", type = "Portal", showInZone = true } -- Dragon Soul o Eye of Eternity
+            nodes[409][49696016] = { eoID = 409, mnID = 412, name = "", type = "Portal", showInZone = true } -- Dragon Soul to Tanaris
         --##########################################
         --#### Eastern Kingdom Dungeon Portals #####
         --##########################################
