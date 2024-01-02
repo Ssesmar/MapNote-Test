@@ -126,7 +126,7 @@ function pluginHandler:OnEnter(uiMapId, coord)
 	    tooltip:AddLine(v, nil, nil, nil, false)
 	  end
 
-    if nodeData.eoID then
+    if nodeData.eoID then --  outputs the Continent or Zone name and displays it in the tooltip
       local linkToMap = C_Map.GetMapInfo(nodeData.eoID).parentMapID
       if linkToMap then
         local eoIDname = C_Map.GetMapInfo(linkToMap).name
@@ -136,7 +136,7 @@ function pluginHandler:OnEnter(uiMapId, coord)
       end
     end
     
-    if nodeData.mnID then
+    if nodeData.mnID then -- outputs the Zone or Dungeonmap name and displays it in the tooltip
       local mnIDname = C_Map.GetMapInfo(nodeData.mnID).name
       if mnIDname then
         tooltip:AddDoubleLine("=>  " .. mnIDname, nil, nil, false)
