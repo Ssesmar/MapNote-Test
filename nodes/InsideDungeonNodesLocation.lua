@@ -359,8 +359,7 @@ if not db.show.HideMapNote then
             nodes[411][57698846] = { eoID = 409, mnID = 409, name = "", type = "Portal", showInZone = true } -- Maw of Shu'ma
             nodes[410][23324020] = { eoID = 409, mnID = 409, name = "", type = "Portal", showInZone = true } -- Maw of Go'rath
             nodes[412][52181359] = { eoID = 409, mnID = 409, name = "", type = "Portal", showInZone = true } -- Eye of Eternity
-            nodes[409][52786486] = { eoID = 409, mnID = 412, name = "", type = "Portal", showInZone = true } -- Dragon Soul o Eye of Eternity
-            nodes[409][49696016] = { eoID = 409, mnID = 412, name = "", type = "Portal", showInZone = true } -- Dragon Soul to Tanaris
+            nodes[409][50606029] = { eoID = 412, mnID = 412, name = "", type = "Portal", showInZone = true } -- Dragon Soul o Eye of Eternity
         --##########################################
         --#### Eastern Kingdom Dungeon Portals #####
         --##########################################

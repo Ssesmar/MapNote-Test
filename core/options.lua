@@ -100,8 +100,8 @@ ns.options = {
           width = 1.89,
           get = function() return ns.Addon.db.profile.show.ShiftWorld end,
           set = function(info, v) ns.Addon.db.profile.show.ShiftWorld = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
-            if not ns.Addon.db.profile.show.ShiftWorld then MNMMBIcon:Show("MNMiniMapButton") print(COLORED_ADDON_NAME .. "|cffffff00", L["Shift function"], "|cffff0000" .. L["is deactivated"]) else
-            if ns.Addon.db.profile.show.ShiftWorld then MNMMBIcon:Hide("MNMiniMapButton") print(COLORED_ADDON_NAME .. "|cffffff00", L["Shift function"], "|cff00ff00" .. L["is activated"]) end end end,
+            if not ns.Addon.db.profile.show.ShiftWorld then print(COLORED_ADDON_NAME .. "|cffffff00", L["Shift function"], "|cffff0000" .. L["is deactivated"]) else
+            if ns.Addon.db.profile.show.ShiftWorld then print(COLORED_ADDON_NAME .. "|cffffff00", L["Shift function"], "|cff00ff00" .. L["is activated"]) end end end,
           },
           General2 = {
           type = "header",

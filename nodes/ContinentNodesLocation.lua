@@ -86,7 +86,7 @@ if not db.show.HideMapNote then
                 nodes[71][65984960] = { mnID = 85, name = "", type = "HPortal", showInZone = true, hideOnContinent = true } -- Portal from Tanaris to Orgrimmar 
                 nodes[74][58152676] = { mnID = 85, name = "", type = "HPortal", showInZone = true, hideOnContinent = false } -- Portal from Tanaris to Orgrimmar 
                 nodes[12][59898422] = { mnID = 85, name = "", type = "HPortal", showInZone = true, hideOnContinent = false } -- Portal from Tanaris to Orgrimmar 
-                nodes[12][56122725] = { eoID = 85, mnID = 85, name = "", type = "HPortal", showInZone = true, hideOnContinent = false } -- Portal To Orgrimmar from Hyjal
+                nodes[12][56122725] = { mnID = 85, name = "", type = "HPortal", showInZone = true, hideOnContinent = false } -- Portal To Orgrimmar from Hyjal
               end
     
               if self.faction == "Alliance" then --was additionally added without the showEnemyFaction option because the two points would be on top of each other when showing EnemyFaction and would therefore not be clickable for one of the two factions
