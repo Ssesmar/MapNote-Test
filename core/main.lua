@@ -126,20 +126,15 @@ function pluginHandler:OnEnter(uiMapId, coord)
 	    tooltip:AddLine(v, nil, nil, nil, false)
 	  end
 
-    if nodeData.upID then --  outputs the Continent or Zone name and displays it in the tooltip
-      local linkToMap = C_Map.GetMapInfo(nodeData.upID).parentMapID
-      if linkToMap then
-        local upIDname = C_Map.GetMapInfo(linkToMap).name
-        if upIDname then
-          tooltip:AddDoubleLine("|T4578752:8:20|t" .. upIDname, nil, nil, false)
-        end
-      end
-    end
+    if nodeData.dnID then -- outputs the names we set and displays it in the tooltip
+      tooltip:AddDoubleLine(nodeData.dnID, nil, nil, false)
+  end
     
-    if nodeData.mnID then -- outputs the Zone or Dungeonmap name and displays it in the tooltip
+    if not nodeData.dnID and nodeData.mnID then -- outputs the Zone or Dungeonmap name and displays it in the tooltip
       local mnIDname = C_Map.GetMapInfo(nodeData.mnID).name
       if mnIDname then
-        tooltip:AddDoubleLine("|T4578752:8:20|t" .. mnIDname, nil, nil, false)
+        tooltip:AddDoubleLine(mnIDname, nil, nil, false)
+        --tooltip:AddDoubleLine("|T4578752:8:20|t" .. mnIDname, nil, nil, false)
       end 
     end
      	tooltip:Show()
@@ -315,7 +310,7 @@ local function setWaypoint(uiMapID, coord)
     local title = dungeon.name
     local x, y = HandyNotes:getXY(coord)
     waypoints[dungeon] = TomTom:AddWaypoint(uiMapID , x, y, {
-        title = dungeon.upID or dungeon.mnID or dungeon.name,
+        title = dungeon.dnID or dungeon.mnID or dungeon.name,
         persistent = nil,
         minimap = true,
         world = true
@@ -338,10 +333,6 @@ function pluginHandler:OnClick(button, pressed, uiMapId, coord)
 
       if (nodes[uiMapId] and nodes[uiMapId][coord] and nodes[uiMapId][coord].mnID) then
         WorldMapFrame:SetMapID(nodes[uiMapId][coord].mnID)
-      end
-
-      if (nodes[uiMapId] and nodes[uiMapId][coord] and nodes[uiMapId][coord].upID) then
-        WorldMapFrame:SetMapID(nodes[uiMapId][coord].upID)
       end
 
       local dungeonID
@@ -376,10 +367,6 @@ function pluginHandler:OnClick(button, pressed, uiMapId, coord)
 
       if (nodes[uiMapId] and nodes[uiMapId][coord] and nodes[uiMapId][coord].mnID) then
         WorldMapFrame:SetMapID(nodes[uiMapId][coord].mnID)
-      end
-
-      if (nodes[uiMapId] and nodes[uiMapId][coord] and nodes[uiMapId][coord].upID) then
-        WorldMapFrame:SetMapID(nodes[uiMapId][coord].upID)
       end
 
       local dungeonID
