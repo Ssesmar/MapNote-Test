@@ -118,7 +118,7 @@ if not db.show.HideMapNote then
                 nodes[85][50863628] = { mnID = 207, name = "", type = "HPortal", hideOnContinent = true, showInZone = true } -- Portal to Deepholm
                 nodes[85][49203647] = { mnID = 203, name = "", type = "HPortal", hideOnContinent = true, showInZone = true } -- Portal to Vashjir
                 nodes[207][50945311] = { mnID = 85, name = "", type = "HPortal", showInZone = true } -- Portal To Orgrimmar from Deepholm
-                nodes[198][63482447] = { mnID = 85, name = "", type = "HPortal", showInZone = true, hideOnContinent = true } -- Portal To Orgrimmar from Hyjal
+                nodes[198][63482447] = { mnID = 85, dnID = "test", name = "", type = "HPortal", showInZone = true, hideOnContinent = true } -- Portal To Orgrimmar from Hyjal
               end
     
               if self.faction == "Alliance" or db.show.EnemyFaction then
@@ -466,6 +466,8 @@ if not db.show.HideMapNote then
             nodes[504][33223269] = { mnID = 388, name = "", type = "Portal", hideOnContinent = true, showInZone = true } -- Portal from IsleoftheThunderKing to Shado-Pan Garrison
     
             if self.faction == "Horde" or db.show.EnemyFaction then
+              nodes[371][28501401] = { mnID = 85, name = "", type = "HPortal", showInZone = true, hideOnContinent = true } -- Portal from Jade Forest to Orgrimmar
+              nodes[379][85946249] = { mnID = 85, name = "", type = "HPortal", showInZone = true, hideOnContinent = true } -- Portal from Jade Forest to Orgrimmar
               nodes[424][59733518] = { mnID = 85, name = "", type = "HPortal", showInZone = true } -- Portal from Jade Forest to Orgrimmar
             end
           end

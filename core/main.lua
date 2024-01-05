@@ -128,7 +128,7 @@ function pluginHandler:OnEnter(uiMapId, coord)
 
     if nodeData.dnID then -- outputs the names we set and displays it in the tooltip
       tooltip:AddDoubleLine(nodeData.dnID, nil, nil, false)
-  end
+    end
     
     if not nodeData.dnID and nodeData.mnID then -- outputs the Zone or Dungeonmap name and displays it in the tooltip
       local mnIDname = C_Map.GetMapInfo(nodeData.mnID).name
@@ -195,19 +195,19 @@ do
 				end
 			end
 
-			local icon = icons[value.type]
+			local icon = icons[value.type] --show locked multi raids/dungeon
 			if ((anyLocked and db.graymultipleID) or (allLocked and not db.graymultipleID)) then
 				icon = icons["MultipleMgray"]
 			end
 
       if ((anyLocked and db.invertlockout) or (allLocked and not db.invertlockout) and db.uselockoutalpha) then
-				alpha = db.mapnoteAlpha
+				alpha = db.azerothAlpha
       else
-				alpha = db.mapnoteAlpha
+				alpha = db.azerothAlpha
 			end
 
 			if value.showInZone or t.minimapUpdate or not db.show.Azeroth then
-			  return state, nil, icon, db.mapnoteScale, alpha --set this to the same Scale as for iterCont, cause we only wanna use 1 Scale options at the moment
+			  return state, nil, icon, db.azerothScale, alpha
 			end
       
 			state, value = next(data, state)
@@ -233,7 +233,7 @@ do
 
 					local allLocked = true
 					local anyLocked = false
-          --
+          
 					local instances = { strsplit("\n", value.name) }
 					for i, v in pairs(instances) do
 						if (not assignedIDs[v] and not assignedIDs[lfgIDs[v]]) then
@@ -243,19 +243,19 @@ do
 						end
 					end
 
-          icon = icons[value.type]
+          icon = icons[value.type] --show locked raids/dungeon
 					if ((anyLocked and db.assignedgray) or (allLocked and db.assignedgray)) then   
 						icon = icons["Locked"]
 					end
           
           if ((anyLocked and db.invertlockout) or (allLocked and not db.invertlockout) and db.uselockoutalpha) then
-						alpha = db.mapnoteAlpha
+						alpha = db.continentAlpha
           else
-            alpha = db.mapnoteAlpha
+            alpha = db.continentAlpha
           end
 
 					if not value.hideOnContinent and db.show.Continent then
-						return state, zone, icon, db.mapnoteScale, alpha --set this to the same Scale as for iterCont, cause we only wanna use 1 Scale options at the moment 
+						return state, zone, icon, db.continentScale, alpha
           end
 
 					state, value = next(data, state)  -- Get next data
