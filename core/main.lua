@@ -206,7 +206,7 @@ do
 				alpha = db.azerothAlpha
 			end
 
-			if value.showInZone or t.minimapUpdate or not db.show.Azeroth then
+			if (value.showInZone or t.minimapUpdate) and db.show.Azeroth then
 			  return state, nil, icon, db.azerothScale, alpha
 			end
       
