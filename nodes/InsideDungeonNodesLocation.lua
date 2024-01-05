@@ -710,7 +710,7 @@ if not db.show.HideMapNote then
           --Dragon Soul
             nodes[409][49145903] = { mnID = 410, dnID = DUNGEON_FLOOR_DRAGONSOUL1, name = "", type = "TravelM", showInZone = true } -- Dragon Soul
             nodes[409][51055925] = { mnID = 411, dnID = DUNGEON_FLOOR_DRAGONSOUL2, name = "", type = "TravelM", showInZone = true } -- Dragon Soul
-            nodes[409][50145769] = { name = L["(on the tower)"], type = "TravelM", showInZone = true } -- Dragon Soul
+            nodes[409][50145769] = { dnID =  " " .. L["Appears first after a certain instance progress \n or requires a certain achievement"] .. "\n" .. " " .. "\n" .. "•", name = "", type = "TravelM", showInZone = true } -- Dragon Soul
         
         --###########################################
         --#### Eastern Kingdom Dungeon Transport ####
