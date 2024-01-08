@@ -4,8 +4,10 @@ local ADDON_NAME, ns = ...
 ns.defaults = {
     profile = {
         show = {
+        ClassicIcons = true,
         Azeroth = true,
         Continent = true,
+        ZoneMap = true,
         Dungeon = true,
         DungeonMap = true,
         EnemyFaction = true,
@@ -24,8 +26,9 @@ ns.defaults = {
   
       --1
         ShiftWorld = false,
-        --AzerothScale = 1.2,
-        --AzerothAlpha = 1,    
+        ClassicIcons = false,
+        mapnoteScale = 1.2,
+        mapnoteAlpha = 1,    
         hideAddon = false,
         hideMMB = false,
         journal = true,
@@ -37,10 +40,10 @@ ns.defaults = {
       
       --2 Azeroth map
         showAzeroth = true,
-        azerothScale = 1.2,
-        azerothAlpha = 1,
-        showAzerothRaid = true,
-        showAzerothDungeon = true,
+        --azerothScale = 1.2,
+        --azerothAlpha = 1,
+        showAzerothRaids = true,
+        showAzerothDungeons = true,
         showAzerothPassage = true,
         showAzerothMultiple = true,
         showAzerothPortals = true,
@@ -59,8 +62,8 @@ ns.defaults = {
   
       --3 Continent map
         showContinent = true,
-        continentScale = 1.2,
-        continentAlpha = 1,
+        --continentScale = 1.2,
+        --continentAlpha = 1,
         showContinentRaids = true,
         showContinentDungeons = true,
         showContinentPassage = true,
@@ -83,10 +86,36 @@ ns.defaults = {
         showContinentShadowlands = true,
         showContinentDragonIsles = true,
   
-      --4 Inside Dungeon Map
+      --3 Zone map
+        showZoneMap = true,
+        --zoneScale = 1.2,
+        --zoneAlpha = 1,
+        showZoneRaids = true,
+        showZoneDungeons = true,
+        showZonePassage = true,
+        showZoneMultiple = true,
+        showZonePortals = true,
+        showZoneZeppelins = true,
+        showZoneShips = true,
+        showZoneTransport = true,
+        showZoneOldVanilla = true,
+        showZoneOgreWaygates = true,
+        showZoneKalimdor = true,
+        showZoneEasternKingdom = true,
+        showZoneOutland = true,
+        showZoneNorthrend = true,
+        showZonePandaria = true,
+        showZoneDraenor = true,
+        showZoneBrokenIsles = true,
+        showZoneZandalar = true,
+        showZoneKulTiras = true,
+        showZoneShadowlands = true,
+        showZoneDragonIsles = true,
+        
+      --5 Inside Dungeon Map
         showDungeonMap = true,
-        dungeonScale = 1.2,
-        dungeonAlpha = 1,
+        --dungeonScale = 1.2,
+        --dungeonAlpha = 1,
         showDungeonExit = true,
         showDungeonPassage = true,
         showDungeonPortal = true,

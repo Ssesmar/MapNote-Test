@@ -25,8 +25,7 @@ if not db.show.HideMapNote then
           
     
         -- Azeroth Kalimdor Dungeons
-          if self.db.profile.showAzerothDungeon then
-            nodes[947][26635536] = { id = 240, type = "Dungeon", showInZone = true } -- Wailing Caverns
+          if self.db.profile.showAzerothDungeons then
             nodes[947][22724585] = { id = 227, type = "Dungeon", showInZone = true } -- Blackfathom Deeps
             nodes[947][27126301] = { id = 233, type = "Dungeon", showInZone = true } -- Razorfen Downs
             nodes[947][27416697] = { id = 241, type = "Dungeon", showInZone = true } -- Zul'Farrak
@@ -42,35 +41,52 @@ if not db.show.HideMapNote then
     
     
         -- Azeroth Kalimdor Raids
-          if self.db.profile.showAzerothRaid then
+          if self.db.profile.showAzerothRaids then
             nodes[947][27684669] = { id = 78, type = "Raid", showInZone = true } -- Firelands
-              nodes[947][28906346] = { id = 760,type = "Raid", showInZone = true } -- Onyxia's Lair
+            nodes[947][28906346] = { id = 760,type = "Raid", showInZone = true } -- Onyxia's Lair
             nodes[947][23887588] = { id = 74,type = "Raid", showInZone = true } -- Throne of the Four Winds
+            nodes[947][25327281] = { id = 1180, type = "Raid" } -- Ny'Alotha, The Waking City
           end
     
 
-          if self.db.profile.showAzerothPassage then
+        -- Azeroth Kalimdor Passage
+          if self.db.profile.showAzerothPassage and not self.db.profile.show.ClassicIcons then
+            nodes[947][26635536] = { id = 240, type = "PassageDungeonM", showInZone = true } -- Wailing Caverns
+            nodes[947][30006911] = { id = { 187, 279, 255, 251, 750, 184, 185, 186 }, type = "PassageDungeonRaidMultiM", showInZone = true } -- Dragon Soul, The Battle for Mount Hyjal, The Culling of Stratholme, Black Morass, Old Hillsbrad Foothills, End Time, Well of Eternity, Hour of Twilight Heroic
             nodes[947][23716144] = { id = 230, lfgid = 34, type = "PassageDungeonM", showInZone = true } -- Dire Maul - Warpwood Quarter
+          end
+
+
+        -- Azeroth Kalimdor ClassicIcons 
+          if self.db.profile.show.ClassicIcons then
+
+            if self.db.profile.showAzerothMultiple then
+              nodes[947][30006911] = { id = { 187, 279, 255, 251, 750, 184, 185, 186 }, type = "MultipleM", showInZone = true } -- Dragon Soul, The Battle for Mount Hyjal, The Culling of Stratholme, Black Morass, Old Hillsbrad Foothills, End Time, Well of Eternity, Hour of Twilight Heroic
+            end
+
+            if self.db.profile.showAzerothDungeons then
+              nodes[947][26635536] = { id = 240, type = "Dungeon", showInZone = true } -- Wailing Caverns
+              nodes[947][23716144] = { id = 230, lfgid = 34, type = "Dungeon", showInZone = true } -- Dire Maul - Warpwood Quarter
+            end            
           end
 
 
         -- Azeroth Kalimdor Multiple
           if self.db.profile.showAzerothMultiple then
             nodes[947][21116955] = { id = { 744, 743 }, type = "MultipleR",showInZone = true } -- Temple of Ahn'Qiraj, Ruins of Ahn'Qiraj
-            nodes[947][30006911] = { id = { 187, 279, 255, 251, 750, 184, 185, 186 }, type = "MultipleM", showInZone = true } -- Dragon Soul, The Battle for Mount Hyjal, The Culling of Stratholme, Black Morass, Old Hillsbrad Foothills, End Time, Well of Eternity, Hour of Twilight Heroic
           end
     
-    
+
         -- Azeroth Kalimdor Portals
           if self.db.profile.showAzerothPortals then
     
             if self.faction == "Horde" then --was additionally added without the showEnemyFaction option because the two points would be on top of each other when showing EnemyFaction and would therefore not be clickable for one of the two factions
-              nodes[947][22226727] = { mnID = 862, name = "", type = "Portal", showInZone = true } -- Portal from Silithus to Zandalar
+              nodes[947][22066626] = { mnID = 862, name = "", type = "Portal", showInZone = true } -- Portal from Silithus to Zandalar
               nodes[947][30457087] = { mnID = 85, name = "", type = "HPortal", showInZone = true, hideOnContinent = false } -- Portal from Tanaris to Orgrimmar         
             end
     
             if self.faction == "Alliance" then --was additionally added without the showEnemyFaction option because the two points would be on top of each other when showing EnemyFaction and would therefore not be clickable for one of the two factions
-              nodes[947][22226727] = { mnID = 1161, name = "", type = "Portal", showInZone = true } -- Portal from Silithus to Boralus
+              nodes[947][22066626] = { mnID = 1161, name = "", type = "Portal", showInZone = true } -- Portal from Silithus to Boralus
               nodes[947][30457087] = { mnID = 84,  name = "" , type = "APortal", showInZone = true, hideOnContinent = false } -- Portal from Tanaris to Stormwind City          
             end
     
@@ -116,33 +132,46 @@ if not db.show.HideMapNote then
     
     
         -- Azeroth Eastern Kingdom Dungeons
-          if self.db.profile.showAzerothDungeon then
+          if self.db.profile.showAzerothDungeons then
             nodes[947][92813801] = { id = 77, type = "Dungeon", showInZone = true } -- Zul'Aman
             nodes[947][91972614] = { id = 249, type = "Dungeon", showInZone = true } -- Magisters' Terrace
             nodes[947][83204721] = { id = 64, type = "Dungeon", showInZone = true } -- Shadowfang Keep
             nodes[947][88634402] = { id = 246, type = "Dungeon", showInZone = true } -- Scholomance
             nodes[947][89593995] = { id = 236, lfgid = 40,type = "Dungeon", showInZone = true } -- Stratholme
-            nodes[947][84445688] = { id = 231, type = "Dungeon", showInZone = true } -- Gnomeregan
             nodes[947][86767011] = { id = 76, type = "Dungeon", showInZone = true } -- Zul'Gurub
-            nodes[947][90366709] = { id = 237, type = "Dungeon", showInZone = true } -- The Temple of Atal'hakkar
-            nodes[947][83226850] = { id = 63, type = "Dungeon", showInZone = true } -- Deadmines
             nodes[947][84056387] = { id = 238, type = "Dungeon", showInZone = true } -- The Stockade
             nodes[947][79985920] = { id = 65, type = "Dungeon", showInZone = true } -- Throne of Tides
+            nodes[947][89945460] = { id = 71, type = "Dungeon", showInZone = true } -- Grim Batol
           end
     
     
         -- Azeroth Eastern Kingdom Raids
-          if self.db.profile.showAzerothRaid then
+          if self.db.profile.showAzerothRaids then
             nodes[947][80455260] = { id = 75, type = "Raid", showInZone = true } -- Baradin Hold
             nodes[947][90652724] = { id = 752, type = "Raid", showInZone = true } -- Sunwell Plateau
             nodes[947][90655621] = { id = 72, type = "Raid", showInZone = true } -- The Bastion of Twilight
-            nodes[947][89945460] = { id = 71, type = "Dungeon", showInZone = true } -- Grim Batol
           end
     
-          -- Azeroth Eastern Kingdom Passage
-          if self.db.profile.showAzerothPassage then
+        -- Azeroth Eastern Kingdom Passage
+          if self.db.profile.showAzerothPassage and not self.db.profile.show.ClassicIcons then
+            nodes[947][84445688] = { id = 231, type = "PassageDungeonM", showInZone = true } -- Gnomeregan
+            nodes[947][90366709] = { id = 237, type = "PassageDungeonM", showInZone = true } -- The Temple of Atal'hakkar
+            nodes[947][83226850] = { id = 63, type = "PassageDungeonM", showInZone = true } -- Deadmines
             nodes[947][90503929] = { id = 236, lfgid = 274,type = "PassageDungeonM", showInZone = true } -- Stratholme Service Entrance
             nodes[947][89856028] = { id = 239, name = "", type = "PassageDungeonM", showInZone = true } -- Uldaman (Secondary Entrance)
+          end
+
+        -- Azeroth Eastern Kingdom ClassicIcons
+          if self.db.profile.show.ClassicIcons then
+
+            if self.db.profile.showAzerothDungeons then
+              nodes[947][84445688] = { id = 231, type = "Dungeon", showInZone = true } -- Gnomeregan
+              nodes[947][90366709] = { id = 237, type = "Dungeon", showInZone = true } -- The Temple of Atal'hakkar
+              nodes[947][83226850] = { id = 63, type = "Dungeon", showInZone = true } -- Deadmines              
+              nodes[947][89856028] = { id = 239, name = "", type = "Dungeon", showInZone = true } -- Uldaman (Secondary Entrance)
+              nodes[947][90503929] = { id = 236, lfgid = 274,type = "Dungeon", showInZone = true } -- Stratholme Service Entrance
+            end
+
           end
 
         -- Azeroth Eastern Kingdom Multiple
@@ -217,7 +246,7 @@ if not db.show.HideMapNote then
     
     
         -- Azeroth Northrend Dungeons
-          if self.db.profile.showAzerothDungeon then
+          if self.db.profile.showAzerothDungeons then
             nodes[947][53111487] = { id = 273, type = "Dungeon", showInZone = true } -- Drak'Tharon Keep
             nodes[947][56481047] = { id = 274, type = "Dungeon", showInZone = true } -- Gundrak
             nodes[947][50781352] = { id = 283, type = "Dungeon", showInZone = true } -- The Violet Hold
@@ -225,7 +254,7 @@ if not db.show.HideMapNote then
     
     
         -- Azeroth Northrend Raids
-          if self.db.profile.showAzerothRaid then
+          if self.db.profile.showAzerothRaids then
             nodes[947][52131713] = { id = 754, type = "Raid", showInZone = true } -- Naxxramas
             nodes[947][46291352] = { id =  753,  type = "Raid", showInZone = true } -- Vault of Archavon
           end
@@ -284,7 +313,7 @@ if not db.show.HideMapNote then
         if self.db.profile.showAzerothPandaria then
     
         -- Azeroth Pandaria Dungeons
-          if self.db.profile.showAzerothDungeon then
+          if self.db.profile.showAzerothDungeons then
             nodes[947][53138189] = { id = 313, type = "Dungeon", showInZone = true } -- Temple of the Jade Serpent
             nodes[947][47568563] = { id = 302, type = "Dungeon", showInZone = true } -- Stormstout Brewery
             nodes[947][45737584] = { id = 312, type = "Dungeon", showInZone = true } -- Shado-Pan Monastery
@@ -294,7 +323,7 @@ if not db.show.HideMapNote then
     
     
         -- Azeroth Pandaria Raids
-          if self.db.profile.showAzerothRaid then
+          if self.db.profile.showAzerothRaids then
             nodes[947][47857509] = { id = 317, type = "Raid", showInZone = true } -- Mogu'shan Vaults
             nodes[947][43598371] = { id = 330, type = "Raid", showInZone = true } -- Heart of Fear
             nodes[947][41907121] = { id = 362, type = "Raid", showInZone = true } -- Throne of Thunder
@@ -327,7 +356,7 @@ if not db.show.HideMapNote then
         if self.db.profile.showAzerothBrokenIsles then
     
         -- Azeroth Legion Dungeons
-          if self.db.profile.showAzerothDungeon then
+          if self.db.profile.showAzerothDungeons then
             nodes[947][58804606] = { id = 777, type = "Dungeon", showInZone = true } -- Assault on Violet Hold
             nodes[947][66413395] = { id = 945, type = "Dungeon", showInZone = true } -- Seat of the Triumvirate
             nodes[947][55944783] = { id = 707, type = "Dungeon", showInZone = true } -- Vault of the Wardens
@@ -339,7 +368,7 @@ if not db.show.HideMapNote then
     
     
         -- Azeroth Legion Raids    
-          if self.db.profile.showAzerothRaid then
+          if self.db.profile.showAzerothRaids then
             nodes[947][65603682] = { id = 946, type = "Raid", showInZone = true } -- Antorus, the Burning Thron
           end
     
@@ -383,7 +412,7 @@ if not db.show.HideMapNote then
         if self.db.profile.showAzerothZandalar then  
     
         -- Azeroth Zandalar Dungeons
-          if self.db.profile.showAzerothDungeon then
+          if self.db.profile.showAzerothDungeons then
             nodes[947][54116471] = { id = 968, type = "Dungeon", showInZone = true } -- Atal'Dazar
             nodes[947][52726453] = { id = 1041, type = "Dungeon", showInZone = true } -- Kings' Rest
             nodes[947][52725672] = { id = 1030, type = "Dungeon", showInZone = true } -- Temple of Sethraliss    
@@ -399,7 +428,7 @@ if not db.show.HideMapNote then
     
     
         -- Azeroth Zandalar Raids
-          if self.db.profile.showAzerothRaid then
+          if self.db.profile.showAzerothRaids then
             nodes[947][60705670] = { id = 1179, type = "Raid", showInZone = true } -- The Eternal Palace
             
             if self.faction == "Horde" or db.show.EnemyFaction then
@@ -446,7 +475,7 @@ if not db.show.HideMapNote then
         if self.db.profile.showAzerothKulTiras then
     
         -- Azeroth Kul Tiras Dungeons 
-          if self.db.profile.showAzerothDungeon then  --Dungeons
+          if self.db.profile.showAzerothDungeons then  --Dungeons
             nodes[947][66824486] = { id = 1178, type = "Dungeon", showInZone = true } -- Operation: Mechagon 
             nodes[947][74365363] = { id = 1001, type = "Dungeon", showInZone = true } -- Freehold 
             nodes[947][68354901] = { id = 1021, type = "Dungeon", showInZone = true } -- Waycrest Manor 
@@ -456,7 +485,7 @@ if not db.show.HideMapNote then
     
     
         -- Azeroth Kul Tiras Raids
-          if self.db.profile.showAzerothRaid then 
+          if self.db.profile.showAzerothRaids then 
             nodes[947][74404422] = { id = 1177, type = "Raid", showInZone = true } -- Crucible of Storms
           end
     
@@ -512,7 +541,7 @@ if not db.show.HideMapNote then
         if self.db.profile.showAzerothDragonIsles then
               
         -- Azeroth Dragon Isles Dungeons
-            if self.db.profile.showAzerothDungeon then
+            if self.db.profile.showAzerothDungeons then
             nodes[947][77241864] = { id = 1202, type = "Dungeon", showInZone = true } -- Ruby Life Pools
             nodes[947][74891765] = { id = 1199, type = "Dungeon", showInZone = true } -- Neltharus 
             nodes[947][75192161] = { id = 1198, type = "Dungeon", showInZone = true } -- The Nokhud Offensive 
@@ -525,20 +554,35 @@ if not db.show.HideMapNote then
     
     
         -- Azeroth Dragon Isles Raids     
-          if self.db.profile.showAzerothRaid then
+          if self.db.profile.showAzerothRaids then
             nodes[947][81372023] = { id = 1200, type = "Raid", showInZone = true } -- Vault of the Incarnates 
             nodes[947][85002623] = { id = 1208, type = "Raid", showInZone = true } -- Aberrus, the Shadowed Crucible 
-            nodes[947][71222297] = { id = 1207, type = "PassageRaidM", showInZone = true } -- Amirdrassil, the Dream's Hope
           end
     
+
+         -- Azeroth Dragon Isles Passage 
+          if self.db.profile.showAzerothPassage and not self.db.profile.show.ClassicIcons then
+            nodes[947][71222297] = { id = 1207, type = "PassageRaidM", showInZone = true } -- Amirdrassil, the Dream's Hope  
+          end
+
+
+        -- Azeroth Dragon Isles ClassicIcons  
+          if self.db.profile.show.ClassicIcons then
+
+            if self.db.profile.showAzerothRaids then
+              nodes[947][71222297] = { id = 1207, type = "Raid", showInZone = true } -- Amirdrassil, the Dream's Hope
+            end
+
+          end
     
+
         -- Azeroth Dragon Isles Portals
           if self.db.profile.showAzerothPortals then
             nodes[947][72202222] = { mnID = 2200, name = "", type = "Portal", showInZone = true } -- Portal to The Emerald Dream 
             nodes[947][77692120] = { name = L["The Timeways"], type = "Portal", showInZone = true } --  Portal from Valdrakken to Timeways
           end
     
-    
+
         -- Azeroth Dragon Isles Zeppelin
           if self.db.profile.showAzerothZeppelins then
     

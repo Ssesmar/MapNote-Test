@@ -57,6 +57,7 @@ if not db.show.HideMapNote then
             nodes[213][60990723] = { mnID = 86, name = "", type = "Exit", showInZone = true } -- Ragefire Chasm
             nodes[221][45131069] = { mnID = 63, name = "", type = "Exit", showInZone = true } -- Blackfathom Deeps
             nodes[367][24579004] = { mnID = 198, name = "", type = "Exit", showInZone = true } -- Firelands
+            nodes[1580][52648361] = { mnID = 1527, name = "", type = "Exit", showInZone = true } -- Ny'Alotha, The Waking City
         --####################################
         --#### Eastern Kingdom Exit Notes ####
         --####################################
