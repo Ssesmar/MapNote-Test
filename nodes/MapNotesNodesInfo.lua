@@ -15,6 +15,8 @@ nodes[947] = { } -- Azeroth
 --############################
 
 -- Azeroth/Continent map nodes
+nodes[1]  = { } -- Durotar
+nodes[7]  = { } -- Mulgore
 nodes[10] = { } -- Barrens    
 nodes[11] = { } -- Wailing Caverns
 nodes[12] = { } -- Kalimdor 
@@ -31,8 +33,9 @@ nodes[74] = { } -- Timeless Tunnel
 nodes[75] = { } -- Caverns of Time lower half
 nodes[81] = { } -- Silithus    
 nodes[85] = { } -- Orgrimmar 
+nodes[88] = { } -- Thunder Bluff
 nodes[199] = { } -- Southern Barrens  
-nodes[327] = { } -- AhnQiraj The Fallen Kingdom  
+nodes[327] = { } -- AhnQiraj The Fallen Kingdom 
 -- Dungeon map nodes
 nodes[130] = { } -- The Culling of Stratholme
 nodes[131] = { } -- Stratholme City
@@ -77,6 +80,7 @@ nodes[409] = { } -- Dragon Soul
 nodes[410] = { } -- Maw of Go'rath
 nodes[411] = { } -- Maw of Shu'ma
 nodes[412] = { } -- Eye of Eternity
+nodes[1580] = { } -- AhnQiraj The Fallen Kingdom 
 
 --############################
 --###### Eastern Kingdom #####
@@ -206,7 +210,8 @@ nodes[616] = { } -- Upper Blackrock Spire - Inside Dungeon Map
 nodes[617] = { } -- Upper Blackrock Spire - Inside Dungeon Map
 nodes[617] = { } -- Upper Blackrock Spire - Inside Dungeon Map
 nodes[618] = { } -- Upper Blackrock Spire - Inside Dungeon Map
-nodes[814] = { } -- Return to Karazhan
+nodes[809] = { } -- Return to Karazhan - Inside Dungeon Map
+nodes[814] = { } -- Return to Karazhan - Inside Dungeon Map
 nodes[2071] = { } -- Uldaman Legacy of Tyr
 
 --############################
@@ -401,7 +406,6 @@ nodes[567] = { } -- Siege of Orgrimmar - Inside Dungeon Map
 --############################
 
 -- Azeroth/Continent map nodes
-nodes[1]  = { } -- Durotar
 nodes[463] = { } -- Echo Isles
 nodes[525] = { } -- FrostfireRidge
 nodes[543] = { } -- Gorgrond
@@ -572,35 +576,6 @@ nodes[2097] = { } -- Algeth'ar Academy
 nodes[2190] = { } -- Dawn of the Infinite
 nodes[2119] = { } -- Vault of the Incarnates
 nodes[2166] = { } -- Aberrus, the Shadowed Crucible
-nodes[2232] = { } -- Amirdrassil
-
-
---ns.lfgIDs = {
---
---    [63]=326, [64]=327, [66]=323, [65]=1150, [67]=1148, [68]=1147, [69]=1151, [70]=321, [71]=1149, [72]=316, [73]=314, [74]=318, [75]=329, [76]=334, [77]=340, [78]=362,
---
---    [186]=439, [184]=1152, [185]=437, [187]=448,
---
---    [226]=4, [227]=10, [229]=32, [231]=14, [233]=20, [234]=16, [236]=1458, [239]=22, [240]=1, [241]=24, [246]=472, [247]=178, [248]=188, [249]=1154,
---
---    [250]=1013, [252]=180, [253]=181, [254]=1011, [257]=191, [258]=192, [261]=185, [271]=1016, [272]=241, [273]=215, [274]=1017, [275]=1018,
---
---    [276]=256, [277]=213, [278]=1153, [279]=210, [280]=252, [281]=1019, [282]=1296, [283]=221, [284]=249, [285]=242, [286]=1020,
---
---    [302]=1466, [303]=1464, [311]=473, [312]=1468, [313]=1469, [316]=474, [317]=532, [320]=834, [321]=1467, [324]=1465, [330]=534, [369]=766, [362]=634, [385]=1005,
---
---    [457]=900, [476]=1010, [477]=897,
---
---    [536]=1006, [537]=1009, [547]=1008, [556]=1003, [558]=1007, [559]=1004,
---
---    [669]=989,
---
---    [707]=1044, [716]=1175, [721]=1473, [726]=1190, [727]=1192, [740]=1205, [741]=48, [742]=50, [743]=160, [744]=161, [745]=175, [746]=177, [747]=176, [748]=194, [749]=193,
---
---    [751]=196, [753]=240, [754]=227, [755]=238, [756]=1423, [757]=248, [758]=280, [759]=244, [760]=257, [761]=1502, [762]=1202, [767]=1207, [768]=1350, [777]=1209, [786]=1353,
---
---    [800]=1319, [861]=1439, [875]=1527,
---
---    [900]=1488,
---    }
+nodes[2232] = { } -- Amirdrassil - Inside Dungeon Map
+nodes[2238] = { } -- Amirdrassil - Inside Dungeon Map
 end
