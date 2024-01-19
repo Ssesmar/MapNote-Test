@@ -1,21 +1,9 @@
---## Interface: 100200
---## Title: HandyNotes: |cffff0000Map|r|cff00ccffNotes|r
---## Version: 1.7.0
---## Notes: Show different icons (location for: Raids and Dungeons Entrances, Portals, Ships, Zeppelin, Exits and Passage) on every map!
---## Author: BadBoyBarny
---## RequiredDeps: HandyNotes
---## X-Curse-Project-ID: 912524
---## IconTexture: Interface\AddOns\HandyNotes_MapNotes\Images\MNL4
---## SavedVariables: HandyNotes_MapNotesDB, MNMiniMapButtonDB
-
 local ADDON_NAME, ns = ...
 
 local HandyNotes = LibStub("AceAddon-3.0"):GetAddon("HandyNotes", true)
 if not HandyNotes then return end
 
 local ADDON_NAME = "HandyNotes_MapNotes"
-local iconLink = "Interface\\Addons\\" .. ADDON_NAME .. "\\images\\"
-local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
 local MapNotesMiniButton = LibStub("AceAddon-3.0"):NewAddon("MNMiniMapButton", "AceConsole-3.0")  
 local MNMMBIcon = LibStub("LibDBIcon-1.0", true)
 
@@ -26,49 +14,6 @@ local minimap = { }
 local lfgIDs = { }
 local assignedIDs = { }
 
-
-local icons = { 
-["Dungeon"] = "Interface\\MINIMAP\\Dungeon",
-["Raid"] = "Interface\\MINIMAP\\Raid",
-["PassageDungeonRaidM"] = iconLink .. "PassageDungeonM",
-["PassageDungeonM"] = iconLink .. "PassageDungeonM",
-["PassageRaidM"] = iconLink .. "passageRaidM",
-["PassageDungeonL"] = iconLink .. "PassageDungeonL",
-["PassageRaidL"] = iconLink .. "passageRaidL",
-["PassageDungeonRaidMultiM"] = iconLink .. "PassageDungeonRaidMultiM",
-["PassageDungeonMultiM"] = iconLink .. "PassageDungeonMultiM",
-["PassageRaidMultiM"] = iconLink .. "passageRaidMultiM",
-["TravelL"] = iconLink .. "travelL",
-["TravelM"] = iconLink .. "travelm",
-["VDungeon"] = iconLink .. "vanilladungeons",
-["VRaid"] = iconLink .. "vanilladungeons",
-["VKey1"] = iconLink .. "vkey1",
-["MultipleM"] = iconLink .. "multipleM",
-["MultipleD"] = iconLink .. "multipleD",
-["MultipleR"] = iconLink .. "multipleR",
-["MultipleMgray"] = iconLink .. "multipleMgray",
-["Locked"] = iconLink .. "gray",
-["Zeppelin"] = iconLink .. "zeppelin",
-["HZeppelin"] = iconLink .. "zeppelinH",
-["AZeppelin"] = iconLink .. "zeppelinA",
-["Portal"] = iconLink .. "portal",
-["HPortal"] = "interface/minimap/vehicle-hordemageportal",
-["APortal"] = "Interface/Minimap/Vehicle-AllianceMagePortal",
-["Ship"] = iconLink .. "ship",
-["HShip"] = iconLink .. "shipH",
-["AShip"] = iconLink .. "shipA",
-["Exit"] = "interface/TARGETINGFRAME/UI-RaidTargetingIcon_7",
-["PassageUpL"] = iconLink .. "passageupL",
-["PassageDownL"] = iconLink .. "passagedownL",
-["PassageRightL"] = iconLink .. "passagerightL",
-["PassageLeftL"] = iconLink .. "passageleftL",
-["PassageUpM"] = iconLink .. "passageupM",
-["PassageDownM"] = iconLink .. "passagedownM",
-["PassageRightM"] = iconLink .. "passagerightM",
-["PassageLeftM"] = iconLink .. "passageleftM",
-["TransportHelper"] = iconLink .. "tport",
-["OgreWaygate"] = "Interface/Minimap/Vehicle-AllianceWarlockPortal",
-}
 
 function MapNotesMiniButton:OnInitialize() --mmb.lua
   self.db = LibStub("AceDB-3.0"):New("MNMiniMapButtonDB", { profile = { minimap = { hide = false, }, }, }) 
@@ -93,16 +38,12 @@ local pluginHandler = { }
 function pluginHandler:OnEnter(uiMapId, coord)
   local nodeData = nil
 
-	if (minimap[uiMapId] and minimap[uiMapId][coord]) then
-	  nodeData = minimap[uiMapId][coord]
-	end
-
 	if (nodes[uiMapId] and nodes[uiMapId][coord]) then
 	  nodeData = nodes[uiMapId][coord]
 	end
-	
+
 	if (not nodeData) then return end
-	
+
 	local tooltip = self:GetParent() == WorldMapButton and WorldMapTooltip or GameTooltip
 	if ( self:GetCenter() > UIParent:GetCenter() ) then -- compare X coordinate
 	  tooltip:SetOwner(self, "ANCHOR_LEFT")
@@ -164,7 +105,7 @@ function pluginHandler:OnEnter(uiMapId, coord)
   end
 end
 
-function pluginHandler:OnLeave(uiMapID, coord)
+function pluginHandler:OnLeave(uiMapID, coord, tooltip)
     if self:GetParent() == WorldMapButton then
       WorldMapTooltip:Hide()
     else
@@ -172,29 +113,28 @@ function pluginHandler:OnLeave(uiMapID, coord)
     end
 end
 
-
 do
 	local tablepool = setmetatable({}, {__mode = 'k'})
-	
-	local function deepCopy(object)
-		local lookup_table = {}
-		local function _copy(object)
-			if type(object) ~= "table" then
-				return object
-			elseif lookup_table[object] then
-				return lookup_table[object]
-			end
 
-			local new_table = {}
-			  lookup_table[object] = new_table
-			for index, value in pairs(object) do
-				new_table[_copy(index)] = _copy(value)
-			end
-
-			return setmetatable(new_table, getmetatable(object))
-		end
-			return _copy(object)
-	end
+--	local function deepCopy(object)
+--		local lookup_table = {}
+--		local function _copy(object)
+--			if type(object) ~= "table" then
+--				return object
+--			elseif lookup_table[object] then
+--				return lookup_table[object]
+--			end
+--
+--			local new_table = {}
+--			  lookup_table[object] = new_table
+--			for index, value in pairs(object) do
+--				new_table[_copy(index)] = _copy(value)
+--			end
+--
+--			return setmetatable(new_table, getmetatable(object))
+--		end
+--			return _copy(object)
+--	end
 
 	local function iter(t, prestate)
 		if not t then return end
@@ -204,7 +144,7 @@ do
     
 		while value do
 			local alpha
-			local icon = icons[value.type]
+			local icon = ns.icons[value.type]
 
 			local allLocked = true
 			local anyLocked = false
@@ -219,9 +159,9 @@ do
 					anyLocked = true
 				end
 			end
-      
-        if (anyLocked and db.graymultipleID) or ((allLocked and not db.graymultipleID) and db.assignedgray) then  
-        icon = icons["Locked"]
+     
+      if (anyLocked and db.graymultipleID) or ((allLocked and not db.graymultipleID) and db.assignedgray) then  
+        icon = ns.icons["Locked"]
       end
 
       if (anyLocked and db.invertlockout) or ((allLocked and not db.invertlockout) and db.uselockoutalpha) then
@@ -230,7 +170,7 @@ do
 				alpha = db.mapnoteAlpha
 			end
 
-			if (value.showInZone or t.minimapUpdate) then
+			if (value.showInZone) then
 			  return state, nil, icon, db.mapnoteScale, alpha
 			end
       
@@ -242,7 +182,6 @@ do
 
 	local function iterCont(t, prestate)
 		if not t then return end
-    --if not db.show.Continent then return end
 
     local state, value
   	local zone = t.C[t.Z]
@@ -255,7 +194,7 @@ do
 
 				while state do -- Have we reached the end of this zone?
           local alpha
-          local icon = icons[value.type]
+          local icon = ns.icons[value.type]
           
 					local allLocked = true
 					local anyLocked = false
@@ -270,7 +209,7 @@ do
 					end
 
           if (anyLocked and db.graymultipleID) or ((allLocked and not db.graymultipleID) and db.assignedgray) then   
-						icon = icons["Locked"]
+						icon = ns.icons["Locked"]
 					end
 
           if (anyLocked and db.invertlockout) or ((allLocked and not db.invertlockout) and db.uselockoutalpha) then
@@ -298,7 +237,8 @@ do
 
 	function pluginHandler:GetNodes2(uiMapId, isMinimapUpdate, coord)
     --print(uiMapId)
-		local C = deepCopy(HandyNotes:GetContinentZoneList(uiMapId)) -- Is this a continent?
+		--local C = deepCopy(HandyNotes:GetContinentZoneList(uiMapId)) -- Is this a continent?
+    local C = HandyNotes:GetContinentZoneList(uiMapId) -- Is this a continent?
 		if C then
 			table.insert(C, uiMapId)
 			local tbl = next(tablepool) or {}
@@ -357,6 +297,7 @@ function pluginHandler:OnClick(button, pressed, uiMapId, coord)
       local mnID = nodes[uiMapId][coord].mnID
       if mnID then
          WorldMapFrame:SetMapID(mnID)
+         --self:SetFrameLevel(WorldMapFrame:GetFrameLevel() + 20)
       if (not EncounterJournal_OpenJournal) then 
         UIParentLoadAddOn('Blizzard_EncounterJournal')
       end
@@ -372,9 +313,9 @@ function pluginHandler:OnClick(button, pressed, uiMapId, coord)
       end
 
       if nodes[uiMapId][coord].mnID and nodes[uiMapId][coord].id then
-        mnID = nodes[uiMapId][coord].mnID[1] --change id function to mnID function
+        mnID = nodes[uiMapId][coord].mnID[1] --change id function to multi mnID function
       else
-        mnID = nodes[uiMapId][coord].mnID
+        mnID = nodes[uiMapId][coord].mnID --change id function to mnID function
       end
 
       if (not dungeonID) then return end
@@ -405,6 +346,7 @@ function pluginHandler:OnClick(button, pressed, uiMapId, coord)
       local mnID = nodes[uiMapId][coord].mnID
       if mnID then
          WorldMapFrame:SetMapID(mnID)
+         --self:SetFrameLevel(WorldMapFrame:GetFrameLevel() + 20)
       if (not EncounterJournal_OpenJournal) then 
         UIParentLoadAddOn('Blizzard_EncounterJournal')
       end
@@ -443,6 +385,7 @@ ns.Addon = Addon
 Addon:RegisterEvent("PLAYER_LOGIN")
 Addon:SetScript("OnEvent", function(self, event, ...) return self[event](self, ...)end)
 
+
 local function updateStuff()
   updateAssignedID()
   HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
@@ -452,10 +395,8 @@ function Addon:PLAYER_ENTERING_WORLD()
   if (not self.faction) then
       self.faction = UnitFactionGroup("player")
       self:PopulateTable()
-      self:PopulateMinimap()
       self:ProcessTable()
   end
-
     updateAssignedID()
     updateStuff()
 end
@@ -475,29 +416,10 @@ function Addon:PLAYER_LOGIN()
   end
 end
 
-function Addon:PopulateMinimap()
-   --print('Populating minimap')
-    local temp = { }
-    for k,v in pairs(nodes) do
-        if (minimap[k]) then
-          --print('Minimap already exists')
-          for a,b in pairs(minimap[k]) do -- Looks at the nodes we already have on the minimap and marks them down in a temp table
-            temp[a] = true
-          end
-          for c,d in pairs(v) do -- Looks at the nodes in the normal node table and if they are also not in the temp table then add them to the minimap
-              if (not temp[c] and not d.hideOnMinimap) then
-                minimap[k][c] = d
-	            end
-            end
-        end
-    end
-end
-
 
 function Addon:PopulateTable()
   ns.nodes = nodes
   table.wipe(nodes)
-  table.wipe(minimap)
   ns.LoadMapNotesNodesInfo() -- load nodes\MapNotesNodesInfo.lua
   ns.LoadAzerothNodesLocationInfo(self) -- load nodes\AzerothNodeslocation.lua
   ns.LoadContinentNodesLocationinfo(self) -- load nodes\ContinentNodesLocation.lua
@@ -532,22 +454,8 @@ end
 
 function Addon:ProcessTable()
   table.wipe(lfgIDs)
+  ns.lfgIDs = lfgIDs
 
-  lfgIDs = {
-    [63]=326, [64]=327, [66]=323, [65]=1150, [67]=1148, [68]=1147, [69]=1151, [70]=321, [71]=1149, [72]=316, [73]=314, [74]=318, [75]=329, [76]=334, [77]=340, [78]=362,
-    [186]=439, [184]=1152, [185]=437, [187]=448,
-    [226]=4, [227]=10, [229]=32, [231]=14, [233]=20, [234]=16, [236]=1458, [239]=22, [240]=1, [241]=24, [246]=472, [247]=178, [248]=188, [249]=1154,
-    [250]=1013, [252]=180, [253]=181, [254]=1011, [257]=191, [258]=192, [261]=185, [271]=1016, [272]=241, [273]=215, [274]=1017, [275]=1018,
-    [276]=256, [277]=213, [278]=1153, [279]=210, [280]=252, [281]=1019, [282]=1296, [283]=221, [284]=249, [285]=242, [286]=1020,
-    [302]=1466, [303]=1464, [311]=473, [312]=1468, [313]=1469, [316]=474, [317]=532, [320]=834, [321]=1467, [324]=1465, [330]=534, [369]=766, [362]=634, [385]=1005,
-    [457]=900, [476]=1010, [477]=897,
-    [536]=1006, [537]=1009, [547]=1008, [556]=1003, [558]=1007, [559]=1004,
-    [669]=989,
-    [707]=1044, [716]=1175, [721]=1473, [726]=1190, [727]=1192, [740]=1205, [741]=48, [742]=50, [743]=160, [744]=161, [745]=175, [746]=177, [747]=176, [748]=194, [749]=193,
-    [751]=196, [753]=240, [754]=227, [755]=238, [756]=1423, [757]=248, [758]=280, [759]=244, [760]=257, [761]=1502, [762]=1202, [767]=1207, [768]=1350, [777]=1209, [786]=1353,
-    [800]=1319, [861]=1439, [875]=1527,
-    [900]=1488,
-  }
   function Addon:UpdateAlter(id, name)
     if (lfgIDs[id]) then
       local lfgIDs1, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, lfgIDs2 = GetLFGDungeonInfo(lfgIDs[id])
@@ -570,18 +478,9 @@ function Addon:ProcessTable()
       self:UpdateInstanceNames(u)
     end
   end
-
-  for i,v in pairs(minimap) do
-    for j,u in pairs(v) do
-      if (not u.name) then
-  	    self:UpdateInstanceNames(u)
-      end
-    end
-  end
 end
 
 function Addon:FullUpdate()
   self:PopulateTable()
-  self:PopulateMinimap()
   self:ProcessTable()
 end

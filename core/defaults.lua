@@ -6,8 +6,8 @@ ns.defaults = {
       --1
         ShiftWorld = false,
         ClassicIcons = false,
-        mapnoteScale = 1.2,
-        mapnoteAlpha = 1,    
+        mapnoteScale = 1.5,
+        mapnoteAlpha = 1,
         hideAddon = false,
         hideMMB = false,
         journal = true,

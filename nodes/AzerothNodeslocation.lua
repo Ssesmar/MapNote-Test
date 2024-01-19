@@ -31,7 +31,7 @@ if not db.show.HideMapNote then
             nodes[947][27416697] = { id = 241, type = "Dungeon", showInZone = true } -- Zul'Farrak
             nodes[947][20055663] = { id = 232, type = "Dungeon", showInZone = true } -- Maraudon
             nodes[947][22126200] = { id = 230, lfgid = 36,type = "Dungeon", showInZone = true } -- Dire Maul - Capital Gardens
-            nodes[947][29395008] = { id = 226, type = "Dungeon", showInZone = true } -- Ragefire
+            nodes[947][28904964] = { id = 226, type = "Dungeon", showInZone = true } -- Ragefire
             nodes[947][25766218] = { id = 234, type = "Dungeon", showInZone = true } -- Razorfen Kraul
             nodes[947][26777580] = { id = 68, type = "Dungeon", showInZone = true } -- The Vortex Pinnacle
             nodes[947][25237426] = { id = 69, type = "Dungeon", showInZone = true } -- Lost City of Tol'Vir
@@ -51,6 +51,7 @@ if not db.show.HideMapNote then
 
         -- Azeroth Kalimdor Passage
           if self.db.profile.showAzerothPassage and not self.db.profile.show.ClassicIcons then
+            nodes[947][28904964] = { id = 226, type = "PassageDungeonM", showInZone = true } -- Ragefire
             nodes[947][26635536] = { id = 240, type = "PassageDungeonM", showInZone = true } -- Wailing Caverns
             nodes[947][30006911] = { mnID = 75, id = { 187, 279, 255, 251, 750, 184, 185, 186 }, type = "PassageDungeonRaidMultiM", showInZone = true } -- Dragon Soul, The Battle for Mount Hyjal, The Culling of Stratholme, Black Morass, Old Hillsbrad Foothills, End Time, Well of Eternity, Hour of Twilight Heroic
             nodes[947][23716144] = { id = 230, lfgid = 34, type = "PassageDungeonM", showInZone = true } -- Dire Maul - Warpwood Quarter
@@ -65,6 +66,7 @@ if not db.show.HideMapNote then
             end
 
             if self.db.profile.showAzerothDungeons then
+              nodes[947][28904964] = { id = 226, type = "Dungeon", showInZone = true } -- Ragefire
               nodes[947][26635536] = { id = 240, type = "Dungeon", showInZone = true } -- Wailing Caverns
               nodes[947][23716144] = { id = 230, lfgid = 34, type = "Dungeon", showInZone = true } -- Dire Maul - Warpwood Quarter
             end            
@@ -91,7 +93,7 @@ if not db.show.HideMapNote then
             end
     
             if self.faction == "Horde" or db.show.EnemyFaction then
-              nodes[947][29365125] = { mnID = 85, name = "", type = "HPortal", showInZone = true, TransportName = ORGRIMMAR .. " " .. L["Portals"] .. "\n" .. " => " .. L["Silvermoon City"] .. "\n" .. " => " .. L["Valdrakken"] .. "\n" .. " => " .. L["Oribos"] .. "\n" .. " => " .. L["Aszuna"] .. "\n" .. " => " .. L["Zuldazar"] .. "\n" .. " => " .. L["Shattrath City"] .. "\n" .. " => " .. DUNGEON_FLOOR_DALARANCITY1 .. "\n" .. " => " .. DUNGEON_FLOOR_TANARIS18 .. "\n" .. " => " .. POSTMASTER_LETTER_HYJAL .. "\n" .. " => " .. L["Twilight Highlands"] .. "\n" .. " => " .. ARTIFACT_SHAMAN_TITLECARD_DEEPHOLM .. "\n" .. " => " .. L["Vashj'ir"] .. "\n" .. " => " .. L["Uldum"] .. "\n" .. " => " .. DUNGEON_FLOOR_TOLBARADWARLOCKSCENARIO0} -- Portalroom from Dazar'alor
+              nodes[947][29814964] = { mnID = 85, name = "", type = "HPortal", showInZone = true, TransportName = ORGRIMMAR .. " " .. L["Portals"] .. "\n" .. " => " .. L["Silvermoon City"] .. "\n" .. " => " .. L["Valdrakken"] .. "\n" .. " => " .. L["Oribos"] .. "\n" .. " => " .. L["Azsuna"] .. "\n" .. " => " .. L["Zuldazar"] .. "\n" .. " => " .. L["Shattrath City"] .. "\n" .. " => " .. DUNGEON_FLOOR_DALARANCITY1 .. "\n" .. " => " .. DUNGEON_FLOOR_TANARIS18 .. "\n" .. " => " .. POSTMASTER_LETTER_HYJAL .. "\n" .. " => " .. L["Twilight Highlands"] .. "\n" .. " => " .. ARTIFACT_SHAMAN_TITLECARD_DEEPHOLM .. "\n" .. " => " .. L["Vashj'ir"] .. "\n" .. " => " .. L["Uldum"] .. "\n" .. " => " .. DUNGEON_FLOOR_TOLBARADWARLOCKSCENARIO0} -- Portalroom from Dazar'alor
               nodes[947][23994090] = { mnID = 862, name = L["(its only shown up ingame if your faction is currently occupying Bashal'Aran)"], type = "HPortal", showInZone = true } -- Portal from New Darkshore to Zandalar
               nodes[947][28254356] = { mnID = 85, name = "", type = "HPortal", showInZone = true, TransportName = L["Portal"] .. " => " .. ORGRIMMAR } -- Portal To Orgrimmar from Hyjal
             end
@@ -107,7 +109,7 @@ if not db.show.HideMapNote then
           if self.db.profile.showAzerothZeppelins then
     
             if self.faction == "Horde" or db.show.EnemyFaction then
-              nodes[947][30485132] = { mnID = 2022, name = "", type = "HZeppelin", showInZone = true } -- Zeppelin from Durotar to The Waking Shores - Dragonflight
+              nodes[947][30485132] = { mnID = 2022, name = "", type = "HZeppelin", showInZone = true, TransportName = L["Zeppelin"] .. " => " .. L["The Waking Shores, Dragon Isles"] } -- Zeppelin from Durotar to The Waking Shores - Dragonflight
             end
           end
     
@@ -143,7 +145,7 @@ if not db.show.HideMapNote then
             nodes[947][88634402] = { id = 246, type = "Dungeon", showInZone = true } -- Scholomance
             nodes[947][89593995] = { id = 236, lfgid = 40,type = "Dungeon", showInZone = true } -- Stratholme
             nodes[947][86767011] = { id = 76, type = "Dungeon", showInZone = true } -- Zul'Gurub
-            nodes[947][84056387] = { id = 238, type = "Dungeon", showInZone = true } -- The Stockade
+            nodes[947][84116247] = { id = 238, type = "Dungeon", showInZone = true } -- The Stockade
             nodes[947][79985920] = { id = 65, type = "Dungeon", showInZone = true } -- Throne of Tides
             nodes[947][89945460] = { id = 71, type = "Dungeon", showInZone = true } -- Grim Batol
           end
@@ -201,12 +203,13 @@ if not db.show.HideMapNote then
             if self.faction == "Horde" or db.show.EnemyFaction then
               nodes[947][84864258] = { mnID = 18, name = "", type = "HPortal", showInZone = true, TransportName = L["Portal"] .. "\n" .. " => " .. ORGRIMMAR .. "\n" .. " => " .. L["Grom'gol, Stranglethorn Vale"] .. "\n" .. " => " .. L["Howling Fjord"] .. "\n" .. " => " .. L["Silvermoon City"] } -- Portal to Orgrimmar, Silvermoon, Howling Fjord and Grom'gol from Tirisfal
               nodes[947][88074841] = { mnID = 862, name = "", type = "HPortal", showInZone = true, hideOnContinent = false, TransportName = L["Portal"] .. " => " .. L["Zandalar"] } -- Portal from Arathi to Zandalar
-              nodes[947][93143255] = { mnID = 110, name = "", type = "HPortal", showInZone = true, TransportName = L["Portal"] .. "\n" .. " => " .. ORGRIMMAR .. "\n" .. " => " .. L["Ruins of Lordaeron"] } -- Portal to Orgrimmar, Ruins of Lordaeron from Silvermoon
+              nodes[947][93143255] = { mnID = 110, name = "", type = "HPortal", showInZone = true, TransportName = L["Silvermoon City"] .. " " .. L["Portal"] .. "\n" .. " => " .. ORGRIMMAR .. "\n" .. " => " .. L["Ruins of Lordaeron"] } -- Portal to Orgrimmar, Ruins of Lordaeron from Silvermoon
               nodes[947][79625090] = { mnID = 85, name = "", type = "HPortal", showInZone = true, TransportName = L["Portal"] .. " => " .. ORGRIMMAR } -- Portal Tol Bard to Orgimmar 
               nodes[947][93675469] = { mnID = 85, name = "", type = "HPortal", showInZone = true, TransportName = L["Portal"] .. " => " .. ORGRIMMAR } -- Portal Tol Orgrimmar from Twilight Highlands
             end
     
             if self.faction == "Alliance" or db.show.EnemyFaction then
+              nodes[947][85486376] = { mnID = 84, name = "", type = "APortal", showInZone = true, TransportName = STORMWIND .. " " .. L["Portals"] .. "\n" .. " => " .. L["Ashran"] .. "\n" .. " => " .. L["Valdrakken"] .. "\n" .. " => " .. L["Boralus, Tiragarde Sound"] .. "\n" .. " => " .. L["Oribos"] .. "\n" .. " => " .. L["Azsuna"] .. "\n" .. " => " .. L["Shattrath City"] .. "\n" .. " => " .. L["Jade Forest"] .. "\n" .. " => " .. DUNGEON_FLOOR_DALARANCITY1 .. "\n" .. " => " .. DUNGEON_FLOOR_TANARIS18 .. "\n" .. " => " .. L["Exodar"] .. "\n" .. " => " .. L["Uldum"] .. "\n" .. " => " .. L["Vashj'ir"] .. "\n" .. " => " .. POSTMASTER_LETTER_HYJAL .. "\n" .. " => " .. ARTIFACT_SHAMAN_TITLECARD_DEEPHOLM .. "\n" .. " => " .. L["Twilight Highlands"] .. "\n" .. " => " .. DUNGEON_FLOOR_TOLBARADWARLOCKSCENARIO0 } -- Portalroom from Stormwind
               nodes[947][90126888] = { mnID = 84,  name = "" , type = "APortal", showInZone = true, hideOnContinent = true, TransportName = L["Portal"] .. " => " .. STORMWIND } -- Portal to Stormwind
               nodes[947][80655046] = { mnID = 84,  name = "" , type = "APortal", showInZone = true, TransportName = L["Portal"] .. " => " .. STORMWIND } -- Portal Tol Bard to Stormwind
             end
@@ -313,9 +316,9 @@ if not db.show.HideMapNote then
         end
     
     
-        --#########################
+        --###########################
         --##### Azeroth Pandaria ####
-        --#########################
+        --###########################
     
         if self.db.profile.showAzerothPandaria then
     
@@ -333,7 +336,7 @@ if not db.show.HideMapNote then
           if self.db.profile.showAzerothRaids then
             nodes[947][47857509] = { id = 317, type = "Raid", showInZone = true } -- Mogu'shan Vaults
             nodes[947][43598371] = { id = 330, type = "Raid", showInZone = true } -- Heart of Fear
-            nodes[947][41907121] = { id = 362, type = "Raid", showInZone = true } -- Throne of Thunder
+            nodes[947][41077005] = { id = 362, type = "Raid", showInZone = true } -- Throne of Thunder
             nodes[947][49688206] = { id = 320, type = "Raid", showInZone = true } -- Terrace of Endless Spring 
           end
     
@@ -346,11 +349,16 @@ if not db.show.HideMapNote then
     
         -- Azeroth Pandaria Portals
           if self.db.profile.showAzerothPortals then
-            nodes[947][40147153] = { mnID = 388, name = "", type = "Portal", showInZone = true, TransportName = L["Portal"] .. " => " .. L["Shado-Pan Garrison, Townlong Steppes"] } -- Portal from Shado-Pan Garrison to Isle of Thunder
-            nodes[947][43408025] = { mnID = 504, name = "", type = "Portal", showInZone = true, TransportName = L["Portal"] .. " => " .. L["Isle of Thunder"] } -- Portal from Isle of Thunder to Shado-Pan Garrison
+            nodes[947][43408025] = { mnID = 504, name = "", type = "Portal", showInZone = true, TransportName = L["Portal"] .. " => " .. L["Isle of Thunder"] } -- Portal from Shado-Pan Garrison to Isle of Thunder
             
             if self.faction == "Horde" or db.show.EnemyFaction then
               nodes[947][50477732] = { mnID = 85, name = "", type = "HPortal", showInZone = true, TransportName = L["Portal"] .. " => " .. ORGRIMMAR } -- Portal from Jade Forest to Orgrimmar
+              nodes[947][40147153] = { mnID = 388, name = "", type = "HPortal", showInZone = true, TransportName = L["Portal"] .. " => " .. L["Shado-Pan Garrison, Townlong Steppes"] } -- Portal from Isle of Thunder to Shado-Pan Garrison
+            end
+
+            if self.faction == "Alliance" or db.show.EnemyFaction then
+              nodes[947][52048446] = { mnID = 85, name = "", type = "APortal", showInZone = true, TransportName = L["Portal"] .. " => " .. STORMWIND } -- Portal from Jade Forest to Orgrimmar
+              nodes[947][41857186] = { mnID = 388, name = "", type = "APortal", showInZone = true, TransportName = L["Portal"] .. " => " .. L["Shado-Pan Garrison, Townlong Steppes"] } -- Portal from Isle of Thunder to Shado-Pan Garrison
             end
           end
         end
@@ -394,11 +402,11 @@ if not db.show.HideMapNote then
             
 
             if self.faction == "Horde" then
-             nodes[947][55624409] = { mnID = 85, name = "", type = "HPortal", showInZone = true, hideOnContinent = false, TransportName = L["Portal"] .. " => " .. ORGRIMMAR } -- Portal to Orgrimmar from Aszuna 
+             nodes[947][55624409] = { mnID = 85, name = "", type = "HPortal", showInZone = true, hideOnContinent = false, TransportName = L["Portal"] .. " => " .. ORGRIMMAR } -- Portal to Orgrimmar from Azsuna 
             end
 
             if self.faction == "Alliance" then
-              nodes[947][55624409] = { mnID = 84,  name = "" , type = "APortal", showInZone = true, hideOnContinent = false, TransportName = L["Portal"] .. " => " .. STORMWIND } -- Portal to Stormwind from Aszuna
+              nodes[947][55624409] = { mnID = 84,  name = "" , type = "APortal", showInZone = true, hideOnContinent = false, TransportName = L["Portal"] .. " => " .. STORMWIND } -- Portal to Stormwind from Azsuna
             end
 
             if self.faction == "Horde" or db.show.EnemyFaction then
@@ -463,7 +471,7 @@ if not db.show.HideMapNote then
           if self.db.profile.showAzerothShips then
     
             if self.faction == "Horde" or db.show.EnemyFaction then
-              nodes[947][55506808] = { mnID = 463, name = "" , type = "HShip", showInZone = true } -- Ship from Zandalar to Echo Isles
+              nodes[947][55506808] = { mnID = 463, name = "" , type = "HShip", showInZone = true, TransportName = L["Ship"] .. " => " .. L["Echo Isles, Durotar"] } -- Ship from Zandalar to Echo Isles
             end
     
             if self.faction == "Alliance" or db.show.EnemyFaction then
@@ -586,7 +594,7 @@ if not db.show.HideMapNote then
         -- Azeroth Dragon Isles Portals
           if self.db.profile.showAzerothPortals then
             nodes[947][72202222] = { mnID = 2200, name = "", type = "Portal", showInZone = true, TransportName = L["Portal"] .. " => " .. L["Emerald Dream"] } -- Portal to The Emerald Dream 
-            nodes[947][77692120] = { mnID = 2112, name = "", type = "Portal", showInZone = true, TransportName = L["Portal"] .. " => " .. "\n"  .. L["The Timeways"] .. "\n".. L["Emerald Dream"] .. "\n" .. L["Badlands"] .. "\n" .. ORGRIMMAR .. "\n" .. STORMWIND } --  Portal from Valdrakken to Timeways
+            nodes[947][77692120] = { mnID = 2112, name = "", type = "Portal", showInZone = true, TransportName = L["Valdrakken"] .. " " .. L["Portals"] .. "\n" .. " => " .. L["The Timeways"] .. "\n".. " => " .. L["Emerald Dream"] .. "\n" .. " => " .. L["Badlands"] .. "\n" .. " => " .. ORGRIMMAR .. "\n" .. " => " .. STORMWIND } --  Portal from Valdrakken to Timeways
           end
     
 

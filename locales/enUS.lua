@@ -157,7 +157,7 @@ L["Boralus, Tiragarde Sound"] = true
 L["Valdrakken"] = true
 L["Badlands"] = true
 L["Oribos"] = true
-L["Aszuna"] = true
+L["Azsuna"] = true
 L["Uldum"] = true
 L["Dazar'alor"] = true
 L["Shattrath City"] = true
@@ -174,6 +174,8 @@ L["Vashj'ir"] = true
 L["The Waking Shores, Dragon Isles"] = true
 L["Shado-Pan Garrison, Townlong Steppes"] = true
 L["Grom'gol, Stranglethorn Vale"] = true
+L["Exodar"] = true
+L["Jade Forest"] = true
 --11 Specific
 L["Shows locations of raids, dungeons, portals ,ship and zeppelins icons on different maps"] = true
 L["(Wards of the Dread Citadel - Achievement)"] = true
