@@ -1,4 +1,4 @@
-## Interface: 11502
+## Interface: 40400
 ## Version: 1.9.4
 ## Title: HandyNotes: |cffff0000Map|r|cff00ccffNotes|r
 ## Notes: Displays instance entrances, ships and zeppelin icons
@@ -16,14 +16,12 @@
 ## X-License: All Rights Reserved
 ## RequiredDeps: HandyNotes
 ## OptionalDeps: TomTom
-## X-Curse-Project-ID: 1007601
+## X-Curse-Project-ID: 912524
 ## X-Localizations: enUS, enGB, deDE, esES, esMX, frFR, ruRU, itIT, ptBR, koKR, zhCN, zhTW
-## SavedVariables: HandyNotes_MapNotesClassicDB, MNMiniMapButtonClassicDB
+## SavedVariables: HandyNotes_MapNotesCataDB, MNMiniMapButtonCataDB
 
 
 ExternalLibs\ExternalLibs.xml
 Locales\Locales.xml
-Nodes\NodesClassic.xml
-Core\CoreClassic.xml
-
-
+Nodes\NodesCata.xml
+Core\CoreCata.xml
