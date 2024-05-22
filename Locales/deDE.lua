@@ -3,6 +3,7 @@ local L = LibStub("AceLocale-3.0"):NewLocale(ADDON_NAME, "deDE")
 if not L then return end
 
 --Capitals
+L["Paths"] = "Wege"
 L["Capitals"] = "Hauptstädte"
 L["Alchemy"] = "Alchemie"
 L["Engineer"] = "Ingeneur"
@@ -141,8 +142,8 @@ L["Show icons of multiple on this map"] = "Symbole mehrerer auf dieser Karte anz
 L["Show icons of portals on this map"] = "Symbole von Portalen auf dieser Karte anzeigen"
 L["Show icons of zeppelins on this map"] = "Symbole von Zeppelinen auf dieser Karte anzeigen"
 L["Show icons of ships on this map"] = "Symbole von Schiffen auf dieser Karte anzeigen"
-L["Show all MapNotes for a specific map"] = "Alle MapNotes für eine bestimmte Karte anzeigen"
-L["Show icons of MapNotes dungeon exit on this map"] = "Symbole des MapNotes-Dungeonausgangs auf dieser Karte anzeigen"
+L["Show all MapNotes for a specific map"] = "Alle MapNotes Symbole für eine bestimmte Karte anzeigen"
+L["Show icons of MapNotes dungeon exit on this map"] = "MapNotes Dungeonausgangssymbole auf dieser Karte anzeigen"
 L["Enables the display of all possible icons on this map"] = "Ermöglicht die Anzeige aller möglichen Symbole auf dieser Karte"
 L["Show icons of passage to raids and dungeons on this map"] = "Zeige Symbole für den Durchgang zu Raids und Dungeons auf dieser Karte."
 L["Show Ogre Waygate icons from Garrison on this map"] = "Zeige Ogerportale Symbole aus Garrison auf dieser Karte."

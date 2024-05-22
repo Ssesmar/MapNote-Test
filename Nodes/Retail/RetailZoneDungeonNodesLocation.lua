@@ -167,7 +167,6 @@ if not db.show.HideMapNote then
             nodes[224][63942179] = { id = 76, type = "Dungeon", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Zul'gurub
             nodes[224][22130243] = { id = 63, type = "Dungeon", showInZone = true, hideOnContinent = true, hideOnMinimap = true  } -- Deadmines 
             nodes[37][20223635] = { id = 238, type = "Dungeon", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- The Stockade
-            nodes[84][51196779] = { id = 238, type = "Dungeon", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- The Stockade
             nodes[15][41121030] = { id = 1197, type = "Dungeon", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Uldaman: Legacy of Tyr
             nodes[48][43478705] = { id = 239, type = "Dungeon", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Uldaman
             nodes[241][19205411] = { id = 71, type = "Dungeon", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Grim Batol

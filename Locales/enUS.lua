@@ -2,6 +2,7 @@ local ADDON_NAME = ...
 local L = LibStub("AceLocale-3.0"):NewLocale(ADDON_NAME, "enUS", true)
 
 --Capitals
+L["Paths"] = true
 L["Capitals"] = true
 L["Alchemy"] = true
 L["Engineer"] = true
