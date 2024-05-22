@@ -31,7 +31,7 @@ OnClick = function(self, button)
         print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. MINIMAP_LABEL, "|cffff0000" .. L["is deactivated"])
       end
     end
-
+    
     if IsShiftKeyDown() and button == "RightButton" then
       MNMMBIcon:Hide("MNMiniMapButton")
       ns.Addon.db.profile.show.HideMMB = true

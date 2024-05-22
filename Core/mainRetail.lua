@@ -165,10 +165,17 @@ do
 
       ns.instances = value.type == "Dungeon" or value.type == "Raid" or value.type == "PassageDungeon" or value.type == "PassageDungeonRaidMulti" or value.type == "PassageRaid" or value.type == "VInstance" or value.type == "PassageDungeon" or value.type == "Multiple" or value.type == "LFR" or value.type == "Gray"
 
-      ns.transports =  value.type == "Portal" or value.type == "HPortal" or value.type == "APortal" or value.type == "HPortalS" or value.type == "APortalS" or value.type == "Zeppelin" or value.type == "HZeppelin" or value.type == "AZeppelin" or value.type == "Ship" or value.type == "AShip" or value.type == "HShip" or value.type == "Carriage" or value.type == "TravelH" or value.type == "TravelA" or value.type == "GPortal" or         value.type == "Tport2" or value.type == "TransportHelper" or value.type == "OgreWaygate" or value.type == "WayGateGreen" or value.type == "Ghost"
+      ns.transports = value.type == "Portal" or value.type == "HPortal" or value.type == "APortal" or value.type == "HPortalS" or value.type == "APortalS" or value.type == "Zeppelin" or value.type == "HZeppelin" or value.type == "AZeppelin" or value.type == "Ship" or value.type == "AShip" or value.type == "HShip" or value.type == "Carriage" or value.type == "TravelH" or value.type == "TravelA" or value.type == "GPortal" or         value.type == "Tport2" or value.type == "TransportHelper" or value.type == "OgreWaygate" or value.type == "WayGateGreen" or value.type == "Ghost"
 
-      ns.CapitalIDs = 
+      ns.ways = value.type == "Exit" or value.type == "PassageUpL" or value.type == "PassageDownL" or value.type == "PassageRightL" or value.type == "PassageLeftL"
+
+      ns.CapitalIDs =
+        WorldMapFrame:GetMapID() == 84 or -- Stormwind
+        WorldMapFrame:GetMapID() == 87 or -- Ironforge
+        WorldMapFrame:GetMapID() == 89 or -- Darnassus
+        WorldMapFrame:GetMapID() == 103 or -- Exodar
         WorldMapFrame:GetMapID() == 85 or -- Orgrimmar
+        WorldMapFrame:GetMapID() == 90 or -- Undercity
         WorldMapFrame:GetMapID() == 86 or -- Ragefire Chasmn
         WorldMapFrame:GetMapID() == 88 or -- Thunder Bluff
         WorldMapFrame:GetMapID() == 110 or -- Silvermoon
@@ -256,6 +263,18 @@ do
       if ns.CapitalIDs and ns.instances and (value.hideOnMinimap == false) then
         scale = db.CapitalsMinimapInstanceScale
         alpha = db.CapitalsMinimapInstanceAlpha
+      end
+
+      -- Capitals Minimap Ways (Exit/Passage) icons
+      if ns.CapitalIDs and ns.ways and (value.hideOnMinimap == false) then
+        scale = db.CapitalsMinimapWaysScale
+        alpha = db.CapitalsMinimapWaysAlpha
+      end
+
+      -- Capitals Ways (Exit/Passage) icons
+      if ns.CapitalIDs and ns.ways and (value.hideOnMinimap == true) then
+        scale = db.CapitalsWaysScale
+        alpha = db.CapitalsWaysAlpha
       end
 
       -- Capitals Transport (Zeppeline/Ship/Carriage) icons

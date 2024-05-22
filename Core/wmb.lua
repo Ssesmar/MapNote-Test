@@ -94,29 +94,31 @@ local info = C_Map.GetMapInfo(WorldMapFrame:GetMapID())
         end
 
         --es müssen noch die 1670 oribvos
-        if (info.mapType == 3 or WorldMapFrame:GetMapID() == 327) and not ns.Capitals then -- Zone Maps
+        if (info.mapType == 3 or WorldMapFrame:GetMapID() == 327) then -- Zone Maps
         
             if not ns.Addon.db.profile.show.ZoneMap then
                 ns.Addon.db.profile.show.ZoneMap = true
+                ns.Addon.db.profile.show.Capitals = true
                 print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Zone map"], "|cff00ff00" .. L["is activated"])
             else
                 ns.Addon.db.profile.show.ZoneMap = false
+                ns.Addon.db.profile.show.Capitals = false
                 print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Zone map"], "|cffff0000" .. L["is deactivated"])
             end
 
         end
 
-        if ns.Capitals then -- Zone Maps
-        
-            if not ns.Addon.db.profile.show.Capitals then
-                ns.Addon.db.profile.show.Capitals = true
-                print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Capitals"], "|cff00ff00" .. L["is activated"])
-            else
-                ns.Addon.db.profile.show.Capitals = false
-                print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Capitals"], "|cffff0000" .. L["is deactivated"])
-            end
-
-        end
+        --if ns.Capitals then -- Capitals
+        --
+        --    if not ns.Addon.db.profile.show.Capitals then
+        --        ns.Addon.db.profile.show.Capitals = true
+        --        print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Capitals"], "|cff00ff00" .. L["is activated"])
+        --    else
+        --        ns.Addon.db.profile.show.Capitals = false
+        --        print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Capitals"], "|cffff0000" .. L["is deactivated"])
+        --    end
+--
+        --end
 
     end
     ns.Addon:FullUpdate()

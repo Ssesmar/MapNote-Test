@@ -12,13 +12,22 @@ ns.defaults = {
         showThunderBluff = true,
         showSilvermoon = true,
         showUndercity = true,
+        showStormwind = true,
+        showIronforge = true,
+        showDarnassus = true,
+        showExodar = true,
+      --Capital Ways
+        showCapitalsWays = true,
+        showCapitalsPaths = true,
+        CapitalsWaysScale = 1,
+        CapitalsWaysAlpha = 1,
       --Capital Instances
-        showCapitalInstances = true,
+        showCapitalsInstances = true,
         CapitalsInstanceScale = 2,
         CapitalsInstanceAlpha = 1,
         showCapitalsRaids = true,
         showCapitalsDungeons = true,
-        showCapitalsPassage = true,
+        showCapitalsInstancePassage = true,
         showCapitalsMultiple = true,
       --Capital Transport
         showCapitalsTransports = true,
@@ -49,6 +58,7 @@ ns.defaults = {
         showInscription = true,
         showEnchanting = true,
 
+
       --Capitals Minimap
         CapitalsMinimap = true,
         CapitalsMinimapScale = 1,
@@ -58,15 +68,24 @@ ns.defaults = {
         showMinimapThunderBluff = true,
         showMinimapSilvermoon = true,
         showMinimapUndercity = true,
-      --Capital Instances
+        showMinimapStormwind = true,
+        showMinimapIronforge = true,
+        showMinimapDarnassus = true,
+        showMinimapExodar = true,
+        --Capital Ways
+        showMinimapCapitalsWays = true,
+        showMinimapCapitalsPaths = true,
+        CapitalsMinimapWaysScale = 1,
+        CapitalsMinimapWaysAlpha = 1,
+      --Capital Minimap Instances
         showMinimapCapitalInstances = true,
         CapitalsMinimapInstanceScale = 2,
         CapitalsMinimapInstanceAlpha = 1,
         showMinimapCapitalsRaids = true,
         showMinimapCapitalsDungeons = true,
-        showMinimapCapitalsPassage = true,
+        showMinimapCapitalsInstancePassage = true,
         showMinimapCapitalsMultiple = true,
-      --Capital Transport
+      --Capital Minimap Transport
         showMinimapCapitalsTransports = true,
         CapitalsMinimapTransportScale = 1,
         CapitalsMinimapTransportAlpha = 1,
@@ -76,7 +95,7 @@ ns.defaults = {
         showMinimapCapitalsTransport = true,
         showMinimapCapitalsOldVanilla = true,
         showMinimapCapitalsLFR = true,
-      -- Capital Professions
+      -- Capital Minimap Professions
         showMinimapProfessions = true,
         ProfessionsMinimapScale = 1,
         ProfessionsMinimapAlpha = 1,

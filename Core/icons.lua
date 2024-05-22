@@ -110,6 +110,10 @@ TextIconOrgrimmar = TextIcon("interface/icons/spell_arcane_teleportorgrimmar.blp
 TextIconThunderBluff = TextIcon("interface/icons/spell_arcane_teleportthunderbluff.blp", 50, 50, 1, 50, 1, 50)
 TextIconSilvermoon = TextIcon("interface/icons/spell_arcane_teleportsilvermoon.blp", 50, 50, 1, 50, 1, 50)
 TextIconUndercity = TextIcon("interface/icons/spell_arcane_teleportundercity.blp", 50, 50, 1, 50, 1, 50)
+TextIconStormwind = TextIcon("interface/icons/spell_arcane_teleportstormwind.blp", 50, 50, 1, 50, 1, 50)
+TextIconIronforge = TextIcon("interface/icons/spell_arcane_teleportironforge.blp", 50, 50, 1, 50, 1, 50)
+TextIconDarnassus = TextIcon("interface/icons/spell_arcane_teleportdarnassus.blp", 50, 50, 1, 50, 1, 50)
+TextIconExodar = TextIcon("interface/icons/spell_arcane_teleportexodar.blp", 50, 50, 1, 50, 1, 50)
 --profession
 TextIconEngineer = TextIcon("interface/icons/trade_engineering.blp", 50, 50, 1, 50, 1, 50)
 TextIconAlchemy = TextIcon("interface/icons/trade_alchemy.blp", 50, 50, 1, 50, 1, 50)
