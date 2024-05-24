@@ -8,10 +8,14 @@ local iconLink = "Interface\\Addons\\" .. ADDON_NAME .. "\\Images\\"
 ns.icons = { 
 --Addon Logo
 ["MNL"] = iconLink .. "MNL4",
+--General
+["Hearthstone"] = "interface/minimap/tracking/innkeeper.blp",
+["Auctioneer"] = "interface/minimap/tracking/auctioneer.blp",
+["Bank"] = "interface/minimap/tracking/banker.blp",
 --Professions
 ["Engineer"] = "interface/icons/trade_engineering.blp",
 ["Alchemy"] = "interface/icons/trade_alchemy.blp",
-["Blacksmith"] = "interface/icons/trade_blacksmithing.blp",
+["Blacksmith"] = "interface/minimap/tracking/repair.blp",
 ["Skinning"] = "interface/icons/ui_profession_skinning.blp",
 ["Engraving"] = "interface/icons/trade_engraving.blp",
 ["Enchanting"] = "interface/icons/ui_profession_enchanting.blp",
@@ -105,6 +109,10 @@ ns.icons = {
 
 TextIcon = IconClass
 TextIconMNL4 = TextIcon(iconLink .. "MNL4", 50, 50, 1, 50, 1, 50)
+--General
+TextIconHearthstone = TextIcon("interface/minimap/tracking/innkeeper.blpp", 50, 50, 1, 50, 1, 50)
+TextIconAuctioneer = TextIcon("interface/minimap/tracking/auctioneer.blp", 50, 50, 1, 50, 1, 50)
+TextIconBank = TextIcon("interface/minimap/tracking/banker.blp", 50, 50, 1, 50, 1, 50)
 --Cities
 TextIconOrgrimmar = TextIcon("interface/icons/spell_arcane_teleportorgrimmar.blp", 50, 50, 1, 50, 1, 50)
 TextIconThunderBluff = TextIcon("interface/icons/spell_arcane_teleportthunderbluff.blp", 50, 50, 1, 50, 1, 50)
@@ -114,10 +122,21 @@ TextIconStormwind = TextIcon("interface/icons/spell_arcane_teleportstormwind.blp
 TextIconIronforge = TextIcon("interface/icons/spell_arcane_teleportironforge.blp", 50, 50, 1, 50, 1, 50)
 TextIconDarnassus = TextIcon("interface/icons/spell_arcane_teleportdarnassus.blp", 50, 50, 1, 50, 1, 50)
 TextIconExodar = TextIcon("interface/icons/spell_arcane_teleportexodar.blp", 50, 50, 1, 50, 1, 50)
+TextIconShattrath = TextIcon("interface/icons/spell_arcane_teleportshattrath.blp", 50, 50, 1, 50, 1, 50)
+TextIconDalaranNorthrend = TextIcon("interface/icons/spell_arcane_teleportdalaran.blp", 50, 50, 1, 50, 1, 50)
+TextIconDalaranLegion = TextIcon("interface/icons/spell_arcane_teleportdalaranbrokenisles.blp", 50, 50, 1, 50, 1, 50)
+TextIconDazarAlor = TextIcon("interface/icons/spell_arcane_teleportzandalar.blp", 50, 50, 1, 50, 1, 50)
+TextIconBoralus = TextIcon("interface/icons/spell_arcane_teleportkultiras.blp", 50, 50, 1, 50, 1, 50)
+TextIconSot2M = TextIcon("interface/icons/spell_arcane_teleporthalloftheguardian.blp", 50, 50, 1, 50, 1, 50)
+TextIconSot7S = TextIcon("interface/icons/spell_arcane_teleporttolbarad.blp", 50, 50, 1, 50, 1, 50)
+TextIconWarspear = TextIcon("interface/icons/spell_arcane_teleportwarspear.blp", 50, 50, 1, 50, 1, 50)
+TextIconStormshield = TextIcon("interface/icons/spell_arcane_teleportstormshield.blp", 50, 50, 1, 50, 1, 50)
+TextIconOribos = TextIcon("interface/icons/spell_arcane_teleportoribos.blp", 50, 50, 1, 50, 1, 50)
+TextIconValdrakken = TextIcon("interface/icons/spell_arcane_teleportvaldrakken.blp", 50, 50, 1, 50, 1, 50)
 --profession
 TextIconEngineer = TextIcon("interface/icons/trade_engineering.blp", 50, 50, 1, 50, 1, 50)
 TextIconAlchemy = TextIcon("interface/icons/trade_alchemy.blp", 50, 50, 1, 50, 1, 50)
-TextIconBlacksmith = TextIcon("interface/icons/trade_blacksmithing.blp", 50, 50, 1, 50, 1, 50)
+TextIconBlacksmith = TextIcon("interface/minimap/tracking/repair.blp", 50, 50, 1, 50, 1, 50)
 TextIconSkinning = TextIcon("interface/icons/ui_profession_skinning", 50, 50, 1, 50, 1, 50)
 TextIconEngraving = TextIcon("interface/icons/trade_engraving.blp", 50, 50, 1, 50, 1, 50)
 TextIconTailoring = TextIcon("interface/icons/trade_tailoring.blp", 50, 50, 1, 50, 1, 50)

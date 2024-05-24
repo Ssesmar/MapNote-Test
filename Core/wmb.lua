@@ -6,15 +6,6 @@ local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
 local WorldMapOptionsButtonMixin = {}
 _G[ADDON_NAME .. 'WorldMapOptionsButtonMixin'] = WorldMapOptionsButtonMixin
 
-ns.Capitals = {
-WorldMapFrame:GetMapID() == 85,
-WorldMapFrame:GetMapID() == 88,
-WorldMapFrame:GetMapID() == 110,
-WorldMapFrame:GetMapID() == 1670,
-WorldMapFrame:GetMapID() == 125,
-WorldMapFrame:GetMapID() == 1670,
-}
-
 function WorldMapOptionsButtonMixin:OnLoad()
 
 end
@@ -93,32 +84,44 @@ local info = C_Map.GetMapInfo(WorldMapFrame:GetMapID())
 
         end
 
-        --es müssen noch die 1670 oribvos
-        if (info.mapType == 3 or WorldMapFrame:GetMapID() == 327) then -- Zone Maps
+        --Zones without Capitals
+        if (info.mapType == 3 or WorldMapFrame:GetMapID() == 327) and not 
+            (WorldMapFrame:GetMapID() == 84 or WorldMapFrame:GetMapID() == 87 or WorldMapFrame:GetMapID() == 89 or WorldMapFrame:GetMapID() == 103 or WorldMapFrame:GetMapID() == 85
+            or WorldMapFrame:GetMapID() == 90 or WorldMapFrame:GetMapID() == 86 or WorldMapFrame:GetMapID() == 88 or WorldMapFrame:GetMapID() == 110 or WorldMapFrame:GetMapID() == 111
+            or WorldMapFrame:GetMapID() == 125 or WorldMapFrame:GetMapID() == 391 or WorldMapFrame:GetMapID() == 392 or WorldMapFrame:GetMapID() == 393 or WorldMapFrame:GetMapID() == 394
+            or WorldMapFrame:GetMapID() == 582 or WorldMapFrame:GetMapID() == 590 or WorldMapFrame:GetMapID() == 622 or WorldMapFrame:GetMapID() == 624 or WorldMapFrame:GetMapID() == 626
+            or WorldMapFrame:GetMapID() == 627 or WorldMapFrame:GetMapID() == 628 or WorldMapFrame:GetMapID() == 629 or WorldMapFrame:GetMapID() == 1161 or WorldMapFrame:GetMapID() == 1163
+            or WorldMapFrame:GetMapID() == 1164 or WorldMapFrame:GetMapID() == 1165 or WorldMapFrame:GetMapID() == 1670 or WorldMapFrame:GetMapID() == 1671 or WorldMapFrame:GetMapID() == 1672
+            or WorldMapFrame:GetMapID() == 1673 or WorldMapFrame:GetMapID() == 2112) then
         
             if not ns.Addon.db.profile.show.ZoneMap then
                 ns.Addon.db.profile.show.ZoneMap = true
-                ns.Addon.db.profile.show.Capitals = true
                 print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Zone map"], "|cff00ff00" .. L["is activated"])
             else
                 ns.Addon.db.profile.show.ZoneMap = false
-                ns.Addon.db.profile.show.Capitals = false
                 print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Zone map"], "|cffff0000" .. L["is deactivated"])
             end
 
         end
 
-        --if ns.Capitals then -- Capitals
-        --
-        --    if not ns.Addon.db.profile.show.Capitals then
-        --        ns.Addon.db.profile.show.Capitals = true
-        --        print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Capitals"], "|cff00ff00" .. L["is activated"])
-        --    else
-        --        ns.Addon.db.profile.show.Capitals = false
-        --        print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Capitals"], "|cffff0000" .. L["is deactivated"])
-        --    end
---
-        --end
+        --Capitals
+        if (WorldMapFrame:GetMapID() == 84 or WorldMapFrame:GetMapID() == 87 or WorldMapFrame:GetMapID() == 89 or WorldMapFrame:GetMapID() == 103 or WorldMapFrame:GetMapID() == 85
+        or WorldMapFrame:GetMapID() == 90 or WorldMapFrame:GetMapID() == 86 or WorldMapFrame:GetMapID() == 88 or WorldMapFrame:GetMapID() == 110 or WorldMapFrame:GetMapID() == 111
+        or WorldMapFrame:GetMapID() == 125 or WorldMapFrame:GetMapID() == 391 or WorldMapFrame:GetMapID() == 392 or WorldMapFrame:GetMapID() == 393 or WorldMapFrame:GetMapID() == 394
+        or WorldMapFrame:GetMapID() == 582 or WorldMapFrame:GetMapID() == 590 or WorldMapFrame:GetMapID() == 622 or WorldMapFrame:GetMapID() == 624 or WorldMapFrame:GetMapID() == 626
+        or WorldMapFrame:GetMapID() == 627 or WorldMapFrame:GetMapID() == 628 or WorldMapFrame:GetMapID() == 629 or WorldMapFrame:GetMapID() == 1161 or WorldMapFrame:GetMapID() == 1163
+        or WorldMapFrame:GetMapID() == 1164 or WorldMapFrame:GetMapID() == 1165 or WorldMapFrame:GetMapID() == 1670 or WorldMapFrame:GetMapID() == 1671 or WorldMapFrame:GetMapID() == 1672
+        or WorldMapFrame:GetMapID() == 1673 or WorldMapFrame:GetMapID() == 2112) then
+        
+            if not ns.Addon.db.profile.show.Capitals then
+                ns.Addon.db.profile.show.Capitals = true
+                print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Capitals"], "|cff00ff00" .. L["is activated"])
+            else
+                ns.Addon.db.profile.show.Capitals = false
+                print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Capitals"], "|cffff0000" .. L["is deactivated"])
+            end
+
+        end
 
     end
     ns.Addon:FullUpdate()
@@ -162,14 +165,33 @@ local info = C_Map.GetMapInfo(WorldMapFrame:GetMapID())
         GameTooltip:Show()
     end
 
-
-    if info.mapType == 3 or WorldMapFrame:GetMapID() == 1670 or WorldMapFrame:GetMapID() == 125 or WorldMapFrame:GetMapID() == 327 then -- Zone Maps
+    --Zones without Capitals
+    if (info.mapType == 3 or WorldMapFrame:GetMapID() == 327) and not 
+        (WorldMapFrame:GetMapID() == 84 or WorldMapFrame:GetMapID() == 87 or WorldMapFrame:GetMapID() == 89 or WorldMapFrame:GetMapID() == 103 or WorldMapFrame:GetMapID() == 85
+        or WorldMapFrame:GetMapID() == 90 or WorldMapFrame:GetMapID() == 86 or WorldMapFrame:GetMapID() == 88 or WorldMapFrame:GetMapID() == 110 or WorldMapFrame:GetMapID() == 111
+        or WorldMapFrame:GetMapID() == 125 or WorldMapFrame:GetMapID() == 391 or WorldMapFrame:GetMapID() == 392 or WorldMapFrame:GetMapID() == 393 or WorldMapFrame:GetMapID() == 394
+        or WorldMapFrame:GetMapID() == 582 or WorldMapFrame:GetMapID() == 590 or WorldMapFrame:GetMapID() == 622 or WorldMapFrame:GetMapID() == 624 or WorldMapFrame:GetMapID() == 626
+        or WorldMapFrame:GetMapID() == 627 or WorldMapFrame:GetMapID() == 628 or WorldMapFrame:GetMapID() == 629 or WorldMapFrame:GetMapID() == 1161 or WorldMapFrame:GetMapID() == 1163
+        or WorldMapFrame:GetMapID() == 1164 or WorldMapFrame:GetMapID() == 1165 or WorldMapFrame:GetMapID() == 1670 or WorldMapFrame:GetMapID() == 1671 or WorldMapFrame:GetMapID() == 1672
+        or WorldMapFrame:GetMapID() == 1673 or WorldMapFrame:GetMapID() == 2112) then
         GameTooltip:AddLine(HELPFRAME_REPORT_PLAYER_RIGHT_CLICK .. " => " .. "|cffff0000".. L["Zone map"] .. "|cffffcc00" .. " " .. L["icons"] .. " " .. SHOW .. " / " .. HIDE,1,1,1)
         GameTooltip:Show()
     end
 
-    if info.mapType == 4 and not WorldMapFrame:GetMapID() == 1670 or not WorldMapFrame:GetMapID() == 125 then -- Dungeon Maps
+    if info.mapType == 4 then -- Dungeon Maps
         GameTooltip:AddLine(HELPFRAME_REPORT_PLAYER_RIGHT_CLICK .. " => " .. "|cffff0000".. DUNGEONS .. "|cffffcc00" .. " " .. L["icons"] .. " " .. SHOW .. " / " .. HIDE,1,1,1)
+        GameTooltip:Show()
+    end
+
+    -- Capitals
+    if (WorldMapFrame:GetMapID() == 84 or WorldMapFrame:GetMapID() == 87 or WorldMapFrame:GetMapID() == 89 or WorldMapFrame:GetMapID() == 103 or WorldMapFrame:GetMapID() == 85
+    or WorldMapFrame:GetMapID() == 90 or WorldMapFrame:GetMapID() == 86 or WorldMapFrame:GetMapID() == 88 or WorldMapFrame:GetMapID() == 110 or WorldMapFrame:GetMapID() == 111
+    or WorldMapFrame:GetMapID() == 125 or WorldMapFrame:GetMapID() == 391 or WorldMapFrame:GetMapID() == 392 or WorldMapFrame:GetMapID() == 393 or WorldMapFrame:GetMapID() == 394
+    or WorldMapFrame:GetMapID() == 582 or WorldMapFrame:GetMapID() == 590 or WorldMapFrame:GetMapID() == 622 or WorldMapFrame:GetMapID() == 624 or WorldMapFrame:GetMapID() == 626
+    or WorldMapFrame:GetMapID() == 627 or WorldMapFrame:GetMapID() == 628 or WorldMapFrame:GetMapID() == 629 or WorldMapFrame:GetMapID() == 1161 or WorldMapFrame:GetMapID() == 1163
+    or WorldMapFrame:GetMapID() == 1164 or WorldMapFrame:GetMapID() == 1165 or WorldMapFrame:GetMapID() == 1670 or WorldMapFrame:GetMapID() == 1671 or WorldMapFrame:GetMapID() == 1672
+    or WorldMapFrame:GetMapID() == 1673 or WorldMapFrame:GetMapID() == 2112) then
+        GameTooltip:AddLine(HELPFRAME_REPORT_PLAYER_RIGHT_CLICK .. " => " .. "|cffff0000".. L["Capitals"] .. "|cffffcc00" .. " " .. L["icons"] .. " " .. SHOW .. " / " .. HIDE,1,1,1)
         GameTooltip:Show()
     end
 end

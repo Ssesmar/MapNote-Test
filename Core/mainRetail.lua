@@ -167,7 +167,7 @@ do
 
       ns.transports = value.type == "Portal" or value.type == "HPortal" or value.type == "APortal" or value.type == "HPortalS" or value.type == "APortalS" or value.type == "Zeppelin" or value.type == "HZeppelin" or value.type == "AZeppelin" or value.type == "Ship" or value.type == "AShip" or value.type == "HShip" or value.type == "Carriage" or value.type == "TravelH" or value.type == "TravelA" or value.type == "GPortal" or         value.type == "Tport2" or value.type == "TransportHelper" or value.type == "OgreWaygate" or value.type == "WayGateGreen" or value.type == "Ghost"
 
-      ns.ways = value.type == "Exit" or value.type == "PassageUpL" or value.type == "PassageDownL" or value.type == "PassageRightL" or value.type == "PassageLeftL"
+      ns.capitalgenerals = value.type == "Exit" or value.type == "PassageUpL" or value.type == "PassageDownL" or value.type == "PassageRightL" or value.type == "PassageLeftL" or value.type == "Hearthstone" or value.type == "Auctioneer" or value.type == "Bank" or value.type == "MNL"
 
       ns.CapitalIDs =
         WorldMapFrame:GetMapID() == 84 or -- Stormwind
@@ -179,8 +179,29 @@ do
         WorldMapFrame:GetMapID() == 86 or -- Ragefire Chasmn
         WorldMapFrame:GetMapID() == 88 or -- Thunder Bluff
         WorldMapFrame:GetMapID() == 110 or -- Silvermoon
+        WorldMapFrame:GetMapID() == 111 or -- Shattrath
+        WorldMapFrame:GetMapID() == 125 or  -- Dalaran Northrend
+        WorldMapFrame:GetMapID() == 391 or  -- Pandaria Shrine of the two Moons first floor
+        WorldMapFrame:GetMapID() == 392 or  -- Pandaria Shrine of the two Moons second floor
+        WorldMapFrame:GetMapID() == 393 or  -- Pandaria Shrine of the seven Stars first floor
+        WorldMapFrame:GetMapID() == 394 or  -- Pandaria Shrine of the seven Stars second floor
+        WorldMapFrame:GetMapID() == 582 or  -- Draenor Alliance Garrision
+        WorldMapFrame:GetMapID() == 590 or  -- Draenor Horde Garrision
+        WorldMapFrame:GetMapID() == 622 or  -- Draenor Stormshield
+        WorldMapFrame:GetMapID() == 624 or  -- Draenor Warspear
+        WorldMapFrame:GetMapID() == 626 or  -- Dalaran Legion Basement
+        WorldMapFrame:GetMapID() == 627 or  -- Dalaran Legion
+        WorldMapFrame:GetMapID() == 628 or  -- Dalaran Legion Shadowside
+        WorldMapFrame:GetMapID() == 629 or  -- Dalaran Legion Aeqwynns Galarie
+        WorldMapFrame:GetMapID() == 1161 or -- Boralus
+        WorldMapFrame:GetMapID() == 1163 or -- Dazar'alor first floor
+        WorldMapFrame:GetMapID() == 1164 or -- Dazar'alor second floor
+        WorldMapFrame:GetMapID() == 1165 or -- Dazar'alor Area
         WorldMapFrame:GetMapID() == 1670 or -- Oribos
-        WorldMapFrame:GetMapID() == 125  -- Dalaran
+        WorldMapFrame:GetMapID() == 1671 or -- Oribos second floor
+        WorldMapFrame:GetMapID() == 1672 or -- Oribos Basement
+        WorldMapFrame:GetMapID() == 1673 or -- Oribos melting pot
+        WorldMapFrame:GetMapID() == 2112 -- Valdrakken
       
 			if value.name == nil then value.name = value.id or value.mnID end
       
@@ -265,16 +286,16 @@ do
         alpha = db.CapitalsMinimapInstanceAlpha
       end
 
-      -- Capitals Minimap Ways (Exit/Passage) icons
-      if ns.CapitalIDs and ns.ways and (value.hideOnMinimap == false) then
-        scale = db.CapitalsMinimapWaysScale
-        alpha = db.CapitalsMinimapWaysAlpha
+      -- Capitals Minimap General (Hearthstone/Exit/Passage) icons
+      if ns.CapitalIDs and ns.capitalgenerals and (value.hideOnMinimap == false) then
+        scale = db.CapitalsMinimapGeneralScale
+        alpha = db.CapitalsMinimapGeneralAlpha
       end
 
-      -- Capitals Ways (Exit/Passage) icons
-      if ns.CapitalIDs and ns.ways and (value.hideOnMinimap == true) then
-        scale = db.CapitalsWaysScale
-        alpha = db.CapitalsWaysAlpha
+      -- Capitals General (Hearthstone/Exit/Passage) icons
+      if ns.CapitalIDs and ns.capitalgenerals and (value.hideOnMinimap == true) then
+        scale = db.CapitalsGeneralScale
+        alpha = db.CapitalsGeneralAlpha
       end
 
       -- Capitals Transport (Zeppeline/Ship/Carriage) icons
