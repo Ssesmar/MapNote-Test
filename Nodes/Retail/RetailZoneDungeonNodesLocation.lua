@@ -475,12 +475,10 @@ if not db.show.HideMapNote then
             
             if self.faction == "Horde" or db.show.EnemyFaction then
               nodes[525][47746482] = { mnID = 590, name = L["Seer Kazal"] .. " - " .. REQUIRES_LABEL .. " " .. GARRISON_LOCATION_TOOLTIP .. " " .. LEVEL .. " " .. ACTION_SPELL_CAST_START_MASTER .. "\n" .. L["Registrant"] .. " - " .. RAID_FINDER .. "\n" .. " ", id = { 477, 457, 669 }, type = "LFR", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
-              nodes[590][41364698] = { mnID = 590, name = L["Seer Kazal"] .. " - " .. REQUIRES_LABEL .. " " .. GARRISON_LOCATION_TOOLTIP .. " " .. LEVEL .. " " .. ACTION_SPELL_CAST_START_MASTER .. "\n" .. L["Registrant"] .. " - " .. RAID_FINDER .. "\n" .. " ", id = { 477, 457, 669 }, type = "LFR", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
             end
             
             if self.faction == "Alliance" or db.show.EnemyFaction then
               nodes[539][29001638] = { mnID = 582, name = L["Seer Kazal"] .. " - " .. REQUIRES_LABEL .. " " .. GARRISON_LOCATION_TOOLTIP .. " " .. LEVEL .. " " .. ACTION_SPELL_CAST_START_MASTER .. "\n" .. L["Registrant"] .. " - " .. RAID_FINDER .. "\n" .. " ", id = { 477, 457, 669 }, type = "LFR", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
-              nodes[582][33173703] = { mnID = 582, name = L["Seer Kazal"] .. " - " .. REQUIRES_LABEL .. " " .. GARRISON_LOCATION_TOOLTIP .. " " .. LEVEL .. " " .. ACTION_SPELL_CAST_START_MASTER .. "\n" .. L["Registrant"] .. " - " .. RAID_FINDER .. "\n" .. " ", id = { 477, 457, 669 }, type = "LFR", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
             end
           end
 
@@ -558,7 +556,6 @@ if not db.show.HideMapNote then
           if self.db.profile.showZoneDungeons then
 
             if self.faction == "Horde" or db.show.EnemyFaction then
-              nodes[1165][44049256] = { id = 1012, type = "Dungeon", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- The MOTHERLODE HORDE
               nodes[862][56105984] = { id = 1012, type = "Dungeon", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- The Motherlode
             end
 
@@ -604,9 +601,6 @@ if not db.show.HideMapNote then
 
             if self.faction == "Horde" or db.show.EnemyFaction then
               nodes[862][57304305] = { mnID = 1164, name = L["Eppu"] .. "\n" .. L["Registrant"] .. " - " .. RAID_FINDER .. "\n" .. " ", id = { 1176, 1031, 1179, 1036 }, type = "LFR", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
-              nodes[1163][76554199] = { mnID = 1164, name = DUNGEON_FLOOR_GILNEAS3  .. "\n" .. " " .. "\n" .. L["Eppu"] .. "\n" .. L["Registrant"] .. " - " .. RAID_FINDER .. "\n" .. " ", id = { 1176, 1031, 1179, 1036 }, type = "PassageRaid", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
-              nodes[1164][68583002] = { mnID = 1164, name = L["Eppu"] .. "\n" .. L["Registrant"] .. " - " .. RAID_FINDER .. "\n" .. " ", id = { 1176, 1031, 1179, 1036 }, type = "LFR", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
-              nodes[1165][49914447] = { mnID = 1164, name = L["Eppu"] .. "\n" .. L["Registrant"] .. " - " .. RAID_FINDER .. "\n" .. " ", id = { 1176, 1031, 1179, 1036 }, type = "LFR", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
             end
           end
 
@@ -630,8 +624,6 @@ if not db.show.HideMapNote then
             nodes[1169][38926976] = { id = 1002, type = "Dungeon", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Tol Dagor
 
             if self.faction == "Alliance" or db.show.EnemyFaction then
-              nodes[1161][71971537] = { id = 1023, type = "Dungeon", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Siege of Boralus
-              nodes[1161][75591953] = { dnID = L["Position of the real Instance Entrance"], id = 1023, type = "Dungeon", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Siege of Boralus
               nodes[895][75632450] = { id = 1023, type = "Dungeon", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Siege of Boralus
             end
 
@@ -648,7 +640,6 @@ if not db.show.HideMapNote then
 
             if self.faction == "Alliance" or db.show.EnemyFaction then
               nodes[895][74382837] = { id = 1176, type = "Raid", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Battle of Dazar'alor
-              nodes[1161][70443555] = { id = 1176, type = "Raid", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Battle of Dazar'alor
             end
           end
 
@@ -658,7 +649,6 @@ if not db.show.HideMapNote then
 
             if self.faction == "Alliance" or db.show.EnemyFaction then
               nodes[895][75112192] = { mnID = 1161, name = L["Kiku"] .. "\n" .. L["Registrant"] .. " - " .. RAID_FINDER .. "\n" .. " ", id = { 1176, 1031, 1179, 1036 }, type = "LFR", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
-              nodes[1161][74191352] = { mnID = 1161, name = L["Kiku"] .. "\n" .. L["Registrant"] .. " - " .. RAID_FINDER .. "\n" .. " ", id = { 1176, 1031, 1179, 1036 }, type = "LFR", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
             end
           end
         end

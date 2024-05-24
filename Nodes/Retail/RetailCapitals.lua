@@ -17,6 +17,10 @@ if not db.show.HideMapNote then
     if db.show.Capitals then
 
 
+    --###########################################################################################
+    --################################         Horde Cities       ###############################
+    --###########################################################################################
+
     --################
     --### Ogrimmar ###
     --################
@@ -25,7 +29,7 @@ if not db.show.HideMapNote then
         --#############################
         --### Horde or EnemyFaction ###
         --#############################
-            if self.faction == "Horde" or db.show.EnemyFaction then
+            if self.faction == "Horde" or db.show.CapitalEnemyFaction then
 
             --Professions Orgrimmar
                 if self.db.profile.showProfessions then
@@ -58,11 +62,11 @@ if not db.show.HideMapNote then
                     end
 
                     if self.db.profile.showBlacksmith then
-                        nodes[85][76533451] = { name = L["Blacksmith"], type = "Blacksmith", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
-                        nodes[85][75353400] = { name = L["Blacksmith"], type = "Blacksmith", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
-                        nodes[85][76373707] = { name = L["Blacksmith"], type = "Blacksmith", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
-                        nodes[85][40565031] = { name = L["Blacksmith"], type = "Blacksmith", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
-                        nodes[85][44237719] = { name = L["Blacksmith"], type = "Blacksmith", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                        nodes[85][76533451] = { name = L["Blacksmithing"], type = "Blacksmith", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                        nodes[85][75353400] = { name = L["Blacksmithing"], type = "Blacksmith", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                        nodes[85][76373707] = { name = L["Blacksmithing"], type = "Blacksmith", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                        nodes[85][40565031] = { name = L["Blacksmithing"], type = "Blacksmith", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                        nodes[85][44237719] = { name = L["Blacksmithing"], type = "Blacksmith", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
                     if self.db.profile.showMining then
@@ -93,10 +97,10 @@ if not db.show.HideMapNote then
                 end
 
             --Transports Orgrimmar
-                if self.db.profile.showCapitalsTransports then
+                if self.db.profile.showCapitalsTransporting then
 
                     if self.db.profile.showCapitalsPortals then
-                        nodes[85][57278961] = { name = "", type = "HPortal", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = L["Portalroom"] .. "\n" .. "\n" .. " => " .. L["Silvermoon City"] .. "\n" .. " => " .. L["Valdrakken"] .. "\n" .. " => " .. L["Oribos"] .. "\n" .. " => " .. L["Azsuna"] .. "\n" .. " => " .. L["Zuldazar"] .. "\n" .. " => " .. L["Shattrath City"] .. "\n" .. " => " .. DUNGEON_FLOOR_DALARANCITY1 .. "\n" .. " => " .. DUNGEON_FLOOR_TANARIS18 .. "\n" .. " => " .. POSTMASTER_LETTER_HYJAL } -- Portalroom from Orgrimmar
+                        nodes[85][57278961] = { name = "", type = "PassageHPortal", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = L["Portalroom"] .. "\n" .. "\n" .. " => " .. L["Silvermoon City"] .. "\n" .. " => " .. L["Valdrakken"] .. "\n" .. " => " .. L["Oribos"] .. "\n" .. " => " .. L["Azsuna"] .. "\n" .. " => " .. L["Zuldazar"] .. "\n" .. " => " .. L["Shattrath City"] .. "\n" .. " => " .. DUNGEON_FLOOR_DALARANCITY1 .. "\n" .. " => " .. DUNGEON_FLOOR_TANARIS18 .. "\n" .. " => " .. POSTMASTER_LETTER_HYJAL } -- Portalroom from Orgrimmar
                         nodes[85][50765561] = { mnID = 18, name = "", type = "HPortal", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = L["Portal"] .. " => " .. L["Ruins of Lordaeron"] } -- Ruins of Lordaeron 
                         nodes[85][55988822] = { mnID = 110, name = "", type = "HPortalS", showInZone = false, hideOnContinent = true, hideOnMinimap = true, TransportName = L["Portal"] .. " => " .. L["Silvermoon City"] } -- Silvermoon City
                         nodes[85][57098737] = { mnID = 2112, name = "", type = "HPortalS", showInZone = false, hideOnContinent = true, hideOnMinimap = true, TransportName = L["Portal"] .. " => " .. L["Valdrakken"] } --  Valdrakken 
@@ -114,6 +118,8 @@ if not db.show.HideMapNote then
                         nodes[85][51203832] = { mnID = 198, name = "", type = "HPortalS", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = L["Portal"] .. " => " .. POSTMASTER_LETTER_HYJAL } -- Portal to Hyjal
                         nodes[85][50863628] = { mnID = 207, name = "", type = "HPortalS", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = L["Portal"] .. " => " .. ARTIFACT_SHAMAN_TITLECARD_DEEPHOLM } -- Portal to Deepholm
                         nodes[85][49203647] = { mnID = 203, name = "", type = "HPortalS", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = L["Portal"] .. " => " .. L["Vashj'ir"] } -- Portal to Vashjir
+                        nodes[85][70583097] = { mnID = 503, name = "", type = "HPortal", showInZone = true, hideOnContinent = true, hideOnMinimap = true} -- Portal to Shlae'gararena
+                        nodes[503][57431229] = { mnID = 85, name = "", type = "HPortal", showInZone = true, hideOnContinent = true, hideOnMinimap = true} -- Portal to Shlae'gararena
                     end
 
                     if self.db.profile.showCapitalsZeppelins then
@@ -140,14 +146,41 @@ if not db.show.HideMapNote then
 
                 end
 
-            --Ways Orgrimmar
-                if self.db.profile.showCapitalsWays then
+            --General Orgrimmar
+                if self.db.profile.showCapitalsGeneral then
     
                     if self.db.profile.showCapitalsPaths then
                         nodes[85][74800606] = { dnID = L["Exit"], name = "", mnID = 76, type = "PassageRightL", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Passage/Exit 
                         nodes[85][49529373] = { dnID = L["Exit"], name = "", mnID = 1, type = "PassageDownL", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Passage/Exit 
                         nodes[85][23636814] = { dnID = L["Exit"], name = "", mnID = 10, type = "PassageLeftL", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Passage/Exit 
+                    end
 
+                    if self.db.profile.showCapitalsHearthstone then
+                        nodes[85][53637877] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                        nodes[85][40977990] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                        nodes[85][38854865] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                        nodes[85][71304995] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+
+                    end
+
+                    if self.db.profile.showCapitalsAuctioneer then
+                        nodes[85][53957324] = { dnID = MINIMAP_TRACKING_AUCTIONEER, name = "", type = "Auctioneer", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                        nodes[85][35847732] = { dnID = MINIMAP_TRACKING_AUCTIONEER, name = "", type = "Auctioneer", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                        nodes[85][41674889] = { dnID = MINIMAP_TRACKING_AUCTIONEER, name = "", type = "Auctioneer", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                        nodes[85][66623629] = { dnID = MINIMAP_TRACKING_AUCTIONEER, name = "", type = "Auctioneer", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+
+                    end
+
+                    if self.db.profile.showCapitalsBank then
+                        nodes[85][48748348] = { dnID = BANK .. "\n" .. GUILD_BANK, name = "", type = "Bank", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                        nodes[85][67615218] = { dnID = BANK .. "\n" .. GUILD_BANK, name = "", type = "Bank", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                        nodes[85][39904626] = { dnID = BANK, name = "", type = "Bank", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                        nodes[85][40634599] = { dnID = GUILD_BANK, name = "", type = "Bank", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+
+                    end
+
+                    if self.db.profile.showCapitalsMapNotes then
+                        nodes[85][32916483] = { dnID = MINIMAP_TRACKING_INNKEEPER .. "\n" .. BANK .. "\n" .. MINIMAP_TRACKING_AUCTIONEER, name = "", type = "MNL", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
                     end
 
                 end
@@ -164,7 +197,7 @@ if not db.show.HideMapNote then
         --#############################
         --### Horde or EnemyFaction ###
         --#############################
-            if self.faction == "Horde" or db.show.EnemyFaction then
+            if self.faction == "Horde" or db.show.CapitalEnemyFaction then
 
             --Professions Thunder Bluff
                 if self.db.profile.showProfessions then
@@ -183,7 +216,6 @@ if not db.show.HideMapNote then
 
                     if self.db.profile.showSkinning then
                         nodes[88][44424321] = { name = L["Skinning"], type = "Skinning", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
-                        nodes[88][39404968] = { name = L["Skinning"], type = "Skinning", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
                     if self.db.profile.showTailoring then
@@ -195,7 +227,7 @@ if not db.show.HideMapNote then
                     end
 
                     if self.db.profile.showBlacksmith then
-                        nodes[88][39365510] = { name = L["Blacksmith"], type = "Blacksmith", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                        nodes[88][39365510] = { name = L["Blacksmithing"], type = "Blacksmith", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
                     if self.db.profile.showMining then
@@ -221,7 +253,7 @@ if not db.show.HideMapNote then
                 end
 
             --Transports Thunder Bluff
-                if self.db.profile.showCapitalsTransports then
+                if self.db.profile.showCapitalsTransporting then
   
                     if self.db.profile.showCapitalsZeppelins then
                         nodes[88][14292570] = { mnID = 85, name = "", type = "HZeppelin", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = L["Zeppelin"] .. " => " .. ORGRIMMAR } -- Zeppelin from Thunder Bluff to OG
@@ -229,18 +261,31 @@ if not db.show.HideMapNote then
 
                 end
 
-            --Ways Thunder Bluff
-                if self.db.profile.showCapitalsWays then
+            --General Thunder Bluff
+                if self.db.profile.showCapitalsGeneral then
     
                     if self.db.profile.showCapitalsPaths then
-                        nodes[88][31886595] = { dnID = L["Exit"], name = "", mnID = 7, type = "PassageDownL", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Passage/Exit 
-                        nodes[88][31456256] = { dnID = L["Exit"], name = "", mnID = 7, type = "PassageDownL", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Passage/Exit 
+                        nodes[88][31886595] = { dnID = L["Exit"], name = "", mnID = 7, type = "PassageDownL", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                        nodes[88][31456256] = { dnID = L["Exit"], name = "", mnID = 7, type = "PassageDownL", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                    end
+
+                    if self.db.profile.showCapitalsHearthstone then
+                        nodes[88][45856477] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                    end
+
+                    if self.db.profile.showCapitalsAuctioneer then
+                        nodes[88][38875023] = { dnID = MINIMAP_TRACKING_AUCTIONEER, name = "", type = "Auctioneer", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                        nodes[88][40435169] = { dnID = MINIMAP_TRACKING_AUCTIONEER, name = "", type = "Auctioneer", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                    end
+
+                    
+                    if self.db.profile.showCapitalsBank then
+                        nodes[88][47175862] = { dnID = BANK, name = "", type = "Bank", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
                     end
 
                 end
 
-            end
-
+            end    
         end
 
 
@@ -252,7 +297,7 @@ if not db.show.HideMapNote then
         --#############################
         --### Horde or EnemyFaction ###
         --#############################
-            if self.faction == "Horde" or db.show.EnemyFaction then
+            if self.faction == "Horde" or db.show.CapitalEnemyFaction then
 
             --Professions Silvermoon
                 if self.db.profile.showProfessions then
@@ -283,7 +328,7 @@ if not db.show.HideMapNote then
                     end
 
                     if self.db.profile.showBlacksmith then
-                        nodes[110][79423869] = { name = L["Blacksmith"], type = "Blacksmith", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                        nodes[110][79423869] = { name = L["Blacksmithing"], type = "Blacksmith", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
                     if self.db.profile.showMining then
@@ -318,7 +363,7 @@ if not db.show.HideMapNote then
                 end
 
             --Transports Silvermoon
-                if self.db.profile.showCapitalsTransports then
+                if self.db.profile.showCapitalsTransporting then
 
                     if self.db.profile.showCapitalsPortals then
                         nodes[110][58511859] = { mnID = 85, name = "", type = "HPortal", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = L["Portal"] .. " => " .. ORGRIMMAR } -- Portal to Orgrimmar from Silvermoon 
@@ -327,11 +372,26 @@ if not db.show.HideMapNote then
 
                 end
 
-            --Ways Silvermoon
-                if self.db.profile.showCapitalsWays then
+            --General Silvermoon
+                if self.db.profile.showCapitalsGeneral then
     
                     if self.db.profile.showCapitalsPaths then
                         nodes[110][72609199] = { dnID = L["Exit"], name = "", mnID = 94, type = "PassageDownL", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Passage/Exit 
+                    end
+
+                    if self.db.profile.showCapitalsHearthstone then
+                        nodes[110][79465822] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                        nodes[110][67867288] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                    end
+
+                    if self.db.profile.showCapitalsAuctioneer then
+                        nodes[110][92735828] = { dnID = MINIMAP_TRACKING_AUCTIONEER, name = "", type = "Auctioneer", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                        nodes[110][60726258] = { dnID = MINIMAP_TRACKING_AUCTIONEER, name = "", type = "Auctioneer", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                    end
+
+                    if self.db.profile.showCapitalsBank then
+                        nodes[110][89714509] = { dnID = BANK .. "\n" .. GUILD_BANK, name = "", type = "Bank", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                        nodes[110][65807788] = { dnID = BANK .. "\n" .. GUILD_BANK, name = "", type = "Bank", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
                     end
 
                 end
@@ -348,15 +408,13 @@ if not db.show.HideMapNote then
         --#############################
         --### Horde or EnemyFaction ###
         --#############################
-            if self.faction == "Horde" or db.show.EnemyFaction then
+            if self.faction == "Horde" or db.show.CapitalEnemyFaction then
 
             --Professions Undercity
                 if self.db.profile.showProfessions then
 
                     if self.db.profile.showAlchemy then
                         nodes[90][47757332] = { name = L["Alchemy"], type = "Alchemy", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
-                        nodes[90][52947737] = { name = L["Alchemy"], type = "PassageDownL", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = L["Passage"] .. " " .. MINIMAP_TRACKING_TRAINER_PROFESSION }
-                        nodes[90][44626639] = { name = L["Alchemy"], type = "PassageDownL", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = L["Passage"] .. " " .. MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
                 
                     if self.db.profile.showLeatherworking then
@@ -380,7 +438,7 @@ if not db.show.HideMapNote then
                     end
 
                     if self.db.profile.showBlacksmith then
-                        nodes[90][61313061] = { name = L["Blacksmith"], type = "Blacksmith", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                        nodes[90][61313061] = { name = L["Blacksmithing"], type = "Blacksmith", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
                     if self.db.profile.showMining then
@@ -413,7 +471,7 @@ if not db.show.HideMapNote then
                 end
 
             --Transports Undercity
-                if self.db.profile.showCapitalsTransports then
+                if self.db.profile.showCapitalsTransporting then
 
                     if self.db.profile.showCapitalsPortals then
                         nodes[90][85181711] = { mnID = 100, name = "", type = "HPortal", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Portal from Old Undercity to Hellfire
@@ -421,11 +479,376 @@ if not db.show.HideMapNote then
 
                 end
 
-            --Ways Undercity
-                if self.db.profile.showCapitalsWays then
+            --General Undercity
+                if self.db.profile.showCapitalsGeneral then
     
                     if self.db.profile.showCapitalsPaths then
                         nodes[90][15003101] = { dnID = L["Exit"], name = "", mnID = 18, type = "PassageUpL", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Passage/Exit 
+                        nodes[90][46474406] = { dnID = L["Exit"], name = "", mnID = 18, type = "PassageLeftL", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Passage/Exit 
+                        nodes[90][66110384] = { dnID = L["Exit"] .. " " .. DUNGEON_FLOOR_GILNEAS3, name = "", mnID = 18, type = "PassageUpL", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Passage/Exit 
+                        nodes[90][49792975] = { dnID = L["Exit"], name = "", mnID = 18, type = "PassageLeftL", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = REQUIRES_LABEL .. " " .. MOUNT_JOURNAL_FILTER_FLYING } -- Passage/Exit 
+                        nodes[90][65865202] = { dnID = DUNGEON_FLOOR_GILNEAS3 .. " => " .. DUNGEON_FLOOR_GILNEAS2 .. "\n" ..  DUNGEON_FLOOR_GILNEAS2 .. " => " .. DUNGEON_FLOOR_GILNEAS3, name = "", type = "PassageUpL", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Passage/Exit 
+                        nodes[90][60584399] = { dnID = DUNGEON_FLOOR_GILNEAS3 .. " => " .. DUNGEON_FLOOR_GILNEAS2 .. "\n" ..  DUNGEON_FLOOR_GILNEAS2 .. " => " .. DUNGEON_FLOOR_GILNEAS3, name = "", type = "PassageUpL", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Passage/Exit 
+                        nodes[90][71294410] = { dnID = DUNGEON_FLOOR_GILNEAS3 .. " => " .. DUNGEON_FLOOR_GILNEAS2 .. "\n" ..  DUNGEON_FLOOR_GILNEAS2 .. " => " .. DUNGEON_FLOOR_GILNEAS3, name = "", type = "PassageUpL", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Passage/Exit 
+                        nodes[90][52947737] = { name = L["Passage"] .. " " .. MINIMAP_TRACKING_TRAINER_PROFESSION, type = "PassageDownL", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName =  L["Alchemy"] }
+                        nodes[90][44626639] = { name = L["Passage"] .. " " .. MINIMAP_TRACKING_TRAINER_PROFESSION, type = "PassageDownL", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName =  L["Alchemy"] }
+                    end
+
+                    if self.db.profile.showCapitalsHearthstone then
+                        nodes[90][67743784] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                    end
+
+                    if self.db.profile.showCapitalsAuctioneer then
+                        nodes[90][60534156] = { dnID = MINIMAP_TRACKING_AUCTIONEER, name = "", type = "Auctioneer", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                        nodes[90][64363583] = { dnID = MINIMAP_TRACKING_AUCTIONEER, name = "", type = "Auctioneer", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                        nodes[90][67663591] = { dnID = MINIMAP_TRACKING_AUCTIONEER, name = "", type = "Auctioneer", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                        nodes[90][71494189] = { dnID = MINIMAP_TRACKING_AUCTIONEER, name = "", type = "Auctioneer", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                        nodes[90][71394672] = { dnID = MINIMAP_TRACKING_AUCTIONEER, name = "", type = "Auctioneer", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                        nodes[90][67545239] = { dnID = MINIMAP_TRACKING_AUCTIONEER, name = "", type = "Auctioneer", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                        nodes[90][64415242] = { dnID = MINIMAP_TRACKING_AUCTIONEER, name = "", type = "Auctioneer", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                        nodes[90][60494647] = { dnID = MINIMAP_TRACKING_AUCTIONEER, name = "", type = "Auctioneer", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                    end
+
+                    if self.db.profile.showCapitalsBank then
+                        nodes[90][66014406] = { dnID = BANK .. "\n" .. GUILD_BANK, name = "", type = "Bank", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                    end
+
+                end
+
+            end
+
+        end
+
+    --###########################
+    --### Warspear / Garrison ###
+    --###########################
+        if self.db.profile.showWarspear then
+
+        --#############################
+        --### Horde or EnemyFaction ###
+        --#############################
+            if self.faction == "Horde" or db.show.CapitalEnemyFaction then
+
+            --Instance Warspear / Garrison
+                if self.db.profile.showCapitalsInstances then
+    
+                    if self.db.profile.showCapitalsLFR then
+                        nodes[590][41364698] = { mnID = 590, name = L["Seer Kazal"] .. " - " .. REQUIRES_LABEL .. " " .. GARRISON_LOCATION_TOOLTIP .. " " .. LEVEL .. " " .. ACTION_SPELL_CAST_START_MASTER .. "\n" .. L["Registrant"] .. " - " .. RAID_FINDER .. "\n" .. " ", id = { 477, 457, 669 }, type = "LFR", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                    end
+    
+                end
+
+            --Professions Warspear
+                if self.db.profile.showProfessions then
+
+                    if self.db.profile.showAlchemy then
+                        nodes[624][60832652] = { name = L["Alchemy"], type = "Alchemy", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                    end
+                
+                    if self.db.profile.showLeatherworking then
+                        nodes[624][49532786] = { name = L["Leatherworking"], type = "Leatherworking", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                    end
+
+                    if self.db.profile.showEngineer then
+                        nodes[624][716840299] = { name = L["Engineer"], type = "Engineer", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                    end
+
+                    if self.db.profile.showSkinning then
+                        nodes[624][48643138] = { name = L["Skinning"], type = "Skinning", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                    end
+
+                    if self.db.profile.showTailoring then
+                        nodes[624][59394278] = { name = L["Tailoring"], type = "Tailoring", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                    end
+
+                    if self.db.profile.showJewelcrafting then
+                        nodes[624][60203986] = { name = L["Jewelcrafting"], type = "Jewelcrafting", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                    end
+
+                    if self.db.profile.showBlacksmith then
+                        nodes[624][74093712] = { name = L["Blacksmithing"], type = "Blacksmith", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                    end
+
+                    if self.db.profile.showMining then
+                        nodes[624][78603676] = { name = L["Mining"], type = "Mining", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                    end
+
+                    if self.db.profile.showFishing then
+                        nodes[624][69161653] = { name = PROFESSIONS_FISHING, type = "Fishing", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                    end
+
+                    if self.db.profile.showCooking then
+                        nodes[624][45784497] = { name = PROFESSIONS_COOKING, type = "Cooking", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                    end
+
+                    if self.db.profile.showArchaeology then
+                        nodes[624][73603119] = { name = PROFESSIONS_ARCHAEOLOGY, type = "Archaeology", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                    end
+
+                    if self.db.profile.showHerbalism then
+                        nodes[624][62563059] = { name = L["Herbalism"], type = "Herbalism", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                    end
+
+                    if self.db.profile.showInscription then
+                        nodes[624][77104741] = { name = INSCRIPTION, type = "Inscription", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                    end
+
+                    if self.db.profile.showEnchanting then
+                        nodes[624][78755287] = { name = L["Enchanting"], type = "Enchanting", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                    end
+                end
+
+            --Transports Warspear
+                if self.db.profile.showCapitalsTransporting then
+
+                    if self.db.profile.showCapitalsPortals then
+                        nodes[624][53184384] = { mnID = 534, name = L["Vol'mar"], type = "HPortal", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Portal from Ashran to Vol'mar Captive
+                        nodes[624][60825159] = { mnID = 85, name = "", type = "HPortal", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = L["Portal"] .. " => " .. ORGRIMMAR } -- Portal from Garrison to Ashran
+                        nodes[590][75184879] = { mnID = 624, name = L["Ashran"], type = "HPortal", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Portal from Garrison to Ashran
+                    end
+
+                end
+
+            --General Warspear
+                if self.db.profile.showCapitalsGeneral then
+    
+                    if self.db.profile.showCapitalsPaths then
+                        nodes[624][55498792] = { dnID = L["Exit"], name = "", mnID = 588, type = "PassageRightL", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Passage/Exit 
+                    end
+
+                    if self.db.profile.showCapitalsHearthstone then
+                        nodes[624][44954321] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                    end
+
+                    if self.db.profile.showCapitalsAuctioneer then
+                        nodes[624][54692551] = { dnID = MINIMAP_TRACKING_AUCTIONEER, name = "", type = "Auctioneer", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                    end
+
+                    if self.db.profile.showCapitalsBank then
+                        nodes[624][51766162] = { dnID = BANK .. "\n" .. GUILD_BANK, name = "", type = "Bank", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                    end
+
+                end
+
+            end
+
+        end
+
+    --#################
+    --### DazarAlor ###
+    --#################
+        if self.db.profile.showDazarAlor then
+
+        --#############################
+        --### Horde or EnemyFaction ###
+        --#############################
+            if self.faction == "Horde" or db.show.CapitalEnemyFaction then
+
+            --Professions DazarAlor
+                if self.db.profile.showProfessions then
+
+                    if self.db.profile.showAlchemy then
+                        nodes[1165][42223796] = { name = L["Alchemy"], type = "Alchemy", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                    end
+                
+                    if self.db.profile.showLeatherworking then
+                        nodes[1165][44103463] = { name = L["Leatherworking"], type = "Leatherworking", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                    end
+
+                    if self.db.profile.showEngineer then
+                        nodes[1165][45144059] = { name = L["Engineer"], type = "Engineer", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                    end
+
+                    if self.db.profile.showSkinning then
+                        nodes[1165][43783469] = { name = L["Skinning"], type = "Skinning", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                    end
+
+                    if self.db.profile.showTailoring then
+                        nodes[1165][44493387] = { name = L["Tailoring"], type = "Tailoring", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                    end
+
+                    if self.db.profile.showJewelcrafting then
+                        nodes[1165][47053791] = { name = L["Jewelcrafting"], type = "Jewelcrafting", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION .. "\n" .. L["in the basement"] }
+                    end
+
+                    if self.db.profile.showBlacksmith then
+                        nodes[624][74093712] = { name = L["Blacksmithing"], type = "Blacksmith", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                    end
+
+                    if self.db.profile.showMining then
+                        nodes[1165][44123896] = { name = L["Mining"], type = "Mining", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                    end
+
+                    if self.db.profile.showFishing then
+                        nodes[1165][50522337] = { name = PROFESSIONS_FISHING, type = "Fishing", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                    end
+
+                    if self.db.profile.showCooking then
+                        nodes[1165][52479045] = { name = PROFESSIONS_COOKING, type = "Cooking", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                        nodes[1164][28565017] = { name = PROFESSIONS_COOKING, type = "Cooking", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+
+                    end
+
+                    if self.db.profile.showArchaeology then
+                        nodes[1163][32223550] = { name = PROFESSIONS_ARCHAEOLOGY, type = "Archaeology", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION .. "\n" .. ERR_USE_OBJECT_MOVING }
+                        nodes[1165][48804311] = { mnID = 1163, name = PROFESSIONS_ARCHAEOLOGY, type = "Archaeology", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                    end
+
+                    if self.db.profile.showHerbalism then
+                        nodes[1165][42093560] = { name = L["Herbalism"], type = "Herbalism", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                    end
+
+                    if self.db.profile.showInscription then
+                        nodes[1165][42313974] = { name = INSCRIPTION, type = "Inscription", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                        nodes[1163][70563292] = { name = INSCRIPTION, type = "Inscription", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                    end
+
+                    if self.db.profile.showEnchanting then
+                        nodes[1165][47103569] = { name = L["Enchanting"], type = "Enchanting", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION .. "\n" .. L["in the basement"] }
+                    end
+                end
+
+            --Transports DazarAlor
+                if self.db.profile.showCapitalsTransporting then
+
+                    if self.db.profile.showCapitalsPortals then
+                        nodes[1165][51424583] = { mnID = 1163, name = "", type = "HPortal", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = L["Dazar'alor"] .. " " .. L["Portalroom"] .. L["(inside building)"] .. "\n" .. " => " .. L["Silvermoon City"] .. "\n" .. " => " .. ORGRIMMAR .. "\n" .. " => " .. L["Thunder Bluff"] .. "\n" .. " => " .. L["Silithus"] .. "\n" .. " => " .. L["Nazjatar"] } -- Portalroom from Dazar'alor
+                        nodes[1163][73726194] = { mnID = 110, name = "", type = "HPortal", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Portalroom from Dazar'alor
+                        nodes[1163][74006974] = { mnID = 85, name = "", type = "HPortal", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = L["Portal"] .. " => " .. ORGRIMMAR } -- Portalroom from Dazar'alor
+                        nodes[1163][74027739] = { mnID = 88, name = "", type = "HPortal", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Portalroom from Dazar'alor
+                        nodes[1163][73808541] = { mnID = 81, name = "", type = "HPortal", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Portalroom from Dazar'alor
+                        nodes[1163][63008553] = { mnID = 1355,  name = "", type = "HPortal", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Portalroom from Dazar'alor
+                        nodes[1165][52079454] = { mnID = 62, name = L["This Darkshore portal is only active if your faction is currently occupying Bashal'Aran"], type = "HPortal", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Portal from Dazar'alor to Arathi or Darkshore
+                        nodes[1165][51719454] = { mnID = 14, name = L["This Arathi Highlands portal is only active if your faction is currently occupying Ar'gorok"], type = "HPortal", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Portal from Dazar'alor to Arathi or Darkshore         
+                    end
+
+                    if self.db.profile.showCapitalsTransport then
+                        nodes[1165][41838761] = { mnID = 1462, name = L["Captain Krooz"] .. " " .. L["Travel"], type = "GoblinF", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Transport from Dazar'alor to Mechagon
+                    end
+
+                end
+
+            --Instances DazarAlor
+                if self.db.profile.showCapitalsInstances then
+    
+                    if self.db.profile.showCapitalsDungeons then
+                        nodes[1165][44049256] = { id = 1012, type = "Dungeon", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- The MOTHERLODE HORDE
+                    end
+
+                    if self.db.profile.showCapitalsLFR then
+                        nodes[1163][76554199] = { mnID = 1164, name = DUNGEON_FLOOR_GILNEAS3  .. "\n" .. " " .. "\n" .. L["Eppu"] .. "\n" .. L["Registrant"] .. " - " .. RAID_FINDER .. "\n" .. " ", id = { 1176, 1031, 1179, 1036 }, type = "PassageRaid", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                        nodes[1164][68583002] = { mnID = 1164, name = L["Eppu"] .. "\n" .. L["Registrant"] .. " - " .. RAID_FINDER .. "\n" .. " ", id = { 1176, 1031, 1179, 1036 }, type = "LFR", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                        nodes[1165][49914447] = { mnID = 1164, name = L["Eppu"] .. "\n" .. L["Registrant"] .. " - " .. RAID_FINDER .. "\n" .. " ", id = { 1176, 1031, 1179, 1036 }, type = "LFR", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                    end
+                end
+
+            --General DazarAlor
+                if self.db.profile.showCapitalsGeneral then
+    
+                    if self.db.profile.showCapitalsPaths then
+                        nodes[1165][44423697] = { name = L["Passage"] .. " " .. MINIMAP_TRACKING_TRAINER_PROFESSION, type = "PassageRightL", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName =  L["Jewelcrafting"] .. "\n" .. L["Enchanting"] }
+                        nodes[1163][20962819] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS3, mnID = 1164, type = "PassageUpL", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = PROFESSIONS_COOKING .. "\n" .. RAID_FINDER } -- Passage/Exit 
+                        nodes[1163][43888227] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS3, mnID = 1164, type = "PassageUpL", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = PROFESSIONS_COOKING .. "\n" .. RAID_FINDER } -- Passage/Exit 
+                        nodes[1163][53458227] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS3, mnID = 1164, type = "PassageUpL", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = PROFESSIONS_COOKING .. "\n" .. RAID_FINDER } -- Passage/Exit 
+                        nodes[1163][41524702] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS3, mnID = 1164, type = "PassageUpL", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = PROFESSIONS_COOKING .. "\n" .. RAID_FINDER } -- Passage/Exit 
+                        nodes[1163][55184702] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS3, mnID = 1164, type = "PassageUpL", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = PROFESSIONS_COOKING .. "\n" .. RAID_FINDER } -- Passage/Exit 
+                        nodes[1164][42158227] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS2, mnID = 1163, type = "PassageDownL", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = L["Portals"] .. "\n" .. BANK .. " / " .. GUILD_BANK .."\n" .. MINIMAP_TRACKING_INNKEEPER .."\n" .. INSCRIPTION .."\n" .. PROFESSIONS_ARCHAEOLOGY } -- Passage/Exit 
+                        nodes[1164][54398227] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS2, mnID = 1163, type = "PassageDownL", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = L["Portals"] .. "\n" .. BANK .. " / " .. GUILD_BANK .."\n" .. MINIMAP_TRACKING_INNKEEPER .."\n" .. INSCRIPTION .."\n" .. PROFESSIONS_ARCHAEOLOGY } -- Passage/Exit 
+                        nodes[1164][76683848] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS2, mnID = 1163, type = "PassageDownL", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = L["Portals"] .. "\n" .. BANK .. " / " .. GUILD_BANK .."\n" .. MINIMAP_TRACKING_INNKEEPER .."\n" .. INSCRIPTION .."\n" .. PROFESSIONS_ARCHAEOLOGY } -- Passage/Exit 
+                        nodes[1164][20803895] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS2, mnID = 1163, type = "PassageDownL", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = L["Portals"] .. "\n" .. BANK .. " / " .. GUILD_BANK .."\n" .. MINIMAP_TRACKING_INNKEEPER .."\n" .. INSCRIPTION .."\n" .. PROFESSIONS_ARCHAEOLOGY } -- Passage/Exit 
+                        nodes[1164][40905331] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS2, mnID = 1163, type = "PassageDownL", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = L["Portals"] .. "\n" .. BANK .. " / " .. GUILD_BANK .."\n" .. MINIMAP_TRACKING_INNKEEPER .."\n" .. INSCRIPTION .."\n" .. PROFESSIONS_ARCHAEOLOGY } -- Passage/Exit 
+                        nodes[1164][56435354] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS2, mnID = 1163, type = "PassageDownL", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = L["Portals"] .. "\n" .. BANK .. " / " .. GUILD_BANK .."\n" .. MINIMAP_TRACKING_INNKEEPER .."\n" .. INSCRIPTION .."\n" .. PROFESSIONS_ARCHAEOLOGY } -- Passage/Exit 
+                        nodes[1164][22677175] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS3, mnID = 1165, type = "PassageUpL", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Passage/Exit 
+                        nodes[1164][74017175] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS3, mnID = 1165, type = "PassageUpL", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Passage/Exit 
+                    end
+
+                    if self.db.profile.showCapitalsHearthstone then
+                        nodes[1165][52418494] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                        nodes[1165][49844867] = { mnID = 1163, dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                        nodes[1163][48837200] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                    end
+
+                    if self.db.profile.showCapitalsAuctioneer then
+                        nodes[1165][44964015] = { dnID = MINIMAP_TRACKING_AUCTIONEER, name = "", type = "Auctioneer", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = REQUIRES_LABEL .. " " .. L["Engineer"] }
+                    end
+
+                    if self.db.profile.showCapitalsBank then
+                        nodes[1163][31834692] = { dnID = GUILD_BANK, name = "", type = "Bank", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                        nodes[1163][30226774] = { dnID = BANK .. "\n" .. GUILD_BANK, name = "", type = "Bank", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                    end
+
+                end
+
+            end
+
+        end
+
+    --#############
+    --### Sot2M ###
+    --#############
+        if self.db.profile.showSot2M then
+
+        --#############################
+        --### Horde or EnemyFaction ###
+        --#############################
+            if self.faction == "Horde" or db.show.CapitalEnemyFaction then
+
+            --Professions Sot2M
+                if self.db.profile.showProfessions then
+
+                    if self.db.profile.showEngineer then
+                        nodes[391][62374397] = { name = L["Engineer"], type = "Engineer", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                    end
+
+                    if self.db.profile.showBlacksmith then
+                        nodes[391][25844377] = { name = L["Blacksmithing"], type = "Blacksmith", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                    end
+
+                end
+
+            --Transports Sot2M
+                if self.db.profile.showCapitalsTransporting then
+
+                    if self.db.profile.showCapitalsPortals then
+                        nodes[392][72464286] = { mnID = 85, name = "", type = "HPortal", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = L["Portal"] .. " => " .. ORGRIMMAR } -- Portal from Shrine of Two Moons to Orgrimmar
+                    end
+
+                end
+
+            --General Sot2M
+                if self.db.profile.showCapitalsGeneral then
+    
+                    if self.db.profile.showCapitalsPaths then
+                        nodes[391][26778156] = { name = L["Exit"], mnID = 390, type = "PassageDownL", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                        nodes[391][53618846] = { name = L["Exit"], mnID = 390, type = "PassageDownL", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                        nodes[391][77476963] = { name = L["Exit"], mnID = 390, type = "PassageDownL", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                        nodes[391][78084452] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS3, mnID = 392, type = "PassageUpL", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = "\n" .. BANK .. "\n" .. GUILD_BANK .. "\n" .. L["Portal"] .. " => " .. ORGRIMMAR }
+                        nodes[391][22245623] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS3, mnID = 392, type = "PassageUpL", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = "\n" .. BANK .. "\n" .. GUILD_BANK .. "\n" .. L["Portal"] .. " => " .. ORGRIMMAR }
+                        nodes[391][36972301] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS3, mnID = 392, type = "PassageUpL", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = "\n" .. BANK .. "\n" .. GUILD_BANK .. "\n" .. L["Portal"] .. " => " .. ORGRIMMAR }
+                        nodes[391][57691948] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS3, mnID = 392, type = "PassageUpL", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = "\n" .. BANK .. "\n" .. GUILD_BANK .. "\n" .. L["Portal"] .. " => " .. ORGRIMMAR }
+                        nodes[392][55653047] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS2, mnID = 391, type = "PassageDownL", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = "\n" .. MINIMAP_TRACKING_AUCTIONEER .. " " .. REQUIRES_LABEL .. " " .. L["Engineer"] .. "\n" .. MINIMAP_TRACKING_INNKEEPER .. "\n" .. L["Engineer"] .. "\n" .. L["Blacksmithing"] }
+                        nodes[392][37913400] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS2, mnID = 391, type = "PassageDownL", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = "\n" .. MINIMAP_TRACKING_AUCTIONEER .. " " .. REQUIRES_LABEL .. " " .. L["Engineer"] .. "\n" .. MINIMAP_TRACKING_INNKEEPER .. "\n" .. L["Engineer"] .. "\n" .. L["Blacksmithing"] }
+                        nodes[392][27407968] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS2, mnID = 391, type = "PassageDownL", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = "\n" .. MINIMAP_TRACKING_AUCTIONEER .. " " .. REQUIRES_LABEL .. " " .. L["Engineer"] .. "\n" .. MINIMAP_TRACKING_INNKEEPER .. "\n" .. L["Engineer"] .. "\n" .. L["Blacksmithing"] }
+                        nodes[392][74176908] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS2, mnID = 391, type = "PassageDownL", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = "\n" .. MINIMAP_TRACKING_AUCTIONEER .. " " .. REQUIRES_LABEL .. " " .. L["Engineer"] .. "\n" .. MINIMAP_TRACKING_INNKEEPER .. "\n" .. L["Engineer"] .. "\n" .. L["Blacksmithing"] }
+                    end
+
+                    if self.db.profile.showCapitalsHearthstone then
+                        nodes[391][68544760] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                        nodes[392][60357734] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                    end
+
+                    if self.db.profile.showCapitalsAuctioneer then
+                        nodes[391][59044226] = { dnID = MINIMAP_TRACKING_AUCTIONEER, name = "", type = "Auctioneer", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = REQUIRES_LABEL .. " " .. L["Engineer"] }
+                    end
+
+                    if self.db.profile.showCapitalsBank then
+                        nodes[392][27686535] = { dnID = GUILD_BANK, name = "", type = "Bank", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                        nodes[392][20935102] = { dnID = GUILD_BANK, name = "", type = "Bank", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                        nodes[392][22975452] = { dnID = BANK, name = "", type = "Bank", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                    end
+
+                    if self.db.profile.showCapitalsMapNotes then
+                        nodes[1530][61691650] = { dnID = BANK .. "\n" .. GUILD_BANK .. "\n" .. L["Portal"] .. " => " .. ORGRIMMAR .. "\n" .. MINIMAP_TRACKING_AUCTIONEER .. " " .. REQUIRES_LABEL .. " " .. L["Engineer"] .. "\n" .. MINIMAP_TRACKING_INNKEEPER .. "\n" .. L["Engineer"] .. "\n" .. L["Blacksmithing"], name = "", type = "MNL", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
                     end
 
                 end
@@ -435,6 +858,10 @@ if not db.show.HideMapNote then
         end
 
 
+    --###############################################################################################
+    --################################         Alliance Cities       ################################
+    --###############################################################################################
+
     --#################
     --### Stormwind ###
     --#################
@@ -443,7 +870,7 @@ if not db.show.HideMapNote then
         --################################
         --### Alliance or EnemyFaction ###
         --################################
-            if self.faction == "Alliance" or db.show.EnemyFaction then
+            if self.faction == "Alliance" or db.show.CapitalEnemyFaction then
 
             --Instances Stormwind
                 if self.db.profile.showCapitalsInstances then
@@ -455,7 +882,7 @@ if not db.show.HideMapNote then
                 end
 
             --Transports Stormwind
-                if self.db.profile.showCapitalsTransports then
+                if self.db.profile.showCapitalsTransporting then
 
                     if self.db.profile.showCapitalsPortals then
                         nodes[84][73221836] = { mnID = 245, name = "", type = "APortalS", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = L["Portal"] .. " => " .. DUNGEON_FLOOR_TOLBARADWARLOCKSCENARIO0 } --  Portal to Tol Barad
@@ -464,7 +891,7 @@ if not db.show.HideMapNote then
                         nodes[84][76211869] = { mnID = 198, name = "", type = "APortalS", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = L["Portal"] .. " => " .. POSTMASTER_LETTER_HYJAL } -- Portal to Hyjal
                         nodes[84][73171966] = { mnID = 207, name = "", type = "APortalS", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = L["Portal"] .. " => " .. ARTIFACT_SHAMAN_TITLECARD_DEEPHOLM } -- Portal to Deepholm
                         nodes[84][73301687] = { mnID = 203, name = "", type = "APortalS", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = L["Portal"] .. " => " .. L["Vashj'ir"] } -- Portal to Vashjir
-                        nodes[84][48728798] = { name = "", type = "APortal", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = STORMWIND .. " " .. L["Portalroom"] .. "\n" .. " => " .. L["Ashran"] .. "\n" .. " => " .. L["Valdrakken"] .. "\n" .. " => " .. L["Boralus, Tiragarde Sound"] .. "\n" .. " => " .. L["Oribos"] .. "\n" .. " => " .. L["Azsuna"] .. "\n" .. " => " .. L["Shattrath City"] .. "\n" .. " => " .. L["Jade Forest"] .. "\n" .. " => " .. DUNGEON_FLOOR_DALARANCITY1 .. "\n" .. " => " .. DUNGEON_FLOOR_TANARIS18 .. "\n" .. " => " .. L["Exodar"] .. "\n" ..  " => " .. L["Bel'ameth, Amirdrassil"] } -- Portalroom from Stormwind
+                        nodes[84][48728798] = { name = "", type = "PassageAPortal", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = STORMWIND .. " " .. L["Portalroom"] .. "\n" .. " => " .. L["Ashran"] .. "\n" .. " => " .. L["Valdrakken"] .. "\n" .. " => " .. L["Boralus, Tiragarde Sound"] .. "\n" .. " => " .. L["Oribos"] .. "\n" .. " => " .. L["Azsuna"] .. "\n" .. " => " .. L["Shattrath City"] .. "\n" .. " => " .. L["Jade Forest"] .. "\n" .. " => " .. DUNGEON_FLOOR_DALARANCITY1 .. "\n" .. " => " .. DUNGEON_FLOOR_TANARIS18 .. "\n" .. " => " .. L["Exodar"] .. "\n" ..  " => " .. L["Bel'ameth, Amirdrassil"] } -- Portalroom from Stormwind
                         nodes[84][43748538] = { mnID = 74, name = "", type = "APortalS", showInZone = false, hideOnContinent = true, hideOnMinimap = true, TransportName = L["Portal"] .. " => " .. DUNGEON_FLOOR_TANARIS18} -- Portal to Caverns of Time 
                         nodes[84][44888577] = { mnID = 111, name = "", type = "APortalS", showInZone = false, hideOnContinent = true, hideOnMinimap = true, TransportName = L["Portal"] .. " => " .. L["Shattrath City"] } -- Portal to Shattrath 
                         nodes[84][43638719] = { mnID = 103, name = "", type = "APortalS", showInZone = false, hideOnContinent = true, hideOnMinimap = true, TransportName = L["Portal"] .. " => " .. L["Exodar"] } -- Portal to Exodar 
@@ -521,7 +948,7 @@ if not db.show.HideMapNote then
                     end
 
                     if self.db.profile.showBlacksmith then
-                        nodes[84][63663702] = { name = L["Blacksmith"], type = "Blacksmith", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                        nodes[84][63663702] = { name = L["Blacksmithing"], type = "Blacksmith", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
                     if self.db.profile.showMining then
@@ -557,11 +984,30 @@ if not db.show.HideMapNote then
                     end
                 end
 
-            --Ways Stormwind
-                if self.db.profile.showCapitalsWays then
+            --General Stormwind
+                if self.db.profile.showCapitalsGeneral then
     
                     if self.db.profile.showCapitalsPaths then
                         nodes[84][73399051] = { dnID = L["Exit"], name = "", mnID = 37, type = "PassageRightL", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Passage/Exit 
+                        nodes[499][52124649] = { dnID = L["Stormwind"] .. " - " .. DUNGEON_FLOOR_DEEPRUNTRAM1 .. "\n" .. " => " .. DUNGEON_FLOOR_DEEPRUNTRAM2, name = "", mnID = 500, type = "PassageUpL", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Passage/Exit 
+                        nodes[500][72440888] = { dnID = DUNGEON_FLOOR_DEEPRUNTRAM1, name = "", mnID = 499, type = "PassageUpL", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Passage/Exit 
+                    end
+
+                    if self.db.profile.showCapitalsHearthstone then
+                        nodes[84][60407527] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                        nodes[84][75685411] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                        nodes[84][49881574] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                        nodes[84][64943193] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                    end
+
+                    if self.db.profile.showCapitalsAuctioneer then
+                        nodes[84][61167081] = { dnID = MINIMAP_TRACKING_AUCTIONEER, name = "", type = "Auctioneer", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                        nodes[84][60233216] = { dnID = MINIMAP_TRACKING_AUCTIONEER, name = "", type = "Auctioneer", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                    end
+
+                    if self.db.profile.showCapitalsBank then
+                        nodes[84][62887831] = { dnID = BANK .. "\n" .. GUILD_BANK, name = "", type = "Bank", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                        nodes[84][64562883] = { dnID = BANK .. "\n" .. GUILD_BANK, name = "", type = "Bank", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
                     end
 
                 end
@@ -569,7 +1015,6 @@ if not db.show.HideMapNote then
             end
 
         end
-
 
     --#################
     --### Ironforge ###
@@ -579,10 +1024,10 @@ if not db.show.HideMapNote then
         --################################
         --### Alliance or EnemyFaction ###
         --################################
-            if self.faction == "Alliance" or db.show.EnemyFaction then
+            if self.faction == "Alliance" or db.show.CapitalEnemyFaction then
 
             --Transports Ironforge
-                if self.db.profile.showCapitalsTransports then
+                if self.db.profile.showCapitalsTransporting then
 
                     if self.db.profile.showCapitalsTransport then
                         nodes[87][72545022] = { mnID = 84, name = "", type = "Carriage", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = DUNGEON_FLOOR_DEEPRUNTRAM1 .. " => " .. STORMWIND } -- Transport to Stormwind Carriage
@@ -618,8 +1063,8 @@ if not db.show.HideMapNote then
                     end
 
                     if self.db.profile.showBlacksmith then
-                        nodes[87][50324338] = { name = L["Blacksmith"], type = "Blacksmith", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
-                        nodes[87][52554139] = { name = L["Blacksmith"], type = "Blacksmith", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                        nodes[87][50324338] = { name = L["Blacksmithing"], type = "Blacksmith", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                        nodes[87][52554139] = { name = L["Blacksmithing"], type = "Blacksmith", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
                     if self.db.profile.showMining then
@@ -651,11 +1096,25 @@ if not db.show.HideMapNote then
                     end
                 end
 
-            --Ways Ironforge
-                if self.db.profile.showCapitalsWays then
+            --General Ironforge
+                if self.db.profile.showCapitalsGeneral then
     
                     if self.db.profile.showCapitalsPaths then
                         nodes[87][14218604] = { dnID = L["Exit"], name = "", mnID = 27, type = "PassageLeftL", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Passage/Exit 
+                    end
+
+                    if self.db.profile.showCapitalsHearthstone then
+                        nodes[87][18165147] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                    end
+
+                    if self.db.profile.showCapitalsAuctioneer then
+                        nodes[87][25517317] = { dnID = MINIMAP_TRACKING_AUCTIONEER, name = "", type = "Auctioneer", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                    end
+
+                    if self.db.profile.showCapitalsBank then
+                        nodes[87][35646042] = { dnID = BANK, name = "", type = "Bank", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                        nodes[87][33516017] = { dnID = GUILD_BANK, name = "", type = "Bank", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                        nodes[87][35386360] = { dnID = GUILD_BANK, name = "", type = "Bank", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
                     end
 
                 end
@@ -667,13 +1126,13 @@ if not db.show.HideMapNote then
     --#################
     --### Darnassus ###
     --#################
-    if self.db.profile.showDarnassus then
+        if self.db.profile.showDarnassus then
 
         --##########################
         --### Horde and Alliance ###
         --##########################
         --Transports Darnassus
-            if self.db.profile.showCapitalsTransports then
+            if self.db.profile.showCapitalsTransporting then
 
                 if self.db.profile.showCapitalsPortals then
                     nodes[89][36045019] = { mnID = 57, name = "", type = "Portal", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = L["Portal"] .. " => " .. L["Rut'theran"] } -- Portal To Darnassus from Teldrassil
@@ -684,19 +1143,32 @@ if not db.show.HideMapNote then
         --################################
         --### Alliance or EnemyFaction ###
         --################################
-            if self.faction == "Alliance" or db.show.EnemyFaction then
+            if self.faction == "Alliance" or db.show.CapitalEnemyFaction then
 
-            --Ways Darnassus
-                if self.db.profile.showCapitalsWays then
+            --General Darnassus
+                if self.db.profile.showCapitalsGeneral then
     
                     if self.db.profile.showCapitalsPaths then
                         nodes[89][79984648] = { dnID = L["Exit"], name = "", mnID = 57, type = "PassageRightL", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Passage/Exit Exodar
                     end
 
+                    if self.db.profile.showCapitalsHearthstone then
+                        nodes[89][62533278] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                    end
+
+                    if self.db.profile.showCapitalsAuctioneer then
+                        nodes[89][54915837] = { dnID = MINIMAP_TRACKING_AUCTIONEER, name = "", type = "Auctioneer", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                    end
+
+                    if self.db.profile.showCapitalsBank then
+                        nodes[89][44285140] = { dnID = BANK, name = "", type = "Bank", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                        nodes[89][42655247] = { dnID = GUILD_BANK, name = "", type = "Bank", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                    end
+
                 end
 
             --Transports Darnassus
-                if self.db.profile.showCapitalsTransports then
+                if self.db.profile.showCapitalsTransporting then
 
                     if self.db.profile.showCapitalsPortals then
                         nodes[89][44127840] = { name = "", type = "APortal", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = L["Portals"] .. "\n" .. " => " .. L["Exodar"] .. "\n" .. " => " .. L["Hellfire Peninsula"] } -- Portal To Darnassus from Teldrassil
@@ -732,7 +1204,7 @@ if not db.show.HideMapNote then
                     end
 
                     if self.db.profile.showBlacksmith then
-                        nodes[89][56985271] = { name = L["Blacksmith"], type = "Blacksmith", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                        nodes[89][56985271] = { name = L["Blacksmithing"], type = "Blacksmith", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
                     if self.db.profile.showMining then
@@ -771,25 +1243,37 @@ if not db.show.HideMapNote then
     --##############
     --### Exodar ###
     --##############
-    if self.db.profile.showExodar then
+        if self.db.profile.showExodar then
 
         --################################
         --### Alliance or EnemyFaction ###
         --################################
-            if self.faction == "Alliance" or db.show.EnemyFaction then
+            if self.faction == "Alliance" or db.show.CapitalEnemyFaction then
 
-            --Ways Exodar
-                if self.db.profile.showCapitalsWays then
+            --General Exodar
+                if self.db.profile.showCapitalsGeneral then
     
                     if self.db.profile.showCapitalsPaths then
                         nodes[103][34947443] = { dnID = L["Exit"], name = "", mnID = 97, type = "PassageUpL", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Passage/Exit Exodar
                         nodes[103][65223478] = { dnID = L["Exit"], name = "", mnID = 97, type = "PassageRightL", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Passage/Exit Exodar
                     end
 
+                    if self.db.profile.showCapitalsHearthstone then
+                        nodes[103][59511876] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                    end
+
+                    if self.db.profile.showCapitalsAuctioneer then
+                        nodes[103][61935508] = { dnID = MINIMAP_TRACKING_AUCTIONEER, name = "", type = "Auctioneer", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                    end
+
+                    if self.db.profile.showCapitalsBank then
+                        nodes[103][49224406] = { dnID = BANK .. "\n" .. GUILD_BANK, name = "", type = "Bank", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                    end
+
                 end
 
             --Transports Exodar
-                if self.db.profile.showCapitalsTransports then
+                if self.db.profile.showCapitalsTransporting then
 
                     if self.db.profile.showCapitalsPortals then
                         nodes[103][48326264] = { mnID = 84, name = "", type = "APortal", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = L["Portal"] .. " => " .. STORMWIND } -- Portal Exodar to Stormwind
@@ -825,7 +1309,7 @@ if not db.show.HideMapNote then
                     end
 
                     if self.db.profile.showBlacksmith then
-                        nodes[103][60609000] = { name = L["Blacksmith"], type = "Blacksmith", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                        nodes[103][60609000] = { name = L["Blacksmithing"], type = "Blacksmith", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
                     if self.db.profile.showMining then
@@ -855,6 +1339,320 @@ if not db.show.HideMapNote then
                     if self.db.profile.showEnchanting then
                         nodes[103][40693881] = { name = L["Enchanting"], type = "Enchanting", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
+                end
+
+            end
+
+        end
+
+    --##############################
+    --### Stormshield / Garrison ###
+    --##############################
+        if self.db.profile.showStormshield then
+
+        --################################
+        --### Alliance or EnemyFaction ###
+        --################################
+            if self.faction == "Alliance" or db.show.CapitalEnemyFaction then
+
+            --Instance Warspear / Garrison
+                if self.db.profile.showCapitalsInstances then
+    
+                    if self.db.profile.showCapitalsLFR then
+                        nodes[582][33173703] = { mnID = 582, name = L["Seer Kazal"] .. " - " .. REQUIRES_LABEL .. " " .. GARRISON_LOCATION_TOOLTIP .. " " .. LEVEL .. " " .. ACTION_SPELL_CAST_START_MASTER .. "\n" .. L["Registrant"] .. " - " .. RAID_FINDER .. "\n" .. " ", id = { 477, 457, 669 }, type = "LFR", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                    end
+    
+                end
+
+            --General Stormshield
+                if self.db.profile.showCapitalsGeneral then
+    
+                    if self.db.profile.showCapitalsPaths then
+                        nodes[622][55650794] = { dnID = L["Exit"], name = "", mnID = 588, type = "PassageUpL", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Passage/Exit Exodar
+                    end
+
+                    if self.db.profile.showCapitalsHearthstone then
+                        nodes[622][35727790] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                    end
+
+                    if self.db.profile.showCapitalsAuctioneer then
+                        nodes[622][53966609] = { dnID = MINIMAP_TRACKING_AUCTIONEER, name = "", type = "Auctioneer", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                    end
+
+                    if self.db.profile.showCapitalsBank then
+                        nodes[622][54394818] = { dnID = BANK, name = "", type = "Bank", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                        nodes[622][56135089] = { dnID = GUILD_BANK, name = "", type = "Bank", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                    end
+
+                end
+
+            --Transports Stormshield
+                if self.db.profile.showCapitalsTransporting then
+
+                    if self.db.profile.showCapitalsPortals then
+                        nodes[582][69692706] = { mnID = 622, name = L["Ashran"], type = "APortal", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Portal from Garison to Ashran
+                        nodes[622][36234113] = { mnID = 534, name = "", type = "APortal", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = L["Portal"] .. " => " .. SPLASH_NEW_6_2_FEATURE1_TITLE } -- Portal from Ashran to Lion's Watch
+                        nodes[622][60813785] = { mnID = 84,  name = "" , type = "APortal", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = L["Portal"] .. " => " .. STORMWIND } -- Portal from Ashran to Stormwind
+                    end
+
+                end
+
+            --Professions Stormshield
+                if self.db.profile.showProfessions then
+
+                    if self.db.profile.showAlchemy then
+                        nodes[622][37056882] = { name = L["Alchemy"], type = "Alchemy", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                    end
+                
+                    if self.db.profile.showLeatherworking then
+                        nodes[622][52494201] = { name = L["Leatherworking"], type = "Leatherworking", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                    end
+
+                    if self.db.profile.showEngineer then
+                        nodes[622][48004052] = { name = L["Engineer"], type = "Engineer", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                    end
+
+                    if self.db.profile.showSkinning then
+                        nodes[622][52124369] = { name = L["Skinning"], type = "Skinning", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                    end
+
+                    if self.db.profile.showTailoring then
+                        nodes[622][51533716] = { name = L["Tailoring"], type = "Tailoring", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                    end
+
+                    if self.db.profile.showJewelcrafting then
+                        nodes[622][43513391] = { name = L["Jewelcrafting"], type = "Jewelcrafting", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                    end
+
+                    if self.db.profile.showBlacksmith then
+                        nodes[622][49344639] = { name = L["Blacksmithing"], type = "Blacksmith", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                    end
+
+                    if self.db.profile.showMining then
+                        nodes[622][47324371] = { name = L["Mining"], type = "Mining", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                    end
+
+                    if self.db.profile.showFishing then
+                        nodes[622][55497849] = { name = PROFESSIONS_FISHING, type = "Fishing", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                    end
+
+                    if self.db.profile.showCooking then
+                        nodes[622][35137611] = { name = PROFESSIONS_COOKING, type = "Cooking", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION .. "\n" .. L["in the basement"] }
+                    end
+
+                    if self.db.profile.showArchaeology then
+                        nodes[622][48993319] = { name = PROFESSIONS_ARCHAEOLOGY, type = "Archaeology", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                    end
+
+                    if self.db.profile.showHerbalism then
+                        nodes[622][37616948] = { name = L["Herbalism"], type = "Herbalism", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                    end
+
+                    if self.db.profile.showInscription then
+                        nodes[622][63163365] = { name = INSCRIPTION, type = "Inscription", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                    end
+
+                    if self.db.profile.showEnchanting then
+                        nodes[622][56706551] = { name = L["Enchanting"], type = "Enchanting", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                    end
+                end
+
+            end
+
+        end
+
+    --###############
+    --### Boralus ###
+    --###############
+        if self.db.profile.showBoralus then
+
+        --################################
+        --### Alliance or EnemyFaction ###
+        --################################
+            if self.faction == "Alliance" or db.show.CapitalEnemyFaction then
+
+            --Instance Boralus
+                if self.db.profile.showCapitalsInstances then
+
+                    if self.db.profile.showCapitalsRaids then
+                        nodes[1161][70443555] = { id = 1176, type = "Raid", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Battle of Dazar'alor
+                    end
+
+                    if self.db.profile.showCapitalsDungeons then
+                        nodes[1161][71971537] = { id = 1023, type = "Dungeon", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Siege of Boralus
+                        nodes[1161][75591953] = { dnID = L["Position of the real Instance Entrance"], id = 1023, type = "Dungeon", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Siege of Boralus
+                    end
+
+                    if self.db.profile.showCapitalsLFR then
+                        nodes[1161][74191352] = { mnID = 1161, name = L["Kiku"] .. "\n" .. L["Registrant"] .. " - " .. RAID_FINDER .. "\n" .. " ", id = { 1176, 1031, 1179, 1036 }, type = "LFR", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                    end
+    
+                end
+
+            --General Boralus
+                if self.db.profile.showCapitalsGeneral then
+    
+                    if self.db.profile.showCapitalsPaths then
+                        nodes[1161][80297904] = { dnID = L["Exit"], name = "", mnID = 895, type = "PassageDownL", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Passage/Exit Exodar
+                        nodes[1161][40581618] = { dnID = L["Exit"], name = "", mnID = 895, type = "PassageUpL", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Passage/Exit Exodar
+                        nodes[1161][11864020] = { dnID = L["Exit"], name = "", mnID = 895, type = "PassageLeftL", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Passage/Exit Exodar
+                    end
+
+                    if self.db.profile.showCapitalsHearthstone then
+                        nodes[1161][74001234] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                    end
+
+                    if self.db.profile.showCapitalsAuctioneer then
+                        nodes[1161][77271368] = { dnID = MINIMAP_TRACKING_AUCTIONEER, name = "", type = "Auctioneer", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = REQUIRES_LABEL .. " " .. L["Engineer"] }
+                    end
+
+                    if self.db.profile.showCapitalsBank then
+                        nodes[1161][75591929] = { dnID = BANK .. "\n" .. GUILD_BANK, name = "", type = "Bank", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                    end
+
+                end
+
+            --Transports Boralus
+                if self.db.profile.showCapitalsTransporting then
+
+                    if self.db.profile.showCapitalsPortals then
+                        nodes[1161][70351605] = { name = "", type = "APortal", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = L["Boralus"] .. " " .. L["Portalroom"] .. "\n" .. " " .. L["(inside building)"] .. "\n" .. " => " .. STORMWIND .. "\n" .. " => " .. L["Silithus"] .. "\n" .. " => " .. L["Exodar"] .. "\n" .. " => " .. L["Ironforge"] } -- Portalroom from Boralus
+                        nodes[1161][66182474] = { mnID = 14, name = L["This Arathi Highlands portal is only active if your faction is currently occupying Ar'gorok"], type = "APortal", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Portalroom from Boralus
+                        nodes[1161][66212442] = { mnID = 62, name = L["This Darkshore portal is only active if your faction is currently occupying Bashal'Aran"], type = "APortal", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Portalroom from Boralus
+                    end
+
+                    if self.db.profile.showCapitalsTransport then
+                        nodes[1161][67952670] = { mnID = 875, name = L["(Grand Admiral Jes-Tereth) will take you to Vol'Dun, Nazmir or Zuldazar"], type = "GilneanF", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Portal from Dazar'alor to Mechagon
+                    end
+
+                end
+
+            --Professions Boralus
+                if self.db.profile.showProfessions then
+
+                    if self.db.profile.showAlchemy then
+                        nodes[1161][74090670] = { name = L["Alchemy"], type = "Alchemy", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                    end
+                
+                    if self.db.profile.showLeatherworking then
+                        nodes[1161][75451258] = { name = L["Leatherworking"], type = "Leatherworking", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                    end
+
+                    if self.db.profile.showEngineer then
+                        nodes[1161][77611434] = { name = L["Engineer"], type = "Engineer", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                    end
+
+                    if self.db.profile.showSkinning then
+                        nodes[1161][75661340] = { name = L["Skinning"], type = "Skinning", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                    end
+
+                    if self.db.profile.showTailoring then
+                        nodes[1161][76951116] = { name = L["Tailoring"], type = "Tailoring", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                    end
+
+                    if self.db.profile.showJewelcrafting then
+                        nodes[1161][75210986] = { name = L["Jewelcrafting"], type = "Jewelcrafting", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                    end
+
+                    if self.db.profile.showBlacksmith then
+                        nodes[1161][73470849] = { name = L["Blacksmithing"], type = "Blacksmith", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                    end
+
+                    if self.db.profile.showMining then
+                        nodes[1161][75200760] = { name = L["Mining"], type = "Mining", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                    end
+
+                    if self.db.profile.showFishing then
+                        nodes[1161][74160560] = { name = PROFESSIONS_FISHING, type = "Fishing", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                    end
+
+                    if self.db.profile.showCooking then
+                        nodes[1161][71201068] = { name = PROFESSIONS_COOKING, type = "Cooking", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                    end
+
+                    if self.db.profile.showArchaeology then
+                        nodes[1161][68340848] = { name = PROFESSIONS_ARCHAEOLOGY, type = "Archaeology", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                    end
+
+                    if self.db.profile.showHerbalism then
+                        nodes[1161][70550566] = { name = L["Herbalism"], type = "Herbalism", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                    end
+
+                    if self.db.profile.showInscription then
+                        nodes[1161][73380637] = { name = INSCRIPTION, type = "Inscription", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                    end
+
+                    if self.db.profile.showEnchanting then
+                        nodes[1161][74031153] = { name = L["Enchanting"], type = "Enchanting", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                    end
+                end
+
+            end
+
+        end
+
+    --#############
+    --### Sot7S ###
+    --#############
+        if self.db.profile.showSot7S then
+
+        --################################
+        --### Alliance or EnemyFaction ###
+        --################################
+            if self.faction == "Alliance" or db.show.CapitalEnemyFaction then
+
+            --General Sot7S
+                if self.db.profile.showCapitalsGeneral then
+    
+                    if self.db.profile.showCapitalsPaths then
+                        nodes[393][24265267] = { name = L["Exit"], mnID = 390, type = "PassageUpL", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                        nodes[393][60201547] = { name = L["Exit"], mnID = 390, type = "PassageUpL", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                        nodes[393][37762459] = { name = L["Exit"], mnID = 390, type = "PassageUpL", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                        nodes[393][70883384] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS3, mnID = 394, type = "PassageUpL", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = "\n" .. BANK .. "\n" .. GUILD_BANK .. "\n" .. L["Portal"] .. " => " .. STORMWIND }
+                        nodes[393][54048271] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS3, mnID = 394, type = "PassageUpL", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = "\n" .. BANK .. "\n" .. GUILD_BANK .. "\n" .. L["Portal"] .. " => " .. STORMWIND }
+                        nodes[393][67926633] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS3, mnID = 394, type = "PassageUpL", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = "\n" .. BANK .. "\n" .. GUILD_BANK .. "\n" .. L["Portal"] .. " => " .. STORMWIND }
+                        nodes[393][32697602] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS3, mnID = 394, type = "PassageUpL", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = "\n" .. BANK .. "\n" .. GUILD_BANK .. "\n" .. L["Portal"] .. " => " .. STORMWIND }
+                        nodes[394][55347175] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS2, mnID = 393, type = "PassageDownL", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = "\n" .. MINIMAP_TRACKING_AUCTIONEER .. " " .. REQUIRES_LABEL .. " " .. L["Engineer"] .. "\n" .. MINIMAP_TRACKING_INNKEEPER .. "\n" .. L["Blacksmithing"] }
+                        nodes[394][67115809] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS2, mnID = 393, type = "PassageDownL", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = "\n" .. MINIMAP_TRACKING_AUCTIONEER .. " " .. REQUIRES_LABEL .. " " .. L["Engineer"] .. "\n" .. MINIMAP_TRACKING_INNKEEPER .. "\n" .. L["Blacksmithing"] }
+                        nodes[394][31955456] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS2, mnID = 393, type = "PassageDownL", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = "\n" .. MINIMAP_TRACKING_AUCTIONEER .. " " .. REQUIRES_LABEL .. " " .. L["Engineer"] .. "\n" .. MINIMAP_TRACKING_INNKEEPER .. "\n" .. L["Blacksmithing"] }
+                        nodes[394][63182065] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS2, mnID = 393, type = "PassageDownL", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = "\n" .. MINIMAP_TRACKING_AUCTIONEER .. " " .. REQUIRES_LABEL .. " " .. L["Engineer"] .. "\n" .. MINIMAP_TRACKING_INNKEEPER .. "\n" .. L["Blacksmithing"] }
+                    end
+
+                    if self.db.profile.showCapitalsHearthstone then
+                        nodes[393][36506610] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                    end
+
+                    if self.db.profile.showCapitalsAuctioneer then
+                        nodes[393][57045237] = { dnID = MINIMAP_TRACKING_AUCTIONEER, name = "", type = "Auctioneer", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = REQUIRES_LABEL .. " " .. L["Engineer"] }
+                    end
+
+                    if self.db.profile.showCapitalsBank then
+                        nodes[393][55624688] = { dnID = GUILD_BANK, name = "", type = "Bank", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                        nodes[394][48517769] = { dnID = GUILD_BANK, name = "", type = "Bank", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                        nodes[394][42608412] = { dnID = GUILD_BANK, name = "", type = "Bank", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                        nodes[394][38927502] = { dnID = BANK, name = "", type = "Bank", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                        nodes[394][44866826] = { dnID = BANK .. " / " .. GUILD_BANK, name = "", type = "Bank", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+
+                    end
+
+                end
+
+            --Transports Sot7S
+                if self.db.profile.showCapitalsTransporting then
+
+                    if self.db.profile.showCapitalsPortals then
+                        nodes[394][71563593] = { mnID = 84, name = "", type = "APortal", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName =  L["Portal"] .. " => " .. STORMWIND }
+                    end
+
+                end
+
+            --Professions Sot7S
+                if self.db.profile.showProfessions then
+
+                    if self.db.profile.showBlacksmith then
+                        nodes[393][72655225] = { name = L["Blacksmithing"], type = "Blacksmith", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                    end
+
                 end
 
             end

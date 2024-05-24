@@ -166,7 +166,6 @@ if not db.show.HideMapNote then
             minimap[224][63942179] = { id = 76, type = "Dungeon", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Zul'gurub
             minimap[224][22130243] = { id = 63, type = "Dungeon", showInZone = false, hideOnContinent = true, hideOnMinimap = false  } -- Deadmines 
             minimap[37][20223635] = { id = 238, type = "Dungeon", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- The Stockade
-            minimap[84][51196779] = { id = 238, type = "Dungeon", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- The Stockade
             minimap[15][41121030] = { id = 1197, type = "Dungeon", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Uldaman: Legacy of Tyr
             minimap[48][43478705] = { id = 239, type = "Dungeon", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Uldaman
             minimap[241][19205411] = { id = 71, type = "Dungeon", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Grim Batol
@@ -431,8 +430,8 @@ if not db.show.HideMapNote then
 
         -- Pandaria LFR
           if self.db.profile.showMiniMapLFR then
-            minimap[390][83153063] = { id = { 317,330, 362, 320 }, name = L["Lorewalker Han"] .. "\n" .. L["Registrant"] .. " - " .. RAID_FINDER .. "\n" .. " ", type = "LFR", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Portal from Garrison to Ashran
-            minimap[1530][83712804] = { id = { 317,330, 362, 320 }, name = L["Lorewalker Han"] .. "\n" .. L["Registrant"] .. " - " .. RAID_FINDER .. "\n" .. " ", type = "LFR", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Portal from Garrison to Ashran
+            minimap[390][83153063] = { id = { 317, 330, 362, 320 }, name = L["Lorewalker Han"] .. "\n" .. L["Registrant"] .. " - " .. RAID_FINDER .. "\n" .. " ", type = "LFR", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Portal from Garrison to Ashran
+            minimap[1530][83712804] = { id = { 317, 330, 362, 320 }, name = L["Lorewalker Han"] .. "\n" .. L["Registrant"] .. " - " .. RAID_FINDER .. "\n" .. " ", type = "LFR", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Portal from Garrison to Ashran
           end
         end
 
@@ -467,19 +466,6 @@ if not db.show.HideMapNote then
             minimap[534][46965264] = { id = 669, type = "Raid", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Hellfire Citadel
             minimap[550][32963837] = { id = 477, type = "Raid", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Highmaul
             minimap[543][51562719] = { id = 457, type = "Raid", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Blackrock Foundry
-          end
-
-
-        --Draenor LFR
-          if self.db.profile.showMiniMapLFR then
-            
-            if self.faction == "Horde" or db.show.EnemyFaction then
-              minimap[590][41534722] = { name = L["Seer Kazal"] .. " - " .. REQUIRES_LABEL .. " " .. GARRISON_LOCATION_TOOLTIP .. " " .. LEVEL .. " " .. ACTION_SPELL_CAST_START_MASTER .. "\n" .. L["Registrant"] .. " - " .. RAID_FINDER .. "\n" .. " " .. "\n" .. EXPANSION_NAME5, id = { 477, 457, 669 }, type = "LFR", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Portal from Garrison to Ashran
-            end
-
-            if self.faction == "Alliance" or db.show.EnemyFaction then
-              minimap[582][33173703] = { nname = L["Seer Kazal"] .. " - " .. REQUIRES_LABEL .. " " .. GARRISON_LOCATION_TOOLTIP .. " " .. LEVEL .. " " .. ACTION_SPELL_CAST_START_MASTER .. "\n" .. L["Registrant"] .. " - " .. RAID_FINDER .. "\n" .. " " .. "\n" .. EXPANSION_NAME5, id = { 477, 457, 669 }, type = "LFR", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Portal from Garrison to Ashran
-            end
           end
         
         end
@@ -555,11 +541,6 @@ if not db.show.HideMapNote then
         --Zandalar Dungeons
           if self.db.profile.showMiniMapDungeons then
 
-            if self.faction == "Horde" or db.show.EnemyFaction then
-              minimap[1165][44049256] = { id = 1012, type = "Dungeon", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- The MOTHERLODE HORDE
-              minimap[862][56105984] = { id = 1012, type = "Dungeon", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- The Motherlode
-            end
-
             if self.faction == "Alliance" or db.show.EnemyFaction then
               minimap[862][39307154] = { id = 1012, type = "Dungeon", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- The MOTHERLODe
             end
@@ -596,18 +577,6 @@ if not db.show.HideMapNote then
             end
           end
 
-
-        -- Zandalar LFR
-          if self.db.profile.showMiniMapLFR then
-
-            if self.faction == "Horde" or db.show.EnemyFaction then
-              minimap[862][57304305] = { mnID = 1164, name = L["Eppu"] .. "\n" .. L["Registrant"] .. " - " .. RAID_FINDER .. "\n" .. " ", id = { 1176, 1031, 1179, 1036 }, type = "LFR", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
-              minimap[1163][76554199] = { mnID = 1164, name = DUNGEON_FLOOR_GILNEAS3  .. "\n" .. " " .. "\n" .. L["Eppu"] .. "\n" .. L["Registrant"] .. " - " .. RAID_FINDER .. "\n" .. " ", id = { 1176, 1031, 1179, 1036 }, type = "PassageRaid", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
-              minimap[1164][68583002] = { name = L["Eppu"] .. "\n" .. L["Registrant"] .. " - " .. RAID_FINDER .. "\n" .. " ", id = { 1176, 1031, 1179, 1036 }, type = "LFR", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
-              minimap[1165][49914447] = { mnID = 1164, name = L["Eppu"] .. "\n" .. L["Registrant"] .. " - " .. RAID_FINDER .. "\n" .. " ", id = { 1176, 1031, 1179, 1036 }, type = "LFR", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
-            end
-          end
-
         end
 
 
@@ -628,8 +597,6 @@ if not db.show.HideMapNote then
             minimap[1169][38926976] = { id = 1002, type = "Dungeon", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Tol Dagor
 
             if self.faction == "Alliance" or db.show.EnemyFaction then
-              minimap[1161][71971537] = { id = 1023, type = "Dungeon", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Siege of Boralus
-              minimap[1161][75591953] = { dnID = L["Position of the real Instance Entrance"], id = 1023, type = "Dungeon", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Siege of Boralus
               minimap[895][75632450] = { id = 1023, type = "Dungeon", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Siege of Boralus
             end
 
@@ -646,7 +613,6 @@ if not db.show.HideMapNote then
 
             if self.faction == "Alliance" or db.show.EnemyFaction then
               minimap[895][74382837] = { id = 1176, type = "Raid", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Battle of Dazar'alor
-              minimap[1161][70443555] = { id = 1176, type = "Raid", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Battle of Dazar'alor
             end
           end
 
@@ -656,7 +622,6 @@ if not db.show.HideMapNote then
 
             if self.faction == "Horde" or db.show.EnemyFaction then
               minimap[895][75112192] = { mnID = 1161, name = L["Kiku"] .. "\n" .. L["Registrant"] .. " - " .. RAID_FINDER .. "\n" .. " ", id = { 1176, 1031, 1179, 1036 }, type = "LFR", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
-              minimap[1161][74191352] = { mnID = 1161, name = L["Kiku"] .. "\n" .. L["Registrant"] .. " - " .. RAID_FINDER .. "\n" .. " ", id = { 1176, 1031, 1179, 1036 }, type = "LFR", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
             end
           end
 

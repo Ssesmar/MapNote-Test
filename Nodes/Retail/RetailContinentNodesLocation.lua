@@ -439,7 +439,7 @@ if not db.show.HideMapNote then
 
         -- Outland RemoveBlizzPOIs 
           if self.db.profile.show.RemoveBlizzPOIs then
-            nodes[101][43186573] = { mnID = 108, name = "", type = "NT", showInZone = true, TransportName = L["Shattrath City"] .. "\n" .. "\n" .. L["Portals"] .. "\n" .. " => " .. ORGRIMMAR .. "\n" .. " => " .. STORMWIND .. "\n" .. " => " .. L["Isle of Quel'Danas"] } -- Portal from Shattrath to Orgrimmar
+            nodes[101][43186573] = { mnID = 108, name = "", type = "MNL", showInZone = true, TransportName = L["Shattrath City"] .. "\n" .. "\n" .. L["Portals"] .. "\n" .. " => " .. ORGRIMMAR .. "\n" .. " => " .. STORMWIND .. "\n" .. " => " .. L["Isle of Quel'Danas"] } -- Portal from Shattrath to Orgrimmar
           end
 
         end

@@ -1,5 +1,5 @@
 # MapNote
-## [1.9.4](https://github.com/Ssesmar/MapNote) (2024-05-25)
+## [1.9.4](https://github.com/Ssesmar/MapNote) (2024-05-28)
 - Note:
 
 -- MapNotes now works on every version of World of Warcraft. Classic Era / Cataclysm and Retail
