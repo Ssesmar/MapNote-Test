@@ -2,6 +2,26 @@ local ADDON_NAME = ...
 local L = LibStub("AceLocale-3.0"):NewLocale(ADDON_NAME, "frFR")
 if not L then return end
 
+L["Generals"] = "Général"
+L["Paths"] = "Façons"
+L["Capitals"] = "Capitales"
+L["Alchemy"] = "Alchimie"
+L["Engineer"] = "Ingénieur"
+L["Jewelcrafting"] = "Joaillerie"
+L["Leatherworking"] = "Travail du cuir"
+L["Blacksmithing"] = "Forge"
+L["Tailoring"] = "Couture"
+L["Skinning"] = "Dépeçage"
+L["Mining"] = "Minage"
+L["Herbalism"] = "Herboristerie"
+L["Enchanting"] = "Enchantement"
+L["Warspear"] = "Fer-de-Lance"
+L["Stormshield"] = "Bouclier-des-Tempêtes"
+L["Shrine2Moons"] = "SanctuaireDeux-Lunes"
+L["Shrine7Stars"] = "Sanctuaire7Étoiles"
+L["Enables the display of icons for a specific capital city"] = "Active l'affichage des symboles pour un capital spécifique"
+L["This MapNotes icons shows various icons that are too close to each other together"] = "Ce symbole Mapnotes montre différents symboles qui sont trop proches les uns des autres."
+L["Only affects instance passage icons, not path icons such as exit icons or icons on an instance map or the Capitals category / Minimap Capitals"] = "Affecte uniquement l'instance à travers des symboles, pas des symboles de chemin tels que les symboles de départ ou les symboles sur une carte d'instance ou les capitales / capitales mini-cartes"
 L["Zones"] = "Zones"
 L["Continents"] = "Continents"
 --Unexplored Areas function

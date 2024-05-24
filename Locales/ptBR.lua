@@ -2,6 +2,26 @@
 local L = LibStub("AceLocale-3.0"):NewLocale(ADDON_NAME, "ptBR")
 if not L then return end
 
+L["Generals"] = "Em geral"
+L["Paths"] = "Caminhos"
+L["Capitals"] = "Cidades Capitais"
+L["Alchemy"] = "Alquimia"
+L["Engineer"] = "Engenheiro"
+L["Jewelcrafting"] = "Joalheria"
+L["Leatherworking"] = "Couraria"
+L["Blacksmithing"] = "Ferraria"
+L["Tailoring"] = "Alfaiataria"
+L["Skinning"] = "Esfolamento"
+L["Mining"] = "Mineração"
+L["Herbalism"] = "Herborismo"
+L["Enchanting"] = "Encantamento"
+L["Warspear"] = "Lança de Guerra"
+L["Stormshield"] = "Escudo Tonante"
+L["Shrine2Moons"] = "SantuárioDuasLuas"
+L["Shrine7Stars"] = "Santuário7Estrelas"
+L["Enables the display of icons for a specific capital city"] = "Ativa a exibição de símbolos para um capital específico"
+L["This MapNotes icons shows various icons that are too close to each other together"] = "Este símbolo Mapnotes mostra diferentes símbolos que estão muito próximos."
+L["Only affects instance passage icons, not path icons such as exit icons or icons on an instance map or the Capitals category / Minimap Capitals"] = "Afeta apenas a instância através de símbolos, não símbolos de caminho, como os símbolos ou símbolos iniciais em um mapa de instância ou nas capitais / mini -card Capitals"
 L["Zones"] = "Zonas"
 L["Continents"] = "Continentes"
 --Unexplored Areas function

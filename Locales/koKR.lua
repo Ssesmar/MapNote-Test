@@ -2,6 +2,28 @@
 local L = LibStub("AceLocale-3.0"):NewLocale(ADDON_NAME, "koKR")
 if not L then return end
 
+L["Generals"] = "일반적인"
+L["Paths"] = "방법"
+L["Capitals"] = "수도 도시"
+L["Alchemy"] = "연금술"
+L["Engineer"] = "엔지니어"
+L["Jewelcrafting"] = "보석세공"
+L["Leatherworking"] = "가죽세공"
+L["Blacksmithing"] = "대장기술"
+L["Tailoring"] = "재봉술"
+L["Skinning"] = "무두질"
+L["Mining"] = "채광"
+L["Herbalism"] = "약초채집"
+L["Enchanting"] = "마법부여"
+L["Warspear"] = "전쟁의 창"
+L["Stormshield"] = "폭풍방패"
+L["Shrine2Moons"] = "두 달의 제단"
+L["Shrine7Stars"] = "일곱 별의 제단"
+L["Enables the display of icons for a specific capital city"] = "특정 자본에 대한 상징의 표시를 활성화합니다"
+L["This MapNotes icons shows various icons that are too close to each other together"] = "이 Mapnotes 기호는 너무 가까운 다른 기호를 보여줍니다."
+L["Only affects instance passage icons, not path icons such as exit icons or icons on an instance map or the Capitals category / Minimap Capitals"] = "인스턴스 맵의 시작 기호 또는 기호와 같은 경로 기호가 아닌 기호를 통해 인스턴스에만 영향을 미칩니다."
+L["Zones"] = "구역"
+L["Continents"] = "대륙"
 --Unexplored Areas function
 L["Unexplored Areas"] = "미개척 지역"
 L["Unexplored Areas visibility"] = "가시성 미개척 지역"

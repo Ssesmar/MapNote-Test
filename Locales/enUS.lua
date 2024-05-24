@@ -2,20 +2,26 @@ local ADDON_NAME = ...
 local L = LibStub("AceLocale-3.0"):NewLocale(ADDON_NAME, "enUS", true)
 
 --Capitals
+L["Generals"] = true
 L["Paths"] = true
 L["Capitals"] = true
 L["Alchemy"] = true
 L["Engineer"] = true
 L["Jewelcrafting"] = true
 L["Leatherworking"] = true
-L["Blacksmith"] = true
+L["Blacksmithing"] = true
 L["Tailoring"] = true
 L["Skinning"] = true
 L["Mining"] = true
 L["Herbalism"] = true
 L["Enchanting"] = true
+L["Warspear"] = true
+L["Stormshield"] = true
+L["Shrine2Moons"] = true
+L["Shrine7Stars"] = true
 L["Enables the display of icons for a specific capital city"] = true
-
+L["This MapNotes icons shows various icons that are too close to each other together"] = true
+L["Only affects instance passage icons, not path icons such as exit icons or icons on an instance map or the Capitals category / Minimap Capitals"] = true
 L["Zones"] = true
 L["Continents"] = true
 --Unexplored Areas function

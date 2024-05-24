@@ -2,6 +2,26 @@ local ADDON_NAME = ...
 local L = LibStub("AceLocale-3.0"):NewLocale(ADDON_NAME, "zhTW")
 if not L then return end
 
+L["Generals"] = "一般的"
+L["Paths"] = "方法"
+L["Capitals"] = "省會城市"
+L["Alchemy"] = "煉金術"
+L["Engineer"] = "工程師"
+L["Jewelcrafting"] = "珠宝加工"
+L["Leatherworking"] = "制皮"
+L["Blacksmithing"] = "锻造"
+L["Tailoring"] = "裁縫"
+L["Skinning"] = "剥皮"
+L["Mining"] = "采矿"
+L["Herbalism"] = "草药学"
+L["Enchanting"] = "附魔"
+L["Warspear"] = "战争之矛"
+L["Stormshield"] = "暴风之盾"
+L["Shrine2Moons"] = "双月殿"
+L["Shrine7Stars"] = "七星殿"
+L["Enables the display of icons for a specific capital city"] = "激活特定資本的符號的顯示"
+L["This MapNotes icons shows various icons that are too close to each other together"] = "此MAPNOTES符號顯示了不同的符號，這些符號太近了。"
+L["Only affects instance passage icons, not path icons such as exit icons or icons on an instance map or the Capitals category / Minimap Capitals"] = "僅通過符號來影響實例，而不是路徑符號，例如實例地圖上的啟動符號或符號"
 L["Zones"] = "區域"
 L["Continents"] = "各大洲"
 --Unexplored Areas function

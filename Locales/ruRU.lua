@@ -2,6 +2,26 @@ local ADDON_NAME = ...
 local L = LibStub("AceLocale-3.0"):NewLocale(ADDON_NAME, "ruRU")
 if not L then return end
 
+L["Generals"] = "Общий"
+L["Paths"] = "Пути"
+L["Capitals"] = "столицы"
+L["Alchemy"] = "Алхимия"
+L["Engineer"] = "инженер"
+L["Jewelcrafting"] = "Ювелирное дело"
+L["Leatherworking"] = "Кожевничество"
+L["Blacksmithing"] = "Кузнечное дело"
+L["Tailoring"] = "Портняжное дело"
+L["Skinning"] = "Снятие шкур"
+L["Mining"] = "Горное дело"
+L["Herbalism"] = "Травничество"
+L["Enchanting"] = "Наложение чар"
+L["Warspear"] = "Копье Войны"
+L["Stormshield"] = "Преграда Ветров"
+L["Shrine2Moons"] = "Святилище2Лун"
+L["Shrine7Stars"] = "Святилище7Звезд"
+L["Enables the display of icons for a specific capital city"] = "Активирует отображение символов для определенного капитала"
+L["This MapNotes icons shows various icons that are too close to each other together"] = "Этот символ MapNotes показывает разные символы, которые слишком близки друг к другу."
+L["Only affects instance passage icons, not path icons such as exit icons or icons on an instance map or the Capitals category / Minimap Capitals"] = "Влияет только на экземпляр только через символы, а не символы пути, такие как начальные символы или символы на карте экземпляров или столицы / мини -карты"
 L["Zones"] = "зоны"
 L["Continents"] = "континенты"
 --Unexplored Areas function
