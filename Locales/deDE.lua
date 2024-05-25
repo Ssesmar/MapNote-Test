@@ -3,6 +3,8 @@ local L = LibStub("AceLocale-3.0"):NewLocale(ADDON_NAME, "deDE")
 if not L then return end
 
 --Capitals
+L["The Scryers"] = "Die Seher"
+L["The Aldor"] = "Die Aldor"
 L["Generals"] = "Allgemeine"
 L["Paths"] = "Wege"
 L["Capitals"] = "Hauptstädte"

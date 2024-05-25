@@ -386,6 +386,7 @@ minimap[120] = { } -- The Storm Peaks
 minimap[121] = { } -- Zul'Drak
 minimap[123] = { } -- LakeWintergrasp  
 minimap[125] = { } -- Dalaran City    
+minimap[126] = { } -- Dalaran City Basement
 minimap[127] = { } -- Crystalsong Forest 
 -- Dungeon map minimap 
 minimap[129] = { } -- The Nexus

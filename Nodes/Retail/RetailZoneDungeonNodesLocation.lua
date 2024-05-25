@@ -362,7 +362,6 @@ if not db.show.HideMapNote then
             nodes[123][77890620] = { id = 278, type = "Dungeon", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Pit of Saron
             nodes[114][28592772] = { id = 281, type = "Dungeon", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- The Nexus
             nodes[114][26602746] = { id = 282, type = "Dungeon", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- The Oculus
-            nodes[125][66166745] = { id = 283, type = "Dungeon", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- The Violet Hold
           end
 
           -- Northrend Raids
@@ -498,7 +497,6 @@ if not db.show.HideMapNote then
             nodes[630][48068212] = { id = 707, type = "Dungeon", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Vault of the Wardens
             nodes[630][61164111] = { id = 716, type = "Dungeon", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Eye of Azshara
             nodes[630][87515684] = { id = 777, type = "Dungeon", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Assault on Violet Hold
-            nodes[627][65576738] = { id = 777, type = "Dungeon", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Assault on Violet Hold
             nodes[646][15313666] = { id = 777, type = "Dungeon", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Assault on Violet Hold
             nodes[646][64811675] = { id = 900, type = "Dungeon", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Cathedral of Eternal Night
             nodes[680][50766553] = { id = 800, type = "Dungeon", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Court of Stars
@@ -538,11 +536,6 @@ if not db.show.HideMapNote then
             end
           end
 
-
-        -- Pandaria LFR
-          if self.db.profile.showZoneLFR then
-            nodes[627][63535488] = { name = L["Archmage Timear"] .. "\n" .. L["Registrant"] .. " - " .. RAID_FINDER .. "\n" .. " ", id = { 875, 786, 768, 861, 946 }, type = "LFR", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
-          end
         end
 
 
@@ -685,11 +678,6 @@ if not db.show.HideMapNote then
             nodes[1543][69743201] = { id = 1193, type = "Raid", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Sanctum of Domination  
           end
 
-
-        -- Shadowlands LFR
-          if self.db.profile.showZoneLFR then
-            nodes[1670][41377150] = { mnID = 1670, name = L["Ta'elfar"] .. "\n" .. L["Registrant"] .. " - " .. RAID_FINDER .. "\n" .. " ", id = { 1190, 1193, 1195 }, type = "LFR", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
-          end
         end
 
 

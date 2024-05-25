@@ -2,6 +2,9 @@
 local L = LibStub("AceLocale-3.0"):NewLocale(ADDON_NAME, "koKR")
 if not L then return end
 
+--Capitals
+L["The Scryers"] = "점술가 길드"
+L["The Aldor"] = "알도르 사제회"
 L["Generals"] = "일반적인"
 L["Paths"] = "방법"
 L["Capitals"] = "수도 도시"

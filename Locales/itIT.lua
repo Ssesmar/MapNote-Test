@@ -2,6 +2,9 @@
 local L = LibStub("AceLocale-3.0"):NewLocale(ADDON_NAME, "itIT")
 if not L then return end
 
+--Capitals
+L["The Scryers"] = "The Scryers"
+L["The Aldor"] = "Aldor"
 L["Generals"] = "Generale"
 L["Paths"] = "Modi"
 L["Capitals"] = "Capitali"

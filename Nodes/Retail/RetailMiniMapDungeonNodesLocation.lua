@@ -361,7 +361,6 @@ if not db.show.HideMapNote then
             minimap[123][77890620] = { id = 278, type = "Dungeon", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Pit of Saron
             minimap[114][28592772] = { id = 281, type = "Dungeon", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- The Nexus
             minimap[114][26602746] = { id = 282, type = "Dungeon", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- The Oculus
-            minimap[125][66166745] = { id = 283, type = "Dungeon", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- The Violet Hold
           end
 
           -- Northrend Raids
@@ -484,7 +483,6 @@ if not db.show.HideMapNote then
             minimap[630][48068212] = { id = 707, type = "Dungeon", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Vault of the Wardens
             minimap[630][61164111] = { id = 716, type = "Dungeon", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Eye of Azshara
             minimap[630][87515684] = { id = 777, type = "Dungeon", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Assault on Violet Hold
-            minimap[627][65576738] = { id = 777, type = "Dungeon", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Assault on Violet Hold
             minimap[646][15313666] = { id = 777, type = "Dungeon", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Assault on Violet Hold
             minimap[646][64811675] = { id = 900, type = "Dungeon", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Cathedral of Eternal Night
             minimap[680][50766553] = { id = 800, type = "Dungeon", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Court of Stars
@@ -524,11 +522,6 @@ if not db.show.HideMapNote then
             end
           end
 
-
-        -- Broken Isles LFR
-          if self.db.profile.showMiniMapLFR then
-            minimap[627][63535488] = { name = L["Archmage Timear"] .. "\n" .. L["Registrant"] .. " - " .. RAID_FINDER .. "\n" .. " ", id = { 875, 786, 768, 861, 946 }, type = "LFR", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
-          end
         end
 
 
@@ -659,10 +652,6 @@ if not db.show.HideMapNote then
             minimap[1543][69743201] = { id = 1193, type = "Raid", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Sanctum of Domination  
           end
 
-        -- Shadowlands LFR
-          if self.db.profile.showMiniMapLFR then
-            minimap[1670][41377150] = { name = L["Ta'elfar"] .. "\n" .. L["Registrant"] .. " - " .. RAID_FINDER .. "\n" .. " ", id = { 1190, 1193, 1195 }, type = "LFR", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Portal from Garrison to Ashran
-          end
         end
 
 

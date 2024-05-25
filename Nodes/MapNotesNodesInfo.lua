@@ -385,6 +385,7 @@ nodes[120] = { } -- The Storm Peaks
 nodes[121] = { } -- Zul'Drak
 nodes[123] = { } -- LakeWintergrasp  
 nodes[125] = { } -- Dalaran City    
+nodes[126] = { } -- Dalaran City Basement
 nodes[127] = { } -- Crystalsong Forest 
 -- Dungeon map nodes 
 nodes[129] = { } -- The Nexus

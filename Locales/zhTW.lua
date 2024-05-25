@@ -2,6 +2,9 @@ local ADDON_NAME = ...
 local L = LibStub("AceLocale-3.0"):NewLocale(ADDON_NAME, "zhTW")
 if not L then return end
 
+--Capitals
+L["The Scryers"] = "占星者"
+L["The Aldor"] = "奥尔多"
 L["Generals"] = "一般的"
 L["Paths"] = "方法"
 L["Capitals"] = "省會城市"
