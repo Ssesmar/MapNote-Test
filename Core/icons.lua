@@ -15,7 +15,7 @@ ns.icons = {
 --Professions
 ["Engineer"] = "interface/icons/trade_engineering.blp",
 ["Alchemy"] = "interface/icons/trade_alchemy.blp",
-["Blacksmith"] = "interface/minimap/tracking/repair.blp",
+["Blacksmith"] = "interface/icons/trade_blacksmithing.blp",
 ["Skinning"] = "interface/icons/ui_profession_skinning.blp",
 ["Engraving"] = "interface/icons/trade_engraving.blp",
 ["Enchanting"] = "interface/icons/ui_profession_enchanting.blp",
@@ -136,7 +136,7 @@ TextIconValdrakken = TextIcon("interface/icons/spell_arcane_teleportvaldrakken.b
 --profession
 TextIconEngineer = TextIcon("interface/icons/trade_engineering.blp", 50, 50, 1, 50, 1, 50)
 TextIconAlchemy = TextIcon("interface/icons/trade_alchemy.blp", 50, 50, 1, 50, 1, 50)
-TextIconBlacksmith = TextIcon("interface/minimap/tracking/repair.blp", 50, 50, 1, 50, 1, 50)
+TextIconBlacksmith = TextIcon("interface/icons/trade_blacksmithing.blp", 50, 50, 1, 50, 1, 50)
 TextIconSkinning = TextIcon("interface/icons/ui_profession_skinning", 50, 50, 1, 50, 1, 50)
 TextIconEngraving = TextIcon("interface/icons/trade_engraving.blp", 50, 50, 1, 50, 1, 50)
 TextIconTailoring = TextIcon("interface/icons/trade_tailoring.blp", 50, 50, 1, 50, 1, 50)

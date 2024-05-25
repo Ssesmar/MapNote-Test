@@ -62,7 +62,7 @@ function FogOfWar:MapExplorationPin_RefreshOverlays(pin, fullUpdate)
 
 	local TILE_SIZE_WIDTH = layerInfo.tileWidth
 	local TILE_SIZE_HEIGHT = layerInfo.tileHeight
-	local r, g, b, a, r_Reduce, g_Reduce, b_Reduce, a_Reduce = self:GetOverlayColor()
+	local Xr, Xg, Xb, Xa, r_Reduce, g_Reduce, b_Reduce, a_Reduce = self:GetOverlayColor() -- X was added to prevent errors with other fog map addons
 
 	for key, files in pairs(data) do
 		if not exploredTilesKeyed[key] then
@@ -107,13 +107,13 @@ function FogOfWar:MapExplorationPin_RefreshOverlays(pin, fullUpdate)
 					texture:SetTexture(tonumber(fileDataIDs[((j - 1) * numTexturesWide) + k]), nil, nil, "TRILINEAR")
 
 					if ns.Addon.db.profile.show.FogOfWar then
-						texture:SetVertexColor(a, r, g, b)
+						texture:SetVertexColor(Xa, Xr, Xg, Xb)
 					end
 					if ns.Addon.db.profile.show.FogOfWarAlphaReduce then
 						texture:SetVertexColor(a_Reduce, r_Reduce, g_Reduce, b_Reduce)
 					end
 					if ns.Addon.db.profile.show.FogOfWar then
-						texture:SetAlpha(a)
+						texture:SetAlpha(Xa)
 					end
 					if ns.Addon.db.profile.show.FogOfWarAlphaReduce then
 						texture:SetAlpha(a_Reduce)
@@ -138,8 +138,8 @@ function FogOfWar:GetOverlayColor()
 	return db.colorR, db.colorG, db.colorB, db.colorA, db.colorR_Reduce, db.colorG_Reduce, db.colorB_Reduce, db.colorA_Reduce
 end
 
-function FogOfWar:SetOverlayColor(info, r,g,b,a,r_Reduce,g_Reduce,b_Reduce,a_Reduce)
-	db.colorR_Reduce, db.colorG_Reduce, db.colorB_Reduce, db.colorA_Reduce = r_Reduce,g_Reduce,b_Reduce,a_Reduce
-	db.colorR, db.colorG, db.colorB, db.colorA = r,g,b,a
+function FogOfWar:SetOverlayColor(info, Xr,Xg,Xb,Xa,r_Reduce,g_Reduce,b_Reduce,a_Reduce)
+	db.colorR_Reduce, db.colorG_Reduce, db.colorB_Reduce, db.colorA_Reduce = r_Reduce, g_Reduce, b_Reduce, a_Reduce
+	db.colorR, db.colorG, db.colorB, db.colorA = Xr, Xg, Xb, Xa
 	if self:IsEnabled() then self:Refresh() end
 end

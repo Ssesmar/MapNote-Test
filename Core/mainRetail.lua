@@ -181,6 +181,7 @@ do
         WorldMapFrame:GetMapID() == 110 or -- Silvermoon
         WorldMapFrame:GetMapID() == 111 or -- Shattrath
         WorldMapFrame:GetMapID() == 125 or  -- Dalaran Northrend
+        WorldMapFrame:GetMapID() == 126 or  -- Dalaran Northrend Basement
         WorldMapFrame:GetMapID() == 391 or  -- Pandaria Shrine of the two Moons first floor
         WorldMapFrame:GetMapID() == 392 or  -- Pandaria Shrine of the two Moons second floor
         WorldMapFrame:GetMapID() == 393 or  -- Pandaria Shrine of the seven Stars first floor
