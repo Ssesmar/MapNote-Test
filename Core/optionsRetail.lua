@@ -132,7 +132,7 @@ ns.options = {
           type = "toggle",
           name = L["Mist of the Unexplored"],
           desc = L["Leaves the unexplored areas revealed but adds a slight fog so you can still see which ones you haven't explored yet"],
-          width = 2,
+          width = 1.6,
           order = 2.2,
           get = function() return ns.Addon.db.profile.show.FogOfWarAlphaReduce end,
           set = function(info, v) ns.Addon.db.profile.show.FogOfWarAlphaReduce = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
@@ -238,22 +238,9 @@ ns.options = {
           },
         InfoTab3 = {
           type = "group",
-          name = "-> " .. WORLDMAP_BUTTON .. " - " .. WINDOWED_MAXIMIZED .. " <-",
-          desc = L["A collection of various icons on various maps from previous expansions up to Dragonflight"],
-          order = 3,
-          args = {
-            InfoDescriptionText3 = {
-              name = "• " .. L["After the adventure guide is opened using a MapNote instance icon and you then switch to the dungeon map using the 'Show map' option in the adventure guide, the map is shown reduced in size so that you can move with the character within the instance and see where you have to go. This minimized map feature ends when you close the map or once! Press the “World map on/off” button (which you have set under 'ESC - Keyboard assignment - Interface function'), whereupon the map will be maximized"],
-              type = "description",
-              order = 30.1,
-              },
-            },
-          },
-        InfoTab4 = {
-          type = "group",
           name = L["-> MiniMapButton <-"],
           desc = L["A collection of various icons on various maps from previous expansions up to Dragonflight"],
-          order = 4,
+          order = 3,
           args = {
             InfoDescriptionText4 = {
               name = "• " .. L["Left-click opens or close the MapNote setting menu"] .. "\n" .. "\n" .. "• " .. HELPFRAME_REPORT_PLAYER_RIGHT_CLICK .. " " .. MINIMAP_LABEL .. " " .. L["icons"] .. " " .. SHOW .. " / " .. HIDE .. "\n" .. "\n" .. "• " .. L["Shift+Right-click hide the minimap button"] .. "\n" .. "\n" .. "• " .. L["Middle-Mouse-Button => Open/Close"],
@@ -262,29 +249,29 @@ ns.options = {
               },
             },
           },
-        InfoTab5 = {
+        InfoTab4 = {
           type = "group",
           name = L["-> WorldMapButton <-"],
           desc = L["A collection of various icons on various maps from previous expansions up to Dragonflight"],
-          order = 5,
+          order = 4,
           args = {
             InfoDescriptionText5 = {
               name =  "• " .. L["Left-click => Open/Close"] .. " " .. HUD_EDIT_MODE_MICRO_MENU_LABEL .. "\n" .. "\n" .. "• " .. MIDDLE_BUTTON_STRING .. " => " .. L["Disable MapNotes, all icons will be hidden on each map and all categories will be disabled"] .. " " .. SHOW .. " / " .. HIDE  .. "\n" .. "\n" .. "• " .. HELPFRAME_REPORT_PLAYER_RIGHT_CLICK .. " => " .. WORLDMAP_BUTTON .. " " .. L["icons"] .. " " .. SHOW .. " / " .. HIDE,
               type = "description",
-              order = 50.1,
+              order = 40.1,
               },
             },
           },
-        InfoTab6 = {
+        InfoTab5 = {
           type = "group",
           name = "-> " .. L["Chat commands"] .. " <-",
           desc = L["A collection of various icons on various maps from previous expansions up to Dragonflight"],
-          order = 6,
+          order = 5,
           args = {
             InfoDescriptionText6 = {
               name =  "• " .. L["to show MapNotes info in chat: /mn, /MN"] .. "\n" .. "• " .. L["to open MapNotes menu: /mno, /MNO"] .. "\n" .. "• " .. L["to close MapNotes menu: /mnc, /MNC"] .. "\n" .. "• " .. L["to show minimap button: /mnb or /MNB"] .. "\n" .. "• " .. L["to hide minimap button: /mnbh or /MNBH"],
               type = "description",
-              order = 60.1,
+              order = 50.1,
               },
             },
           },
