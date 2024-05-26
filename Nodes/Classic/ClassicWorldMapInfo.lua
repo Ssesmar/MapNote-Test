@@ -129,6 +129,7 @@ local nodes = ns.nodes
                     if self.faction == "Horde" or db.show.EnemyFaction then
                         nodes[947][20183226] = { mnID = 1448, name = MINIMAP_TRACKING_FLIGHTMASTER .. " - " .. FACTION_HORDE, type = "TravelH", showInZone = true } -- Felwood
                         nodes[947][24964141] = { mnID = 1440, name = MINIMAP_TRACKING_FLIGHTMASTER .. " - " .. FACTION_HORDE, type = "TravelH", showInZone = true } -- Ashenvale
+                        nodes[947][17183788] = { mnID = 1440, name = MINIMAP_TRACKING_FLIGHTMASTER .. " - " .. FACTION_HORDE, type = "TravelH", showInZone = true } -- Ashenvale
                         nodes[947][29113690] = { mnID = 1447, name = MINIMAP_TRACKING_FLIGHTMASTER .. " - " .. FACTION_HORDE, type = "TravelH", showInZone = true } -- Azshara
                         nodes[947][17094552] = { mnID = 1442, name = MINIMAP_TRACKING_FLIGHTMASTER .. " - " .. FACTION_HORDE, type = "TravelH", showInZone = true } -- Stonetalon Mountains
                         nodes[947][24874141] = { mnID = 1413, name = MINIMAP_TRACKING_FLIGHTMASTER .. " - " .. FACTION_HORDE, type = "TravelH", showInZone = true } -- Barrens
