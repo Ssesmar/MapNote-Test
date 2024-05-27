@@ -1,7 +1,7 @@
 local ADDON_NAME, ns = ...
 
 local function RemoveBlizzPOIs()
-    if (not ns.Addon.db.profile.show.RemoveBlizzPOIs) then return end
+    if (not ns.Addon.db.profile.activate.RemoveBlizzPOIs or ns.Addon.db.profile.activate.HideMapNote) then return end
   
     for pin in WorldMapFrame:EnumeratePinsByTemplate("AreaPOIPinTemplate") do
         for _, poiID in pairs(ns.BlizzAreaPoisInfo) do

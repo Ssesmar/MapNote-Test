@@ -32,13 +32,13 @@ end
 SLASH_MMBSHOW1, SLASH_MMBSHOW2 = "/mnb", "/MNB";
 function SlashCmdList.MMBSHOW(msg, editbox)
   MNMMBIcon:Show("MNMiniMapButton")
-  ns.Addon.db.profile.show.HideMMB = false
+  ns.Addon.db.profile.activate.HideMMB = false
   print(COLORED_ADDON_NAME .. "|cffffff00 " .. L["-> MiniMapButton <-"], "|cff00ff00" .. L["is activated"])
 end
 
 SLASH_MMBHIDE1, SLASH_MMBHIDE2 = "/mnbh", "/MNBH";
 function SlashCmdList.MMBHIDE(msg, editbox)
   MNMMBIcon:Hide("MNMiniMapButton")
-  ns.Addon.db.profile.show.HideMMB = true
+  ns.Addon.db.profile.activate.HideMMB = true
   print(COLORED_ADDON_NAME .. "|cffffff00 " .. L["-> MiniMapButton <-"], "|cffff0000" .. L["is deactivated"])
 end

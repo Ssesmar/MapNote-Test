@@ -24,11 +24,11 @@ local info = C_Map.GetMapInfo(WorldMapFrame:GetMapID())
 
     if button == "MiddleButton" then
 
-        if not ns.Addon.db.profile.show.HideMapNote then
-            ns.Addon.db.profile.show.HideMapNote = true
+        if not ns.Addon.db.profile.activate.HideMapNote then
+            ns.Addon.db.profile.activate.HideMapNote = true
             print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffff0000", L["All MapNotes icons have been hidden"])
         else
-            ns.Addon.db.profile.show.HideMapNote = false
+            ns.Addon.db.profile.activate.HideMapNote = false
             print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cff00ff00", L["All set icons have been restored"])
         end
 
@@ -38,11 +38,11 @@ local info = C_Map.GetMapInfo(WorldMapFrame:GetMapID())
 
         if WorldMapFrame:GetMapID() == 946 then -- World Map
         
-            if not ns.Addon.db.profile.show.CosmosMap then
-                ns.Addon.db.profile.show.CosmosMap = true
+            if not ns.Addon.db.profile.activate.CosmosMap then
+                ns.Addon.db.profile.activate.CosmosMap = true
                 print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00", WORLDMAP_BUTTON, "|cff00ff00" .. L["is activated"])
             else
-                ns.Addon.db.profile.show.CosmosMap = false
+                ns.Addon.db.profile.activate.CosmosMap = false
                 print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00", WORLDMAP_BUTTON, "|cffff0000" .. L["is deactivated"])
             end
 
@@ -50,11 +50,11 @@ local info = C_Map.GetMapInfo(WorldMapFrame:GetMapID())
 
         if WorldMapFrame:GetMapID() == 947 then-- Azeroth World Map
 
-            if not ns.Addon.db.profile.show.Azeroth then
-                ns.Addon.db.profile.show.Azeroth = true
+            if not ns.Addon.db.profile.activate.Azeroth then
+                ns.Addon.db.profile.activate.Azeroth = true
                 print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. WORLD_MAP, "|cff00ff00" .. L["is activated"])
             else
-                ns.Addon.db.profile.show.Azeroth = false
+                ns.Addon.db.profile.activate.Azeroth = false
                 print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. WORLD_MAP, "|cffff0000" .. L["is deactivated"])
             end
 
@@ -62,11 +62,11 @@ local info = C_Map.GetMapInfo(WorldMapFrame:GetMapID())
 
         if info.mapType == 2 then -- Continent Maps
         
-            if not ns.Addon.db.profile.show.Continent then
-                ns.Addon.db.profile.show.Continent = true
+            if not ns.Addon.db.profile.activate.Continent then
+                ns.Addon.db.profile.activate.Continent = true
                 print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Continent map"], "|cff00ff00" .. L["is activated"])
             else
-                ns.Addon.db.profile.show.Continent = false
+                ns.Addon.db.profile.activate.Continent = false
                 print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Continent map"], "|cffff0000" .. L["is deactivated"])
             end
 
@@ -82,11 +82,11 @@ local info = C_Map.GetMapInfo(WorldMapFrame:GetMapID())
         or WorldMapFrame:GetMapID() == 1163 or WorldMapFrame:GetMapID() == 1164 or WorldMapFrame:GetMapID() == 1165 or WorldMapFrame:GetMapID() == 1670 or WorldMapFrame:GetMapID() == 1671 
         or WorldMapFrame:GetMapID() == 1672 or WorldMapFrame:GetMapID() == 1673 or WorldMapFrame:GetMapID() == 2112) then
         
-            if not ns.Addon.db.profile.show.DungeonMap then
-                ns.Addon.db.profile.show.DungeonMap = true
+            if not ns.Addon.db.profile.activate.DungeonMap then
+                ns.Addon.db.profile.activate.DungeonMap = true
                 print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Dungeon map"], "|cff00ff00" .. L["is activated"])
             else
-                ns.Addon.db.profile.show.DungeonMap = false
+                ns.Addon.db.profile.activate.DungeonMap = false
                 print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Dungeon map"], "|cffff0000" .. L["is deactivated"])
             end
 
@@ -102,11 +102,11 @@ local info = C_Map.GetMapInfo(WorldMapFrame:GetMapID())
             or WorldMapFrame:GetMapID() == 1163 or WorldMapFrame:GetMapID() == 1164 or WorldMapFrame:GetMapID() == 1165 or WorldMapFrame:GetMapID() == 1670 or WorldMapFrame:GetMapID() == 1671 
             or WorldMapFrame:GetMapID() == 1672 or WorldMapFrame:GetMapID() == 1673 or WorldMapFrame:GetMapID() == 2112) then
         
-            if not ns.Addon.db.profile.show.ZoneMap then
-                ns.Addon.db.profile.show.ZoneMap = true
+            if not ns.Addon.db.profile.activate.ZoneMap then
+                ns.Addon.db.profile.activate.ZoneMap = true
                 print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Zone map"], "|cff00ff00" .. L["is activated"])
             else
-                ns.Addon.db.profile.show.ZoneMap = false
+                ns.Addon.db.profile.activate.ZoneMap = false
                 print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Zone map"], "|cffff0000" .. L["is deactivated"])
             end
 
@@ -121,11 +121,11 @@ local info = C_Map.GetMapInfo(WorldMapFrame:GetMapID())
         or WorldMapFrame:GetMapID() == 1163 or WorldMapFrame:GetMapID() == 1164 or WorldMapFrame:GetMapID() == 1165 or WorldMapFrame:GetMapID() == 1670 or WorldMapFrame:GetMapID() == 1671 
         or WorldMapFrame:GetMapID() == 1672 or WorldMapFrame:GetMapID() == 1673 or WorldMapFrame:GetMapID() == 2112) then
         
-            if not ns.Addon.db.profile.show.Capitals then
-                ns.Addon.db.profile.show.Capitals = true
+            if not ns.Addon.db.profile.activate.Capitals then
+                ns.Addon.db.profile.activate.Capitals = true
                 print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Capitals"], "|cff00ff00" .. L["is activated"])
             else
-                ns.Addon.db.profile.show.Capitals = false
+                ns.Addon.db.profile.activate.Capitals = false
                 print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Capitals"], "|cffff0000" .. L["is deactivated"])
             end
 

@@ -28,11 +28,11 @@ OnClick = function(self, button)
     or WorldMapFrame:GetMapID() == 626 or WorldMapFrame:GetMapID() == 627 or WorldMapFrame:GetMapID() == 628 or WorldMapFrame:GetMapID() == 629 or WorldMapFrame:GetMapID() == 1161
     or WorldMapFrame:GetMapID() == 1163 or WorldMapFrame:GetMapID() == 1164 or WorldMapFrame:GetMapID() == 1165 or WorldMapFrame:GetMapID() == 1670 or WorldMapFrame:GetMapID() == 1671 
     or WorldMapFrame:GetMapID() == 1672 or WorldMapFrame:GetMapID() == 1673 or WorldMapFrame:GetMapID() == 2112) then
-      if not ns.Addon.db.profile.show.MiniMap then
-        ns.Addon.db.profile.show.MiniMap = true
+      if not ns.Addon.db.profile.activate.MiniMap then
+        ns.Addon.db.profile.activate.MiniMap = true
         print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. MINIMAP_LABEL, "|cff00ff00" .. L["is activated"])
       else
-        ns.Addon.db.profile.show.MiniMap = false
+        ns.Addon.db.profile.activate.MiniMap = false
         print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. MINIMAP_LABEL, "|cffff0000" .. L["is deactivated"])
       end
     end
@@ -45,18 +45,18 @@ OnClick = function(self, button)
     or WorldMapFrame:GetMapID() == 626 or WorldMapFrame:GetMapID() == 627 or WorldMapFrame:GetMapID() == 628 or WorldMapFrame:GetMapID() == 629 or WorldMapFrame:GetMapID() == 1161
     or WorldMapFrame:GetMapID() == 1163 or WorldMapFrame:GetMapID() == 1164 or WorldMapFrame:GetMapID() == 1165 or WorldMapFrame:GetMapID() == 1670 or WorldMapFrame:GetMapID() == 1671 
     or WorldMapFrame:GetMapID() == 1672 or WorldMapFrame:GetMapID() == 1673 or WorldMapFrame:GetMapID() == 2112) then
-      if not ns.Addon.db.profile.show.MinimapCapitals then
-        ns.Addon.db.profile.show.MinimapCapitals = true
+      if not ns.Addon.db.profile.activate.MinimapCapitals then
+        ns.Addon.db.profile.activate.MinimapCapitals = true
         print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. MINIMAP_LABEL, L["Capitals"], "|cff00ff00" .. L["is activated"])
       else
-        ns.Addon.db.profile.show.MinimapCapitals = false
+        ns.Addon.db.profile.activate.MinimapCapitals = false
         print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. MINIMAP_LABEL, L["Capitals"], "|cffff0000" .. L["is deactivated"])
       end
     end
     
     if IsShiftKeyDown() and button == "RightButton" then
       MNMMBIcon:Hide("MNMiniMapButton")
-      ns.Addon.db.profile.show.HideMMB = true
+      ns.Addon.db.profile.activate.HideMMB = true
       LibStub("AceConfigDialog-3.0"):Close("HandyNotes") 
       print(COLORED_ADDON_NAME .. "|cffffff00 " .. L["-> MiniMapButton <-"], "|cffff0000" .. L["is deactivated"]) 
       print(COLORED_ADDON_NAME .. "|cffffff00 " .. L["to show minimap button: /mnb or /MNB"])

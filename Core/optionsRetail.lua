@@ -34,10 +34,10 @@ ns.options = {
           desc = L["Disable MapNotes, all icons will be hidden on each map and all categories will be disabled"],
           order = 0.5,
           width = 1.10,
-          get = function() return ns.Addon.db.profile.show.HideMapNote end,
-          set = function(info, v) ns.Addon.db.profile.show.HideMapNote = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
-                if ns.Addon.db.profile.show.HideMapNote then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffff0000", L["All MapNotes icons have been hidden"]) else
-                if not ns.Addon.db.profile.show.HideMapNote then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cff00ff00", L["All set icons have been restored"]) end end end,
+          get = function() return ns.Addon.db.profile.activate.HideMapNote end,
+          set = function(info, v) ns.Addon.db.profile.activate.HideMapNote = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
+                if ns.Addon.db.profile.activate.HideMapNote then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffff0000", L["All MapNotes icons have been hidden"]) else
+                if not ns.Addon.db.profile.activate.HideMapNote then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cff00ff00", L["All set icons have been restored"]) end end end,
           },  
         hideMMB = {
           type = "toggle",
@@ -45,10 +45,10 @@ ns.options = {
           desc = L["Hide the MapNotes button on the minimap"],
           order = 0.7,
           width = 1.25,
-          get = function() return ns.Addon.db.profile.show.HideMMB end,
-          set = function(info, v) ns.Addon.db.profile.show.HideMMB = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
-            if not ns.Addon.db.profile.show.HideMMB then MNMMBIcon:Show("MNMiniMapButton") print(COLORED_ADDON_NAME .. "|cffffff00", L["-> MiniMapButton <-"], L["icons"], "|cff00ff00" .. L["is activated"]) else
-            if ns.Addon.db.profile.show.HideMMB then MNMMBIcon:Hide("MNMiniMapButton") print(COLORED_ADDON_NAME .. "|cffffff00", L["-> MiniMapButton <-"], L["icons"], "|cffff0000" .. L["is deactivated"]) end end end,
+          get = function() return ns.Addon.db.profile.activate.HideMMB end,
+          set = function(info, v) ns.Addon.db.profile.activate.HideMMB = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
+            if not ns.Addon.db.profile.activate.HideMMB then MNMMBIcon:Show("MNMiniMapButton") print(COLORED_ADDON_NAME .. "|cffffff00", L["-> MiniMapButton <-"], L["icons"], "|cff00ff00" .. L["is activated"]) else
+            if ns.Addon.db.profile.activate.HideMMB then MNMMBIcon:Hide("MNMiniMapButton") print(COLORED_ADDON_NAME .. "|cffffff00", L["-> MiniMapButton <-"], L["icons"], "|cffff0000" .. L["is deactivated"]) end end end,
           },
         hideWMB = {
           type = "toggle",
@@ -56,10 +56,10 @@ ns.options = {
           desc = L["Hide the MapNotes button on the worldmap"],
           order = 0.8,
           width = 1.20,
-          get = function() return ns.Addon.db.profile.show.HideWMB end,
-          set = function(info, v) ns.Addon.db.profile.show.HideWMB = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
-            if not ns.Addon.db.profile.show.HideWMB then ns.WorldMapButton:Show() LibStub("Krowi_WorldMapButtons-1.4").SetPoints(); print(COLORED_ADDON_NAME .. "|cffffff00", L["-> WorldMapButton <-"], L["icons"], "|cff00ff00" .. L["is activated"]) else
-            if ns.Addon.db.profile.show.HideWMB then ns.WorldMapButton:Hide() LibStub("Krowi_WorldMapButtons-1.4").SetPoints(); print(COLORED_ADDON_NAME .. "|cffffff00", L["-> WorldMapButton <-"], L["icons"], "|cffff0000" .. L["is deactivated"]) end end end,
+          get = function() return ns.Addon.db.profile.activate.HideWMB end,
+          set = function(info, v) ns.Addon.db.profile.activate.HideWMB = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
+            if not ns.Addon.db.profile.activate.HideWMB then ns.WorldMapButton:Show() LibStub("Krowi_WorldMapButtons-1.4").SetPoints(); print(COLORED_ADDON_NAME .. "|cffffff00", L["-> WorldMapButton <-"], L["icons"], "|cff00ff00" .. L["is activated"]) else
+            if ns.Addon.db.profile.activate.HideWMB then ns.WorldMapButton:Hide() LibStub("Krowi_WorldMapButtons-1.4").SetPoints(); print(COLORED_ADDON_NAME .. "|cffffff00", L["-> WorldMapButton <-"], L["icons"], "|cffff0000" .. L["is deactivated"]) end end end,
           },
         DescriptionHeader2 = {
           type = "header",
@@ -67,78 +67,78 @@ ns.options = {
           order = 1.6,
           },
         RemoveBlizzPOIs = {
-          -- disabled = function() return ns.Addon.db.profile.show.HideMapNote end,
+          -- disabled = function() return ns.Addon.db.profile.activate.HideMapNote end,
           type = "toggle",
           name = COLORED_ADDON_NAME .. " " .. L["icons"],
           desc = TextIconMNL4:GetIconString() ..  " " .. TextIconHIcon:GetIconString() ..  " " .. TextIconAIcon:GetIconString() .. " " .. L["Hides certain Blizzard icons (e.g. Horde/Alliance/Neutral capitals icon or general travel icons on the map) and replaces them with almost identical MapNotes icons, providing additional information and functionality"] .. "\n" .. "\n" .. TextIconRaid:GetIconString() .. " " .. TextIconDungeon:GetIconString() .. " " ..  L["Also disables all Blizzard Instance icons on the zone map. However, these can be reactivated on the map at the top right under the 'Map filter' dungeon entrance magnifying glass. Disable and enable MapNotes VS again. blizzard, deactivates the instance icons on the zone map again"] .. "\n" .. "\n" .. L["Removes the Blizzard symbols only where MapNotes symbols and Blizzard symbols overlap, thereby making the tooltip and the function of the MapNote symbols usable again on the overlapping points"],
           order = 1.7,
           width = 1.05,
-          get = function() return ns.Addon.db.profile.show.RemoveBlizzPOIs end,
-          set = function(info, v) ns.Addon.db.profile.show.RemoveBlizzPOIs = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
-                if ns.Addon.db.profile.show.RemoveBlizzPOIs then SetCVar("showDungeonEntrancesOnMap", 0) print(COLORED_ADDON_NAME, "|cffffff00" .. SLASH_TEXTTOSPEECH_BLIZZARD .. " " .. L["icons"], "|cffff0000" .. L["are hidden"] ) else
-                if not ns.Addon.db.profile.show.RemoveBlizzPOIs then SetCVar("showDungeonEntrancesOnMap", 1) print(COLORED_ADDON_NAME, "|cffffff00" .. SLASH_TEXTTOSPEECH_BLIZZARD .. " " ..L["icons"], "|cff00ccff" .. L["are shown"] )end end end,
+          get = function() return ns.Addon.db.profile.activate.RemoveBlizzPOIs end,
+          set = function(info, v) ns.Addon.db.profile.activate.RemoveBlizzPOIs = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
+                if ns.Addon.db.profile.activate.RemoveBlizzPOIs then SetCVar("showDungeonEntrancesOnMap", 0) print(COLORED_ADDON_NAME, "|cffffff00" .. SLASH_TEXTTOSPEECH_BLIZZARD .. " " .. L["icons"], "|cffff0000" .. L["are hidden"] ) else
+                if not ns.Addon.db.profile.activate.RemoveBlizzPOIs then SetCVar("showDungeonEntrancesOnMap", 1) print(COLORED_ADDON_NAME, "|cffffff00" .. SLASH_TEXTTOSPEECH_BLIZZARD .. " " ..L["icons"], "|cff00ccff" .. L["are shown"] )end end end,
           },
         showEnemyFaction = {
-          disabled = function() return ns.Addon.db.profile.show.HideMapNote end,
+          disabled = function() return ns.Addon.db.profile.activate.HideMapNote end,
           type = "toggle",
           name = L["enemy faction"],
           desc = TextIconHorde:GetIconString() ..  " " .. TextIconAlliance:GetIconString() .. " " .. L["Shows enemy faction (horde/alliance) icons"],
           order = 1.8,
           width = 0.90,
-          get = function() return ns.Addon.db.profile.show.EnemyFaction end,
-          set = function(info, v) ns.Addon.db.profile.show.EnemyFaction = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
-                if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.show.EnemyFaction then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["enemy faction"], L["icons"], "|cff00ff00" .. L["is activated"]) else 
-                if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.show.EnemyFaction then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["enemy faction"], "|cffff0000" ..  L["is deactivated"]) end end end,
+          get = function() return ns.Addon.db.profile.activate.EnemyFaction end,
+          set = function(info, v) ns.Addon.db.profile.activate.EnemyFaction = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
+                if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.activate.EnemyFaction then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["enemy faction"], L["icons"], "|cff00ff00" .. L["is activated"]) else 
+                if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.activate.EnemyFaction then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["enemy faction"], "|cffff0000" ..  L["is deactivated"]) end end end,
          },
         ShiftWorld = {
-          disabled = function() return ns.Addon.db.profile.show.HideMapNote end,
+          disabled = function() return ns.Addon.db.profile.activate.HideMapNote end,
           type = "toggle",
           name = L["Shift function!"],
           desc = L["When enabled, you must press Shift before left- or right-clicking to interact with MapNotes icons. But this has an advantage because there are so many icons in the game, including from other addons, so you don't accidentally click on a symbol and change the map, or mistakenly create a TomTom point."],
           order = 1.9,
           width = 0.75,
-          get = function() return ns.Addon.db.profile.show.ShiftWorld end,
-          set = function(info, v) ns.Addon.db.profile.show.ShiftWorld = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
-            if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.show.ShiftWorld then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00", L["Shift function"], "|cff00ff00" .. L["is deactivated"] .. " " .. L["You can now interact with MapNotes icons without having to press Shift + Click at the same time"]) else
-            if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.show.ShiftWorld then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00", L["Shift function"], "|cffff0000" .. L["is activated"] .. " " .. L["You must now always press Shift + Click at the same time to interact with the MapNotes icons"]) end end end,
+          get = function() return ns.Addon.db.profile.activate.ShiftWorld end,
+          set = function(info, v) ns.Addon.db.profile.activate.ShiftWorld = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
+            if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.activate.ShiftWorld then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00", L["Shift function"], "|cff00ff00" .. L["is deactivated"] .. " " .. L["You can now interact with MapNotes icons without having to press Shift + Click at the same time"]) else
+            if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.activate.ShiftWorld then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00", L["Shift function"], "|cffff0000" .. L["is activated"] .. " " .. L["You must now always press Shift + Click at the same time to interact with the MapNotes icons"]) end end end,
           },
         ClassicIcons = {
-          disabled = function() return ns.Addon.db.profile.show.HideMapNote end,
+          disabled = function() return ns.Addon.db.profile.activate.HideMapNote end,
           type = "toggle",
           name = CLASSIC_STYLE,
           desc = L["Only affects instance passage icons, not path icons such as exit icons or icons on an instance map or the Capitals category / Minimap Capitals"] .. "\n" .. "\n" .. L["Changes all passage symbols on all maps to dungeon, raid or multiple symbols. In addition, the passage option will be disabled everywhere and the symbols will be added to the respective raids, dungeons or multiple options (The dungeon map remains unchanged from all this)"] .. "\n" .. "\n" .. L["At the same time, all icons representing additional instance inputs are removed"],
           order = 2.0,
           width = 0.85,
-          get = function() return ns.Addon.db.profile.show.ClassicIcons end,
-          set = function(info, v) ns.Addon.db.profile.show.ClassicIcons = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
-            if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.show.ClassicIcons then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00", CLASSIC_STYLE, "|cff00ff00" .. L["is deactivated"]) else
-            if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.show.ClassicIcons then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00", CLASSIC_STYLE, "|cffff0000" .. L["is activated"]) end end end,
+          get = function() return ns.Addon.db.profile.activate.ClassicIcons end,
+          set = function(info, v) ns.Addon.db.profile.activate.ClassicIcons = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
+            if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.activate.ClassicIcons then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00", CLASSIC_STYLE, "|cff00ff00" .. L["is deactivated"]) else
+            if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.activate.ClassicIcons then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00", CLASSIC_STYLE, "|cffff0000" .. L["is activated"]) end end end,
           }, 
         FogOfWar = {
-          --disabled = function() return ns.Addon.db.profile.show.HideMapNote end,
+          --disabled = function() return ns.Addon.db.profile.activate.HideMapNote end,
           type = "toggle",
           name = L["Unexplored Areas"],
           desc = L["Reveals unexplored areas and shows the individual areas of each zone that are actually still unexplored"],
           order = 2.1,
           width = 1.05,
-          get = function() return ns.Addon.db.profile.show.FogOfWar end,
-          set = function(info, v) ns.Addon.db.profile.show.FogOfWar = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
+          get = function() return ns.Addon.db.profile.activate.FogOfWar end,
+          set = function(info, v) ns.Addon.db.profile.activate.FogOfWar = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
             HandyNotes:GetModule("FogOfWarButton"):Refresh()
-            if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.show.FogOfWar then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00", L["Unexplored Areas"], L["icons"], "|cffff0000" .. L["is deactivated"]) else
-            if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.show.FogOfWar then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00", L["Unexplored Areas"], L["icons"], "|cff00ff00" .. L["is activated"]) end end end,
+            if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.activate.FogOfWar then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00", L["Unexplored Areas"], L["icons"], "|cffff0000" .. L["is deactivated"]) else
+            if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.activate.FogOfWar then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00", L["Unexplored Areas"], L["icons"], "|cff00ff00" .. L["is activated"]) end end end,
           }, 
         FogOfWarAlphaReduce = {
-          disabled = function() return not ns.Addon.db.profile.show.FogOfWar end,
+          disabled = function() return not ns.Addon.db.profile.activate.FogOfWar end,
           type = "toggle",
           name = L["Mist of the Unexplored"],
           desc = L["Leaves the unexplored areas revealed but adds a slight fog so you can still see which ones you haven't explored yet"],
           width = 1.6,
           order = 2.2,
-          get = function() return ns.Addon.db.profile.show.FogOfWarAlphaReduce end,
-          set = function(info, v) ns.Addon.db.profile.show.FogOfWarAlphaReduce = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
+          get = function() return ns.Addon.db.profile.activate.FogOfWarAlphaReduce end,
+          set = function(info, v) ns.Addon.db.profile.activate.FogOfWarAlphaReduce = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
             HandyNotes:GetModule("FogOfWarButton"):Refresh()
-            if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.show.FogOfWarAlphaReduce then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00", L["Mist of the Unexplored"], L["icons"], "|cffff0000" .. L["is deactivated"]) else
-            if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.show.FogOfWarAlphaReduce then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00",L["Mist of the Unexplored"], L["icons"], "|cff00ff00" .. L["is activated"]) end end end,
+            if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.activate.FogOfWarAlphaReduce then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00", L["Mist of the Unexplored"], L["icons"], "|cffff0000" .. L["is deactivated"]) else
+            if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.activate.FogOfWarAlphaReduce then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00",L["Mist of the Unexplored"], L["icons"], "|cff00ff00" .. L["is activated"]) end end end,
           }, 
         GeneralHeader = {
           type = "header",
@@ -146,7 +146,7 @@ ns.options = {
           order = 3.0,
           },
         journal = {
-          disabled = function() return ns.Addon.db.profile.show.HideMapNote end,
+          disabled = function() return ns.Addon.db.profile.activate.HideMapNote end,
           type = "toggle",
           name = TextIconJournal:GetIconString() .. " " .. L["Adventure guide"],
           desc = L["Left-clicking on a MapNotes raid (green), dungeon (blue) or multiple icon (green&blue) on the map opens the corresponding dungeon or raid map in the Adventure Guide (the map must not be open in full screen)"] .. " " .. L["Left-clicking on a multiple icon will open the map where the dungeons are located"],
@@ -156,7 +156,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.journal then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Adventure guide"], L["icons"], "|cffff0000" .. L["is deactivated"]) end end end,
           },    
         tomtom = {
-          disabled = function() return ns.Addon.db.profile.show.HideMapNote end,
+          disabled = function() return ns.Addon.db.profile.activate.HideMapNote end,
           type = "toggle",
           name = TextIconTomTom:GetIconString() .. " " .. L["TomTom waypoints"],
           desc = L["Shift+right click on a raid, dungeon, multiple symbol, portal, ship, zeppelin, passage or exit from MapNotes on the continent or dungeon map creates a TomTom waypoint to this point (but the TomTom add-on must be installed for this)"],
@@ -166,7 +166,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.tomtom then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["TomTom waypoints"], "|cffff0000" ..  L["is deactivated"]) end end end,
           },
         extraInformation = {
-          disabled = function() return ns.Addon.db.profile.show.HideMapNote end,
+          disabled = function() return ns.Addon.db.profile.activate.HideMapNote end,
           type = "toggle",
           name = TextIconKilledBosses:GetIconString() .. " " .. L["extra information"],
           desc = L["Displays additional information for dungeons or raids. E.g. the number of bosses already killed"],
@@ -176,7 +176,7 @@ ns.options = {
             if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.assignedID then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["extra information"], "|cffff0000" ..  L["is deactivated"]) end end end,
           },
         assignedgray = {
-          disabled = function() return ns.Addon.db.profile.show.HideMapNote or ns.Addon.db.profile.graymultipleID end,
+          disabled = function() return ns.Addon.db.profile.activate.HideMapNote or ns.Addon.db.profile.graymultipleID end,
           type = "toggle",
           name = TextIconLocked:GetIconString() .. " " .. TextIconRaid:GetIconString() .. " " .. TextIconDungeon:GetIconString() .. " " .. L["gray single"],
           desc = L["Colors only individual points of assigned dungeons and raids in gray (if you have an ID)"],
@@ -186,7 +186,7 @@ ns.options = {
             if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.assignedgray then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["gray single"], "|cffff0000" ..  L["is deactivated"]) end end end,
           },
         graymultipleID = {
-          disabled = function() return ns.Addon.db.profile.show.HideMapNote end,
+          disabled = function() return ns.Addon.db.profile.activate.HideMapNote end,
           type = "toggle",
           name = TextIconLocked:GetIconString() .. " " .. TextIconMultipleM:GetIconString() .. " " .. TextIconPassageDungeonMultiM:GetIconString() .. " " .. L["gray all"],
           desc = L["Colors EVERYONE! Assigned dungeons and raids also have multiple points in gray (if you have an ID)"],
@@ -196,7 +196,7 @@ ns.options = {
             if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.graymultipleID then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["gray all"], "|cffff0000" ..  L["is deactivated"]) end end end,
           },
         noChatMassage = {
-          disabled = function() return ns.Addon.db.profile.show.HideMapNote end,
+          disabled = function() return ns.Addon.db.profile.activate.HideMapNote end,
           type = "toggle",
           name = TextIconMNL4:GetIconString() .. " " .. L["chat message"],
           desc = L["Disables MapNotes status chat messages excluding core information"],
@@ -278,7 +278,7 @@ ns.options = {
       },
     },
     MiniMapTab = {
-      disabled = function() return ns.Addon.db.profile.show.HideMapNote end,
+      disabled = function() return ns.Addon.db.profile.activate.HideMapNote end,
       type = "group",
       name = MINIMAP_LABEL,
       desc = L["Certain icons can be displayed or not displayed. If the option (Activate icons) has been activated in this category"],
@@ -305,13 +305,13 @@ ns.options = {
           desc = L["Activates the display of all possible icons on this map"],
           width = 1,
           order = 10.4,
-          get = function() return ns.Addon.db.profile.show.MiniMap end,
-          set = function(info, v) ns.Addon.db.profile.show.MiniMap = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
-                if ns.Addon.db.profile.show.MiniMap then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. MINIMAP_LABEL, L["icons"], "|cff00ff00" .. L["is activated"]) else 
-                if not ns.Addon.db.profile.show.MiniMap then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. MINIMAP_LABEL, L["icons"], "|cffff0000" .. L["is deactivated"]) end end end,
+          get = function() return ns.Addon.db.profile.activate.MiniMap end,
+          set = function(info, v) ns.Addon.db.profile.activate.MiniMap = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
+                if ns.Addon.db.profile.activate.MiniMap then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. MINIMAP_LABEL, L["icons"], "|cff00ff00" .. L["is activated"]) else 
+                if not ns.Addon.db.profile.activate.MiniMap then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. MINIMAP_LABEL, L["icons"], "|cffff0000" .. L["is deactivated"]) end end end,
           },
         minimapScale = {
-          disabled = function() return not ns.Addon.db.profile.show.MiniMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.MiniMap end,
           type = "range",
           name = L["symbol size"],
           desc = L["Changes the size of the icons"],
@@ -320,7 +320,7 @@ ns.options = {
           order = 10.8,
           },
         minimapAlpha = {
-          disabled = function() return not ns.Addon.db.profile.show.MiniMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.MiniMap end,
           type = "range",
           name = L["symbol visibility"],
           desc = L["Changes the visibility of the icons"],
@@ -334,7 +334,7 @@ ns.options = {
           order = 11.0,
           },
         showMiniMapRaids = {
-          disabled = function() return not ns.Addon.db.profile.show.MiniMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.MiniMap end,
           type = "toggle",
           name = TextIconRaid:GetIconString() .. " " .. L["Raids"],
           desc = L["Show icons of raids on this map"],
@@ -344,7 +344,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMiniMapRaids then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL, L["Raids"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showMiniMapDungeons = {
-          disabled = function() return not ns.Addon.db.profile.show.MiniMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.MiniMap end,
           type = "toggle",
           name = TextIconDungeon:GetIconString() .. " " .. L["Dungeons"],
           desc = L["Show icons of dungeons on this map"],
@@ -354,7 +354,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMiniMapDungeons then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL, L["Dungeons"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showMiniMapPassage = {
-          disabled = function() return not ns.Addon.db.profile.show.MiniMap or ns.Addon.db.profile.show.ClassicIcons end,
+          disabled = function() return not ns.Addon.db.profile.activate.MiniMap or ns.Addon.db.profile.activate.ClassicIcons end,
           type = "toggle",
           name = TextIconPassageRaidM:GetIconString() .. " " .. TextIconPassageDungeonM:GetIconString() .. " " .. TextIconPassageRaidMultiM:GetIconString() .. " " .. TextIconPassageDungeonMultiM:GetIconString() .. " " ..L["Passages"],
           desc = L["Show icons of passage to raids and dungeons on this map"],
@@ -364,7 +364,7 @@ ns.options = {
             if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMiniMapPassage then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL, L["Passages"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showMiniMapMultiple = {
-          disabled = function() return not ns.Addon.db.profile.show.MiniMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.MiniMap end,
           type = "toggle",
           name = TextIconMultipleM:GetIconString() .. " " .. TextIconMultipleR:GetIconString() .. " " .. TextIconMultipleD:GetIconString() .. " " .. L["Multiple"],
           desc = L["Show icons of multiple (dungeons,raids) on this map"],
@@ -374,7 +374,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMiniMapMultiple then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL, L["Multiple"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showMiniMapPortals = {
-          disabled = function() return not ns.Addon.db.profile.show.MiniMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.MiniMap end,
           type = "toggle",
           name = TextIconPortal:GetIconString() .. " " .. TextIconHPortal:GetIconString() .. " " .. TextIconAPortal:GetIconString() .. " " .. TextIconWayGateGreen:GetIconString().. " " .. TextIconWayGateGolden:GetIconString() .. " " .. L["Portals"],
           desc = L["Show icons of portals on this map"],
@@ -384,7 +384,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMiniMapPortals then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL, L["Portals"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showMiniMapZeppelins = {
-          disabled = function() return not ns.Addon.db.profile.show.MiniMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.MiniMap end,
           type = "toggle",
           name = TextIconZeppelin:GetIconString() .. " " .. TextIconHZeppelin:GetIconString() .. " " .. L["Zeppelins"],
           desc = L["Show icons of zeppelins on this map"],
@@ -394,7 +394,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMiniMapZeppelins then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL, L["Zeppelins"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showMiniMapShips = {
-          disabled = function() return not ns.Addon.db.profile.show.MiniMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.MiniMap end,
           type = "toggle",
           name = TextIconShip:GetIconString() .. " " .. TextIconHShip:GetIconString() .. " " .. TextIconAShip:GetIconString() .. " " .. L["Ships"],
           desc = L["Show icons of ships on this map"],
@@ -404,7 +404,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMiniMapShips then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL, L["Ships"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showMiniMapTransport = {
-          disabled = function() return not ns.Addon.db.profile.show.MiniMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.MiniMap end,
           type = "toggle",
           name = TextIconOgreWaygate:GetIconString() .. " " .. TextIconTravelL:GetIconString() .. " " .. TextIconTransport:GetIconString() .. " " .. TextIconDwarfF:GetIconString() .. " ".. TextIconCarriage:GetIconString() .. " " .. L["Transport"],
           desc = L["Shows special transport icons like"] .. "\n" .. "\n" .. " " .. TextIconOgreWaygate:GetIconString() .. " " .. L["Ogre Waygate"] .. " - " .. GARRISON_LOCATION_TOOLTIP .. "/" .. L["Draenor"] .. "\n" .. "\n" .. " " .. TextIconTransport:GetIconString() .. " " .. L["Teleporter"] .. " - " .. L["Oribos"] .. "/" .. L["Korthia"] .. "/" .. "\n" .. " " .. L["The Maw"] .. "/" .. L["Shadowlands"] .. "\n" .. "\n" .. " " .. TextIconTransport:GetIconString() .. " " .. TextIconDwarfF:GetIconString() .. " " .. L["Travel"] .. " - " .. L["Zandalar"] .. "/" .. L["Kul Tiras"] .. "\n" .. "\n" .. " " .. TextIconCarriage:GetIconString() .. " " .. L["Transport"] .. " - " .. DUNGEON_FLOOR_DEEPRUNTRAM1,
@@ -414,7 +414,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMiniMapTransport then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL, L["Transport"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showMiniMapOldVanilla = {
-          disabled = function() return not ns.Addon.db.profile.show.MiniMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.MiniMap end,
           type = "toggle",
           name = TextIconVInstance:GetIconString() .. " " .. TextIconVKey1:GetIconString() .. " " .. L["Old Instances"],
           desc = L["Show vanilla versions of dungeons and raids such as Naxxramas, Scholomance or Scarlet Monastery, which require achievements or other things"],
@@ -424,7 +424,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMiniMapOldVanilla then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. MINIMAP_LABEL, L["Old Instances"], "|cffff0000" ..  L["is deactivated"]) end end end,
           },
         showMiniMapLFR = {
-          disabled = function() return not ns.Addon.db.profile.show.MiniMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.MiniMap end,
           type = "toggle",
           name = TextIconLFR:GetIconString() .. " " .. PLAYER_DIFFICULTY3,
           desc = L["Shows the locations of Raidbrowser applicants for old Raids"] .. "\n" .. "\n" .. EXPANSION_NAME3 .. " - " .. DUNGEON_FLOOR_TANARIS18 .. "\n" ..  "\n" .. EXPANSION_NAME4 .. " - " .. L["Vale of Eternal Blossoms"] .. "\n" .. "\n" .. EXPANSION_NAME5 .. " - " .. GARRISON_LOCATION_TOOLTIP .. "\n" .. "\n" .. EXPANSION_NAME2 .. " - " .. DUNGEON_FLOOR_DALARAN1 .. "\n" .. "\n" .. EXPANSION_NAME6 .. " - " .. DUNGEON_FLOOR_DALARAN1 .. "\n" .. "\n" .. EXPANSION_NAME7 .. " - " .. L["Dazar'alor"] .. " / " .. L["Boralus"] .. "\n" .. "\n" .. EXPANSION_NAME8 .. " - " .. L["Oribos"],
@@ -439,7 +439,7 @@ ns.options = {
           order = 14.1,
           },
         showMiniMapKalimdor= {
-          disabled = function() return not ns.Addon.db.profile.show.MiniMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.MiniMap end,
           type = "toggle",
           name = TextIconKalimdor:GetIconString() .. " " .. L["Kalimdor"],
           desc = L["Show all Kalimdor MapNotes dungeon, raid, portal, zeppelin and ship icons on this map"],
@@ -449,7 +449,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMiniMapKalimdor then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL, L["Kalimdor"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showMiniMapEasternKingdom = {
-          disabled = function() return not ns.Addon.db.profile.show.MiniMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.MiniMap end,
           type = "toggle",
           name = TextIconEK:GetIconString() .. " " .. L["Eastern Kingdom"],
           desc = L["Show all Eastern Kingdom MapNotes dungeon, raid, portal, zeppelin and ship icons on this map"],
@@ -459,7 +459,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMiniMapEasternKingdom then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL, L["Eastern Kingdom"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showMiniMapOutland = {
-          disabled = function() return not ns.Addon.db.profile.show.MiniMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.MiniMap end,
           type = "toggle",
           name = TextIconBC:GetIconString() .. " " .. L["Outland"],
           desc = L["Show all Outland MapNotes dungeon, raid, portal, zeppelin and ship icons on this map"],
@@ -469,7 +469,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMiniMapOutland then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL, L["Outland"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showMiniMapNorthrend = {
-          disabled = function() return not ns.Addon.db.profile.show.MiniMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.MiniMap end,
           type = "toggle",
           name = TextIconNorthrend:GetIconString() .. " " .. L["Northrend"],
           desc = L["Show all Northrend MapNotes dungeon, raid, portal, zeppelin and ship icons on this map"],
@@ -479,7 +479,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMiniMapNorthrend then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL, L["Northrend"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showMiniMapPandaria = {
-          disabled = function() return not ns.Addon.db.profile.show.MiniMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.MiniMap end,
           type = "toggle",
           name = TextIconPandaria:GetIconString() .. " " .. L["Pandaria"],
           desc = L["Show all Pandaria MapNotes dungeon, raid, portal, zeppelin and ship icons on this map"],
@@ -489,7 +489,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMiniMapPandaria then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL, L["Pandaria"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showMiniMapDraenor = {
-          disabled = function() return not ns.Addon.db.profile.show.MiniMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.MiniMap end,
           type = "toggle",
           name = TextIconDraenor:GetIconString() .. " " .. L["Draenor"],
           desc = L["Show all Draenor MapNotes dungeon, raid, portal, zeppelin and ship icons on this map"],
@@ -499,7 +499,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMiniMapDraenor then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL, L["Draenor"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showMiniMapBrokenIsles = {
-          disabled = function() return not ns.Addon.db.profile.show.MiniMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.MiniMap end,
           type = "toggle",
           name = TextIconLegion:GetIconString() .. " " .. L["Broken Isles"],
           desc = L["Show all Broken Isles MapNotes dungeon, raid, portal, zeppelin and ship icons on this map"],
@@ -509,7 +509,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMiniMapBrokenIsles then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL, L["Broken Isles"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showMiniMapZandalar = {
-          disabled = function() return not ns.Addon.db.profile.show.MiniMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.MiniMap end,
           type = "toggle",
           name = TextIconZandalar:GetIconString() .. " " .. L["Zandalar"],
           desc = L["Show all Zandalar MapNotes dungeon, raid, portal, zeppelin and ship icons on this map"],
@@ -519,7 +519,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMiniMapZandalar then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL, L["Zandalar"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showMiniMapKulTiras = {
-          disabled = function() return not ns.Addon.db.profile.show.MiniMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.MiniMap end,
           type = "toggle",
           name = TextIconKT:GetIconString() .. " " .. L["Kul Tiras"],
           desc = L["Show all Kul Tiras MapNotes dungeon, raid, portal, zeppelin and ship icons on this map"],
@@ -529,7 +529,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMiniMapKulTiras then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL, L["Kul Tiras"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showMiniMapShadowlands = {
-          disabled = function() return not ns.Addon.db.profile.show.MiniMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.MiniMap end,
           type = "toggle",
           name = TextIconSL:GetIconString() .. " " .. L["Shadowlands"],
           desc = L["Show all Shadowlands MapNotes dungeon, raid, portal, zeppelin and ship icons on this map"],
@@ -539,7 +539,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMiniMapShadowlands then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL, L["Shadowlands"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showMiniMapDragonIsles = {
-          disabled = function() return not ns.Addon.db.profile.show.MiniMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.MiniMap end,
           type = "toggle",
           name = TextIconDF:GetIconString() .. " " .. L["Dragon Isles"],
           desc = L["Show all Dragon Isles MapNotes dungeon, raid, portal, zeppelin and ship icons on this map"],
@@ -551,7 +551,7 @@ ns.options = {
         },
       },
     ZoneTab = {
-      disabled = function() return ns.Addon.db.profile.show.HideMapNote end,
+      disabled = function() return ns.Addon.db.profile.activate.HideMapNote end,
       type = "group",
       name = L["Zones"],
       desc = L["Certain icons can be displayed or not displayed. If the option (Activate icons) has been activated in this category"],
@@ -573,10 +573,10 @@ ns.options = {
           desc = L["Activates the display of all possible icons on this map"],
           width = 0.90,
           order = 20.2,
-          get = function() return ns.Addon.db.profile.show.ZoneMap end,
-          set = function(info, v) ns.Addon.db.profile.show.ZoneMap = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
-                if ns.Addon.db.profile.show.ZoneMap then OpenWorldMap(uiMapID) print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Zone map"], L["icons"], "|cff00ff00" .. L["is activated"]) else 
-                if not ns.Addon.db.profile.show.ZoneMap then OpenWorldMap(uiMapID) print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Zone map"], L["icons"], "|cffff0000" .. L["is deactivated"]) end end end,
+          get = function() return ns.Addon.db.profile.activate.ZoneMap end,
+          set = function(info, v) ns.Addon.db.profile.activate.ZoneMap = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
+                if ns.Addon.db.profile.activate.ZoneMap then OpenWorldMap(uiMapID) print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Zone map"], L["icons"], "|cff00ff00" .. L["is activated"]) else 
+                if not ns.Addon.db.profile.activate.ZoneMap then OpenWorldMap(uiMapID) print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Zone map"], L["icons"], "|cffff0000" .. L["is deactivated"]) end end end,
           },
         zonetheader1 = {
           type = "description",
@@ -584,7 +584,7 @@ ns.options = {
           order = 20.5,
           },
         zoneScale = {
-          disabled = function() return not ns.Addon.db.profile.show.ZoneMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.ZoneMap end,
           type = "range",
           name = COMMUNITIES_ROSTER_COLUMN_TITLE_ZONE .. " " .. L["symbol size"],
           desc = L["Changes the size of the icons"],
@@ -593,7 +593,7 @@ ns.options = {
           order = 20.6,
           },
         zoneAlpha = {
-          disabled = function() return not ns.Addon.db.profile.show.ZoneMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.ZoneMap end,
           type = "range",
           name = COMMUNITIES_ROSTER_COLUMN_TITLE_ZONE .. " " .. L["symbol visibility"],
           desc = L["Changes the visibility of the icons"],
@@ -602,7 +602,7 @@ ns.options = {
           order = 20.7,
           },
         instanceScale = {
-          disabled = function() return not ns.Addon.db.profile.show.ZoneMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.ZoneMap end,
           type = "range",
           name = INSTANCE .. " " .. L["symbol size"],
           desc = L["Changes the size of the icons"] .. "\n" .. "|cffffff00" .. L["Icon size 2.0 would be the default size of Blizzard's own instance icons on the zone map"],
@@ -611,7 +611,7 @@ ns.options = {
           order = 20.8,
           },
         instanceAlpha = {
-          disabled = function() return not ns.Addon.db.profile.show.ZoneMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.ZoneMap end,
           type = "range",
           name = INSTANCE .. " " .. L["symbol visibility"],
           desc = L["Changes the visibility of the icons"],
@@ -625,7 +625,7 @@ ns.options = {
           order = 21.0,
           },
         showZoneRaids = {
-          disabled = function() return not ns.Addon.db.profile.show.ZoneMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.ZoneMap end,
           type = "toggle",
           name = TextIconRaid:GetIconString() .. " " .. L["Raids"],
           desc = L["Show icons of raids on this map"],
@@ -635,7 +635,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showZoneRaids then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Zone map"], L["Raids"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showZoneDungeons = {
-          disabled = function() return not ns.Addon.db.profile.show.ZoneMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.ZoneMap end,
           type = "toggle",
           name = TextIconDungeon:GetIconString() .. " " .. L["Dungeons"],
           desc = L["Show icons of dungeons on this map"],
@@ -645,7 +645,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showZoneDungeons then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Zone map"], L["Dungeons"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showZonePassage = {
-          disabled = function() return not ns.Addon.db.profile.show.ZoneMap or ns.Addon.db.profile.show.ClassicIcons end,
+          disabled = function() return not ns.Addon.db.profile.activate.ZoneMap or ns.Addon.db.profile.activate.ClassicIcons end,
           type = "toggle",
           name = TextIconPassageRaidM:GetIconString() .. " " .. TextIconPassageDungeonM:GetIconString() .. " " .. TextIconPassageRaidMultiM:GetIconString() .. " " .. TextIconPassageDungeonMultiM:GetIconString() .. " " ..L["Passages"],
           desc = L["Show icons of passage to raids and dungeons on this map"],
@@ -655,7 +655,7 @@ ns.options = {
             if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showZonePassage then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Zone map"], L["Passages"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showZoneMultiple = {
-          disabled = function() return not ns.Addon.db.profile.show.ZoneMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.ZoneMap end,
           type = "toggle",
           name = TextIconMultipleM:GetIconString() .. " " .. TextIconMultipleR:GetIconString() .. " " .. TextIconMultipleD:GetIconString() .. " " .. L["Multiple"],
           desc = L["Show icons of multiple (dungeons,raids) on this map"],
@@ -665,7 +665,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showZoneMultiple then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Zone map"], L["Multiple"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showZonePortals = {
-          disabled = function() return not ns.Addon.db.profile.show.ZoneMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.ZoneMap end,
           type = "toggle",
           name = TextIconPortal:GetIconString() .. " " .. TextIconHPortal:GetIconString() .. " " .. TextIconAPortal:GetIconString() .. " " .. TextIconWayGateGreen:GetIconString().. " " .. TextIconWayGateGolden:GetIconString() .. " " .. L["Portals"],
           desc = L["Show icons of portals on this map"],
@@ -675,7 +675,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showZonePortals then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Zone map"], L["Portals"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showZoneZeppelins = {
-          disabled = function() return not ns.Addon.db.profile.show.ZoneMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.ZoneMap end,
           type = "toggle",
           name = TextIconZeppelin:GetIconString() .. " " .. TextIconHZeppelin:GetIconString() .. " " .. L["Zeppelins"],
           desc = L["Show icons of zeppelins on this map"],
@@ -685,7 +685,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showZoneZeppelins then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Zone map"], L["Zeppelins"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showZoneShips = {
-          disabled = function() return not ns.Addon.db.profile.show.ZoneMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.ZoneMap end,
           type = "toggle",
           name = TextIconShip:GetIconString() .. " " .. TextIconHShip:GetIconString() .. " " .. TextIconAShip:GetIconString() .. " " .. L["Ships"],
           desc = L["Show icons of ships on this map"],
@@ -695,7 +695,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showZoneShips then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Zone map"], L["Ships"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showZoneTransport = {
-          disabled = function() return not ns.Addon.db.profile.show.ZoneMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.ZoneMap end,
           type = "toggle",
           name = TextIconOgreWaygate:GetIconString() .. " " .. TextIconTravelL:GetIconString() .. " " .. TextIconTransport:GetIconString() .. " " .. TextIconDwarfF:GetIconString() .. " ".. TextIconCarriage:GetIconString() .. " " .. L["Transport"],
           desc = L["Shows special transport icons like"] .. "\n" .. "\n" .. " " .. TextIconOgreWaygate:GetIconString() .. " " .. L["Ogre Waygate"] .. " - " .. GARRISON_LOCATION_TOOLTIP .. "/" .. L["Draenor"] .. "\n" .. "\n" .. " " .. TextIconTransport:GetIconString() .. " " .. L["Teleporter"] .. " - " .. L["Oribos"] .. "/" .. L["Korthia"] .. "/" .. "\n" .. " " .. L["The Maw"] .. "/" .. L["Shadowlands"] .. "\n" .. "\n" .. " " .. TextIconTransport:GetIconString() .. " " .. TextIconDwarfF:GetIconString() .. " " .. L["Travel"] .. " - " .. L["Zandalar"] .. "/" .. L["Kul Tiras"] .. "\n" .. "\n" .. " " .. TextIconCarriage:GetIconString() .. " " .. L["Transport"] .. " - " .. DUNGEON_FLOOR_DEEPRUNTRAM1,
@@ -705,7 +705,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showZoneTransport then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Zone map"], L["Transport"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showZoneOldVanilla = {
-          disabled = function() return not ns.Addon.db.profile.show.ZoneMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.ZoneMap end,
           type = "toggle",
           name = TextIconVInstance:GetIconString() .. " " .. TextIconVKey1:GetIconString() .. " " .. L["Old Instances"],
           desc = L["Show vanilla versions of dungeons and raids such as Naxxramas, Scholomance or Scarlet Monastery, which require achievements or other things"],
@@ -715,7 +715,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showZoneOldVanilla then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Zone map"], L["Old Instances"], "|cffff0000" ..  L["is deactivated"]) end end end,
           },
         showZoneLFR = {
-          disabled = function() return not ns.Addon.db.profile.show.ZoneMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.ZoneMap end,
           type = "toggle",
           name = TextIconLFR:GetIconString() .. " " .. PLAYER_DIFFICULTY3,
           desc = L["Shows the locations of Raidbrowser applicants for old Raids"] .. "\n" .. "\n" .. EXPANSION_NAME3 .. " - " .. DUNGEON_FLOOR_TANARIS18 .. "\n" ..  "\n" .. EXPANSION_NAME4 .. " - " .. L["Vale of Eternal Blossoms"] .. "\n" .. "\n" .. EXPANSION_NAME5 .. " - " .. GARRISON_LOCATION_TOOLTIP .. "\n" .. "\n" .. EXPANSION_NAME2 .. " - " .. DUNGEON_FLOOR_DALARAN1 .. "\n" .. "\n" .. EXPANSION_NAME6 .. " - " .. DUNGEON_FLOOR_DALARAN1 .. "\n" .. "\n" .. EXPANSION_NAME7 .. " - " .. L["Dazar'alor"] .. " / " .. L["Boralus"] .. "\n" .. "\n" .. EXPANSION_NAME8 .. " - " .. L["Oribos"],
@@ -730,7 +730,7 @@ ns.options = {
           order = 23.1,
           },
         showZoneKalimdor= {
-          disabled = function() return not ns.Addon.db.profile.show.ZoneMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.ZoneMap end,
           type = "toggle",
           name = TextIconKalimdor:GetIconString() .. " " .. L["Kalimdor"],
           desc = L["Show all Kalimdor MapNotes dungeon, raid, portal, zeppelin and ship icons on this map"],
@@ -740,7 +740,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showZoneKalimdor then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Zone map"], L["Kalimdor"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showZoneEasternKingdom = {
-          disabled = function() return not ns.Addon.db.profile.show.ZoneMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.ZoneMap end,
           type = "toggle",
           name = TextIconEK:GetIconString() .. " " .. L["Eastern Kingdom"],
           desc = L["Show all Eastern Kingdom MapNotes dungeon, raid, portal, zeppelin and ship icons on this map"],
@@ -750,7 +750,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showZoneEasternKingdom then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Zone map"], L["Eastern Kingdom"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showZoneOutland = {
-          disabled = function() return not ns.Addon.db.profile.show.ZoneMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.ZoneMap end,
           type = "toggle",
           name = TextIconBC:GetIconString() .. " " .. L["Outland"],
           desc = L["Show all Outland MapNotes dungeon, raid, portal, zeppelin and ship icons on this map"],
@@ -760,7 +760,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showZoneOutland then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Zone map"], L["Outland"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showZoneNorthrend = {
-          disabled = function() return not ns.Addon.db.profile.show.ZoneMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.ZoneMap end,
           type = "toggle",
           name = TextIconNorthrend:GetIconString() .. " " .. L["Northrend"],
           desc = L["Show all Northrend MapNotes dungeon, raid, portal, zeppelin and ship icons on this map"],
@@ -770,7 +770,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showZoneNorthrend then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Zone map"], L["Northrend"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showZonePandaria = {
-          disabled = function() return not ns.Addon.db.profile.show.ZoneMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.ZoneMap end,
           type = "toggle",
           name = TextIconPandaria:GetIconString() .. " " .. L["Pandaria"],
           desc = L["Show all Pandaria MapNotes dungeon, raid, portal, zeppelin and ship icons on this map"],
@@ -780,7 +780,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showZonePandaria then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Zone map"], L["Pandaria"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showZoneDraenor = {
-          disabled = function() return not ns.Addon.db.profile.show.ZoneMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.ZoneMap end,
           type = "toggle",
           name = TextIconDraenor:GetIconString() .. " " .. L["Draenor"],
           desc = L["Show all Draenor MapNotes dungeon, raid, portal, zeppelin and ship icons on this map"],
@@ -790,7 +790,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showZoneDraenor then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Zone map"], L["Draenor"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showZoneBrokenIsles = {
-          disabled = function() return not ns.Addon.db.profile.show.ZoneMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.ZoneMap end,
           type = "toggle",
           name = TextIconLegion:GetIconString() .. " " .. L["Broken Isles"],
           desc = L["Show all Broken Isles MapNotes dungeon, raid, portal, zeppelin and ship icons on this map"],
@@ -800,7 +800,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showZoneBrokenIsles then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Zone map"], L["Broken Isles"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showZoneZandalar = {
-          disabled = function() return not ns.Addon.db.profile.show.ZoneMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.ZoneMap end,
           type = "toggle",
           name = TextIconZandalar:GetIconString() .. " " .. L["Zandalar"],
           desc = L["Show all Zandalar MapNotes dungeon, raid, portal, zeppelin and ship icons on this map"],
@@ -810,7 +810,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showZoneZandalar then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Zone map"], L["Zandalar"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showZoneKulTiras = {
-          disabled = function() return not ns.Addon.db.profile.show.ZoneMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.ZoneMap end,
           type = "toggle",
           name = TextIconKT:GetIconString() .. " " .. L["Kul Tiras"],
           desc = L["Show all Kul Tiras MapNotes dungeon, raid, portal, zeppelin and ship icons on this map"],
@@ -820,7 +820,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showZoneKulTiras then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Zone map"], L["Kul Tiras"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showZoneShadowlands = {
-          disabled = function() return not ns.Addon.db.profile.show.ZoneMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.ZoneMap end,
           type = "toggle",
           name = TextIconSL:GetIconString() .. " " .. L["Shadowlands"],
           desc = L["Show all Shadowlands MapNotes dungeon, raid, portal, zeppelin and ship icons on this map"],
@@ -830,7 +830,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showZoneShadowlands then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Zone map"], L["Shadowlands"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showZoneDragonIsles = {
-          disabled = function() return not ns.Addon.db.profile.show.ZoneMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.ZoneMap end,
           type = "toggle",
           name = TextIconDF:GetIconString() .. " " .. L["Dragon Isles"],
           desc = L["Show all Dragon Isles MapNotes dungeon, raid, portal, zeppelin and ship icons on this map"],
@@ -842,7 +842,7 @@ ns.options = {
         }
       },
     ContinentTab = {
-      disabled = function() return ns.Addon.db.profile.show.HideMapNote end,
+      disabled = function() return ns.Addon.db.profile.activate.HideMapNote end,
       type = "group",
       name = L["Continents"],
       desc = L["Certain icons can be displayed or not displayed. If the option (Activate icons) has been activated in this category"],
@@ -873,13 +873,13 @@ ns.options = {
           name = L["Activate icons"],
           desc = L["Activates the display of all possible icons on this map"],
           order = 30.6,
-          get = function() return ns.Addon.db.profile.show.Continent end,
-          set = function(info, v) ns.Addon.db.profile.show.Continent = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
-                if ns.Addon.db.profile.show.Continent and not WorldMapFrame:IsShown() then OpenWorldMap(uiMapID) WorldMapFrame:SetMapID(12) print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Continent map"], L["icons"], "|cff00ff00" .. L["is activated"]) else 
-                if not ns.Addon.db.profile.show.Continent and not WorldMapFrame:IsShown() then OpenWorldMap(uiMapID) WorldMapFrame:SetMapID(12) print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Continent map"], L["icons"], "|cffff0000" .. L["is deactivated"]) end end end,
+          get = function() return ns.Addon.db.profile.activate.Continent end,
+          set = function(info, v) ns.Addon.db.profile.activate.Continent = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
+                if ns.Addon.db.profile.activate.Continent and not WorldMapFrame:IsShown() then OpenWorldMap(uiMapID) WorldMapFrame:SetMapID(12) print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Continent map"], L["icons"], "|cff00ff00" .. L["is activated"]) else 
+                if not ns.Addon.db.profile.activate.Continent and not WorldMapFrame:IsShown() then OpenWorldMap(uiMapID) WorldMapFrame:SetMapID(12) print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Continent map"], L["icons"], "|cffff0000" .. L["is deactivated"]) end end end,
           },
-          continentScale = {
-            disabled = function() return not ns.Addon.db.profile.show.Continent end,
+        continentScale = {
+            disabled = function() return not ns.Addon.db.profile.activate.Continent end,
           type = "range",
           name = L["symbol size"],
           desc = L["Changes the size of the icons"],
@@ -888,7 +888,7 @@ ns.options = {
           order = 30.7,
           },
         continentAlpha = {
-          disabled = function() return not ns.Addon.db.profile.show.Continent end,
+          disabled = function() return not ns.Addon.db.profile.activate.Continent end,
           type = "range",
           name = L["symbol visibility"],
           desc = L["Changes the visibility of the icons"],
@@ -902,7 +902,7 @@ ns.options = {
           order = 31.0,
           },
         showContinentRaids = {
-          disabled = function() return not ns.Addon.db.profile.show.Continent end,
+          disabled = function() return not ns.Addon.db.profile.activate.Continent end,
           type = "toggle",
           name = TextIconRaid:GetIconString() .. " " .. L["Raids"],
           desc = L["Show icons of raids on this map"],
@@ -912,7 +912,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showContinentRaids then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Continent map"], L["Raids"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showContinentDungeons = {
-          disabled = function() return not ns.Addon.db.profile.show.Continent end,
+          disabled = function() return not ns.Addon.db.profile.activate.Continent end,
           type = "toggle",
           name = TextIconDungeon:GetIconString() .. " " .. L["Dungeons"],
           desc = L["Show icons of dungeons on this map"],
@@ -922,7 +922,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showContinentDungeons then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Continent map"], L["Dungeons"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showContinentPassage = {
-          disabled = function() return not ns.Addon.db.profile.show.Continent or ns.Addon.db.profile.show.ClassicIcons end,
+          disabled = function() return not ns.Addon.db.profile.activate.Continent or ns.Addon.db.profile.activate.ClassicIcons end,
           type = "toggle",
           name = TextIconPassageRaidM:GetIconString() .. " " .. TextIconPassageDungeonM:GetIconString() .. " " .. TextIconPassageRaidMultiM:GetIconString() .. " " .. TextIconPassageDungeonMultiM:GetIconString() .. " " ..L["Passages"],
           desc = L["Show icons of passage to raids and dungeons on this map"],
@@ -932,7 +932,7 @@ ns.options = {
             if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showContinentPassage then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Continent map"], L["Passages"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showContinentMultiple = {
-          disabled = function() return not ns.Addon.db.profile.show.Continent end,
+          disabled = function() return not ns.Addon.db.profile.activate.Continent end,
           type = "toggle",
           name = TextIconMultipleM:GetIconString() .. " " .. TextIconMultipleR:GetIconString() .. " " .. TextIconMultipleD:GetIconString() .. " " .. L["Multiple"],
           desc = L["Show icons of multiple (dungeons,raids) on this map"],
@@ -942,7 +942,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showContinentMultiple then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Continent map"], L["Multiple"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showContinentPortals = {
-          disabled = function() return not ns.Addon.db.profile.show.Continent end,
+          disabled = function() return not ns.Addon.db.profile.activate.Continent end,
           type = "toggle",
           name = TextIconPortal:GetIconString() .. " " .. TextIconHPortal:GetIconString() .. " " .. TextIconAPortal:GetIconString() .. " " .. TextIconWayGateGreen:GetIconString().. " " .. TextIconWayGateGolden:GetIconString() .. " " .. L["Portals"],
           desc = L["Show icons of portals on this map"],
@@ -952,7 +952,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showContinentPortals then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Continent map"], L["Portals"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showContinentZeppelins = {
-          disabled = function() return not ns.Addon.db.profile.show.Continent end,
+          disabled = function() return not ns.Addon.db.profile.activate.Continent end,
           type = "toggle",
           name = TextIconZeppelin:GetIconString() .. " " .. TextIconHZeppelin:GetIconString() .. " " .. L["Zeppelins"],
           desc = L["Show icons of zeppelins on this map"],
@@ -962,7 +962,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showContinentZeppelins then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Continent map"], L["Zeppelins"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showContinentShips = {
-          disabled = function() return not ns.Addon.db.profile.show.Continent end,
+          disabled = function() return not ns.Addon.db.profile.activate.Continent end,
           type = "toggle",
           name = TextIconShip:GetIconString() .. " " .. TextIconHShip:GetIconString() .. " " .. TextIconAShip:GetIconString() .. " " .. L["Ships"],
           desc = L["Show icons of ships on this map"],
@@ -972,7 +972,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showContinentShips then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Continent map"], L["Ships"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showContinentTransport = {
-          disabled = function() return not ns.Addon.db.profile.show.Continent end,
+          disabled = function() return not ns.Addon.db.profile.activate.Continent end,
           type = "toggle",
           name = TextIconOgreWaygate:GetIconString() .. " " .. TextIconTravelL:GetIconString() .. " " .. TextIconDwarfF:GetIconString() .. " " .. TextIconCarriage:GetIconString() .. " " .. L["Transport"],
           desc = L["Shows special transport icons like"] .. "\n" .. "\n" .. " " .. TextIconOgreWaygate:GetIconString() .. " " .. L["Ogre Waygate"] .. " - " .. GARRISON_LOCATION_TOOLTIP .. "/" .. L["Draenor"] .. "\n" .. "\n" .. " " .. TextIconTravelL:GetIconString() .. " " .. TextIconDwarfF:GetIconString() .. " " .. L["Travel"] .. " - " .. L["Zandalar"] .. "/" .. L["Kul Tiras"] .. "\n" .. "\n" .. " " .. TextIconCarriage:GetIconString() .. " " .. L["Transport"] .. " - " .. DUNGEON_FLOOR_DEEPRUNTRAM1,
@@ -982,7 +982,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showContinentTransport then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Continent map"], L["Transport"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showContinentOldVanilla = {
-          disabled = function() return not ns.Addon.db.profile.show.Continent end,
+          disabled = function() return not ns.Addon.db.profile.activate.Continent end,
           type = "toggle",
           name = TextIconVInstance:GetIconString() .. " " .. TextIconVKey1:GetIconString() .. " " .. L["Old Instances"],
           desc = L["Show vanilla versions of dungeons and raids such as Naxxramas, Scholomance or Scarlet Monastery, which require achievements or other things"],
@@ -992,7 +992,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showContinentOldVanilla then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Continent map"], L["Old Instances"], "|cffff0000" ..  L["is deactivated"]) end end end,
           },
         showContinentLFR = {
-          disabled = function() return not ns.Addon.db.profile.show.Continent end,
+          disabled = function() return not ns.Addon.db.profile.activate.Continent end,
           type = "toggle",
           name = TextIconLFR:GetIconString() .. " " .. PLAYER_DIFFICULTY3,
           desc = L["Shows the locations of Raidbrowser applicants for old Raids"] .. "\n" .. "\n" .. EXPANSION_NAME3 .. " - " .. DUNGEON_FLOOR_TANARIS18 .. "\n" ..  "\n" .. EXPANSION_NAME4 .. " - " .. L["Vale of Eternal Blossoms"] .. "\n" .. "\n" .. EXPANSION_NAME5 .. " - " .. GARRISON_LOCATION_TOOLTIP .. "\n" .. "\n" .. EXPANSION_NAME2 .. " - " .. DUNGEON_FLOOR_DALARAN1 .. "\n" .. "\n" .. EXPANSION_NAME6 .. " - " .. DUNGEON_FLOOR_DALARAN1 .. "\n" .. "\n" .. EXPANSION_NAME7 .. " - " .. L["Dazar'alor"] .. " / " .. L["Boralus"] .. "\n" .. "\n" .. EXPANSION_NAME8 .. " - " .. L["Oribos"],
@@ -1007,7 +1007,7 @@ ns.options = {
           order = 33.1
           },
         showContinentKalimdor= {
-          disabled = function() return not ns.Addon.db.profile.show.Continent end,
+          disabled = function() return not ns.Addon.db.profile.activate.Continent end,
           type = "toggle",
           name = TextIconKalimdor:GetIconString() .. " " .. L["Kalimdor"],
           desc = L["Show all Kalimdor MapNotes dungeon, raid, portal, zeppelin and ship icons on this map"],
@@ -1017,7 +1017,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showContinentKalimdor then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Continent map"], L["Kalimdor"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showContinentEasternKingdom = {
-          disabled = function() return not ns.Addon.db.profile.show.Continent end,
+          disabled = function() return not ns.Addon.db.profile.activate.Continent end,
           type = "toggle",
           name = TextIconEK:GetIconString() .. " " .. L["Eastern Kingdom"],
           desc = L["Show all Eastern Kingdom MapNotes dungeon, raid, portal, zeppelin and ship icons on this map"],
@@ -1027,7 +1027,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showContinentEasternKingdom then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Continent map"], L["Eastern Kingdom"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showContinentOutland = {
-          disabled = function() return not ns.Addon.db.profile.show.Continent end,
+          disabled = function() return not ns.Addon.db.profile.activate.Continent end,
           type = "toggle",
           name = TextIconBC:GetIconString() .. " " .. L["Outland"],
           desc = L["Show all Outland MapNotes dungeon, raid, portal, zeppelin and ship icons on this map"],
@@ -1037,7 +1037,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showContinentOutland then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Continent map"], L["Outland"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showContinentNorthrend = {
-          disabled = function() return not ns.Addon.db.profile.show.Continent end,
+          disabled = function() return not ns.Addon.db.profile.activate.Continent end,
           type = "toggle",
           name = TextIconNorthrend:GetIconString() .. " " .. L["Northrend"],
           desc = L["Show all Northrend MapNotes dungeon, raid, portal, zeppelin and ship icons on this map"],
@@ -1047,7 +1047,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showContinentNorthrend then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Continent map"], L["Northrend"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showContinentPandaria = {
-          disabled = function() return not ns.Addon.db.profile.show.Continent end,
+          disabled = function() return not ns.Addon.db.profile.activate.Continent end,
           type = "toggle",
           name = TextIconPandaria:GetIconString() .. " " .. L["Pandaria"],
           desc = L["Show all Pandaria MapNotes dungeon, raid, portal, zeppelin and ship icons on this map"],
@@ -1057,7 +1057,7 @@ ns.options = {
                   if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showContinentPandaria then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Continent map"], L["Pandaria"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showContinentDraenor = {
-          disabled = function() return not ns.Addon.db.profile.show.Continent end,
+          disabled = function() return not ns.Addon.db.profile.activate.Continent end,
           type = "toggle",
           name = TextIconDraenor:GetIconString() .. " " .. L["Draenor"],
           desc = L["Show all Draenor MapNotes dungeon, raid, portal, zeppelin and ship icons on this map"],
@@ -1067,7 +1067,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showContinentDraenor then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Continent map"], L["Draenor"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showContinentBrokenIsles = {
-          disabled = function() return not ns.Addon.db.profile.show.Continent end,
+          disabled = function() return not ns.Addon.db.profile.activate.Continent end,
           type = "toggle",
           name = TextIconLegion:GetIconString() .. " " .. L["Broken Isles"],
           desc = L["Show all Broken Isles MapNotes dungeon, raid, portal, zeppelin and ship icons on this map"],
@@ -1077,7 +1077,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showContinentBrokenIsles then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Continent map"], L["Broken Isles"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showContinentZandalar = {
-          disabled = function() return not ns.Addon.db.profile.show.Continent end,
+          disabled = function() return not ns.Addon.db.profile.activate.Continent end,
           type = "toggle",
           name = TextIconZandalar:GetIconString() .. " " .. L["Zandalar"],
           desc = L["Show all Zandalar MapNotes dungeon, raid, portal, zeppelin and ship icons on this map"],
@@ -1087,7 +1087,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showContinentZandalar then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Continent map"], L["Zandalar"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showContinentKulTiras = {
-          disabled = function() return not ns.Addon.db.profile.show.Continent end,
+          disabled = function() return not ns.Addon.db.profile.activate.Continent end,
           type = "toggle",
           name = TextIconKT:GetIconString() .. " " .. L["Kul Tiras"],
           desc = L["Show all Kul Tiras MapNotes dungeon, raid, portal, zeppelin and ship icons on this map"],
@@ -1097,7 +1097,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showContinentKulTiras then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Continent map"], L["Kul Tiras"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showContinentShadowlands = {
-          disabled = function() return not ns.Addon.db.profile.show.Continent end,
+          disabled = function() return not ns.Addon.db.profile.activate.Continent end,
           type = "toggle",
           name = TextIconSL:GetIconString() .. " " .. L["Shadowlands"],
           desc = L["Show all Shadowlands MapNotes dungeon, raid, portal, zeppelin and ship icons on this map"],
@@ -1107,7 +1107,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showContinentShadowlands then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Continent map"], L["Shadowlands"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showContinentDragonIsles = {
-          disabled = function() return not ns.Addon.db.profile.show.Continent end,
+          disabled = function() return not ns.Addon.db.profile.activate.Continent end,
           type = "toggle",
           name = TextIconDF:GetIconString() .. " " .. L["Dragon Isles"],
           desc = L["Show all Dragon Isles MapNotes dungeon, raid, portal, zeppelin and ship icons on this map"],
@@ -1119,7 +1119,7 @@ ns.options = {
         },
       },
     AzerothTab = {
-      disabled = function() return ns.Addon.db.profile.show.HideMapNote end,
+      disabled = function() return ns.Addon.db.profile.activate.HideMapNote end,
       type = "group",
       name = AZEROTH,
       desc = L["Certain icons can be displayed or not displayed. If the option (Activate icons) has been activated in this category"],
@@ -1150,13 +1150,13 @@ ns.options = {
           name = L["Activate icons"],
           desc = L["Activates the display of all possible icons on this map"],
           order = 40.6,
-          get = function() return ns.Addon.db.profile.show.Azeroth end,
-          set = function(info, v) ns.Addon.db.profile.show.Azeroth = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
-                if ns.Addon.db.profile.show.Azeroth then OpenWorldMap(uiMapID) WorldMapFrame:SetMapID(947) print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Azeroth map"], L["icons"], "|cff00ff00" .. L["is activated"]) else 
-                if not ns.Addon.db.profile.show.Azeroth then OpenWorldMap(uiMapID) WorldMapFrame:SetMapID(947) print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Azeroth map"], L["icons"], "|cffff0000" .. L["is deactivated"]) end end end,
+          get = function() return ns.Addon.db.profile.activate.Azeroth end,
+          set = function(info, v) ns.Addon.db.profile.activate.Azeroth = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
+                if ns.Addon.db.profile.activate.Azeroth then OpenWorldMap(uiMapID) WorldMapFrame:SetMapID(947) print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Azeroth map"], L["icons"], "|cff00ff00" .. L["is activated"]) else 
+                if not ns.Addon.db.profile.activate.Azeroth then OpenWorldMap(uiMapID) WorldMapFrame:SetMapID(947) print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Azeroth map"], L["icons"], "|cffff0000" .. L["is deactivated"]) end end end,
           },
         azerothScale = {
-          disabled = function() return not ns.Addon.db.profile.show.Azeroth end,
+          disabled = function() return not ns.Addon.db.profile.activate.Azeroth end,
           type = "range",
           name = L["symbol size"],
           desc = L["Changes the size of the icons"],
@@ -1165,7 +1165,7 @@ ns.options = {
           order = 40.7,
           },
         azerothAlpha = {
-          disabled = function() return not ns.Addon.db.profile.show.Azeroth end,
+          disabled = function() return not ns.Addon.db.profile.activate.Azeroth end,
           type = "range",
           name = L["symbol visibility"],
           desc = L["Changes the visibility of the icons"],
@@ -1179,7 +1179,7 @@ ns.options = {
           order = 41
           },
         showAzerothRaids = {
-          disabled = function() return not ns.Addon.db.profile.show.Azeroth end,
+          disabled = function() return not ns.Addon.db.profile.activate.Azeroth end,
           type = "toggle",
           name = TextIconRaid:GetIconString() .. " " .. L["Raids"],
           desc = L["Show icons of raids on this map"],
@@ -1189,7 +1189,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showAzerothRaids then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Azeroth map"], L["Raids"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showAzerothDungeons = {
-          disabled = function() return not ns.Addon.db.profile.show.Azeroth end,
+          disabled = function() return not ns.Addon.db.profile.activate.Azeroth end,
           type = "toggle",
           name = TextIconDungeon:GetIconString() .. " " .. L["Dungeons"],
           desc = L["Show icons of dungeons on this map"],
@@ -1199,7 +1199,7 @@ ns.options = {
             if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showAzerothDungeons then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Azeroth map"], L["Dungeons"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showAzerothPassage = {
-          disabled = function() return not ns.Addon.db.profile.show.Azeroth or ns.Addon.db.profile.show.ClassicIcons end,
+          disabled = function() return not ns.Addon.db.profile.activate.Azeroth or ns.Addon.db.profile.activate.ClassicIcons end,
           type = "toggle",
           name = TextIconPassageRaidM:GetIconString() .. " " .. TextIconPassageDungeonM:GetIconString() .. " " .. TextIconPassageRaidMultiM:GetIconString() .. " " .. TextIconPassageDungeonMultiM:GetIconString() .. " " ..L["Passages"],
           desc = L["Show icons of passage to raids and dungeons on this map"],
@@ -1209,7 +1209,7 @@ ns.options = {
             if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showAzerothPassage then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Azeroth map"], L["Passages"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showAzerothMultiple = {
-          disabled = function() return not ns.Addon.db.profile.show.Azeroth end,
+          disabled = function() return not ns.Addon.db.profile.activate.Azeroth end,
           type = "toggle",
           name = TextIconMultipleM:GetIconString() .. " " .. TextIconMultipleR:GetIconString() .. " " .. TextIconMultipleD:GetIconString() .. " " .. L["Multiple"],
           desc = L["Show icons of multiple on this map"],
@@ -1219,7 +1219,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.howAzerothMultiple then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Azeroth map"], L["Multiple"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showAzerothPortals = {
-          disabled = function() return not ns.Addon.db.profile.show.Azeroth end,
+          disabled = function() return not ns.Addon.db.profile.activate.Azeroth end,
           type = "toggle",
           name = TextIconPortal:GetIconString() .. " " .. TextIconHPortal:GetIconString() .. " " .. TextIconAPortal:GetIconString() .. " " .. TextIconWayGateGreen:GetIconString().. " " .. TextIconWayGateGolden:GetIconString() .. " " .. L["Portals"],
           desc = L["Show icons of portals on this map"],
@@ -1229,7 +1229,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showAzerothPortals then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Azeroth map"], L["Portals"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showAzerothZeppelins = {
-          disabled = function() return not ns.Addon.db.profile.show.Azeroth end,
+          disabled = function() return not ns.Addon.db.profile.activate.Azeroth end,
           type = "toggle",
           name = TextIconZeppelin:GetIconString() .. " " .. TextIconHZeppelin:GetIconString() .. " " .. L["Zeppelins"],
           desc = L["Show icons of zeppelins on this map"],
@@ -1239,7 +1239,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showAzerothZeppelins then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Azeroth map"], L["Zeppelins"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showAzerothShips = {
-          disabled = function() return not ns.Addon.db.profile.show.Azeroth end,
+          disabled = function() return not ns.Addon.db.profile.activate.Azeroth end,
           type = "toggle",
           name = TextIconShip:GetIconString() .. " " .. TextIconHShip:GetIconString() .. " " .. TextIconAShip:GetIconString() .. " " .. L["Ships"],
           desc = L["Show icons of ships on this map"],
@@ -1249,7 +1249,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showAzerothShips then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Azeroth map"], L["Ships"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showAzerothTransport = {
-          disabled = function() return not ns.Addon.db.profile.show.Azeroth end,
+          disabled = function() return not ns.Addon.db.profile.activate.Azeroth end,
           type = "toggle",
           name = TextIconDwarfF:GetIconString() .. " " .. TextIconUndeadF:GetIconString() .. " " .. TextIconGoblinF:GetIconString() .. " " .. TextIconGilneanF:GetIconString() .. " " .. TextIconCarriage:GetIconString() .. " " .. L["Transport"],
           desc = L["Shows special transport icons like"] .. "\n" .. "\n" .. L["Travel"] .. " - " .. L["Zandalar"] .. "/" .. L["Kul Tiras"] .. "\n" .. "\n" .. " " .. TextIconCarriage:GetIconString() .. " " .. L["Transport"] .. " - " .. DUNGEON_FLOOR_DEEPRUNTRAM1,
@@ -1259,7 +1259,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showAzerothTransport then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Azeroth map"], L["Transport"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showAzerothOldVanilla = {
-          disabled = function() return not ns.Addon.db.profile.show.Azeroth end,
+          disabled = function() return not ns.Addon.db.profile.activate.Azeroth end,
           type = "toggle",
           name = TextIconVInstance:GetIconString() .. " " .. TextIconVKey1:GetIconString() .. " " .. L["Old Instances"],
           desc = L["Show vanilla versions of dungeons and raids such as Naxxramas, Scholomance or Scarlet Monastery, which require achievements or other things"],
@@ -1269,7 +1269,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showAzerothOldVanilla then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Azeroth map"], L["Old Instances"], "|cffff0000" ..  L["is deactivated"]) end end end,
           },
         showAzerothLFR = {
-          disabled = function() return not ns.Addon.db.profile.show.Azeroth end,
+          disabled = function() return not ns.Addon.db.profile.activate.Azeroth end,
           type = "toggle",
           name = TextIconLFR:GetIconString() .. " " .. PLAYER_DIFFICULTY3,
           desc = L["Shows the locations of Raidbrowser applicants for old Raids"] .. "\n" .. "\n" .. EXPANSION_NAME3 .. " - " .. DUNGEON_FLOOR_TANARIS18 .. "\n" ..  "\n" .. EXPANSION_NAME4 .. " - " .. L["Vale of Eternal Blossoms"] .. "\n" .. "\n" .. EXPANSION_NAME5 .. " - " .. GARRISON_LOCATION_TOOLTIP .. "\n" .. "\n" .. EXPANSION_NAME2 .. " - " .. DUNGEON_FLOOR_DALARAN1 .. "\n" .. "\n" .. EXPANSION_NAME6 .. " - " .. DUNGEON_FLOOR_DALARAN1 .. "\n" .. "\n" .. EXPANSION_NAME7 .. " - " .. L["Dazar'alor"] .. " / " .. L["Boralus"] .. "\n" .. "\n" .. EXPANSION_NAME8 .. " - " .. L["Oribos"],
@@ -1284,7 +1284,7 @@ ns.options = {
           order = 44
           },
         showAzerothKalimdor = {
-          disabled = function() return not ns.Addon.db.profile.show.Azeroth end,
+          disabled = function() return not ns.Addon.db.profile.activate.Azeroth end,
           type = "toggle",
           name = TextIconKalimdor:GetIconString() .. " " .. L["Kalimdor"],
           desc = L["Show all Kalimdor MapNotes dungeon, raid, portal, zeppelin and ship icons on this map"],
@@ -1294,7 +1294,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showAzerothKalimdor then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Azeroth map"], L["Kalimdor"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showAzerothEasternKingdom = {
-          disabled = function() return not ns.Addon.db.profile.show.Azeroth end,
+          disabled = function() return not ns.Addon.db.profile.activate.Azeroth end,
           type = "toggle",
           name = TextIconEK:GetIconString() .. " " .. L["Eastern Kingdom"],
           desc = L["Show all Eastern Kingdom MapNotes dungeon, raid, portal, zeppelin and ship icons on this map"],
@@ -1304,7 +1304,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showAzerothEasternKingdom then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Azeroth map"], L["Eastern Kingdom"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showAzerothNorthrend = {
-          disabled = function() return not ns.Addon.db.profile.show.Azeroth end,
+          disabled = function() return not ns.Addon.db.profile.activate.Azeroth end,
           type = "toggle",
           name = TextIconNorthrend:GetIconString() .. " " .. L["Northrend"],
           desc = L["Show all Northrend MapNotes dungeon, raid, portal, zeppelin and ship icons on this map"],
@@ -1314,7 +1314,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showAzerothNorthrend then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Azeroth map"], L["Northrend"], L["icons"],  L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showAzerothPandaria = {
-          disabled = function() return not ns.Addon.db.profile.show.Azeroth end,
+          disabled = function() return not ns.Addon.db.profile.activate.Azeroth end,
           type = "toggle",
           name = TextIconPandaria:GetIconString() .. " " .. L["Pandaria"],
           desc = L["Show all Pandaria MapNotes dungeon, raid, portal, zeppelin and ship icons on this map"],
@@ -1324,7 +1324,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showAzerothPandaria then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Azeroth map"], L["Pandaria"], L["icons"],  L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showAzerothBrokenIsles = {
-          disabled = function() return not ns.Addon.db.profile.show.Azeroth end,
+          disabled = function() return not ns.Addon.db.profile.activate.Azeroth end,
           type = "toggle",
           name = TextIconLegion:GetIconString() .. " " .. L["Broken Isles"],
           desc = L["Show all Broken Isles MapNotes dungeon, raid, portal, zeppelin and ship icons on this map"],
@@ -1334,7 +1334,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showAzerothBrokenIsles then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Azeroth map"], L["Broken Isles"], L["icons"],  L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },  
         showAzerothZandalar = {
-          disabled = function() return not ns.Addon.db.profile.show.Azeroth end,
+          disabled = function() return not ns.Addon.db.profile.activate.Azeroth end,
           type = "toggle",
           name = TextIconZandalar:GetIconString() .. " " .. L["Zandalar"],
           desc = L["Show all Zandalar MapNotes dungeon, raid, portal, zeppelin and ship icons on this map"],
@@ -1344,7 +1344,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showAzerothZandalar then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Azeroth map"], L["Zandalar"], L["icons"],  L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showAzerothKulTiras = {
-          disabled = function() return not ns.Addon.db.profile.show.Azeroth end,
+          disabled = function() return not ns.Addon.db.profile.activate.Azeroth end,
           type = "toggle",
           name = TextIconKT:GetIconString() .. " " .. L["Kul Tiras"],
           desc = L["Show all Kul Tiras MapNotes dungeon, raid, portal, zeppelin and ship icons on this map"],
@@ -1354,7 +1354,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showAzerothKulTiras then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Azeroth map"], L["Kul Tiras"], L["icons"],  L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showAzerothDragonIsles = {
-          disabled = function() return not ns.Addon.db.profile.show.Azeroth end,
+          disabled = function() return not ns.Addon.db.profile.activate.Azeroth end,
           type = "toggle",
           name = TextIconDF:GetIconString() .. " " .. L["Dragon Isles"],
           desc = L["Show all Dragon Isles MapNotes dungeon, raid, portal, zeppelin and ship icons on this map"],
@@ -1366,7 +1366,7 @@ ns.options = {
         }
       },
     CosmosTab = {
-      disabled = function() return ns.Addon.db.profile.show.HideMapNote end,
+      disabled = function() return ns.Addon.db.profile.activate.HideMapNote end,
       type = "group",
       name = WORLDMAP_BUTTON,
       desc = L["Certain icons can be displayed or not displayed. If the option (Activate icons) has been activated in this category"],
@@ -1393,13 +1393,13 @@ ns.options = {
           desc = L["Activates the display of all possible icons on this map"],
           order = 50.6,
           width = 1,
-          get = function() return ns.Addon.db.profile.show.CosmosMap end,
-          set = function(info, v) ns.Addon.db.profile.show.CosmosMap = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
-                if ns.Addon.db.profile.show.CosmosMap then OpenWorldMap(uiMapID) WorldMapFrame:SetMapID(946) print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00", WORLDMAP_BUTTON, L["icons"], "|cff00ff00" .. L["is activated"]) else
-                if not ns.Addon.db.profile.show.CosmosMap then OpenWorldMap(uiMapID) WorldMapFrame:SetMapID(946) print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00", WORLDMAP_BUTTON, L["icons"], "|cffff0000" .. L["is deactivated"] ) end end end,
+          get = function() return ns.Addon.db.profile.activate.CosmosMap end,
+          set = function(info, v) ns.Addon.db.profile.activate.CosmosMap = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
+                if ns.Addon.db.profile.activate.CosmosMap then OpenWorldMap(uiMapID) WorldMapFrame:SetMapID(946) print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00", WORLDMAP_BUTTON, L["icons"], "|cff00ff00" .. L["is activated"]) else
+                if not ns.Addon.db.profile.activate.CosmosMap then OpenWorldMap(uiMapID) WorldMapFrame:SetMapID(946) print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00", WORLDMAP_BUTTON, L["icons"], "|cffff0000" .. L["is deactivated"] ) end end end,
           },  
         cosmosScale = {
-          disabled = function() return not ns.Addon.db.profile.show.CosmosMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.CosmosMap end,
           type = "range",
           name = L["symbol size"],
           desc = L["Changes the size of the icons"],
@@ -1408,7 +1408,7 @@ ns.options = {
           order = 50.8,
           },
         cosmosAlpha = {
-          disabled = function() return not ns.Addon.db.profile.show.CosmosMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.CosmosMap end,
           type = "range",
           name = L["symbol visibility"],
           desc = L["Changes the visibility of the icons"],
@@ -1422,7 +1422,7 @@ ns.options = {
             order = 53.1,
             },
         showCosmosKalimdor= {
-          disabled = function() return not ns.Addon.db.profile.show.CosmosMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.CosmosMap end,
           type = "toggle",
           name = TextIconKalimdor:GetIconString() .. " " .. L["Kalimdor"],
           desc = L["Show all Kalimdor MapNotes dungeon, raid, portal, zeppelin and ship icons on this map"],
@@ -1432,7 +1432,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showCosmosKalimdor then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. WORLDMAP_BUTTON, L["Kalimdor"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showCosmosEasternKingdom = {
-          disabled = function() return not ns.Addon.db.profile.show.CosmosMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.CosmosMap end,
           type = "toggle",
           name = TextIconEK:GetIconString() .. " " .. L["Eastern Kingdom"],
           desc = L["Show all Eastern Kingdom MapNotes dungeon, raid, portal, zeppelin and ship icons on this map"],
@@ -1442,7 +1442,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showCosmosEasternKingdom then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. WORLDMAP_BUTTON, L["Eastern Kingdom"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showCosmosNorthrend = {
-          disabled = function() return not ns.Addon.db.profile.show.CosmosMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.CosmosMap end,
           type = "toggle",
           name = TextIconNorthrend:GetIconString() .. " " .. L["Northrend"],
           desc = L["Show all Northrend MapNotes dungeon, raid, portal, zeppelin and ship icons on this map"],
@@ -1452,7 +1452,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showCosmosNorthrend then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. WORLDMAP_BUTTON, L["Northrend"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showCosmosPandaria = {
-          disabled = function() return not ns.Addon.db.profile.show.CosmosMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.CosmosMap end,
           type = "toggle",
           name = TextIconPandaria:GetIconString() .. " " .. L["Pandaria"],
           desc = L["Show all Pandaria MapNotes dungeon, raid, portal, zeppelin and ship icons on this map"],
@@ -1462,7 +1462,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showCosmosPandaria then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. WORLDMAP_BUTTON, L["Pandaria"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showCosmosBrokenIsles = {
-          disabled = function() return not ns.Addon.db.profile.show.CosmosMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.CosmosMap end,
           type = "toggle",
           name = TextIconLegion:GetIconString() .. " " .. L["Broken Isles"],
           desc = L["Show all Broken Isles MapNotes dungeon, raid, portal, zeppelin and ship icons on this map"],
@@ -1472,7 +1472,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showCosmosBrokenIsles then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. WORLDMAP_BUTTON, L["Broken Isles"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showCosmosZandalar = {
-          disabled = function() return not ns.Addon.db.profile.show.CosmosMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.CosmosMap end,
           type = "toggle",
           name = TextIconZandalar:GetIconString() .. " " .. L["Zandalar"],
           desc = L["Show all Zandalar MapNotes dungeon, raid, portal, zeppelin and ship icons on this map"],
@@ -1482,7 +1482,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showCosmosZandalar then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. WORLDMAP_BUTTON, L["Zandalar"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showCosmosKulTiras = {
-          disabled = function() return not ns.Addon.db.profile.show.CosmosMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.CosmosMap end,
           type = "toggle",
           name = TextIconKT:GetIconString() .. " " .. L["Kul Tiras"],
           desc = L["Show all Kul Tiras MapNotes dungeon, raid, portal, zeppelin and ship icons on this map"],
@@ -1492,7 +1492,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showCosmosKulTiras then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. WORLDMAP_BUTTON, L["Kul Tiras"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showCosmosDragonIsles = {
-          disabled = function() return not ns.Addon.db.profile.show.CosmosMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.CosmosMap end,
           type = "toggle",
           name = TextIconDF:GetIconString() .. " " .. L["Dragon Isles"],
           desc = L["Show all Dragon Isles MapNotes dungeon, raid, portal, zeppelin and ship icons on this map"],
@@ -1502,7 +1502,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showCosmosDragonIsles then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. WORLDMAP_BUTTON, L["Dragon Isles"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showCosmosShadowlands = {
-          disabled = function() return not ns.Addon.db.profile.show.CosmosMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.CosmosMap end,
           type = "toggle",
           name = TextIconSL:GetIconString() .. " " .. L["Shadowlands"],
           desc = L["Show all Shadowlands MapNotes dungeon, raid, portal, zeppelin and ship icons on this map"],
@@ -1512,7 +1512,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showCosmosShadowlands then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. WORLDMAP_BUTTON, L["Shadowlands"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showCosmosOutland = {
-          disabled = function() return not ns.Addon.db.profile.show.CosmosMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.CosmosMap end,
           type = "toggle",
           name = TextIconBC:GetIconString() .. " " .. L["Outland"],
           desc = L["Show all Outland MapNotes dungeon, raid, portal, zeppelin and ship icons on this map"],
@@ -1522,7 +1522,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showCosmosOutland then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. WORLDMAP_BUTTON, L["Outland"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showCosmosDraenor = {
-          disabled = function() return not ns.Addon.db.profile.show.CosmosMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.CosmosMap end,
           type = "toggle",
           name = TextIconDraenor:GetIconString() .. " " .. L["Draenor"],
           desc = L["Show all Draenor MapNotes dungeon, raid, portal, zeppelin and ship icons on this map"],
@@ -1534,7 +1534,7 @@ ns.options = {
         },
       },
     DungeonMapTab = {
-      disabled = function() return ns.Addon.db.profile.show.HideMapNote end,
+      disabled = function() return ns.Addon.db.profile.activate.HideMapNote end,
       type = "group",
       name = DUNGEONS,
       desc = L["Certain icons can be displayed or not displayed. If the option (Activate icons) has been activated in this category"],
@@ -1560,13 +1560,13 @@ ns.options = {
           name = L["Activate icons"],
           desc = L["Enables the display of all possible icons on this map"],
           order = 60.5,
-          get = function() return ns.Addon.db.profile.show.DungeonMap end,
-          set = function(info, v) ns.Addon.db.profile.show.DungeonMap = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
-                if ns.Addon.db.profile.show.DungeonMap and not WorldMapFrame:IsShown() then OpenWorldMap(uiMapID) WorldMapFrame:SetMapID(661) print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Dungeon map"], L["icons"], "|cff00ff00" .. L["is activated"]) else 
-                if not ns.Addon.db.profile.show.DungeonMap and not WorldMapFrame:IsShown() then OpenWorldMap(uiMapID) WorldMapFrame:SetMapID(661) print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Dungeon map"], L["icons"], "|cffff0000" .. L["is deactivated"]) end end end,
+          get = function() return ns.Addon.db.profile.activate.DungeonMap end,
+          set = function(info, v) ns.Addon.db.profile.activate.DungeonMap = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
+                if ns.Addon.db.profile.activate.DungeonMap and not WorldMapFrame:IsShown() then OpenWorldMap(uiMapID) WorldMapFrame:SetMapID(661) print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Dungeon map"], L["icons"], "|cff00ff00" .. L["is activated"]) else 
+                if not ns.Addon.db.profile.activate.DungeonMap and not WorldMapFrame:IsShown() then OpenWorldMap(uiMapID) WorldMapFrame:SetMapID(661) print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Dungeon map"], L["icons"], "|cffff0000" .. L["is deactivated"]) end end end,
           },
         dungeonScale = {
-          disabled = function() return not ns.Addon.db.profile.show.DungeonMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.DungeonMap end,
           type = "range",
           name = L["symbol size"],
           desc = L["Changes the size of the icons"],
@@ -1575,7 +1575,7 @@ ns.options = {
           order = 60.6,
           },
         dungeonAlpha = {
-          disabled = function() return not ns.Addon.db.profile.show.DungeonMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.DungeonMap end,
           type = "range",
           name = L["symbol visibility"],
           desc = L["Changes the visibility of the icons"],
@@ -1589,7 +1589,7 @@ ns.options = {
           order = 61.0,
           },
         showDungeonExit = {
-          disabled = function() return not ns.Addon.db.profile.show.DungeonMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.DungeonMap end,
           type = "toggle",
           name = TextIconExit:GetIconString() .. " " .. L["Exits"],
           desc = L["Show icons of MapNotes dungeon exit on this map"],
@@ -1599,7 +1599,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showDungeonExit then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Dungeon map"], L["Exits"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
         showDungeonPortal = {
-          disabled = function() return not ns.Addon.db.profile.show.DungeonMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.DungeonMap end,
           type = "toggle",
           name = TextIconPortal:GetIconString() .. " " .. TextIconHPortal:GetIconString() .. " " .. TextIconAPortal:GetIconString() .. " " .. L["Portals"],
           desc = L["Show icons of portals on this map"],
@@ -1609,7 +1609,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showDungeonPortal then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Dungeon map"], L["Portals"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },    
         showDungeonPassage = {
-          disabled = function() return not ns.Addon.db.profile.show.DungeonMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.DungeonMap end,
           type = "toggle",
           name = TextIconPassageup:GetIconString() .. " " .. TextIconPassagedown:GetIconString() .. " " .. TextIconPassageright:GetIconString() .. " " .. TextIconPassageleft:GetIconString() .. " " .. L["Passages"],
           desc = L["Show icons of passage on this map"],
@@ -1619,7 +1619,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showDungeonPassage then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Dungeon map"], L["Passages"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
           },
           showDungeonTransport = {
-          disabled = function() return not ns.Addon.db.profile.show.DungeonMap end,
+          disabled = function() return not ns.Addon.db.profile.activate.DungeonMap end,
           type = "toggle",
           name = TextIconTravelL:GetIconString() .. " " .. TextIconTransportHelper:GetIconString() .. " " .. TextIconTransport:GetIconString() .. " " .. L["Transport"],
           desc = L["Shows special transport icons like"],
@@ -1631,7 +1631,7 @@ ns.options = {
         },
       },
     Capitals = {
-      disabled = function() return ns.Addon.db.profile.show.HideMapNote end,
+      disabled = function() return ns.Addon.db.profile.activate.HideMapNote end,
       type = "group",
       name = L["Capitals"],
       desc = L["Certain icons can be displayed or not displayed. If the option (Activate icons) has been activated in this category"] .. "\n" .. "\n" .. L["Capitals"] .. ":" .. "\n" .. "\n" .. ORGRIMMAR .. "\n" .. L["Thunder Bluff"] .. "\n" .. L["Silvermoon City"] .. "\n" .. L["Undercity"] .. "\n" .. STORMWIND .. "\n" .. L["Ironforge"] .. "\n" .. L["Darnassus"] .. "\n" .. L["Exodar"] .. "\n" .. L["Shattrath City"] .. "\n" .. DUNGEON_FLOOR_DALARAN1 .. " - " .. POSTMASTER_PIPE_NORTHREND .. "\n" .. DUNGEON_FLOOR_DALARAN1 .. " - " .. EXPANSION_NAME6 .. "\n" .. L["Shrine7Stars"] .. "\n" .. L["Shrine2Moons"] .. "\n" .. L["Stormshield"] .. "\n" .. L["Warspear"] .. "\n" .. L["Dazar'alor"] .. "\n" .. L["Boralus"] .. "\n" .. L["Oribos"] .. "\n" .. L["Valdrakken"],
@@ -1648,22 +1648,22 @@ ns.options = {
           desc = L["Activates the display of all possible icons on this map"] .. "\n" .. "\n" .. L["Capitals"] .. ":" .. "\n" .. "\n" .. ORGRIMMAR .. "\n" .. L["Thunder Bluff"] .. "\n" .. L["Silvermoon City"] .. "\n" .. L["Undercity"] .. "\n" .. STORMWIND .. "\n" .. L["Ironforge"] .. "\n" .. L["Darnassus"] .. "\n" .. L["Exodar"] .. "\n" .. L["Shattrath City"] .. "\n" .. DUNGEON_FLOOR_DALARAN1 .. " - " .. POSTMASTER_PIPE_NORTHREND .. "\n" .. DUNGEON_FLOOR_DALARAN1 .. " - " .. EXPANSION_NAME6 .. "\n" .. L["Shrine7Stars"] .. "\n" .. L["Shrine2Moons"] .. "\n" .. L["Stormshield"] .. "\n" .. L["Warspear"] .. "\n" .. L["Dazar'alor"] .. "\n" .. L["Boralus"] .. "\n" .. L["Oribos"] .. "\n" .. L["Valdrakken"],
           width = 1.8,
           order = 70.1,
-          get = function() return ns.Addon.db.profile.show.Capitals end,
-          set = function(info, v) ns.Addon.db.profile.show.Capitals = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
-                if ns.Addon.db.profile.show.Capitals then OpenWorldMap(uiMapID) print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Capitals"], L["icons"], "|cff00ff00" .. L["is activated"]) else 
-                if not ns.Addon.db.profile.show.Capitals then OpenWorldMap(uiMapID) print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Capitals"], L["icons"], "|cffff0000" .. L["is deactivated"]) end end end,
+          get = function() return ns.Addon.db.profile.activate.Capitals end,
+          set = function(info, v) ns.Addon.db.profile.activate.Capitals = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
+                if ns.Addon.db.profile.activate.Capitals then OpenWorldMap(uiMapID) print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Capitals"], L["icons"], "|cff00ff00" .. L["is activated"]) else 
+                if not ns.Addon.db.profile.activate.Capitals then OpenWorldMap(uiMapID) print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Capitals"], L["icons"], "|cffff0000" .. L["is deactivated"]) end end end,
           },
-        showCapitalEnemyFaction = {
-          disabled = function() return not ns.Addon.db.profile.show.Capitals end,
+        CapitalEnemyFaction = {
+          disabled = function() return not ns.Addon.db.profile.activate.Capitals end,
           type = "toggle",
           name = L["Capitals"] .. " " .. L["enemy faction"],
           desc = TextIconHorde:GetIconString() ..  " " .. TextIconAlliance:GetIconString() .. " " .. L["Shows enemy faction (horde/alliance) icons"],
           order = 70.2,
           width = 1.8,
-          get = function() return ns.Addon.db.profile.show.CapitalEnemyFaction end,
-          set = function(info, v) ns.Addon.db.profile.show.CapitalEnemyFaction = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
-                if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.show.CapitalEnemyFaction then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Capitals"] .. " " .. L["enemy faction"], L["icons"], "|cff00ff00" .. L["is activated"]) else 
-                if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.show.CapitalEnemyFaction then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Capitals"] .. " " .. L["enemy faction"], "|cffff0000" ..  L["is deactivated"]) end end end,
+          get = function() return ns.Addon.db.profile.activate.CapitalsEnemyFaction end,
+          set = function(info, v) ns.Addon.db.profile.activate.CapitalsEnemyFaction = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
+                if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.activate.CapitalsEnemyFaction then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Capitals"] .. " " .. L["enemy faction"], L["icons"], "|cff00ff00" .. L["is activated"]) else 
+                if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.activate.CapitalsEnemyFaction then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Capitals"] .. " " .. L["enemy faction"], "|cffff0000" ..  L["is deactivated"]) end end end,
          },
         CapitalsTab = {
           type = "group",
@@ -1676,224 +1676,224 @@ ns.options = {
               name = FACTION_HORDE,
               order = 70.4,
               },
-            showOrgrimmar = {
-              disabled = function() return not ns.Addon.db.profile.show.Capitals end,
+            showCapitalsOrgrimmar = {
+              disabled = function() return not ns.Addon.db.profile.activate.Capitals end,
               type = "toggle",
               name = TextIconOrgrimmar:GetIconString() .. " " .. ORGRIMMAR,
               desc = "",
               width = 0.80,
               order = 70.5,
               set = function(info, v) ns.Addon.db.profile[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
-                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showOrgrimmar then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], ORGRIMMAR, L["icons"], "|cff00ff00" .. L["are shown"]) else 
-                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showOrgrimmar then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], ORGRIMMAR, L["icons"], "|cffff0000" .. L["are hidden"])end end end,
+                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showCapitalsOrgrimmar then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], ORGRIMMAR, L["icons"], "|cff00ff00" .. L["are shown"]) else 
+                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showCapitalsOrgrimmar then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], ORGRIMMAR, L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
-            showThunderBluff = {
-              disabled = function() return not ns.Addon.db.profile.show.Capitals end,
+            showCapitalsThunderBluff = {
+              disabled = function() return not ns.Addon.db.profile.activate.Capitals end,
               type = "toggle",
               name = TextIconThunderBluff:GetIconString() .. " " .. L["Thunder Bluff"],
               desc = "",
               width = 0.80,
               order = 70.6,
               set = function(info, v) ns.Addon.db.profile[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
-                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showThunderBluff then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Thunder Bluff"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
-                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showThunderBluff then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Thunder Bluff"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
+                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showCapitalsThunderBluff then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Thunder Bluff"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
+                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showCapitalsThunderBluff then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Thunder Bluff"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
-            showSilvermoon = {
-              disabled = function() return not ns.Addon.db.profile.show.Capitals end,
+            showCapitalsSilvermoon = {
+              disabled = function() return not ns.Addon.db.profile.activate.Capitals end,
               type = "toggle",
               name = TextIconSilvermoon:GetIconString() .. " " .. L["Silvermoon City"],
               desc = "",
               width = 0.80,
               order = 70.7,
               set = function(info, v) ns.Addon.db.profile[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
-                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showSilvermoon then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Silvermoon City"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
-                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showSilvermoon then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Silvermoon City"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
+                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showCapitalsSilvermoon then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Silvermoon City"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
+                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showCapitalsSilvermoon then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Silvermoon City"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
-            showUndercity = {
-              disabled = function() return not ns.Addon.db.profile.show.Capitals end,
+            showCapitalsUndercity = {
+              disabled = function() return not ns.Addon.db.profile.activate.Capitals end,
               type = "toggle",
               name = TextIconUndercity:GetIconString() .. " " .. L["Undercity"],
               desc = "",
               width = 0.80,
               order = 70.8,
               set = function(info, v) ns.Addon.db.profile[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
-                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showUndercity then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Undercity"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
-                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showUndercity then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Undercity"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
+                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showCapitalsUndercity then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Undercity"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
+                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showCapitalsUndercity then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Undercity"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
-            showDazarAlor = {
-              disabled = function() return not ns.Addon.db.profile.show.Capitals end,
+            showCapitalsDazarAlor = {
+              disabled = function() return not ns.Addon.db.profile.activate.Capitals end,
               type = "toggle",
               name = TextIconDazarAlor:GetIconString() .. " " .. L["Dazar'alor"],
               desc = "",
               width = 0.80,
               order = 70.9,
               set = function(info, v) ns.Addon.db.profile[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
-                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showDazarAlor then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Dazar'alor"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
-                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showDazarAlor then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Dazar'alor"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
+                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showCapitalsDazarAlor then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Dazar'alor"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
+                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showCapitalsDazarAlor then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Dazar'alor"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
-            showSot2M = {
-              disabled = function() return not ns.Addon.db.profile.show.Capitals end,
+            showCapitalsSot2M = {
+              disabled = function() return not ns.Addon.db.profile.activate.Capitals end,
               type = "toggle",
               name = TextIconSot2M:GetIconString() .. " " .. L["Shrine2Moons"],
               desc = EXPANSION_NAME4,
               width = 0.95,
               order = 71,
               set = function(info, v) ns.Addon.db.profile[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
-                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showSot2M then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Shrine2Moons"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
-                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showSot2M then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Shrine2Moons"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
+                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showCapitalsSot2M then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Shrine2Moons"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
+                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showCapitalsSot2M then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Shrine2Moons"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
-            showWarspear = {
-              disabled = function() return not ns.Addon.db.profile.show.Capitals end,
+            showCapitalsWarspear = {
+              disabled = function() return not ns.Addon.db.profile.activate.Capitals end,
               type = "toggle",
               name = TextIconWarspear:GetIconString() .. " " .. L["Warspear"] .. " / " .. GARRISON_LOCATION_TOOLTIP,
               desc = "",
               width = 1.40,
               order = 71.1,
               set = function(info, v) ns.Addon.db.profile[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
-                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showWarspear then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Warspear"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
-                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showWarspear then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Warspear"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
+                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showCapitalsWarspear then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Warspear"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
+                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showCapitalsWarspear then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Warspear"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
             Capitalsheader7 = {
               type = "header",
               name = FACTION_ALLIANCE,
               order = 72,
               },
-            showStormwind = {
-              disabled = function() return not ns.Addon.db.profile.show.Capitals end,
+            showCapitalsStormwind = {
+              disabled = function() return not ns.Addon.db.profile.activate.Capitals end,
               type = "toggle",
               name = TextIconStormwind:GetIconString() .. " " .. L["Stormwind"],
               desc = "",
               width = 0.80,
               order = 72.1,
               set = function(info, v) ns.Addon.db.profile[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
-                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showStormwind then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Stormwind"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
-                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showStormwind then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Stormwind"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
+                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showCapitalsStormwind then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Stormwind"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
+                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showCapitalsStormwind then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Stormwind"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
-            showIronforge = {
-              disabled = function() return not ns.Addon.db.profile.show.Capitals end,
+            showCapitalsIronforge = {
+              disabled = function() return not ns.Addon.db.profile.activate.Capitals end,
               type = "toggle",
               name = TextIconIronforge:GetIconString() .. " " .. L["Ironforge"],
               desc = "",
               width = 0.80,
               order = 72.2,
               set = function(info, v) ns.Addon.db.profile[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
-                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showIronforge then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Ironforge"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
-                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showIronforge then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Ironforge"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
+                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showCapitalsIronforge then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Ironforge"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
+                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showCapitalsIronforge then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Ironforge"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
-            showDarnassus = {
-              disabled = function() return not ns.Addon.db.profile.show.Capitals end,
+            showCapitalsDarnassus = {
+              disabled = function() return not ns.Addon.db.profile.activate.Capitals end,
               type = "toggle",
               name = TextIconDarnassus:GetIconString() .. " " .. L["Darnassus"],
               desc = "",
               width = 0.80,
               order = 72.3,
               set = function(info, v) ns.Addon.db.profile[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
-                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showDarnassus then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Darnassus"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
-                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showDarnassus then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" ..  L["Capitals"], L["Darnassus"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
+                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showCapitalsDarnassus then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Darnassus"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
+                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showCapitalsDarnassus then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" ..  L["Capitals"], L["Darnassus"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
-            showExodar = {
-              disabled = function() return not ns.Addon.db.profile.show.Capitals end,
+            showCapitalsExodar = {
+              disabled = function() return not ns.Addon.db.profile.activate.Capitals end,
               type = "toggle",
               name = TextIconExodar:GetIconString() .. " " .. L["Exodar"],
               desc = "",
               width = 0.80,
               order = 72.4,
               set = function(info, v) ns.Addon.db.profile[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
-                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showExodar then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Exodar"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
-                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showExodar then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Exodar"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
+                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showCapitalsExodar then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Exodar"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
+                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showCapitalsExodar then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Exodar"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
-            showBoralus = {
-              disabled = function() return not ns.Addon.db.profile.show.Capitals end,
+            showCapitalsBoralus = {
+              disabled = function() return not ns.Addon.db.profile.activate.Capitals end,
               type = "toggle",
               name = TextIconBoralus:GetIconString() .. " " .. L["Boralus"],
               desc = "",
               width = 0.80,
               order = 72.5,
               set = function(info, v) ns.Addon.db.profile[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
-                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showBoralus then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Boralus"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
-                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showBoralus then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Boralus"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
+                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showCapitalsBoralus then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Boralus"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
+                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showCapitalsBoralus then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Boralus"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
-            showSot7S = {
-              disabled = function() return not ns.Addon.db.profile.show.Capitals end,
+            showCapitalsSot7S = {
+              disabled = function() return not ns.Addon.db.profile.activate.Capitals end,
               type = "toggle",
               name = TextIconSot7S:GetIconString() .. " " .. L["Shrine7Stars"],
               desc = EXPANSION_NAME4,
               width = 1,
               order = 72.6,
               set = function(info, v) ns.Addon.db.profile[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
-                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showSot7S then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Shrine7Stars"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
-                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showSot7S then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Shrine7Stars"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
+                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showCapitalsSot7S then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Shrine7Stars"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
+                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showCapitalsSot7S then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Shrine7Stars"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
-            showStormshield = {
-              disabled = function() return not ns.Addon.db.profile.show.Capitals end,
+            showCapitalsStormshield = {
+              disabled = function() return not ns.Addon.db.profile.activate.Capitals end,
               type = "toggle",
               name = TextIconStormshield:GetIconString() .. " " .. L["Stormshield"] .. " / " .. GARRISON_LOCATION_TOOLTIP,
               desc = "",
               width = 1.40,
               order = 72.7,
               set = function(info, v) ns.Addon.db.profile[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
-                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showStormshield then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Stormshield"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
-                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showStormshield then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Stormshield"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
+                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showCapitalsStormshield then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Stormshield"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
+                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showCapitalsStormshield then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Stormshield"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
             Capitalsheader8 = {
               type = "header",
               name = FACTION_NEUTRAL,
               order = 74.,
               },
-            showShattrath = {
-              disabled = function() return not ns.Addon.db.profile.show.Capitals end,
+            showCapitalsShattrath = {
+              disabled = function() return not ns.Addon.db.profile.activate.Capitals end,
               type = "toggle",
               name = TextIconShattrath:GetIconString() .. " " .. L["Shattrath City"],
               desc = "",
               width = 0.80,
               order = 74.1,
               set = function(info, v) ns.Addon.db.profile[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
-                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showShattrath then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Shattrath City"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
-                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showShattrath then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Shattrath City"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
+                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showCapitalsShattrath then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Shattrath City"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
+                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showCapitalsShattrath then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Shattrath City"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
-            showDalaranNorthrend = {
-              disabled = function() return not ns.Addon.db.profile.show.Capitals end,
+            showCapitalsDalaranNorthrend = {
+              disabled = function() return not ns.Addon.db.profile.activate.Capitals end,
               type = "toggle",
               name = TextIconDalaranNorthrend:GetIconString() .. " " .. DUNGEON_FLOOR_DALARAN1,
               desc = DUNGEON_FLOOR_DALARAN1 .. "-" .. POSTMASTER_PIPE_NORTHREND,
               width = 0.80,
               order = 74.2,
               set = function(info, v) ns.Addon.db.profile[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
-                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showDalaranNorthrend then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], DUNGEON_FLOOR_DALARAN1 .. "-" .. POSTMASTER_PIPE_NORTHREND, L["icons"], "|cff00ff00" .. L["are shown"]) else 
-                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showDalaranNorthrend then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], DUNGEON_FLOOR_DALARAN1 .. "-" .. POSTMASTER_PIPE_NORTHREND, L["icons"], "|cffff0000" .. L["are hidden"])end end end,
+                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showCapitalsDalaranNorthrend then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], DUNGEON_FLOOR_DALARAN1 .. "-" .. POSTMASTER_PIPE_NORTHREND, L["icons"], "|cff00ff00" .. L["are shown"]) else 
+                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showCapitalsDalaranNorthrend then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], DUNGEON_FLOOR_DALARAN1 .. "-" .. POSTMASTER_PIPE_NORTHREND, L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
-            showDalaranLegion = {
-              disabled = function() return not ns.Addon.db.profile.show.Capitals end,
+            showCapitalsDalaranLegion = {
+              disabled = function() return not ns.Addon.db.profile.activate.Capitals end,
               type = "toggle",
               name = TextIconDalaranLegion:GetIconString() .. " " .. DUNGEON_FLOOR_DALARAN1,
               desc = DUNGEON_FLOOR_DALARAN1 .. "-" .. EXPANSION_NAME6,
               width = 0.80,
               order = 74.3,
               set = function(info, v) ns.Addon.db.profile[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
-                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showDalaranLegion then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], DUNGEON_FLOOR_DALARAN1 .. "-" .. EXPANSION_NAME6, L["icons"], "|cff00ff00" .. L["are shown"]) else 
-                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showDalaranLegion then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], DUNGEON_FLOOR_DALARAN1 .. "-" .. EXPANSION_NAME6, L["icons"], "|cffff0000" .. L["are hidden"])end end end,
+                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showCapitalsDalaranLegion then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], DUNGEON_FLOOR_DALARAN1 .. "-" .. EXPANSION_NAME6, L["icons"], "|cff00ff00" .. L["are shown"]) else 
+                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showCapitalsDalaranLegion then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], DUNGEON_FLOOR_DALARAN1 .. "-" .. EXPANSION_NAME6, L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
-            showOribos = {
-              disabled = function() return not ns.Addon.db.profile.show.Capitals end,
+            showCapitalsOribos = {
+              disabled = function() return not ns.Addon.db.profile.activate.Capitals end,
               type = "toggle",
               name = TextIconOribos:GetIconString() .. " " .. L["Oribos"],
               desc = "",
               width = 0.80,
               order = 74.4,
               set = function(info, v) ns.Addon.db.profile[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
-                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showOribos then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Oribos"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
-                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showOribos then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Oribos"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
+                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showCapitalsOribos then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Oribos"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
+                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showCapitalsOribos then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Oribos"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
-            showValdrakken = {
-              disabled = function() return not ns.Addon.db.profile.show.Capitals end,
+            showCapitalsValdrakken = {
+              disabled = function() return not ns.Addon.db.profile.activate.Capitals end,
               type = "toggle",
               name = TextIconValdrakken:GetIconString() .. " " .. L["Valdrakken"],
               desc = "",
               width = 0.80,
               order = 74.5,
               set = function(info, v) ns.Addon.db.profile[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
-                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showValdrakken then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Valdrakken"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
-                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showValdrakken then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Valdrakken"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
+                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showCapitalsValdrakken then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Valdrakken"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
+                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showCapitalsValdrakken then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Valdrakken"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
             },
           },
@@ -1903,20 +1903,20 @@ ns.options = {
           desc = "",
           order = 72,
           args = {
-            showCapitalsInstances = {
-              disabled = function() return not ns.Addon.db.profile.show.Capitals end,
+            CapitalsInstances = {
+              disabled = function() return not ns.Addon.db.profile.activate.Capitals end,
               type = "toggle",
               name = L["Activate icons"],
               desc = L["Activates the display of all possible icons on this map"],
               width = 0.90,
               order = 72.1,
-              get = function() return ns.Addon.db.profile.showCapitalsInstances end,
-              set = function(info, v) ns.Addon.db.profile.showCapitalsInstances = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
-                    if ns.Addon.db.profile.showCapitalsInstances then OpenWorldMap(uiMapID) print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Capitals"] .. " " .. INSTANCE .. " " .. L["icons"], "|cff00ff00" .. L["is activated"]) else 
-                    if not ns.Addon.db.profile.showCapitalsInstances then OpenWorldMap(uiMapID) print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Capitals"] .. " " .. INSTANCE .. " " .. L["icons"], "|cffff0000" .. L["is deactivated"]) end end end,
+              get = function() return ns.Addon.db.profile.activate.CapitalsInstances end,
+              set = function(info, v) ns.Addon.db.profile.activate.CapitalsInstances = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
+                    if ns.Addon.db.profile.activate.CapitalsInstances then OpenWorldMap(uiMapID) print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Capitals"] .. " " .. INSTANCE .. " " .. L["icons"], "|cff00ff00" .. L["is activated"]) else 
+                    if not ns.Addon.db.profile.activate.CapitalsInstances then OpenWorldMap(uiMapID) print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Capitals"] .. " " .. INSTANCE .. " " .. L["icons"], "|cffff0000" .. L["is deactivated"]) end end end,
               },
             CapitalsInstanceScale = {
-              disabled = function() return not ns.Addon.db.profile.show.Capitals or not ns.Addon.db.profile.showCapitalsInstances end,
+              disabled = function() return not ns.Addon.db.profile.activate.Capitals or not ns.Addon.db.profile.activate.CapitalsInstances end,
               type = "range",
               name = L["symbol size"],
               desc = L["Changes the size of the icons"] .. "\n" .. "|cffffff00" .. L["Icon size 2.0 would be the default size of Blizzard's own instance icons on the zone map"],
@@ -1925,7 +1925,7 @@ ns.options = {
               order = 72.3,
               },
             CapitalsInstanceAlpha = {
-              disabled = function() return not ns.Addon.db.profile.show.Capitals or not ns.Addon.db.profile.showCapitalsInstances end,
+              disabled = function() return not ns.Addon.db.profile.activate.Capitals or not ns.Addon.db.profile.activate.CapitalsInstances end,
               type = "range",
               name = L["symbol visibility"],
               desc = L["Changes the visibility of the icons"],
@@ -1939,7 +1939,7 @@ ns.options = {
               order = 73.0,
               },
             showCapitalsRaids = {
-              disabled = function() return not ns.Addon.db.profile.show.Capitals or not ns.Addon.db.profile.showCapitalsInstances end,
+              disabled = function() return not ns.Addon.db.profile.activate.Capitals or not ns.Addon.db.profile.activate.CapitalsInstances end,
               type = "toggle",
               name = TextIconRaid:GetIconString() .. " " .. L["Raids"],
               desc = L["Show icons of raids on this map"],
@@ -1949,7 +1949,7 @@ ns.options = {
                     if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showCapitalsRaids then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Raids"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
             showCapitalsInstancePassage = {
-              disabled = function() return not ns.Addon.db.profile.show.Capitals or not ns.Addon.db.profile.showCapitalsInstances end,
+              disabled = function() return not ns.Addon.db.profile.activate.Capitals or not ns.Addon.db.profile.activate.CapitalsInstances end,
               type = "toggle",
               name = TextIconPassageRaidM:GetIconString() .. " " .. TextIconPassageDungeonM:GetIconString() .. " " .. TextIconPassageRaidMultiM:GetIconString() .. " " .. TextIconPassageDungeonMultiM:GetIconString() .. " " ..L["Passages"],
               desc = L["Show icons of passage to raids and dungeons on this map"],
@@ -1959,7 +1959,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showCapitalsInstancePassage then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Passages"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
             showCapitalsMultiple = {
-              disabled = function() return not ns.Addon.db.profile.show.Capitals or not ns.Addon.db.profile.showCapitalsInstances end,
+              disabled = function() return not ns.Addon.db.profile.activate.Capitals or not ns.Addon.db.profile.activate.CapitalsInstances end,
               type = "toggle",
               name = TextIconMultipleM:GetIconString() .. " " .. TextIconMultipleR:GetIconString() .. " " .. TextIconMultipleD:GetIconString() .. " " .. L["Multiple"],
               desc = L["Show icons of multiple (dungeons,raids) on this map"],
@@ -1969,7 +1969,7 @@ ns.options = {
                     if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showCapitalsMultiple then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Multiple"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
             showCapitalsOldVanilla = {
-              disabled = function() return not ns.Addon.db.profile.show.Capitals or not ns.Addon.db.profile.showCapitalsInstances end,
+              disabled = function() return not ns.Addon.db.profile.activate.Capitals or not ns.Addon.db.profile.activate.CapitalsInstances end,
               type = "toggle",
               name = TextIconVInstance:GetIconString() .. " " .. TextIconVKey1:GetIconString() .. " " .. L["Old Instances"],
               desc = L["Show vanilla versions of dungeons and raids such as Naxxramas, Scholomance or Scarlet Monastery, which require achievements or other things"],
@@ -1979,7 +1979,7 @@ ns.options = {
                     if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showCapitalsOldVanilla then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Capitals"], L["Old Instances"], "|cffff0000" ..  L["is deactivated"]) end end end,
               },
               showCapitalsDungeons = {
-                disabled = function() return not ns.Addon.db.profile.show.Capitals or not ns.Addon.db.profile.showCapitalsInstances end,
+                disabled = function() return not ns.Addon.db.profile.activate.Capitals or not ns.Addon.db.profile.activate.CapitalsInstances end,
               type = "toggle",
               name = TextIconDungeon:GetIconString() .. " " .. L["Dungeons"],
               desc = L["Show icons of dungeons on this map"],
@@ -1989,7 +1989,7 @@ ns.options = {
                     if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showCapitalsDungeons then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Dungeons"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
             showCapitalsLFR = {
-              disabled = function() return not ns.Addon.db.profile.show.Capitals or not ns.Addon.db.profile.showCapitalsInstances end,
+              disabled = function() return not ns.Addon.db.profile.activate.Capitals or not ns.Addon.db.profile.activate.CapitalsInstances end,
               type = "toggle",
               name = TextIconLFR:GetIconString() .. " " .. PLAYER_DIFFICULTY3,
               desc = L["Shows the locations of Raidbrowser applicants for old Raids"] .. "\n" .. "\n" .. EXPANSION_NAME3 .. " - " .. DUNGEON_FLOOR_TANARIS18 .. "\n" ..  "\n" .. EXPANSION_NAME4 .. " - " .. L["Vale of Eternal Blossoms"] .. "\n" .. "\n" .. EXPANSION_NAME5 .. " - " .. GARRISON_LOCATION_TOOLTIP .. "\n" .. "\n" .. EXPANSION_NAME2 .. " - " .. DUNGEON_FLOOR_DALARAN1 .. "\n" .. "\n" .. EXPANSION_NAME6 .. " - " .. DUNGEON_FLOOR_DALARAN1 .. "\n" .. "\n" .. EXPANSION_NAME7 .. " - " .. L["Dazar'alor"] .. " / " .. L["Boralus"] .. "\n" .. "\n" .. EXPANSION_NAME8 .. " - " .. L["Oribos"],
@@ -2006,20 +2006,20 @@ ns.options = {
           desc = "",
           order = 74,
           args = {
-            showCapitalsTransporting = {
-              disabled = function() return not ns.Addon.db.profile.show.Capitals end,
+            CapitalsTransporting = {
+              disabled = function() return not ns.Addon.db.profile.activate.Capitals end,
               type = "toggle",
               name = L["Activate icons"],
               desc = L["Enables the display of all possible icons on this map"],
               width = 0.90,
               order = 74.1,
-              get = function() return ns.Addon.db.profile.showCapitalsTransporting end,
-              set = function(info, v) ns.Addon.db.profile.showCapitalsTransporting = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
-                    if ns.Addon.db.profile.showCapitalsTransporting then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00" .. " " .. L["Capitals"] .. " " ..  L["Transport"] .. " " .. L["icons"], "|cff00ff00" .. L["is activated"]) else 
-                    if not ns.Addon.db.profile.showCapitalsTransporting then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00" .. " " .. L["Capitals"] .. " " ..  L["Transport"] .. " " .. L["icons"], "|cffff0000" .. L["is deactivated"]) end end end,
+              get = function() return ns.Addon.db.profile.activate.Transporting end,
+              set = function(info, v) ns.Addon.db.profile.activate.Transporting = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
+                    if ns.Addon.db.profile.activate.Transporting then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00" .. " " .. L["Capitals"] .. " " ..  L["Transport"] .. " " .. L["icons"], "|cff00ff00" .. L["is activated"]) else 
+                    if not ns.Addon.db.profile.activate.Transporting then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00" .. " " .. L["Capitals"] .. " " ..  L["Transport"] .. " " .. L["icons"], "|cffff0000" .. L["is deactivated"]) end end end,
               },
             CapitalsTransportScale = {
-              disabled = function() return not ns.Addon.db.profile.show.Capitals or not ns.Addon.db.profile.showCapitalsTransporting end,
+              disabled = function() return not ns.Addon.db.profile.activate.Capitals or not ns.Addon.db.profile.activate.Transporting end,
               type = "range",
               name = L["symbol size"],
               desc = L["Changes the size of the icons"] .. "\n" .. "|cffffff00" .. L["Icon size 2.0 would be the default size of Blizzard's own instance icons on the zone map"],
@@ -2028,7 +2028,7 @@ ns.options = {
               order = 74.1,
               },
             CapitalsTransportAlpha = {
-              disabled = function() return not ns.Addon.db.profile.show.Capitals or not ns.Addon.db.profile.showCapitalsTransporting end,
+              disabled = function() return not ns.Addon.db.profile.activate.Capitals or not ns.Addon.db.profile.activate.Transporting end,
               type = "range",
               name = L["symbol visibility"],
               desc = L["Changes the visibility of the icons"],
@@ -2042,7 +2042,7 @@ ns.options = {
               order = 74.5,
               },
             showCapitalsPortals = {
-              disabled = function() return not ns.Addon.db.profile.show.Capitals or not ns.Addon.db.profile.showCapitalsTransporting end,
+              disabled = function() return not ns.Addon.db.profile.activate.Capitals or not ns.Addon.db.profile.activate.Transporting end,
               type = "toggle",
               name = TextIconPortal:GetIconString() .. " " .. TextIconHPortal:GetIconString() .. " " .. TextIconAPortal:GetIconString() .. " " .. TextIconWayGateGreen:GetIconString().. " " .. TextIconWayGateGolden:GetIconString() .. " " .. L["Portals"],
               desc = L["Show icons of portals on this map"],
@@ -2052,7 +2052,7 @@ ns.options = {
                     if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showCapitalsPortals then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Portals"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
             showCapitalsZeppelins = {
-              disabled = function() return not ns.Addon.db.profile.show.Capitals or not ns.Addon.db.profile.showCapitalsTransporting end,
+              disabled = function() return not ns.Addon.db.profile.activate.Capitals or not ns.Addon.db.profile.activate.Transporting end,
               type = "toggle",
               name = TextIconZeppelin:GetIconString() .. " " .. TextIconHZeppelin:GetIconString() .. " " .. L["Zeppelins"],
               desc = L["Show icons of zeppelins on this map"],
@@ -2062,7 +2062,7 @@ ns.options = {
                     if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showCapitalsZeppelins then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Zeppelins"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
             showCapitalsShips = {
-              disabled = function() return not ns.Addon.db.profile.show.Capitals or not ns.Addon.db.profile.showCapitalsTransporting end,
+              disabled = function() return not ns.Addon.db.profile.activate.Capitals or not ns.Addon.db.profile.activate.Transporting end,
               type = "toggle",
               name = TextIconShip:GetIconString() .. " " .. TextIconHShip:GetIconString() .. " " .. TextIconAShip:GetIconString() .. " " .. L["Ships"],
               desc = L["Show icons of ships on this map"],
@@ -2072,7 +2072,7 @@ ns.options = {
                     if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showCapitalsShips then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Ships"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
             showCapitalsTransport = {
-              disabled = function() return not ns.Addon.db.profile.show.Capitals or not ns.Addon.db.profile.showCapitalsTransporting end,
+              disabled = function() return not ns.Addon.db.profile.activate.Capitals or not ns.Addon.db.profile.activate.Transporting end,
               type = "toggle",
               name = TextIconOgreWaygate:GetIconString() .. " " .. TextIconTravelL:GetIconString() .. " " .. TextIconTransport:GetIconString() .. " " .. TextIconDwarfF:GetIconString() .. " ".. TextIconCarriage:GetIconString() .. " " .. L["Transport"],
               desc = L["Shows special transport icons like"] .. "\n" .. "\n" .. " " .. TextIconOgreWaygate:GetIconString() .. " " .. L["Ogre Waygate"] .. " - " .. GARRISON_LOCATION_TOOLTIP .. "/" .. L["Draenor"] .. "\n" .. "\n" .. " " .. TextIconTransport:GetIconString() .. " " .. L["Teleporter"] .. " - " .. L["Oribos"] .. "/" .. L["Korthia"] .. "/" .. "\n" .. " " .. L["The Maw"] .. "/" .. L["Shadowlands"] .. "\n" .. "\n" .. " " .. TextIconTransport:GetIconString() .. " " .. TextIconDwarfF:GetIconString() .. " " .. L["Travel"] .. " - " .. L["Zandalar"] .. "/" .. L["Kul Tiras"] .. "\n" .. "\n" .. " " .. TextIconCarriage:GetIconString() .. " " .. L["Transport"] .. " - " .. DUNGEON_FLOOR_DEEPRUNTRAM1,
@@ -2089,20 +2089,20 @@ ns.options = {
           desc = "",
           order = 76,
           args = {
-            showProfessions = {
-              disabled = function() return not ns.Addon.db.profile.show.Capitals end,
+            CapitalsProfessions = {
+              disabled = function() return not ns.Addon.db.profile.activate.Capitals end,
               type = "toggle",
               name = L["Activate icons"],
               desc = L["Enables the display of all possible icons on this map"],
               width = 0.90,
               order = 76.1,
-              get = function() return ns.Addon.db.profile.showProfessions end,
-              set = function(info, v) ns.Addon.db.profile.showProfessions = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
-                    if ns.Addon.db.profile.showProfessions then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00" .. " " .. L["Capitals"] .. " " .. GUILD_ROSTER_DROPDOWN_PROFESSION .. " " .. L["icons"], "|cff00ff00" .. L["is activated"]) else 
-                    if not ns.Addon.db.profile.showProfessions then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00" .. " " .. L["Capitals"] .. " " .. GUILD_ROSTER_DROPDOWN_PROFESSION .. " " .. L["icons"], "|cffff0000" .. L["is deactivated"]) end end end,
+              get = function() return ns.Addon.db.profile.activate.CapitalsProfessions end,
+              set = function(info, v) ns.Addon.db.profile.activate.CapitalsProfessions = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
+                    if ns.Addon.db.profile.activate.CapitalsProfessions then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00" .. " " .. L["Capitals"] .. " " .. GUILD_ROSTER_DROPDOWN_PROFESSION .. " " .. L["icons"], "|cff00ff00" .. L["is activated"]) else 
+                    if not ns.Addon.db.profile.activate.CapitalsProfessions then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00" .. " " .. L["Capitals"] .. " " .. GUILD_ROSTER_DROPDOWN_PROFESSION .. " " .. L["icons"], "|cffff0000" .. L["is deactivated"]) end end end,
               },
-            ProfessionsScale = {
-              disabled = function() return not ns.Addon.db.profile.show.Capitals or not ns.Addon.db.profile.showProfessions end,
+            CapitalsProfessionsScale = {
+              disabled = function() return not ns.Addon.db.profile.activate.Capitals or not ns.Addon.db.profile.activate.CapitalsProfessions end,
               type = "range",
               name = L["symbol size"],
               desc = L["Changes the size of the icons"],
@@ -2110,8 +2110,8 @@ ns.options = {
               width = 0.80, 
               order = 76.2,
               },
-            ProfessionsAlpha = {
-              disabled = function() return not ns.Addon.db.profile.show.Capitals or not ns.Addon.db.profile.showProfessions end,
+            CapitalsProfessionsAlpha = {
+              disabled = function() return not ns.Addon.db.profile.activate.Capitals or not ns.Addon.db.profile.activate.CapitalsProfessions end,
               type = "range",
               name = L["symbol visibility"],
               desc = L["Changes the visibility of the icons"],
@@ -2125,7 +2125,7 @@ ns.options = {
               order = 76.4,
               },
             showAlchemy = {
-              disabled = function() return not ns.Addon.db.profile.show.Capitals or not ns.Addon.db.profile.showProfessions end,
+              disabled = function() return not ns.Addon.db.profile.activate.Capitals or not ns.Addon.db.profile.activate.CapitalsProfessions end,
               type = "toggle",
               name = TextIconAlchemy:GetIconString() .. " " .. L["Alchemy"],
               desc = "",
@@ -2136,7 +2136,7 @@ ns.options = {
                     if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showAlchemy then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. TUTORIAL_TITLE38, L["Alchemy"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
             showEngineer = {
-              disabled = function() return not ns.Addon.db.profile.show.Capitals or not ns.Addon.db.profile.showProfessions end,
+              disabled = function() return not ns.Addon.db.profile.activate.Capitals or not ns.Addon.db.profile.activate.CapitalsProfessions end,
               type = "toggle",
               name = TextIconEngineer:GetIconString() .. " " .. L["Engineer"],
               desc = "",
@@ -2147,7 +2147,7 @@ ns.options = {
                     if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showEngineer then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. TUTORIAL_TITLE38, L["Engineer"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
             showJewelcrafting = {
-              disabled = function() return not ns.Addon.db.profile.show.Capitals or not ns.Addon.db.profile.showProfessions end,
+              disabled = function() return not ns.Addon.db.profile.activate.Capitals or not ns.Addon.db.profile.activate.CapitalsProfessions end,
               type = "toggle",
               name = TextIconJewelcrafting:GetIconString() .. " " .. L["Jewelcrafting"],
               desc = "",
@@ -2158,7 +2158,7 @@ ns.options = {
                     if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showJewelcrafting then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. TUTORIAL_TITLE38, L["Jewelcrafting"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
             showBlacksmith = {
-              disabled = function() return not ns.Addon.db.profile.show.Capitals or not ns.Addon.db.profile.showProfessions end,
+              disabled = function() return not ns.Addon.db.profile.activate.Capitals or not ns.Addon.db.profile.activate.CapitalsProfessions end,
               type = "toggle",
               name = TextIconBlacksmith:GetIconString() .. " " .. L["Blacksmithing"],
               desc = "",
@@ -2169,7 +2169,7 @@ ns.options = {
                     if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showBlacksmith then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. TUTORIAL_TITLE38, L["Blacksmithing"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
             showTailoring = {
-              disabled = function() return not ns.Addon.db.profile.show.Capitals or not ns.Addon.db.profile.showProfessions end,
+              disabled = function() return not ns.Addon.db.profile.activate.Capitals or not ns.Addon.db.profile.activate.CapitalsProfessions end,
               type = "toggle",
               name = TextIconTailoring:GetIconString() .. " " .. L["Tailoring"],
               desc = "",
@@ -2180,7 +2180,7 @@ ns.options = {
                     if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showTailoring then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. TUTORIAL_TITLE38, L["Tailoring"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
             showSkinning = {
-              disabled = function() return not ns.Addon.db.profile.show.Capitals or not ns.Addon.db.profile.showProfessions end,
+              disabled = function() return not ns.Addon.db.profile.activate.Capitals or not ns.Addon.db.profile.activate.CapitalsProfessions end,
               type = "toggle",
               name = TextIconSkinning:GetIconString() .. " " .. L["Skinning"],
               desc = "",
@@ -2191,7 +2191,7 @@ ns.options = {
                     if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showSkinning then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. TUTORIAL_TITLE38, L["Skinning"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
             showMining = {
-              disabled = function() return not ns.Addon.db.profile.show.Capitals or not ns.Addon.db.profile.showProfessions end,
+              disabled = function() return not ns.Addon.db.profile.activate.Capitals or not ns.Addon.db.profile.activate.CapitalsProfessions end,
               type = "toggle",
               name = TextIconMining:GetIconString() .. " " .. L["Mining"],
               desc = "",
@@ -2202,7 +2202,7 @@ ns.options = {
                     if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMining then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. TUTORIAL_TITLE38, L["Mining"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
             showHerbalism = {
-              disabled = function() return not ns.Addon.db.profile.show.Capitals or not ns.Addon.db.profile.showProfessions end,
+              disabled = function() return not ns.Addon.db.profile.activate.Capitals or not ns.Addon.db.profile.activate.CapitalsProfessions end,
               type = "toggle",
               name = TextIconHerbalism:GetIconString() .. " " .. L["Herbalism"],
               desc = "",
@@ -2213,7 +2213,7 @@ ns.options = {
                     if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showHerbalism then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. TUTORIAL_TITLE38, L["Herbalism"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
             showInscription = {
-              disabled = function() return not ns.Addon.db.profile.show.Capitals or not ns.Addon.db.profile.showProfessions end,
+              disabled = function() return not ns.Addon.db.profile.activate.Capitals or not ns.Addon.db.profile.activate.CapitalsProfessions end,
               type = "toggle",
               name = TextIconInscription:GetIconString() .. " " .. INSCRIPTION,
               desc = "",
@@ -2224,7 +2224,7 @@ ns.options = {
                     if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showInscription then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. TUTORIAL_TITLE38, INSCRIPTION, L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
             showFishing = {
-              disabled = function() return not ns.Addon.db.profile.show.Capitals or not ns.Addon.db.profile.showProfessions end,
+              disabled = function() return not ns.Addon.db.profile.activate.Capitals or not ns.Addon.db.profile.activate.CapitalsProfessions end,
               type = "toggle",
               name = TextIconFishing:GetIconString() .. " " .. PROFESSIONS_FISHING,
               desc = "",
@@ -2235,7 +2235,7 @@ ns.options = {
                     if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showFishing then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. TUTORIAL_TITLE38,PROFESSIONS_FISHING, L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
             showCooking = {
-              disabled = function() return not ns.Addon.db.profile.show.Capitals or not ns.Addon.db.profile.showProfessions end,
+              disabled = function() return not ns.Addon.db.profile.activate.Capitals or not ns.Addon.db.profile.activate.CapitalsProfessions end,
               type = "toggle",
               name = TextIconCooking:GetIconString() .. " " .. PROFESSIONS_COOKING,
               desc = "",
@@ -2246,7 +2246,7 @@ ns.options = {
                     if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showCooking then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. TUTORIAL_TITLE38, PROFESSIONS_COOKING, L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
             showArchaeology = {
-              disabled = function() return not ns.Addon.db.profile.show.Capitals or not ns.Addon.db.profile.showProfessions end,
+              disabled = function() return not ns.Addon.db.profile.activate.Capitals or not ns.Addon.db.profile.activate.CapitalsProfessions end,
               type = "toggle",
               name = TextIconArchaeology:GetIconString() .. " " .. PROFESSIONS_ARCHAEOLOGY,
               desc = "",
@@ -2257,7 +2257,7 @@ ns.options = {
                     if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showArchaeology then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. TUTORIAL_TITLE38, PROFESSIONS_ARCHAEOLOGY, L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
             showEnchanting = {
-              disabled = function() return not ns.Addon.db.profile.show.Capitals or not ns.Addon.db.profile.showProfessions end,
+              disabled = function() return not ns.Addon.db.profile.activate.Capitals or not ns.Addon.db.profile.activate.CapitalsProfessions end,
               type = "toggle",
               name = TextIconEnchanting:GetIconString() .. " " .. L["Enchanting"],
               desc = "",
@@ -2268,7 +2268,7 @@ ns.options = {
                     if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showEnchanting then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. TUTORIAL_TITLE38, L["Enchanting"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
             showLeatherworking = {
-              disabled = function() return not ns.Addon.db.profile.show.Capitals or not ns.Addon.db.profile.showProfessions end,
+              disabled = function() return not ns.Addon.db.profile.activate.Capitals or not ns.Addon.db.profile.activate.CapitalsProfessions end,
               type = "toggle",
               name = TextIconLeatherworking:GetIconString() .. " " .. L["Leatherworking"],
               desc = "",
@@ -2286,20 +2286,20 @@ ns.options = {
           desc = "",
           order = 79,
           args = {
-            showCapitalsGeneral = {
-              disabled = function() return not ns.Addon.db.profile.show.Capitals end,
+            CapitalsGeneral = {
+              disabled = function() return not ns.Addon.db.profile.activate.Capitals end,
               type = "toggle",
               name = L["Activate icons"],
               desc = L["Activates the display of all possible icons on this map"],
               width = 0.90,
               order = 79.1,
-              get = function() return ns.Addon.db.profile.showCapitalsGeneral end,
-              set = function(info, v) ns.Addon.db.profile.showCapitalsGeneral = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
-                    if ns.Addon.db.profile.showCapitalsGeneral then OpenWorldMap(uiMapID) print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Capitals"] .. " " .. L["Generals"] .. " " .. L["icons"], "|cff00ff00" .. L["is activated"]) else 
-                    if not ns.Addon.db.profile.showCapitalsGeneral then OpenWorldMap(uiMapID) print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Capitals"] .. " " .. L["Generals"] .. " " .. L["icons"], "|cffff0000" .. L["is deactivated"]) end end end,
+              get = function() return ns.Addon.db.profile.activate.CapitalsGeneral end,
+              set = function(info, v) ns.Addon.db.profile.activate.CapitalsGeneral = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
+                    if ns.Addon.db.profile.activate.CapitalsGeneral then OpenWorldMap(uiMapID) print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Capitals"] .. " " .. L["Generals"] .. " " .. L["icons"], "|cff00ff00" .. L["is activated"]) else 
+                    if not ns.Addon.db.profile.activate.CapitalsGeneral then OpenWorldMap(uiMapID) print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Capitals"] .. " " .. L["Generals"] .. " " .. L["icons"], "|cffff0000" .. L["is deactivated"]) end end end,
               },
             CapitalsGeneralScale = {
-              disabled = function() return not ns.Addon.db.profile.show.Capitals or not ns.Addon.db.profile.showCapitalsGeneral end,
+              disabled = function() return not ns.Addon.db.profile.activate.Capitals or not ns.Addon.db.profile.activate.CapitalsGeneral end,
               type = "range",
               name = L["symbol size"],
               desc = L["Changes the size of the icons"],
@@ -2308,7 +2308,7 @@ ns.options = {
               order = 79.2,
               },
             CapitalsGeneralAlpha = {
-              disabled = function() return not ns.Addon.db.profile.show.Capitals or not ns.Addon.db.profile.showCapitalsGeneral end,
+              disabled = function() return not ns.Addon.db.profile.activate.Capitals or not ns.Addon.db.profile.activate.CapitalsGeneral end,
               type = "range",
               name = L["symbol visibility"],
               desc = L["Changes the visibility of the icons"],
@@ -2322,7 +2322,7 @@ ns.options = {
               order = 79.4,
               },
             showCapitalsMapNotes = {
-              disabled = function() return not ns.Addon.db.profile.show.Capitals or not ns.Addon.db.profile.showCapitalsGeneral end,
+              disabled = function() return not ns.Addon.db.profile.activate.Capitals or not ns.Addon.db.profile.activate.CapitalsGeneral end,
               type = "toggle",
               name = TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME,
               desc = L["This MapNotes icons shows various icons that are too close to each other together"] .. "\n" .. "\n" .. TextIconBank:GetIconString() .. " " .. BANK .. "\n" .. TextIconAuctioneer:GetIconString() .. " " .. MINIMAP_TRACKING_AUCTIONEER .. "\n" .. TextIconHearthstone:GetIconString() .. " " .. MINIMAP_TRACKING_INNKEEPER .. "\n" .. TextIconPassageup:GetIconString() .. " " .. TextIconPassagedown:GetIconString() .. " " .. TextIconPassageleft:GetIconString() .. " " .. TextIconPassageright:GetIconString() .. " " .. L["Paths"],
@@ -2333,7 +2333,7 @@ ns.options = {
                     if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showCapitalsMapNotes then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], COLORED_ADDON_NAME, L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
             showCapitalsPaths = {
-              disabled = function() return not ns.Addon.db.profile.show.Capitals or not ns.Addon.db.profile.showCapitalsGeneral end,
+              disabled = function() return not ns.Addon.db.profile.activate.Capitals or not ns.Addon.db.profile.activate.CapitalsGeneral end,
               type = "toggle",
               name = TextIconPassageup:GetIconString() .. " " .. TextIconPassagedown:GetIconString() .. " " .. TextIconPassageleft:GetIconString() .. " " .. TextIconPassageright:GetIconString() .. " " .. L["Paths"],
               desc = L["Exit"] .. " / " .. L["Paths"] .. " / " .. L["Passage"],
@@ -2344,7 +2344,7 @@ ns.options = {
                     if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showCapitalsPaths then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], L["Paths"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
             showCapitalsHearthstone = {
-              disabled = function() return not ns.Addon.db.profile.show.Capitals or not ns.Addon.db.profile.showCapitalsGeneral end,
+              disabled = function() return not ns.Addon.db.profile.activate.Capitals or not ns.Addon.db.profile.activate.CapitalsGeneral end,
               type = "toggle",
               name = TextIconHearthstone:GetIconString() .. " " .. MINIMAP_TRACKING_INNKEEPER,
               desc = "",
@@ -2355,7 +2355,7 @@ ns.options = {
                     if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showCapitalsHearthstone then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], MINIMAP_TRACKING_INNKEEPER, L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
             showCapitalsAuctioneer = {
-              disabled = function() return not ns.Addon.db.profile.show.Capitals or not ns.Addon.db.profile.showCapitalsGeneral end,
+              disabled = function() return not ns.Addon.db.profile.activate.Capitals or not ns.Addon.db.profile.activate.CapitalsGeneral end,
               type = "toggle",
               name = TextIconAuctioneer:GetIconString() .. " " .. MINIMAP_TRACKING_AUCTIONEER,
               desc = "",
@@ -2366,7 +2366,7 @@ ns.options = {
                     if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showCapitalsAuctioneer then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Capitals"], MINIMAP_TRACKING_AUCTIONEER, L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
             showCapitalsBank = {
-              disabled = function() return not ns.Addon.db.profile.show.Capitals or not ns.Addon.db.profile.showCapitalsGeneral end,
+              disabled = function() return not ns.Addon.db.profile.activate.Capitals or not ns.Addon.db.profile.activate.CapitalsGeneral end,
               type = "toggle",
               name = TextIconBank:GetIconString() .. " " .. BANK,
               desc = "",
@@ -2380,8 +2380,8 @@ ns.options = {
           },
         },
       },
-    CapitalsMinimap = {
-      disabled = function() return ns.Addon.db.profile.show.HideMapNote end,
+    MinimapCapitals = {
+      disabled = function() return ns.Addon.db.profile.activate.HideMapNote end,
       type = "group",
       name = L["Capitals"] .. " - " .. MINIMAP_LABEL,
       desc = L["Certain icons can be displayed or not displayed. If the option (Activate icons) has been activated in this category"] .. "\n" .. "\n" .. L["Capitals"] .. ":" .. "\n" .. "\n" .. ORGRIMMAR .. "\n" .. L["Thunder Bluff"] .. "\n" .. L["Silvermoon City"] .. "\n" .. L["Undercity"] .. "\n" .. STORMWIND .. "\n" .. L["Ironforge"] .. "\n" .. L["Darnassus"] .. "\n" .. L["Exodar"] .. "\n" .. L["Shattrath City"] .. "\n" .. DUNGEON_FLOOR_DALARAN1 .. " - " .. POSTMASTER_PIPE_NORTHREND .. "\n" .. DUNGEON_FLOOR_DALARAN1 .. " - " .. EXPANSION_NAME6 .. "\n" .. L["Shrine7Stars"] .. "\n" .. L["Shrine2Moons"] .. "\n" .. L["Stormshield"] .. "\n" .. L["Warspear"] .. "\n" .. L["Dazar'alor"] .. "\n" .. L["Boralus"] .. "\n" .. L["Oribos"] .. "\n" .. L["Valdrakken"],
@@ -2392,30 +2392,30 @@ ns.options = {
           name = L["Capitals"] .. " " .. L["icons"],
           order = 80,
           },
-        showMinimapCapitals = {
+        MinimapCapitals = {
           type = "toggle",
           name = L["Capitals"] .. " " .. MINIMAP_LABEL .. " " .. L["Activate icons"],
           desc = L["Activates the display of all possible icons on this map"] .. "\n" .. "\n" .. L["Capitals"] .. ":" .. "\n" .. "\n" .. ORGRIMMAR .. "\n" .. L["Thunder Bluff"] .. "\n" .. L["Silvermoon City"] .. "\n" .. L["Undercity"] .. "\n" .. STORMWIND .. "\n" .. L["Ironforge"] .. "\n" .. L["Darnassus"] .. "\n" .. L["Exodar"] .. "\n" .. L["Shattrath City"] .. "\n" .. DUNGEON_FLOOR_DALARAN1 .. " - " .. POSTMASTER_PIPE_NORTHREND .. "\n" .. DUNGEON_FLOOR_DALARAN1 .. " - " .. EXPANSION_NAME6 .. "\n" .. L["Shrine7Stars"] .. "\n" .. L["Shrine2Moons"] .. "\n" .. L["Stormshield"] .. "\n" .. L["Warspear"] .. "\n" .. L["Dazar'alor"] .. "\n" .. L["Boralus"] .. "\n" .. L["Oribos"] .. "\n" .. L["Valdrakken"],
           width = 1.8,
           order = 80.1,
-          get = function() return ns.Addon.db.profile.show.MinimapCapitals end,
-          set = function(info, v) ns.Addon.db.profile.show.MinimapCapitals = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
-                if ns.Addon.db.profile.show.MinimapCapitals then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. MINIMAP_LABEL .. " " .. L["Capitals"], L["icons"], "|cff00ff00" .. L["is activated"]) else 
-                if not ns.Addon.db.profile.show.MinimapCapitals then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. MINIMAP_LABEL .. " " .. L["Capitals"], L["icons"], "|cffff0000" .. L["is deactivated"]) end end end,
+          get = function() return ns.Addon.db.profile.activate.MinimapCapitals end,
+          set = function(info, v) ns.Addon.db.profile.activate.MinimapCapitals = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
+                if ns.Addon.db.profile.activate.MinimapCapitals then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. MINIMAP_LABEL .. " " .. L["Capitals"], L["icons"], "|cff00ff00" .. L["is activated"]) else 
+                if not ns.Addon.db.profile.activate.MinimapCapitals then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. MINIMAP_LABEL .. " " .. L["Capitals"], L["icons"], "|cffff0000" .. L["is deactivated"]) end end end,
           },
-        showMinimapCapitalEnemyFaction = {
-          disabled = function() return not ns.Addon.db.profile.show.MinimapCapitals end,
+        MinimapCapitalsEnemyFaction = {
+          disabled = function() return not ns.Addon.db.profile.activate.MinimapCapitals end,
           type = "toggle",
           name = L["Capitals"] .. " " .. MINIMAP_LABEL .. " " .. L["enemy faction"],
           desc = TextIconHorde:GetIconString() ..  " " .. TextIconAlliance:GetIconString() .. " " .. L["Shows enemy faction (horde/alliance) icons"],
           order = 80.2,
           width = 1.8,
-          get = function() return ns.Addon.db.profile.show.MinimapCapitalEnemyFaction end,
-          set = function(info, v) ns.Addon.db.profile.show.MinimapCapitalEnemyFaction = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
-                if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.show.MinimapCapitalEnemyFaction then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Capitals"] .. " " .. L["enemy faction"], L["icons"], "|cff00ff00" .. L["is activated"]) else 
-                if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.show.MinimapCapitalEnemyFaction then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Capitals"] .. " " .. L["enemy faction"], "|cffff0000" ..  L["is deactivated"]) end end end,
+          get = function() return ns.Addon.db.profile.activate.MinimapCapitalsEnemyFaction end,
+          set = function(info, v) ns.Addon.db.profile.activate.MinimapCapitalsEnemyFaction = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
+                if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.activate.MinimapCapitalsEnemyFaction then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Capitals"] .. " " .. L["enemy faction"], L["icons"], "|cff00ff00" .. L["is activated"]) else 
+                if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.activate.MinimapCapitalsEnemyFaction then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Capitals"] .. " " .. L["enemy faction"], "|cffff0000" ..  L["is deactivated"]) end end end,
          },
-        CapitalsMinimapTab = {
+        MinimapCapitalsTab = {
           type = "group",
           name = "• " .. L["Capitals"],
           desc = L["Enables the display of icons for a specific capital city"],
@@ -2426,30 +2426,30 @@ ns.options = {
               name = FACTION_HORDE,
               order = 80.4,
               },
-            showMinimapOrgrimmar = {
-              disabled = function() return not ns.Addon.db.profile.show.MinimapCapitals end,
+            showMinimapCapitalsOrgrimmar = {
+              disabled = function() return not ns.Addon.db.profile.activate.MinimapCapitals end,
               type = "toggle",
               name = TextIconOrgrimmar:GetIconString() .. " " .. ORGRIMMAR,
               desc = "",
               width = 0.80,
               order = 80.5,
               set = function(info, v) ns.Addon.db.profile[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
-                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapOrgrimmar then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], ORGRIMMAR, L["icons"], "|cff00ff00" .. L["are shown"]) else 
-                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapOrgrimmar then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], ORGRIMMAR, L["icons"], "|cffff0000" .. L["are hidden"])end end end,
+                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapCapitalsOrgrimmar then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], ORGRIMMAR, L["icons"], "|cff00ff00" .. L["are shown"]) else 
+                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapCapitalsOrgrimmar then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], ORGRIMMAR, L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
-            showMinimapThunderBluff = {
-              disabled = function() return not ns.Addon.db.profile.show.MinimapCapitals end,
+            showMinimapCapitalsThunderBluff = {
+              disabled = function() return not ns.Addon.db.profile.activate.MinimapCapitals end,
               type = "toggle",
               name = TextIconThunderBluff:GetIconString() .. " " .. L["Thunder Bluff"],
               desc = "",
               width = 0.80,
               order = 80.6,
               set = function(info, v) ns.Addon.db.profile[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
-                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapThunderBluff then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Thunder Bluff"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
-                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapThunderBluff then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Thunder Bluff"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
+                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapCapitalsThunderBluff then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Thunder Bluff"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
+                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapCapitalsThunderBluff then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Thunder Bluff"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
-            showMinimapSilvermoon = {
-              disabled = function() return not ns.Addon.db.profile.show.MinimapCapitals end,
+            showMinimapCapitalsSilvermoon = {
+              disabled = function() return not ns.Addon.db.profile.activate.MinimapCapitals end,
               type = "toggle",
               name = TextIconSilvermoon:GetIconString() .. " " .. L["Silvermoon City"],
               desc = "",
@@ -2459,191 +2459,191 @@ ns.options = {
                     if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapSilvermoon then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Silvermoon City"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
                     if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapSilvermoon then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Silvermoon City"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
-            showMinimapUndercity = {
-              disabled = function() return not ns.Addon.db.profile.show.MinimapCapitals end,
+            showMinimapCapitalsUndercity = {
+              disabled = function() return not ns.Addon.db.profile.activate.MinimapCapitals end,
               type = "toggle",
               name = TextIconUndercity:GetIconString() .. " " .. L["Undercity"],
               desc = "",
               width = 0.80,
               order = 80.8,
               set = function(info, v) ns.Addon.db.profile[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
-                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapUndercity then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Undercity"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
-                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapUndercity then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Undercity"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
+                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapCapitalsUndercity then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Undercity"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
+                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapCapitalsUndercity then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Undercity"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
-            showMinimapDazarAlor = {
-              disabled = function() return not ns.Addon.db.profile.show.MinimapCapitals end,
+            showMinimapCapitalsDazarAlor = {
+              disabled = function() return not ns.Addon.db.profile.activate.MinimapCapitals end,
               type = "toggle",
               name = TextIconDazarAlor:GetIconString() .. " " .. L["Dazar'alor"],
               desc = "",
               width = 0.80,
               order = 80.9,
               set = function(info, v) ns.Addon.db.profile[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
-                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapDazarAlor then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Dazar'alor"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
-                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapDazarAlor then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Dazar'alor"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
+                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapCapitalsDazarAlor then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Dazar'alor"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
+                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapCapitalsDazarAlor then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Dazar'alor"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
-            showMinimapSot2M = {
-              disabled = function() return not ns.Addon.db.profile.show.MinimapCapitals end,
+            showMinimapCapitalsSot2M = {
+              disabled = function() return not ns.Addon.db.profile.activate.MinimapCapitals end,
               type = "toggle",
               name = TextIconSot2M:GetIconString() .. " " .. L["Shrine2Moons"],
               desc = EXPANSION_NAME4,
               width = 1,
               order = 81,
               set = function(info, v) ns.Addon.db.profile[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
-                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapSot2M then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Shrine2Moons"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
-                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapSot2M then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Shrine2Moons"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
+                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapCapitalsSot2M then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Shrine2Moons"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
+                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapCapitalsSot2M then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Shrine2Moons"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
-            showMinimapWarspear = {
-              disabled = function() return not ns.Addon.db.profile.show.MinimapCapitals end,
+            showMinimapCapitalsWarspear = {
+              disabled = function() return not ns.Addon.db.profile.activate.MinimapCapitals end,
               type = "toggle",
               name = TextIconWarspear:GetIconString() .. " " .. L["Warspear"] .. " / " .. GARRISON_LOCATION_TOOLTIP,
               desc = "",
               width = 1.40,
               order = 81.1,
               set = function(info, v) ns.Addon.db.profile[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
-                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapWarspear then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Warspear"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
-                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapWarspear then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Warspear"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
+                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapCapitalsWarspear then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Warspear"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
+                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapCapitalsWarspear then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Warspear"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
             Capitalsheader7 = {
               type = "header",
               name = FACTION_ALLIANCE,
               order = 82,
               },
-            showMinimapStormwind = {
-              disabled = function() return not ns.Addon.db.profile.show.MinimapCapitals end,
+            showMinimapCapitalsStormwind = {
+              disabled = function() return not ns.Addon.db.profile.activate.MinimapCapitals end,
               type = "toggle",
               name = TextIconStormwind:GetIconString() .. " " .. L["Stormwind"],
               desc = "",
               width = 0.80,
               order = 82.1,
               set = function(info, v) ns.Addon.db.profile[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
-                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapStormwind then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Stormwind"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
-                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapStormwind then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Stormwind"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
+                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapCapitalsStormwind then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Stormwind"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
+                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapCapitalsStormwind then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Stormwind"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
-            showMinimapIronforge = {
-              disabled = function() return not ns.Addon.db.profile.show.MinimapCapitals end,
+            showMinimapCapitalsIronforge = {
+              disabled = function() return not ns.Addon.db.profile.activate.MinimapCapitals end,
               type = "toggle",
               name = TextIconIronforge:GetIconString() .. " " .. L["Ironforge"],
               desc = "",
               width = 0.80,
               order = 82.2,
               set = function(info, v) ns.Addon.db.profile[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
-                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapIronforge then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Ironforge"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
-                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapIronforge then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Ironforge"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
+                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapCapitalsIronforge then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Ironforge"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
+                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapCapitalsIronforge then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Ironforge"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
-            showMinimapDarnassus = {
-              disabled = function() return not ns.Addon.db.profile.show.MinimapCapitals end,
+            showMinimapCapitalsDarnassus = {
+              disabled = function() return not ns.Addon.db.profile.activate.MinimapCapitals end,
               type = "toggle",
               name = TextIconDarnassus:GetIconString() .. " " .. L["Darnassus"],
               desc = "",
               width = 0.80,
               order = 82.3,
               set = function(info, v) ns.Addon.db.profile[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
-                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapDarnassus then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Darnassus"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
-                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapDarnassus then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" ..  MINIMAP_LABEL .. " " .. L["Capitals"], L["Darnassus"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
+                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapCapitalsDarnassus then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Darnassus"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
+                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapCapitalsDarnassus then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" ..  MINIMAP_LABEL .. " " .. L["Capitals"], L["Darnassus"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
-            showMinimapExodar = {
-              disabled = function() return not ns.Addon.db.profile.show.MinimapCapitals end,
+            showMinimapCapitalsExodar = {
+              disabled = function() return not ns.Addon.db.profile.activate.MinimapCapitals end,
               type = "toggle",
               name = TextIconExodar:GetIconString() .. " " .. L["Exodar"],
               desc = "",
               width = 0.80,
               order = 82.4,
               set = function(info, v) ns.Addon.db.profile[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
-                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapExodar then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Exodar"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
-                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapExodar then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" ..  MINIMAP_LABEL .. " " .. L["Capitals"], L["Exodar"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
+                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapCapitalsExodar then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Exodar"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
+                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapCapitalsExodar then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" ..  MINIMAP_LABEL .. " " .. L["Capitals"], L["Exodar"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
-            showMinimapBoralus = {
-              disabled = function() return not ns.Addon.db.profile.show.MinimapCapitals end,
+            showMinimapCapitalsBoralus = {
+              disabled = function() return not ns.Addon.db.profile.activate.MinimapCapitals end,
               type = "toggle",
               name = TextIconBoralus:GetIconString() .. " " .. L["Boralus"],
               desc = "",
               width = 0.80,
               order = 82.5,
               set = function(info, v) ns.Addon.db.profile[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
-                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapBoralus then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Boralus"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
-                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapBoralus then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Boralus"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
+                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapCapitalsBoralus then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Boralus"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
+                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapCapitalsBoralus then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Boralus"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
-            showMinimapSot7S = {
-              disabled = function() return not ns.Addon.db.profile.show.MinimapCapitals end,
+            showMinimapCapitalsSot7S = {
+              disabled = function() return not ns.Addon.db.profile.activate.MinimapCapitals end,
               type = "toggle",
               name = TextIconSot7S:GetIconString() .. " " .. L["Shrine7Stars"],
               desc = EXPANSION_NAME4,
               width = 1,
               order = 82.6,
               set = function(info, v) ns.Addon.db.profile[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
-                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapSot7S then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Shrine7Stars"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
-                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapSot7S then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Shrine7Stars"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
+                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapCapitalsSot7S then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Shrine7Stars"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
+                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapCapitalsSot7S then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Shrine7Stars"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
-            showMinimapStormshield = {
-              disabled = function() return not ns.Addon.db.profile.show.MinimapCapitals end,
+            showMinimapCapitalsStormshield = {
+              disabled = function() return not ns.Addon.db.profile.activate.MinimapCapitals end,
               type = "toggle",
               name = TextIconStormshield:GetIconString() .. " " .. L["Stormshield"] .. " / " .. GARRISON_LOCATION_TOOLTIP,
               desc = "",
               width = 1.40,
               order = 82.7,
               set = function(info, v) ns.Addon.db.profile[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
-                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapStormshield then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Stormshield"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
-                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapStormshield then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Stormshield"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
+                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapCapitalsStormshield then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Stormshield"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
+                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapCapitalsStormshield then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Stormshield"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
             Capitalsheader8 = {
               type = "header",
               name = FACTION_NEUTRAL,
               order = 83,
               },
-            showMinimapShattrath = {
-              disabled = function() return not ns.Addon.db.profile.show.MinimapCapitals end,
+            showMinimapCapitalsShattrath = {
+              disabled = function() return not ns.Addon.db.profile.activate.MinimapCapitals end,
               type = "toggle",
               name = TextIconShattrath:GetIconString() .. " " .. L["Shattrath City"],
               desc = "",
               width = 0.80,
               order = 83.1,
               set = function(info, v) ns.Addon.db.profile[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
-                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapShattrath then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Shattrath City"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
-                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapShattrath then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Shattrath City"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
+                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapCapitalsShattrath then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Shattrath City"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
+                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapCapitalsShattrath then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Shattrath City"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
-            showMinimapDalaranNorthrend = {
-              disabled = function() return not ns.Addon.db.profile.show.MinimapCapitals end,
+            showMinimapCapitalsDalaranNorthrend = {
+              disabled = function() return not ns.Addon.db.profile.activate.MinimapCapitals end,
               type = "toggle",
               name = TextIconDalaranNorthrend:GetIconString() .. " " .. DUNGEON_FLOOR_DALARAN1,
               desc = DUNGEON_FLOOR_DALARAN1 .. "-" .. POSTMASTER_PIPE_NORTHREND,
               width = 0.80,
               order = 83.2,
               set = function(info, v) ns.Addon.db.profile[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
-                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapDalaranNorthrend then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], DUNGEON_FLOOR_DALARAN1 .. "-" .. POSTMASTER_PIPE_NORTHREND, L["icons"], "|cff00ff00" .. L["are shown"]) else 
-                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapDalaranNorthrend then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], DUNGEON_FLOOR_DALARAN1 .. "-" .. POSTMASTER_PIPE_NORTHREND, L["icons"], "|cffff0000" .. L["are hidden"])end end end,
+                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapCapitalsDalaranNorthrend then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], DUNGEON_FLOOR_DALARAN1 .. "-" .. POSTMASTER_PIPE_NORTHREND, L["icons"], "|cff00ff00" .. L["are shown"]) else 
+                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapCapitalsDalaranNorthrend then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], DUNGEON_FLOOR_DALARAN1 .. "-" .. POSTMASTER_PIPE_NORTHREND, L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
-            showMinimapDalaranLegion = {
-              disabled = function() return not ns.Addon.db.profile.show.MinimapCapitals end,
+            showMinimapCapitalsDalaranLegion = {
+              disabled = function() return not ns.Addon.db.profile.activate.MinimapCapitals end,
               type = "toggle",
               name = TextIconDalaranLegion:GetIconString() .. " " .. DUNGEON_FLOOR_DALARAN1,
               desc = DUNGEON_FLOOR_DALARAN1 .. "-" .. EXPANSION_NAME6,
               width = 0.80,
               order = 83.3,
               set = function(info, v) ns.Addon.db.profile[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
-                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapDalaranLegion then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], DUNGEON_FLOOR_DALARAN1 .. "-" .. EXPANSION_NAME6, L["icons"], "|cff00ff00" .. L["are shown"]) else 
-                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapDalaranLegion then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], DUNGEON_FLOOR_DALARAN1 .. "-" .. EXPANSION_NAME6, L["icons"], "|cffff0000" .. L["are hidden"])end end end,
+                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapCapitalsDalaranLegion then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], DUNGEON_FLOOR_DALARAN1 .. "-" .. EXPANSION_NAME6, L["icons"], "|cff00ff00" .. L["are shown"]) else 
+                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapCapitalsDalaranLegion then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], DUNGEON_FLOOR_DALARAN1 .. "-" .. EXPANSION_NAME6, L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
-            showMinimapOribos = {
-              disabled = function() return not ns.Addon.db.profile.show.MinimapCapitals end,
+            showMinimapCapitalsOribos = {
+              disabled = function() return not ns.Addon.db.profile.activate.MinimapCapitals end,
               type = "toggle",
               name = TextIconOribos:GetIconString() .. " " .. L["Oribos"],
               desc = "",
               width = 0.80,
               order = 83.4,
               set = function(info, v) ns.Addon.db.profile[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
-                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapOribos then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Oribos"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
-                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapOribos then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Oribos"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
+                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapCapitalsOribos then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Oribos"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
+                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapCapitalsOribos then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Oribos"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
-            showMinimapValdrakken = {
-              disabled = function() return not ns.Addon.db.profile.show.MinimapCapitals end,
+            showMinimapCapitalsValdrakken = {
+              disabled = function() return not ns.Addon.db.profile.activate.MinimapCapitals end,
               type = "toggle",
               name = TextIconValdrakken:GetIconString() .. " " .. L["Valdrakken"],
               desc = "",
               width = 0.80,
               order = 83.5,
               set = function(info, v) ns.Addon.db.profile[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
-                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapValdrakken then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Valdrakken"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
-                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapValdrakken then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Valdrakken"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
+                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapCapitalsValdrakken then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Valdrakken"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
+                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapCapitalsValdrakken then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Valdrakken"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
             },
           },
@@ -2653,20 +2653,20 @@ ns.options = {
           desc = "",
           order = 82,
           args = {
-            showMinimapCapitalsInstances = {
-              disabled = function() return not ns.Addon.db.profile.show.MinimapCapitals end,
+            MinimapCapitalsInstances = {
+              disabled = function() return not ns.Addon.db.profile.activate.MinimapCapitals end,
               type = "toggle",
               name = L["Activate icons"],
               desc = L["Activates the display of all possible icons on this map"],
               width = 0.90,
               order = 82.1,
-              get = function() return ns.Addon.db.profile.showMinimapCapitalsInstances end,
-              set = function(info, v) ns.Addon.db.profile.showMinimapCapitalsInstances = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
-                    if ns.Addon.db.profile.showMinimapCapitalsInstances then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. MINIMAP_LABEL .. " " .. L["Capitals"],INSTANCE, L["icons"], "|cff00ff00" .. L["is activated"]) else 
-                    if not ns.Addon.db.profile.showMinimapCapitalsInstances then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. MINIMAP_LABEL .. " " .. L["Capitals"],INSTANCE, L["icons"], "|cffff0000" .. L["is deactivated"]) end end end,
+              get = function() return ns.Addon.db.profile.activate.MinimapCapitalsInstances end,
+              set = function(info, v) ns.Addon.db.profile.activate.MinimapCapitalsInstances = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
+                    if ns.Addon.db.profile.activate.MinimapCapitalsInstances then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. MINIMAP_LABEL .. " " .. L["Capitals"],INSTANCE, L["icons"], "|cff00ff00" .. L["is activated"]) else 
+                    if not ns.Addon.db.profile.activate.MinimapCapitalsInstances then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. MINIMAP_LABEL .. " " .. L["Capitals"],INSTANCE, L["icons"], "|cffff0000" .. L["is deactivated"]) end end end,
               },
-            CapitalsMinimapInstanceScale = {
-              disabled = function() return not ns.Addon.db.profile.show.MinimapCapitals or not ns.Addon.db.profile.showMinimapCapitalsInstances end,
+            MinimapCapitalsInstanceScale = {
+              disabled = function() return not ns.Addon.db.profile.activate.MinimapCapitals or not ns.Addon.db.profile.activate.MinimapCapitalsInstances end,
               type = "range",
               name = L["symbol size"],
               desc = L["Changes the size of the icons"] .. "\n" .. "|cffffff00" .. L["Icon size 2.0 would be the default size of Blizzard's own instance icons on the zone map"],
@@ -2674,8 +2674,8 @@ ns.options = {
               width = 0.80,  
               order = 82.3,
               },
-            CapitalsMinimapInstanceAlpha = {
-              disabled = function() return not ns.Addon.db.profile.show.MinimapCapitals or not ns.Addon.db.profile.showMinimapCapitalsInstances end,
+            MinimapCapitalsInstanceAlpha = {
+              disabled = function() return not ns.Addon.db.profile.activate.MinimapCapitals or not ns.Addon.db.profile.activate.MinimapCapitalsInstances end,
               type = "range",
               name = L["symbol visibility"],
               desc = L["Changes the visibility of the icons"],
@@ -2689,7 +2689,7 @@ ns.options = {
               order = 83.0,
               },
             showMinimapCapitalsRaids = {
-              disabled = function() return not ns.Addon.db.profile.show.MinimapCapitals or not ns.Addon.db.profile.showMinimapCapitalsInstances end,
+              disabled = function() return not ns.Addon.db.profile.activate.MinimapCapitals or not ns.Addon.db.profile.activate.MinimapCapitalsInstances end,
               type = "toggle",
               name = TextIconRaid:GetIconString() .. " " .. L["Raids"],
               desc = L["Show icons of raids on this map"],
@@ -2699,7 +2699,7 @@ ns.options = {
                     if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapCapitalsRaids then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Raids"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
             showMinimapCapitalsPassage = {
-              disabled = function() return not ns.Addon.db.profile.show.MinimapCapitals or not ns.Addon.db.profile.showMinimapCapitalsInstances end,
+              disabled = function() return not ns.Addon.db.profile.activate.MinimapCapitals or not ns.Addon.db.profile.activate.MinimapCapitalsInstances end,
               type = "toggle",
               name = TextIconPassageRaidM:GetIconString() .. " " .. TextIconPassageDungeonM:GetIconString() .. " " .. TextIconPassageRaidMultiM:GetIconString() .. " " .. TextIconPassageDungeonMultiM:GetIconString() .. " " ..L["Passages"],
               desc = L["Show icons of passage to raids and dungeons on this map"],
@@ -2709,7 +2709,7 @@ ns.options = {
                 if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapCapitalsPassage then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Passages"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
             showMinimapCapitalsMultiple = {
-              disabled = function() return not ns.Addon.db.profile.show.MinimapCapitals or not ns.Addon.db.profile.showMinimapCapitalsInstances end,
+              disabled = function() return not ns.Addon.db.profile.activate.MinimapCapitals or not ns.Addon.db.profile.activate.MinimapCapitalsInstances end,
               type = "toggle",
               name = TextIconMultipleM:GetIconString() .. " " .. TextIconMultipleR:GetIconString() .. " " .. TextIconMultipleD:GetIconString() .. " " .. L["Multiple"],
               desc = L["Show icons of multiple (dungeons,raids) on this map"],
@@ -2719,7 +2719,7 @@ ns.options = {
                     if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapCapitalsMultiple then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Multiple"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
             showMinimapCapitalsOldVanilla = {
-              disabled = function() return not ns.Addon.db.profile.show.MinimapCapitals or not ns.Addon.db.profile.showMinimapCapitalsInstances end,
+              disabled = function() return not ns.Addon.db.profile.activate.MinimapCapitals or not ns.Addon.db.profile.activate.MinimapCapitalsInstances end,
               type = "toggle",
               name = TextIconVInstance:GetIconString() .. " " .. TextIconVKey1:GetIconString() .. " " .. L["Old Instances"],
               desc = L["Show vanilla versions of dungeons and raids such as Naxxramas, Scholomance or Scarlet Monastery, which require achievements or other things"],
@@ -2729,7 +2729,7 @@ ns.options = {
                     if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapCapitalsOldVanilla then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. MINIMAP_LABEL .. " " .. L["Capitals"], L["Old Instances"], "|cffff0000" ..  L["is deactivated"]) end end end,
               },
               showMinimapCapitalsDungeons = {
-                disabled = function() return not ns.Addon.db.profile.show.MinimapCapitals or not ns.Addon.db.profile.showMinimapCapitalsInstances end,
+                disabled = function() return not ns.Addon.db.profile.activate.MinimapCapitals or not ns.Addon.db.profile.activate.MinimapCapitalsInstances end,
               type = "toggle",
               name = TextIconDungeon:GetIconString() .. " " .. L["Dungeons"],
               desc = L["Show icons of dungeons on this map"],
@@ -2739,7 +2739,7 @@ ns.options = {
                     if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapCapitalsDungeons then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Dungeons"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
             showMinimapCapitalsLFR = {
-              disabled = function() return not ns.Addon.db.profile.show.MinimapCapitals or not ns.Addon.db.profile.showMinimapCapitalsInstances end,
+              disabled = function() return not ns.Addon.db.profile.activate.MinimapCapitals or not ns.Addon.db.profile.activate.MinimapCapitalsInstances end,
               type = "toggle",
               name = TextIconLFR:GetIconString() .. " " .. PLAYER_DIFFICULTY3,
               desc = L["Shows the locations of Raidbrowser applicants for old Raids"] .. "\n" .. "\n" .. EXPANSION_NAME3 .. " - " .. DUNGEON_FLOOR_TANARIS18 .. "\n" ..  "\n" .. EXPANSION_NAME4 .. " - " .. L["Vale of Eternal Blossoms"] .. "\n" .. "\n" .. EXPANSION_NAME5 .. " - " .. GARRISON_LOCATION_TOOLTIP .. "\n" .. "\n" .. EXPANSION_NAME2 .. " - " .. DUNGEON_FLOOR_DALARAN1 .. "\n" .. "\n" .. EXPANSION_NAME6 .. " - " .. DUNGEON_FLOOR_DALARAN1 .. "\n" .. "\n" .. EXPANSION_NAME7 .. " - " .. L["Dazar'alor"] .. " / " .. L["Boralus"] .. "\n" .. "\n" .. EXPANSION_NAME8 .. " - " .. L["Oribos"],
@@ -2756,20 +2756,20 @@ ns.options = {
           desc = "",
           order = 84,
           args = {
-            showMinimapCapitalsTransporting = {
-              disabled = function() return not ns.Addon.db.profile.show.MinimapCapitals end,
+            MinimapCapitalsTransporting = {
+              disabled = function() return not ns.Addon.db.profile.activate.MinimapCapitals end,
               type = "toggle",
               name = L["Activate icons"],
               desc = L["Enables the display of all possible icons on this map"],
               width = 0.90,
               order = 84.1,
-              get = function() return ns.Addon.db.profile.showMinimapCapitalsTransporting end,
-              set = function(info, v) ns.Addon.db.profile.showMinimapCapitalsTransporting = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
-                    if ns.Addon.db.profile.showMinimapCapitalsTransporting then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00" .. " " .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Transport"], L["icons"], "|cff00ff00" .. L["is activated"]) else 
-                    if not ns.Addon.db.profile.showMinimapCapitalsTransporting then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00" .. " " .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Transport"], L["icons"], "|cffff0000" .. L["is deactivated"]) end end end,
+              get = function() return ns.Addon.db.profile.activate.MinimapCapitalsTransporting end,
+              set = function(info, v) ns.Addon.db.profile.activate.MinimapCapitalsTransporting = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
+                    if ns.Addon.db.profile.activate.MinimapCapitalsTransporting then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00" .. " " .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Transport"], L["icons"], "|cff00ff00" .. L["is activated"]) else 
+                    if not ns.Addon.db.profile.activate.MinimapCapitalsTransporting then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00" .. " " .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Transport"], L["icons"], "|cffff0000" .. L["is deactivated"]) end end end,
               },
-            CapitalsMinimapTransportScale = {
-              disabled = function() return not ns.Addon.db.profile.show.MinimapCapitals or not ns.Addon.db.profile.showMinimapCapitalsTransporting end,
+            MinimapCapitalsTransportScale = {
+              disabled = function() return not ns.Addon.db.profile.activate.MinimapCapitals or not ns.Addon.db.profile.activate.MinimapCapitalsTransporting end,
               type = "range",
               name = L["symbol size"],
               desc = L["Changes the size of the icons"] .. "\n" .. "|cffffff00" .. L["Icon size 2.0 would be the default size of Blizzard's own instance icons on the zone map"],
@@ -2777,8 +2777,8 @@ ns.options = {
               width = 0.80,  
               order = 84.1,
               },
-            CapitalsMinimapTransportAlpha = {
-              disabled = function() return not ns.Addon.db.profile.show.MinimapCapitals or not ns.Addon.db.profile.showMinimapCapitalsTransporting end,
+            MinimapCapitalsTransportAlpha = {
+              disabled = function() return not ns.Addon.db.profile.activate.MinimapCapitals or not ns.Addon.db.profile.activate.MinimapCapitalsTransporting end,
               type = "range",
               name = L["symbol visibility"],
               desc = L["Changes the visibility of the icons"],
@@ -2792,7 +2792,7 @@ ns.options = {
               order = 84.5,
               },
             showMinimapCapitalsPortals = {
-              disabled = function() return not ns.Addon.db.profile.show.MinimapCapitals or not ns.Addon.db.profile.showMinimapCapitalsTransporting end,
+              disabled = function() return not ns.Addon.db.profile.activate.MinimapCapitals or not ns.Addon.db.profile.activate.MinimapCapitalsTransporting end,
               type = "toggle",
               name = TextIconPortal:GetIconString() .. " " .. TextIconHPortal:GetIconString() .. " " .. TextIconAPortal:GetIconString() .. " " .. TextIconWayGateGreen:GetIconString().. " " .. TextIconWayGateGolden:GetIconString() .. " " .. L["Portals"],
               desc = L["Show icons of portals on this map"],
@@ -2802,7 +2802,7 @@ ns.options = {
                     if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapCapitalsPortals then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Portals"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
             showMinimapCapitalsZeppelins = {
-              disabled = function() return not ns.Addon.db.profile.show.MinimapCapitals or not ns.Addon.db.profile.showMinimapCapitalsTransporting end,
+              disabled = function() return not ns.Addon.db.profile.activate.MinimapCapitals or not ns.Addon.db.profile.activate.MinimapCapitalsTransporting end,
               type = "toggle",
               name = TextIconZeppelin:GetIconString() .. " " .. TextIconHZeppelin:GetIconString() .. " " .. L["Zeppelins"],
               desc = L["Show icons of zeppelins on this map"],
@@ -2812,7 +2812,7 @@ ns.options = {
                     if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapCapitalsZeppelins then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Zeppelins"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
             showMinimapCapitalsShips = {
-              disabled = function() return not ns.Addon.db.profile.show.MinimapCapitals or not ns.Addon.db.profile.showMinimapCapitalsTransporting end,
+              disabled = function() return not ns.Addon.db.profile.activate.MinimapCapitals or not ns.Addon.db.profile.activate.MinimapCapitalsTransporting end,
               type = "toggle",
               name = TextIconShip:GetIconString() .. " " .. TextIconHShip:GetIconString() .. " " .. TextIconAShip:GetIconString() .. " " .. L["Ships"],
               desc = L["Show icons of ships on this map"],
@@ -2822,7 +2822,7 @@ ns.options = {
                     if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapCapitalsShips then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Ships"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
             showMinimapCapitalsTransport = {
-              disabled = function() return not ns.Addon.db.profile.show.MinimapCapitals or not ns.Addon.db.profile.showMinimapCapitalsTransporting end,
+              disabled = function() return not ns.Addon.db.profile.activate.MinimapCapitals or not ns.Addon.db.profile.activate.MinimapCapitalsTransporting end,
               type = "toggle",
               name = TextIconOgreWaygate:GetIconString() .. " " .. TextIconTravelL:GetIconString() .. " " .. TextIconTransport:GetIconString() .. " " .. TextIconDwarfF:GetIconString() .. " ".. TextIconCarriage:GetIconString() .. " " .. L["Transport"],
               desc = L["Shows special transport icons like"] .. "\n" .. "\n" .. " " .. TextIconOgreWaygate:GetIconString() .. " " .. L["Ogre Waygate"] .. " - " .. GARRISON_LOCATION_TOOLTIP .. "/" .. L["Draenor"] .. "\n" .. "\n" .. " " .. TextIconTransport:GetIconString() .. " " .. L["Teleporter"] .. " - " .. L["Oribos"] .. "/" .. L["Korthia"] .. "/" .. "\n" .. " " .. L["The Maw"] .. "/" .. L["Shadowlands"] .. "\n" .. "\n" .. " " .. TextIconTransport:GetIconString() .. " " .. TextIconDwarfF:GetIconString() .. " " .. L["Travel"] .. " - " .. L["Zandalar"] .. "/" .. L["Kul Tiras"] .. "\n" .. "\n" .. " " .. TextIconCarriage:GetIconString() .. " " .. L["Transport"] .. " - " .. DUNGEON_FLOOR_DEEPRUNTRAM1,
@@ -2839,20 +2839,20 @@ ns.options = {
           desc = "",
           order = 86,
           args = {
-            showMinimapProfessions = {
-              disabled = function() return not ns.Addon.db.profile.show.MinimapCapitals end,
+            MinimapCapitalsProfessions = {
+              disabled = function() return not ns.Addon.db.profile.activate.MinimapCapitals end,
               type = "toggle",
               name = L["Activate icons"],
               desc = L["Enables the display of all possible icons on this map"],
               width = 0.90,
               order = 86.1,
-              get = function() return ns.Addon.db.profile.showMinimapProfessions end,
-              set = function(info, v) ns.Addon.db.profile.showMinimapProfessions = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
-                    if ns.Addon.db.profile.showMinimapProfessions then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00" .. " " .. MINIMAP_LABEL .. " " .. L["Capitals"], GUILD_ROSTER_DROPDOWN_PROFESSION, L["icons"], "|cff00ff00" .. L["is activated"]) else 
-                    if not ns.Addon.db.profile.showMinimapProfessions then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00" .. " " .. MINIMAP_LABEL .. " " .. L["Capitals"], GUILD_ROSTER_DROPDOWN_PROFESSION, L["icons"], "|cffff0000" .. L["is deactivated"]) end end end,
+              get = function() return ns.Addon.db.profile.activate.MinimapCapitalsProfessions end,
+              set = function(info, v) ns.Addon.db.profile.activate.MinimapCapitalsProfessions = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
+                    if ns.Addon.db.profile.activate.MinimapCapitalsProfessions then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00" .. " " .. MINIMAP_LABEL .. " " .. L["Capitals"], GUILD_ROSTER_DROPDOWN_PROFESSION, L["icons"], "|cff00ff00" .. L["is activated"]) else 
+                    if not ns.Addon.db.profile.activate.MinimapCapitalsProfessions then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00" .. " " .. MINIMAP_LABEL .. " " .. L["Capitals"], GUILD_ROSTER_DROPDOWN_PROFESSION, L["icons"], "|cffff0000" .. L["is deactivated"]) end end end,
               },
-            ProfessionsMinimapScale = {
-              disabled = function() return not ns.Addon.db.profile.show.MinimapCapitals or not ns.Addon.db.profile.showMinimapProfessions end,
+            MinimapCapitalsProfessionsScale = {
+              disabled = function() return not ns.Addon.db.profile.activate.MinimapCapitals or not ns.Addon.db.profile.activate.MinimapCapitalsProfessions end,
               type = "range",
               name = L["symbol size"],
               desc = L["Changes the size of the icons"],
@@ -2860,8 +2860,8 @@ ns.options = {
               width = 0.80,   
               order = 86.2,
               },
-            ProfessionsMinimapAlpha = {
-              disabled = function() return not ns.Addon.db.profile.show.MinimapCapitals or not ns.Addon.db.profile.showMinimapProfessions end,
+            MinimapCapitalsProfessionsAlpha = {
+              disabled = function() return not ns.Addon.db.profile.activate.MinimapCapitals or not ns.Addon.db.profile.activate.MinimapCapitalsProfessions end,
               type = "range",
               name = L["symbol visibility"],
               desc = L["Changes the visibility of the icons"],
@@ -2874,159 +2874,159 @@ ns.options = {
               name = "",
               order = 86.4,
               },
-            showMinimapAlchemy = {
-              disabled = function() return not ns.Addon.db.profile.show.MinimapCapitals or not ns.Addon.db.profile.showMinimapProfessions end,
+            showMinimapCapitalsAlchemy = {
+              disabled = function() return not ns.Addon.db.profile.activate.MinimapCapitals or not ns.Addon.db.profile.activate.MinimapCapitalsProfessions end,
               type = "toggle",
               name = TextIconAlchemy:GetIconString() .. " " .. L["Alchemy"],
               desc = "",
               width = 1.2, -- width professions
               order = 87,
               set = function(info, v) ns.Addon.db.profile[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
-                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapAlchemy then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. TUTORIAL_TITLE38, L["Alchemy"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
-                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapAlchemy then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. TUTORIAL_TITLE38, L["Alchemy"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
+                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapCapitalsAlchemy then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. TUTORIAL_TITLE38, L["Alchemy"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
+                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapCapitalsAlchemy then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. TUTORIAL_TITLE38, L["Alchemy"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
-            showMinimapEngineer = {
-              disabled = function() return not ns.Addon.db.profile.show.MinimapCapitals or not ns.Addon.db.profile.showMinimapProfessions end,
+            showMinimapCapitalsEngineer = {
+              disabled = function() return not ns.Addon.db.profile.activate.MinimapCapitals or not ns.Addon.db.profile.activate.MinimapCapitalsProfessions end,
               type = "toggle",
               name = TextIconEngineer:GetIconString() .. " " .. L["Engineer"],
               desc = "",
               width = 1.2, -- width professions
               order = 87.1,
               set = function(info, v) ns.Addon.db.profile[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
-                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapEngineer then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. TUTORIAL_TITLE38, L["Engineer"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
-                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapEngineer then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. TUTORIAL_TITLE38, L["Engineer"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
+                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapCapitalsEngineer then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. TUTORIAL_TITLE38, L["Engineer"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
+                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapCapitalsEngineer then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. TUTORIAL_TITLE38, L["Engineer"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
-            showMinimapJewelcrafting = {
-              disabled = function() return not ns.Addon.db.profile.show.MinimapCapitals or not ns.Addon.db.profile.showMinimapProfessions end,
+            showMinimapCapitalsJewelcrafting = {
+              disabled = function() return not ns.Addon.db.profile.activate.MinimapCapitals or not ns.Addon.db.profile.activate.MinimapCapitalsProfessions end,
               type = "toggle",
               name = TextIconJewelcrafting:GetIconString() .. " " .. L["Jewelcrafting"],
               desc = "",
               width = 1.2, -- width professions
               order = 87.2,
               set = function(info, v) ns.Addon.db.profile[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
-                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapJewelcrafting then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. TUTORIAL_TITLE38, L["Jewelcrafting"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
-                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapJewelcrafting then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. TUTORIAL_TITLE38, L["Jewelcrafting"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
+                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapCapitalsJewelcrafting then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. TUTORIAL_TITLE38, L["Jewelcrafting"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
+                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapCapitalsJewelcrafting then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. TUTORIAL_TITLE38, L["Jewelcrafting"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
-            showMinimapBlacksmith = {
-              disabled = function() return not ns.Addon.db.profile.show.MinimapCapitals or not ns.Addon.db.profile.showMinimapProfessions end,
+            showMinimapCapitalsBlacksmith = {
+              disabled = function() return not ns.Addon.db.profile.activate.MinimapCapitals or not ns.Addon.db.profile.activate.MinimapCapitalsProfessions end,
               type = "toggle",
               name = TextIconBlacksmith:GetIconString() .. " " .. L["Blacksmithing"],
               desc = "",
               width = 1.2, -- width professions
               order = 87.4,
               set = function(info, v) ns.Addon.db.profile[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
-                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapBlacksmith then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. TUTORIAL_TITLE38, L["Blacksmithing"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
-                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapBlacksmith then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. TUTORIAL_TITLE38, L["Blacksmithing"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
+                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapCapitalsBlacksmith then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. TUTORIAL_TITLE38, L["Blacksmithing"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
+                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapCapitalsBlacksmith then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. TUTORIAL_TITLE38, L["Blacksmithing"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
-            showMinimapTailoring = {
-              disabled = function() return not ns.Addon.db.profile.show.MinimapCapitals or not ns.Addon.db.profile.showMinimapProfessions end,
+            showMinimapCapitalsTailoring = {
+              disabled = function() return not ns.Addon.db.profile.activate.MinimapCapitals or not ns.Addon.db.profile.activate.MinimapCapitalsProfessions end,
               type = "toggle",
               name = TextIconTailoring:GetIconString() .. " " .. L["Tailoring"],
               desc = "",
               width = 1.2, -- width professions
               order = 87.5,
               set = function(info, v) ns.Addon.db.profile[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
-                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapTailoring then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. TUTORIAL_TITLE38, L["Tailoring"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
-                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapTailoring then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. TUTORIAL_TITLE38, L["Tailoring"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
+                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapCapitalsTailoring then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. TUTORIAL_TITLE38, L["Tailoring"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
+                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapCapitalsTailoring then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. TUTORIAL_TITLE38, L["Tailoring"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
-            showMinimapSkinning = {
-              disabled = function() return not ns.Addon.db.profile.show.MinimapCapitals or not ns.Addon.db.profile.showMinimapProfessions end,
+            showMinimapCapitalsSkinning = {
+              disabled = function() return not ns.Addon.db.profile.activate.MinimapCapitals or not ns.Addon.db.profile.activate.MinimapCapitalsProfessions end,
               type = "toggle",
               name = TextIconSkinning:GetIconString() .. " " .. L["Skinning"],
               desc = "",
               width = 1.2, -- width professions
               order = 87.6,
               set = function(info, v) ns.Addon.db.profile[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
-                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapSkinning then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. TUTORIAL_TITLE38, L["Skinning"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
-                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapSkinning then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. TUTORIAL_TITLE38, L["Skinning"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
+                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapCapitalsSkinning then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. TUTORIAL_TITLE38, L["Skinning"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
+                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapCapitalsSkinning then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. TUTORIAL_TITLE38, L["Skinning"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
-            showMinimapMining = {
-              disabled = function() return not ns.Addon.db.profile.show.MinimapCapitals or not ns.Addon.db.profile.showMinimapProfessions end,
+            showMinimapCapitalsMining = {
+              disabled = function() return not ns.Addon.db.profile.activate.MinimapCapitals or not ns.Addon.db.profile.activate.MinimapCapitalsProfessions end,
               type = "toggle",
               name = TextIconMining:GetIconString() .. " " .. L["Mining"],
               desc = "",
               width = 1.2, -- width professions
               order = 87.7,
               set = function(info, v) ns.Addon.db.profile[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
-                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapMining then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. TUTORIAL_TITLE38, L["Mining"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
-                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapMining then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. TUTORIAL_TITLE38, L["Mining"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
+                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapCapitalsMining then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. TUTORIAL_TITLE38, L["Mining"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
+                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapCapitalsMining then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. TUTORIAL_TITLE38, L["Mining"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
-            showMinimapHerbalism = {
-              disabled = function() return not ns.Addon.db.profile.show.MinimapCapitals or not ns.Addon.db.profile.showMinimapProfessions end,
+            showMinimapCapitalsHerbalism = {
+              disabled = function() return not ns.Addon.db.profile.activate.MinimapCapitals or not ns.Addon.db.profile.activate.MinimapCapitalsProfessions end,
               type = "toggle",
               name = TextIconHerbalism:GetIconString() .. " " .. L["Herbalism"],
               desc = "",
               width = 1.2, -- width professions
               order = 87.8,
               set = function(info, v) ns.Addon.db.profile[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
-                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapHerbalism then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. TUTORIAL_TITLE38, L["Herbalism"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
-                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapHerbalism then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. TUTORIAL_TITLE38, L["Herbalism"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
+                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapCapitalsHerbalism then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. TUTORIAL_TITLE38, L["Herbalism"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
+                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapCapitalsHerbalism then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. TUTORIAL_TITLE38, L["Herbalism"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
-            showMinimapInscription = {
-              disabled = function() return not ns.Addon.db.profile.show.MinimapCapitals or not ns.Addon.db.profile.showMinimapProfessions end,
+            showMinimapCapitalsInscription = {
+              disabled = function() return not ns.Addon.db.profile.activate.MinimapCapitals or not ns.Addon.db.profile.activate.MinimapCapitalsProfessions end,
               type = "toggle",
               name = TextIconInscription:GetIconString() .. " " .. INSCRIPTION,
               desc = "",
               width = 1.2, -- width professions
               order = 87.9,
               set = function(info, v) ns.Addon.db.profile[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
-                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapInscription then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. TUTORIAL_TITLE38, INSCRIPTION, L["icons"], "|cff00ff00" .. L["are shown"]) else 
-                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapInscription then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. TUTORIAL_TITLE38, INSCRIPTION, L["icons"], "|cffff0000" .. L["are hidden"])end end end,
+                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapCapitalsInscription then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. TUTORIAL_TITLE38, INSCRIPTION, L["icons"], "|cff00ff00" .. L["are shown"]) else 
+                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapCapitalsInscription then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. TUTORIAL_TITLE38, INSCRIPTION, L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
-            showMinimapFishing = {
-              disabled = function() return not ns.Addon.db.profile.show.MinimapCapitals or not ns.Addon.db.profile.showMinimapProfessions end,
+            showMinimapCapitalsFishing = {
+              disabled = function() return not ns.Addon.db.profile.activate.MinimapCapitals or not ns.Addon.db.profile.activate.MinimapCapitalsProfessions end,
               type = "toggle",
               name = TextIconFishing:GetIconString() .. " " .. PROFESSIONS_FISHING,
               desc = "",
               width = 1.2, -- width professions
               order = 88,
               set = function(info, v) ns.Addon.db.profile[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
-                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapFishing then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. TUTORIAL_TITLE38, PROFESSIONS_FISHING, L["icons"], "|cff00ff00" .. L["are shown"]) else 
-                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapFishing then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. TUTORIAL_TITLE38,PROFESSIONS_FISHING, L["icons"], "|cffff0000" .. L["are hidden"])end end end,
+                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapCapitalsFishing then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. TUTORIAL_TITLE38, PROFESSIONS_FISHING, L["icons"], "|cff00ff00" .. L["are shown"]) else 
+                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapCapitalsFishing then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. TUTORIAL_TITLE38,PROFESSIONS_FISHING, L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
-            showMinimapCooking = {
-              disabled = function() return not ns.Addon.db.profile.show.MinimapCapitals or not ns.Addon.db.profile.showMinimapProfessions end,
+            showMinimapCapitalsCooking = {
+              disabled = function() return not ns.Addon.db.profile.activate.MinimapCapitals or not ns.Addon.db.profile.activate.MinimapCapitalsProfessions end,
               type = "toggle",
               name = TextIconCooking:GetIconString() .. " " .. PROFESSIONS_COOKING,
               desc = "",
               width = 1.2, -- width professions
               order = 88.1,
               set = function(info, v) ns.Addon.db.profile[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
-                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapCooking then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. TUTORIAL_TITLE38, PROFESSIONS_COOKING, L["icons"], "|cff00ff00" .. L["are shown"]) else 
-                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapCooking then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. TUTORIAL_TITLE38, PROFESSIONS_COOKING, L["icons"], "|cffff0000" .. L["are hidden"])end end end,
+                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapCapitalsCooking then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. TUTORIAL_TITLE38, PROFESSIONS_COOKING, L["icons"], "|cff00ff00" .. L["are shown"]) else 
+                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapCapitalsCooking then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. TUTORIAL_TITLE38, PROFESSIONS_COOKING, L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
-            showMinimapArchaeology = {
-              disabled = function() return not ns.Addon.db.profile.show.MinimapCapitals or not ns.Addon.db.profile.showMinimapProfessions end,
+            showMinimapCapitalsArchaeology = {
+              disabled = function() return not ns.Addon.db.profile.activate.MinimapCapitals or not ns.Addon.db.profile.activate.MinimapCapitalsProfessions end,
               type = "toggle",
               name = TextIconArchaeology:GetIconString() .. " " .. PROFESSIONS_ARCHAEOLOGY,
               desc = "",
               width = 1.2, -- width professions
               order = 88.2,
               set = function(info, v) ns.Addon.db.profile[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
-                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapArchaeology then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. TUTORIAL_TITLE38, PROFESSIONS_ARCHAEOLOGY, L["icons"], "|cff00ff00" .. L["are shown"]) else 
-                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapArchaeology then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. TUTORIAL_TITLE38, PROFESSIONS_ARCHAEOLOGY, L["icons"], "|cffff0000" .. L["are hidden"])end end end,
+                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapCapitalsArchaeology then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. TUTORIAL_TITLE38, PROFESSIONS_ARCHAEOLOGY, L["icons"], "|cff00ff00" .. L["are shown"]) else 
+                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapCapitalsArchaeology then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. TUTORIAL_TITLE38, PROFESSIONS_ARCHAEOLOGY, L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
-            showMinimapEnchanting = {
-              disabled = function() return not ns.Addon.db.profile.show.MinimapCapitals or not ns.Addon.db.profile.showMinimapProfessions end,
+            showMinimapCapitalsEnchanting = {
+              disabled = function() return not ns.Addon.db.profile.activate.MinimapCapitals or not ns.Addon.db.profile.activate.MinimapCapitalsProfessions end,
               type = "toggle",
               name = TextIconEnchanting:GetIconString() .. " " .. L["Enchanting"],
               desc = "",
               width = 1.2, -- width professions
               order = 88.3,
               set = function(info, v) ns.Addon.db.profile[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
-                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapEnchanting then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. TUTORIAL_TITLE38, L["Enchanting"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
-                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapEnchanting then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. TUTORIAL_TITLE38, L["Enchanting"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
+                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapCapitalsEnchanting then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. TUTORIAL_TITLE38, L["Enchanting"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
+                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapCapitalsEnchanting then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. TUTORIAL_TITLE38, L["Enchanting"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
-            showMinimapLeatherworking = {
-              disabled = function() return not ns.Addon.db.profile.show.MinimapCapitals or not ns.Addon.db.profile.showMinimapProfessions end,
+            showMinimapCapitalsLeatherworking = {
+              disabled = function() return not ns.Addon.db.profile.activate.MinimapCapitals or not ns.Addon.db.profile.activate.MinimapCapitalsProfessions end,
               type = "toggle",
               name = TextIconLeatherworking:GetIconString() .. " " .. L["Leatherworking"],
               desc = "",
               width = 1.2, -- width professions
               order = 88.4,
               set = function(info, v) ns.Addon.db.profile[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
-                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapLeatherworking then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. TUTORIAL_TITLE38, L["Leatherworking"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
-                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapLeatherworking then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. TUTORIAL_TITLE38, L["Leatherworking"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
+                    if ns.Addon.db.profile.noChatMassage and ns.Addon.db.profile.showMinimapCapitalsLeatherworking then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. TUTORIAL_TITLE38, L["Leatherworking"], L["icons"], "|cff00ff00" .. L["are shown"]) else 
+                    if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapCapitalsLeatherworking then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. TUTORIAL_TITLE38, L["Leatherworking"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
             },
           },
@@ -3036,20 +3036,20 @@ ns.options = {
           desc = "",
           order = 89,
           args = {
-            showMinimapCapitalsGeneral = {
-              disabled = function() return not ns.Addon.db.profile.show.MinimapCapitals end,
+            MinimapCapitalsGeneral = {
+              disabled = function() return not ns.Addon.db.profile.activate.MinimapCapitals end,
               type = "toggle",
               name = L["Activate icons"],
               desc = L["Activates the display of all possible icons on this map"],
               width = 0.90,
               order = 89.1,
-              get = function() return ns.Addon.db.profile.showMinimapCapitalsGeneral end,
-              set = function(info, v) ns.Addon.db.profile.showMinimapCapitalsGeneral = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
-                    if ns.Addon.db.profile.showMinimapCapitalsGeneral then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00" .. " " .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Generals"], L["icons"], "|cff00ff00" .. L["is activated"]) else 
-                    if not ns.Addon.db.profile.showMinimapCapitalsGeneral then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00" .. " " .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Generals"], L["icons"], "|cffff0000" .. L["is deactivated"]) end end end,
+              get = function() return ns.Addon.db.profile.activate.MinimapCapitalsGeneral end,
+              set = function(info, v) ns.Addon.db.profile.activate.MinimapCapitalsGeneral = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
+                    if ns.Addon.db.profile.activate.MinimapCapitalsGeneral then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00" .. " " .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Generals"], L["icons"], "|cff00ff00" .. L["is activated"]) else 
+                    if not ns.Addon.db.profile.activate.MinimapCapitalsGeneral then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00" .. " " .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Generals"], L["icons"], "|cffff0000" .. L["is deactivated"]) end end end,
               },
-            CapitalsMinimapGeneralScale = {
-              disabled = function() return not ns.Addon.db.profile.show.MinimapCapitals or not ns.Addon.db.profile.showMinimapCapitalsGeneral end,
+            MinimapCapitalsGeneralScale = {
+              disabled = function() return not ns.Addon.db.profile.activate.MinimapCapitals or not ns.Addon.db.profile.activate.MinimapCapitalsGeneral end,
               type = "range",
               name = L["symbol size"],
               desc = L["Changes the size of the icons"],
@@ -3057,8 +3057,8 @@ ns.options = {
               width = 0.80, 
               order = 89.2,
               },
-            CapitalsMinimapGeneralAlpha = {
-              disabled = function() return not ns.Addon.db.profile.show.MinimapCapitals or not ns.Addon.db.profile.showMinimapCapitalsGeneral end,
+            MinimapCapitalsGeneralAlpha = {
+              disabled = function() return not ns.Addon.db.profile.activate.MinimapCapitals or not ns.Addon.db.profile.activate.MinimapCapitalsGeneral end,
               type = "range",
               name = L["symbol visibility"],
               desc = L["Changes the visibility of the icons"],
@@ -3072,7 +3072,7 @@ ns.options = {
               order = 89.4,
               },
             showMinimapCapitalsMapNotes = {
-              disabled = function() return not ns.Addon.db.profile.show.MinimapCapitals or not ns.Addon.db.profile.showMinimapCapitalsGeneral end,
+              disabled = function() return not ns.Addon.db.profile.activate.MinimapCapitals or not ns.Addon.db.profile.activate.MinimapCapitalsGeneral end,
               type = "toggle",
               name = TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME,
               desc = L["This MapNotes icons shows various icons that are too close to each other together"] .. "\n" .. "\n" .. TextIconBank:GetIconString() .. " " .. BANK .. "\n" .. TextIconAuctioneer:GetIconString() .. " " .. MINIMAP_TRACKING_AUCTIONEER .. "\n" .. TextIconHearthstone:GetIconString() .. " " .. MINIMAP_TRACKING_INNKEEPER .. "\n" .. TextIconPassageup:GetIconString() .. " " .. TextIconPassagedown:GetIconString() .. " " .. TextIconPassageleft:GetIconString() .. " " .. TextIconPassageright:GetIconString() .. " " .. L["Paths"],
@@ -3083,7 +3083,7 @@ ns.options = {
                     if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapCapitalsMapNotes then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" ..  MINIMAP_LABEL .. " " .. L["Capitals"], COLORED_ADDON_NAME, L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
             showMinimapCapitalsPaths = {
-              disabled = function() return not ns.Addon.db.profile.show.MinimapCapitals or not ns.Addon.db.profile.showMinimapCapitalsGeneral end,
+              disabled = function() return not ns.Addon.db.profile.activate.MinimapCapitals or not ns.Addon.db.profile.activate.MinimapCapitalsGeneral end,
               type = "toggle",
               name = TextIconPassageup:GetIconString() .. " " .. TextIconPassagedown:GetIconString() .. " " .. TextIconPassageleft:GetIconString() .. " " .. TextIconPassageright:GetIconString() .. " " ..L["Paths"],
               desc = L["Exit"] .. " / " .. L["Paths"] .. " / " .. L["Passage"],
@@ -3094,7 +3094,7 @@ ns.options = {
                     if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapCapitalsPaths then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. MINIMAP_LABEL .. " " .. L["Capitals"], L["Paths"], L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
             showMinimapCapitalsHearthstone = {
-              disabled = function() return not ns.Addon.db.profile.show.MinimapCapitals or not ns.Addon.db.profile.showMinimapCapitalsGeneral end,
+              disabled = function() return not ns.Addon.db.profile.activate.MinimapCapitals or not ns.Addon.db.profile.activate.MinimapCapitalsGeneral end,
               type = "toggle",
               name = TextIconHearthstone:GetIconString() .. " " .. MINIMAP_TRACKING_INNKEEPER,
               desc = "",
@@ -3105,7 +3105,7 @@ ns.options = {
                     if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapCapitalsHearthstone then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" ..  MINIMAP_LABEL .. " " .. L["Capitals"], MINIMAP_TRACKING_INNKEEPER, L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
             showMinimapCapitalsAuctioneer = {
-              disabled = function() return not ns.Addon.db.profile.show.MinimapCapitals or not ns.Addon.db.profile.showMinimapCapitalsGeneral end,
+              disabled = function() return not ns.Addon.db.profile.activate.MinimapCapitals or not ns.Addon.db.profile.activate.MinimapCapitalsGeneral end,
               type = "toggle",
               name = TextIconAuctioneer:GetIconString() .. " " .. MINIMAP_TRACKING_AUCTIONEER,
               desc = "",
@@ -3116,7 +3116,7 @@ ns.options = {
                     if ns.Addon.db.profile.noChatMassage and not ns.Addon.db.profile.showMinimapCapitalsAuctioneer then print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" ..  MINIMAP_LABEL .. " " .. L["Capitals"], MINIMAP_TRACKING_AUCTIONEER, L["icons"], "|cffff0000" .. L["are hidden"])end end end,
               },
             showMinimapCapitalsBank = {
-              disabled = function() return not ns.Addon.db.profile.show.MinimapCapitals or not ns.Addon.db.profile.showMinimapCapitalsGeneral end,
+              disabled = function() return not ns.Addon.db.profile.activate.MinimapCapitals or not ns.Addon.db.profile.activate.MinimapCapitalsGeneral end,
               type = "toggle",
               name = TextIconBank:GetIconString() .. " " .. BANK,
               desc = "",

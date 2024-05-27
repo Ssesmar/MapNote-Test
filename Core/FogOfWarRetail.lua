@@ -106,20 +106,20 @@ function FogOfWar:MapExplorationPin_RefreshOverlays(pin, fullUpdate)
 					texture:SetPoint("TOPLEFT", offsetX + (TILE_SIZE_WIDTH * (k - 1)), -(offsetY + (TILE_SIZE_HEIGHT * (j - 1))))
 					texture:SetTexture(tonumber(fileDataIDs[((j - 1) * numTexturesWide) + k]), nil, nil, "TRILINEAR")
 
-					if ns.Addon.db.profile.show.FogOfWar then
+					if ns.Addon.db.profile.activate.FogOfWar then
 						texture:SetVertexColor(Xa, Xr, Xg, Xb)
 					end
-					if ns.Addon.db.profile.show.FogOfWarAlphaReduce then
+					if ns.Addon.db.profile.activate.FogOfWarAlphaReduce then
 						texture:SetVertexColor(a_Reduce, r_Reduce, g_Reduce, b_Reduce)
 					end
-					if ns.Addon.db.profile.show.FogOfWar then
+					if ns.Addon.db.profile.activate.FogOfWar then
 						texture:SetAlpha(Xa)
 					end
-					if ns.Addon.db.profile.show.FogOfWarAlphaReduce then
+					if ns.Addon.db.profile.activate.FogOfWarAlphaReduce then
 						texture:SetAlpha(a_Reduce)
 					end
 					texture:SetDrawLayer("ARTWORK", -1)
-                    if ns.Addon.db.profile.show.FogOfWar then
+                    if ns.Addon.db.profile.activate.FogOfWar then
                         texture:Show()
                     else
                         texture:Hide()

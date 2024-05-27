@@ -17,7 +17,7 @@ local extraInformations = { }
 
 
 function MapNotesMiniButton:OnInitialize() --mmb.lua
-  self.db = LibStub("AceDB-3.0"):New("MNMiniMapButtonDB", { profile = { minimap = { hide = false, }, }, }) 
+  self.db = LibStub("AceDB-3.0"):New("MNMiniMapButtonRetailDB", { profile = { minimap = { hide = false, }, }, }) 
   MNMMBIcon:Register("MNMiniMapButton", ns.miniButton, self.db.profile.minimap)
 end
 
@@ -246,19 +246,19 @@ do
 
       -- Profession icons in Capitals
       if ns.professions and ns.CapitalIDs and (value.hideOnMinimap == true) then
-        scale = db.ProfessionsScale
-        alpha = db.ProfessionsAlpha
+        scale = db.CapitalsProfessionsScale
+        alpha = db.CapitalsProfessionsAlpha
       end
 
       -- Profession Minimap icons in Capitals
       if ns.CapitalIDs and (value.hideOnMinimap == false) then
-        scale = db.CapitalsMinimapScale
-        alpha = db.CapitalsMinimapAlpha
+        scale = db.MinimapCapitalsScale
+        alpha = db.MinimapCapitalsAlpha
       end
       
       -- inside Dungeon
       mapInfo = C_Map.GetMapInfo(t.uiMapId)
-      if mapInfo and mapInfo.mapType == 4 then 
+      if mapInfo and mapInfo.mapType == 4 and not ns.CapitalIDs then 
           scale = db.dungeonScale
           alpha = db.dungeonAlpha
       end
@@ -269,28 +269,28 @@ do
         alpha = db.instanceAlpha
       end
 
-      -- Profession icons in Capitals
+      -- Profession Minimap icons in Capitals
       if ns.professions and ns.CapitalIDs and (value.hideOnMinimap == false) then
-        scale = db.ProfessionsMinimapScale
-        alpha = db.ProfessionsMinimapAlpha
+        scale = db.MinimapCapitalsProfessionsScale
+        alpha = db.MinimapCapitalsProfessionsAlpha
       end
 
       -- Capitals Minimap Transport (Zeppeline/Ship/Carriage) icons
       if ns.CapitalIDs and ns.transports and (value.hideOnMinimap == false) then
-        scale = db.CapitalsMinimapTransportScale
-        alpha = db.CapitalsMinimapTransportAlpha
+        scale = db.MinimapCapitalsTransportScale
+        alpha = db.MinimapCapitalsTransportAlpha
       end
 
       -- Capitals Minimap Instance (Dungeon/Raid/Passage/Multi) icons
       if ns.CapitalIDs and ns.instances and (value.hideOnMinimap == false) then
-        scale = db.CapitalsMinimapInstanceScale
-        alpha = db.CapitalsMinimapInstanceAlpha
+        scale = db.MinimapCapitalsInstanceScale
+        alpha = db.MinimapCapitalsInstanceAlpha
       end
 
       -- Capitals Minimap General (Hearthstone/Exit/Passage) icons
       if ns.CapitalIDs and ns.capitalgenerals and (value.hideOnMinimap == false) then
-        scale = db.CapitalsMinimapGeneralScale
-        alpha = db.CapitalsMinimapGeneralAlpha
+        scale = db.MinimapCapitalsGeneralScale
+        alpha = db.MinimapCapitalsGeneralAlpha
       end
 
       -- Capitals General (Hearthstone/Exit/Passage) icons
@@ -308,18 +308,8 @@ do
       -- Capitals Instance (Dungeon/Raid/Passage/Multi) icons
       if ns.CapitalIDs and ns.instances and (value.hideOnMinimap == true) then
         scale = db.CapitalsInstanceScale
-        alpha = db.CapitalsInstanceScale
-      end
-
-      --if t.uiMapId == 1670 then -- Oribos
-      --    scale = db.zoneScale
-      --    alpha = db.zoneAlpha
-      --    
-      --    if t.uiMapId == 1670 and t.minimapUpdate then -- Oribos Minimap
-      --      scale = db.minimapScale
-      --      alpha = db.minimapAlpha
-      --    end
-      --end      
+        alpha = db.CapitalsInstanceAlpha
+      end   
 
       if t.uiMapId == 947 then-- Azeroth World Map
         scale = db.azerothScale
@@ -343,7 +333,7 @@ do
 
 	local function iterCont(t, prestate) -- continent settings
 		if not t then return end
-    --if not db.show.Continent then return end
+    --if not ns.Addon.db.profile.activate.Continent then return end
 
     local state, value
   	local zone = t.C[t.Z]
@@ -457,7 +447,7 @@ end
 
 function pluginHandler:OnClick(button, pressed, uiMapId, coord)
 
-  if not db.show.ShiftWorld then
+  if not ns.Addon.db.profile.activate.ShiftWorld then
 
     if (not pressed) then return end
 
@@ -517,7 +507,7 @@ function pluginHandler:OnClick(button, pressed, uiMapId, coord)
 
   end
 
-  if db.show.ShiftWorld then
+  if ns.Addon.db.profile.activate.ShiftWorld then
 
     if (not pressed) then return end
 
@@ -603,22 +593,29 @@ function Addon:PLAYER_LOGIN()
 
   ns.LoadOptions(self)
   ns.Addon = Addon
- 
-  HandyNotes:RegisterPluginDB("MapNotes", pluginHandler, ns.options)
-  self.db = LibStub("AceDB-3.0"):New(ADDON_NAME .. "DB", ns.defaults, true)
-  db = self.db.profile
-  Addon:RegisterEvent("PLAYER_ENTERING_WORLD") -- Check for any lockout changes when we zone
-  LibStub("AceConfigRegistry-3.0"):RegisterOptionsTable("MNMiniMapButton", ns.options)
 
-  if db.show.HideMMB then -- minimap button
+  -- Register Database Profile
+  self.db = LibStub("AceDB-3.0"):New("HandyNotes_MapNotesRetailDB", ns.defaults)
+  db = self.db.profile
+
+  -- Register options 
+  HandyNotes:RegisterPluginDB("MapNotes", pluginHandler, ns.options)
+  LibStub("AceConfigRegistry-3.0"):RegisterOptionsTable("MNMiniMapButton", ns.options) -- Minimap
+
+  -- Check for any lockout changes when we zone
+  Addon:RegisterEvent("PLAYER_ENTERING_WORLD") 
+
+  if ns.Addon.db.profile.activate.HideMMB then -- minimap button
     MNMMBIcon:Hide("MNMiniMapButton")
   end
 
+  -- Register Worldmapbutton
   ns.WorldMapButton = LibStub('Krowi_WorldMapButtons-1.4'):Add(ADDON_NAME .. "WorldMapOptionsButtonTemplate","BUTTON")
-  if ns.Addon.db.profile.show.HideWMB
+  if ns.Addon.db.profile.activate.HideWMB
     then ns.WorldMapButton:Hide()
     else ns.WorldMapButton:Show()
   end
+
 end
 
 function Addon:PopulateMinimap()
@@ -656,7 +653,7 @@ function Addon:PopulateTable()
   ns.LoadWorldNodesLocationInfo(self) -- load nodes\Retail\RetailWorldNodesLocation.lua
 
   ns.LoadCapitalsLocationinfo(self) -- load nodes\Retail\RetailCapitals.lua
-  ns.LoadCapitalsMinimapLocationinfo(self) -- load nodes\Retail\RetailCapitalsMinimap.lua
+  ns.LoadMinimapCapitalsLocationinfo(self) -- load nodes\Retail\RetailMinimapCapitals.lua
 
 end
 
