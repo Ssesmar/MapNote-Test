@@ -1,19 +1,19 @@
 local ADDON_NAME, ns = ...
 local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
 
-function ns.LoadCapitalsMinimapLocationinfo(self)
+function ns.LoadMinimapCapitalsLocationinfo(self)
 local db = ns.Addon.db.profile
 local minimap = ns.minimap
 
 --#####################################################################################################
 --##########################        function to hide all minimap below         ########################
 --#####################################################################################################
-if not db.show.HideMapNote then
+if not db.activate.HideMapNote then
 
     --########################################################################################
     --################################         Capitals       ################################
     --########################################################################################
-    if db.show.MinimapCapitals then
+    if db.activate.MinimapCapitals then
 
 
     --###########################################################################################
@@ -24,44 +24,44 @@ if not db.show.HideMapNote then
     --################
     --### Ogrimmar ###
     --################
-        if self.db.profile.showMinimapOrgrimmar then
+        if self.db.profile.showMinimapCapitalsOrgrimmar then
 
         --#############################
         --### Horde or EnemyFaction ###
         --#############################
-            if self.faction == "Horde" or db.show.MinimapCapitalEnemyFaction then
+            if self.faction == "Horde" or db.activate.MinimapCapitalsEnemyFaction then
 
             --Professions Orgrimmar
-                if self.db.profile.showMinimapProfessions then
+                if self.db.profile.activate.MinimapCapitalsProfessions then
 
-                    if self.db.profile.showMinimapAlchemy then
+                    if self.db.profile.showMinimapCapitalsAlchemy then
                         minimap[85][55684575] = { name = L["Alchemy"], type = "Alchemy", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
                 
-                    if self.db.profile.showMinimapLeatherworking then
+                    if self.db.profile.showMinimapCapitalsLeatherworking then
                         minimap[85][60905490] = { name = L["Leatherworking"], type = "Leatherworking", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapEngineer then
+                    if self.db.profile.showMinimapCapitalsEngineer then
                         minimap[85][57105622] = { name = L["Engineer"], type = "Engineer", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                         minimap[85][37058474] = { name = L["Engineer"], type = "Engineer", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapSkinning then
+                    if self.db.profile.showMinimapCapitalsSkinning then
                         minimap[85][61195463] = { name = L["Skinning"], type = "Skinning", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                         minimap[85][39404968] = { name = L["Skinning"], type = "Skinning", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapTailoring then
+                    if self.db.profile.showMinimapCapitalsTailoring then
                         minimap[85][60755912] = { name = L["Tailoring"], type = "Tailoring", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                         minimap[85][38835061] = { name = L["Tailoring"], type = "Tailoring", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapJewelcrafting then
+                    if self.db.profile.showMinimapCapitalsJewelcrafting then
                         minimap[85][72493435] = { name = L["Jewelcrafting"], type = "Jewelcrafting", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapBlacksmith then
+                    if self.db.profile.showMinimapCapitalsBlacksmith then
                         minimap[85][76533451] = { name = L["Blacksmithing"], type = "Blacksmith", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                         minimap[85][75353400] = { name = L["Blacksmithing"], type = "Blacksmith", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                         minimap[85][76373707] = { name = L["Blacksmithing"], type = "Blacksmith", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
@@ -69,35 +69,35 @@ if not db.show.HideMapNote then
                         minimap[85][44237719] = { name = L["Blacksmithing"], type = "Blacksmith", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapMining then
+                    if self.db.profile.showMinimapCapitalsMining then
                         minimap[85][39058556] = { name = L["Mining"], type = "Mining", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                         minimap[85][44547839] = { name = L["Mining"], type = "Mining", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                         minimap[85][72313491] = { name = L["Mining"], type = "Mining", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapFishing then
+                    if self.db.profile.showMinimapCapitalsFishing then
                         minimap[85][66434193] = { name = PROFESSIONS_FISHING, type = "Fishing", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                         minimap[85][35196733] = { name = PROFESSIONS_FISHING, type = "Fishing", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapCooking then
+                    if self.db.profile.showMinimapCapitalsCooking then
                         minimap[85][56376139] = { name = PROFESSIONS_COOKING, type = "Cooking", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                         minimap[85][41187939] = { name = PROFESSIONS_COOKING, type = "Cooking", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                         minimap[85][32256966] = { name = PROFESSIONS_COOKING, type = "Cooking", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapArchaeology then
+                    if self.db.profile.showMinimapCapitalsArchaeology then
                         minimap[85][49077056] = { name = PROFESSIONS_ARCHAEOLOGY, type = "Archaeology", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapHerbalism then
+                    if self.db.profile.showMinimapCapitalsHerbalism then
                         minimap[85][54895027] = { name = L["Herbalism"], type = "Herbalism", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
                 end
 
             --Transports Orgrimmar
-                if self.db.profile.showMinimapCapitalsTransporting then
+                if self.db.profile.activate.MinimapCapitalsTransporting then
 
                     if self.db.profile.showMinimapCapitalsPortals then
                         minimap[85][50765561] = { mnID = 18, name = "", type = "HPortal", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = L["Portal"] .. " => " .. L["Ruins of Lordaeron"] } -- Ruins of Lordaeron 
@@ -130,7 +130,7 @@ if not db.show.HideMapNote then
                 end
     
             --Instances Orgrimmar
-                if self.db.profile.showMinimapCapitalsInstances then
+                if self.db.profile.activate.MinimapCapitalsInstances then
     
                     if self.db.profile.showMinimapCapitalsDungeons then
                         --minimap[85][51685850] = { id = 226, type = "Dungeon", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Ragefire
@@ -146,7 +146,7 @@ if not db.show.HideMapNote then
                 end
 
             --General Orgrimmar
-                if self.db.profile.showMinimapCapitalsGeneral then
+                if self.db.profile.activate.MinimapCapitalsGeneral then
     
                     if self.db.profile.showMinimapCapitalsPaths then
                         minimap[85][74800606] = { dnID = L["Exit"], name = "", mnID = 76, type = "PassageRightL", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Passage/Exit 
@@ -189,68 +189,68 @@ if not db.show.HideMapNote then
     --#####################
     --### Thunder Bluff ###
     --#####################
-        if self.db.profile.showMinimapThunderBluff then
+        if self.db.profile.showMinimapCapitalsThunderBluff then
 
         --#############################
         --### Horde or EnemyFaction ###
         --#############################
-            if self.faction == "Horde" or db.show.MinimapCapitalEnemyFaction then
+            if self.faction == "Horde" or db.activate.MinimapCapitalsEnemyFaction then
 
             --Professions Thunder Bluff
-                if self.db.profile.showMinimapProfessions then
+                if self.db.profile.activate.MinimapCapitalsProfessions then
 
-                    if self.db.profile.showMinimapAlchemy then
+                    if self.db.profile.showMinimapCapitalsAlchemy then
                         minimap[88][46643317] = { name = L["Alchemy"], type = "Alchemy", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
                 
-                    if self.db.profile.showMinimapLeatherworking then
+                    if self.db.profile.showMinimapCapitalsLeatherworking then
                         minimap[88][41514257] = { name = L["Leatherworking"], type = "Leatherworking", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapEngineer then
+                    if self.db.profile.showMinimapCapitalsEngineer then
                         minimap[88][36065961] = { name = L["Engineer"], type = "Engineer", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapSkinning then
+                    if self.db.profile.showMinimapCapitalsSkinning then
                         minimap[88][44424321] = { name = L["Skinning"], type = "Skinning", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapTailoring then
+                    if self.db.profile.showMinimapCapitalsTailoring then
                         minimap[88][44544531] = { name = L["Tailoring"], type = "Tailoring", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapJewelcrafting then
+                    if self.db.profile.showMinimapCapitalsJewelcrafting then
                         minimap[88][34825399] = { name = L["Jewelcrafting"], type = "Jewelcrafting", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showBlacksmith then
+                    if self.db.profile.showCapitalsBlacksmith then
                         minimap[88][39365510] = { name = L["Blacksmithing"], type = "Blacksmith", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapMining then
+                    if self.db.profile.showMinimapCapitalsMining then
                         minimap[88][34385790] = { name = L["Mining"], type = "Mining", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapFishing then
+                    if self.db.profile.showMinimapCapitalsFishing then
                         minimap[88][56144642] = { name = PROFESSIONS_FISHING, type = "Fishing", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapCooking then
+                    if self.db.profile.showMinimapCapitalsCooking then
                         minimap[88][50745310] = { name = PROFESSIONS_COOKING, type = "Cooking", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapArchaeology then
+                    if self.db.profile.showMinimapCapitalsArchaeology then
                         minimap[88][75032812] = { name = PROFESSIONS_ARCHAEOLOGY, type = "Archaeology", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapHerbalism then
+                    if self.db.profile.showMinimapCapitalsHerbalism then
                         minimap[88][49954040] = { name = L["Herbalism"], type = "Herbalism", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
                 end
 
             --Transports Thunder Bluff
-                if self.db.profile.showMinimapCapitalsTransporting then
+                if self.db.profile.activate.MinimapCapitalsTransporting then
   
                     if self.db.profile.showMinimapCapitalsZeppelins then
                         minimap[88][14292570] = { mnID = 85, name = "", type = "HZeppelin", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = L["Zeppelin"] .. " => " .. ORGRIMMAR } -- Zeppelin from Thunder Bluff to OG
@@ -259,7 +259,7 @@ if not db.show.HideMapNote then
                 end
 
             --General Thunder Bluff
-            if self.db.profile.showMinimapCapitalsGeneral then
+            if self.db.profile.activate.MinimapCapitalsGeneral then
     
                 if self.db.profile.showMinimapCapitalsPaths then
                     minimap[88][31886595] = { dnID = L["Exit"], name = "", mnID = 7, type = "PassageDownL", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
@@ -288,78 +288,78 @@ if not db.show.HideMapNote then
     --##################
     --### Silvermoon ###
     --##################
-        if self.db.profile.showMinimapSilvermoon then
+        if self.db.profile.showMinimapCapitalsSilvermoon then
 
         --#############################
         --### Horde or EnemyFaction ###
         --#############################
-            if self.faction == "Horde" or db.show.MinimapCapitalEnemyFaction then
+            if self.faction == "Horde" or db.activate.MinimapCapitalsEnemyFaction then
 
             --Professions Silvermoon
-                if self.db.profile.showMinimapProfessions then
+                if self.db.profile.activate.MinimapCapitalsProfessions then
 
-                    if self.db.profile.showMinimapAlchemy then
+                    if self.db.profile.showMinimapCapitalsAlchemy then
                         minimap[110][66701673] = { name = L["Alchemy"], type = "Alchemy", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
                 
-                    if self.db.profile.showMinimapLeatherworking then
+                    if self.db.profile.showMinimapCapitalsLeatherworking then
                         minimap[110][85008054] = { name = L["Leatherworking"], type = "Leatherworking", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapEngineer then
+                    if self.db.profile.showMinimapCapitalsEngineer then
                         minimap[110][76634110] = { name = L["Engineer"], type = "Engineer", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapSkinning then
+                    if self.db.profile.showMinimapCapitalsSkinning then
                         minimap[110][84997931] = { name = L["Skinning"], type = "Skinning", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapTailoring then
+                    if self.db.profile.showMinimapCapitalsTailoring then
                         minimap[110][57365009] = { name = L["Tailoring"], type = "Tailoring", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapJewelcrafting then
+                    if self.db.profile.showMinimapCapitalsJewelcrafting then
                         minimap[110][91377443] = { name = L["Jewelcrafting"], type = "Jewelcrafting", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                         minimap[110][90327383] = { name = L["Jewelcrafting"], type = "Jewelcrafting", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showBlacksmith then
+                    if self.db.profile.showCapitalsBlacksmith then
                         minimap[110][79423869] = { name = L["Blacksmithing"], type = "Blacksmith", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapMining then
+                    if self.db.profile.showMinimapCapitalsMining then
                         minimap[110][78914322] = { name = L["Mining"], type = "Mining", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapFishing then
+                    if self.db.profile.showMinimapCapitalsFishing then
                         minimap[110][76246779] = { name = PROFESSIONS_FISHING, type = "Fishing", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapCooking then
+                    if self.db.profile.showMinimapCapitalsCooking then
                         minimap[110][69647153] = { name = PROFESSIONS_COOKING, type = "Cooking", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapArchaeology then
+                    if self.db.profile.showMinimapCapitalsArchaeology then
                         minimap[110][75032812] = { name = PROFESSIONS_ARCHAEOLOGY, type = "Archaeology", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                         minimap[110][81436390] = { name = PROFESSIONS_ARCHAEOLOGY, type = "Archaeology", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapHerbalism then
+                    if self.db.profile.showMinimapCapitalsHerbalism then
                         minimap[110][67401842] = { name = L["Herbalism"], type = "Herbalism", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showInscription then
+                    if self.db.profile.showCapitalsInscription then
                         minimap[110][69322382] = { name = INSCRIPTION, type = "Inscription", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showEnchanting then
+                    if self.db.profile.showCapitalsEnchanting then
                         minimap[110][70012365] = { name = L["Enchanting"], type = "Enchanting", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
                 end
 
             --Transports Silvermoon
-                if self.db.profile.showMinimapCapitalsTransporting then
+                if self.db.profile.activate.MinimapCapitalsTransporting then
 
                     if self.db.profile.showMinimapCapitalsPortals then
                         minimap[110][58511859] = { mnID = 85, name = "", type = "HPortal", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = L["Portal"] .. " => " .. ORGRIMMAR } -- Portal to Orgrimmar from Silvermoon 
@@ -369,7 +369,7 @@ if not db.show.HideMapNote then
                 end
 
             --General Silvermoon
-                if self.db.profile.showMinimapCapitalsGeneral then
+                if self.db.profile.activate.MinimapCapitalsGeneral then
     
                     if self.db.profile.showMinimapCapitalsPaths then
                         minimap[110][72609199] = { dnID = L["Exit"], name = "", mnID = 94, type = "PassageDownL", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Passage/Exit 
@@ -399,77 +399,77 @@ if not db.show.HideMapNote then
     --#################
     --### Undercity ###
     --#################
-        if self.db.profile.showMinimapUndercity then
+        if self.db.profile.showMinimapCapitalsUndercity then
 
         --#############################
         --### Horde or EnemyFaction ###
         --#############################
-            if self.faction == "Horde" or db.show.MinimapCapitalEnemyFaction then
+            if self.faction == "Horde" or db.activate.MinimapCapitalsEnemyFaction then
 
             --Professions Undercity
-                if self.db.profile.showMinimapProfessions then
+                if self.db.profile.activate.MinimapCapitalsProfessions then
 
-                    if self.db.profile.showMinimapAlchemy then
+                    if self.db.profile.showMinimapCapitalsAlchemy then
                         minimap[90][47757332] = { name = L["Alchemy"], type = "Alchemy", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                         minimap[90][52947737] = { name = L["Alchemy"], type = "PassageDownL", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = L["Passage"] .. " " .. MINIMAP_TRACKING_TRAINER_PROFESSION }
                         minimap[90][44626639] = { name = L["Alchemy"], type = "PassageDownL", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = L["Passage"] .. " " .. MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
                 
-                    if self.db.profile.showMinimapLeatherworking then
+                    if self.db.profile.showMinimapCapitalsLeatherworking then
                         minimap[90][70155740] = { name = L["Leatherworking"], type = "Leatherworking", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapEngineer then
+                    if self.db.profile.showMinimapCapitalsEngineer then
                         minimap[90][76107409] = { name = L["Engineer"], type = "Engineer", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapSkinning then
+                    if self.db.profile.showMinimapCapitalsSkinning then
                         minimap[90][70165922] = { name = L["Skinning"], type = "Skinning", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapTailoring then
+                    if self.db.profile.showMinimapCapitalsTailoring then
                         minimap[90][70763072] = { name = L["Tailoring"], type = "Tailoring", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapJewelcrafting then
+                    if self.db.profile.showMinimapCapitalsJewelcrafting then
                         minimap[90][56503630] = { name = L["Jewelcrafting"], type = "Jewelcrafting", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showBlacksmith then
+                    if self.db.profile.showCapitalsBlacksmith then
                         minimap[90][61313061] = { name = L["Blacksmithing"], type = "Blacksmith", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapMining then
+                    if self.db.profile.showMinimapCapitalsMining then
                         minimap[90][56043744] = { name = L["Mining"], type = "Mining", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapFishing then
+                    if self.db.profile.showMinimapCapitalsFishing then
                         minimap[90][80693124] = { name = PROFESSIONS_FISHING, type = "Fishing", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapCooking then
+                    if self.db.profile.showMinimapCapitalsCooking then
                         minimap[90][62194489] = { name = PROFESSIONS_COOKING, type = "Cooking", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapArchaeology then
+                    if self.db.profile.showMinimapCapitalsArchaeology then
                         minimap[90][75403772] = { name = PROFESSIONS_ARCHAEOLOGY, type = "Archaeology", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapHerbalism then
+                    if self.db.profile.showMinimapCapitalsHerbalism then
                         minimap[90][54014961] = { name = L["Herbalism"], type = "Herbalism", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showInscription then
+                    if self.db.profile.showCapitalsInscription then
                         minimap[90][61065801] = { name = INSCRIPTION, type = "Inscription", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showEnchanting then
+                    if self.db.profile.showCapitalsEnchanting then
                         minimap[90][61866139] = { name = L["Enchanting"], type = "Enchanting", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
                 end
 
             --Transports Undercity
-                if self.db.profile.showMinimapCapitalsTransporting then
+                if self.db.profile.activate.MinimapCapitalsTransporting then
 
                     if self.db.profile.showMinimapCapitalsPortals then
                         minimap[90][85181711] = { mnID = 100, name = "", type = "HPortal", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Portal from Old Undercity to Hellfire
@@ -478,7 +478,7 @@ if not db.show.HideMapNote then
                 end
 
             --General Undercity
-                if self.db.profile.showMinimapCapitalsGeneral then
+                if self.db.profile.activate.MinimapCapitalsGeneral then
     
                     if self.db.profile.showMinimapCapitalsPaths then
                         minimap[90][15003101] = { dnID = L["Exit"], name = "", mnID = 18, type = "PassageUpL", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Passage/Exit 
@@ -519,12 +519,12 @@ if not db.show.HideMapNote then
     --################
     --### Warspear ###
     --################
-        if self.db.profile.showMinimapWarspear then
+        if self.db.profile.showMinimapCapitalsWarspear then
 
         --#############################
         --### Horde or EnemyFaction ###
         --#############################
-            if self.faction == "Horde" or db.show.MinimapCapitalEnemyFaction then
+            if self.faction == "Horde" or db.activate.MinimapCapitalsEnemyFaction then
 
             --Instance Warspear / Garrison
                 if self.db.profile.showCapitalsInstances then
@@ -536,67 +536,67 @@ if not db.show.HideMapNote then
                 end
 
             --Professions Warspear
-                if self.db.profile.showMinimapProfessions then
+                if self.db.profile.activate.MinimapCapitalsProfessions then
 
-                    if self.db.profile.showMinimapAlchemy then
+                    if self.db.profile.showMinimapCapitalsAlchemy then
                         minimap[624][60832652] = { name = L["Alchemy"], type = "Alchemy", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
                 
-                    if self.db.profile.showMinimapLeatherworking then
+                    if self.db.profile.showMinimapCapitalsLeatherworking then
                         minimap[624][49532786] = { name = L["Leatherworking"], type = "Leatherworking", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapEngineer then
+                    if self.db.profile.showMinimapCapitalsEngineer then
                         minimap[624][716840299] = { name = L["Engineer"], type = "Engineer", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showSkinning then
+                    if self.db.profile.showCapitalsSkinning then
                         minimap[624][48643138] = { name = L["Skinning"], type = "Skinning", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapTailoring then
+                    if self.db.profile.showMinimapCapitalsTailoring then
                         minimap[624][59394278] = { name = L["Tailoring"], type = "Tailoring", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapJewelcrafting then
+                    if self.db.profile.showMinimapCapitalsJewelcrafting then
                         minimap[624][60203986] = { name = L["Jewelcrafting"], type = "Jewelcrafting", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMiniapBlacksmith then
+                    if self.db.profile.showCapitalsMiniapBlacksmith then
                         minimap[624][74093712] = { name = L["Blacksmithing"], type = "Blacksmith", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapMining then
+                    if self.db.profile.showMinimapCapitalsMining then
                         minimap[624][78603676] = { name = L["Mining"], type = "Mining", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapFishing then
+                    if self.db.profile.showMinimapCapitalsFishing then
                         minimap[624][69161653] = { name = PROFESSIONS_FISHING, type = "Fishing", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapCooking then
+                    if self.db.profile.showMinimapCapitalsCooking then
                         minimap[624][45784497] = { name = PROFESSIONS_COOKING, type = "Cooking", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapArchaeology then
+                    if self.db.profile.showMinimapCapitalsArchaeology then
                         minimap[624][73603119] = { name = PROFESSIONS_ARCHAEOLOGY, type = "Archaeology", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapHerbalism then
+                    if self.db.profile.showMinimapCapitalsHerbalism then
                         minimap[624][62563059] = { name = L["Herbalism"], type = "Herbalism", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapInscription then
+                    if self.db.profile.showMinimapCapitalsInscription then
                         minimap[624][77104741] = { name = INSCRIPTION, type = "Inscription", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapEnchanting then
+                    if self.db.profile.showMinimapCapitalsEnchanting then
                         minimap[624][78755287] = { name = L["Enchanting"], type = "Enchanting", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
                 end
 
             --Transports Warspear
-                if self.db.profile.showMinimapCapitalsTransporting then
+                if self.db.profile.activate.MinimapCapitalsTransporting then
 
                     if self.db.profile.showMinimapCapitalsPortals then
                         minimap[624][53184384] = { mnID = 534, name = L["Vol'mar"], type = "HPortal", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Portal from Ashran to Vol'mar Captive
@@ -608,7 +608,7 @@ if not db.show.HideMapNote then
                 end
 
             --General Warspear
-                if self.db.profile.showMinimapCapitalsGeneral then
+                if self.db.profile.activate.MinimapCapitalsGeneral then
     
                     if self.db.profile.showMinimapCapitalsPaths then
                         minimap[624][55498792] = { dnID = L["Exit"], name = "", mnID = 588, type = "PassageRightL", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Passage/Exit 
@@ -635,79 +635,79 @@ if not db.show.HideMapNote then
     --#################
     --### DazarAlor ###
     --#################
-        if self.db.profile.showMinimapDazarAlor then
+        if self.db.profile.showMinimapCapitalsDazarAlor then
 
         --#############################
         --### Horde or EnemyFaction ###
         --#############################
-            if self.faction == "Horde" or db.show.MinimapCapitalEnemyFaction then
+            if self.faction == "Horde" or db.activate.MinimapCapitalsEnemyFaction then
 
             --Professions DazarAlor
-                if self.db.profile.showMinimapProfessions then
+                if self.db.profile.activate.MinimapCapitalsProfessions then
 
-                    if self.db.profile.showMinimapAlchemy then
+                    if self.db.profile.showMinimapCapitalsAlchemy then
                         minimap[1165][42223796] = { name = L["Alchemy"], type = "Alchemy", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
                 
-                    if self.db.profile.showMinimapLeatherworking then
+                    if self.db.profile.showMinimapCapitalsLeatherworking then
                         minimap[1165][44103463] = { name = L["Leatherworking"], type = "Leatherworking", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapEngineer then
+                    if self.db.profile.showMinimapCapitalsEngineer then
                         minimap[1165][45144059] = { name = L["Engineer"], type = "Engineer", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapSkinning then
+                    if self.db.profile.showMinimapCapitalsSkinning then
                         minimap[1165][43783469] = { name = L["Skinning"], type = "Skinning", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapTailoring then
+                    if self.db.profile.showMinimapCapitalsTailoring then
                         minimap[1165][44493387] = { name = L["Tailoring"], type = "Tailoring", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapJewelcrafting then
+                    if self.db.profile.showMinimapCapitalsJewelcrafting then
                         minimap[1165][47053791] = { name = L["Jewelcrafting"], type = "Jewelcrafting", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION .. "\n" .. L["in the basement"] }
                     end
 
-                    if self.db.profile.showMinimapBlacksmith then
+                    if self.db.profile.showMinimapCapitalsBlacksmith then
                         minimap[624][74093712] = { name = L["Blacksmithing"], type = "Blacksmith", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapMining then
+                    if self.db.profile.showMinimapCapitalsMining then
                         minimap[1165][44123896] = { name = L["Mining"], type = "Mining", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapFishing then
+                    if self.db.profile.showMinimapCapitalsFishing then
                         minimap[1165][50522337] = { name = PROFESSIONS_FISHING, type = "Fishing", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapCooking then
+                    if self.db.profile.showMinimapCapitalsCooking then
                         minimap[1165][52479045] = { name = PROFESSIONS_COOKING, type = "Cooking", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                         minimap[1164][28565017] = { name = PROFESSIONS_COOKING, type = "Cooking", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
 
                     end
 
-                    if self.db.profile.showMinimapArchaeology then
+                    if self.db.profile.showMinimapCapitalsArchaeology then
                         minimap[1163][32223550] = { name = PROFESSIONS_ARCHAEOLOGY, type = "Archaeology", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION .. "\n" .. ERR_USE_OBJECT_MOVING }
                         minimap[1165][48804311] = { mnID = 1165, name = PROFESSIONS_ARCHAEOLOGY, type = "Archaeology", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapHerbalism then
+                    if self.db.profile.showMinimapCapitalsHerbalism then
                         minimap[1165][42093560] = { name = L["Herbalism"], type = "Herbalism", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapInscription then
+                    if self.db.profile.showMinimapCapitalsInscription then
                         minimap[1165][42313974] = { name = INSCRIPTION, type = "Inscription", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                         minimap[1163][70563292] = { name = INSCRIPTION, type = "Inscription", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapEnchanting then
+                    if self.db.profile.showMinimapCapitalsEnchanting then
                         minimap[1165][47103569] = { name = L["Enchanting"], type = "Enchanting", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION .. "\n" .. L["in the basement"] }
                     end
                 end
 
             --Transports DazarAlor
-                if self.db.profile.showMinimapCapitalsTransporting then
+                if self.db.profile.activate.MinimapCapitalsTransporting then
 
                     if self.db.profile.showMinimapCapitalsPortals then
                         minimap[1165][51424583] = { mnID = 1163, name = "", type = "HPortal", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = L["Dazar'alor"] .. " " .. L["Portalroom"] .. L["(inside building)"] .. "\n" .. " => " .. L["Silvermoon City"] .. "\n" .. " => " .. ORGRIMMAR .. "\n" .. " => " .. L["Thunder Bluff"] .. "\n" .. " => " .. L["Silithus"] .. "\n" .. " => " .. L["Nazjatar"] } -- Portalroom from Dazar'alor
@@ -727,7 +727,7 @@ if not db.show.HideMapNote then
                 end
 
             --Instances DazarAlor
-                if self.db.profile.showMinimapCapitalsInstances then
+                if self.db.profile.activate.MinimapCapitalsInstances then
     
                     if self.db.profile.showMinimapCapitalsDungeons then
                         minimap[1165][44049256] = { id = 1012, type = "Dungeon", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- The MOTHERLODE HORDE
@@ -741,7 +741,7 @@ if not db.show.HideMapNote then
                 end
 
             --General DazarAlor
-                if self.db.profile.showMinimapCapitalsGeneral then
+                if self.db.profile.activate.MinimapCapitalsGeneral then
     
                     if self.db.profile.showMinimapCapitalsPaths then
                         minimap[1165][44423697] = { name = L["Passage"] .. " " .. MINIMAP_TRACKING_TRAINER_PROFESSION, type = "PassageRightL", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName =  L["Jewelcrafting"] .. "\n" .. L["Enchanting"] }
@@ -784,22 +784,22 @@ if not db.show.HideMapNote then
     --#############
     --### Sot2M ###
     --#############
-        if self.db.profile.showMinimapSot2M then
+        if self.db.profile.showMinimapCapitalsSot2M then
 
         --#############################
         --### Horde or EnemyFaction ###
         --#############################
-            if self.faction == "Horde" or db.show.CapitalMinimapEnemyFaction then
+            if self.faction == "Horde" or db.activate.CapitalMinimapEnemyFaction then
 
             --Professions Sot2M
-                if self.db.profile.showMinimapProfessions then
+                if self.db.profile.activate.MinimapCapitalsProfessions then
 
-                    if self.db.profile.showMinimapEngineer then
+                    if self.db.profile.showMinimapCapitalsEngineer then
                         minimap[391][62374397] = { name = L["Engineer"], type = "Engineer", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                         minimap[1530][62361153] = { name = L["Engineer"], type = "Engineer", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapBlacksmith then
+                    if self.db.profile.showMinimapCapitalsBlacksmith then
                         minimap[391][25844377] = { name = L["Blacksmithing"], type = "Blacksmith", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                         minimap[1530][59181165] = { name = L["Blacksmithing"], type = "Blacksmith", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
@@ -807,7 +807,7 @@ if not db.show.HideMapNote then
                 end
 
             --Transports Sot2M
-                if self.db.profile.showMinimapCapitalsTransporting then
+                if self.db.profile.activate.MinimapCapitalsTransporting then
 
                     if self.db.profile.showMinimapCapitalsPortals then
                         minimap[392][72464286] = { mnID = 85, name = "", type = "HPortal", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = L["Portal"] .. " => " .. ORGRIMMAR } -- Portal from Shrine of Two Moons to Orgrimmar
@@ -817,7 +817,7 @@ if not db.show.HideMapNote then
                 end
 
             --General Sot2M
-                if self.db.profile.showMinimapCapitalsGeneral then
+                if self.db.profile.activate.MinimapCapitalsGeneral then
     
                     if self.db.profile.showMinimapCapitalsPaths then
                         minimap[391][26778156] = { name = L["Exit"], mnID = 390, type = "PassageDownL", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
@@ -871,15 +871,15 @@ if not db.show.HideMapNote then
     --#################
     --### Stormwind ###
     --#################
-        if self.db.profile.showMinimapStormwind then
+        if self.db.profile.showMinimapCapitalsStormwind then
 
         --################################
         --### Alliance or EnemyFaction ###
         --################################
-            if self.faction == "Alliance" or db.show.MinimapCapitalEnemyFaction then
+            if self.faction == "Alliance" or db.activate.MinimapCapitalsEnemyFaction then
 
             --Instances Stormwind
-                if self.db.profile.showMinimapCapitalsInstances then
+                if self.db.profile.activate.MinimapCapitalsInstances then
     
                     if self.db.profile.showMinimapCapitalsDungeons then
                         minimap[84][51196779] = { id = 238, type = "Dungeon", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- The Stockade
@@ -888,7 +888,7 @@ if not db.show.HideMapNote then
                 end
 
             --Transports Stormwind
-                if self.db.profile.showMinimapCapitalsTransporting then
+                if self.db.profile.activate.MinimapCapitalsTransporting then
 
                     if self.db.profile.showMinimapCapitalsPortals then
                         minimap[84][73221836] = { mnID = 245, name = "", type = "APortalS", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = L["Portal"] .. " => " .. DUNGEON_FLOOR_TOLBARADWARLOCKSCENARIO0 } --  Portal to Tol Barad
@@ -925,73 +925,73 @@ if not db.show.HideMapNote then
                 end
 
             --Professions Stormwind
-                if self.db.profile.showMinimapProfessions then
+                if self.db.profile.activate.MinimapCapitalsProfessions then
 
-                    if self.db.profile.showMinimapAlchemy then
+                    if self.db.profile.showMinimapCapitalsAlchemy then
                         minimap[84][55668610] = { name = L["Alchemy"], type = "Alchemy", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
                 
-                    if self.db.profile.showMinimapLeatherworking then
+                    if self.db.profile.showMinimapCapitalsLeatherworking then
                         minimap[84][42596045] = { name = L["Leatherworking"], type = "Leatherworking", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                         minimap[84][71676301] = { name = L["Leatherworking"], type = "Leatherworking", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapEngineer then
+                    if self.db.profile.showMinimapCapitalsEngineer then
                         minimap[84][62863192] = { name = L["Engineer"], type = "Engineer", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapSkinning then
+                    if self.db.profile.showMinimapCapitalsSkinning then
                         minimap[84][72136222] = { name = L["Skinning"], type = "Skinning", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapTailoring then
+                    if self.db.profile.showMinimapCapitalsTailoring then
                         minimap[84][53098136] = { name = L["Tailoring"], type = "Tailoring", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                         minimap[84][52011954] = { name = L["Tailoring"], type = "Tailoring", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapJewelcrafting then
+                    if self.db.profile.showMinimapCapitalsJewelcrafting then
                         minimap[84][63486183] = { name = L["Jewelcrafting"], type = "Jewelcrafting", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showBlacksmith then
+                    if self.db.profile.showCapitalsBlacksmith then
                         minimap[84][63663702] = { name = L["Blacksmithing"], type = "Blacksmith", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapMining then
+                    if self.db.profile.showMinimapCapitalsMining then
                         minimap[84][59523778] = { name = L["Mining"], type = "Mining", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                         minimap[84][49371220] = { name = L["Mining"], type = "Mining", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapFishing then
+                    if self.db.profile.showMinimapCapitalsFishing then
                         minimap[84][54806960] = { name = PROFESSIONS_FISHING, type = "Fishing", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapCooking then
+                    if self.db.profile.showMinimapCapitalsCooking then
                         minimap[84][77285321] = { name = PROFESSIONS_COOKING, type = "Cooking", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                         minimap[84][50657384] = { name = PROFESSIONS_COOKING, type = "Cooking", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapArchaeology then
+                    if self.db.profile.showMinimapCapitalsArchaeology then
                         minimap[84][85812593] = { name = PROFESSIONS_ARCHAEOLOGY, type = "Archaeology", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapHerbalism then
+                    if self.db.profile.showMinimapCapitalsHerbalism then
                         minimap[84][54298408] = { name = L["Herbalism"], type = "Herbalism", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                         minimap[84][40846587] = { name = L["Herbalism"], type = "Herbalism", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showInscription then
+                    if self.db.profile.showCapitalsInscription then
                         minimap[84][49827479] = { name = INSCRIPTION, type = "Inscription", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showEnchanting then
+                    if self.db.profile.showCapitalsEnchanting then
                         minimap[84][52907447] = { name = L["Enchanting"], type = "Enchanting", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                         minimap[84][51211270] = { name = L["Enchanting"], type = "Enchanting", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
                 end
 
             --General Stormwind
-                if self.db.profile.showMinimapCapitalsGeneral then
+                if self.db.profile.activate.MinimapCapitalsGeneral then
     
                     if self.db.profile.showMinimapCapitalsPaths then
                         minimap[84][73399051] = { dnID = L["Exit"], name = "", mnID = 37, type = "PassageRightL", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Passage/Exit 
@@ -1025,15 +1025,15 @@ if not db.show.HideMapNote then
     --#################
     --### Ironforge ###
     --#################
-        if self.db.profile.showMinimapIronforge then
+        if self.db.profile.showMinimapCapitalsIronforge then
 
         --################################
         --### Alliance or EnemyFaction ###
         --################################
-            if self.faction == "Alliance" or db.show.MinimapCapitalEnemyFaction then
+            if self.faction == "Alliance" or db.activate.MinimapCapitalsEnemyFaction then
 
             --Transports Ironforge
-                if self.db.profile.showMinimapCapitalsTransporting then
+                if self.db.profile.activate.MinimapCapitalsTransporting then
 
                     if self.db.profile.showMinimapCapitalsTransport then
                         minimap[87][72545022] = { mnID = 84, name = "", type = "Carriage", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = DUNGEON_FLOOR_DEEPRUNTRAM1 .. " => " .. STORMWIND } -- Transport to Stormwind Carriage
@@ -1042,68 +1042,68 @@ if not db.show.HideMapNote then
                 end
 
             --Professions ironforge
-                if self.db.profile.showMinimapProfessions then
+                if self.db.profile.activate.MinimapCapitalsProfessions then
 
-                    if self.db.profile.showMinimapAlchemy then
+                    if self.db.profile.showMinimapCapitalsAlchemy then
                         minimap[87][66615566] = { name = L["Alchemy"], type = "Alchemy", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
                 
-                    if self.db.profile.showMinimapLeatherworking then
+                    if self.db.profile.showMinimapCapitalsLeatherworking then
                         minimap[87][40223365] = { name = L["Leatherworking"], type = "Leatherworking", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapEngineer then
+                    if self.db.profile.showMinimapCapitalsEngineer then
                         minimap[87][68444359] = { name = L["Engineer"], type = "Engineer", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapSkinning then
+                    if self.db.profile.showMinimapCapitalsSkinning then
                         minimap[87][39843248] = { name = L["Skinning"], type = "Skinning", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapTailoring then
+                    if self.db.profile.showMinimapCapitalsTailoring then
                         minimap[87][43132939] = { name = L["Tailoring"], type = "Tailoring", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapJewelcrafting then
+                    if self.db.profile.showMinimapCapitalsJewelcrafting then
                         minimap[87][50192602] = { name = L["Jewelcrafting"], type = "Jewelcrafting", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showBlacksmith then
+                    if self.db.profile.showCapitalsBlacksmith then
                         minimap[87][50324338] = { name = L["Blacksmithing"], type = "Blacksmith", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                         minimap[87][52554139] = { name = L["Blacksmithing"], type = "Blacksmith", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapMining then
+                    if self.db.profile.showMinimapCapitalsMining then
                         minimap[87][50142649] = { name = L["Mining"], type = "Mining", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapFishing then
+                    if self.db.profile.showMinimapCapitalsFishing then
                         minimap[87][48090763] = { name = PROFESSIONS_FISHING, type = "Fishing", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapCooking then
+                    if self.db.profile.showMinimapCapitalsCooking then
                         minimap[87][60073646] = { name = PROFESSIONS_COOKING, type = "Cooking", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapArchaeology then
+                    if self.db.profile.showMinimapCapitalsArchaeology then
                         minimap[87][75611110] = { name = PROFESSIONS_ARCHAEOLOGY, type = "Archaeology", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapHerbalism then
+                    if self.db.profile.showMinimapCapitalsHerbalism then
                         minimap[87][55865907] = { name = L["Herbalism"], type = "Herbalism", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showInscription then
+                    if self.db.profile.showCapitalsInscription then
                         minimap[87][61004516] = { name = INSCRIPTION, type = "Inscription", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showEnchanting then
+                    if self.db.profile.showCapitalsEnchanting then
                         minimap[87][60114533] = { name = L["Enchanting"], type = "Enchanting", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
                 end
 
             --General Ironforge
-                if self.db.profile.showMinimapCapitalsGeneral then
+                if self.db.profile.activate.MinimapCapitalsGeneral then
     
                     if self.db.profile.showMinimapCapitalsPaths then
                         minimap[87][14218604] = { dnID = L["Exit"], name = "", mnID = 27, type = "PassageLeftL", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Passage/Exit 
@@ -1132,13 +1132,13 @@ if not db.show.HideMapNote then
     --#################
     --### Darnassus ###
     --#################
-        if self.db.profile.showMinimapDarnassus then
+        if self.db.profile.showMinimapCapitalsDarnassus then
 
         --##########################
         --### Horde and Alliance ###
         --##########################
         --Transports Darnassus
-            if self.db.profile.showMinimapCapitalsTransporting then
+            if self.db.profile.activate.MinimapCapitalsTransporting then
 
                 if self.db.profile.showMinimapCapitalsPortals then
                     minimap[89][36045019] = { mnID = 57, name = "", type = "Portal", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = L["Portal"] .. " => " .. L["Rut'theran"] } -- Portal To Darnassus from Teldrassil
@@ -1149,10 +1149,10 @@ if not db.show.HideMapNote then
         --################################
         --### Alliance or EnemyFaction ###
         --################################
-            if self.faction == "Alliance" or db.show.MinimapCapitalEnemyFaction then
+            if self.faction == "Alliance" or db.activate.MinimapCapitalsEnemyFaction then
 
             --General Darnassus
-                if self.db.profile.showMinimapCapitalsGeneral then
+                if self.db.profile.activate.MinimapCapitalsGeneral then
     
                     if self.db.profile.showMinimapCapitalsPaths then
                         minimap[89][79984648] = { dnID = L["Exit"], name = "", mnID = 57, type = "PassageRightL", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Passage/Exit Exodar
@@ -1174,7 +1174,7 @@ if not db.show.HideMapNote then
                 end
 
             --Transports Darnassus
-                if self.db.profile.showMinimapCapitalsTransporting then
+                if self.db.profile.activate.MinimapCapitalsTransporting then
 
                     if self.db.profile.showMinimapCapitalsPortals then
                         minimap[89][44127840] = { name = "", type = "APortal", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = L["Portals"] .. "\n" .. " => " .. L["Exodar"] .. "\n" .. " => " .. L["Hellfire Peninsula"] } -- Portal To Darnassus from Teldrassil
@@ -1183,61 +1183,61 @@ if not db.show.HideMapNote then
                 end
 
             --Professions Darnassus
-                if self.db.profile.showMinimapProfessions then
+                if self.db.profile.activate.MinimapCapitalsProfessions then
 
-                    if self.db.profile.showMinimapAlchemy then
+                    if self.db.profile.showMinimapCapitalsAlchemy then
                         minimap[89][53913853] = { name = L["Alchemy"], type = "Alchemy", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
                 
-                    if self.db.profile.showMinimapLeatherworking then
+                    if self.db.profile.showMinimapCapitalsLeatherworking then
                         minimap[89][60463683] = { name = L["Leatherworking"], type = "Leatherworking", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapEngineer then
+                    if self.db.profile.showMinimapCapitalsEngineer then
                         minimap[89][49613236] = { name = L["Engineer"], type = "Engineer", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapSkinning then
+                    if self.db.profile.showMinimapCapitalsSkinning then
                         minimap[89][60273733] = { name = L["Skinning"], type = "Skinning", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapTailoring then
+                    if self.db.profile.showMinimapCapitalsTailoring then
                         minimap[89][59783740] = { name = L["Tailoring"], type = "Tailoring", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapJewelcrafting then
+                    if self.db.profile.showMinimapCapitalsJewelcrafting then
                         minimap[89][53993111] = { name = L["Jewelcrafting"], type = "Jewelcrafting", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showBlacksmith then
+                    if self.db.profile.showCapitalsBlacksmith then
                         minimap[89][56985271] = { name = L["Blacksmithing"], type = "Blacksmith", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapMining then
+                    if self.db.profile.showMinimapCapitalsMining then
                         minimap[89][50083357] = { name = L["Mining"], type = "Mining", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapFishing then
+                    if self.db.profile.showMinimapCapitalsFishing then
                         minimap[89][49096098] = { name = PROFESSIONS_FISHING, type = "Fishing", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapCooking then
+                    if self.db.profile.showMinimapCapitalsCooking then
                         minimap[89][49893663] = { name = PROFESSIONS_COOKING, type = "Cooking", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapArchaeology then
+                    if self.db.profile.showMinimapCapitalsArchaeology then
                         minimap[89][42658334] = { name = PROFESSIONS_ARCHAEOLOGY, type = "Archaeology", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapHerbalism then
+                    if self.db.profile.showMinimapCapitalsHerbalism then
                         minimap[89][49146878] = { name = L["Herbalism"], type = "Herbalism", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showInscription then
+                    if self.db.profile.showCapitalsInscription then
                         minimap[89][56793163] = { name = INSCRIPTION, type = "Inscription", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showEnchanting then
+                    if self.db.profile.showCapitalsEnchanting then
                         minimap[89][56413101] = { name = L["Enchanting"], type = "Enchanting", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
                 end
@@ -1249,15 +1249,15 @@ if not db.show.HideMapNote then
     --##############
     --### Exodar ###
     --##############
-        if self.db.profile.showMinimapExodar then
+        if self.db.profile.showMinimapCapitalsExodar then
 
         --################################
         --### Alliance or EnemyFaction ###
         --################################
-            if self.faction == "Alliance" or db.show.MinimapCapitalEnemyFaction then
+            if self.faction == "Alliance" or db.activate.MinimapCapitalsEnemyFaction then
 
             --General Exodar
-                if self.db.profile.showMinimapCapitalsGeneral then
+                if self.db.profile.activate.MinimapCapitalsGeneral then
     
                     if self.db.profile.showMinimapCapitalsPaths then
                         minimap[103][34947443] = { dnID = L["Exit"], name = "", mnID = 97, type = "PassageUpL", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Passage/Exit Exodar
@@ -1279,7 +1279,7 @@ if not db.show.HideMapNote then
                 end
 
             --Transports Exodar
-                if self.db.profile.showMinimapCapitalsTransporting then
+                if self.db.profile.activate.MinimapCapitalsTransporting then
 
                     if self.db.profile.showMinimapCapitalsPortals then
                         minimap[103][48326264] = { mnID = 84, name = "", type = "APortal", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = L["Portal"] .. " => " .. STORMWIND } -- Portal Exodar to Stormwind
@@ -1288,61 +1288,61 @@ if not db.show.HideMapNote then
                 end
 
             --Professions Exodar
-                if self.db.profile.showMinimapProfessions then
+                if self.db.profile.activate.MinimapCapitalsProfessions then
 
-                    if self.db.profile.showMinimapAlchemy then
+                    if self.db.profile.showMinimapCapitalsAlchemy then
                         minimap[103][27766078] = { name = L["Alchemy"], type = "Alchemy", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
                 
-                    if self.db.profile.showMinimapLeatherworking then
+                    if self.db.profile.showMinimapCapitalsLeatherworking then
                         minimap[103][67467457] = { name = L["Leatherworking"], type = "Leatherworking", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapEngineer then
+                    if self.db.profile.showMinimapCapitalsEngineer then
                         minimap[103][54139288] = { name = L["Engineer"], type = "Engineer", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapSkinning then
+                    if self.db.profile.showMinimapCapitalsSkinning then
                         minimap[103][65657456] = { name = L["Skinning"], type = "Skinning", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapTailoring then
+                    if self.db.profile.showMinimapCapitalsTailoring then
                         minimap[103][64386894] = { name = L["Tailoring"], type = "Tailoring", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapJewelcrafting then
+                    if self.db.profile.showMinimapCapitalsJewelcrafting then
                         minimap[103][44882424] = { name = L["Jewelcrafting"], type = "Jewelcrafting", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showBlacksmith then
+                    if self.db.profile.showCapitalsBlacksmith then
                         minimap[103][60609000] = { name = L["Blacksmithing"], type = "Blacksmith", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapMining then
+                    if self.db.profile.showMinimapCapitalsMining then
                         minimap[103][59698781] = { name = L["Mining"], type = "Mining", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapFishing then
+                    if self.db.profile.showMinimapCapitalsFishing then
                         minimap[103][31931462] = { name = PROFESSIONS_FISHING, type = "Fishing", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapCooking then
+                    if self.db.profile.showMinimapCapitalsCooking then
                         minimap[103][55772672] = { name = PROFESSIONS_COOKING, type = "Cooking", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapArchaeology then
+                    if self.db.profile.showMinimapCapitalsArchaeology then
                         minimap[103][33316569] = { name = PROFESSIONS_ARCHAEOLOGY, type = "Archaeology", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapHerbalism then
+                    if self.db.profile.showMinimapCapitalsHerbalism then
                         minimap[103][27456281] = { name = L["Herbalism"], type = "Herbalism", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showInscription then
+                    if self.db.profile.showCapitalsInscription then
                         minimap[103][39833860] = { name = INSCRIPTION, type = "Inscription", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showEnchanting then
+                    if self.db.profile.showCapitalsEnchanting then
                         minimap[103][40693881] = { name = L["Enchanting"], type = "Enchanting", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
                 end
@@ -1354,15 +1354,15 @@ if not db.show.HideMapNote then
     --##############################
     --### Stormshield / Garrison ###
     --##############################
-        if self.db.profile.showMinimapStormshield then
+        if self.db.profile.showMinimapCapitalsStormshield then
 
         --################################
         --### Alliance or EnemyFaction ###
         --################################
-            if self.faction == "Alliance" or db.show.MinimapCapitalEnemyFaction then
+            if self.faction == "Alliance" or db.activate.MinimapCapitalsEnemyFaction then
 
             --Instance Warspear / Garrison
-                if self.db.profile.showMinimapCapitalsInstances then
+                if self.db.profile.activate.MinimapCapitalsInstances then
     
                     if self.db.profile.showMinimapCapitalsLFR then
                         minimap[582][33173703] = { mnID = 582, name = L["Seer Kazal"] .. " - " .. REQUIRES_LABEL .. " " .. GARRISON_LOCATION_TOOLTIP .. " " .. LEVEL .. " " .. ACTION_SPELL_CAST_START_MASTER .. "\n" .. L["Registrant"] .. " - " .. RAID_FINDER .. "\n" .. " ", id = { 477, 457, 669 }, type = "LFR", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
@@ -1371,7 +1371,7 @@ if not db.show.HideMapNote then
                 end
 
             --General Stormshield
-                if self.db.profile.showMinimapCapitalsGeneral then
+                if self.db.profile.activate.MinimapCapitalsGeneral then
     
                     if self.db.profile.showMinimapCapitalsPaths then
                         minimap[622][55650794] = { dnID = L["Exit"], name = "", mnID = 588, type = "PassageUpL", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Passage/Exit Exodar
@@ -1393,7 +1393,7 @@ if not db.show.HideMapNote then
                 end
 
             --Transports Stormshield
-                if self.db.profile.showMinimapCapitalsTransporting then
+                if self.db.profile.activate.MinimapCapitalsTransporting then
 
                     if self.db.profile.showMinimapCapitalsPortals then
                         minimap[582][69692706] = { mnID = 622, name = L["Ashran"], type = "APortal", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Portal from Garison to Ashran
@@ -1404,61 +1404,61 @@ if not db.show.HideMapNote then
                 end
 
             --Professions Stormshield
-                if self.db.profile.showMinimapProfessions then
+                if self.db.profile.activate.MinimapCapitalsProfessions then
 
-                    if self.db.profile.showMinimapAlchemy then
+                    if self.db.profile.showMinimapCapitalsAlchemy then
                         minimap[622][37056882] = { name = L["Alchemy"], type = "Alchemy", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
                 
-                    if self.db.profile.showMinimapLeatherworking then
+                    if self.db.profile.showMinimapCapitalsLeatherworking then
                         minimap[622][52494201] = { name = L["Leatherworking"], type = "Leatherworking", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapEngineer then
+                    if self.db.profile.showMinimapCapitalsEngineer then
                         minimap[622][48004052] = { name = L["Engineer"], type = "Engineer", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapSkinning then
+                    if self.db.profile.showMinimapCapitalsSkinning then
                         minimap[622][52124369] = { name = L["Skinning"], type = "Skinning", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapTailoring then
+                    if self.db.profile.showMinimapCapitalsTailoring then
                         minimap[622][51533716] = { name = L["Tailoring"], type = "Tailoring", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapJewelcrafting then
+                    if self.db.profile.showMinimapCapitalsJewelcrafting then
                         minimap[622][43513391] = { name = L["Jewelcrafting"], type = "Jewelcrafting", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapBlacksmith then
+                    if self.db.profile.showMinimapCapitalsBlacksmith then
                         minimap[622][49344639] = { name = L["Blacksmithing"], type = "Blacksmith", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapMining then
+                    if self.db.profile.showMinimapCapitalsMining then
                         minimap[622][47324371] = { name = L["Mining"], type = "Mining", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapFishing then
+                    if self.db.profile.showMinimapCapitalsFishing then
                         minimap[622][55497849] = { name = PROFESSIONS_FISHING, type = "Fishing", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapCooking then
+                    if self.db.profile.showMinimapCapitalsCooking then
                         minimap[622][35137611] = { name = PROFESSIONS_COOKING, type = "Cooking", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION .. "\n" .. L["in the basement"] }
                     end
 
-                    if self.db.profile.showMinimapArchaeology then
+                    if self.db.profile.showMinimapCapitalsArchaeology then
                         minimap[622][48993319] = { name = PROFESSIONS_ARCHAEOLOGY, type = "Archaeology", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapHerbalism then
+                    if self.db.profile.showMinimapCapitalsHerbalism then
                         minimap[622][37616948] = { name = L["Herbalism"], type = "Herbalism", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapInscription then
+                    if self.db.profile.showMinimapCapitalsInscription then
                         minimap[622][63163365] = { name = INSCRIPTION, type = "Inscription", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapEnchanting then
+                    if self.db.profile.showMinimapCapitalsEnchanting then
                         minimap[622][56706551] = { name = L["Enchanting"], type = "Enchanting", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
                 end
@@ -1470,15 +1470,15 @@ if not db.show.HideMapNote then
     --###############
     --### Boralus ###
     --###############
-        if self.db.profile.showMinimapBoralus then
+        if self.db.profile.showMinimapCapitalsBoralus then
 
         --################################
         --### Alliance or EnemyFaction ###
         --################################
-            if self.faction == "Alliance" or db.show.MinimapCapitalEnemyFaction then
+            if self.faction == "Alliance" or db.activate.MinimapCapitalsEnemyFaction then
 
             --Instance Boralus
-                if self.db.profile.showMinimapCapitalsInstances then
+                if self.db.profile.activate.MinimapCapitalsInstances then
 
                     if self.db.profile.showMinimapCapitalsRaids then
                         minimap[1161][70443555] = { id = 1176, type = "Raid", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Battle of Dazar'alor
@@ -1496,7 +1496,7 @@ if not db.show.HideMapNote then
                 end
 
             --General Boralus
-                if self.db.profile.showMinimapCapitalsGeneral then
+                if self.db.profile.activate.MinimapCapitalsGeneral then
     
                     if self.db.profile.showMinimapCapitalsPaths then
                         minimap[1161][80297904] = { dnID = L["Exit"], name = "", mnID = 895, type = "PassageDownL", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Passage/Exit Exodar
@@ -1519,7 +1519,7 @@ if not db.show.HideMapNote then
                 end
 
             --Transports Boralus
-                if self.db.profile.showMinimapCapitalsTransporting then
+                if self.db.profile.activate.MinimapCapitalsTransporting then
 
                     if self.db.profile.showMinimapCapitalsPortals then
                         minimap[1161][69641590] = { mnID = 81, name = "", type = "APortal", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Portalroom from Boralus
@@ -1537,61 +1537,61 @@ if not db.show.HideMapNote then
                 end
 
             --Professions Boralus
-                if self.db.profile.showMinimapProfessions then
+                if self.db.profile.activate.MinimapCapitalsProfessions then
 
-                    if self.db.profile.showAlchemy then
+                    if self.db.profile.showCapitalsAlchemy then
                         minimap[1161][74090670] = { name = L["Alchemy"], type = "Alchemy", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
                 
-                    if self.db.profile.showMinimapLeatherworking then
+                    if self.db.profile.showMinimapCapitalsLeatherworking then
                         minimap[1161][75451258] = { name = L["Leatherworking"], type = "Leatherworking", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapEngineer then
+                    if self.db.profile.showMinimapCapitalsEngineer then
                         minimap[1161][77611434] = { name = L["Engineer"], type = "Engineer", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapSkinning then
+                    if self.db.profile.showMinimapCapitalsSkinning then
                         minimap[1161][75661340] = { name = L["Skinning"], type = "Skinning", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapTailoring then
+                    if self.db.profile.showMinimapCapitalsTailoring then
                         minimap[1161][76951116] = { name = L["Tailoring"], type = "Tailoring", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapJewelcrafting then
+                    if self.db.profile.showMinimapCapitalsJewelcrafting then
                         minimap[1161][75210986] = { name = L["Jewelcrafting"], type = "Jewelcrafting", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapBlacksmith then
+                    if self.db.profile.showMinimapCapitalsBlacksmith then
                         minimap[1161][73470849] = { name = L["Blacksmithing"], type = "Blacksmith", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapMining then
+                    if self.db.profile.showMinimapCapitalsMining then
                         minimap[1161][75200760] = { name = L["Mining"], type = "Mining", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapFishing then
+                    if self.db.profile.showMinimapCapitalsFishing then
                         minimap[1161][74160560] = { name = PROFESSIONS_FISHING, type = "Fishing", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapCooking then
+                    if self.db.profile.showMinimapCapitalsCooking then
                         minimap[1161][71201068] = { name = PROFESSIONS_COOKING, type = "Cooking", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapArchaeology then
+                    if self.db.profile.showMinimapCapitalsArchaeology then
                         minimap[1161][68340848] = { name = PROFESSIONS_ARCHAEOLOGY, type = "Archaeology", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapHerbalism then
+                    if self.db.profile.showMinimapCapitalsHerbalism then
                         minimap[1161][70550566] = { name = L["Herbalism"], type = "Herbalism", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapInscription then
+                    if self.db.profile.showMinimapCapitalsInscription then
                         minimap[1161][73380637] = { name = INSCRIPTION, type = "Inscription", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
-                    if self.db.profile.showMinimapEnchanting then
+                    if self.db.profile.showMinimapCapitalsEnchanting then
                         minimap[1161][74031153] = { name = L["Enchanting"], type = "Enchanting", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
                 end
@@ -1603,15 +1603,15 @@ if not db.show.HideMapNote then
     --#############
     --### Sot7S ###
     --#############
-        if self.db.profile.showMinimapSot7S then
+        if self.db.profile.showMinimapCapitalsSot7S then
 
         --################################
         --### Alliance or EnemyFaction ###
         --################################
-            if self.faction == "Alliance" or db.show.MinimapCapitalEnemyFaction then
+            if self.faction == "Alliance" or db.activate.MinimapCapitalsEnemyFaction then
 
             --General Sot7S
-                if self.db.profile.showMinimapCapitalsGeneral then
+                if self.db.profile.activate.MinimapCapitalsGeneral then
     
                     if self.db.profile.showMinimapCapitalsPaths then
                         minimap[393][24265267] = { name = L["Exit"], mnID = 390, type = "PassageUpL", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
@@ -1647,7 +1647,7 @@ if not db.show.HideMapNote then
                 end
 
             --Transports Sot7S
-                if self.db.profile.showMinimapCapitalsTransporting then
+                if self.db.profile.activate.MinimapCapitalsTransporting then
 
                     if self.db.profile.showMinimapCapitalsPortals then
                         minimap[394][71563593] = { mnID = 84, name = "", type = "APortal", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName =  L["Portal"] .. " => " .. STORMWIND }
@@ -1656,9 +1656,9 @@ if not db.show.HideMapNote then
                 end
 
             --Professions Sot7S
-                if self.db.profile.showMinimapProfessions then
+                if self.db.profile.activate.MinimapCapitalsProfessions then
 
-                    if self.db.profile.showMinimapBlacksmith then
+                    if self.db.profile.showMinimapCapitalsBlacksmith then
                         minimap[393][72655225] = { name = L["Blacksmithing"], type = "Blacksmith", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
 
@@ -1677,10 +1677,10 @@ if not db.show.HideMapNote then
     --#################
     --### Shattrath ###
     --#################
-        if self.db.profile.showMinimapShattrath then
+        if self.db.profile.showMinimapCapitalsShattrath then
 
         --General Shattrath
-            if self.db.profile.showMinimapCapitalsGeneral then
+            if self.db.profile.activate.MinimapCapitalsGeneral then
     
                 if self.db.profile.showMinimapCapitalsHearthstone then
                     minimap[111][56278147] = { dnID = MINIMAP_TRACKING_INNKEEPER .. " - " .. L["The Scryers"], name = "", type = "Hearthstone", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
@@ -1717,16 +1717,16 @@ if not db.show.HideMapNote then
             end
 
         --Transports Shattrath
-            if self.db.profile.showMinimapCapitalsTransporting then
+            if self.db.profile.activate.MinimapCapitalsTransporting then
     
                 if self.db.profile.showMinimapCapitalsPortals then
                     minimap[111][48614203] = { mnID = 122, name = "", type = "Portal", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Portal from Shattrath to Quel'Danas 
 
-                    if self.faction == "Horde" or db.show.MinimapCapitalEnemyFaction then
+                    if self.faction == "Horde" or db.activate.MinimapCapitalsEnemyFaction then
                         minimap[111][56784884] = { mnID = 85, name = "", type = "HPortal", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = L["Shattrath City"] .. " " .. L["Portals"] .. "\n" ..  "\n" .. " => " .. ORGRIMMAR } -- Portal from Shattrath to Orgrimmar 
                     end
 
-                    if self.faction == "Alliance" or db.show.MinimapCapitalEnemyFaction then
+                    if self.faction == "Alliance" or db.activate.MinimapCapitalsEnemyFaction then
                         minimap[111][57214825] = { mnID = 84,  name = "" , type = "APortal", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = L["Shattrath City"] .. " " .. L["Portal"] .. "\n" .. " => " .. STORMWIND } -- Portal from Shattrath to Stormwind 
                     end
                 end
@@ -1734,78 +1734,78 @@ if not db.show.HideMapNote then
             end
 
         --Professions Shattrath
-            if self.db.profile.showMinimapProfessions then
+            if self.db.profile.activate.MinimapCapitalsProfessions then
 
-                if self.db.profile.showMinimapAlchemy then
+                if self.db.profile.showMinimapCapitalsAlchemy then
                     minimap[111][37977048] = { name = L["Alchemy"] .. " - " .. L["The Scryers"], type = "Alchemy", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     minimap[111][38892992] = { name = L["Alchemy"] .. " - " .. L["The Aldor"], type = "Alchemy", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     minimap[111][45612149] = { name = L["Alchemy"], type = "Alchemy", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
             
-                if self.db.profile.showMinimapLeatherworking then
+                if self.db.profile.showMinimapCapitalsLeatherworking then
                     minimap[111][41366301] = { name = L["Leatherworking"] .. " - " .. L["The Scryers"], type = "Leatherworking", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     minimap[111][37652815] = { name = L["Leatherworking"] .. " - " .. L["The Aldor"], type = "Leatherworking", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     minimap[111][67256738] = { name = L["Leatherworking"], type = "Leatherworking", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
 
                 end
 
-                if self.db.profile.showMinimapEngineer then
+                if self.db.profile.showMinimapCapitalsEngineer then
                     minimap[111][43926531] = { name = L["Engineer"] .. " - " .. L["The Scryers"], type = "Engineer", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     minimap[111][37823205] = { name = L["Engineer"] .. " - " .. L["The Aldor"], type = "Engineer", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
 
-                if self.db.profile.showMinimapSkinning then
+                if self.db.profile.showMinimapCapitalsSkinning then
                     minimap[111][40626347] = { name = L["Skinning"] .. " - " .. L["The Scryers"], type = "Skinning", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     minimap[111][36972686] = { name = L["Skinning"] .. " - " .. L["The Aldor"], type = "Skinning", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     minimap[111][63946588] = { name = L["Skinning"], type = "Skinning", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
 
-                if self.db.profile.showMinimapTailoring then
+                if self.db.profile.showMinimapCapitalsTailoring then
                     minimap[111][41176365] = { name = L["Tailoring"] .. " - " .. L["The Scryers"], type = "Tailoring", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     minimap[111][37812700] = { name = L["Tailoring"] .. " - " .. L["The Aldor"], type = "Tailoring", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
 
-                if self.db.profile.showMinimapJewelcrafting then
+                if self.db.profile.showMinimapCapitalsJewelcrafting then
                     minimap[111][58027508] = { name = L["Jewelcrafting"] .. " - " .. L["The Scryers"], type = "Jewelcrafting", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     minimap[111][35671956] = { name = L["Jewelcrafting"] .. " - " .. L["The Aldor"], type = "Jewelcrafting", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     minimap[111][36024745] = { name = L["Jewelcrafting"] .. " - " .. L["The Aldor"], type = "Jewelcrafting", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
 
-                if self.db.profile.showMinimapBlacksmith then
+                if self.db.profile.showMinimapCapitalsBlacksmith then
                     minimap[111][43236492] = { name = L["Blacksmithing"] .. " - " .. L["The Scryers"], type = "Blacksmith", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     minimap[111][37293132] = { name = L["Blacksmithing"] .. " - " .. L["The Aldor"], type = "Blacksmith", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
 
-                if self.db.profile.showMinimapMining then
+                if self.db.profile.showMinimapCapitalsMining then
                     minimap[111][58917523] = { name = L["Mining"] .. " - " .. L["The Scryers"], type = "Mining", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     minimap[111][36054859] = { name = L["Mining"] .. " - " .. L["The Aldor"], type = "Mining", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
 
-                if self.db.profile.showMinimapFishing then
+                if self.db.profile.showMinimapCapitalsFishing then
                     minimap[111][43439160] = { name = PROFESSIONS_FISHING .. " - " .. L["The Scryers"], type = "Fishing", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
 
-                if self.db.profile.showMinimapHerbalism then
+                if self.db.profile.showMinimapCapitalsHerbalism then
                     minimap[111][38807156] = { name = L["Herbalism"] .. " - " .. L["The Scryers"], type = "Herbalism", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     minimap[111][38073007] = { name = L["Herbalism"] .. " - " .. L["The Aldor"], type = "Herbalism", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
 
-                if self.db.profile.showMinimapInscription then
+                if self.db.profile.showMinimapCapitalsInscription then
                     minimap[111][55947403] = { name = INSCRIPTION .. " - " .. L["The Scryers"], type = "Inscription", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     minimap[111][36014345] = { name = INSCRIPTION .. " - " .. L["The Aldor"], type = "Inscription", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
 
-                if self.db.profile.showMinimapEnchanting then
+                if self.db.profile.showMinimapCapitalsEnchanting then
                     minimap[111][55417484] = { name = L["Enchanting"] .. " - " .. L["The Scryers"], type = "Enchanting", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     minimap[111][43299253] = { name = L["Enchanting"] .. " - " .. L["The Scryers"], type = "Enchanting", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     minimap[111][36514454] = { name = L["Enchanting"] .. " - " .. L["The Aldor"], type = "Enchanting", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
 
-                if self.db.profile.showMinimapArchaeology then
+                if self.db.profile.showMinimapCapitalsArchaeology then
                     minimap[111][62667040] = { name = PROFESSIONS_ARCHAEOLOGY, type = "Archaeology", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
 
-                if self.db.profile.showMinimapCooking then
+                if self.db.profile.showMinimapCapitalsCooking then
                     minimap[111][74793084] = { name = PROFESSIONS_COOKING, type = "Cooking", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     minimap[111][63066835] = { name = PROFESSIONS_COOKING, type = "Cooking", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
@@ -1817,10 +1817,10 @@ if not db.show.HideMapNote then
     --#########################
     --### Dalaran Northrend ###
     --#########################
-        if self.db.profile.showMinimapDalaranNorthrend then
+        if self.db.profile.showMinimapCapitalsDalaranNorthrend then
 
         --Instance Dalaran Northrend
-            if self.db.profile.showMinimapCapitalsInstances then
+            if self.db.profile.activate.MinimapCapitalsInstances then
 
                 if self.db.profile.showMinimapCapitalsDungeons then
                     minimap[125][66166745] = { id = 283, type = "Dungeon", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- The Violet Hold
@@ -1833,18 +1833,18 @@ if not db.show.HideMapNote then
             end
 
         --General Dalaran Northrend
-            if self.db.profile.showMinimapCapitalsGeneral then
+            if self.db.profile.activate.MinimapCapitalsGeneral then
     
                 if self.db.profile.showMinimapCapitalsHearthstone then
                     minimap[125][50273955] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
                     minimap[126][35425767] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
 
 
-                    if self.faction == "Horde" or db.show.MinimapCapitalEnemyFaction then
+                    if self.faction == "Horde" or db.activate.MinimapCapitalsEnemyFaction then
                         minimap[125][65613218] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, TransportName = ITEM_REQ_HORDE, type = "Hearthstone", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
                     end
 
-                    if self.faction == "Alliance" or db.show.MinimapCapitalEnemyFaction then
+                    if self.faction == "Alliance" or db.activate.MinimapCapitalsEnemyFaction then
                         minimap[125][44666336] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, TransportName = ITEM_REQ_ALLIANCE, type = "Hearthstone", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
                     end
 
@@ -1861,11 +1861,11 @@ if not db.show.HideMapNote then
                 if self.db.profile.showMinimapCapitalsAuctioneer then
                     minimap[125][38402502] = { name = MINIMAP_TRACKING_AUCTIONEER, type = "Auctioneer", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = REQUIRES_LABEL .. " " .. L["Engineer"] }
 
-                    if self.faction == "Horde" or db.show.MinimapCapitalEnemyFaction then
+                    if self.faction == "Horde" or db.activate.MinimapCapitalsEnemyFaction then
                         minimap[125][65522343] = { dnID = MINIMAP_TRACKING_AUCTIONEER, name = "", type = "Auctioneer", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = ITEM_REQ_HORDE}
                     end
 
-                    if self.faction == "Alliance" or db.show.MinimapCapitalEnemyFaction then
+                    if self.faction == "Alliance" or db.activate.MinimapCapitalsEnemyFaction then
                         minimap[125][37175488] = { dnID = MINIMAP_TRACKING_AUCTIONEER, name = "", type = "Auctioneer", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = ITEM_REQ_ALLIANCE}
                     end
 
@@ -1884,16 +1884,16 @@ if not db.show.HideMapNote then
             end
 
         --Transports Dalaran Northrend
-            if self.db.profile.showMinimapCapitalsTransporting then
+            if self.db.profile.activate.MinimapCapitalsTransporting then
     
                 if self.db.profile.showMinimapCapitalsPortals then
                     minimap[125][55904678] = { mnID = 127, name = L["Portal"], type = "Portal", showInZone = false, hideOnContinent = true, hideOnMinimap = false } 
 
-                    if self.faction == "Horde" or db.show.MinimapCapitalEnemyFaction then
+                    if self.faction == "Horde" or db.activate.MinimapCapitalsEnemyFaction then
                         minimap[125][55322545] = { mnID = 85, name = "", type = "HPortal", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = L["Portal"] .. " => " .. ORGRIMMAR } -- Dalaran to Orgrimmar Portal 
                     end
 
-                    if self.faction == "Alliance" or db.show.MinimapCapitalEnemyFaction then
+                    if self.faction == "Alliance" or db.activate.MinimapCapitalsEnemyFaction then
                         minimap[125][40016276] = { mnID = 84,  name = "" , type = "APortal", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = L["Portal"] .. " => " .. STORMWIND } -- Dalaran to Stormwind City Portal
                     end
                 end
@@ -1901,72 +1901,72 @@ if not db.show.HideMapNote then
             end
 
         --Professions Dalaran Northrend
-            if self.db.profile.showMinimapProfessions then
+            if self.db.profile.activate.MinimapCapitalsProfessions then
 
-                if self.db.profile.showMinimapAlchemy then
+                if self.db.profile.showMinimapCapitalsAlchemy then
                     minimap[125][42633205] = { name = L["Alchemy"], type = "Alchemy", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
             
-                if self.db.profile.showMinimapLeatherworking then
+                if self.db.profile.showMinimapCapitalsLeatherworking then
                     minimap[125][34652896] = { name = L["Leatherworking"], type = "Leatherworking", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     minimap[125][33842922] = { name = L["Leatherworking"], type = "Leatherworking", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
 
-                if self.db.profile.showMinimapEngineer then
+                if self.db.profile.showMinimapCapitalsEngineer then
                     minimap[125][39652486] = { name = L["Engineer"], type = "Engineer", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
 
-                if self.db.profile.showMinimapSkinning then
+                if self.db.profile.showMinimapCapitalsSkinning then
                     minimap[125][34832786] = { name = L["Skinning"], type = "Skinning", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
 
-                if self.db.profile.showMinimapTailoring then
+                if self.db.profile.showMinimapCapitalsTailoring then
                     minimap[125][36133357] = { name = L["Tailoring"], type = "Tailoring", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
 
-                if self.db.profile.showMinimapJewelcrafting then
+                if self.db.profile.showMinimapCapitalsJewelcrafting then
                     minimap[125][40693536] = { name = L["Jewelcrafting"], type = "Jewelcrafting", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
 
-                if self.db.profile.showMinimapBlacksmith then
+                if self.db.profile.showMinimapCapitalsBlacksmith then
                     minimap[125][45162895] = { name = L["Blacksmithing"], type = "Blacksmith", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
 
-                if self.db.profile.showMinimapMining then
+                if self.db.profile.showMinimapCapitalsMining then
                     minimap[125][41462566] = { name = L["Mining"], type = "Mining", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
 
-                if self.db.profile.showMinimapFishing then
+                if self.db.profile.showMinimapCapitalsFishing then
                     minimap[125][53066493] = { name = PROFESSIONS_FISHING, type = "Fishing", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
 
-                if self.db.profile.showMinimapHerbalism then
+                if self.db.profile.showMinimapCapitalsHerbalism then
                     minimap[125][42933408] = { name = L["Herbalism"], type = "Herbalism", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
 
-                if self.db.profile.showMinimapInscription then
+                if self.db.profile.showMinimapCapitalsInscription then
                     minimap[125][41593717] = { name = INSCRIPTION, type = "Inscription", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
 
-                if self.db.profile.showMinimapEnchanting then
+                if self.db.profile.showMinimapCapitalsEnchanting then
                     minimap[125][39043981] = { name = L["Enchanting"], type = "Enchanting", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
 
-                if self.db.profile.showMinimapArchaeology then
+                if self.db.profile.showMinimapCapitalsArchaeology then
                     minimap[125][48363820] = { name = PROFESSIONS_ARCHAEOLOGY, type = "Archaeology", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
 
-                if self.faction == "Horde" or db.show.MinimapCapitalEnemyFaction then
+                if self.faction == "Horde" or db.activate.MinimapCapitalsEnemyFaction then
 
-                    if self.db.profile.showMinimapCooking then
+                    if self.db.profile.showMinimapCapitalsCooking then
                         minimap[125][69943898] = { name = PROFESSIONS_COOKING, type = "Cooking", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION .. "\n" .. ITEM_REQ_HORDE }
                     end
 
                 end
 
-                if self.faction == "Alliance" or db.show.MinimapCapitalEnemyFaction then
+                if self.faction == "Alliance" or db.activate.MinimapCapitalsEnemyFaction then
 
-                    if self.db.profile.showMinimapCooking then
+                    if self.db.profile.showMinimapCapitalsCooking then
                         minimap[125][40486581] = { name = PROFESSIONS_COOKING, type = "Cooking", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION .. "\n" .. ITEM_REQ_ALLIANCE }
                     end
 
@@ -1979,10 +1979,10 @@ if not db.show.HideMapNote then
     --######################
     --### Dalaran Legion ###
     --######################
-        if self.db.profile.showMinimapDalaranLegion then
+        if self.db.profile.showMinimapCapitalsDalaranLegion then
 
         --Instance Dalaran Legion
-            if self.db.profile.showMinimapCapitalsInstances then
+            if self.db.profile.activate.MinimapCapitalsInstances then
 
                 if self.db.profile.showMinimapCapitalsDungeons then
                     minimap[627][65576738] = { id = 777, type = "Dungeon", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Assault on Violet Hold
@@ -1995,16 +1995,16 @@ if not db.show.HideMapNote then
             end
 
         --General Dalaran Legion
-            if self.db.profile.showMinimapCapitalsGeneral then
+            if self.db.profile.activate.MinimapCapitalsGeneral then
     
                 if self.db.profile.showMinimapCapitalsHearthstone then
                     minimap[627][49784006] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
 
-                    if self.faction == "Horde" or db.show.MinimapCapitalEnemyFaction then
+                    if self.faction == "Horde" or db.activate.MinimapCapitalsEnemyFaction then
                         minimap[627][65443217] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, TransportName = ITEM_REQ_HORDE, type = "Hearthstone", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
                     end
 
-                    if self.faction == "Alliance" or db.show.MinimapCapitalEnemyFaction then
+                    if self.faction == "Alliance" or db.activate.MinimapCapitalsEnemyFaction then
                         minimap[627][44196398] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, TransportName = ITEM_REQ_ALLIANCE, type = "Hearthstone", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
                     end
 
@@ -2031,15 +2031,15 @@ if not db.show.HideMapNote then
             end
 
         --Transports Dalaran Legion
-            if self.db.profile.showMinimapCapitalsTransporting then
+            if self.db.profile.activate.MinimapCapitalsTransporting then
     
                 if self.db.profile.showMinimapCapitalsPortals then
 
-                    if self.faction == "Horde" or db.show.MinimapCapitalEnemyFaction then
+                    if self.faction == "Horde" or db.activate.MinimapCapitalsEnemyFaction then
                         minimap[627][55242392] = { mnID = 85, name = "", type = "HPortal", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = L["Portal"] .. " => " .. ORGRIMMAR } -- Dalaran to Orgrimmar Portal
                     end
 
-                    if self.faction == "Alliance" or db.show.MinimapCapitalEnemyFaction then
+                    if self.faction == "Alliance" or db.activate.MinimapCapitalsEnemyFaction then
                         minimap[627][40416378] = { mnID = 84,  name = "" , type = "APortal", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = L["Portal"] .. " => " .. STORMWIND } --  Dalaran to Stormwind City Portal
                     end
                 end
@@ -2047,71 +2047,71 @@ if not db.show.HideMapNote then
             end
 
         --Professions Dalaran Legion
-            if self.db.profile.showMinimapProfessions then
+            if self.db.profile.activate.MinimapCapitalsProfessions then
 
-                if self.db.profile.showMinimapAlchemy then
+                if self.db.profile.showMinimapCapitalsAlchemy then
                     minimap[627][42023184] = { name = L["Alchemy"], type = "Alchemy", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
             
-                if self.db.profile.showMinimapLeatherworking then
+                if self.db.profile.showMinimapCapitalsLeatherworking then
                     minimap[627][35102936] = { name = L["Leatherworking"], type = "Leatherworking", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
 
-                if self.db.profile.showMinimapEngineer then
+                if self.db.profile.showMinimapCapitalsEngineer then
                     minimap[627][38552459] = { name = L["Engineer"], type = "Engineer", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
 
-                if self.db.profile.showMinimapSkinning then
+                if self.db.profile.showMinimapCapitalsSkinning then
                     minimap[627][36082796] = { name = L["Skinning"], type = "Skinning", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
 
-                if self.db.profile.showMinimapTailoring then
+                if self.db.profile.showMinimapCapitalsTailoring then
                     minimap[627][34993457] = { name = L["Tailoring"], type = "Tailoring", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
 
-                if self.db.profile.showMinimapJewelcrafting then
+                if self.db.profile.showMinimapCapitalsJewelcrafting then
                     minimap[627][40043528] = { name = L["Jewelcrafting"], type = "Jewelcrafting", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
 
-                if self.db.profile.showMinimapBlacksmith then
+                if self.db.profile.showMinimapCapitalsBlacksmith then
                     minimap[627][45122893] = { name = L["Blacksmithing"], type = "Blacksmith", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
 
-                if self.db.profile.showMinimapMining then
+                if self.db.profile.showMinimapCapitalsMining then
                     minimap[627][46102579] = { name = L["Mining"], type = "Mining", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
 
-                if self.db.profile.showMinimapFishing then
+                if self.db.profile.showMinimapCapitalsFishing then
                     minimap[627][52776559] = { name = PROFESSIONS_FISHING, type = "Fishing", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
 
-                if self.db.profile.showMinimapHerbalism then
+                if self.db.profile.showMinimapCapitalsHerbalism then
                     minimap[627][42363394] = { name = L["Herbalism"], type = "Herbalism", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
 
-                if self.db.profile.showMinimapInscription then
+                if self.db.profile.showMinimapCapitalsInscription then
                     minimap[627][41253707] = { name = INSCRIPTION, type = "Inscription", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
 
-                if self.db.profile.showMinimapEnchanting then
+                if self.db.profile.showMinimapCapitalsEnchanting then
                     minimap[627][38294031] = { name = L["Enchanting"], type = "Enchanting", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
 
-                if self.db.profile.showMinimapArchaeology then
+                if self.db.profile.showMinimapCapitalsArchaeology then
                     minimap[627][41242630] = { name = PROFESSIONS_ARCHAEOLOGY, type = "Archaeology", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
 
-                if self.faction == "Horde" or db.show.MinimapCapitalEnemyFaction then
+                if self.faction == "Horde" or db.activate.MinimapCapitalsEnemyFaction then
 
-                    if self.db.profile.showMinimapCooking then
+                    if self.db.profile.showMinimapCapitalsCooking then
                         minimap[627][69973897] = { name = PROFESSIONS_COOKING, type = "Cooking", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION .. "\n" .. ITEM_REQ_HORDE }
                     end
 
                 end
 
-                if self.faction == "Alliance" or db.show.MinimapCapitalEnemyFaction then
+                if self.faction == "Alliance" or db.activate.MinimapCapitalsEnemyFaction then
 
-                    if self.db.profile.showMinimapCooking then
+                    if self.db.profile.showMinimapCapitalsCooking then
                         minimap[627][40586680] = { name = PROFESSIONS_COOKING, type = "Cooking", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION .. "\n" .. ITEM_REQ_ALLIANCE }
                     end
 
@@ -2124,10 +2124,10 @@ if not db.show.HideMapNote then
     --##############
     --### Oribos ###
     --##############
-        if self.db.profile.showMinimapOribos then
+        if self.db.profile.showMinimapCapitalsOribos then
 
         --Instance oribos
-            if self.db.profile.showMinimapCapitalsInstances then
+            if self.db.profile.activate.MinimapCapitalsInstances then
 
                 if self.db.profile.showMinimapCapitalsLFR then
                     minimap[1670][41377150] = { mnID = 1670, name = L["Ta'elfar"] .. "\n" .. L["Registrant"] .. " - " .. RAID_FINDER .. "\n" .. " ", id = { 1190, 1193, 1195 }, type = "LFR", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
@@ -2137,7 +2137,7 @@ if not db.show.HideMapNote then
 
 
         --General Oribos
-            if self.db.profile.showMinimapCapitalsGeneral then
+            if self.db.profile.activate.MinimapCapitalsGeneral then
     
                 if self.db.profile.showMinimapCapitalsHearthstone then
                     minimap[1670][67505031] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
@@ -2155,18 +2155,18 @@ if not db.show.HideMapNote then
             end
 
         --Transports Oribos
-            if self.db.profile.showMinimapCapitalsTransporting then
+            if self.db.profile.activate.MinimapCapitalsTransporting then
     
                 if self.db.profile.showMinimapCapitalsPortals then
                     minimap[1671][49405127] = { mnID = 1543, name = "", type = "Portal", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = L["Portal"] .. " => " .. L["The Maw"] } -- Oribos to The Maw
                     minimap[1671][30322269] = { mnID = 1961, name = "", type = "Portal", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = L["Portal"] .. " => " .. L["Korthia"] } -- Oribos to Korthia
                     minimap[1671][49532566] = { mnID = 1970, name = "", type = "Portal", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = L["Portal"] .. " => " .. L["Zereth Mortis"] } -- Oribos to Zereth Morthis
 
-                    if self.faction == "Horde" or db.show.MinimapCapitalEnemyFaction then
+                    if self.faction == "Horde" or db.activate.MinimapCapitalsEnemyFaction then
                         minimap[1670][20805432] = { mnID = 85, name = "", type = "HPortal", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = L["Portal"] .. " => " .. ORGRIMMAR } -- Oribos to Orgrimmar Portal
                     end
 
-                    if self.faction == "Alliance" or db.show.MinimapCapitalEnemyFaction then
+                    if self.faction == "Alliance" or db.activate.MinimapCapitalsEnemyFaction then
                         minimap[1670][20654625] = { mnID = 84,  name = "" , type = "APortal", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = L["Portal"] .. " => " .. STORMWIND } -- Oribos to Stormwind City Portal
                     end
                 end
@@ -2185,57 +2185,57 @@ if not db.show.HideMapNote then
             end
 
         --Professions Oribos
-            if self.db.profile.showMinimapProfessions then
+            if self.db.profile.activate.MinimapCapitalsProfessions then
 
-                if self.db.profile.showMinimapAlchemy then
+                if self.db.profile.showMinimapCapitalsAlchemy then
                     minimap[1670][39284044] = { name = L["Alchemy"], type = "Alchemy", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
             
-                if self.db.profile.showMinimapLeatherworking then
+                if self.db.profile.showMinimapCapitalsLeatherworking then
                     minimap[1670][42342642] = { name = L["Leatherworking"], type = "Leatherworking", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
 
-                if self.db.profile.showMinimapEngineer then
+                if self.db.profile.showMinimapCapitalsEngineer then
                     minimap[1670][38114472] = { name = L["Engineer"], type = "Engineer", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
 
-                if self.db.profile.showMinimapSkinning then
+                if self.db.profile.showMinimapCapitalsSkinning then
                     minimap[1670][42072813] = { name = L["Skinning"], type = "Skinning", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
 
-                if self.db.profile.showMinimapTailoring then
+                if self.db.profile.showMinimapCapitalsTailoring then
                     minimap[1670][45553182] = { name = L["Tailoring"], type = "Tailoring", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
 
-                if self.db.profile.showMinimapJewelcrafting then
+                if self.db.profile.showMinimapCapitalsJewelcrafting then
                     minimap[1670][35164127] = { name = L["Jewelcrafting"], type = "Jewelcrafting", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
 
-                if self.db.profile.showMinimapBlacksmith then
+                if self.db.profile.showMinimapCapitalsBlacksmith then
                     minimap[1670][40563139] = { name = L["Blacksmithing"], type = "Blacksmith", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
 
-                if self.db.profile.showMinimapMining then
+                if self.db.profile.showMinimapCapitalsMining then
                     minimap[1670][39313292] = { name = L["Mining"], type = "Mining", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
 
-                if self.db.profile.showMinimapFishing then
+                if self.db.profile.showMinimapCapitalsFishing then
                     minimap[1670][46162635] = { name = PROFESSIONS_FISHING, type = "Fishing", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
 
-                if self.db.profile.showMinimapCooking then
+                if self.db.profile.showMinimapCapitalsCooking then
                     minimap[1670][46812266] = { name = PROFESSIONS_COOKING, type = "Cooking", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
 
-                if self.db.profile.showMinimapHerbalism then
+                if self.db.profile.showMinimapCapitalsHerbalism then
                     minimap[1670][40303824] = { name = L["Herbalism"], type = "Herbalism", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
 
-                if self.db.profile.showMinimapInscription then
+                if self.db.profile.showMinimapCapitalsInscription then
                     minimap[1670][36473666] = { name = INSCRIPTION, type = "Inscription", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
 
-                if self.db.profile.showMinimapEnchanting then
+                if self.db.profile.showMinimapCapitalsEnchanting then
                     minimap[1670][48422949] = { name = L["Enchanting"], type = "Enchanting", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
 
@@ -2246,10 +2246,10 @@ if not db.show.HideMapNote then
     --##################
     --### Valdrakken ###
     --##################
-        if self.db.profile.showMinimapValdrakken then
+        if self.db.profile.showMinimapCapitalsValdrakken then
 
         --General Valdrakken
-            if self.db.profile.showMinimapCapitalsGeneral then
+            if self.db.profile.activate.MinimapCapitalsGeneral then
     
                 if self.db.profile.showMinimapCapitalsHearthstone then
                     minimap[2112][47714635] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
@@ -2267,18 +2267,18 @@ if not db.show.HideMapNote then
             end
 
         --Transports Valdrakken
-            if self.db.profile.showMinimapCapitalsTransporting then
+            if self.db.profile.activate.MinimapCapitalsTransporting then
     
                 if self.db.profile.showMinimapCapitalsPortals then
                     minimap[2112][26104102] = { mnID = 15, name = "", type = "Portal", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = L["Portal"] .. " => " .. L["Badlands"] } --  Portal from Valdrakken to the Badlands
                     minimap[2112][62725732] = { mnID = 2200, name = "", type = "Portal", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = L["Portal"] .. " => " .. L["Emerald Dream"] } --  Portal from Valdrakken to The Emerald Dream
                     --minimap[2112][53575534] = { mnID = 2266, name = "", type = "GPortal", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = L["The Timeways"] .. " " .. L["Portals"] .. "\n" .. "\n" .. " => " .. L["Vashj'ir"] .. "\n" .. " => " .. POSTMASTER_LETTER_LORLATHIL .. "\n" .. " => " .. L["Zuldazar"] .. "\n" .. " => " .. L["Drustvar"] .. "\n" .. " => " .. L["Gorgrond"] } --  Portal from Valdrakken to the Timeways
 
-                    if self.faction == "Horde" or db.show.MinimapCapitalEnemyFaction then
+                    if self.faction == "Horde" or db.activate.MinimapCapitalsEnemyFaction then
                         minimap[2112][56593828] = { mnID = 85, name = L["(inside building)"], type = "HPortal", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = L["Portal"] .. " => " .. ORGRIMMAR } -- Valdrakken to Orgrimmar Portal
                     end
 
-                    if self.faction == "Alliance" or db.show.MinimapCapitalEnemyFaction then
+                    if self.faction == "Alliance" or db.activate.MinimapCapitalsEnemyFaction then
                         minimap[2112][59804169] = { mnID = 84,  name = L["(inside building)"], type = "APortal", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = L["Portal"] .. " => " .. STORMWIND } -- Valdrakken to Stormwind City Portal
                     end
                 end
@@ -2286,58 +2286,58 @@ if not db.show.HideMapNote then
             end
 
         --Professions Valdrakken
-            if self.db.profile.showMinimapProfessions then
+            if self.db.profile.activate.MinimapCapitalsProfessions then
                 minimap[2112][34796252] = { name = PROFESSIONS_CRAFTING_ORDERS_TAB_NAME, type = "Inscription", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
 
-                if self.db.profile.showMinimapAlchemy then
+                if self.db.profile.showMinimapCapitalsAlchemy then
                     minimap[2112][36417170] = { name = L["Alchemy"], type = "Alchemy", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
             
-                if self.db.profile.showMinimapLeatherworking then
+                if self.db.profile.showMinimapCapitalsLeatherworking then
                     minimap[2112][28616157] = { name = L["Leatherworking"], type = "Leatherworking", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
 
-                if self.db.profile.showMinimapEngineer then
+                if self.db.profile.showMinimapCapitalsEngineer then
                     minimap[2112][42254861] = { name = L["Engineer"], type = "Engineer", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
 
-                if self.db.profile.showMinimapSkinning then
+                if self.db.profile.showMinimapCapitalsSkinning then
                     minimap[2112][28606008] = { name = L["Skinning"], type = "Skinning", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
 
-                if self.db.profile.showMinimapTailoring then
+                if self.db.profile.showMinimapCapitalsTailoring then
                     minimap[2112][32026629] = { name = L["Tailoring"], type = "Tailoring", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
 
-                if self.db.profile.showMinimapJewelcrafting then
+                if self.db.profile.showMinimapCapitalsJewelcrafting then
                     minimap[2112][40486141] = { name = L["Jewelcrafting"], type = "Jewelcrafting", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
 
-                if self.db.profile.showMinimapBlacksmith then
+                if self.db.profile.showMinimapCapitalsBlacksmith then
                     minimap[2112][36864659] = { name = L["Blacksmithing"], type = "Blacksmith", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
 
-                if self.db.profile.showMinimapMining then
+                if self.db.profile.showMinimapCapitalsMining then
                     minimap[2112][38885143] = { name = L["Mining"], type = "Mining", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
 
-                if self.db.profile.showMinimapFishing then
+                if self.db.profile.showMinimapCapitalsFishing then
                     minimap[2112][44847471] = { name = PROFESSIONS_FISHING, type = "Fishing", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
 
-                if self.db.profile.showMinimapCooking then
+                if self.db.profile.showMinimapCapitalsCooking then
                     minimap[2112][46494625] = { name = PROFESSIONS_COOKING, type = "Cooking", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
 
-                if self.db.profile.showMinimapHerbalism then
+                if self.db.profile.showMinimapCapitalsHerbalism then
                     minimap[2112][337626892] = { name = L["Herbalism"], type = "Herbalism", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
 
-                if self.db.profile.showMinimapInscription then
+                if self.db.profile.showMinimapCapitalsInscription then
                     minimap[2112][38847338] = { name = INSCRIPTION, type = "Inscription", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
 
-                if self.db.profile.showMinimapEnchanting then
+                if self.db.profile.showMinimapCapitalsEnchanting then
                     minimap[2112][31076137] = { name = L["Enchanting"], type = "Enchanting", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
 

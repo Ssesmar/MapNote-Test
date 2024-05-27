@@ -8,12 +8,12 @@ local nodes = ns.nodes
 --#####################################################################################################
 --##########################        function to hide all nodes below         ##########################
 --#####################################################################################################
-if not db.show.HideMapNote then
+if not db.activate.HideMapNote then
 
     --########################################################################################
     --################################         Capitals       ################################
     --########################################################################################
-    if db.show.Capitals then
+    if db.activate.Capitals then
 
 
     --###########################################################################################
@@ -24,15 +24,15 @@ if not db.show.HideMapNote then
     --################
     --### Ogrimmar ###   
     --################
-        if self.db.profile.showOrgrimmar then
+        if self.db.profile.showCapitalsOrgrimmar then
 
         --#############################
         --### Horde or EnemyFaction ###
         --#############################
-            if self.faction == "Horde" or db.show.CapitalEnemyFaction then
+            if self.faction == "Horde" or db.activate.CapitalsEnemyFaction then
 
             --Professions Orgrimmar
-                if self.db.profile.showProfessions then
+                if self.db.profile.activate.CapitalsProfessions then
 
                     if self.db.profile.showAlchemy then
                         nodes[85][55684575] = { name = L["Alchemy"], type = "Alchemy", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
@@ -97,7 +97,7 @@ if not db.show.HideMapNote then
                 end
 
             --Transports Orgrimmar
-                if self.db.profile.showCapitalsTransporting then
+                if self.db.profile.activate.Transporting then
 
                     if self.db.profile.showCapitalsPortals then
                         nodes[85][57278961] = { name = "", type = "PassageHPortal", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = L["Portalroom"] .. "\n" .. "\n" .. " => " .. L["Silvermoon City"] .. "\n" .. " => " .. L["Valdrakken"] .. "\n" .. " => " .. L["Oribos"] .. "\n" .. " => " .. L["Azsuna"] .. "\n" .. " => " .. L["Zuldazar"] .. "\n" .. " => " .. DUNGEON_FLOOR_DALARANCITY1 .. "\n" .. " => " .. POSTMASTER_LETTER_HYJAL .. "\n" .. "\n" .. " => " .. DUNGEON_FLOOR_TANARIS18 .. " - " .. L["in the basement"] .. "\n" .. " => " .. L["Shattrath City"] .. " - " .. L["in the basement"] .. "\n" .. " => " .. L["Warspear"] .. " - " .. L["in the basement"] } -- Portalroom from Orgrimmar
@@ -121,7 +121,7 @@ if not db.show.HideMapNote then
                 end
     
             --Instances Orgrimmar
-                if self.db.profile.showCapitalsInstances then
+                if self.db.profile.activate.CapitalsInstances then
     
                     if self.db.profile.showCapitalsDungeons then
                         --nodes[85][51685850] = { id = 226, type = "Dungeon", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Ragefire
@@ -137,7 +137,7 @@ if not db.show.HideMapNote then
                 end
 
             --General Orgrimmar
-                if self.db.profile.showCapitalsGeneral then
+                if self.db.profile.activate.CapitalsGeneral then
     
                     if self.db.profile.showCapitalsPaths then
                         nodes[85][74800606] = { dnID = L["Exit"], name = "", mnID = 76, type = "PassageRightL", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Passage/Exit 
@@ -181,15 +181,15 @@ if not db.show.HideMapNote then
     --#####################
     --### Thunder Bluff ###
     --#####################
-        if self.db.profile.showThunderBluff then
+        if self.db.profile.showCapitalsThunderBluff then
 
         --#############################
         --### Horde or EnemyFaction ###
         --#############################
-            if self.faction == "Horde" or db.show.CapitalEnemyFaction then
+            if self.faction == "Horde" or db.activate.CapitalsEnemyFaction then
 
             --Professions Thunder Bluff
-                if self.db.profile.showProfessions then
+                if self.db.profile.activate.CapitalsProfessions then
 
                     if self.db.profile.showAlchemy then
                         nodes[88][46643317] = { name = L["Alchemy"], type = "Alchemy", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
@@ -242,7 +242,7 @@ if not db.show.HideMapNote then
                 end
 
             --Transports Thunder Bluff
-                if self.db.profile.showCapitalsTransporting then
+                if self.db.profile.activate.Transporting then
   
                     if self.db.profile.showCapitalsZeppelins then
                         nodes[88][14292570] = { mnID = 85, name = "", type = "HZeppelin", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = L["Zeppelin"] .. " => " .. ORGRIMMAR } -- Zeppelin from Thunder Bluff to OG
@@ -251,7 +251,7 @@ if not db.show.HideMapNote then
                 end
 
             --General Thunder Bluff
-                if self.db.profile.showCapitalsGeneral then
+                if self.db.profile.activate.CapitalsGeneral then
     
                     if self.db.profile.showCapitalsPaths then
                         nodes[88][31886595] = { dnID = L["Exit"], name = "", mnID = 7, type = "PassageDownL", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
@@ -280,15 +280,15 @@ if not db.show.HideMapNote then
     --##################
     --### Silvermoon ###
     --##################
-        if self.db.profile.showSilvermoon then
+        if self.db.profile.showCapitalsSilvermoon then
 
         --#############################
         --### Horde or EnemyFaction ###
         --#############################
-            if self.faction == "Horde" or db.show.CapitalEnemyFaction then
+            if self.faction == "Horde" or db.activate.CapitalsEnemyFaction then
 
             --Professions Silvermoon
-                if self.db.profile.showProfessions then
+                if self.db.profile.activate.CapitalsProfessions then
 
                     if self.db.profile.showAlchemy then
                         nodes[110][66701673] = { name = L["Alchemy"], type = "Alchemy", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
@@ -351,7 +351,7 @@ if not db.show.HideMapNote then
                 end
 
             --Transports Silvermoon
-                if self.db.profile.showCapitalsTransporting then
+                if self.db.profile.activate.Transporting then
 
                     if self.db.profile.showCapitalsPortals then
                         nodes[110][58511859] = { mnID = 85, name = "", type = "HPortal", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = L["Portal"] .. " => " .. ORGRIMMAR } -- Portal to Orgrimmar from Silvermoon 
@@ -361,7 +361,7 @@ if not db.show.HideMapNote then
                 end
 
             --General Silvermoon
-                if self.db.profile.showCapitalsGeneral then
+                if self.db.profile.activate.CapitalsGeneral then
     
                     if self.db.profile.showCapitalsPaths then
                         nodes[110][72609199] = { dnID = L["Exit"], name = "", mnID = 94, type = "PassageDownL", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Passage/Exit 
@@ -391,15 +391,15 @@ if not db.show.HideMapNote then
     --#################
     --### Undercity ###
     --#################
-        if self.db.profile.showUndercity then
+        if self.db.profile.showCapitalsUndercity then
 
         --#############################
         --### Horde or EnemyFaction ###
         --#############################
-            if self.faction == "Horde" or db.show.CapitalEnemyFaction then
+            if self.faction == "Horde" or db.activate.CapitalsEnemyFaction then
 
             --Professions Undercity
-                if self.db.profile.showProfessions then
+                if self.db.profile.activate.CapitalsProfessions then
 
                     if self.db.profile.showAlchemy then
                         nodes[90][47757332] = { name = L["Alchemy"], type = "Alchemy", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
@@ -459,7 +459,7 @@ if not db.show.HideMapNote then
                 end
 
             --Transports Undercity
-                if self.db.profile.showCapitalsTransporting then
+                if self.db.profile.activate.Transporting then
 
                     if self.db.profile.showCapitalsPortals then
                         nodes[90][85181711] = { mnID = 100, name = "", type = "HPortal", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Portal from Old Undercity to Hellfire
@@ -468,7 +468,7 @@ if not db.show.HideMapNote then
                 end
 
             --General Undercity
-                if self.db.profile.showCapitalsGeneral then
+                if self.db.profile.activate.CapitalsGeneral then
     
                     if self.db.profile.showCapitalsPaths then
                         nodes[90][15003101] = { dnID = L["Exit"], name = "", mnID = 18, type = "PassageUpL", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Passage/Exit 
@@ -510,15 +510,15 @@ if not db.show.HideMapNote then
     --###########################
     --### Warspear / Garrison ###
     --###########################
-        if self.db.profile.showWarspear then
+        if self.db.profile.showCapitalsWarspear then
 
         --#############################
         --### Horde or EnemyFaction ###
         --#############################
-            if self.faction == "Horde" or db.show.CapitalEnemyFaction then
+            if self.faction == "Horde" or db.activate.CapitalsEnemyFaction then
 
             --Instance Warspear / Garrison
-                if self.db.profile.showCapitalsInstances then
+                if self.db.profile.activate.CapitalsInstances then
     
                     if self.db.profile.showCapitalsLFR then
                         nodes[590][41364698] = { mnID = 590, name = L["Seer Kazal"] .. " - " .. REQUIRES_LABEL .. " " .. GARRISON_LOCATION_TOOLTIP .. " " .. LEVEL .. " " .. ACTION_SPELL_CAST_START_MASTER .. "\n" .. L["Registrant"] .. " - " .. RAID_FINDER .. "\n" .. " ", id = { 477, 457, 669 }, type = "LFR", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
@@ -527,7 +527,7 @@ if not db.show.HideMapNote then
                 end
 
             --Professions Warspear
-                if self.db.profile.showProfessions then
+                if self.db.profile.activate.CapitalsProfessions then
 
                     if self.db.profile.showAlchemy then
                         nodes[624][60832652] = { name = L["Alchemy"], type = "Alchemy", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
@@ -587,7 +587,7 @@ if not db.show.HideMapNote then
                 end
 
             --Transports Warspear
-                if self.db.profile.showCapitalsTransporting then
+                if self.db.profile.activate.Transporting then
 
                     if self.db.profile.showCapitalsPortals then
                         nodes[624][53184384] = { mnID = 534, name = L["Vol'mar"], type = "HPortal", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Portal from Ashran to Vol'mar Captive
@@ -598,7 +598,7 @@ if not db.show.HideMapNote then
                 end
 
             --General Warspear
-                if self.db.profile.showCapitalsGeneral then
+                if self.db.profile.activate.CapitalsGeneral then
     
                     if self.db.profile.showCapitalsPaths then
                         nodes[624][55498792] = { dnID = L["Exit"], name = "", mnID = 588, type = "PassageRightL", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Passage/Exit 
@@ -625,15 +625,15 @@ if not db.show.HideMapNote then
     --#################
     --### DazarAlor ###
     --#################
-        if self.db.profile.showDazarAlor then
+        if self.db.profile.showCapitalsDazarAlor then
 
         --#############################
         --### Horde or EnemyFaction ###
         --#############################
-            if self.faction == "Horde" or db.show.CapitalEnemyFaction then
+            if self.faction == "Horde" or db.activate.CapitalsEnemyFaction then
 
             --Professions DazarAlor
-                if self.db.profile.showProfessions then
+                if self.db.profile.activate.CapitalsProfessions then
 
                     if self.db.profile.showAlchemy then
                         nodes[1165][42223796] = { name = L["Alchemy"], type = "Alchemy", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
@@ -697,7 +697,7 @@ if not db.show.HideMapNote then
                 end
 
             --Transports DazarAlor
-                if self.db.profile.showCapitalsTransporting then
+                if self.db.profile.activate.Transporting then
 
                     if self.db.profile.showCapitalsPortals then
                         nodes[1165][51424583] = { mnID = 1163, name = "", type = "HPortal", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = L["Dazar'alor"] .. " " .. L["Portalroom"] .. L["(inside building)"] .. "\n" .. " => " .. L["Silvermoon City"] .. "\n" .. " => " .. ORGRIMMAR .. "\n" .. " => " .. L["Thunder Bluff"] .. "\n" .. " => " .. L["Silithus"] .. "\n" .. " => " .. L["Nazjatar"] } -- Portalroom from Dazar'alor
@@ -717,7 +717,7 @@ if not db.show.HideMapNote then
                 end
 
             --Instances DazarAlor
-                if self.db.profile.showCapitalsInstances then
+                if self.db.profile.activate.CapitalsInstances then
     
                     if self.db.profile.showCapitalsDungeons then
                         nodes[1165][44049256] = { id = 1012, type = "Dungeon", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- The MOTHERLODE HORDE
@@ -731,7 +731,7 @@ if not db.show.HideMapNote then
                 end
 
             --General DazarAlor
-                if self.db.profile.showCapitalsGeneral then
+                if self.db.profile.activate.CapitalsGeneral then
     
                     if self.db.profile.showCapitalsPaths then
                         nodes[1165][44423697] = { name = L["Passage"] .. " " .. MINIMAP_TRACKING_TRAINER_PROFESSION, type = "PassageRightL", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName =  L["Jewelcrafting"] .. "\n" .. L["Enchanting"] }
@@ -774,15 +774,15 @@ if not db.show.HideMapNote then
     --#############
     --### Sot2M ###
     --#############
-        if self.db.profile.showSot2M then
+        if self.db.profile.showCapitalsSot2M then
 
         --#############################
         --### Horde or EnemyFaction ###
         --#############################
-            if self.faction == "Horde" or db.show.CapitalEnemyFaction then
+            if self.faction == "Horde" or db.activate.CapitalsEnemyFaction then
 
             --Professions Sot2M
-                if self.db.profile.showProfessions then
+                if self.db.profile.activate.CapitalsProfessions then
 
                     if self.db.profile.showEngineer then
                         nodes[391][62374397] = { name = L["Engineer"], type = "Engineer", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
@@ -795,7 +795,7 @@ if not db.show.HideMapNote then
                 end
 
             --Transports Sot2M
-                if self.db.profile.showCapitalsTransporting then
+                if self.db.profile.activate.Transporting then
 
                     if self.db.profile.showCapitalsPortals then
                         nodes[392][72464286] = { mnID = 85, name = "", type = "HPortal", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = L["Portal"] .. " => " .. ORGRIMMAR } -- Portal from Shrine of Two Moons to Orgrimmar
@@ -804,7 +804,7 @@ if not db.show.HideMapNote then
                 end
 
             --General Sot2M
-                if self.db.profile.showCapitalsGeneral then
+                if self.db.profile.activate.CapitalsGeneral then
     
                     if self.db.profile.showCapitalsPaths then
                         nodes[391][26778156] = { name = L["Exit"], mnID = 390, type = "PassageDownL", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
@@ -854,15 +854,15 @@ if not db.show.HideMapNote then
     --#################
     --### Stormwind ###
     --#################
-        if self.db.profile.showStormwind then
+        if self.db.profile.showCapitalsStormwind then
 
         --################################
         --### Alliance or EnemyFaction ###
         --################################
-            if self.faction == "Alliance" or db.show.CapitalEnemyFaction then
+            if self.faction == "Alliance" or db.activate.CapitalsEnemyFaction then
 
             --Instances Stormwind
-                if self.db.profile.showCapitalsInstances then
+                if self.db.profile.activate.CapitalsInstances then
     
                     if self.db.profile.showCapitalsDungeons then
                         nodes[84][51196779] = { id = 238, type = "Dungeon", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- The Stockade
@@ -871,7 +871,7 @@ if not db.show.HideMapNote then
                 end
 
             --Transports Stormwind
-                if self.db.profile.showCapitalsTransporting then
+                if self.db.profile.activate.Transporting then
 
                     if self.db.profile.showCapitalsPortals then
                         nodes[84][73221836] = { mnID = 245, name = "", type = "APortalS", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = L["Portal"] .. " => " .. DUNGEON_FLOOR_TOLBARADWARLOCKSCENARIO0 } --  Portal to Tol Barad
@@ -908,7 +908,7 @@ if not db.show.HideMapNote then
                 end
 
             --Professions Stormwind
-                if self.db.profile.showProfessions then
+                if self.db.profile.activate.CapitalsProfessions then
 
                     if self.db.profile.showAlchemy then
                         nodes[84][55668610] = { name = L["Alchemy"], type = "Alchemy", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
@@ -974,7 +974,7 @@ if not db.show.HideMapNote then
                 end
 
             --General Stormwind
-                if self.db.profile.showCapitalsGeneral then
+                if self.db.profile.activate.CapitalsGeneral then
     
                     if self.db.profile.showCapitalsPaths then
                         nodes[84][73399051] = { dnID = L["Exit"], name = "", mnID = 37, type = "PassageRightL", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Passage/Exit 
@@ -1008,15 +1008,15 @@ if not db.show.HideMapNote then
     --#################
     --### Ironforge ###
     --#################
-        if self.db.profile.showIronforge then
+        if self.db.profile.showCapitalsIronforge then
 
         --################################
         --### Alliance or EnemyFaction ###
         --################################
-            if self.faction == "Alliance" or db.show.CapitalEnemyFaction then
+            if self.faction == "Alliance" or db.activate.CapitalsEnemyFaction then
 
             --Transports Ironforge
-                if self.db.profile.showCapitalsTransporting then
+                if self.db.profile.activate.Transporting then
 
                     if self.db.profile.showCapitalsTransport then
                         nodes[87][72545022] = { mnID = 84, name = "", type = "Carriage", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = DUNGEON_FLOOR_DEEPRUNTRAM1 .. " => " .. STORMWIND } -- Transport to Stormwind Carriage
@@ -1025,7 +1025,7 @@ if not db.show.HideMapNote then
                 end
 
             --Professions ironforge
-                if self.db.profile.showProfessions then
+                if self.db.profile.activate.CapitalsProfessions then
 
                     if self.db.profile.showAlchemy then
                         nodes[87][66615566] = { name = L["Alchemy"], type = "Alchemy", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
@@ -1086,7 +1086,7 @@ if not db.show.HideMapNote then
                 end
 
             --General Ironforge
-                if self.db.profile.showCapitalsGeneral then
+                if self.db.profile.activate.CapitalsGeneral then
     
                     if self.db.profile.showCapitalsPaths then
                         nodes[87][14218604] = { dnID = L["Exit"], name = "", mnID = 27, type = "PassageLeftL", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Passage/Exit 
@@ -1115,13 +1115,13 @@ if not db.show.HideMapNote then
     --#################
     --### Darnassus ###
     --#################
-        if self.db.profile.showDarnassus then
+        if self.db.profile.showCapitalsDarnassus then
 
         --##########################
         --### Horde and Alliance ###
         --##########################
         --Transports Darnassus
-            if self.db.profile.showCapitalsTransporting then
+            if self.db.profile.activate.Transporting then
 
                 if self.db.profile.showCapitalsPortals then
                     nodes[89][36045019] = { mnID = 57, name = "", type = "Portal", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = L["Portal"] .. " => " .. L["Rut'theran"] } -- Portal To Darnassus from Teldrassil
@@ -1132,10 +1132,10 @@ if not db.show.HideMapNote then
         --################################
         --### Alliance or EnemyFaction ###
         --################################
-            if self.faction == "Alliance" or db.show.CapitalEnemyFaction then
+            if self.faction == "Alliance" or db.activate.CapitalsEnemyFaction then
 
             --General Darnassus
-                if self.db.profile.showCapitalsGeneral then
+                if self.db.profile.activate.CapitalsGeneral then
     
                     if self.db.profile.showCapitalsPaths then
                         nodes[89][79984648] = { dnID = L["Exit"], name = "", mnID = 57, type = "PassageRightL", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Passage/Exit Exodar
@@ -1157,7 +1157,7 @@ if not db.show.HideMapNote then
                 end
 
             --Transports Darnassus
-                if self.db.profile.showCapitalsTransporting then
+                if self.db.profile.activate.Transporting then
 
                     if self.db.profile.showCapitalsPortals then
                         nodes[89][44127840] = { name = "", type = "APortal", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = L["Portals"] .. "\n" .. " => " .. L["Exodar"] .. "\n" .. " => " .. L["Hellfire Peninsula"] } -- Portal To Darnassus from Teldrassil
@@ -1166,7 +1166,7 @@ if not db.show.HideMapNote then
                 end
 
             --Professions Darnassus
-                if self.db.profile.showProfessions then
+                if self.db.profile.activate.CapitalsProfessions then
 
                     if self.db.profile.showAlchemy then
                         nodes[89][53913853] = { name = L["Alchemy"], type = "Alchemy", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
@@ -1232,15 +1232,15 @@ if not db.show.HideMapNote then
     --##############
     --### Exodar ###
     --##############
-        if self.db.profile.showExodar then
+        if self.db.profile.showCapitalsExodar then
 
         --################################
         --### Alliance or EnemyFaction ###
         --################################
-            if self.faction == "Alliance" or db.show.CapitalEnemyFaction then
+            if self.faction == "Alliance" or db.activate.CapitalsEnemyFaction then
 
             --General Exodar
-                if self.db.profile.showCapitalsGeneral then
+                if self.db.profile.activate.CapitalsGeneral then
     
                     if self.db.profile.showCapitalsPaths then
                         nodes[103][34947443] = { dnID = L["Exit"], name = "", mnID = 97, type = "PassageUpL", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Passage/Exit Exodar
@@ -1262,7 +1262,7 @@ if not db.show.HideMapNote then
                 end
 
             --Transports Exodar
-                if self.db.profile.showCapitalsTransporting then
+                if self.db.profile.activate.Transporting then
 
                     if self.db.profile.showCapitalsPortals then
                         nodes[103][48326264] = { mnID = 84, name = "", type = "APortal", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = L["Portal"] .. " => " .. STORMWIND } -- Portal Exodar to Stormwind
@@ -1271,7 +1271,7 @@ if not db.show.HideMapNote then
                 end
 
             --Professions Exodar
-                if self.db.profile.showProfessions then
+                if self.db.profile.activate.CapitalsProfessions then
 
                     if self.db.profile.showAlchemy then
                         nodes[103][27766078] = { name = L["Alchemy"], type = "Alchemy", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
@@ -1337,15 +1337,15 @@ if not db.show.HideMapNote then
     --##############################
     --### Stormshield / Garrison ###
     --##############################
-        if self.db.profile.showStormshield then
+        if self.db.profile.showCapitalsStormshield then
 
         --################################
         --### Alliance or EnemyFaction ###
         --################################
-            if self.faction == "Alliance" or db.show.CapitalEnemyFaction then
+            if self.faction == "Alliance" or db.activate.CapitalsEnemyFaction then
 
             --Instance Warspear / Garrison
-                if self.db.profile.showCapitalsInstances then
+                if self.db.profile.activate.CapitalsInstances then
     
                     if self.db.profile.showCapitalsLFR then
                         nodes[582][33173703] = { mnID = 582, name = L["Seer Kazal"] .. " - " .. REQUIRES_LABEL .. " " .. GARRISON_LOCATION_TOOLTIP .. " " .. LEVEL .. " " .. ACTION_SPELL_CAST_START_MASTER .. "\n" .. L["Registrant"] .. " - " .. RAID_FINDER .. "\n" .. " ", id = { 477, 457, 669 }, type = "LFR", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
@@ -1354,7 +1354,7 @@ if not db.show.HideMapNote then
                 end
 
             --General Stormshield
-                if self.db.profile.showCapitalsGeneral then
+                if self.db.profile.activate.CapitalsGeneral then
     
                     if self.db.profile.showCapitalsPaths then
                         nodes[622][55650794] = { dnID = L["Exit"], name = "", mnID = 588, type = "PassageUpL", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Passage/Exit Exodar
@@ -1376,7 +1376,7 @@ if not db.show.HideMapNote then
                 end
 
             --Transports Stormshield
-                if self.db.profile.showCapitalsTransporting then
+                if self.db.profile.activate.Transporting then
 
                     if self.db.profile.showCapitalsPortals then
                         nodes[582][69692706] = { mnID = 622, name = L["Ashran"], type = "APortal", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Portal from Garison to Ashran
@@ -1387,7 +1387,7 @@ if not db.show.HideMapNote then
                 end
 
             --Professions Stormshield
-                if self.db.profile.showProfessions then
+                if self.db.profile.activate.CapitalsProfessions then
 
                     if self.db.profile.showAlchemy then
                         nodes[622][37056882] = { name = L["Alchemy"], type = "Alchemy", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
@@ -1453,15 +1453,15 @@ if not db.show.HideMapNote then
     --###############
     --### Boralus ###
     --###############
-        if self.db.profile.showBoralus then
+        if self.db.profile.showCapitalsBoralus then
 
         --################################
         --### Alliance or EnemyFaction ###
         --################################
-            if self.faction == "Alliance" or db.show.CapitalEnemyFaction then
+            if self.faction == "Alliance" or db.activate.CapitalsEnemyFaction then
 
             --Instance Boralus
-                if self.db.profile.showCapitalsInstances then
+                if self.db.profile.activate.CapitalsInstances then
 
                     if self.db.profile.showCapitalsRaids then
                         nodes[1161][70443555] = { id = 1176, type = "Raid", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Battle of Dazar'alor
@@ -1479,7 +1479,7 @@ if not db.show.HideMapNote then
                 end
 
             --General Boralus
-                if self.db.profile.showCapitalsGeneral then
+                if self.db.profile.activate.CapitalsGeneral then
     
                     if self.db.profile.showCapitalsPaths then
                         nodes[1161][80297904] = { dnID = L["Exit"], name = "", mnID = 895, type = "PassageDownL", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Passage/Exit Exodar
@@ -1502,7 +1502,7 @@ if not db.show.HideMapNote then
                 end
 
             --Transports Boralus
-                if self.db.profile.showCapitalsTransporting then
+                if self.db.profile.activate.Transporting then
 
                     if self.db.profile.showCapitalsPortals then
                         nodes[1161][70351605] = { name = "", type = "APortal", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = L["Boralus"] .. " " .. L["Portalroom"] .. "\n" .. " " .. L["(inside building)"] .. "\n" .. " => " .. STORMWIND .. "\n" .. " => " .. L["Silithus"] .. "\n" .. " => " .. L["Exodar"] .. "\n" .. " => " .. L["Ironforge"] } -- Portalroom from Boralus
@@ -1517,7 +1517,7 @@ if not db.show.HideMapNote then
                 end
 
             --Professions Boralus
-                if self.db.profile.showProfessions then
+                if self.db.profile.activate.CapitalsProfessions then
 
                     if self.db.profile.showAlchemy then
                         nodes[1161][74090670] = { name = L["Alchemy"], type = "Alchemy", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
@@ -1583,15 +1583,15 @@ if not db.show.HideMapNote then
     --#############
     --### Sot7S ###
     --#############
-        if self.db.profile.showSot7S then
+        if self.db.profile.showCapitalsSot7S then
 
         --################################
         --### Alliance or EnemyFaction ###
         --################################
-            if self.faction == "Alliance" or db.show.CapitalEnemyFaction then
+            if self.faction == "Alliance" or db.activate.CapitalsEnemyFaction then
 
             --General Sot7S
-                if self.db.profile.showCapitalsGeneral then
+                if self.db.profile.activate.CapitalsGeneral then
     
                     if self.db.profile.showCapitalsPaths then
                         nodes[393][24265267] = { name = L["Exit"], mnID = 390, type = "PassageUpL", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
@@ -1627,7 +1627,7 @@ if not db.show.HideMapNote then
                 end
 
             --Transports Sot7S
-                if self.db.profile.showCapitalsTransporting then
+                if self.db.profile.activate.Transporting then
 
                     if self.db.profile.showCapitalsPortals then
                         nodes[394][71563593] = { mnID = 84, name = "", type = "APortal", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName =  L["Portal"] .. " => " .. STORMWIND }
@@ -1636,7 +1636,7 @@ if not db.show.HideMapNote then
                 end
 
             --Professions Sot7S
-                if self.db.profile.showProfessions then
+                if self.db.profile.activate.CapitalsProfessions then
 
                     if self.db.profile.showBlacksmith then
                         nodes[393][72655225] = { name = L["Blacksmithing"], type = "Blacksmith", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
@@ -1657,10 +1657,10 @@ if not db.show.HideMapNote then
     --#################
     --### Shattrath ###
     --#################
-        if self.db.profile.showShattrath then
+        if self.db.profile.showCapitalsShattrath then
 
         --General Shattrath
-            if self.db.profile.showCapitalsGeneral then
+            if self.db.profile.activate.CapitalsGeneral then
     
                 if self.db.profile.showCapitalsHearthstone then
                     nodes[111][56278147] = { dnID = MINIMAP_TRACKING_INNKEEPER .. " - " .. L["The Scryers"], name = "", type = "Hearthstone", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
@@ -1697,16 +1697,16 @@ if not db.show.HideMapNote then
             end
 
         --Transports Shattrath
-            if self.db.profile.showCapitalsTransporting then
+            if self.db.profile.activate.Transporting then
     
                 if self.db.profile.showCapitalsPortals then
                     nodes[111][48614203] = { mnID = 122, name = "", type = "Portal", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Portal from Shattrath to Quel'Danas 
 
-                    if self.faction == "Horde" or db.show.CapitalEnemyFaction then
+                    if self.faction == "Horde" or db.activate.CapitalsEnemyFaction then
                         nodes[111][56784884] = { mnID = 85, name = "", type = "HPortal", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = L["Shattrath City"] .. " " .. L["Portals"] .. "\n" ..  "\n" .. " => " .. ORGRIMMAR } -- Portal from Shattrath to Orgrimmar 
                     end
 
-                    if self.faction == "Alliance" or db.show.CapitalEnemyFaction then
+                    if self.faction == "Alliance" or db.activate.CapitalsEnemyFaction then
                         nodes[111][57214825] = { mnID = 84,  name = "" , type = "APortal", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = L["Shattrath City"] .. " " .. L["Portal"] .. "\n" .. " => " .. STORMWIND } -- Portal from Shattrath to Stormwind 
                     end
                 end
@@ -1714,7 +1714,7 @@ if not db.show.HideMapNote then
             end
 
         --Professions Shattrath
-            if self.db.profile.showProfessions then
+            if self.db.profile.activate.CapitalsProfessions then
 
                 if self.db.profile.showAlchemy then
                     nodes[111][37977048] = { name = L["Alchemy"] .. " - " .. L["The Scryers"], type = "Alchemy", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
@@ -1797,10 +1797,10 @@ if not db.show.HideMapNote then
     --#########################
     --### Dalaran Northrend ###
     --#########################
-        if self.db.profile.showDalaranNorthrend then
+        if self.db.profile.showCapitalsDalaranNorthrend then
 
         --Instance Dalaran Northrend
-            if self.db.profile.showCapitalsInstances then
+            if self.db.profile.activate.CapitalsInstances then
 
                 if self.db.profile.showCapitalsDungeons then
                     nodes[125][66166745] = { id = 283, type = "Dungeon", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- The Violet Hold
@@ -1813,18 +1813,18 @@ if not db.show.HideMapNote then
             end
 
         --General Dalaran Northrend
-            if self.db.profile.showCapitalsGeneral then
+            if self.db.profile.activate.CapitalsGeneral then
     
                 if self.db.profile.showCapitalsHearthstone then
                     nodes[125][50273955] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
                     nodes[126][35425767] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
 
 
-                    if self.faction == "Horde" or db.show.CapitalEnemyFaction then
+                    if self.faction == "Horde" or db.activate.CapitalsEnemyFaction then
                         nodes[125][65613218] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, TransportName = ITEM_REQ_HORDE, type = "Hearthstone", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
                     end
 
-                    if self.faction == "Alliance" or db.show.CapitalEnemyFaction then
+                    if self.faction == "Alliance" or db.activate.CapitalsEnemyFaction then
                         nodes[125][44666336] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, TransportName = ITEM_REQ_ALLIANCE, type = "Hearthstone", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
                     end
 
@@ -1841,11 +1841,11 @@ if not db.show.HideMapNote then
                 if self.db.profile.showCapitalsAuctioneer then
                     nodes[125][38402502] = { name = MINIMAP_TRACKING_AUCTIONEER, type = "Auctioneer", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = REQUIRES_LABEL .. " " .. L["Engineer"] }
 
-                    if self.faction == "Horde" or db.show.CapitalEnemyFaction then
+                    if self.faction == "Horde" or db.activate.CapitalsEnemyFaction then
                         nodes[125][65522343] = { dnID = MINIMAP_TRACKING_AUCTIONEER, name = "", type = "Auctioneer", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = ITEM_REQ_HORDE}
                     end
 
-                    if self.faction == "Alliance" or db.show.CapitalEnemyFaction then
+                    if self.faction == "Alliance" or db.activate.CapitalsEnemyFaction then
                         nodes[125][37175488] = { dnID = MINIMAP_TRACKING_AUCTIONEER, name = "", type = "Auctioneer", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = ITEM_REQ_ALLIANCE}
                     end
 
@@ -1864,16 +1864,16 @@ if not db.show.HideMapNote then
             end
 
         --Transports Dalaran Northrend
-            if self.db.profile.showCapitalsTransporting then
+            if self.db.profile.activate.Transporting then
     
                 if self.db.profile.showCapitalsPortals then
                     nodes[125][55904678] = { mnID = 127, name = L["Portal"], type = "Portal", showInZone = true, hideOnContinent = true, hideOnMinimap = true } 
 
-                    if self.faction == "Horde" or db.show.CapitalEnemyFaction then
+                    if self.faction == "Horde" or db.activate.CapitalsEnemyFaction then
                         nodes[125][55322545] = { mnID = 85, name = "", type = "HPortal", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = L["Portal"] .. " => " .. ORGRIMMAR } -- Dalaran to Orgrimmar Portal 
                     end
 
-                    if self.faction == "Alliance" or db.show.CapitalEnemyFaction then
+                    if self.faction == "Alliance" or db.activate.CapitalsEnemyFaction then
                         nodes[125][40016276] = { mnID = 84,  name = "" , type = "APortal", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = L["Portal"] .. " => " .. STORMWIND } -- Dalaran to Stormwind City Portal
                     end
                 end
@@ -1881,7 +1881,7 @@ if not db.show.HideMapNote then
             end
 
         --Professions Dalaran Northrend
-            if self.db.profile.showProfessions then
+            if self.db.profile.activate.CapitalsProfessions then
 
                 if self.db.profile.showAlchemy then
                     nodes[125][42633205] = { name = L["Alchemy"], type = "Alchemy", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
@@ -1936,7 +1936,7 @@ if not db.show.HideMapNote then
                     nodes[125][48363820] = { name = PROFESSIONS_ARCHAEOLOGY, type = "Archaeology", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
 
-                if self.faction == "Horde" or db.show.CapitalEnemyFaction then
+                if self.faction == "Horde" or db.activate.CapitalsEnemyFaction then
 
                     if self.db.profile.showCooking then
                         nodes[125][69943898] = { name = PROFESSIONS_COOKING, type = "Cooking", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION .. "\n" .. ITEM_REQ_HORDE }
@@ -1944,7 +1944,7 @@ if not db.show.HideMapNote then
 
                 end
 
-                if self.faction == "Alliance" or db.show.CapitalEnemyFaction then
+                if self.faction == "Alliance" or db.activate.CapitalsEnemyFaction then
 
                     if self.db.profile.showCooking then
                         nodes[125][40486581] = { name = PROFESSIONS_COOKING, type = "Cooking", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION .. "\n" .. ITEM_REQ_ALLIANCE }
@@ -1959,10 +1959,10 @@ if not db.show.HideMapNote then
     --######################
     --### Dalaran Legion ###
     --######################
-        if self.db.profile.showDalaranLegion then
+        if self.db.profile.showCapitalsDalaranLegion then
 
         --Instance Dalaran Legion
-            if self.db.profile.showCapitalsInstances then
+            if self.db.profile.activate.CapitalsInstances then
 
                 if self.db.profile.showCapitalsDungeons then
                     nodes[627][65576738] = { id = 777, type = "Dungeon", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Assault on Violet Hold
@@ -1975,16 +1975,16 @@ if not db.show.HideMapNote then
             end
 
         --General Dalaran Legion
-            if self.db.profile.showCapitalsGeneral then
+            if self.db.profile.activate.CapitalsGeneral then
     
                 if self.db.profile.showCapitalsHearthstone then
                     nodes[627][49784006] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
 
-                    if self.faction == "Horde" or db.show.CapitalEnemyFaction then
+                    if self.faction == "Horde" or db.activate.CapitalsEnemyFaction then
                         nodes[627][65443217] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, TransportName = ITEM_REQ_HORDE, type = "Hearthstone", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
                     end
 
-                    if self.faction == "Alliance" or db.show.CapitalEnemyFaction then
+                    if self.faction == "Alliance" or db.activate.CapitalsEnemyFaction then
                         nodes[627][44196398] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, TransportName = ITEM_REQ_ALLIANCE, type = "Hearthstone", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
                     end
 
@@ -2011,15 +2011,15 @@ if not db.show.HideMapNote then
             end
 
         --Transports Dalaran Legion
-            if self.db.profile.showCapitalsTransporting then
+            if self.db.profile.activate.Transporting then
     
                 if self.db.profile.showCapitalsPortals then
 
-                    if self.faction == "Horde" or db.show.CapitalEnemyFaction then
+                    if self.faction == "Horde" or db.activate.CapitalsEnemyFaction then
                         nodes[627][55242392] = { mnID = 85, name = "", type = "HPortal", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = L["Portal"] .. " => " .. ORGRIMMAR } -- Dalaran to Orgrimmar Portal
                     end
 
-                    if self.faction == "Alliance" or db.show.CapitalEnemyFaction then
+                    if self.faction == "Alliance" or db.activate.CapitalsEnemyFaction then
                         nodes[627][40416378] = { mnID = 84,  name = "" , type = "APortal", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = L["Portal"] .. " => " .. STORMWIND } --  Dalaran to Stormwind City Portal
                     end
                 end
@@ -2027,7 +2027,7 @@ if not db.show.HideMapNote then
             end
 
         --Professions Dalaran Legion
-            if self.db.profile.showProfessions then
+            if self.db.profile.activate.CapitalsProfessions then
 
                 if self.db.profile.showAlchemy then
                     nodes[627][42023184] = { name = L["Alchemy"], type = "Alchemy", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
@@ -2081,7 +2081,7 @@ if not db.show.HideMapNote then
                     nodes[627][41242630] = { name = PROFESSIONS_ARCHAEOLOGY, type = "Archaeology", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                 end
 
-                if self.faction == "Horde" or db.show.CapitalEnemyFaction then
+                if self.faction == "Horde" or db.activate.CapitalsEnemyFaction then
 
                     if self.db.profile.showCooking then
                         nodes[627][69973897] = { name = PROFESSIONS_COOKING, type = "Cooking", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION .. "\n" .. ITEM_REQ_HORDE }
@@ -2089,7 +2089,7 @@ if not db.show.HideMapNote then
 
                 end
 
-                if self.faction == "Alliance" or db.show.CapitalEnemyFaction then
+                if self.faction == "Alliance" or db.activate.CapitalsEnemyFaction then
 
                     if self.db.profile.showCooking then
                         nodes[627][40586680] = { name = PROFESSIONS_COOKING, type = "Cooking", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION .. "\n" .. ITEM_REQ_ALLIANCE }
@@ -2104,10 +2104,10 @@ if not db.show.HideMapNote then
     --##############
     --### Oribos ###
     --##############
-        if self.db.profile.showOribos then
+        if self.db.profile.showCapitalsOribos then
 
         --Instance oribos
-            if self.db.profile.showCapitalsInstances then
+            if self.db.profile.activate.CapitalsInstances then
 
                 if self.db.profile.showCapitalsLFR then
                     nodes[1670][41377150] = { mnID = 1670, name = L["Ta'elfar"] .. "\n" .. L["Registrant"] .. " - " .. RAID_FINDER .. "\n" .. " ", id = { 1190, 1193, 1195 }, type = "LFR", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
@@ -2116,7 +2116,7 @@ if not db.show.HideMapNote then
             end
 
         --General Oribos
-            if self.db.profile.showCapitalsGeneral then
+            if self.db.profile.activate.CapitalsGeneral then
     
                 if self.db.profile.showCapitalsHearthstone then
                     nodes[1670][67505031] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
@@ -2134,18 +2134,18 @@ if not db.show.HideMapNote then
             end
 
         --Transports Oribos
-            if self.db.profile.showCapitalsTransporting then
+            if self.db.profile.activate.Transporting then
     
                 if self.db.profile.showCapitalsPortals then
                     nodes[1671][49405127] = { mnID = 1543, name = "", type = "Portal", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = L["Portal"] .. " => " .. L["The Maw"] } -- Oribos to The Maw
                     nodes[1671][30322269] = { mnID = 1961, name = "", type = "Portal", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = L["Portal"] .. " => " .. L["Korthia"] } -- Oribos to Korthia
                     nodes[1671][49532566] = { mnID = 1970, name = "", type = "Portal", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = L["Portal"] .. " => " .. L["Zereth Mortis"] } -- Oribos to Zereth Morthis
 
-                    if self.faction == "Horde" or db.show.CapitalEnemyFaction then
+                    if self.faction == "Horde" or db.activate.CapitalsEnemyFaction then
                         nodes[1670][20805432] = { mnID = 85, name = "", type = "HPortal", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = L["Portal"] .. " => " .. ORGRIMMAR } -- Oribos to Orgrimmar Portal
                     end
 
-                    if self.faction == "Alliance" or db.show.CapitalEnemyFaction then
+                    if self.faction == "Alliance" or db.activate.CapitalsEnemyFaction then
                         nodes[1670][20654625] = { mnID = 84,  name = "" , type = "APortal", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = L["Portal"] .. " => " .. STORMWIND } -- Oribos to Stormwind City Portal
                     end
                 end
@@ -2164,7 +2164,7 @@ if not db.show.HideMapNote then
             end
 
         --Professions Oribos
-            if self.db.profile.showProfessions then
+            if self.db.profile.activate.CapitalsProfessions then
 
                 if self.db.profile.showAlchemy then
                     nodes[1670][39284044] = { name = L["Alchemy"], type = "Alchemy", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
@@ -2225,10 +2225,10 @@ if not db.show.HideMapNote then
     --##################
     --### Valdrakken ###
     --##################
-        if self.db.profile.showValdrakken then
+        if self.db.profile.showCapitalsValdrakken then
 
         --General Valdrakken
-            if self.db.profile.showCapitalsGeneral then
+            if self.db.profile.activate.CapitalsGeneral then
     
                 if self.db.profile.showCapitalsHearthstone then
                     nodes[2112][47714635] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
@@ -2246,18 +2246,18 @@ if not db.show.HideMapNote then
             end
 
         --Transports Valdrakken
-            if self.db.profile.showCapitalsTransporting then
+            if self.db.profile.activate.Transporting then
     
                 if self.db.profile.showCapitalsPortals then
                     nodes[2112][26104102] = { mnID = 15, name = "", type = "Portal", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = L["Portal"] .. " => " .. L["Badlands"] } --  Portal from Valdrakken to the Badlands
                     nodes[2112][62725732] = { mnID = 2200, name = "", type = "Portal", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = L["Portal"] .. " => " .. L["Emerald Dream"] } --  Portal from Valdrakken to The Emerald Dream
                     --nodes[2112][53575534] = { mnID = 2266, name = "", type = "GPortal", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = L["The Timeways"] .. " " .. L["Portals"] .. "\n" .. "\n" .. " => " .. L["Vashj'ir"] .. "\n" .. " => " .. POSTMASTER_LETTER_LORLATHIL .. "\n" .. " => " .. L["Zuldazar"] .. "\n" .. " => " .. L["Drustvar"] .. "\n" .. " => " .. L["Gorgrond"] } --  Portal from Valdrakken to the Timeways
 
-                    if self.faction == "Horde" or db.show.CapitalEnemyFaction then
+                    if self.faction == "Horde" or db.activate.CapitalsEnemyFaction then
                         nodes[2112][56593828] = { mnID = 85, name = L["(inside building)"], type = "HPortal", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = L["Portal"] .. " => " .. ORGRIMMAR } -- Valdrakken to Orgrimmar Portal
                     end
 
-                    if self.faction == "Alliance" or db.show.CapitalEnemyFaction then
+                    if self.faction == "Alliance" or db.activate.CapitalsEnemyFaction then
                         nodes[2112][59804169] = { mnID = 84,  name = L["(inside building)"], type = "APortal", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = L["Portal"] .. " => " .. STORMWIND } -- Valdrakken to Stormwind City Portal
                     end
                 end
@@ -2265,7 +2265,7 @@ if not db.show.HideMapNote then
             end
 
         --Professions Valdrakken
-            if self.db.profile.showProfessions then
+            if self.db.profile.activate.CapitalsProfessions then
                 nodes[2112][34796252] = { name = PROFESSIONS_CRAFTING_ORDERS_TAB_NAME, type = "Inscription", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
 
                 if self.db.profile.showAlchemy then

@@ -8,9 +8,9 @@ local nodes = ns.nodes
 --#####################################################################################################
 --##########################        function to hide all nodes below         ##########################
 --#####################################################################################################
-    if not db.show.HideMapNote then
+    if not db.activate.HideMapNote then
 
-        if ns.Addon.db.profile.show.CosmosMap then
+        if db.activate.CosmosMap then
 
         --  Shadownlands
             if self.db.profile.showCosmosShadowlands then

@@ -8,14 +8,14 @@ local minimap = ns.minimap
 --#####################################################################################################
 --##########################        function to hide all minimap below         ##########################
 --#####################################################################################################
-if not db.show.HideMapNote then
+if not db.activate.HideMapNote then
 
 
     --#####################################################################################################
     --################################         Continent / Zone Map        ################################
     --#####################################################################################################
 
-      if db.show.MiniMap then
+      if db.activate.MiniMap then
 
 
         --#############################
@@ -65,7 +65,7 @@ if not db.show.HideMapNote then
           end
 
         -- Kalimdor Dungeons without ClassicIcons is activ
-          if self.db.profile.showMiniMapDungeons and not self.db.profile.show.ClassicIcons then
+          if self.db.profile.showMiniMapDungeons and not db.activate.ClassicIcons then
             minimap[69][60323015] = { id = 230, lfgid = 36, type = "Dungeon", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Dire Maul - Capital Gardens - West left Entrance 
             minimap[69][60303130] = { id = 230, lfgid = 36, type = "Dungeon", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Dire Maul - Capital Gardens - West right Entrance 
             minimap[69][62502490] = { id = 230, lfgid = 38, type = "Dungeon", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Dire Maul - Gordok Commons - North  
@@ -100,7 +100,7 @@ if not db.show.HideMapNote then
           end
 
         --Kalimdor Passage without ClassicIcons
-          if self.db.profile.showMiniMapPassage and not self.db.profile.show.ClassicIcons then
+          if self.db.profile.showMiniMapPassage and not db.activate.ClassicIcons then
             minimap[199][45089400] = { dnID = L["Way to the Instance Entrance"], id = 233, type = "PassageDungeon", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Razorfen Downs
             minimap[64][41662882] = { dnID = L["Way to the Instance Entrance"], id = 233, type = "PassageDungeon", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Razorfen Downs
             minimap[1527][71755222] = { dnID = L["Way to the Instance Entrance"], id = 70, type = "PassageDungeon", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Halls of Origination  
@@ -113,7 +113,7 @@ if not db.show.HideMapNote then
 
 
         --Kalimdor ClassicIcons
-          if self.db.profile.show.ClassicIcons then  
+          if db.activate.ClassicIcons then  
 
             if self.db.profile.showMiniMapDungeons then 
               minimap[199][45089400] = { dnID = L["Way to the Instance Entrance"], id = 233, type = "Dungeon", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Razorfen Downs
@@ -133,7 +133,7 @@ if not db.show.HideMapNote then
           end
 
         --Kalimdor Multiple
-          if self.db.profile.showMiniMapMultiple and not self.db.profile.show.ClassicIcons then  
+          if self.db.profile.showMiniMapMultiple and not db.activate.ClassicIcons then  
             minimap[71][64864997] = { mnID = 75, id = { 187, 750, 279, 255, 251, 184, 185, 186, }, type = "PassageDungeonRaidMulti", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Dragon Soul, The Battle for Mount Hyjal, The Culling of Stratholme, Black Morass, Old Hillsbrad Foothills, End Time, Well of Eternity, Hour of Twilight Heroic
             minimap[74][30857356] = { mnID = 75, id = { 187, 750, 279, 255, 251, 184, 185, 186, }, type = "PassageDungeonRaidMulti", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Dragon Soul, The Battle for Mount Hyjal, The Culling of Stratholme, Black Morass, Old Hillsbrad Foothills, End Time, Well of Eternity, Hour of Twilight Heroic
           end
@@ -215,7 +215,7 @@ if not db.show.HideMapNote then
 
 
           -- Eastern Kingdom Passage
-          if self.db.profile.showMiniMapPassage and not self.db.profile.show.ClassicIcons then  
+          if self.db.profile.showMiniMapPassage and not db.activate.ClassicIcons then  
             minimap[15][42031147] = { dnID = L["Way to the Instance Entrance"], id = 239, type = "PassageDungeon", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Uldaman
             minimap[469][32793702] = { mnID = 30, dnID = L["Way to the Instance Entrance"], id = 231, type = "PassageDungeon", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Gnomeregan
             minimap[27][31393804] = { mnID = 30, dnID = L["Way to the Instance Entrance"], id = 231, type = "PassageDungeon", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Gnomeregan     
@@ -236,7 +236,7 @@ if not db.show.HideMapNote then
 
 
           -- Eastern Kingdom ClassicIcons
-          if self.db.profile.show.ClassicIcons then
+          if db.activate.ClassicIcons then
 
             if self.db.profile.showMiniMapMultiple then
               minimap[36][21063760] = { mnID = 33, id = { 741, 742, 66, 228, 229, 559 }, name = L["Way to the Instance Entrance"], type = "MultipleM", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Molten Core, Blackwing Lair, Blackrock Caverns, Blackrock Depths, Lower Blackrock Spire, Upper Blackrock Spire 
@@ -509,13 +509,13 @@ if not db.show.HideMapNote then
 
 
         --Broken Isles Raids without ClassicIcons
-          if self.db.profile.showMiniMapPassage and not self.db.profile.show.ClassicIcons then
+          if self.db.profile.showMiniMapPassage and not db.activate.ClassicIcons then
             minimap[680][43346230] = { dnID = L["Way to the Instance Entrance"], id = 726, type = "PassageDungeon", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- The Arcway
           end
 
 
         --Broken Isles ClassicIcons
-          if self.db.profile.show.ClassicIcons then
+          if db.activate.ClassicIcons then
 
             if self.db.profile.showMiniMapDungeons then
               minimap[680][43346230] = { dnID = L["Way to the Instance Entrance"], id = 726, type = "Dungeon", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- The Arcway
@@ -534,7 +534,7 @@ if not db.show.HideMapNote then
         --Zandalar Dungeons
           if self.db.profile.showMiniMapDungeons then
 
-            if self.faction == "Alliance" or db.show.EnemyFaction then
+            if self.faction == "Alliance" or db.activate.EnemyFaction then
               minimap[862][39307154] = { id = 1012, type = "Dungeon", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- The MOTHERLODe
             end
 
@@ -557,13 +557,13 @@ if not db.show.HideMapNote then
 
 
         --Zandalar Raids without ClassicIcons
-          if self.db.profile.showMiniMapPassage and not self.db.profile.show.ClassicIcons then
+          if self.db.profile.showMiniMapPassage and not db.activate.ClassicIcons then
             minimap[1355][50341233] = {  id = 1179, type = "PassageRaid", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- The Eternal Palace
           end
 
 
         --Zandalar ClassicIcons
-          if self.db.profile.show.ClassicIcons then
+          if db.activate.ClassicIcons then
 
             if self.db.profile.showMiniMapRaids then
               minimap[1355][50341233] = {  id = 1179, type = "Raid", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- The Eternal Palace
@@ -589,11 +589,11 @@ if not db.show.HideMapNote then
             minimap[896][33671253] = { id = 1021, type = "Dungeon", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Waycrest Manor 
             minimap[1169][38926976] = { id = 1002, type = "Dungeon", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Tol Dagor
 
-            if self.faction == "Alliance" or db.show.EnemyFaction then
+            if self.faction == "Alliance" or db.activate.EnemyFaction then
               minimap[895][75632450] = { id = 1023, type = "Dungeon", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Siege of Boralus
             end
 
-            if self.faction == "Horde" or db.show.EnemyFaction then
+            if self.faction == "Horde" or db.activate.EnemyFaction then
               minimap[895][88285102] = { id = 1023, type = "Dungeon", showInZone = false, hideOnContinent = true, hideOnMinimap = false  } -- Siege of Boralus
             end
           end
@@ -604,7 +604,7 @@ if not db.show.HideMapNote then
           -- Raid minimap above Blizzards Icons to make it Clickable for maximized Maps
             minimap[942][83894693] = { id = 1036, type = "Raid",  showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Crucible of Storms
 
-            if self.faction == "Alliance" or db.show.EnemyFaction then
+            if self.faction == "Alliance" or db.activate.EnemyFaction then
               minimap[895][74382837] = { id = 1176, type = "Raid", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Battle of Dazar'alor
             end
           end
@@ -613,7 +613,7 @@ if not db.show.HideMapNote then
         -- Kul Tiras LFR
           if self.db.profile.showMiniMapLFR then
 
-            if self.faction == "Horde" or db.show.EnemyFaction then
+            if self.faction == "Horde" or db.activate.EnemyFaction then
               minimap[895][75112192] = { mnID = 1161, name = L["Kiku"] .. "\n" .. L["Registrant"] .. " - " .. RAID_FINDER .. "\n" .. " ", id = { 1176, 1031, 1179, 1036 }, type = "LFR", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
             end
           end
@@ -688,13 +688,13 @@ if not db.show.HideMapNote then
 
 
         -- Dragonflight Passage
-          if self.db.profile.showMiniMapPassage and not self.db.profile.show.ClassicIcons then
+          if self.db.profile.showMiniMapPassage and not db.activate.ClassicIcons then
             minimap[2023][18855124] = { id = 1207, type = "PassageRaid", showInZone = false, hideOnContinent = true, hideOnMinimap = false }-- Amirdrassil, the Dream's Hope
           end
 
 
         -- Dragonflight ClassicIcons
-          if self.db.profile.show.ClassicIcons then
+          if db.activate.ClassicIcons then
 
             if self.db.profile.showMiniMapRaids then
               minimap[2023][18855124] = { id = 1207, type = "Raid", showInZone = false, hideOnContinent = true, hideOnMinimap = false }-- Amirdrassil, the Dream's Hope

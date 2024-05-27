@@ -8,13 +8,13 @@ local nodes = ns.nodes
 --#####################################################################################################
 --##########################        function to hide all nodes below         ##########################
 --#####################################################################################################
-if not db.show.HideMapNote then
+if not db.activate.HideMapNote then
  
     --#####################################################################################################
     --################################         Continent / Zone Map        ################################
     --#####################################################################################################
     
-      if db.show.Continent then
+      if db.activate.Continent then
     
     
         --#############################
@@ -37,7 +37,7 @@ if not db.show.HideMapNote then
 
 
         -- Kalimdor Dungeons hidden if ClassicIcons is activ
-          if self.db.profile.showContinentDungeons and not self.db.profile.show.ClassicIcons then 
+          if self.db.profile.showContinentDungeons and not db.activate.ClassicIcons then 
             nodes[12][42856552] = { id = 230, lfgid = 38, type = "Dungeon", showInZone = true } -- Dire Maul - Gordok Commons - North  
           end
     
@@ -53,7 +53,7 @@ if not db.show.HideMapNote then
           end
     
         --Kalimdor Passage
-          if self.db.profile.showContinentPassage and not self.db.profile.show.ClassicIcons then
+          if self.db.profile.showContinentPassage and not db.activate.ClassicIcons then
             nodes[12][59228331] = { mnID = 75, id = { 187, 750, 279, 255, 251, 184, 185, 186 }, type = "PassageDungeonRaidMulti", showInZone = true, } -- Dragon Soul, The Battle for Mount Hyjal, The Culling of Stratholme, Black Morass, Old Hillsbrad Foothills, End Time, Well of Eternity, Hour of Twilight Heroic
             nodes[12][46106657] = { id = 230, lfgid = 34, type = "PassageDungeon", showInZone = true } -- Dire Maul - Warpwood Quarter - East above Camp Mojache   
             nodes[12][43906613] = { id = 230, lfgid = 34, type = "PassageDungeon", showInZone = true } -- Dire Maul - Warpwood Quarter - East above Camp Mojache 
@@ -65,25 +65,25 @@ if not db.show.HideMapNote then
 
 
         --Kalimdor Passage without ClassicIcons and without RemoveBlizzPOIs
-          if self.db.profile.showContinentPassage and not self.db.profile.show.ClassicIcons and not self.db.profile.show.RemoveBlizzPOIs then
+          if self.db.profile.showContinentPassage and not db.activate.ClassicIcons and not db.activate.RemoveBlizzPOIs then
             nodes[12][58324232] = { id = 226, type = "PassageDungeon" } -- Ragefire 
           end
 
         --Kalimdor Passage without EnemyFaction and RemoveBlizzPOIs
-          if not ns.Addon.db.profile.show.EnemyFaction and self.db.profile.show.RemoveBlizzPOIs then
+          if not db.activate.EnemyFaction and db.activate.RemoveBlizzPOIs then
 
-            if self.faction == "Alliance" or db.show.EnemyFaction then
+            if self.faction == "Alliance" or db.activate.EnemyFaction then
               nodes[12][58324232] = { id = 226, type = "PassageDungeon" } -- Ragefire
             end
           end
 
         --Kalimdor Passage without EnemyFaction and with RemoveBlizzPOIs with ClassicIcons
-          if not ns.Addon.db.profile.show.EnemyFaction and self.db.profile.show.RemoveBlizzPOIs and self.db.profile.show.ClassicIcons then
+          if not db.activate.EnemyFaction and db.activate.RemoveBlizzPOIs and db.activate.ClassicIcons then
             nodes[12][58324232] = { id = 226, type = "Dungeon" } -- Ragefire
           end
 
         --Kalimdor ClassicIcons
-         if self.db.profile.show.ClassicIcons then
+         if db.activate.ClassicIcons then
 
           if self.db.profile.showContinentDungeons then
             --nodes[12][46106657] = { id = 230, lfgid = 34, type = "Dungeon", showInZone = true } -- Dire Maul - Warpwood Quarter - East above Camp Mojache   
@@ -94,7 +94,7 @@ if not db.show.HideMapNote then
           end
 
         --Kalimdor ClassicIcons without RemoveBlizzPOIs
-          if self.db.profile.show.ClassicIcons and not self.db.profile.show.RemoveBlizzPOIs then
+          if db.activate.ClassicIcons and not db.activate.RemoveBlizzPOIs then
 
             if self.db.profile.showContinentDungeons then
               nodes[12][58324232] = { id = 226, type = "Dungeon" } -- Ragefire 
@@ -115,17 +115,17 @@ if not db.show.HideMapNote then
             nodes[12][42807881] = { mnID = 81, name = "", type = "Portal", showInZone = true, TransportName = L["Silithus"] .. " " .. L["Portals"] .. "\n" ..  "\n" .. " => " .. L["Boralus, Tiragarde Sound"] .. "\n" .. " => " .. L["Zandalar"] } -- Portal from Silithus to Boralus
             nodes[12][56122725] = { mnID = 198, name = "", type = "Portal", showInZone = true, TransportName = POSTMASTER_LETTER_HYJAL .. " " .. L["Portals"] .. "\n" ..  "\n" .. " => " .. ORGRIMMAR .. "\n" .. " => " .. STORMWIND } -- Portal To Orgrimmar from Hyjal
     
-            if self.faction == "Horde" or db.show.EnemyFaction then  
+            if self.faction == "Horde" or db.activate.EnemyFaction then  
               nodes[12][45842223] = { mnID = 62, name = "", type = "HPortal", showInZone = true, TransportName = L["Portal"] .. " " .. L["Darkshore"] .. " => " .. L["Zandalar"] .. "\n" .. "\n" .. " " .. L["(its only shown up ingame if your faction\n is currently occupying Bashal'Aran)"] } -- Portal from New Darkshore to Zandalar 
             end
 
-            if self.faction == "Alliance" or db.show.EnemyFaction then
+            if self.faction == "Alliance" or db.activate.EnemyFaction then
               nodes[12][47092322] = { mnID = 62, name = "", type = "APortal", showInZone = true, TransportName = L["Portal"] .. " " .. L["Darkshore"] .. " => " .. L["Boralus"] .. "\n" .. "\n" .. " " .. L["(its only shown up ingame if your faction\n is currently occupying Bashal'Aran)"] } -- Portal from New Darkshore to Zandalar 
               nodes[12][43491624] = { mnID = 57, name = "", type = "APortal", showInZone = true, TransportName = L["Rut'theran"] .. " " .. L["Portals"] .. "\n" .. " => " .. STORMWIND .. "\n" .. " => " .. L["Azuremyst Isle"] .. "\n" .. " => " .. L["Darnassus"] .. "\n" .. " => " .. L["Hellfire Peninsula"] } -- Portal from Teldrassil  
               nodes[12][29062721] = { mnID = 97, name = "", type = "APortal", showInZone = true, TransportName = L["Azuremyst Isle"] .. " " .. L["Portal"] .. "\n" .. " => " .. L["Rut'theran"] } -- Portal Exodar to Teldrassil
             end
 
-            if self.faction == "Horde" and not db.show.EnemyFaction then
+            if self.faction == "Horde" and not db.activate.EnemyFaction then
               nodes[12][43491624] = { mnID = 57, name = "", type = "Portal", showInZone = true, TransportName = L["Rut'theran"] .. " " .. L["Portal"] .. "\n" .. " => " .. L["Darnassus"] } -- Portal from Teldrassil to Darnassus   
               nodes[12][38990979] = { mnID = 89, name = "", type = "Portal", showInZone = true, TransportName = L["Darnassus"] .. " " .. L["Portal"] .. "\n" .. " => " .. L["Rut'theran"] } -- Portal To Teldrassil from Darnassus
             end
@@ -133,23 +133,23 @@ if not db.show.HideMapNote then
     
 
           -- Kalimdor Portals without RemoveBlizzPOIs
-          if self.db.profile.showContinentPortals and not self.db.profile.show.RemoveBlizzPOIs then
+          if self.db.profile.showContinentPortals and not db.activate.RemoveBlizzPOIs then
 
-            if self.faction == "Alliance" or db.show.EnemyFaction then
+            if self.faction == "Alliance" or db.activate.EnemyFaction then
               nodes[12][38990979] = { mnID = 57, name = "", type = "Portal", showInZone = true, TransportName = L["Portal"] .. " => " .. L["Teldrassil"] } -- Portal To Teldrassil from Darnassus
               nodes[12][30752589] = { mnID = 57, name = "", type = "APortal", showInZone = true, TransportName = L["Portal"] .. " => " .. STORMWIND } -- Portal Exodar to Teldrassil
             end
           end
 
         -- Kalimdor RemoveBlizzPOIs
-          if self.db.profile.show.RemoveBlizzPOIs then
+          if db.activate.RemoveBlizzPOIs then
 
-            if self.faction == "Horde" or db.show.EnemyFaction then
+            if self.faction == "Horde" or db.activate.EnemyFaction then
               nodes[12][58214450] = { mnID = 85, name = "", type = "HIcon", showInZone = true, TransportName = ORGRIMMAR .. " - " .. FACTION_HORDE .. "\n" .. "\n" .. L["Portalroom"] .. "\n" .. " => " .. L["Silvermoon City"] .. "\n" .. " => " .. L["Valdrakken"] .. "\n" .. " => " .. L["Oribos"] .. "\n" .. " => " .. L["Azsuna"] .. "\n" .. " => " .. L["Zuldazar"] .. "\n" .. " => " .. L["Shattrath City"] .. "\n" .. " => " .. DUNGEON_FLOOR_DALARANCITY1 .. "\n" .. " => " .. DUNGEON_FLOOR_TANARIS18 .. "\n" .. "\n" .. L["Portals"] .. "\n" .. " => " .. POSTMASTER_LETTER_HYJAL .. "\n" .. " => " .. L["Twilight Highlands"] .. "\n" .. " => " .. ARTIFACT_SHAMAN_TITLECARD_DEEPHOLM .. "\n" .. " => " .. L["Vashj'ir"] .. "\n" .. " => " .. L["Uldum"] .. "\n" .. " => " .. DUNGEON_FLOOR_TOLBARADWARLOCKSCENARIO0 .. "\n" .. "\n" .. L["Zeppelins"] .. "\n" .. " => " .. L["Thunder Bluff"] .. "\n" .. " => " .. L["Grom'gol, Stranglethorn Vale"] .. "\n" .. " => " .. POSTMASTER_LETTER_WARSONGHOLD .. "\n" .. "\n" .. CALENDAR_TYPE_DUNGEON .. "\n" .. " => " .. DUNGEON_FLOOR_RAGEFIRE1 } -- Portalroom from Dazar'alor
               nodes[12][46055495] = { mnID = 88, name = "", type = "HIcon", showInZone = true, TransportName = L["Thunder Bluff"] .. " - " .. FACTION_HORDE .. "\n" .. "\n" .. L["Zeppelin"] .. "\n" .. " => " .. ORGRIMMAR } -- Zeppelin from Thunder Bluff to Orgrimmar
             end
 
-            if self.faction == "Alliance" or db.show.EnemyFaction then
+            if self.faction == "Alliance" or db.activate.EnemyFaction then
               nodes[12][38990979] = { mnID = 89, name = "", type = "AIcon", showInZone = true, TransportName = L["Darnassus"] .. " - " .. FACTION_ALLIANCE .. "\n" .. "\n" .. L["Portals"] .. "\n" .. " => " .. L["Rut'theran"] .. "\n" .. " => " .. L["Exodar"]  .. "\n" .. " => " .. L["Hellfire Peninsula"] } -- Portal To Teldrassil from Darnassus
               nodes[12][30752589] = { mnID = 103, name = "", type = "AIcon", TransportName = L["Exodar"] .. " - " .. FACTION_ALLIANCE .. "\n" .. "\n" .. L["Portal"] .. "\n" .. " => " .. STORMWIND } -- Portal Exodar to Teldrassil
             end
@@ -159,16 +159,16 @@ if not db.show.HideMapNote then
         --Kalimdor Zeppelins
           if self.db.profile.showContinentZeppelins then
 
-            if self.faction == "Horde" or db.show.EnemyFaction then
+            if self.faction == "Horde" or db.activate.EnemyFaction then
     
             end
           end
     
 
         --Kalimdor Zeppelins without RemoveBlizzPOIs
-          if self.db.profile.showContinentZeppelins and not self.db.profile.show.RemoveBlizzPOIs then
+          if self.db.profile.showContinentZeppelins and not db.activate.RemoveBlizzPOIs then
 
-            if self.faction == "Horde" or db.show.EnemyFaction then
+            if self.faction == "Horde" or db.activate.EnemyFaction then
               nodes[12][45295331] = { mnID = 88, name = "", type = "HZeppelin", showInZone = true, TransportName = L["Thunder Bluff"] .. " " .. L["Zeppelin"] .. "\n" .. " => " .. ORGRIMMAR } -- Zeppelin from Thunder Bluff to Orgrimmar
               nodes[12][59814453] = { mnID = 1, name = "", type = "HZeppelin", showInZone = true, TransportName = L["Zeppelin"] .. " => " .. L["The Waking Shores, Dragon Isles"] } -- Zeppelin from Durotar to Waking Shores - Dragonflight
             end
@@ -179,11 +179,11 @@ if not db.show.HideMapNote then
           if self.db.profile.showContinentShips then
             nodes[12][57735526] = { mnID = 10, name = "", type = "Ship", showInZone = true, TransportName = L["Ratchet"] .. " " .. L["Ship"] .. "\n" .. " => " .. POSTMASTER_LETTER_STRANGLETHORNVALE } -- Ship from Ratchet to Booty Bay
     
-            if self.faction == "Horde" or db.show.EnemyFaction then
+            if self.faction == "Horde" or db.activate.EnemyFaction then
               nodes[12][62985416] = { mnID = 463, name = "", type = "HShip", showInZone = true, TransportName = L["Echo Isles, Durotar"] .. " " .. L["Ship"] .. "\n" .. " => " .. L["Zandalar"] } -- Ship from Echo Isles to Dazar'alor - Zandalar
             end
     
-            if self.faction == "Alliance" or db.show.EnemyFaction then
+            if self.faction == "Alliance" or db.activate.EnemyFaction then
               nodes[12][60046602] = { mnID = 70, name = "", type = "AShip", showInZone = true, TransportName = L["Theramore Isle"] .. " " .. L["Ship"] .. "\n" .. " => " .. POSTMASTER_LETTER_WETLANDS } -- Ship from Dustwallow Marsh to Menethil Harbor
             end
           end
@@ -216,7 +216,7 @@ if not db.show.HideMapNote then
 
 
         --Eastern  Kingdom Dungeons without RemoveBlizzPOIs
-          if self.db.profile.showContinentDungeons and not self.db.profile.show.RemoveBlizzPOIs then
+          if self.db.profile.showContinentDungeons and not db.activate.RemoveBlizzPOIs then
             nodes[13][42787097] = { id = 238, type = "Dungeon" } -- The Stockade 
           end
     
@@ -231,7 +231,7 @@ if not db.show.HideMapNote then
 
 
         --Eastern  Kingdom Passage
-          if self.db.profile.showContinentPassage and not self.db.profile.show.ClassicIcons then
+          if self.db.profile.showContinentPassage and not db.activate.ClassicIcons then
             nodes[13][53977927] = { id = 237, type = "PassageDungeon" } -- The Temple of Atal'hakkar 
             nodes[13][40808194] = { id = 63, type = "PassageDungeon" } -- Deadmines
             nodes[13][42915972] = { id = 231, type = "PassageDungeon" } -- Gnomeregan             
@@ -241,21 +241,21 @@ if not db.show.HideMapNote then
           end
     
         --Kalimdor Passage without ClassicIcons and without RemoveBlizzPOIs
-          if self.db.profile.showContinentDungeons and not self.db.profile.show.ClassicIcons and not self.db.profile.show.RemoveBlizzPOIs then
+          if self.db.profile.showContinentDungeons and not db.activate.ClassicIcons and not db.activate.RemoveBlizzPOIs then
             nodes[13][42787097] = { id = 238, type = "Dungeon" } -- The Stockade  
           end
 
         --Kalimdor Dungeon without EnemyFaction and RemoveBlizzPOIs
-          if not ns.Addon.db.profile.show.EnemyFaction and self.db.profile.show.RemoveBlizzPOIs then
+          if not db.activate.EnemyFaction and db.activate.RemoveBlizzPOIs then
             
-            if self.faction == "Horde" or db.show.EnemyFaction then
+            if self.faction == "Horde" or db.activate.EnemyFaction then
               nodes[13][42787097] = { id = 238, type = "Dungeon" } -- The Stockade 
             end
           end
 
         --Eastern Kingdom ClassicIcons
 
-        if self.db.profile.show.ClassicIcons then
+        if db.activate.ClassicIcons then
 
           if self.db.profile.showContinentDungeons then
             nodes[13][53977927] = { id = 237, type = "Dungeon" } -- The Temple of Atal'hakkar 
@@ -290,14 +290,14 @@ if not db.show.HideMapNote then
               nodes[13][52428535] = { mnID = 622, name = L["The Dark Portal"] .. " (" .. L["Portal"] .. " - " .. L["Ashran"] ..")", type = "APortal", showInZone = true, } -- Portal from Blasted Lands to Stormshield              
             end
 
-            if self.faction == "Horde" or db.show.EnemyFaction then
+            if self.faction == "Horde" or db.activate.EnemyFaction then
               nodes[13][49764414] = { mnID = 14, name = "", type = "HPortal", showInZone = true, TransportName = L["Portal"] .. " => " .. L["Zandalar"] .. "\n" .. " " .. "(" .. L["This Arathi Highlands portal is only active if your faction is currently occupying Ar'gorok"] .. ")" } -- Portal from Arathi to Zandalar 
               nodes[13][33874948] = { mnID = 245, name = "", type = "HPortal", showInZone = false, TransportName = DUNGEON_FLOOR_TOLBARADWARLOCKSCENARIO0 .. " " .. L["Portal"] .. "\n" .. " => " .. ORGRIMMAR } -- Portal Tol Barad to Orgrimmar
               nodes[13][60195610] = { mnID = 241, name = "", type = "HPortal", showInZone = true, TransportName = L["Twilight Highlands"] .. " " .. L["Portal"] .. "\n" .. " => " .. ORGRIMMAR } -- Portal To Orgrimmar from Twilight Highlands  
               nodes[13][54128434] = { mnID = 17, name = "", type = "HPortal", showInZone = true, TransportName = L["Blasted Lands"] .. " " .. L["Portal"] .. "\n" .. " => " .. ORGRIMMAR } -- Portal To Orgrimmar from Blasted Lands
             end
     
-            if self.faction == "Alliance" or db.show.EnemyFaction then
+            if self.faction == "Alliance" or db.activate.EnemyFaction then
               nodes[13][60805911] = { mnID = 241, name = "", type = "APortal", showInZone = true, TransportName = L["Twilight Highlands"] .. " " .. L["Portal"] .. "\n" .. " => " .. STORMWIND } -- Portal To Stormwind from Twilight Highlands  
               nodes[13][53428254] = { mnID = 17, name = "", type = "APortal", showInZone = true,TransportName = L["Blasted Lands"] .. " " .. L["Portal"] .. "\n" .. " => " .. STORMWIND } -- Portal to Stormwind from Blasted Lands
               nodes[13][35134883] = { mnID = 245, name = "", type = "APortal", showInZone = false, TransportName = DUNGEON_FLOOR_TOLBARADWARLOCKSCENARIO0 .. " " .. L["Portal"] .. "\n" .. " => " .. STORMWIND } -- Portal Tol Barad to Stormwind
@@ -307,9 +307,9 @@ if not db.show.HideMapNote then
     
 
         --Eastern Kingdom Portals without RemoveBlizzPOIs
-        if self.db.profile.showContinentPortals and not self.db.profile.show.RemoveBlizzPOIs then
+        if self.db.profile.showContinentPortals and not db.activate.RemoveBlizzPOIs then
 
-          if self.faction == "Horde" or db.show.EnemyFaction then
+          if self.faction == "Horde" or db.activate.EnemyFaction then
           nodes[13][43993336] = { mnID = 18, name = "", type = "HPortal", showInZone = true, TransportName = L["Tirisfal Glades"] .. " " .. L["Portal"] .. "\n" .. " => " .. ORGRIMMAR .. "\n" .. " => " .. L["Grom'gol, Stranglethorn Vale"] .. "\n" .. " => " .. L["Howling Fjord"] .. "\n" .. " => " .. L["Silvermoon City"] } -- Portal to Orgrimmar, Silvermoon, Howling Fjord and Grom'gol from Tirisfal
           nodes[13][55751269] = { mnID = 110, name = "", type = "HPortal", showInZone = true, TransportName = L["Silvermoon City"] .. "\n" .. "\n" .. L["Portal"] .. "\n" .. " => " .. ORGRIMMAR .. "\n" .. " => " .. L["Ruins of Lordaeron"] } -- Portal to Orgrimmar, Ruins of Lordaeron from Silvermoon   
           end
@@ -317,24 +317,24 @@ if not db.show.HideMapNote then
 
 
         -- Eastern Kingdom Zeppelins without RemoveBlizzPOIs
-          if self.db.profile.showContinentZeppelins and not self.db.profile.show.RemoveBlizzPOIs then
+          if self.db.profile.showContinentZeppelins and not db.activate.RemoveBlizzPOIs then
 
-            if self.faction == "Horde" or db.show.EnemyFaction then
+            if self.faction == "Horde" or db.activate.EnemyFaction then
               nodes[13][42728658] = { mnID = 50, name = "", type = "HZeppelin", showInZone = true, TransportName = L["Grom'gol, Stranglethorn Vale"] .. " " .. L["Zeppelin"] .. "\n" .. " => " .. ORGRIMMAR } -- Zeppelin from Stranglethorn Valley to Ogrimmar
             end
           end
 
 
         -- Eastern Kingdom RemoveBlizzPOIs
-          if self.db.profile.show.RemoveBlizzPOIs then
+          if db.activate.RemoveBlizzPOIs then
 
-            if self.faction == "Horde" or db.show.EnemyFaction then
+            if self.faction == "Horde" or db.activate.EnemyFaction then
               nodes[13][43263464] = { mnID = 18, name = "", type = "HIcon", showInZone = true, TransportName = L["Undercity"] .. " - " .. FACTION_HORDE .. "\n" .. "\n" .. L["Portal"] .. "\n" .. " => " .. L["Hellfire Peninsula"] .. "\n" .. "\n" .. L["Ruins of Lordaeron"]  .. " / " .. L["Tirisfal Glades"] .. "\n" .. "\n" .. L["Portals"] .. "\n" ..  " => " .. ORGRIMMAR .. "\n" .. " => " .. L["Grom'gol, Stranglethorn Vale"] .. "\n" .. " => " .. L["Howling Fjord"] .. "\n" .. " => " .. L["Silvermoon City"] } -- Portal to Orgrimmar, Silvermoon, Howling Fjord and Grom'gol from Tirisfal
               nodes[13][56471480] = { mnID = 110, name = "", type = "HIcon", showInZone = true, TransportName = L["Silvermoon City"] .. " - " .. FACTION_HORDE .. "\n" .. "\n" .. L["Portals"] .. "\n" ..  " => " .. ORGRIMMAR .. "\n" .. " => " .. L["Ruins of Lordaeron"] } -- Portal to Orgrimmar, Ruins of Lordaeron from Silvermoon
               nodes[13][44168671] = { mnID = 50, name = "", type = "HIcon", showInZone = true, TransportName = L["Grom'gol, Stranglethorn Vale"] .. " - " .. FACTION_HORDE .. "\n" .. "\n" .. L["Zeppelin"] .. "\n" .. " => " .. ORGRIMMAR .. "\n" .. "\n" .. L["Portal"] .. "\n" .. " => " .. L["Ruins of Lordaeron"] } -- Transport from Stranglethorn Valley to Ogrimmar and Ruins of Lordaeron
             end
 
-            if self.faction == "Alliance" or db.show.EnemyFaction then
+            if self.faction == "Alliance" or db.activate.EnemyFaction then
               nodes[13][47275888] = { mnID = 87, name = "", type = "AIcon", showInZone = true, TransportName = L["Ironforge"] .. " - " .. FACTION_ALLIANCE .. "\n" .. "\n" .. DUNGEON_FLOOR_DEEPRUNTRAM1 .. "\n" .. " => " .. STORMWIND } -- Transport to Ironforge Carriage 
               nodes[13][42937289] = { mnID = 84, name = "", type = "AIcon", showInZone = true, TransportName = STORMWIND .. " - " .. FACTION_ALLIANCE .. "\n" .. "\n" .. L["Portalroom"] .. "\n" .. " => " .. L["Ashran"] .. "\n" .. " => " .. L["Valdrakken"] .. "\n" .. " => " .. L["Boralus, Tiragarde Sound"] .. "\n" .. " => " .. L["Oribos"] .. "\n" .. " => " .. L["Azsuna"] .. "\n" .. " => " .. L["Shattrath City"] .. "\n" .. " => " .. L["Jade Forest"] .. "\n" .. " => " .. DUNGEON_FLOOR_DALARANCITY1 .. "\n" .. " => " .. DUNGEON_FLOOR_TANARIS18 .. "\n" .. " => " .. L["Exodar"] .. "\n" ..  " => " .. L["Bel'ameth, Amirdrassil"] .. "\n" .. "\n" .. L["Portals"] .. "\n" ..  "\n" .. " => " .. L["Uldum"] .. "\n" .. " => " .. L["Vashj'ir"] .. "\n" .. " => " .. POSTMASTER_LETTER_HYJAL .. "\n" .. " => " .. ARTIFACT_SHAMAN_TITLECARD_DEEPHOLM .. "\n" .. " => " .. L["Twilight Highlands"] .. "\n" .. " => " .. DUNGEON_FLOOR_TOLBARADWARLOCKSCENARIO0 .. "\n" .. "\n" .. L["Ships"] .. "\n" .. " => " .. POSTMASTER_LETTER_VALIANCEKEEP .. "\n" .. " => " .. L["Boralus, Tiragarde Sound"] .. "\n" .. " => " .. L["The Waking Shores, Dragon Isles"] .. "\n" .. "\n" .. DUNGEON_FLOOR_DEEPRUNTRAM1 .. "\n" .. " => " .. L["Ironforge"] .. "\n" .. "\n" .. " => " .. CALENDAR_TYPE_DUNGEON .. "\n" .. " => " .. DUNGEON_FLOOR_THESTOCKADE1 } -- Portalroom from Stormwind
             end
@@ -345,16 +345,16 @@ if not db.show.HideMapNote then
           if self.db.profile.showContinentShips then
             nodes[13][42379354] = { mnID = 210, name = "", type = "Ship", showInZone = true, TransportName = POSTMASTER_LETTER_STRANGLETHORNVALE .. " " .. L["Ship"] .. "\n" .. " => " .. L["Ratchet"] } -- Ship from Booty Bay to Ratchet
             
-            if self.faction == "Alliance" or db.show.EnemyFaction then
+            if self.faction == "Alliance" or db.activate.EnemyFaction then
               nodes[13][46665454] = { mnID = 56, name = "", type = "AShip", showInZone = true, TransportName = POSTMASTER_LETTER_WETLANDS .." " .. L["Ships"] .. "\n" .. " => " .. L["Theramore Isle"] .. "\n" .. " => " .. L["Howling Fjord"] } -- Ship from Stormwind to Borean Tundra
             end
           end
     
 
         -- Eastern Kingdom Ships without RemoveBlizzPOIs
-          if self.db.profile.showContinentShips and not self.db.profile.show.RemoveBlizzPOIs then
+          if self.db.profile.showContinentShips and not db.activate.RemoveBlizzPOIs then
           
-            if self.faction == "Alliance" or db.show.EnemyFaction then
+            if self.faction == "Alliance" or db.activate.EnemyFaction then
               nodes[13][40967129] = { mnID = 84, name = "", type = "AShip", showInZone = true, TransportName = L["Ship"] .. "\n" .. " " .. STORMWIND .. " => " .. POSTMASTER_LETTER_VALIANCEKEEP } -- Ship from Stormwind to Valiance Keep
               nodes[13][41187327] = { mnID = 84, name = "", type = "AShip", showInZone = true, TransportName = L["Ship"] .. "\n" .. " " .. STORMWIND .. " => " .. L["Boralus, Tiragarde Sound"] } -- Ship from Stormwind to Valiance Keep
             end
@@ -364,14 +364,14 @@ if not db.show.HideMapNote then
         --Eastern Kingdom Zeppelins
           if self.db.profile.showContinentZeppelins then
 
-            if self.faction == "Horde" or db.show.EnemyFaction then
+            if self.faction == "Horde" or db.activate.EnemyFaction then
               --nodes[13][43968695] = { mnID = 50, name = "", type = "HZeppelin", showInZone = true, TransportName = L["Zeppelin"] .. " => " .. ORGRIMMAR } -- Zeppelin from Stranglethorn Valley to Ogrimmar
             end
 
           end
 
         -- Eastern Kingdom Transport and not RemoveBlizzPOIs
-          if self.db.profile.showContinentTransport and not self.db.profile.show.RemoveBlizzPOIs then
+          if self.db.profile.showContinentTransport and not db.activate.RemoveBlizzPOIs then
 
             nodes[13][47275888] = { mnID = 87, name = "", type = "Carriage", showInZone = true, TransportName = DUNGEON_FLOOR_DEEPRUNTRAM1 .. " => " .. L["Ironforge"] } -- Transport to Ironforge Carriage 
           end
@@ -421,24 +421,24 @@ if not db.show.HideMapNote then
         -- Outland Portals
           if self.db.profile.showContinentPortals then
                         
-            if self.faction == "Horde" or db.show.EnemyFaction then
+            if self.faction == "Horde" or db.activate.EnemyFaction then
               nodes[101][69025178] = { mnID = 100, name = "", type = "HPortal", showInZone = true, TransportName = L["Hellfire Peninsula"] .. " " .. L["Portal"] .. "\n" .. " => " .. ORGRIMMAR } -- Portal from Hellfire to Orgrimmar 
 
             end
     
-            if self.faction == "Alliance" or db.show.EnemyFaction then
+            if self.faction == "Alliance" or db.activate.EnemyFaction then
               nodes[101][68905259] = { mnID = 100,  name = "" , type = "APortal", showInZone = true, TransportName = L["Hellfire Peninsula"] .. " " .. L["Portal"] .. "\n" .. " => " .. STORMWIND } -- Portal from Hellfire to Stormwind 
             end
           end
 
 
         -- Outland Portals
-          if self.db.profile.showContinentPortals and not self.db.profile.show.RemoveBlizzPOIs then
+          if self.db.profile.showContinentPortals and not db.activate.RemoveBlizzPOIs then
             nodes[101][43186574] = { mnID = 108, name = "", type = "Portal", showInZone = true, TransportName = L["Shattrath City"] .. " " .. L["Portals"] .. "\n" ..  "\n" .. " => " .. ORGRIMMAR .. "\n" .. " => " .. STORMWIND .. "\n" .. " => " .. L["Isle of Quel'Danas"] } -- Portal from Shattrath to Orgrimmar
           end
 
         -- Outland RemoveBlizzPOIs 
-          if self.db.profile.show.RemoveBlizzPOIs then
+          if db.activate.RemoveBlizzPOIs then
             nodes[101][43186573] = { mnID = 108, name = "", type = "MNL", showInZone = true, TransportName = L["Shattrath City"] .. "\n" .. "\n" .. L["Portals"] .. "\n" .. " => " .. ORGRIMMAR .. "\n" .. " => " .. STORMWIND .. "\n" .. " => " .. L["Isle of Quel'Danas"] } -- Portal from Shattrath to Orgrimmar
           end
 
@@ -492,7 +492,7 @@ if not db.show.HideMapNote then
         -- Northrend Zeppelin
           if self.db.profile.showContinentZeppelins then 
     
-            if self.faction == "Horde" or db.show.EnemyFaction then
+            if self.faction == "Horde" or db.activate.EnemyFaction then
               nodes[113][18766562] = { mnID = 114, name = "", type = "HZeppelin", showInZone = true, TransportName = POSTMASTER_LETTER_WARSONGHOLD .. " " .. L["Zeppelin"] .. " => " .. ORGRIMMAR } -- Zeppelin from Borean Tundra to Ogrimmar
             end
           end
@@ -505,7 +505,7 @@ if not db.show.HideMapNote then
             nodes[113][30056677] = { mnID = 114, name = "", type = "Ship", showInZone = true, TransportName = L["Borean Tundra"] .. " " .. L["Ship"] .. "\n" .. " => " .. POSTMASTER_LETTER_MOAKI } -- Ship from Unu'pe to Moaki
             nodes[113][46406841] = { mnID = 115, name = "", type = "Ship", showInZone = true, TransportName = POSTMASTER_LETTER_MOAKI .. " " .. L["Ship"] .. "\n" .. " => " .. L["Borean Tundra"] } -- Ship from Moaki to Unu'pe
 
-            if self.faction == "Alliance" or db.show.EnemyFaction then
+            if self.faction == "Alliance" or db.activate.EnemyFaction then
               nodes[113][25377045] = { mnID = 114, name = "", type = "AShip", showInZone = true, TransportName = POSTMASTER_LETTER_VALIANCEKEEP .. " " ..  L["Ship"] .. "\n" .. " => " .. STORMWIND } -- Ship from Borean Tundra to Stormwind
               nodes[113][79788368] = { mnID = 117, name = "", type = "AShip", showInZone = true, TransportName = L["Howling Fjord"] .. " " .. L["Ship"] .. "\n" .. " => " .. POSTMASTER_LETTER_WETLANDS } -- Ship from Howling Fjord to Wetlands
             end
@@ -545,14 +545,14 @@ if not db.show.HideMapNote then
         -- Pandaria Portals
           if self.db.profile.showContinentPortals then
     
-            if self.faction == "Horde" or db.show.EnemyFaction then
+            if self.faction == "Horde" or db.activate.EnemyFaction then
               nodes[424][59733518] = { mnID = 371, name = "", type = "HPortal", showInZone = true, TransportName = L["Jade Forest"] .. " " .. L["Portal"] .. "\n" .. " => " .. ORGRIMMAR } -- Portal from Jade Forest to Orgrimmar
               nodes[424][17970919] = { mnID = 504, name = "", type = "HPortal", TransportName = L["Isle of Thunder"] .. " " .. L["Portals"] .. "\n" ..  "\n" .. " => " .. L["Shado-Pan Garrison, Townlong Steppes"] } -- Portal from Isle of Thunder to Shado-Pan Garrison
               nodes[424][29444738] = { mnID = 388, name = "", type = "HPortal", TransportName = L["Shado-Pan Garrison, Townlong Steppes"] .. " " .. L["Portal"] .. "\n" .. " => " .. L["Isle of Thunder"] } -- Portal from Shado-Pan Garrison to Isle of Thunder
               nodes[424][50604810] = { mnID = 392, name = "", type = "HPortal", showInZone = true, TransportName = L["Vale of Eternal Blossoms"] .. " " .. L["Portals"] .. "\n" ..  "\n" .. " => " .. ORGRIMMAR } -- Portal from Vale of Eternal Blossoms to Orgrimmar
             end
 
-            if self.faction == "Alliance" or db.show.EnemyFaction then
+            if self.faction == "Alliance" or db.activate.EnemyFaction then
               nodes[424][67806740] = { mnID = 371, name = "", type = "APortal", showInZone = true, TransportName = L["Jade Forest"] .. " " .. L["Portals"] .. "\n" ..  "\n" .. " => " .. STORMWIND } -- Portal from Jade Forest to Stormwind
               nodes[424][23891588] = { mnID = 504, name = "", type = "APortal",  TransportName = L["Isle of Thunder"] .. " " .. L["Portals"] .. "\n" ..  "\n" .. " => " .. L["Shado-Pan Garrison, Townlong Steppes"] } -- Portal from Isle of Thunder to Shado-Pan Garrison
               nodes[424][28894622] = { mnID = 388, name = "", type = "APortal", showInZone = true, TransportName = L["Shado-Pan Garrison, Townlong Steppes"] .. " " .. L["Portal"] .. "\n" .. " => " .. L["Isle of Thunder"] } -- Portal from Shado-Pan Garrison to Isle of Thunder
@@ -621,13 +621,13 @@ if not db.show.HideMapNote then
         --Draenor Portals
           if self.db.profile.showContinentPortals then
     
-            if self.faction == "Horde" or db.show.EnemyFaction then
+            if self.faction == "Horde" or db.activate.EnemyFaction then
               nodes[572][71343912] = { mnID = 624, name = "", type = "HPortal", TransportName = L["Ashran"] .. " " .. L["Portal"] .. "\n" .. " => " .. ORGRIMMAR .. "\n" .. " => " .. L["Vol'mar"] } -- Portal from Ashran to Orgrimmar
               nodes[572][60424574] = { mnID = 534, name = "", type = "HPortal", showInZone = true, TransportName = L["Vol'mar"] .. " " .. L["Portal"] .. "\n" .. " => " .. L["Ashran"] } -- Portal from Vol'mar to Ashran
               nodes[572][34663659] = { mnID = 590, name = "", type = "HPortal", showInZone = true, TransportName = GARRISON_LOCATION_TOOLTIP .. " " .. L["Portal"] .. "\n" .. " => " .. L["Ashran"] } -- Portal from Garrison to Ashran
             end
     
-            if self.faction == "Alliance" or db.show.EnemyFaction then
+            if self.faction == "Alliance" or db.activate.EnemyFaction then
               nodes[572][59544876] = { mnID = 534, name = "", type = "APortal", showInZone = true, TransportName = L["Portal"] .. " => " .. L["Ashran"] } -- Portal from Lion's Watch to (Ashran Zone)
               nodes[572][71674912] = { mnID = 622,  name = "" , type = "APortal", showInZone = true, TransportName =  L["Ashran"] .. " " .. L["Portal"] .. "\n" .. " => " .. STORMWIND .. "\n" .. " => " .. SPLASH_NEW_6_2_FEATURE1_TITLE } -- Portal from Ashran to Stormwind
               nodes[572][53396082] = { mnID = 582, name = "", type = "APortal", showInZone = true, TransportName = GARRISON_LOCATION_TOOLTIP .. " " .. L["Portal"] .. "\n" .. " => " .. L["Ashran"] } -- Portal from Garrison to Ashran
@@ -637,11 +637,11 @@ if not db.show.HideMapNote then
          --Draenor LFR
           if self.db.profile.showContinentLFR then
             
-            if self.faction == "Horde" or db.show.EnemyFaction then
+            if self.faction == "Horde" or db.activate.EnemyFaction then
               nodes[572][33793621] = { mnID = 590, name = L["Seer Kazal"] .. " - " .. REQUIRES_LABEL .. " " .. GARRISON_LOCATION_TOOLTIP .. " " .. LEVEL .. " " .. ACTION_SPELL_CAST_START_MASTER .. "\n" .. L["Registrant"] .. " - " .. RAID_FINDER .. "\n" .. " ", id = { 477, 457, 669 }, type = "LFR" }
             end
             
-            if self.faction == "Alliance" or db.show.EnemyFaction then
+            if self.faction == "Alliance" or db.activate.EnemyFaction then
               nodes[539][29021652] = { mnID = 582, name = L["Seer Kazal"] .. " - " .. REQUIRES_LABEL .. " " .. GARRISON_LOCATION_TOOLTIP .. " " .. LEVEL .. " " .. ACTION_SPELL_CAST_START_MASTER .. "\n" .. L["Registrant"] .. " - " .. RAID_FINDER .. "\n" .. " ", id = { 477, 457, 669 }, type = "LFR" }
             end
           end
@@ -686,12 +686,12 @@ if not db.show.HideMapNote then
         --Broken Isles Portals
           if self.db.profile.showContinentPortals then
     
-            if self.faction == "Horde" or db.show.EnemyFaction then
+            if self.faction == "Horde" or db.activate.EnemyFaction then
               nodes[619][45606186] = { mnID = 627, name = "", type = "HPortal", showInZone = true, TransportName = L["Portal"] .. " => " .. ORGRIMMAR } --  Dalaran to Orgrimmar Portal
               nodes[619][33715775] = { mnID = 630, name = "", type = "HPortal", showInZone = true, TransportName = L["Portal"] .. " => " .. ORGRIMMAR } -- Portal to Orgrimmar from Azsuna
             end
     
-            if self.faction == "Alliance" or db.show.EnemyFaction then
+            if self.faction == "Alliance" or db.activate.EnemyFaction then
               nodes[619][45296767] = { mnID = 627,  name = "" , type = "APortal", showInZone = false, TransportName = L["Portal"] .. " => " .. STORMWIND } --  Portal from Dalaran to Stormwind
               nodes[619][32905786] = { mnID = 630,  name = "" , type = "APortal", showInZone = true, TransportName = L["Portal"] .. " => " .. STORMWIND } -- Portal to Stormwind from Azsuna
              end
@@ -718,11 +718,11 @@ if not db.show.HideMapNote then
             nodes[875][58243603] = { id = 1022, type = "Dungeon" } -- The Underrot
             nodes[875][40781425] = { id = 1030, type = "Dungeon" } -- Temple of Sethraliss
           
-            if self.faction == "Horde" or db.show.EnemyFaction then
+            if self.faction == "Horde" or db.activate.EnemyFaction then
               nodes[875][57757046] = { id = 1012, type = "Dungeon" } -- The MOTHERLODE HORDE
             end
           
-            if self.faction == "Alliance" or db.show.EnemyFaction then
+            if self.faction == "Alliance" or db.activate.EnemyFaction then
               nodes[875][45457850] = { id = 1012, type = "Dungeon" } -- The MOTHERLODE Alliance
             end
           end
@@ -732,7 +732,7 @@ if not db.show.HideMapNote then
           if self.db.profile.showContinentRaids then
             nodes[875][59413469] = { id = 1031, type = "Raid" } -- Uldir
             nodes[875][86731430] = {  id = 1179, type = "Raid" } -- The Eternal Palace 
-            if self.faction == "Horde" or db.show.EnemyFaction then
+            if self.faction == "Horde" or db.activate.EnemyFaction then
             nodes[875][56005350] = { id = 1176, type = "Raid" } -- Battle of Dazar'alor
             end
           end
@@ -741,7 +741,7 @@ if not db.show.HideMapNote then
         -- Zandalar Portals
           if self.db.profile.showContinentPortals then
     
-            if self.faction == "Horde" or db.show.EnemyFaction then
+            if self.faction == "Horde" or db.activate.EnemyFaction then
               nodes[875][58486162] = { mnID = 1163, name = "", type = "HPortal", showInZone = true, TransportName = L["Dazar'alor"] .. "\n" .. "\n" .. L["Portalroom"] .. "\n" .. " => " .. L["Silvermoon City"] .. "\n" .. " => " .. ORGRIMMAR .. "\n" .. " => " .. L["Thunder Bluff"] .. "\n" .. " => " .. L["Silithus"] .. "\n" .. " => " .. L["Nazjatar"] } -- Portalroom from Dazar'alor
               nodes[875][59107238] = { mnID = 1165, name = "", type = "HPortal", showInZone = true, TransportName = L["Zandalar"] .. " " .. L["Portals"] .. "\n" ..  "\n" .. " => " .. L["This Darkshore portal is only active if your faction is currently occupying Bashal'Aran"] .. "\n" .. " => " .. L["This Arathi Highlands portal is only active if your faction is currently occupying Ar'gorok"] } -- Portal to Arathi and Darkshore
             end
@@ -749,9 +749,9 @@ if not db.show.HideMapNote then
     
 
         -- Zandalar RemoveBlizzPOIs
-          if self.db.profile.show.RemoveBlizzPOIs then
+          if db.activate.RemoveBlizzPOIs then
     
-            if self.faction == "Horde" or db.show.EnemyFaction then
+            if self.faction == "Horde" or db.activate.EnemyFaction then
               nodes[875][58486162] = { mnID = 1163, id = { 1176, 1031, 1179, 1036 }, type = "HIcon", showInZone = true, name = L["Dazar'alor"] .. "\n" .. "\n" .. L["Portalroom"] .. "\n" .. " => " .. L["Silvermoon City"] .. "\n" .. " => " .. ORGRIMMAR .. "\n" .. " => " .. L["Thunder Bluff"] .. "\n" .. " => " .. L["Silithus"] .. "\n" .. " => " .. L["Nazjatar"] .. "\n" .. " " .. "\n" .. L["Eppu"] .. "\n" .. L["Registrant"] .. " - " .. RAID_FINDER .. "\n" .. " " } -- Portalroom from Dazar'alor
             end
           end 
@@ -760,11 +760,11 @@ if not db.show.HideMapNote then
         -- Zandalar Ships
           if self.db.profile.showContinentShips then
     
-            if self.faction == "Horde" or db.show.EnemyFaction then
+            if self.faction == "Horde" or db.activate.EnemyFaction then
               nodes[875][57957497] = { mnID = 463, name = "", type = "HShip", showInZone = true, TransportName = L["Ship"] .. " => " .. L["Echo Isles, Durotar"] } -- Ship from Zandalar to Echo Isles 
             end
     
-            if self.faction == "Alliance" or db.show.EnemyFaction then
+            if self.faction == "Alliance" or db.activate.EnemyFaction then
 
             end
 
@@ -774,11 +774,11 @@ if not db.show.HideMapNote then
         -- Zandalar Transport
           if self.db.profile.showContinentTransport then
 
-            if self.faction == "Horde" or db.show.EnemyFaction then
+            if self.faction == "Horde" or db.activate.EnemyFaction then
               nodes[875][56027038] = { mnID = 876, name = L["(Dread-Admiral Tattersail) will take you to Drustvar, Tiragarde Sound or Stormsong Valley"], type = "Travel", showInZone = true, } -- Ship from Dazar'alor to Drustvar, Tiragarde Sound or Stormsong Valley
             end
 
-            if self.faction == "Alliance" or db.show.EnemyFaction then
+            if self.faction == "Alliance" or db.activate.EnemyFaction then
               nodes[875][33051846] = { mnID = 864, name = "", type = "Kul", showInZone = true, TransportName = L["Barnard 'The Smasher' Bayswort"] .. " " .. L["Travel"] .. "\n" .. "\n" .. " => " .. L["Boralus, Tiragarde Sound"] } -- Transport from Vol'dun to Boralus
               nodes[875][62402600] = { mnID = 863, name = "", type = "DwarfF", showInZone = true, TransportName = L["Desha Stormwallow"] .. " " .. L["Travel"] .. "\n" .. "\n" .. " => " .. L["Boralus, Tiragarde Sound"] } -- Transport from Nazmir to Boralus
               nodes[875][47177779] = { mnID = 862, name = "", type = "GilneanF", showInZone = true, TransportName = L["Daria Smithson"] .. " " .. L["Travel"] .. "\n" .. "\n" .. " => " .. L["Boralus, Tiragarde Sound"] } -- Transport from Zuldazar to Boralus 
@@ -789,7 +789,7 @@ if not db.show.HideMapNote then
         -- Zandalar LFR
           if self.db.profile.showContinentLFR then
 
-            if self.faction == "Horde" or db.show.EnemyFaction then 
+            if self.faction == "Horde" or db.activate.EnemyFaction then 
               nodes[875][56886153] = { mnID = 1164, name = L["Eppu"] .. "\n" .. L["Registrant"] .. " - " .. RAID_FINDER .. "\n" .. " ", id = { 1176, 1031, 1179, 1036 }, type = "LFR" }
             end
           end
@@ -810,11 +810,11 @@ if not db.show.HideMapNote then
             nodes[876][66051501] = { id = 1036, type = "Dungeon" } -- Shrine of Storm 
             nodes[876][77566206] = { id = 1002, type = "Dungeon" } -- Tol Dagor
     
-            if self.faction == "Alliance" or db.show.EnemyFaction then
+            if self.faction == "Alliance" or db.activate.EnemyFaction then
               nodes[876][61865000] = { id = 1023, type = "Dungeon" } -- Siege of Boralus
             end
     
-            if self.faction == "Horde" or db.show.EnemyFaction then
+            if self.faction == "Horde" or db.activate.EnemyFaction then
               nodes[876][69206490] = { id = 1023, type = "Dungeon" } -- Siege of Boralus
             end
           end
@@ -825,25 +825,25 @@ if not db.show.HideMapNote then
             nodes[876][68262354] = { id = 1177, type = "Raid" } -- Crucible of Storms
             nodes[876][86261171] = { id = 1179, type = "Raid" } -- The Eternal Palace
     
-            if self.faction == "Alliance" or db.show.EnemyFaction then
+            if self.faction == "Alliance" or db.activate.EnemyFaction then
               nodes[876][61645308] = { id = 1176, type = "Raid" } -- Battle of Dazar'alor
             end
           end
     
     
         -- Kul Tiras Portals without RemoveBlizzPOIs
-          if self.db.profile.showContinentPortals and not self.db.profile.show.RemoveBlizzPOIs then
+          if self.db.profile.showContinentPortals and not db.activate.RemoveBlizzPOIs then
     
-            if self.faction == "Alliance" or db.show.EnemyFaction then
+            if self.faction == "Alliance" or db.activate.EnemyFaction then
               nodes[876][59165485] = { mnID = 1161, name = "", type = "APortal", showInZone = true, TransportName = L["Boralus"] .. " " .. L["Portalroom"] .. "\n" .. "\n" .. " => " .. STORMWIND .. "\n" .. " => " .. L["Silithus"] .. "\n" .. " => " .. L["Exodar"] .. "\n" .. " => " .. L["Ironforge"] .. "\n" .. "\n" .. L["Portals"] .. "\n" ..  "\n" .. " => " .. L["Arathi Highlands"] .. "\n" .. " => " .. L["Darkshore"] } -- Boralus Portals
             end
           end
 
 
         -- Kul Tiras RemoveBlizzPOIs
-          if self.db.profile.show.RemoveBlizzPOIs then
+          if db.activate.RemoveBlizzPOIs then
     
-            if self.faction == "Alliance" or db.show.EnemyFaction then
+            if self.faction == "Alliance" or db.activate.EnemyFaction then
               nodes[876][58395547] = { mnID = 1161, id = { 1176, 1031, 1179, 1036 }, type = "AIcon", showInZone = true, name = L["Boralus"] .. " " .. "\n" .. " " .. "\n" .. L["Portalroom"] .. "\n" .. " => " .. STORMWIND .. "\n" .. " => " .. L["Silithus"] .. "\n" .. " => " .. L["Exodar"] .. "\n" .. " => " .. L["Ironforge"] .. "\n" .. " " .. "\n" .. L["Grand Admiral Jes-Tereth"] .. L["Travel"] .. "\n" .. " => " .. L["Nazmir"] .. "\n" .. " => " .. L["Zuldazar"] .. "\n" .. " => " .. L["Vol'dun"] .. "\n" .. " " .. "\n" .. L["Portals"] .. "\n" .. " " .. "\n" .. " => " .. L["Arathi Highlands"] .. "\n" .. " => " .. L["Darkshore"] .. "\n" .. " " .. "\n" .. L["Ship"] .. "\n" .. " => " .. STORMWIND .. "\n" .. " "  .."\n" .. L["Kiku"] .. "\n" .. L["Registrant"] .. " - " .. RAID_FINDER .. "\n" .. " "} -- Boralus Transports
             end
           end
@@ -852,11 +852,11 @@ if not db.show.HideMapNote then
         -- Kul Tiras Ships
           if self.db.profile.showContinentShips then
     
-            if self.faction == "Horde" or db.show.EnemyFaction then
+            if self.faction == "Horde" or db.activate.EnemyFaction then
 
             end
     
-            if self.faction == "Alliance" or db.show.EnemyFaction then
+            if self.faction == "Alliance" or db.activate.EnemyFaction then
 
             end
           end
@@ -866,7 +866,7 @@ if not db.show.HideMapNote then
 
             nodes[876][20172422] = { mnID = 1462, name = "", type = "GoblinF", showInZone = true, TransportName = L["Captain Krooz"] .. " " .. SPLASH_BATTLEFORAZEROTH_8_2_0_FEATURE1_TITLE .. " " .. L["Travel"] .. "\n" .. "\n" .. " => " .. L["Dazar'alor"] } -- Ship from Mechagon to Zuldazar
 
-            if self.faction == "Horde" or db.show.EnemyFaction then
+            if self.faction == "Horde" or db.activate.EnemyFaction then
               nodes[876][25676657] = { mnID = 896, name = "", type = "MOrcF", showInZone = true, TransportName = L["Swellthrasher"] .. " " .. L["Travel"] .. "\n" .. "\n" .. " => " .. L["Zuldazar"] } -- Transport from Drustvar to Zuldazar
               nodes[876][54391406] = { mnID = 942, name = "", type = "Orc", showInZone = true, TransportName = L["Grok Seahandler"] .. " " .. L["Travel"] .. "\n" .. "\n" .. " => " .. L["Zuldazar"] } -- Transport from Stormsong Valley to Zuldazar
               nodes[876][68326548] = { mnID = 895, name = "", type = "B11", showInZone = true, TransportName = L["Erul Dawnbrook"] .. " " .. L["Travel"] .. "\n" .. "\n" .. " => " .. L["Zuldazar"] } -- Transport from Tiragarde Sound to Zuldazar 
@@ -877,7 +877,7 @@ if not db.show.HideMapNote then
         -- Kul Tiras LFR
           if self.db.profile.showContinentLFR then
 
-            if self.faction == "Alliance" or db.show.EnemyFaction then
+            if self.faction == "Alliance" or db.activate.EnemyFaction then
               nodes[876][60244960] = { mnID = 895, name = L["Kiku"] .. "\n" .. L["Registrant"] .. " - " .. RAID_FINDER .. "\n" .. " ", id = { 1176, 1031, 1179, 1036 }, type = "LFR" }
             end
           end
@@ -960,24 +960,24 @@ if not db.show.HideMapNote then
             nodes[1978][56264965] = { mnID = 2112, name = "", type = "Portal", showInZone = true, TransportName = L["Valdrakken"] .. " " .. L["Portals"] .. "\n" ..  "\n" .. " => " .. L["Emerald Dream"] .. "\n" .. " => " .. L["Badlands"] .. "\n".." => " .. STORMWIND .. "\n" .. " => " .. ORGRIMMAR } --  Valdrakken Portals
             nodes[1978][30945509] = { mnID = 2200, name = "", type = "WayGateGreen", showInZone = true,  TransportName = L["Portal"] .. " => " .. L["Emerald Dream"] } -- Portal to The Emerald Dream
     
-            if self.faction == "Horde" or db.show.EnemyFaction then
+            if self.faction == "Horde" or db.activate.EnemyFaction then
 
             end
     
-            if self.faction == "Alliance" or db.show.EnemyFaction then
+            if self.faction == "Alliance" or db.activate.EnemyFaction then
               nodes[1978][25006083] = { mnID = "2239",  name = "", type = "APortal", showInZone = true, TransportName = L["Portals"] .. "\n" .. " => " .. STORMWIND .. "\n" .. " => " .. L["Darkshore"] .. "\n" .. " => " .. POSTMASTER_LETTER_HYJAL  .. "\n" .. " => " .. POSTMASTER_LETTER_LORLATHIL } -- Valdrakken to Stormwind City Portal
             end
           end
     
 
         -- Dragonflight Passage          
-          if self.db.profile.showContinentPassage and not self.db.profile.show.ClassicIcons then
+          if self.db.profile.showContinentPassage and not db.activate.ClassicIcons then
             nodes[1978][31065686] = { id = 1207, type = "PassageRaid", showInZone = true, } -- Amirdrassil, the Dream's Hope
           end
     
 
         -- Dragonflight ClassicIcons
-          if self.db.profile.show.ClassicIcons then
+          if db.activate.ClassicIcons then
 
             if self.db.profile.showContinentRaids then
               nodes[1978][31065686] = { id = 1207, type = "Raid", showInZone = true, } -- Amirdrassil, the Dream's Hope
@@ -988,7 +988,7 @@ if not db.show.HideMapNote then
         -- Dragonflight Zeppelin
           if self.db.profile.showContinentZeppelins then      
     
-            if self.faction == "Horde" or db.show.EnemyFaction then 
+            if self.faction == "Horde" or db.activate.EnemyFaction then 
               nodes[1978][59572607] = { mnID = 85, name = "", type = "HZeppelin", showInZone = true, TransportName = L["Zeppelin"] .. " => " .. ORGRIMMAR } -- Zeppelin from The Waking Shores to Orgrimmar 
             end
           end
@@ -997,7 +997,7 @@ if not db.show.HideMapNote then
         -- Dragonflight Ships
           if self.db.profile.showContinentShips then
     
-            if self.faction == "Alliance" or db.show.EnemyFaction then
+            if self.faction == "Alliance" or db.activate.EnemyFaction then
               nodes[1978][59732701] = { mnID = 84, name = "", type = "AShip", showInZone = true, TransportName = L["Ship"] .. " => " .. STORMWIND } -- Ship from The Waking Shores to Stormwind
             end
           end

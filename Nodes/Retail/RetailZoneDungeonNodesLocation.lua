@@ -8,14 +8,14 @@ local nodes = ns.nodes
 --#####################################################################################################
 --##########################        function to hide all nodes below         ##########################
 --#####################################################################################################
-if not db.show.HideMapNote then
+if not db.activate.HideMapNote then
 
 
     --#####################################################################################################
     --################################         Continent / Zone Map        ################################
     --#####################################################################################################
 
-      if db.show.ZoneMap then
+      if db.activate.ZoneMap then
 
 
         --#############################
@@ -65,7 +65,7 @@ if not db.show.HideMapNote then
           end
 
         -- Kalimdor Dungeons without ClassicIcons is activ
-          if self.db.profile.showZoneDungeons and not self.db.profile.show.ClassicIcons then
+          if self.db.profile.showZoneDungeons and not db.activate.ClassicIcons then
             nodes[69][60323015] = { id = 230, lfgid = 36, type = "Dungeon", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Dire Maul - Capital Gardens - West left Entrance 
             nodes[69][60303130] = { id = 230, lfgid = 36, type = "Dungeon", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Dire Maul - Capital Gardens - West right Entrance 
             nodes[69][62502490] = { id = 230, lfgid = 38, type = "Dungeon", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Dire Maul - Gordok Commons - North  
@@ -100,7 +100,7 @@ if not db.show.HideMapNote then
           end
 
         --Kalimdor Passage without ClassicIcons
-          if self.db.profile.showZonePassage and not self.db.profile.show.ClassicIcons then
+          if self.db.profile.showZonePassage and not db.activate.ClassicIcons then
             nodes[199][45089400] = { dnID = L["Way to the Instance Entrance"], id = 233, type = "PassageDungeon", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Razorfen Downs
             nodes[64][41662882] = { dnID = L["Way to the Instance Entrance"], id = 233, type = "PassageDungeon", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Razorfen Downs
             nodes[1527][71755222] = { dnID = L["Way to the Instance Entrance"], id = 70, type = "PassageDungeon", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Halls of Origination
@@ -113,7 +113,7 @@ if not db.show.HideMapNote then
 
 
         --Kalimdor ClassicIcons
-          if self.db.profile.show.ClassicIcons then  
+          if db.activate.ClassicIcons then  
 
             if self.db.profile.showZoneDungeons then 
               nodes[199][45089400] = { dnID = L["Way to the Instance Entrance"], id = 233, type = "Dungeon", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Razorfen Downs
@@ -133,7 +133,7 @@ if not db.show.HideMapNote then
           end
 
         --Kalimdor Multiple
-          if self.db.profile.showZoneMultiple and not self.db.profile.show.ClassicIcons then  
+          if self.db.profile.showZoneMultiple and not db.activate.ClassicIcons then  
             nodes[71][64864997] = { mnID = 75, id = { 187, 750, 279, 255, 251, 184, 185, 186, }, type = "PassageDungeonRaidMulti", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Dragon Soul, The Battle for Mount Hyjal, The Culling of Stratholme, Black Morass, Old Hillsbrad Foothills, End Time, Well of Eternity, Hour of Twilight Heroic
             nodes[74][30857356] = { mnID = 75, id = { 187, 750, 279, 255, 251, 184, 185, 186, }, type = "PassageDungeonRaidMulti", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Dragon Soul, The Battle for Mount Hyjal, The Culling of Stratholme, Black Morass, Old Hillsbrad Foothills, End Time, Well of Eternity, Hour of Twilight Heroic
           end
@@ -216,7 +216,7 @@ if not db.show.HideMapNote then
 
 
           -- Eastern Kingdom Passage
-          if self.db.profile.showZonePassage and not self.db.profile.show.ClassicIcons then  
+          if self.db.profile.showZonePassage and not db.activate.ClassicIcons then  
             nodes[15][42031147] = { dnID = L["Way to the Instance Entrance"], id = 239, type = "PassageDungeon", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Uldaman
             nodes[469][32793702] = { mnID = 30, dnID = L["Way to the Instance Entrance"], id = 231, type = "PassageDungeon", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Gnomeregan
             nodes[27][31393804] = { mnID = 30, dnID = L["Way to the Instance Entrance"], id = 231, type = "PassageDungeon", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Gnomeregan     
@@ -237,7 +237,7 @@ if not db.show.HideMapNote then
 
 
           -- Eastern Kingdom ClassicIcons
-          if self.db.profile.show.ClassicIcons then
+          if db.activate.ClassicIcons then
 
             if self.db.profile.showZoneMultiple then
               nodes[36][21063760] = { mnID = 33, id = { 741, 742, 66, 228, 229, 559 }, name = L["Way to the Instance Entrance"], type = "MultipleM", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Molten Core, Blackwing Lair, Blackrock Caverns, Blackrock Depths, Lower Blackrock Spire, Upper Blackrock Spire 
@@ -472,11 +472,11 @@ if not db.show.HideMapNote then
         --Draenor LFR
           if self.db.profile.showZoneLFR then
             
-            if self.faction == "Horde" or db.show.EnemyFaction then
+            if self.faction == "Horde" or db.activate.EnemyFaction then
               nodes[525][47746482] = { mnID = 590, name = L["Seer Kazal"] .. " - " .. REQUIRES_LABEL .. " " .. GARRISON_LOCATION_TOOLTIP .. " " .. LEVEL .. " " .. ACTION_SPELL_CAST_START_MASTER .. "\n" .. L["Registrant"] .. " - " .. RAID_FINDER .. "\n" .. " ", id = { 477, 457, 669 }, type = "LFR", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
             end
             
-            if self.faction == "Alliance" or db.show.EnemyFaction then
+            if self.faction == "Alliance" or db.activate.EnemyFaction then
               nodes[539][29001638] = { mnID = 582, name = L["Seer Kazal"] .. " - " .. REQUIRES_LABEL .. " " .. GARRISON_LOCATION_TOOLTIP .. " " .. LEVEL .. " " .. ACTION_SPELL_CAST_START_MASTER .. "\n" .. L["Registrant"] .. " - " .. RAID_FINDER .. "\n" .. " ", id = { 477, 457, 669 }, type = "LFR", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
             end
           end
@@ -523,13 +523,13 @@ if not db.show.HideMapNote then
 
 
         -- Broken Isles Raids without ClassicIcons
-          if self.db.profile.showZonePassage and not self.db.profile.show.ClassicIcons then
+          if self.db.profile.showZonePassage and not db.activate.ClassicIcons then
             nodes[680][43346230] = { dnID = L["Way to the Instance Entrance"], id = 726, type = "PassageDungeon", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- The Arcway
           end
 
 
         -- Broken Isles ClassicIcons
-          if self.db.profile.show.ClassicIcons then
+          if db.activate.ClassicIcons then
 
             if self.db.profile.showZoneDungeons then
               nodes[680][43346230] = { dnID = L["Way to the Instance Entrance"], id = 726, type = "Dungeon", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- The Arcway
@@ -548,11 +548,11 @@ if not db.show.HideMapNote then
         --Zandalar Dungeons
           if self.db.profile.showZoneDungeons then
 
-            if self.faction == "Horde" or db.show.EnemyFaction then
+            if self.faction == "Horde" or db.activate.EnemyFaction then
               nodes[862][56105984] = { id = 1012, type = "Dungeon", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- The Motherlode
             end
 
-            if self.faction == "Alliance" or db.show.EnemyFaction then
+            if self.faction == "Alliance" or db.activate.EnemyFaction then
               nodes[862][39307154] = { id = 1012, type = "Dungeon", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- The MOTHERLODe
             end
 
@@ -575,13 +575,13 @@ if not db.show.HideMapNote then
 
 
         --Zandalar Raids without ClassicIcons
-          if self.db.profile.showZonePassage and not self.db.profile.show.ClassicIcons then
+          if self.db.profile.showZonePassage and not db.activate.ClassicIcons then
             nodes[1355][50341233] = {  id = 1179, type = "PassageRaid", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- The Eternal Palace
           end
 
 
         --Zandalar ClassicIcons
-          if self.db.profile.show.ClassicIcons then
+          if db.activate.ClassicIcons then
 
             if self.db.profile.showZoneRaids then
               nodes[1355][50341233] = {  id = 1179, type = "Raid", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- The Eternal Palace
@@ -592,7 +592,7 @@ if not db.show.HideMapNote then
         -- Zandalar LFR
           if self.db.profile.showZoneLFR then
 
-            if self.faction == "Horde" or db.show.EnemyFaction then
+            if self.faction == "Horde" or db.activate.EnemyFaction then
               nodes[862][57304305] = { mnID = 1164, name = L["Eppu"] .. "\n" .. L["Registrant"] .. " - " .. RAID_FINDER .. "\n" .. " ", id = { 1176, 1031, 1179, 1036 }, type = "LFR", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
             end
           end
@@ -616,11 +616,11 @@ if not db.show.HideMapNote then
             nodes[896][33671253] = { id = 1021, type = "Dungeon", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Waycrest Manor 
             nodes[1169][38926976] = { id = 1002, type = "Dungeon", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Tol Dagor
 
-            if self.faction == "Alliance" or db.show.EnemyFaction then
+            if self.faction == "Alliance" or db.activate.EnemyFaction then
               nodes[895][75632450] = { id = 1023, type = "Dungeon", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Siege of Boralus
             end
 
-            if self.faction == "Horde" or db.show.EnemyFaction then
+            if self.faction == "Horde" or db.activate.EnemyFaction then
               nodes[895][88285102] = { id = 1023, type = "Dungeon", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Siege of Boralus
             end
           end
@@ -631,7 +631,7 @@ if not db.show.HideMapNote then
           -- Raid Nodes above Blizzards Icons to make it Clickable for maximized Maps
             nodes[942][83894693] = { id = 1036, type = "Raid",  showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Crucible of Storms
 
-            if self.faction == "Alliance" or db.show.EnemyFaction then
+            if self.faction == "Alliance" or db.activate.EnemyFaction then
               nodes[895][74382837] = { id = 1176, type = "Raid", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Battle of Dazar'alor
             end
           end
@@ -640,7 +640,7 @@ if not db.show.HideMapNote then
          -- Kul Tiras LFR
           if self.db.profile.showZoneLFR then
 
-            if self.faction == "Alliance" or db.show.EnemyFaction then
+            if self.faction == "Alliance" or db.activate.EnemyFaction then
               nodes[895][75112192] = { mnID = 1161, name = L["Kiku"] .. "\n" .. L["Registrant"] .. " - " .. RAID_FINDER .. "\n" .. " ", id = { 1176, 1031, 1179, 1036 }, type = "LFR", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
             end
           end
@@ -714,13 +714,13 @@ if not db.show.HideMapNote then
 
 
         -- Dragonflight Passage
-          if self.db.profile.showZonePassage and not self.db.profile.show.ClassicIcons then
+          if self.db.profile.showZonePassage and not db.activate.ClassicIcons then
             nodes[2023][18855124] = { id = 1207, type = "PassageRaid", showInZone = true, hideOnContinent = true, hideOnMinimap = true }-- Amirdrassil, the Dream's Hope
           end
 
 
         -- Dragonflight ClassicIcons
-          if self.db.profile.show.ClassicIcons then
+          if db.activate.ClassicIcons then
 
             if self.db.profile.showZoneRaids then
               nodes[2023][18855124] = { id = 1207, type = "Raid", showInZone = true, hideOnContinent = true, hideOnMinimap = true }-- Amirdrassil, the Dream's Hope
