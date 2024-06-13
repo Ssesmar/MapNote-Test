@@ -1,31 +1,28 @@
 # MapNote
-## [1.9.5](https://github.com/Ssesmar/MapNote) (2024-05-28)
+## [2.0.3](https://github.com/Ssesmar/MapNote) (2024-06-09)
 - Note:
 
 -- MapNotes now works on every version of World of Warcraft. Classic Era / Cataclysm and Retail
 
-Retail:
-    • Each character has their own Mapnotes profile
-    • add new Tabs called Capitals and Capital - Minimap
-    • The Zones tab is no longer responsible for Zone icons  that were within “Capitals”, but rather the new “Capitals” tab
-    • The Minimap tab is no longer responsible for Minimap icons that were within “Capitals”, but rather the new “Capitals - Minimap” tab
-    • There are 5 submenus in the new tab Capital and Capital - Minimap
-    • Submenu 1 Capitals: Here you can switch off/show all icons within a specific capital
-    • Submenu 2 Instance icons: Here you can switch off/show various instance icons. This option applies to all cities assigned to the Capital category
-    • Submenu 3 Transport icons: Here you can switch off/show various Transport icons. This option applies to all cities assigned to the Capital category
-    • Submenu 4 Profession icons: Here you can switch off/show various Profession icons. This option applies to all cities assigned to the Capital category
-    • Submenu 5 General icons: Here you can switch off/show various General icons. This option applies to all cities assigned to the Capital category
-    • Likewise, right-clicking on the MapNotes world map symbol within a capital now has its own function as outside a capital in a zone.
-    • Within a capital city, right-clicking on the MapNotes map button hides all zone symbols for all capital cities. 
-    • The zone symbols outside of a capital city remain unaffected and can be hidden by right-clicking on them on a zone map
+
+Retail & PTR:
+added a new function called "Synchronizes Zones & Minimap icons" into the Minimap and Zone tab
+    (Synchronizes the Zones tab with the Minimap tab)
+    (Which deactivates the functions from the Minimap tab and is now controlled together by the Zone tab)
+    (This will delete all Minimap settings and replace them with those from Zone tab)
+added a new function called "Synchronizes Capitals & Capitals Minimap icons" into the Capital and Capital - Minimap tab
+    (Synchronizes the Capitals tab with the Capitals - Minimap tab)
+    (Which deactivates the functions from the Capitals - Minimap tab and is now controlled together by the Capitals tab)
+    (This will delete all Capitals - Minimap settings and replace them with those from Capitals tab)
 
 Cataclysm:
 
-    • some flightpoints changes
+added Transmogger/Reforge icon in Stormwind and Orgrimmar to the Capital tab into the General function
+added Transmogger/Reforge icon in Stormwind and Orgrimmar to the Capita Minimapl tab into the General function
+
 
 Classic Era & Hardcore:
 
-    • some flightpoints and spirit healer changes
 
 - Description:
 
