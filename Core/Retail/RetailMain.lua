@@ -496,14 +496,9 @@ function pluginHandler:OnClick(button, pressed, uiMapId, coord)
         return
     end
 
-    if (button == "MiddleButton") and IsShiftKeyDown() then
-      if nodes[uiMapId][coord].showInZone == true then
-        nodes[uiMapId][coord].showInZone = false
-      end
-    else
-      if minimap[uiMapId][coord].hideOnMinimap == false then
-        minimap[uiMapId][coord].hideOnMinimap = true
-      end
+    nodes[uiMapId][coord].showInZone = ns.HiddenIcons
+    if (button == "MiddleButton") and IsAltKeyDown() then
+      ns.HiddenIcons = false
     end
 
     if (button == "MiddleButton") then
@@ -564,6 +559,13 @@ function pluginHandler:OnClick(button, pressed, uiMapId, coord)
     if IsShiftKeyDown() and (button == "RightButton" and db.tomtom and TomTom) then
         setWaypoint(uiMapId, coord)
     return end
+
+    --if (button == "MiddleButton") and IsAltKeyDown() then
+    --  ns.HiddenIcons = nodes[uiMapId][coord].showInZone
+    --  if ns.HiddenIcons then
+    --    nodes[uiMapId][coord].showInZone = false
+    --  end
+    --end
 
     if IsShiftKeyDown() and (button == "MiddleButton") then
       local www = nodes[uiMapId][coord].www
@@ -647,6 +649,8 @@ function Addon:PLAYER_LOGIN()
   -- Register Database Profile
   self.db = LibStub("AceDB-3.0"):New("HandyNotes_MapNotesRetailDB", ns.defaults)
   db = self.db.profile
+
+  ns.HiddenIcons = self.db.char.HiddenIcons
 
   -- Register options 
   HandyNotes:RegisterPluginDB("MapNotes", pluginHandler, ns.options)

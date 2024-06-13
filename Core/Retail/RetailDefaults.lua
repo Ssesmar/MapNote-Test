@@ -357,5 +357,11 @@ ns.defaults = {
           MinimapCapitalsGeneral = true,
 
         },
+
     },
+    char = {
+      hidden = {
+          ['*'] = {},
+      },
+  },
 }
