@@ -198,7 +198,7 @@ do
 
       ns.transports = value.type == "Portal" or value.type == "HPortal" or value.type == "APortal" or value.type == "HPortalS" or value.type == "APortalS" or value.type == "PassageHPortal" or value.type == "PassageAPortal" or value.type == "PassagePortal" or value.type == "Zeppelin" or value.type == "HZeppelin" or value.type == "AZeppelin" or value.type == "Ship" or value.type == "AShip" or value.type == "HShip" or value.type == "Carriage" or value.type == "TravelH" or value.type == "TravelA" or value.type == "GPortal" or value.type == "Tport2" or value.type == "TransportHelper" or value.type == "OgreWaygate" or value.type == "WayGateGreen" or value.type == "Ghost"
 
-      ns.capitalgenerals = value.type == "Exit" or value.type == "PassageUpL" or value.type == "PassageDownL" or value.type == "PassageRightL" or value.type == "PassageLeftL" or value.type == "Hearthstone" or value.type == "Auctioneer" or value.type == "Bank" or value.type == "MNL" or value.type == "Barber" or value.type == "Transmogger" or value.type == "ItemUpgrade" or value.type == "PvPVendor" or value.type == "PvEVendor" or value.type == "MNL" or value.type == "DragonFlyTransmog"
+      ns.capitalgenerals = value.type == "Exit" or value.type == "PassageUpL" or value.type == "PassageDownL" or value.type == "PassageRightL" or value.type == "PassageLeftL" or value.type == "Innkeeper" or value.type == "Auctioneer" or value.type == "Bank" or value.type == "MNL" or value.type == "Barber" or value.type == "Transmogger" or value.type == "ItemUpgrade" or value.type == "PvPVendor" or value.type == "PvEVendor" or value.type == "MNL" or value.type == "DragonFlyTransmog"
 
       ns.CapitalIDs =
         --Cataclysm
@@ -300,13 +300,13 @@ do
         alpha = db.MinimapCapitalsInstanceAlpha
       end
 
-      -- Capitals Minimap General (Hearthstone/Exit/Passage) icons
+      -- Capitals Minimap General (Innkeeper/Exit/Passage) icons
       if ns.CapitalIDs and ns.capitalgenerals and (value.hideOnMinimap == false) then
         scale = db.MinimapCapitalsGeneralScale
         alpha = db.MinimapCapitalsGeneralAlpha
       end
 
-      -- Capitals General (Hearthstone/Exit/Passage) icons
+      -- Capitals General (Innkeeper/Exit/Passage) icons
       if ns.CapitalIDs and ns.capitalgenerals and (value.hideOnMinimap == true) then
         scale = db.CapitalsGeneralScale
         alpha = db.CapitalsGeneralAlpha

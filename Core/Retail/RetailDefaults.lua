@@ -1,6 +1,7 @@
 local ADDON_NAME, ns = ...
 
 ns.defaults = {
+
     profile = {
       
       --FogOfWar
@@ -229,7 +230,7 @@ ns.defaults = {
         CapitalsGeneralScale = 1.2,
         CapitalsGeneralAlpha = 1,
         showCapitalsMapNotes = true,
-        showCapitalsHearthstone = true,
+        showCapitalsInnkeeper = true,
         showCapitalsAuctioneer = true,
         showCapitalsPaths = true,
         showCapitalsBank = true,
@@ -308,7 +309,7 @@ ns.defaults = {
         MinimapCapitalsGeneralScale = 1,
         MinimapCapitalsGeneralAlpha = 1,   
         showMinimapCapitalsMapNotes = true,     
-        showMinimapCapitalsHearthstone = true,
+        showMinimapCapitalsInnkeeper = true,
         showMinimapCapitalsAuctioneer = true,
         showMinimapCapitalsPaths = true,
         showMinimapCapitalsBank = true,
@@ -360,7 +361,7 @@ ns.defaults = {
 
     },
     char = {
-      hidden = {
+      HiddenMapIcons = {
           ['*'] = {},
       },
   },
