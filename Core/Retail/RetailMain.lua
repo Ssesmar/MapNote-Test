@@ -354,7 +354,7 @@ do
         alpha = db.cosmosAlpha
       end
 
-      if value.showInZone or t.minimapUpdate then -- Zone scale
+      if (value.showInZone or t.minimapUpdate) then -- Zone scale
         return state, nil, icon, scale, alpha
       end
 
@@ -491,6 +491,28 @@ function pluginHandler:OnClick(button, pressed, uiMapId, coord)
     if (button == "MiddleButton") and IsAltKeyDown() then
       nodes[uiMapId][coord].showInZone = false
     end
+
+    --test xy
+    --if (button == "MiddleButton") and IsAltKeyDown() then
+    --  local widget = CreateFrame("Button", "TauntingButton", UIParent, "UIPanelButtonTemplate");
+    --  local scale,x,y=widget:GetEffectiveScale(),GetCursorPosition();
+    --  widget:SetWidth(200);
+    --  widget:SetHeight(60);
+    --  widget:SetPoint("CENTER",nil,"BOTTOMLEFT",x/scale,y/scale);
+    --  widget:SetText("Hide Icon permanently" .. "\n" .. KEY_BUTTON1 .. " " .. YES .. "\n" .. KEY_BUTTON2 .. " " .. NO)
+    --  widget:RegisterForClicks("AnyUp");
+    --  widget:SetScript("OnClick", function (self, button, down)
+    --    if button == "LeftButton" then
+    --      nodes[uiMapId][coord].showInZone = false
+    --      print(EMBLEM_SYMBOL .. " " .. HUD_EDIT_MODE_SETTING_ACTION_BAR_VISIBLE_SETTING_HIDDEN)
+    --      widget:Hide()
+    --    end
+    --    if button == "RightButton" then 
+    --      print(CLUB_FINDER_CANCELED)
+    --      widget:Hide()
+    --    end
+    --  end);
+    --end
 
     if (button == "MiddleButton") then
       local www = nodes[uiMapId][coord].www
@@ -634,7 +656,8 @@ function Addon:PLAYER_LOGIN()
   self.db = LibStub("AceDB-3.0"):New("HandyNotes_MapNotesRetailDB", ns.defaults)
   db = self.db.profile
 
-  nodes[uiMapId][coord].showInZone = ns.Addon.db.char.HiddenMapIcons
+  -- try conecting to ns.Addon.db.char.HiddenMapIcons
+  nodes[uiMapId][coord].showInZone = self.db.char.HiddenMapIcons
 
   -- Register options 
   HandyNotes:RegisterPluginDB("MapNotes", pluginHandler, ns.options)
