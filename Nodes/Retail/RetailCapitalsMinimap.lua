@@ -169,11 +169,11 @@ if not db.activate.HideMapNote then
                         minimap[86][22856905] = { dnID = L["Passage"], name = "", mnID = 85, type = "PathLO", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Passage/Exit 
                     end
 
-                    if self.db.profile.showMinimapCapitalsHearthstone then
-                        minimap[85][53637877] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
-                        minimap[85][40977990] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
-                        minimap[85][38854865] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
-                        minimap[85][71304995] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                    if self.db.profile.showMinimapCapitalsInnkeeper then
+                        minimap[85][53637877] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Innkeeper", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[85][40977990] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Innkeeper", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[85][38854865] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Innkeeper", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[85][71304995] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Innkeeper", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
                     end
 
                     if self.db.profile.showMinimapCapitalsAuctioneer then
@@ -318,8 +318,8 @@ if not db.activate.HideMapNote then
                     minimap[88][30323012] = { name = L["Passage"] .. " " .. MINIMAP_TRACKING_TRAINER_PROFESSION, type = "PathO", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName =  INSCRIPTION }
                 end
 
-                if self.db.profile.showMinimapCapitalsHearthstone then
-                    minimap[88][45856477] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone",  showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                if self.db.profile.showMinimapCapitalsInnkeeper then
+                    minimap[88][45856477] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Innkeeper",  showInZone = false, hideOnContinent = true, hideOnMinimap = false }
                 end
 
                 if self.db.profile.showMinimapCapitalsAuctioneer then
@@ -330,6 +330,11 @@ if not db.activate.HideMapNote then
                 if self.db.profile.showMinimapCapitalsBank then
                     minimap[88][47175862] = { dnID = BANK, name = "", type = "Bank",  showInZone = false, hideOnContinent = true, hideOnMinimap = false }
                 end
+
+                if self.db.profile.showMinimapCapitalsMailbox then
+                    minimap[88][45505950] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                end
+
             end
 
             end
@@ -426,9 +431,9 @@ if not db.activate.HideMapNote then
                         minimap[110][72609199] = { dnID = L["Exit"], name = "", mnID = 94, type = "PathU", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Passage/Exit 
                     end
 
-                    if self.db.profile.showMinimapCapitalsHearthstone then
-                        minimap[110][79465822] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
-                        minimap[110][67867288] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                    if self.db.profile.showMinimapCapitalsInnkeeper then
+                        minimap[110][79465822] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Innkeeper", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[110][67867288] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Innkeeper", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
                     end
 
                     if self.db.profile.showMinimapCapitalsAuctioneer then
@@ -439,6 +444,19 @@ if not db.activate.HideMapNote then
                     if self.db.profile.showMinimapCapitalsBank then
                         minimap[110][89714509] = { dnID = BANK .. "\n" .. GUILD_BANK, name = "", type = "Bank", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
                         minimap[110][65807788] = { dnID = BANK .. "\n" .. GUILD_BANK, name = "", type = "Bank", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                    end
+
+                    if self.db.profile.showMinimapCapitalsMailbox then
+                        minimap[110][58906150] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[110][65705420] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[110][67902950] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[110][75005460] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[110][82604290] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[110][88205040] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[110][83006220] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[110][83206540] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[110][71607550] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[110][71607980] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
                     end
 
                 end
@@ -541,8 +559,8 @@ if not db.activate.HideMapNote then
                         minimap[90][44626639] = { name = L["Passage"] .. " " .. MINIMAP_TRACKING_TRAINER_PROFESSION, type = "PathLU", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName =  L["Alchemy"] }
                     end
 
-                    if self.db.profile.showMinimapCapitalsHearthstone then
-                        minimap[90][67743784] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                    if self.db.profile.showMinimapCapitalsInnkeeper then
+                        minimap[90][67743784] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Innkeeper", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
                     end
 
                     if self.db.profile.showMinimapCapitalsAuctioneer then
@@ -567,6 +585,16 @@ if not db.activate.HideMapNote then
                     if self.db.profile.showMinimapCapitalsPvEVendor then
                         minimap[90][78207564] = { dnID = TRANSMOG_SET_PVE .. " " .. MERCHANT, name = "", TransportName = HEIRLOOMS,  type = "PvEVendor", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
                     end   
+
+                    if self.db.profile.showMinimapCapitalsMailbox then
+                        minimap[90][71706150] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[90][62605150] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[90][62603640] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[90][69703600] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[90][69905150] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[90][66505000] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[90][68003850] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                    end
 
                 end
 
@@ -672,8 +700,8 @@ if not db.activate.HideMapNote then
                         minimap[624][55498792] = { dnID = L["Exit"], name = "", mnID = 588, type = "PathR", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Passage/Exit 
                     end
 
-                    if self.db.profile.showMinimapCapitalsHearthstone then
-                        minimap[624][44954321] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                    if self.db.profile.showMinimapCapitalsInnkeeper then
+                        minimap[624][44954321] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Innkeeper", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
                     end
 
                     if self.db.profile.showMinimapCapitalsAuctioneer then
@@ -690,6 +718,15 @@ if not db.activate.HideMapNote then
 
                     if self.db.profile.showMinimapCapitalsTransmogger then
                         minimap[624][58335187] = { dnID = MINIMAP_TRACKING_TRANSMOGRIFIER, name = "", type = "Transmogger", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                    end
+
+                    if self.db.profile.showMinimapCapitalsMailbox then
+                        minimap[624][51905650] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false}
+                        minimap[624][47504450] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false}
+                        minimap[624][54503050] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false}
+                        minimap[624][65105270] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false}
+                        minimap[624][68203930] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false}
+                        minimap[624][77805210] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false}
                     end
 
                 end
@@ -833,10 +870,10 @@ if not db.activate.HideMapNote then
                         minimap[1164][74017175] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS3, mnID = 1165, type = "PathO", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Passage/Exit 
                     end
 
-                    if self.db.profile.showMinimapCapitalsHearthstone then
-                        minimap[1165][52418494] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
-                        minimap[1165][49844867] = { mnID = 1163, dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
-                        minimap[1163][48837200] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                    if self.db.profile.showMinimapCapitalsInnkeeper then
+                        minimap[1165][52418494] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Innkeeper", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[1165][49844867] = { mnID = 1163, dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Innkeeper", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[1163][48837200] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Innkeeper", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
                     end
 
                     if self.db.profile.showMinimapCapitalsAuctioneer then
@@ -858,6 +895,18 @@ if not db.activate.HideMapNote then
 
                     if self.db.profile.showMinimapCapitalsPvPVendor then
                         minimap[1165][51239509] = { dnID = TRANSMOG_SET_PVP .. "" .. SLASH_EQUIP_SET1, name = "", type = "PvPVendor", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                    end
+
+                    if self.db.profile.showMinimapCapitalsMailbox then
+                        minimap[1165][45209450] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[1165][51508550] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[1165][50507150] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[1165][49604170] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[1165][46503510] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[1165][43003790] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[1165][52901840] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[1165][35600920] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[1165][41200440] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
                     end
 
                 end
@@ -905,6 +954,7 @@ if not db.activate.HideMapNote then
                 if self.db.profile.activate.MinimapCapitalsGeneral then
     
                     if self.db.profile.showMinimapCapitalsPaths then
+                        minimap[390][61481920] = { name = L["Entrance"], mnID = 391, type = "PathO", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
                         minimap[391][26778156] = { name = L["Exit"], mnID = 390, type = "PathU", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
                         minimap[391][53618846] = { name = L["Exit"], mnID = 390, type = "PathU", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
                         minimap[391][77476963] = { name = L["Exit"], mnID = 390, type = "PathU", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
@@ -918,10 +968,10 @@ if not db.activate.HideMapNote then
                         minimap[392][74176908] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS2, mnID = 391, type = "PathU", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = "\n" .. BUTTON_LAG_AUCTIONHOUSE .. " " .. REQUIRES_LABEL .. " " .. L["Engineer"] .. "\n" .. MINIMAP_TRACKING_INNKEEPER .. "\n" .. L["Engineer"] .. "\n" .. L["Blacksmithing"] }
                     end
 
-                    if self.db.profile.showMinimapCapitalsHearthstone then
-                        minimap[391][68544760] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
-                        minimap[392][60357734] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
-                        minimap[1530][62921195] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                    if self.db.profile.showMinimapCapitalsInnkeeper then
+                        minimap[391][68544760] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Innkeeper", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[392][60357734] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Innkeeper", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[1530][62921195] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Innkeeper", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
                     end
 
                     if self.db.profile.showMinimapCapitalsAuctioneer then
@@ -944,6 +994,17 @@ if not db.activate.HideMapNote then
                     if self.db.profileshowMinimapCapitalsPvEVendor then
                         minimap[1530][60601347] = { dnID = TRANSMOG_SET_PVE .. "" .. SLASH_EQUIP_SET1, name = "", TransportName = DUNGEON_FLOOR_GILNEAS3,  type = "PvEVendor", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
                         minimap[392][43717734] = { dnID = TRANSMOG_SET_PVE .. "" .. SLASH_EQUIP_SET1, name = "", TransportName = DUNGEON_FLOOR_GILNEAS3,  type = "PvEVendor", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                    end
+
+                    if self.db.profile.showMinimapCapitalsMailbox then
+                        minimap[391][33655993] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[391][59915144] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[391][67405288] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[391][49778240] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[392][39617815] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[392][62397421] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false } 
+                        minimap[392][71503000] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[392][24004020] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
                     end
 
                 end
@@ -1092,11 +1153,11 @@ if not db.activate.HideMapNote then
                         minimap[500][72440888] = { dnID = DUNGEON_FLOOR_DEEPRUNTRAM1, name = "", mnID = 499, type = "PathO", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Passage/Exit 
                     end
 
-                    if self.db.profile.showMinimapCapitalsHearthstone then
-                        minimap[84][60407527] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
-                        minimap[84][75685411] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
-                        minimap[84][49881574] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
-                        minimap[84][64943193] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                    if self.db.profile.showMinimapCapitalsInnkeeper then
+                        minimap[84][60407527] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Innkeeper", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[84][75685411] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Innkeeper", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[84][49881574] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Innkeeper", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[84][64943193] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Innkeeper", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
                     end
 
                     if self.db.profile.showMinimapCapitalsAuctioneer then
@@ -1123,6 +1184,24 @@ if not db.activate.HideMapNote then
 
                     if self.db.profile.showMinimapCapitalsPvEVendor then
                         minimap[84][75666652] = { dnID = TRANSMOG_SET_PVE .. "" .. SLASH_EQUIP_SET1, name = "", TransportName = DUNGEON_FLOOR_GILNEAS3,  type = "PvEVendor", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                    end
+
+                    if self.db.profile.showMinimapCapitalsMailbox then
+                        minimap[84][30204950] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[84][30502550] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[84][37803470] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[84][53201550] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[84][62003120] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[84][60805070] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[84][54805740] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[84][54606350] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[84][51007070] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[84][74505560] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[84][75806440] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[84][66806550] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[84][62107050] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[84][57507150] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[84][62507470] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
                     end
 
                 end
@@ -1218,8 +1297,8 @@ if not db.activate.HideMapNote then
                         minimap[87][14218604] = { dnID = L["Exit"], name = "", mnID = 27, type = "PathLU", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Passage/Exit 
                     end
 
-                    if self.db.profile.showMinimapCapitalsHearthstone then
-                        minimap[87][18165147] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                    if self.db.profile.showMinimapCapitalsInnkeeper then
+                        minimap[87][18165147] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Innkeeper", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
                     end
 
                     if self.db.profile.showMinimapCapitalsAuctioneer then
@@ -1238,6 +1317,15 @@ if not db.activate.HideMapNote then
 
                     if self.db.profile.showMinimapCapitalsPvEVendor then
                         minimap[87][74400917] = { dnID = TRANSMOG_SET_PVE .. "" .. SLASH_EQUIP_SET1, name = "", TransportName = HEIRLOOMS,  type = "PvEVendor", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                    end
+
+                    if self.db.profile.showMinimapCapitalsMailbox then
+                        minimap[87][46805900] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[87][61602760] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[87][71207250] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[87][21505310] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[87][33606370] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[87][72504950] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
                     end
 
                 end
@@ -1275,8 +1363,8 @@ if not db.activate.HideMapNote then
                         minimap[89][79984648] = { dnID = L["Exit"], name = "", mnID = 57, type = "PathR", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Passage/Exit
                     end
 
-                    if self.db.profile.showMinimapCapitalsHearthstone then
-                        minimap[89][62533278] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                    if self.db.profile.showMinimapCapitalsInnkeeper then
+                        minimap[89][62533278] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Innkeeper", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
                     end
 
                     if self.db.profile.showMinimapCapitalsAuctioneer then
@@ -1286,6 +1374,14 @@ if not db.activate.HideMapNote then
                     if self.db.profile.showMinimapCapitalsBank then
                         minimap[89][44285140] = { dnID = BANK, name = "", type = "Bank", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
                         minimap[89][42655247] = { dnID = GUILD_BANK, name = "", type = "Bank", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                    end
+
+                    if self.db.profile.showMinimapCapitalsMailbox then
+                        minimap[89][62603330] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[89][60707150] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[89][57505990] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[89][54705320] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[89][44905040] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
                     end
 
                 end
@@ -1381,8 +1477,8 @@ if not db.activate.HideMapNote then
                         minimap[103][65223478] = { dnID = L["Exit"], name = "", mnID = 97, type = "PathRO", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Passage/Exit
                     end
 
-                    if self.db.profile.showMinimapCapitalsHearthstone then
-                        minimap[103][59511876] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                    if self.db.profile.showMinimapCapitalsInnkeeper then
+                        minimap[103][59511876] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Innkeeper", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
                     end
 
                     if self.db.profile.showMinimapCapitalsAuctioneer then
@@ -1391,6 +1487,13 @@ if not db.activate.HideMapNote then
 
                     if self.db.profile.showMinimapCapitalsBank then
                         minimap[103][49224406] = { dnID = BANK .. "\n" .. GUILD_BANK, name = "", type = "Bank", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                    end
+
+                    if self.db.profile.showMinimapCapitalsMailbox then
+                        minimap[103][79606350] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[103][60505190] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[103][51504320] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[103][59302760] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
                     end
 
                 end
@@ -1494,8 +1597,8 @@ if not db.activate.HideMapNote then
                         minimap[622][55650794] = { dnID = L["Exit"], name = "", mnID = 588, type = "PathO", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Passage/Exit
                     end
 
-                    if self.db.profile.showMinimapCapitalsHearthstone then
-                        minimap[622][35727790] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                    if self.db.profile.showMinimapCapitalsInnkeeper then
+                        minimap[622][35727790] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Innkeeper", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
                     end
 
                     if self.db.profile.showMinimapCapitalsAuctioneer then
@@ -1517,6 +1620,14 @@ if not db.activate.HideMapNote then
 
                     if self.db.profile.showMinimapCapitalsPvEVendor then
                         minimap[622][49776140] = { dnID = TRANSMOG_SET_PVE .. " " .. MERCHANT, name = "", type = "PvEVendor", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                    end
+
+                    if self.db.profile.showMinimapCapitalsMailbox then
+                        minimap[622][36207260] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[622][43506950] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[622][42103790] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[622][51604450] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[622][63602250] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
                     end
 
                 end
@@ -1633,8 +1744,8 @@ if not db.activate.HideMapNote then
                         minimap[1161][08093855] = { dnID = L["Exit"], name = "", mnID = 895, type = "PathLO", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Passage/Exit
                     end
 
-                    if self.db.profile.showMinimapCapitalsHearthstone then
-                        minimap[1161][74001234] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                    if self.db.profile.showMinimapCapitalsInnkeeper then
+                        minimap[1161][74001234] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Innkeeper", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
                     end
 
                     if self.db.profile.showMinimapCapitalsAuctioneer then
@@ -1655,6 +1766,13 @@ if not db.activate.HideMapNote then
 
                     if self.db.profile.showMinimapCapitalsTransmogger then
                         minimap[1161][71621371] = { dnID = MINIMAP_TRACKING_TRANSMOGRIFIER, name = "", type = "Transmogger", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                    end
+
+                    if self.db.profile.showMinimapCapitalsMailbox then
+                        minimap[1161][73606890] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[1161][57002690] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[1161][67002360] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[1161][73801450] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
                     end
 
                 end
@@ -1755,6 +1873,7 @@ if not db.activate.HideMapNote then
                 if self.db.profile.activate.MinimapCapitalsGeneral then
     
                     if self.db.profile.showMinimapCapitalsPaths then
+                        minimap[390][86696414] = { name = L["Entrance"], mnID = 393, type = "PathRU", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
                         minimap[393][24265267] = { name = L["Exit"], mnID = 390, type = "PathLO", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
                         minimap[393][60201547] = { name = L["Exit"], mnID = 390, type = "PathLO", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
                         minimap[393][37762459] = { name = L["Exit"], mnID = 390, type = "PathLO", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
@@ -1768,8 +1887,8 @@ if not db.activate.HideMapNote then
                         minimap[394][63182065] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS2, mnID = 393, type = "PathU", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName = "\n" .. BUTTON_LAG_AUCTIONHOUSE .. " " .. REQUIRES_LABEL .. " " .. L["Engineer"] .. "\n" .. MINIMAP_TRACKING_INNKEEPER .. "\n" .. L["Blacksmithing"] }
                     end
 
-                    if self.db.profile.showMinimapCapitalsHearthstone then
-                        minimap[393][36506610] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                    if self.db.profile.showMinimapCapitalsInnkeeper then
+                        minimap[393][36506610] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Innkeeper", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
                     end
 
                     if self.db.profile.showMinimapCapitalsAuctioneer then
@@ -1790,6 +1909,16 @@ if not db.activate.HideMapNote then
 
                     if self.db.profile.showMinimapCapitalsPvEVendor then
                         minimap[394][42834374] = { dnID = TRANSMOG_SET_PVE .. "" .. SLASH_EQUIP_SET1, name = "",  type = "PvEVendor", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                    end
+
+                    if self.db.profile.showMinimapCapitalsMailbox then
+                        minimap[393][61883771] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[393][30356275] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[393][31006220] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[394][74255074] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[394][64703436] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[394][44228360] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[394][39496198] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
                     end
 
                 end
@@ -1830,9 +1959,9 @@ if not db.activate.HideMapNote then
         --General Shattrath
             if self.db.profile.activate.MinimapCapitalsGeneral then
     
-                if self.db.profile.showMinimapCapitalsHearthstone then
-                    minimap[111][56278147] = { dnID = MINIMAP_TRACKING_INNKEEPER .. " - " .. L["The Scryers"], name = "", type = "Hearthstone", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
-                    minimap[111][28284938] = { dnID = MINIMAP_TRACKING_INNKEEPER .. " - " .. L["The Aldor"], name = "", type = "Hearthstone", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                if self.db.profile.showMinimapCapitalsInnkeeper then
+                    minimap[111][56278147] = { dnID = MINIMAP_TRACKING_INNKEEPER .. " - " .. L["The Scryers"], name = "", type = "Innkeeper", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                    minimap[111][28284938] = { dnID = MINIMAP_TRACKING_INNKEEPER .. " - " .. L["The Aldor"], name = "", type = "Innkeeper", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
 
                     if self.db.profile.showMinimapCapitalsMapNotes then
                         minimap[111][43849031] = { dnID = TUTORIAL_TITLE38 .. " - " .. L["The Scryers"] .. "\n" .. "\n" .. L["Alchemy"] .. "\n" .. L["Engineer"] .. "\n" .. L["Jewelcrafting"] .. "\n" .. L["Leatherworking"] .. "\n" .. L["Blacksmithing"] .. "\n" .. L["Tailoring"] .. "\n" .. L["Skinning"] .. "\n" .. L["Mining"] .. "\n" .. L["Herbalism"] .. "\n" .. L["Enchanting"] .. "\n" .. INSCRIPTION .. "\n" .. PROFESSIONS_FISHING .. "\n" .. PROFESSIONS_COOKING, name = "", type = "MNL", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
@@ -1866,6 +1995,15 @@ if not db.activate.HideMapNote then
                     minimap[111][50864226] = { dnID = TRANSMOG_SET_PVE .. "" .. SLASH_EQUIP_SET1, name = "", type = "PvEVendor", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
                     minimap[111][47752581] = { dnID = L["Quartermaster"] .. " - " .. L["The Aldor"], name = "", type = "PvEVendor", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
                     minimap[111][60486423] = { dnID = L["Quartermaster"] .. " - " .. L["The Scryers"], name = "", type = "PvEVendor", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                end
+
+                if self.db.profile.showMinimapCapitalsMailbox then
+                    minimap[111][55508050] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                    minimap[111][28104780] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                    minimap[111][60006480] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                    minimap[111][74704840] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                    minimap[111][73503460] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                    minimap[111][47002570] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
                 end
 
             end
@@ -1990,17 +2128,17 @@ if not db.activate.HideMapNote then
         --General Dalaran Northrend
             if self.db.profile.activate.MinimapCapitalsGeneral then
     
-                if self.db.profile.showMinimapCapitalsHearthstone then
-                    minimap[125][50273955] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
-                    minimap[126][35425767] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                if self.db.profile.showMinimapCapitalsInnkeeper then
+                    minimap[125][50273955] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Innkeeper", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                    minimap[126][35425767] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Innkeeper", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
 
 
                     if self.faction == "Horde" or db.activate.MinimapCapitalsEnemyFaction then
-                        minimap[125][65613218] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, TransportName = ITEM_REQ_HORDE, type = "Hearthstone", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[125][65613218] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, TransportName = ITEM_REQ_HORDE, type = "Innkeeper", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
                     end
 
                     if self.faction == "Alliance" or db.activate.MinimapCapitalsEnemyFaction then
-                        minimap[125][44666336] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, TransportName = ITEM_REQ_ALLIANCE, type = "Hearthstone", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[125][44666336] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, TransportName = ITEM_REQ_ALLIANCE, type = "Innkeeper", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
                     end
 
                 end
@@ -2062,6 +2200,22 @@ if not db.activate.HideMapNote then
 
                 if self.db.profile.showMinimapCapitalsPvPVendor then
                     minimap[126][59355799] = { dnID = TRANSMOG_SET_PVP .. "" .. SLASH_EQUIP_SET1, name = "", type = "PvPVendor", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                end
+
+                if self.db.profile.showMinimapCapitalsMailbox then
+                    minimap[125][44606850] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                    minimap[125][44905960] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                    minimap[125][38504860] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                    minimap[125][36806040] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                    minimap[125][40503210] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                    minimap[125][51505950] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                    minimap[125][59504850] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                    minimap[125][65604650] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                    minimap[125][62503250] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                    minimap[125][50003750] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                    minimap[125][45503950] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                    minimap[125][52502730] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                    minimap[125][48902540] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
                 end
 
             end
@@ -2180,15 +2334,15 @@ if not db.activate.HideMapNote then
         --General Dalaran Legion
             if self.db.profile.activate.MinimapCapitalsGeneral then
     
-                if self.db.profile.showMinimapCapitalsHearthstone then
-                    minimap[627][49784006] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                if self.db.profile.showMinimapCapitalsInnkeeper then
+                    minimap[627][49784006] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Innkeeper", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
 
                     if self.faction == "Horde" or db.activate.MinimapCapitalsEnemyFaction then
-                        minimap[627][65443217] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, TransportName = ITEM_REQ_HORDE, type = "Hearthstone", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[627][65443217] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, TransportName = ITEM_REQ_HORDE, type = "Innkeeper", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
                     end
 
                     if self.faction == "Alliance" or db.activate.MinimapCapitalsEnemyFaction then
-                        minimap[627][44196398] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, TransportName = ITEM_REQ_ALLIANCE, type = "Hearthstone", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                        minimap[627][44196398] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, TransportName = ITEM_REQ_ALLIANCE, type = "Innkeeper", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
                     end
 
                 end
@@ -2224,6 +2378,22 @@ if not db.activate.HideMapNote then
                 if self.db.profile.showMinimapCapitalsPvEVendor then
                     minimap[627][37635617] = { dnID = TRANSMOG_SET_PVE .. "" .. SLASH_EQUIP_SET1, name = "", TransportName = L["Cloth Armor"], type = "PvEVendor", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
                     minimap[627][51067322] = { dnID = TRANSMOG_SET_PVE .. "" .. SLASH_EQUIP_SET1, name = "", TransportName = L["Leather Armor"] .. "\n" .. L["Heavy Armor"], type = "PvEVendor", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                end
+
+                if self.db.profile.showMinimapCapitalsMailbox then
+                    minimap[627][44606850] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                    minimap[627][44905960] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                    minimap[627][38504860] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                    minimap[627][36806040] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                    minimap[627][40503210] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                    minimap[627][51505950] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                    minimap[627][59504850] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                    minimap[627][65604650] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                    minimap[627][62503250] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                    minimap[627][50003750] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                    minimap[627][45503950] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                    minimap[627][52502730] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                    minimap[627][48902540] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
                 end
 
             end
@@ -2344,8 +2514,8 @@ if not db.activate.HideMapNote then
         --General Oribos
             if self.db.profile.activate.MinimapCapitalsGeneral then
     
-                if self.db.profile.showMinimapCapitalsHearthstone then
-                    minimap[1670][67505031] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                if self.db.profile.showMinimapCapitalsInnkeeper then
+                    minimap[1670][67505031] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Innkeeper", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
                 end
 
                 if self.db.profile.showMinimapCapitalsAuctioneer then
@@ -2375,6 +2545,13 @@ if not db.activate.HideMapNote then
 
                 if self.db.profile.showMinimapCapitalsItemUpgrade then
                     minimap[1670][34505598] = { dnID = ITEM_UPGRADE, name = "",  type = "ItemUpgrade", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                end
+
+                if self.db.profile.showMinimapCapitalsMailbox then
+                    minimap[1670][30505250] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                    minimap[1670][74004940] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                    minimap[1670][58503680] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                    minimap[1670][63505150] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
                 end
 
             end
@@ -2476,8 +2653,8 @@ if not db.activate.HideMapNote then
         --General Valdrakken
             if self.db.profile.activate.MinimapCapitalsGeneral then
     
-                if self.db.profile.showMinimapCapitalsHearthstone then
-                    minimap[2112][47714635] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                if self.db.profile.showMinimapCapitalsInnkeeper then
+                    minimap[2112][47714635] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Innkeeper", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
                 end
 
                 if self.db.profile.showMinimapCapitalsAuctioneer then
@@ -2624,8 +2801,8 @@ if not db.activate.HideMapNote then
                     minimap[2339][68588953] = { dnID = L["Exit"], name = "", mnID = 2248, type = "PathRU", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Passage/Exit 
                 end
     
-                if self.db.profile.showMinimapCapitalsHearthstone then
-                    minimap[2339][44754642] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                if self.db.profile.showMinimapCapitalsInnkeeper then
+                    minimap[2339][44754642] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Innkeeper", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
                 end
 
                 if self.db.profile.showMinimapCapitalsAuctioneer then

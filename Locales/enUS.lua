@@ -34,6 +34,7 @@ L["Warspear"] = true
 L["Stormshield"] = true
 L["Shrine2Moons"] = true
 L["Shrine7Stars"] = true
+L["Since there are too many mailboxes in some capitals, only a few were placed in these capitals"] = true
 L["Starting on the first Sunday of each month for one week"] = true
 L["Enables the display of icons for a specific capital city"] = true
 L["This MapNotes icons shows various icons that are too close to each other together"] = true

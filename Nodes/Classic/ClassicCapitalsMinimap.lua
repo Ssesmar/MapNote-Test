@@ -108,8 +108,8 @@ if not db.activate.HideMapNote then
                         minimap[1454][15456189] = { dnID = L["Exit"], name = "", mnID = 1413, type = "PassageLeftL", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Passage/Exit 
                     end
 
-                    if self.db.profile.showMinimapCapitalsHearthstone then
-                        minimap[1454][54096841] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                    if self.db.profile.showMinimapCapitalsInnkeeper then
+                        minimap[1454][54096841] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Innkeeper", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
                     end
 
                     if self.db.profile.showMinimapCapitalsAuctioneer then
@@ -196,8 +196,8 @@ if not db.activate.HideMapNote then
                     minimap[1456][31456256] = { dnID = L["Exit"], name = "", mnID = 1412, type = "PassageDownL", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
                 end
 
-                if self.db.profile.showMinimapCapitalsHearthstone then
-                    minimap[1456][45856477] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone",  showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                if self.db.profile.showMinimapCapitalsInnkeeper then
+                    minimap[1456][45856477] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Innkeeper",  showInZone = false, hideOnContinent = true, hideOnMinimap = false }
                 end
 
                 if self.db.profile.showMinimapCapitalsAuctioneer then
@@ -301,8 +301,8 @@ if not db.activate.HideMapNote then
                         minimap[1458][44626639] = { name = L["Passage"] .. " " .. MINIMAP_TRACKING_TRAINER_PROFESSION, type = "PassageDownL", showInZone = false, hideOnContinent = true, hideOnMinimap = false, TransportName =  L["Alchemy"] }
                     end
 
-                    if self.db.profile.showMinimapCapitalsHearthstone then
-                        minimap[1458][67743784] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                    if self.db.profile.showMinimapCapitalsInnkeeper then
+                        minimap[1458][67743784] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Innkeeper", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
                     end
 
                     if self.db.profile.showMinimapCapitalsAuctioneer then
@@ -424,8 +424,8 @@ if not db.activate.HideMapNote then
                         minimap[1453][73399051] = { dnID = L["Exit"], name = "", mnID = 1429, type = "PassageRightL", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Passage/Exit 
                     end
 
-                    if self.db.profile.showMinimapCapitalsHearthstone then
-                        minimap[1453][52626566] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                    if self.db.profile.showMinimapCapitalsInnkeeper then
+                        minimap[1453][52626566] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Innkeeper", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
                     end
 
                     if self.db.profile.showMinimapCapitalsAuctioneer then
@@ -520,8 +520,8 @@ if not db.activate.HideMapNote then
                         minimap[1455][14218604] = { dnID = L["Exit"], name = "", mnID = 1426, type = "PassageLeftL", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Passage/Exit 
                     end
 
-                    if self.db.profile.showMinimapCapitalsHearthstone then
-                        minimap[1455][18165147] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                    if self.db.profile.showMinimapCapitalsInnkeeper then
+                        minimap[1455][18165147] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Innkeeper", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
                     end
 
                     if self.db.profile.showMinimapCapitalsAuctioneer then
@@ -567,8 +567,8 @@ if not db.activate.HideMapNote then
                         minimap[1457][88723511] = { dnID = L["Exit"], name = "", mnID = 1438, type = "PassageRightL", showInZone = false, hideOnContinent = true, hideOnMinimap = false } -- Passage/Exit Exodar
                     end
 
-                    if self.db.profile.showMinimapCapitalsHearthstone then
-                        minimap[1457][67451565] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
+                    if self.db.profile.showMinimapCapitalsInnkeeper then
+                        minimap[1457][67451565] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Innkeeper", showInZone = false, hideOnContinent = true, hideOnMinimap = false }
                     end
 
                     if self.db.profile.showMinimapCapitalsAuctioneer then

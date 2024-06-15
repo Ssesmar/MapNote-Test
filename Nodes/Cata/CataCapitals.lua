@@ -157,11 +157,11 @@ if not db.activate.HideMapNote then
                         nodes[86][22856905] = { dnID = L["Passage"], name = "", mnID = 1454, type = "PassageUpL", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Passage/Exit 
                     end
 
-                    if self.db.profile.showCapitalsHearthstone then
-                        nodes[1454][70504917] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
-                        nodes[1454][53637877] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
-                        nodes[1454][39658116] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
-                        nodes[1454][38874864] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                    if self.db.profile.showCapitalsInnkeeper then
+                        nodes[1454][70504917] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Innkeeper", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                        nodes[1454][53637877] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Innkeeper", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                        nodes[1454][39658116] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Innkeeper", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                        nodes[1454][38874864] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Innkeeper", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
                     end
 
                     if self.db.profile.showCapitalsAuctioneer then
@@ -290,8 +290,8 @@ if not db.activate.HideMapNote then
                         nodes[1456][30132989] = { name = L["Passage"] .. " " .. MINIMAP_TRACKING_TRAINER_PROFESSION, type = "PassageDownL", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName = INSCRIPTION }
                     end
 
-                    if self.db.profile.showCapitalsHearthstone then
-                        nodes[1456][45856477] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                    if self.db.profile.showCapitalsInnkeeper then
+                        nodes[1456][45856477] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Innkeeper", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
                     end
 
                     if self.db.profile.showCapitalsAuctioneer then
@@ -399,9 +399,9 @@ if not db.activate.HideMapNote then
                         nodes[1954][72609199] = { dnID = L["Exit"], name = "", mnID = 1941, type = "PassageDownL", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Passage/Exit 
                     end
 
-                    if self.db.profile.showCapitalsHearthstone then
-                        nodes[1954][79465822] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
-                        nodes[1954][67867288] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                    if self.db.profile.showCapitalsInnkeeper then
+                        nodes[1954][79465822] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Innkeeper", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                        nodes[1954][67867288] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Innkeeper", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
                     end
 
                     if self.db.profile.showCapitalsAuctioneer then
@@ -519,8 +519,8 @@ if not db.activate.HideMapNote then
                         nodes[1458][44626639] = { name = L["Passage"] .. " " .. MINIMAP_TRACKING_TRAINER_PROFESSION, type = "PassageDownL", showInZone = true, hideOnContinent = true, hideOnMinimap = true, TransportName =  L["Alchemy"] }
                     end
 
-                    if self.db.profile.showCapitalsHearthstone then
-                        nodes[1458][67743784] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                    if self.db.profile.showCapitalsInnkeeper then
+                        nodes[1458][67743784] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Innkeeper", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
                     end
 
                     if self.db.profile.showCapitalsAuctioneer then
@@ -676,11 +676,11 @@ if not db.activate.HideMapNote then
                         nodes[1453][73399051] = { dnID = L["Exit"], name = "", mnID = 1429, type = "PassageRightL", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Passage/Exit 
                     end
 
-                    if self.db.profile.showCapitalsHearthstone then
-                        nodes[1453][60407527] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
-                        nodes[1453][75685411] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
-                        nodes[1453][49881574] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
-                        nodes[1453][64943193] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                    if self.db.profile.showCapitalsInnkeeper then
+                        nodes[1453][60407527] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Innkeeper", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                        nodes[1453][75685411] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Innkeeper", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                        nodes[1453][49881574] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Innkeeper", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                        nodes[1453][64943193] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Innkeeper", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
                     end
 
                     if self.db.profile.showCapitalsAuctioneer then
@@ -798,8 +798,8 @@ if not db.activate.HideMapNote then
                         nodes[1455][14218604] = { dnID = L["Exit"], name = "", mnID = 1426, type = "PassageLeftL", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Passage/Exit 
                     end
 
-                    if self.db.profile.showCapitalsHearthstone then
-                        nodes[1455][18165147] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                    if self.db.profile.showCapitalsInnkeeper then
+                        nodes[1455][18165147] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Innkeeper", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
                     end
 
                     if self.db.profile.showCapitalsAuctioneer then
@@ -847,8 +847,8 @@ if not db.activate.HideMapNote then
                         nodes[1457][79984648] = { dnID = L["Exit"], name = "", mnID = 1438, type = "PassageRightL", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Passage/Exit Exodar
                     end
 
-                    if self.db.profile.showCapitalsHearthstone then
-                        nodes[1457][62533278] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                    if self.db.profile.showCapitalsInnkeeper then
+                        nodes[1457][62533278] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Innkeeper", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
                     end
 
                     if self.db.profile.showCapitalsAuctioneer then
@@ -961,8 +961,8 @@ if not db.activate.HideMapNote then
                         nodes[1947][65223478] = { dnID = L["Exit"], name = "", mnID = 1943, type = "PassageRightL", showInZone = true, hideOnContinent = true, hideOnMinimap = true } -- Passage/Exit Exodar
                     end
 
-                    if self.db.profile.showCapitalsHearthstone then
-                        nodes[1947][59511876] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                    if self.db.profile.showCapitalsInnkeeper then
+                        nodes[1947][59511876] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Innkeeper", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
                     end
 
                     if self.db.profile.showCapitalsAuctioneer then
@@ -1067,9 +1067,9 @@ if not db.activate.HideMapNote then
         --General Shattrath
             if self.db.profile.activate.CapitalsGeneral then
     
-                if self.db.profile.showCapitalsHearthstone then
-                    nodes[1955][56278147] = { dnID = MINIMAP_TRACKING_INNKEEPER .. " - " .. L["The Scryers"], name = "", type = "Hearthstone", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
-                    nodes[1955][28284938] = { dnID = MINIMAP_TRACKING_INNKEEPER .. " - " .. L["The Aldor"], name = "", type = "Hearthstone", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                if self.db.profile.showCapitalsInnkeeper then
+                    nodes[1955][56278147] = { dnID = MINIMAP_TRACKING_INNKEEPER .. " - " .. L["The Scryers"], name = "", type = "Innkeeper", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                    nodes[1955][28284938] = { dnID = MINIMAP_TRACKING_INNKEEPER .. " - " .. L["The Aldor"], name = "", type = "Innkeeper", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
 
                     if self.db.profile.showCapitalsMapNotes then
                         nodes[1955][43849031] = { dnID = TUTORIAL_TITLE38 .. " - " .. L["The Scryers"] .. "\n" .. "\n" .. L["Alchemy"] .. "\n" .. L["Engineer"] .. "\n" .. L["Jewelcrafting"] .. "\n" .. L["Leatherworking"] .. "\n" .. L["Blacksmithing"] .. "\n" .. L["Tailoring"] .. "\n" .. L["Skinning"] .. "\n" .. L["Mining"] .. "\n" .. L["Herbalism"] .. "\n" .. L["Enchanting"] .. "\n" .. INSCRIPTION .. "\n" .. PROFESSIONS_FISHING .. "\n" .. PROFESSIONS_COOKING, name = "", type = "MNL", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
@@ -1220,17 +1220,17 @@ if not db.activate.HideMapNote then
         --General Dalaran Northrend
             if self.db.profile.activate.CapitalsGeneral then
     
-                if self.db.profile.showCapitalsHearthstone then
-                    nodes[125][50273955] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
-                    nodes[126][35425767] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Hearthstone", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                if self.db.profile.showCapitalsInnkeeper then
+                    nodes[125][50273955] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Innkeeper", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                    nodes[126][35425767] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Innkeeper", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
 
 
                     if self.faction == "Horde" or db.activate.CapitalsEnemyFaction then
-                        nodes[125][65613218] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, TransportName = ITEM_REQ_HORDE, type = "Hearthstone", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                        nodes[125][65613218] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, TransportName = ITEM_REQ_HORDE, type = "Innkeeper", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
                     end
 
                     if self.faction == "Alliance" or db.activate.CapitalsEnemyFaction then
-                        nodes[125][44666336] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, TransportName = ITEM_REQ_ALLIANCE, type = "Hearthstone", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
+                        nodes[125][44666336] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, TransportName = ITEM_REQ_ALLIANCE, type = "Innkeeper", showInZone = true, hideOnContinent = true, hideOnMinimap = true }
                     end
 
                 end
