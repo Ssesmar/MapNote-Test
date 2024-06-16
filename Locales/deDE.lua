@@ -3,6 +3,8 @@ local L = LibStub("AceLocale-3.0"):NewLocale(ADDON_NAME, "deDE")
 if not L then return end
 
 --0 Restore
+L["Delete icon permanently?"] = "Symbol permanent löschen?"
+L["A icon has been deleted"] = "Ein Symbol wurde gelöscht"
 L["Restore all deleted icons for different types of maps"] = "Stellen Sie alle gelöschten Symbole für verschiedene Kartentypen wieder her"
 L["Restore all deleted icons"] = "Stellen Sie alle gelöschten Symbole wieder her"
 L["which you removed with Alt + middle mouse button function"] = "die Sie mit Alt + mittlerer Maustaste entfernt haben"
