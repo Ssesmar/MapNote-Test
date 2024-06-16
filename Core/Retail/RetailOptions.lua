@@ -61,6 +61,62 @@ ns.options = {
             if not ns.Addon.db.profile.activate.HideWMB then ns.WorldMapButton:Show() LibStub("Krowi_WorldMapButtons-1.4").SetPoints(); print(COLORED_ADDON_NAME .. "|cffffff00", L["-> WorldMapButton <-"], L["icons"], "|cff00ff00" .. L["is activated"]) else
             if ns.Addon.db.profile.activate.HideWMB then ns.WorldMapButton:Hide() LibStub("Krowi_WorldMapButtons-1.4").SetPoints(); print(COLORED_ADDON_NAME .. "|cffffff00", L["-> WorldMapButton <-"], L["icons"], "|cffff0000" .. L["is deactivated"]) end end end,
           },
+        DescriptionHeaderRestore = {
+          type = "header",
+          name = L["Restore all deleted icons for different types of maps"],
+          order = 1,
+          },
+        RestoreZoneDeletedIcons = {
+          type = "execute",
+          name = L["Zones"],
+          desc = L["Zones"] .. " - " .. L["Restore all deleted icons"] .. " " .. L["which you removed with Alt + middle mouse button function"],
+          width = 0.75,
+          order = 1.1,
+          func = function(info, v) ns.Addon.db.profile.RestoreZoneDeletedIcons = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
+            --wipe(ns.Addon.db.char.ZoneDeletedIcons)
+            wipe(ns.Addon.db.char.HiddenMapIcons)
+            print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00",L["Zones"] .. " - " .. L["All deleted icons have been restored"]) end,
+          }, 
+        RestoreContinentDeletedIcons = {
+          type = "execute",
+          name = L["Continents"],
+          desc = L["Continents"] .. " - " .. L["Restore all deleted icons"] .. " " .. L["which you removed with Alt + middle mouse button function"],
+          width = 0.75,
+          order = 1.2,
+          func = function(info, v) ns.Addon.db.profile.RestoreContinentDeletedIcons = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
+            wipe(ns.Addon.db.char.ContinentDeletedIcons)
+            print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00",L["Continents"] .. " - " .. L["All deleted icons have been restored"]) end,
+          }, 
+        RestoreAzerothDeletedIcons = {
+          type = "execute",
+          name = AZEROTH,
+          desc = AZEROTH .. " - " .. L["Restore all deleted icons"] .. " " .. L["which you removed with Alt + middle mouse button function"],
+          width = 0.75,
+          order = 1.3,
+          func = function(info, v) ns.Addon.db.profile.RestoreAzerothDeletedIcons = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
+            wipe(ns.Addon.db.char.AzerothDeletedIcons)
+            print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00",AZEROTH .. " - " .. L["All deleted icons have been restored"]) end,
+          }, 
+        RestoreDungeonDeletedIcons = {
+          type = "execute",
+          name = CALENDAR_TYPE_DUNGEON,
+          desc = CALENDAR_TYPE_DUNGEON .. " - " .. L["Restore all deleted icons"] .. " " .. L["which you removed with Alt + middle mouse button function"],
+          width = 0.75,
+          order = 1.4,
+          func = function(info, v) ns.Addon.db.profile.RestoreDungeonDeletedIcons = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
+            wipe(ns.Addon.db.char.DungeonDeletedIcons)
+            print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00",CALENDAR_TYPE_DUNGEON .. " - " .. L["All deleted icons have been restored"]) end,
+          }, 
+        RestoreCapitalsDeletedIcons = {
+          type = "execute",
+          name = L["Capitals"],
+          desc = L["Capitals"] .. " - " .. L["Restore all deleted icons"] .. " " .. L["which you removed with Alt + middle mouse button function"],
+          width = 0.75,
+          order = 1.5,
+          func = function(info, v) ns.Addon.db.profile.RestoreCapitalsDeletedIcons = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
+            wipe(ns.Addon.db.char.CapitalsDeletedIcons)
+            print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00",L["Capitals"] .. " - " .. L["All deleted icons have been restored"]) end,
+          }, 
         DescriptionHeader2 = {
           type = "header",
           name = L["General"],
@@ -2543,7 +2599,7 @@ ns.options = {
               disabled = function() return not ns.Addon.db.profile.activate.MinimapCapitals or not ns.Addon.db.profile.activate.MinimapCapitalsGeneral end,
               type = "toggle",
               name = TextIconMailbox:GetIconString() .. " " .. MINIMAP_TRACKING_MAILBOX,
-              desc = L["Since there are too many mailboxes in some capitals, only a few were placed in these capitals"],
+              desc = "",
               width = 0.80,
               order = 80.1,
               set = function(info, v) ns.Addon.db.profile[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 
@@ -3442,7 +3498,7 @@ ns.options = {
               disabled = function() return not ns.Addon.db.profile.activate.MinimapCapitals or not ns.Addon.db.profile.activate.MinimapCapitalsGeneral end,
               type = "toggle",
               name = TextIconMailbox:GetIconString() .. " " .. MINIMAP_TRACKING_MAILBOX,
-              desc = L["Since there are too many mailboxes in some capitals, only a few were placed in these capitals"],
+              desc = "",
               width = 0.80,
               order = 90.1,
               set = function(info, v) ns.Addon.db.profile[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 

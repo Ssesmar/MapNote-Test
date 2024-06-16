@@ -10,6 +10,7 @@ local MapNotesMiniButton = LibStub("AceAddon-3.0"):NewAddon("MNMiniMapButton", "
 local MNMMBIcon = LibStub("LibDBIcon-1.0", true)
 
 local db = { }
+local dbChar
 local nodes = { }
 local minimap = { }
 local lfgIDs = { }
@@ -354,7 +355,12 @@ do
         alpha = db.cosmosAlpha
       end
 
-      if (value.showInZone or t.minimapUpdate) then -- Zone scale
+      --capital test function
+      --if ((dbChar.CapitalsDeletedIcons[t.uiMapId][state] and value.showInZone) or t.minimapUpdate) then -- Zone scale
+      --  return state, nil, icon, scale, alpha
+      --end
+
+      if ((dbChar.HiddenMapIcons[t.uiMapId][state].show and value.showInZone) or t.minimapUpdate) then -- Zone scale
         return state, nil, icon, scale, alpha
       end
 
@@ -488,8 +494,13 @@ function pluginHandler:OnClick(button, pressed, uiMapId, coord)
         return
     end
 
+    --Capital test delete function
+    --if (button == "MiddleButton") and IsAltKeyDown() then
+    --  dbChar.CapitalsDeletedIcons[uiMapId][coord].showInZone = false
+    --end
+
     if (button == "MiddleButton") and IsAltKeyDown() then
-      nodes[uiMapId][coord].showInZone = false
+      dbChar.HiddenMapIcons[uiMapId][coord].show = false
     end
 
     --test xy
@@ -503,7 +514,7 @@ function pluginHandler:OnClick(button, pressed, uiMapId, coord)
     --  widget:RegisterForClicks("AnyUp");
     --  widget:SetScript("OnClick", function (self, button, down)
     --    if button == "LeftButton" then
-    --      nodes[uiMapId][coord].showInZone = false
+    --      ns.CapitalsDeletedIcons[uiMapId][coord].showInZone = false
     --      print(EMBLEM_SYMBOL .. " " .. HUD_EDIT_MODE_SETTING_ACTION_BAR_VISIBLE_SETTING_HIDDEN)
     --      widget:Hide()
     --    end
@@ -655,9 +666,7 @@ function Addon:PLAYER_LOGIN()
   -- Register Database Profile
   self.db = LibStub("AceDB-3.0"):New("HandyNotes_MapNotesRetailDB", ns.defaults)
   db = self.db.profile
-
-  -- try conecting to ns.Addon.db.char.HiddenMapIcons
-  nodes[uiMapId][coord].showInZone = self.db.char.HiddenMapIcons
+  dbChar = self.db.char
 
   -- Register options 
   HandyNotes:RegisterPluginDB("MapNotes", pluginHandler, ns.options)

@@ -2,7 +2,12 @@ local ADDON_NAME = ...
 local L = LibStub("AceLocale-3.0"):NewLocale(ADDON_NAME, "enUS", true)
 
 
---0 Sync function
+--0 Restore
+L["Restore all deleted icons for different types of maps"] = true
+L["Restore all deleted icons"] = true
+L["which you removed with Alt + middle mouse button function"] = true
+L["All deleted icons have been restored"] = true
+--0.1 Sync function
 L["synchronizes"] = true
 L["Synchronizes the Zones tab with the Minimap tab"] = true
 L["Which deactivates the functions from the Minimap tab and is now controlled together by the Zones tab"] = true
@@ -34,7 +39,6 @@ L["Warspear"] = true
 L["Stormshield"] = true
 L["Shrine2Moons"] = true
 L["Shrine7Stars"] = true
-L["Since there are too many mailboxes in some capitals, only a few were placed in these capitals"] = true
 L["Starting on the first Sunday of each month for one week"] = true
 L["Enables the display of icons for a specific capital city"] = true
 L["This MapNotes icons shows various icons that are too close to each other together"] = true

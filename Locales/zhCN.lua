@@ -2,7 +2,12 @@
 local L = LibStub("AceLocale-3.0"):NewLocale(ADDON_NAME, "zhCN")
 if not L then return end
 
---0 Sync function
+--0 Restore
+L["Restore all deleted icons for different types of maps"] = "恢复不同类型地图的所有已删除图标"
+L["Restore all deleted icons"] = "恢复所有已删除的图标"
+L["which you removed with Alt + middle mouse button function"] = "使用 Alt + 鼠标中键功能删除的"
+L["All deleted icons have been restored"] = "所有删除的图标均已恢复"
+--0.1 Sync function
 L["synchronizes"] = "同步"
 L["Synchronizes the Zones tab with the Minimap tab"] = "将“区域”选项卡与“小地图”选项卡同步"
 L["Which deactivates the functions from the Minimap tab and is now controlled together by the Zones tab"] = "这会禁用“小地图”选项卡上的功能，现在通过“区域”选项卡集中控制"
