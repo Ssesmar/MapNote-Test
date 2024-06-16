@@ -3,11 +3,11 @@ local L = LibStub("AceLocale-3.0"):NewLocale(ADDON_NAME, "zhTW")
 if not L then return end
 
 --0 Restore
-L["Delete icon permanently?"] = "刪除符號？"
+L["Delete icon?"] = "刪除符號？"
 L["A icon has been deleted"] = "符號被刪除"
 L["Restore all deleted icons for different types of maps"] = "恢復不同類型地圖的所有已刪除圖標"
 L["Restore all deleted icons"] = "恢復所有已刪除的圖標"
-L["which you removed with Alt + middle mouse button function"] = "使用 Alt + 滑鼠中鍵功能刪除的"
+L["which you removed with the function"] = "您已經使用該功能刪除了"
 L["All deleted icons have been restored"] = "所有刪除的圖示均已恢復"
 --0.1 Sync function
 L["synchronizes"] = "同步"

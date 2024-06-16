@@ -180,6 +180,7 @@ do
 			local alpha
 			local icon = ns.icons[value.type]
       local scale
+      local mapInfo = C_Map.GetMapInfo(t.uiMapId)
 
 			local allLocked = true
 			local anyLocked = false
@@ -283,7 +284,6 @@ do
       end
 
       -- inside Dungeon
-      mapInfo = C_Map.GetMapInfo(t.uiMapId)
       if mapInfo and mapInfo.mapType == 4 and not ns.CapitalIDs then 
           scale = db.dungeonScale
           alpha = db.dungeonAlpha
@@ -354,13 +354,12 @@ do
         alpha = db.cosmosAlpha
       end
 
-      local mapInfo = C_Map.GetMapInfo(t.uiMapId)
       if (mapInfo.mapType == 0 and (ns.dbChar.AzerothDeletedIcons[t.uiMapId] and not ns.dbChar.AzerothDeletedIcons[t.uiMapId][state] and value.showInZone)) -- Cosmos
         or (mapInfo.mapType == 1 and (ns.dbChar.AzerothDeletedIcons[t.uiMapId] and not ns.dbChar.AzerothDeletedIcons[t.uiMapId][state] and value.showInZone)) -- Azeroth
         or (not ns.CapitalIDs and mapInfo.mapType == 3 and (ns.dbChar.ZoneDeletedIcons[t.uiMapId] and not ns.dbChar.ZoneDeletedIcons[t.uiMapId][state] and value.showInZone)) -- Zone without Capitals
         or (mapInfo.mapType == 4 and (ns.dbChar.DungeonDeletedIcons[t.uiMapId] and not ns.dbChar.DungeonDeletedIcons[t.uiMapId][state] and value.showInZone)) -- Dungeon
         or (ns.CapitalIDs and (ns.dbChar.CapitalsDeletedIcons[t.uiMapId] and not ns.dbChar.CapitalsDeletedIcons[t.uiMapId][state] and value.showInZone)) -- Capitals
-        or t.minimapUpdate -- Zone general
+        or t.uiMapId == 948 or t.minimapUpdate -- Zone general
       then
         return state, nil, icon, scale, alpha
       end
@@ -375,10 +374,10 @@ do
 		if not t then return end
 
     local state, value
-  	local continent = t.C[t.Z]
-    local data = nodes[continent]
+  	local zone = t.C[t.Z]
+    local data = nodes[zone]
 
-		while continent do
+		while zone do
 
 			if data then -- Only if there is data for this continent
 				state, value = next(data, prestate)
@@ -426,7 +425,7 @@ do
           --end
 
           if value.showOnContinent then -- Continent
-            return state, continent, icon, db.continentScale, alpha
+            return state, zone, icon, db.continentScale, alpha
           end
 
 					state, value = next(data, state)  -- Get next data
@@ -434,8 +433,8 @@ do
 			end
       -- Get next continent
 			t.Z = next(t.C, t.Z)
-			continent = t.C[t.Z]
-			data = nodes[continent]
+			zone = t.C[t.Z]
+			data = nodes[zone]
 			prestate = nil
 		end
 		wipe(t)
@@ -507,42 +506,22 @@ function pluginHandler:OnClick(button, pressed, uiMapId, coord)
         return
     end
 
-    --if (button == "MiddleButton") and IsAltKeyDown() then
-    --  if CapitalIDs then
-    --    ns.dbChar.CapitalsDeletedIcons[uiMapId][coord] = true
-    --  end
---
-    --  if mapInfo.mapType == 1 then -- Azeroth
-    --    ns.dbChar.AzerothDeletedIcons[uiMapId][coord] = true
-    --  end
---
-    --  if mapInfo.mapType == 2 then -- Continent
-    --    ns.dbChar.ContinentDeletedIcons[uiMapId][coord] = true
-    --  end
---
-    --  if not CapitalIDs and mapInfo.mapType == 3 then -- Zone
-    --    ns.dbChar.ZoneDeletedIcons[uiMapId][coord] = true
-    --  end
---
-    --  if mapInfo.mapType == 4 then -- Dungeon
-    --    ns.dbChar.DungeonDeletedIcons[uiMapId][coord] = true
-    --    print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cff00ff00", L["This icon has been deleted"])
-    --  end
-    --end
-    --    ns.Addon:FullUpdate()
+    if (button == "LeftButton") and IsAltKeyDown() then
+      local btn = CreateFrame("Button", "TauntingButton", UIParent, "UIPanelButtonTemplate");
+      local scale,x,y=btn:GetEffectiveScale(),GetCursorPosition()
+      --btn:SetNormalFontObject("GameFontNormalSmall");
+      btn:SetFrameStrata("TOOLTIP")
+      btn:SetWidth(160);
+      btn:SetHeight(50);
+      btn:SetPoint("CENTER",nil,"BOTTOMLEFT",x/scale,y/scale);
+      btn:SetText(L["Delete icon?"] .. "\n" .. ALT_KEY .. " + " .. KEY_BUTTON1 .. " " .. YES .. "\n" .. KEY_BUTTON2 .. " " .. NO )
+      btn:RegisterForClicks("AnyUp");
+      btn:SetScript("OnLeave", function()
+        btn:Hide()
+      end);
 
-    --test xy
-    if (button == "MiddleButton") and IsAltKeyDown() then
-      local widget = CreateFrame("Button", "TauntingButton", UIParent, "UIPanelButtonTemplate");
-      local scale,x,y=widget:GetEffectiveScale(),GetCursorPosition();
-      widget:SetNormalFontObject("GameFontNormalSmall");
-      widget:SetWidth(100);
-      widget:SetHeight(30);
-      widget:SetPoint("CENTER");
-      widget:SetText(L["Delete icon permanently?"] .. "\n" .. KEY_BUTTON1 .. " " .. YES .. "\n" .. KEY_BUTTON2 .. " " .. NO)
-      widget:RegisterForClicks("AnyUp");
-      widget:SetScript("OnClick", function (self, button, down)
-        if button == "LeftButton" then
+      btn:SetScript("OnClick", function (self, button, down)
+        if button == "LeftButton" and IsAltKeyDown() then
           if CapitalIDs then
             ns.dbChar.CapitalsDeletedIcons[uiMapId][coord] = true
             print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00", L["Capitals"] .. " - " .. L["A icon has been deleted"])
@@ -567,11 +546,12 @@ function pluginHandler:OnClick(button, pressed, uiMapId, coord)
             ns.dbChar.DungeonDeletedIcons[uiMapId][coord] = true
             print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00", L["Dungeonmap"] .. " - " .. L["A icon has been deleted"])
           end
-          widget:Hide()
+          btn:Hide()
         end
-        if button == "RightButton" then 
-          print(CLUB_FINDER_CANCELED)
-          widget:Hide()
+        
+        if button == "RightButton" or button == "MiddleButton" then 
+          print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. L["Delete icon?"] .. " " .."|cff00ff00" .. CLUB_FINDER_CANCELED)
+          btn:Hide()
         end
         HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
       end);
@@ -584,7 +564,7 @@ function pluginHandler:OnClick(button, pressed, uiMapId, coord)
       end
     end
 
-    if (button == "LeftButton" and db.journal) then
+    if (button == "LeftButton" and db.journal and not IsAltKeyDown()) then
 
       local mnID = nodes[uiMapId][coord].mnID
       if mnID then

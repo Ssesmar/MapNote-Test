@@ -3,11 +3,11 @@ local L = LibStub("AceLocale-3.0"):NewLocale(ADDON_NAME, "enUS", true)
 
 
 --0 Restore
-L["Delete icon permanently?"] = true
+L["Delete icon?"] = true
 L["A icon has been deleted"] = true
 L["Restore all deleted icons for different types of maps"] = true
 L["Restore all deleted icons"] = true
-L["which you removed with Alt + middle mouse button function"] = true
+L["which you removed with the function"] = true
 L["All deleted icons have been restored"] = true
 --0.1 Sync function
 L["synchronizes"] = true

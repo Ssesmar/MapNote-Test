@@ -69,7 +69,7 @@ ns.options = {
         RestoreZoneDeletedIcons = {
           type = "execute",
           name = L["Zones"],
-          desc = L["Zones"] .. " - " .. L["Restore all deleted icons"] .. " " .. L["which you removed with Alt + middle mouse button function"],
+          desc = L["Zones"] .. " - " .. L["Restore all deleted icons"] .. " " .. L["which you removed with the function"] .. " " .. ALT_KEY .. " " .. KEY_BUTTON1,
           width = 0.75,
           order = 1.1,
           func = function(info, v) ns.Addon.db.profile.RestoreZoneDeletedIcons = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
@@ -80,7 +80,7 @@ ns.options = {
         RestoreContinentDeletedIcons = {
           type = "execute",
           name = L["Continents"],
-          desc = L["Continents"] .. " - " .. L["Restore all deleted icons"] .. " " .. L["which you removed with Alt + middle mouse button function"],
+          desc = L["Continents"] .. " - " .. L["Restore all deleted icons"] .. " " .. L["which you removed with the function"] .. " " .. ALT_KEY .. " " .. KEY_BUTTON1,
           width = 0.75,
           order = 1.2,
           func = function(info, v) ns.Addon.db.profile.RestoreContinentDeletedIcons = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
@@ -91,7 +91,7 @@ ns.options = {
         RestoreAzerothDeletedIcons = {
           type = "execute",
           name = AZEROTH,
-          desc = AZEROTH .. " - " .. L["Restore all deleted icons"] .. " " .. L["which you removed with Alt + middle mouse button function"],
+          desc = AZEROTH .. " - " .. L["Restore all deleted icons"] .. " " .. L["which you removed with the function"] .. " " .. ALT_KEY .. " " .. KEY_BUTTON1,
           width = 0.75,
           order = 1.3,
           func = function(info, v) ns.Addon.db.profile.RestoreAzerothDeletedIcons = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
@@ -102,7 +102,7 @@ ns.options = {
         RestoreDungeonDeletedIcons = {
           type = "execute",
           name = CALENDAR_TYPE_DUNGEON,
-          desc = CALENDAR_TYPE_DUNGEON .. " - " .. L["Restore all deleted icons"] .. " " .. L["which you removed with Alt + middle mouse button function"],
+          desc = CALENDAR_TYPE_DUNGEON .. " - " .. L["Restore all deleted icons"] .. " " .. L["which you removed with the function"] .. " " .. ALT_KEY .. " " .. KEY_BUTTON1,
           width = 0.75,
           order = 1.4,
           func = function(info, v) ns.Addon.db.profile.RestoreDungeonDeletedIcons = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
@@ -113,7 +113,7 @@ ns.options = {
         RestoreCapitalsDeletedIcons = {
           type = "execute",
           name = L["Capitals"],
-          desc = L["Capitals"] .. " - " .. L["Restore all deleted icons"] .. " " .. L["which you removed with Alt + middle mouse button function"],
+          desc = L["Capitals"] .. " - " .. L["Restore all deleted icons"] .. " " .. L["which you removed with the function"] .. " " .. ALT_KEY .. " " .. KEY_BUTTON1,
           width = 0.75,
           order = 1.5,
           func = function(info, v) ns.Addon.db.profile.RestoreCapitalsDeletedIcons = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")

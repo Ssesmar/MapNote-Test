@@ -27,7 +27,6 @@ if not db.activate.HideMapNote then
         -- Kalimdor Dungeons
             if self.db.profile.showZoneDungeons then       
             nodes[11][54916646] = { id = 240, type = "Dungeon", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Wailing Caverns 
-            nodes[948][51102882] = { id = 67, type = "Dungeon", showInZone = true, showOnContinent = false, showOnMinimap = false } -- The Stonecore
 
             -- Dungeon Nodes above Blizzards Icons to make it Clickable for maximized Maps
             nodes[1][46200001] = { id = 226, type = "Dungeon", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Ragefire
