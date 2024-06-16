@@ -22,6 +22,9 @@ ns.defaults = {
       graymultipleID = true,
       ChatMassage = false,
       RestoreZoneDeletedIcons = false,
+      RestoreContinentDeletedIcons = false,
+      RestoreAzerothDeletedIcons = false,
+      RestoreDungeonDeletedIcons = false,
       RestoreCapitalsDeletedIcons = false,
 
     --1 MiniMap map tab
@@ -355,24 +358,22 @@ ns.defaults = {
     },
   char = {
 
-    ZoneDeletedIcons = {
+    AzerothDeletedIcons = {
       ['*'] = {},
     },
     ContinentDeletedIcons = {
       ['*'] = {},
     },
-    AzerothDeletedIcons = {
+    ZoneDeletedIcons = {
       ['*'] = {},
-    },    
+    },
     DungeonDeletedIcons = {
         ['*'] = {},
-    },    
+    },
     CapitalsDeletedIcons = {
         ['*'] = {},
-    },    
-    HiddenMapIcons = {
-      ['*'] = {},
     },
     
   },
 }
+

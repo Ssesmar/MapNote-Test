@@ -10,7 +10,6 @@ local MapNotesMiniButton = LibStub("AceAddon-3.0"):NewAddon("MNMiniMapButton", "
 local MNMMBIcon = LibStub("LibDBIcon-1.0", true)
 
 local db = { }
-local dbChar
 local nodes = { }
 local minimap = { }
 local lfgIDs = { }
@@ -195,41 +194,55 @@ do
 
       ns.CapitalIDs =
         --Retail
-        WorldMapFrame:GetMapID() == 84 or -- Stormwind
-        WorldMapFrame:GetMapID() == 87 or -- Ironforge
-        WorldMapFrame:GetMapID() == 89 or -- Darnassus
-        WorldMapFrame:GetMapID() == 103 or -- Exodar
-        WorldMapFrame:GetMapID() == 85 or -- Orgrimmar
-        WorldMapFrame:GetMapID() == 90 or -- Undercity
-        WorldMapFrame:GetMapID() == 86 or -- Ragefire Chasmn
-        WorldMapFrame:GetMapID() == 88 or -- Thunder Bluff
-        WorldMapFrame:GetMapID() == 110 or -- Silvermoon
-        WorldMapFrame:GetMapID() == 111 or -- Shattrath
-        WorldMapFrame:GetMapID() == 125 or  -- Dalaran Northrend
-        WorldMapFrame:GetMapID() == 126 or  -- Dalaran Northrend Basement
-        WorldMapFrame:GetMapID() == 391 or  -- Pandaria Shrine of the two Moons first floor
-        WorldMapFrame:GetMapID() == 392 or  -- Pandaria Shrine of the two Moons second floor
-        WorldMapFrame:GetMapID() == 393 or  -- Pandaria Shrine of the seven Stars first floor
-        WorldMapFrame:GetMapID() == 394 or  -- Pandaria Shrine of the seven Stars second floor
-        WorldMapFrame:GetMapID() == 407 or  -- Darkmoon
-        WorldMapFrame:GetMapID() == 582 or  -- Draenor Alliance Garrision
-        WorldMapFrame:GetMapID() == 590 or  -- Draenor Horde Garrision
-        WorldMapFrame:GetMapID() == 622 or  -- Draenor Stormshield
-        WorldMapFrame:GetMapID() == 624 or  -- Draenor Warspear
-        WorldMapFrame:GetMapID() == 626 or  -- Dalaran Legion Basement
-        WorldMapFrame:GetMapID() == 627 or  -- Dalaran Legion
-        WorldMapFrame:GetMapID() == 628 or  -- Dalaran Legion Shadowside
-        WorldMapFrame:GetMapID() == 629 or  -- Dalaran Legion Aeqwynns Galarie
-        WorldMapFrame:GetMapID() == 1161 or -- Boralus
-        WorldMapFrame:GetMapID() == 1163 or -- Dazar'alor first floor
-        WorldMapFrame:GetMapID() == 1164 or -- Dazar'alor second floor
-        WorldMapFrame:GetMapID() == 1165 or -- Dazar'alor Area
-        WorldMapFrame:GetMapID() == 1670 or -- Oribos
-        WorldMapFrame:GetMapID() == 1671 or -- Oribos second floor
-        WorldMapFrame:GetMapID() == 1672 or -- Oribos Basement
-        WorldMapFrame:GetMapID() == 1673 or -- Oribos melting pot
-        WorldMapFrame:GetMapID() == 2112 or -- Valdrakken
-        WorldMapFrame:GetMapID() == 2339 -- Dornogal
+        WorldMapFrame:GetMapID() == 84 -- Stormwind
+        or WorldMapFrame:GetMapID() == 87  -- Ironforge
+        or WorldMapFrame:GetMapID() == 89  -- Darnassus
+        or WorldMapFrame:GetMapID() == 103 -- Exodar
+        or WorldMapFrame:GetMapID() == 85 -- Orgrimmar
+        or WorldMapFrame:GetMapID() == 90 -- Undercity
+        or WorldMapFrame:GetMapID() == 86 -- Ragefire Chasmn
+        or WorldMapFrame:GetMapID() == 88 -- Thunder Bluff
+        or WorldMapFrame:GetMapID() == 110 -- Silvermoon
+        or WorldMapFrame:GetMapID() == 111 -- Shattrath
+        or WorldMapFrame:GetMapID() == 125  -- Dalaran Northrend
+        or WorldMapFrame:GetMapID() == 126  -- Dalaran Northrend Basement
+        or WorldMapFrame:GetMapID() == 391  -- Pandaria Shrine of the two Moons first floor
+        or WorldMapFrame:GetMapID() == 392  -- Pandaria Shrine of the two Moons second floor
+        or WorldMapFrame:GetMapID() == 393  -- Pandaria Shrine of the seven Stars first floor
+        or WorldMapFrame:GetMapID() == 394  -- Pandaria Shrine of the seven Stars second floor
+        or WorldMapFrame:GetMapID() == 407  -- Darkmoon
+        or WorldMapFrame:GetMapID() == 582  -- Draenor Alliance Garrision
+        or WorldMapFrame:GetMapID() == 590  -- Draenor Horde Garrision
+        or WorldMapFrame:GetMapID() == 622  -- Draenor Stormshield
+        or WorldMapFrame:GetMapID() == 624  -- Draenor Warspear
+        or WorldMapFrame:GetMapID() == 626  -- Dalaran Legion Basement
+        or WorldMapFrame:GetMapID() == 627  -- Dalaran Legion
+        or WorldMapFrame:GetMapID() == 628  -- Dalaran Legion Shadowside
+        or WorldMapFrame:GetMapID() == 629  -- Dalaran Legion Aeqwynns Galarie
+        or WorldMapFrame:GetMapID() == 1161 -- Boralus
+        or WorldMapFrame:GetMapID() == 1163 -- Dazar'alor first floor
+        or WorldMapFrame:GetMapID() == 1164 -- Dazar'alor second floor
+        or WorldMapFrame:GetMapID() == 1165 -- Dazar'alor Area
+        or WorldMapFrame:GetMapID() == 1670 -- Oribos
+        or WorldMapFrame:GetMapID() == 1671 -- Oribos second floor
+        or WorldMapFrame:GetMapID() == 1672 -- Oribos Basement
+        or WorldMapFrame:GetMapID() == 1673 -- Oribos melting pot
+        or WorldMapFrame:GetMapID() == 2112 -- Valdrakken
+        or WorldMapFrame:GetMapID() == 2339 -- Dornogal
+
+        ns.ContinentIDs =
+        --Retail
+        WorldMapFrame:GetMapID() == 12 -- Kalimdor
+        or WorldMapFrame:GetMapID() == 13 -- Eastern Kingdom
+        or WorldMapFrame:GetMapID() == 101 -- Scherbenwelt
+        or WorldMapFrame:GetMapID() == 113 -- Northrend
+        or WorldMapFrame:GetMapID() == 619 -- Legion
+        or WorldMapFrame:GetMapID() == 424 -- Pandaria
+        or WorldMapFrame:GetMapID() == 875 -- Zdanalar
+        or WorldMapFrame:GetMapID() == 876 -- Kul Tiras
+        or WorldMapFrame:GetMapID() == 572 -- Draenor
+        or WorldMapFrame:GetMapID() == 1550 -- Oribos
+        or WorldMapFrame:GetMapID() == 1978 -- Dragonisles
       
 			if value.name == nil then value.name = value.id or value.mnID end
       
@@ -272,13 +285,13 @@ do
       end
 
       -- Instance Minimap icons
-      if ns.instances and (value.hideOnMinimap == false) then
+      if ns.instances and (value.showOnMinimap == true) then
         scale = db.instanceMiniMapScale
         alpha = db.instanceMiniMapAlpha
       end
 
       -- Profession icons in Capitals
-      if ns.professions and ns.CapitalIDs and (value.hideOnMinimap == true) then
+      if ns.professions and ns.CapitalIDs and (value.showOnMinimap == false) then
         scale = db.CapitalsProfessionsScale
         alpha = db.CapitalsProfessionsAlpha
       end
@@ -291,31 +304,31 @@ do
       end
 
       -- Instance icons World
-      if ns.instances and (not value.hideOnMinimap == false) then
+      if ns.instances and (not value.showOnMinimap == true) then
         scale = db.instanceScale
         alpha = db.instanceAlpha
       end
 
       -- Profession Minimap icons in Capitals
-      if ns.professions and ns.CapitalIDs and (value.hideOnMinimap == false) then
+      if ns.professions and ns.CapitalIDs and (value.showOnMinimap == true) then
         scale = db.MinimapCapitalsProfessionsScale
         alpha = db.MinimapCapitalsProfessionsAlpha
       end
 
       -- Capitals Minimap Transport (Zeppeline/Ship/Carriage) icons
-      if ns.CapitalIDs and ns.transports and (value.hideOnMinimap == false) then
+      if ns.CapitalIDs and ns.transports and (value.showOnMinimap == true) then
         scale = db.MinimapCapitalsTransportScale
         alpha = db.MinimapCapitalsTransportAlpha
       end
 
       -- Capitals Minimap Instance (Dungeon/Raid/Passage/Multi) icons
-      if ns.CapitalIDs and ns.instances and (value.hideOnMinimap == false) then
+      if ns.CapitalIDs and ns.instances and (value.showOnMinimap == true) then
         scale = db.MinimapCapitalsInstanceScale
         alpha = db.MinimapCapitalsInstanceAlpha
       end
 
       -- Capitals Minimap General (Innkeeper/Exit/Passage) icons
-      if ns.CapitalIDs and ns.capitalgenerals and (value.hideOnMinimap == false) then
+      if ns.CapitalIDs and ns.capitalgenerals and (value.showOnMinimap == true) then
         scale = db.MinimapCapitalsGeneralScale
         alpha = db.MinimapCapitalsGeneralAlpha
       end
@@ -323,19 +336,19 @@ do
       ns.SyncWithMinimapScaleAlpha() -- sync Capitals with Capitals - Minimap and/or Zones with Minimap Alpha/Scale
 
       -- Capitals General (Innkeeper/Exit/Passage) icons
-      if ns.CapitalIDs and ns.capitalgenerals and (value.hideOnMinimap == true) then
+      if ns.CapitalIDs and ns.capitalgenerals and (value.showOnMinimap == false) then
         scale = db.CapitalsGeneralScale
         alpha = db.CapitalsGeneralAlpha
       end
 
       -- Capitals Transport (Zeppeline/Ship/Carriage) icons
-      if ns.CapitalIDs and ns.transports and (value.hideOnMinimap == true) then
+      if ns.CapitalIDs and ns.transports and (value.showOnMinimap == false) then
         scale = db.CapitalsTransportScale
         alpha = db.CapitalsTransportAlpha
       end
 
       -- Capitals Instance (Dungeon/Raid/Passage/Multi) icons
-      if ns.CapitalIDs and ns.instances and (value.hideOnMinimap == true) then
+      if ns.CapitalIDs and ns.instances and (value.showOnMinimap == false) then
         scale = db.CapitalsInstanceScale
         alpha = db.CapitalsInstanceAlpha
       end   
@@ -355,13 +368,14 @@ do
         alpha = db.cosmosAlpha
       end
 
-      --capital test function
-      --if ((dbChar.CapitalsDeletedIcons[t.uiMapId][state] and value.showInZone) or t.minimapUpdate) then -- Zone scale
-      --  return state, nil, icon, scale, alpha
-      --end
-
-      if ((dbChar.HiddenMapIcons[t.uiMapId][state].show and value.showInZone) or t.minimapUpdate) then -- Zone scale
-        return state, nil, icon, scale, alpha
+      local mapInfo = C_Map.GetMapInfo(t.uiMapId)
+      if (mapInfo.mapType == 0 and (ns.dbChar.AzerothDeletedIcons[t.uiMapId] and not ns.dbChar.AzerothDeletedIcons[t.uiMapId][state] and value.showInZone)) -- Cosmos
+        or (mapInfo.mapType == 1 and (ns.dbChar.AzerothDeletedIcons[t.uiMapId] and not ns.dbChar.AzerothDeletedIcons[t.uiMapId][state] and value.showInZone)) -- Azeroth
+        or (not ns.CapitalIDs and mapInfo.mapType == 3 and (ns.dbChar.ZoneDeletedIcons[t.uiMapId] and not ns.dbChar.ZoneDeletedIcons[t.uiMapId][state] and value.showInZone)) -- Zone
+        or (mapInfo.mapType == 4 and (ns.dbChar.DungeonDeletedIcons[t.uiMapId] and not ns.dbChar.DungeonDeletedIcons[t.uiMapId][state] and value.showInZone)) -- Dungeon
+        or (ns.CapitalIDs and (ns.dbChar.CapitalsDeletedIcons[t.uiMapId] and not ns.dbChar.CapitalsDeletedIcons[t.uiMapId][state] and value.showInZone)) -- Capitals
+        or t.minimapUpdate then -- Zone scale
+          return state, nil, icon, scale, alpha
       end
 
 			state, value = next(data, state)
@@ -374,15 +388,15 @@ do
 		if not t then return end
 
     local state, value
-  	local zone = t.C[t.Z]
-    local data = nodes[zone]
+  	local continent = t.C[t.Z]
+    local data = nodes[continent]
 
-		while zone do
+		while continent do
 
-			if data then -- Only if there is data for this zone
+			if data then -- Only if there is data for this continent
 				state, value = next(data, prestate)
 
-				while state do -- Have we reached the end of this zone?
+				while state do -- Have we reached the end of this continent?
           local alpha
           local icon = ns.icons[value.type]
           
@@ -420,17 +434,17 @@ do
             alpha = db.continentAlpha
           end
 
-					if not value.hideOnContinent then -- Continent scale
-						return state, zone, icon, db.continentScale, alpha
+          if (mapInfo.mapType == 2 and (ns.dbChar.ContinentDeletedIcons[t.uiMapId] and not ns.dbChar.ContinentDeletedIcons[t.uiMapId][state]) and value.showOnContinent) then -- Continent
+            return state, continent, icon, db.continentScale, alpha
           end
 
 					state, value = next(data, state)  -- Get next data
 				end
 			end
-      -- Get next zone
+      -- Get next continent
 			t.Z = next(t.C, t.Z)
-			zone = t.C[t.Z]
-			data = nodes[zone]
+			continent = t.C[t.Z]
+			data = nodes[continent]
 			prestate = nil
 		end
 		wipe(t)
@@ -494,13 +508,27 @@ function pluginHandler:OnClick(button, pressed, uiMapId, coord)
         return
     end
 
-    --Capital test delete function
-    --if (button == "MiddleButton") and IsAltKeyDown() then
-    --  dbChar.CapitalsDeletedIcons[uiMapId][coord].showInZone = false
-    --end
-
     if (button == "MiddleButton") and IsAltKeyDown() then
-      dbChar.HiddenMapIcons[uiMapId][coord].show = false
+      if ns.CapitalIDs then
+        ns.dbChar.CapitalsDeletedIcons[uiMapId][coord] = true
+        ns.Addon:FullUpdate()
+      end
+
+      if mapInfo.mapType == 1 then -- Azeroth
+        ns.dbChar.AzerothDeletedIcons[uiMapId][coord] = true
+      end
+
+      if WorldMapFrame:GetMapID() == 12 then -- Continent
+        ns.dbChar.ContinentDeletedIcons[uiMapId][coord] = true
+      end
+
+      if not ns.CapitalIDs and mapInfo.mapType == 3 then -- Zone
+        ns.dbChar.ZoneDeletedIcons[uiMapId][coord] = true
+      end
+
+      if mapInfo.mapType == 4 then -- Dungeon
+        ns.dbChar.DungeonDeletedIcons[uiMapId][coord] = true
+      end
     end
 
     --test xy
@@ -666,7 +694,7 @@ function Addon:PLAYER_LOGIN()
   -- Register Database Profile
   self.db = LibStub("AceDB-3.0"):New("HandyNotes_MapNotesRetailDB", ns.defaults)
   db = self.db.profile
-  dbChar = self.db.char
+  ns.dbChar = self.db.char
 
   -- Register options 
   HandyNotes:RegisterPluginDB("MapNotes", pluginHandler, ns.options)
@@ -714,7 +742,7 @@ function Addon:PopulateMinimap()
   for uiMapId,uiMapIdDetails in pairs(nodes) do
       if (minimap[uiMapId]) then
           for coords,icondetails in pairs(uiMapIdDetails) do 
-              if (not icondetails.hideOnMinimap) then
+              if (icondetails.showOnMinimap) then
                   minimap[uiMapId][coords] = icondetails
               end
           end

@@ -73,8 +73,7 @@ ns.options = {
           width = 0.75,
           order = 1.1,
           func = function(info, v) ns.Addon.db.profile.RestoreZoneDeletedIcons = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
-            --wipe(ns.Addon.db.char.ZoneDeletedIcons)
-            wipe(ns.Addon.db.char.HiddenMapIcons)
+            wipe(ns.Addon.db.char.ZoneDeletedIcons)
             print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00",L["Zones"] .. " - " .. L["All deleted icons have been restored"]) end,
           }, 
         RestoreContinentDeletedIcons = {
