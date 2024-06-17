@@ -486,18 +486,18 @@ local function setWaypoint(uiMapID, coord)
 end
 
 
-function pluginHandler:OnClick(button, pressed, uiMapId, coord)
-    local mapInfo = C_Map.GetMapInfo(uiMapId)
-    local CapitalIDs = WorldMapFrame:GetMapID() == 84 or WorldMapFrame:GetMapID() == 87  or WorldMapFrame:GetMapID() == 89 or WorldMapFrame:GetMapID() == 103 or WorldMapFrame:GetMapID() == 85 
-                    or WorldMapFrame:GetMapID() == 90 or WorldMapFrame:GetMapID() == 86 or WorldMapFrame:GetMapID() == 88 or WorldMapFrame:GetMapID() == 110  or WorldMapFrame:GetMapID() == 111
-                    or WorldMapFrame:GetMapID() == 125  or WorldMapFrame:GetMapID() == 126  or WorldMapFrame:GetMapID() == 391  or WorldMapFrame:GetMapID() == 392  or WorldMapFrame:GetMapID() == 393 
-                    or WorldMapFrame:GetMapID() == 394  or WorldMapFrame:GetMapID() == 407  or WorldMapFrame:GetMapID() == 582  or WorldMapFrame:GetMapID() == 590  or WorldMapFrame:GetMapID() == 622
-                    or WorldMapFrame:GetMapID() == 624  or WorldMapFrame:GetMapID() == 626  or WorldMapFrame:GetMapID() == 627  or WorldMapFrame:GetMapID() == 628  or WorldMapFrame:GetMapID() == 629 
-                    or WorldMapFrame:GetMapID() == 1161 or WorldMapFrame:GetMapID() == 1163 or WorldMapFrame:GetMapID() == 1164 or WorldMapFrame:GetMapID() == 1165 or WorldMapFrame:GetMapID() == 1670
-                    or WorldMapFrame:GetMapID() == 1671 or WorldMapFrame:GetMapID() == 1672 or WorldMapFrame:GetMapID() == 1673 or WorldMapFrame:GetMapID() == 2112 or WorldMapFrame:GetMapID() == 2339  
+function pluginHandler:OnClick(button, pressed, uiMapId, coord, value)
+local mapInfo = C_Map.GetMapInfo(uiMapId)
+local CapitalIDs = WorldMapFrame:GetMapID() == 84 or WorldMapFrame:GetMapID() == 87  or WorldMapFrame:GetMapID() == 89 or WorldMapFrame:GetMapID() == 103 or WorldMapFrame:GetMapID() == 85 
+                or WorldMapFrame:GetMapID() == 90 or WorldMapFrame:GetMapID() == 86 or WorldMapFrame:GetMapID() == 88 or WorldMapFrame:GetMapID() == 110  or WorldMapFrame:GetMapID() == 111
+                or WorldMapFrame:GetMapID() == 125  or WorldMapFrame:GetMapID() == 126  or WorldMapFrame:GetMapID() == 391  or WorldMapFrame:GetMapID() == 392  or WorldMapFrame:GetMapID() == 393 
+                or WorldMapFrame:GetMapID() == 394  or WorldMapFrame:GetMapID() == 407  or WorldMapFrame:GetMapID() == 582  or WorldMapFrame:GetMapID() == 590  or WorldMapFrame:GetMapID() == 622
+                or WorldMapFrame:GetMapID() == 624  or WorldMapFrame:GetMapID() == 626  or WorldMapFrame:GetMapID() == 627  or WorldMapFrame:GetMapID() == 628  or WorldMapFrame:GetMapID() == 629 
+                or WorldMapFrame:GetMapID() == 1161 or WorldMapFrame:GetMapID() == 1163 or WorldMapFrame:GetMapID() == 1164 or WorldMapFrame:GetMapID() == 1165 or WorldMapFrame:GetMapID() == 1670
+                or WorldMapFrame:GetMapID() == 1671 or WorldMapFrame:GetMapID() == 1672 or WorldMapFrame:GetMapID() == 1673 or WorldMapFrame:GetMapID() == 2112 or WorldMapFrame:GetMapID() == 2339  
 
 StaticPopupDialogs["Delete_Icon?"] = {
-  text = L["Delete icon?"],
+  text = TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. ": " .. EMBLEM_SYMBOL .. " " .. SLASH_STOPWATCH_PARAM_STOP5 .. " ? " .. TextIconMNL4:GetIconString(),
   button1 = YES,
   button2 = NO,
   showAlert = true,
@@ -611,54 +611,7 @@ StaticPopupDialogs["Delete_Icon?"] = {
     return end
 
     if (button == "LeftButton") and IsAltKeyDown() then
-      local btn = CreateFrame("Button", "TauntingButton", UIParent, "UIPanelButtonTemplate");
-      local scale,x,y=btn:GetEffectiveScale(),GetCursorPosition()
-      --btn:SetNormalFontObject("GameFontNormalSmall");
-      btn:SetFrameStrata("TOOLTIP")
-      btn:SetWidth(160);
-      btn:SetHeight(50);
-      btn:SetPoint("CENTER",nil,"BOTTOMLEFT",x/scale,y/scale);
-      btn:SetText(L["Delete icon?"] .. "\n" .. ALT_KEY .. " + " .. KEY_BUTTON1 .. " " .. YES .. "\n" .. KEY_BUTTON2 .. " " .. NO )
-      btn:RegisterForClicks("AnyUp");
-      btn:SetScript("OnLeave", function()
-        btn:Hide()
-      end);
-
-      btn:SetScript("OnClick", function (self, button, down)
-        if  button == "LeftButton" or button == "LeftButton" and IsAltKeyDown() then
-          if CapitalIDs then
-            ns.dbChar.CapitalsDeletedIcons[uiMapId][coord] = true
-            print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00", L["Capitals"] .. " - " .. L["A icon has been deleted"])
-          end
-    
-          if mapInfo.mapType == 1 then -- Azeroth
-            ns.dbChar.AzerothDeletedIcons[uiMapId][coord] = true
-            print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00", AZEROTH .. " - " .. L["A icon has been deleted"])
-          end
-    
-          if mapInfo.mapType == 2 then -- Continent
-            ns.dbChar.ContinentDeletedIcons[uiMapId][coord] = true
-            print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00", L["Continents"] .. " - " .. L["A icon has been deleted"])
-          end
-    
-          if not CapitalIDs and mapInfo.mapType == 3 then -- Zone
-            ns.dbChar.ZoneDeletedIcons[uiMapId][coord] = true
-            print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00", L["Zones"] .. " - " .. L["A icon has been deleted"])
-          end
-
-          if mapInfo.mapType == 4 then -- Dungeon
-            ns.dbChar.DungeonDeletedIcons[uiMapId][coord] = true
-            print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00", L["Dungeonmap"] .. " - " .. L["A icon has been deleted"])
-          end
-          btn:Hide()
-        end
-        
-        if button == "RightButton" or button == "MiddleButton" then 
-          print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. L["Delete icon?"] .. " " .."|cff00ff00" .. CLUB_FINDER_CANCELED)
-          btn:Hide()
-        end
-        HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
-      end);
+      StaticPopup_Show ("Delete_Icon?")
     end
 
     if IsShiftKeyDown() and (button == "MiddleButton") then
