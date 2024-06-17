@@ -422,11 +422,7 @@ do
             alpha = db.continentAlpha
           end
               
-          --if ((ns.dbChar.ContinentDeletedIcons[t.uiMapId] and not ns.dbChar.ContinentDeletedIcons[t.uiMapId][state]) and value.showOnContinent) then -- Continent
-          --  return state, zone, icon, db.continentScale, alpha
-          --end
-
-          if value.showOnContinent then -- Continent
+          if ((ns.dbChar.ContinentDeletedIcons[t.contId] and not ns.dbChar.ContinentDeletedIcons[t.contId][state]) and value.showOnContinent) then -- Continent
             return state, zone, icon, db.continentScale, alpha
           end
 
@@ -489,6 +485,7 @@ local function setWaypoint(uiMapID, coord)
     })  
 end
 
+
 function pluginHandler:OnClick(button, pressed, uiMapId, coord)
     local mapInfo = C_Map.GetMapInfo(uiMapId)
     local CapitalIDs = WorldMapFrame:GetMapID() == 84 or WorldMapFrame:GetMapID() == 87  or WorldMapFrame:GetMapID() == 89 or WorldMapFrame:GetMapID() == 103 or WorldMapFrame:GetMapID() == 85 
@@ -498,6 +495,48 @@ function pluginHandler:OnClick(button, pressed, uiMapId, coord)
                     or WorldMapFrame:GetMapID() == 624  or WorldMapFrame:GetMapID() == 626  or WorldMapFrame:GetMapID() == 627  or WorldMapFrame:GetMapID() == 628  or WorldMapFrame:GetMapID() == 629 
                     or WorldMapFrame:GetMapID() == 1161 or WorldMapFrame:GetMapID() == 1163 or WorldMapFrame:GetMapID() == 1164 or WorldMapFrame:GetMapID() == 1165 or WorldMapFrame:GetMapID() == 1670
                     or WorldMapFrame:GetMapID() == 1671 or WorldMapFrame:GetMapID() == 1672 or WorldMapFrame:GetMapID() == 1673 or WorldMapFrame:GetMapID() == 2112 or WorldMapFrame:GetMapID() == 2339  
+
+StaticPopupDialogs["Delete_Icon?"] = {
+  text = L["Delete icon?"],
+  button1 = YES,
+  button2 = NO,
+  showAlert = true,
+  exclusive  = true,
+  OnAccept = function()
+    if CapitalIDs then
+      ns.dbChar.CapitalsDeletedIcons[uiMapId][coord] = true
+      ns.dbChar.MinimapCapitalsDeletedIcons[uiMapId][coord] = true
+      print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00", L["Capitals"] .. " - " .. L["A icon has been deleted"])
+    end
+  
+    if mapInfo.mapType == 1 then -- Azeroth
+      ns.dbChar.AzerothDeletedIcons[uiMapId][coord] = true
+      print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00", AZEROTH .. " - " .. L["A icon has been deleted"])
+    end
+  
+    if mapInfo.mapType == 2 then -- Continent
+      ns.dbChar.ContinentDeletedIcons[uiMapId][coord] = true
+      print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00", L["Continents"] .. " - " .. L["A icon has been deleted"])
+    end
+  
+    if not CapitalIDs and mapInfo.mapType == 3 then -- Zone
+      ns.dbChar.ZoneDeletedIcons[uiMapId][coord] = true
+      print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00", L["Zones"] .. " - " .. L["A icon has been deleted"])
+    end
+  
+    if mapInfo.mapType == 4 then -- Dungeon
+      ns.dbChar.DungeonDeletedIcons[uiMapId][coord] = true
+      print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00", L["Dungeonmap"] .. " - " .. L["A icon has been deleted"])
+    end
+    HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
+  end,
+  OnCancel = function()
+    print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. L["Delete icon?"] .. " " .."|cff00ff00" .. CLUB_FINDER_CANCELED)
+  end,
+  timeout = 5,
+  whileDead = true,
+  hideOnEscape = true,
+}
 
   if not ns.Addon.db.profile.activate.ShiftWorld then
 
@@ -509,55 +548,7 @@ function pluginHandler:OnClick(button, pressed, uiMapId, coord)
     end
 
     if (button == "LeftButton") and IsAltKeyDown() then
-      local btn = CreateFrame("Button", "TauntingButton", UIParent, "UIPanelButtonTemplate");
-      local scale,x,y=btn:GetEffectiveScale(),GetCursorPosition()
-      --btn:SetNormalFontObject("GameFontNormalSmall");
-      btn:SetFrameStrata("TOOLTIP")
-      btn:SetWidth(160);
-      btn:SetHeight(50);
-      btn:SetPoint("CENTER",nil,"BOTTOMLEFT",x/scale,y/scale);
-      btn:SetText(L["Delete icon?"] .. "\n" .. ALT_KEY .. " + " .. KEY_BUTTON1 .. " " .. YES .. "\n" .. KEY_BUTTON2 .. " " .. NO )
-      btn:RegisterForClicks("AnyUp");
-      btn:SetScript("OnLeave", function()
-        btn:Hide()
-      end);
-
-      btn:SetScript("OnClick", function (self, button, down)
-        if  button == "LeftButton" or button == "LeftButton" and IsAltKeyDown() then
-          if CapitalIDs then
-            ns.dbChar.CapitalsDeletedIcons[uiMapId][coord] = true
-            ns.dbChar.MinimapCapitalsDeletedIcons[uiMapId][coord] = true
-            print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00", L["Capitals"] .. " - " .. L["A icon has been deleted"])
-          end
-    
-          if mapInfo.mapType == 1 then -- Azeroth
-            ns.dbChar.AzerothDeletedIcons[uiMapId][coord] = true
-            print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00", AZEROTH .. " - " .. L["A icon has been deleted"])
-          end
-    
-          if mapInfo.mapType == 2 then -- Continent
-            ns.dbChar.ContinentDeletedIcons[uiMapId][coord] = true
-            print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00", L["Continents"] .. " - " .. L["A icon has been deleted"])
-          end
-    
-          if not CapitalIDs and mapInfo.mapType == 3 then -- Zone
-            ns.dbChar.ZoneDeletedIcons[uiMapId][coord] = true
-            print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00", L["Zones"] .. " - " .. L["A icon has been deleted"])
-          end
-
-          if mapInfo.mapType == 4 then -- Dungeon
-            ns.dbChar.DungeonDeletedIcons[uiMapId][coord] = true
-            print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00", L["Dungeonmap"] .. " - " .. L["A icon has been deleted"])
-          end
-          btn:Hide()
-        end
-        
-        if button == "RightButton" or button == "MiddleButton" then 
-          print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. L["Delete icon?"] .. " " .."|cff00ff00" .. CLUB_FINDER_CANCELED)
-          btn:Hide()
-        end
-        HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
-      end);
+      StaticPopup_Show ("Delete_Icon?")
     end
 
     if (button == "MiddleButton") then
@@ -726,7 +717,6 @@ end
 local Addon = CreateFrame("Frame")
 Addon:RegisterEvent("PLAYER_LOGIN")
 Addon:SetScript("OnEvent", function(self, event, ...) return self[event](self, ...)end)
-
 
 local function updateStuff()
   updateextraInformation()
