@@ -202,6 +202,12 @@ if not db.activate.HideMapNote then
                         nodes[85][51354799] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
                         nodes[85][39764848] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
                         nodes[85][49654161] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                        nodes[85][71101160] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                        nodes[85][67603030] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                        nodes[85][65403130] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                        nodes[85][55905180] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                        nodes[85][45006830] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                        nodes[85][42106050] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     end
 
                     if self.db.profile.showCapitalsPvPVendor then
