@@ -73,9 +73,7 @@ ns.options = {
           width = 0.75,
           order = 1.1,
           func = function(info, v) ns.Addon.db.profile.RestoreZoneDeletedIcons = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
-            wipe(ns.Addon.db.char.ZoneDeletedIcons)
-            HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
-            print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00",L["Zones"] .. " - " .. L["All deleted icons have been restored"]) end,
+            StaticPopup_Show ("Restore_Zone?") end,
           }, 
         RestoreContinentDeletedIcons = {
           type = "execute",
@@ -84,9 +82,7 @@ ns.options = {
           width = 0.75,
           order = 1.2,
           func = function(info, v) ns.Addon.db.profile.RestoreContinentDeletedIcons = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
-            wipe(ns.Addon.db.char.ContinentDeletedIcons)
-            HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
-            print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00",L["Continents"] .. " - " .. L["All deleted icons have been restored"]) end,
+            StaticPopup_Show ("Restore_Continent?") end,
           }, 
         RestoreAzerothDeletedIcons = {
           type = "execute",
@@ -95,9 +91,7 @@ ns.options = {
           width = 0.75,
           order = 1.3,
           func = function(info, v) ns.Addon.db.profile.RestoreAzerothDeletedIcons = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
-            wipe(ns.Addon.db.char.AzerothDeletedIcons)
-            HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
-            print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00",AZEROTH .. " - " .. L["All deleted icons have been restored"]) end,
+            StaticPopup_Show ("Restore_Azeroth?") end,
           }, 
         RestoreDungeonDeletedIcons = {
           type = "execute",
@@ -106,9 +100,7 @@ ns.options = {
           width = 0.75,
           order = 1.4,
           func = function(info, v) ns.Addon.db.profile.RestoreDungeonDeletedIcons = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
-            wipe(ns.Addon.db.char.DungeonDeletedIcons)
-            HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
-            print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00",CALENDAR_TYPE_DUNGEON .. " - " .. L["All deleted icons have been restored"]) end,
+            StaticPopup_Show ("Restore_Dungeon?") end,
           }, 
         RestoreCapitalsDeletedIcons = {
           type = "execute",
@@ -117,10 +109,7 @@ ns.options = {
           width = 0.75,
           order = 1.5,
           func = function(info, v) ns.Addon.db.profile.RestoreCapitalsDeletedIcons = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
-            wipe(ns.Addon.db.char.CapitalsDeletedIcons)
-            wipe(ns.Addon.db.char.MinimapCapitalsDeletedIcons)
-            HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
-            print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00",L["Capitals"] .. " - " .. L["All deleted icons have been restored"]) end,
+            StaticPopup_Show ("Restore_Capitals?") end,
           }, 
         DescriptionHeader2 = {
           type = "header",

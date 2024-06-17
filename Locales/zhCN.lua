@@ -3,7 +3,6 @@ local L = LibStub("AceLocale-3.0"):NewLocale(ADDON_NAME, "zhCN")
 if not L then return end
 
 --0 Restore
-L["Delete icon?"] = "删除符号？"
 L["A icon has been deleted"] = "符号被删除"
 L["Restore all deleted icons for different types of maps"] = "恢复不同类型地图的所有已删除图标"
 L["Restore all deleted icons"] = "恢复所有已删除的图标"

@@ -3,7 +3,6 @@ local L = LibStub("AceLocale-3.0"):NewLocale(ADDON_NAME, "ptBR")
 if not L then return end
 
 --0 Restore
-L["Delete icon?"] = "Excluir símbolo?"
 L["A icon has been deleted"] = "Um símbolo foi excluído"
 L["Restore all deleted icons for different types of maps"] = "Restaure todos os ícones excluídos para diferentes tipos de mapas"
 L["Restore all deleted icons"] = "Restaure todos os ícones excluídos"

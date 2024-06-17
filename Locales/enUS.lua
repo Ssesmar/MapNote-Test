@@ -3,7 +3,6 @@ local L = LibStub("AceLocale-3.0"):NewLocale(ADDON_NAME, "enUS", true)
 
 
 --0 Restore
-L["Delete icon?"] = true
 L["A icon has been deleted"] = true
 L["Restore all deleted icons for different types of maps"] = true
 L["Restore all deleted icons"] = true

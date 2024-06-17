@@ -3,7 +3,6 @@ local L = LibStub("AceLocale-3.0"):NewLocale(ADDON_NAME, "koKR")
 if not L then return end
 
 --0 Restore
-L["Delete icon?"] = "기호 삭제?"
 L["A icon has been deleted"] = "기호가 삭제되었습니다"
 L["Restore all deleted icons for different types of maps"] = "다양한 유형의 지도에 대해 삭제된 모든 아이콘을 복원합니다"
 L["Restore all deleted icons"] = "삭제된 아이콘 모두 복원"
