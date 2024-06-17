@@ -6,23 +6,14 @@
 
 
 Retail & PTR:
-added a new function called "Synchronizes Zones & Minimap icons" into the Minimap and Zone tab
-    (Synchronizes the Zones tab with the Minimap tab)
-    (Which deactivates the functions from the Minimap tab and is now controlled together by the Zone tab)
-    (This will delete all Minimap settings and replace them with those from Zone tab)
-added a new function called "Synchronizes Capitals & Capitals Minimap icons" into the Capital and Capital - Minimap tab
-    (Synchronizes the Capitals tab with the Capitals - Minimap tab)
-    (Which deactivates the functions from the Capitals - Minimap tab and is now controlled together by the Capitals tab)
-    (This will delete all Capitals - Minimap settings and replace them with those from Capitals tab)
+added a new function
+    Now it is possible to delete this specific icon with ALT + left click on an icon so that it is no longer displayed on this map type.
+    These deleted icons are saved individually for each character.
+    In the general MapNotes menu, these deleted icons can be shown again using the corresponding button (Zones/Continent/Azeroth/Dungeon/Capitals)
 
 Cataclysm:
 
-added Transmogger/Reforge icon in Stormwind and Orgrimmar to the Capital tab into the General function
-added Transmogger/Reforge icon in Stormwind and Orgrimmar to the Capita Minimapl tab into the General function
-
-
 Classic Era & Hardcore:
-
 
 - Description:
 

@@ -367,6 +367,9 @@ ns.defaults = {
     ZoneDeletedIcons = {
       ['*'] = {},
     },
+    MinimapZoneDeletedIcons = {
+      ['*'] = {},
+    },
     DungeonDeletedIcons = {
         ['*'] = {},
     },
@@ -376,7 +379,6 @@ ns.defaults = {
     MinimapCapitalsDeletedIcons = {
       ['*'] = {},
     },
-    
   },
 }
 

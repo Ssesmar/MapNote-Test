@@ -5,6 +5,7 @@ if not HandyNotes then return end
 
 local ADDON_NAME = "HandyNotes_MapNotes"
 local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
+ns.COLORED_ADDON_NAME = "|cffff0000Map|r|cff00ccffNotes|r"
 
 local MapNotesMiniButton = LibStub("AceAddon-3.0"):NewAddon("MNMiniMapButton", "AceConsole-3.0")
 local MNMMBIcon = LibStub("LibDBIcon-1.0", true)

@@ -5,7 +5,7 @@ if not HandyNotes then return end
 
 local ADDON_NAME = "HandyNotes_MapNotes"
 local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
-local COLORED_ADDON_NAME = "|cffff0000Map|r|cff00ccffNotes|r"
+ns.COLORED_ADDON_NAME = "|cffff0000Map|r|cff00ccffNotes|r"
 
 local MapNotesMiniButton = LibStub("AceAddon-3.0"):NewAddon("MNMiniMapButton", "AceConsole-3.0")
 local MNMMBIcon = LibStub("LibDBIcon-1.0", true)
@@ -362,8 +362,8 @@ do
         or (not ns.CapitalIDs and mapInfo.mapType == 3 and (ns.dbChar.ZoneDeletedIcons[t.uiMapId] and not ns.dbChar.ZoneDeletedIcons[t.uiMapId][state] and value.showInZone)) -- Zone without Capitals
         or (mapInfo.mapType == 4 and (ns.dbChar.DungeonDeletedIcons[t.uiMapId] and not ns.dbChar.DungeonDeletedIcons[t.uiMapId][state] and value.showInZone)) -- Dungeon
         or (ns.CapitalIDs and (ns.dbChar.CapitalsDeletedIcons[t.uiMapId] and not ns.dbChar.CapitalsDeletedIcons[t.uiMapId][state] and value.showInZone)) -- Capitals
-        or (ns.CapitalIDs and ns.dbChar.MinimapCapitalsDeletedIcons[t.minimapUpdate] and not ns.dbChar.MinimapCapitalsDeletedIcons[t.minimapUpdate][state] and value.showOnMinimap) -- Minimap Capitals
-        or value.showOnMinimap -- Minimap Zones
+        or (ns.CapitalIDs and ns.dbChar.MinimapCapitalsDeletedIcons[t.minimapId] and not ns.dbChar.MinimapCapitalsDeletedIcons[t.minimapId][state] and value.showOnMinimap) -- Minimap Capitals
+        or (not ns.CapitalIDs and mapInfo.mapType == 3 and ns.dbChar.MinimapZoneDeletedIcons[t.minimapId] and not ns.dbChar.MinimapZoneDeletedIcons[t.minimapId][state] and value.showOnMinimap) -- Minimap Zones
       then
         return state, nil, icon, scale, alpha
       end
@@ -458,6 +458,7 @@ function pluginHandler:GetNodes2(uiMapId, isMinimapUpdate)
           tablepool[tbl] = nil
           tbl.minimapUpdate = isMinimapUpdate
           tbl.uiMapId = uiMapId
+          tbl.minimapId = uiMapId
           if (isMinimapUpdate and minimap[uiMapId]) then
               tbl.data = minimap[uiMapId]
           else
@@ -498,7 +499,7 @@ local CapitalIDs = WorldMapFrame:GetMapID() == 84 or WorldMapFrame:GetMapID() ==
                 or WorldMapFrame:GetMapID() == 1671 or WorldMapFrame:GetMapID() == 1672 or WorldMapFrame:GetMapID() == 1673 or WorldMapFrame:GetMapID() == 2112 or WorldMapFrame:GetMapID() == 2339
 
   StaticPopupDialogs["Delete_Icon?"] = {
-    text = TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. ": " .. EMBLEM_SYMBOL .. " " .. SLASH_STOPWATCH_PARAM_STOP5 .. " ? " .. TextIconMNL4:GetIconString(),
+    text = TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. ": " .. EMBLEM_SYMBOL .. " " .. SLASH_STOPWATCH_PARAM_STOP5 .. " ? " .. TextIconMNL4:GetIconString(),
     button1 = YES,
     button2 = NO,
     showAlert = true,
@@ -507,32 +508,33 @@ local CapitalIDs = WorldMapFrame:GetMapID() == 84 or WorldMapFrame:GetMapID() ==
       if CapitalIDs then
         ns.dbChar.CapitalsDeletedIcons[uiMapId][coord] = true
         ns.dbChar.MinimapCapitalsDeletedIcons[uiMapId][coord] = true
-        print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00", L["Capitals"] .. " - " .. "|cff00ff00" .. L["A icon has been deleted"])
+        print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00", L["Capitals"] .. " & " .. L["Capitals"] .. " - " .. MINIMAP_LABEL .. " - " .. "|cff00ff00" .. L["A icon has been deleted"])
       end
     
       if mapInfo.mapType == 1 then -- Azeroth
         ns.dbChar.AzerothDeletedIcons[uiMapId][coord] = true
-        print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00", AZEROTH .. " - " .. "|cff00ff00" .. L["A icon has been deleted"])
+        print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00", AZEROTH .. " - " .. "|cff00ff00" .. L["A icon has been deleted"])
       end
     
       if mapInfo.mapType == 2 then -- Continent
         ns.dbChar.ContinentDeletedIcons[uiMapId][coord] = true
-        print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00", L["Continents"] .. " - " .. "|cff00ff00" .. L["A icon has been deleted"])
+        print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00", L["Continents"] .. " - " .. "|cff00ff00" .. L["A icon has been deleted"])
       end
     
       if not CapitalIDs and mapInfo.mapType == 3 then -- Zone
         ns.dbChar.ZoneDeletedIcons[uiMapId][coord] = true
-        print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00", L["Zones"] .. " - " .. "|cff00ff00" .. L["A icon has been deleted"])
+        ns.dbChar.MinimapZoneDeletedIcons[uiMapId][coord] = true
+        print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00", L["Zones"] .. " & " .. MINIMAP_LABEL .. " - " .. "|cff00ff00" .. L["A icon has been deleted"])
       end
     
       if mapInfo.mapType == 4 then -- Dungeon
         ns.dbChar.DungeonDeletedIcons[uiMapId][coord] = true
-        print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00", L["Dungeonmap"] .. " - " .. "|cff00ff00" .. L["A icon has been deleted"])
+        print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00", DUNGEONS .. " - " .. "|cff00ff00" .. L["A icon has been deleted"])
       end
       HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
     end,
     OnCancel = function()
-      print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. "|cffffff00 ".. EMBLEM_SYMBOL .. " " .. SLASH_STOPWATCH_PARAM_STOP5 .. " " .. "|cffff0000" .. CLUB_FINDER_CANCELED)
+      print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. "|cffffff00 ".. EMBLEM_SYMBOL .. " " .. SLASH_STOPWATCH_PARAM_STOP5 .. " " .. "|cffff0000" .. CLUB_FINDER_CANCELED)
     end,
     timeout = 5,
     whileDead = true,
