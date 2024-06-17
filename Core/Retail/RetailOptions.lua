@@ -118,6 +118,7 @@ ns.options = {
           order = 1.5,
           func = function(info, v) ns.Addon.db.profile.RestoreCapitalsDeletedIcons = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
             wipe(ns.Addon.db.char.CapitalsDeletedIcons)
+            wipe(ns.Addon.db.char.MinimapCapitalsDeletedIcons)
             HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
             print(TextIconMNL4:GetIconString() .. " " .. COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00",L["Capitals"] .. " - " .. L["All deleted icons have been restored"]) end,
           }, 

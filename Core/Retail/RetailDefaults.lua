@@ -373,6 +373,9 @@ ns.defaults = {
     CapitalsDeletedIcons = {
         ['*'] = {},
     },
+    MinimapCapitalsDeletedIcons = {
+      ['*'] = {},
+    },
     
   },
 }
