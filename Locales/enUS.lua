@@ -3,6 +3,8 @@ local L = LibStub("AceLocale-3.0"):NewLocale(ADDON_NAME, "enUS", true)
 
 
 --0 Restore
+L["canceled"] = true
+L["Delete this icon"] = true
 L["A icon has been deleted"] = true
 L["Restore all deleted icons for different types of maps"] = true
 L["Restore all deleted icons"] = true
@@ -25,6 +27,7 @@ L["Quartermaster"] = true
 L["The Scryers"] = true
 L["The Aldor"] = true
 L["Paths"] = true
+L["Path"] = true
 L["Capitals"] = true
 L["Alchemy"] = true
 L["Engineer"] = true
@@ -253,6 +256,7 @@ L["Undercity"] = true
 L["Rut'theran"] = true
 L["Azuremyst Isle"] = true
 L["Bel'ameth, Amirdrassil"] = true
+L["Ruins of Gilneas"] = true
 L["Darnassus"] = true
 L["Teldrassil"] = true
 L["Graveyard"] = true

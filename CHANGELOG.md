@@ -1,15 +1,38 @@
 # MapNote
-## [2.0.3](https://github.com/Ssesmar/MapNote) (2024-06-09)
+## [2.0.4](https://github.com/Ssesmar/MapNote) (2024-06-17)
 - Note:
 
 -- MapNotes now works on every version of World of Warcraft. Classic Era / Cataclysm and Retail
 
+Version: 2.0.4
 
-Retail & PTR:
-added a new function
+PTR:
+The positions on the continent map of Khaz Algar have been corrected
+changed the color from Path nodes from yellow to green for better visibility
+
+Retail:
+added Path icons to all zones maps and minimap in the Zone / Minimap tab
+added a new function for multi transport icons in a zone or capitals (e.g. portals, paths) with 2 to a maximum of 3 locations
+    Clicking left, right or middle mouse button now opens the corresponding map
+    These icons show which button opens which card
+    This function of these icons only works without holding down the Shift key
+    regardless of whether the MapNotes Shift function is activated or not
+    because the Shift + Right mouse button would now set a TomTom point and would not open the second displayed zone map
+
+changed the worldmapbutton function on Continents
+    rightclick on a Continent, did not longer hide all icons on EVERY continent, now its only hidding the icons on the actual opend continent at the Worldmap
+changed the TomTom function. Now u have to press Shift + Rightclick to set a TomTom waypoint
+    regardless of whether the MapNotes Shift function is activated or not
+
+
+2.0.3
+added a new function for delete icons
     Now it is possible to delete this specific icon with ALT + left click on an icon so that it is no longer displayed on this map type.
     These deleted icons are saved individually for each character.
-    In the general MapNotes menu, these deleted icons can be shown again using the corresponding button (Zones/Continent/Azeroth/Dungeon/Capitals)
+    In the MapNotes menu in the gernal tab, these deleted icons can be shown again using the corresponding button (Zones/Continent/Azeroth/Dungeon/Capitals)
+    If you delete a symbol in a capital, it will also be deleted on the capital minimap. The same applies to the zone map and the minimap
+added Mailboxes in Capitals
+changed the Iconsytle from Paths
 
 Cataclysm:
 

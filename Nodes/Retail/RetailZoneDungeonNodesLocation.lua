@@ -37,7 +37,6 @@ if not db.activate.HideMapNote then
             nodes[10][40496868] = { id = 240, type = "Dungeon", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Wailing Caverns
             nodes[7][79421794] = { id = 240, type = "Dungeon", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Wailing Caverns
             nodes[199][46952074] = { id = 240, type = "Dungeon", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Wailing Caverns
-            nodes[69][59514032] = { id = 230, type = "Dungeon", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Dire Maul
             nodes[199][40779446] = { id = 234, type = "Dungeon", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Razorfen Kraul
             nodes[199][51899825] = { id = 233, type = "Dungeon", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Razorfen Downs
             nodes[70][13176945] = { id = 234, type = "Dungeon", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Razorfen Kraul
@@ -95,7 +94,6 @@ if not db.activate.HideMapNote then
           nodes[71][12668471] = { dnID = L["Instance Entrance"] .. " " .. L["switches weekly between"] .. " " .. L["Uldum"] .. " (" .. L["Kalimdor"] ..")" .. " & " .. L["Vale of Eternal Blossoms"] .. " (" .. L["Pandaria"] .. ")", id = 1180, type = "Raid", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Ny'alotha the Waking City
           nodes[75][39601704] = { id = 750, type = "Raid", showInZone = true, showOnContinent = false, showOnMinimap = false } -- The Battle of Mount Hyjal
           nodes[75][60872115] = { id = 187, type = "Raid", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Dragon Soul
-
           end
 
         --Kalimdor Passage without ClassicIcons
@@ -194,6 +192,7 @@ if not db.activate.HideMapNote then
             nodes[35][39281819] = { id = 228, type = "Dungeon", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Blackrock Depths
             nodes[30][29507480] = { id = 231, type = "Dungeon", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Gnomeregan
             nodes[30][42311288] = { id = 231, type = "Dungeon", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Gnomeregan
+            nodes[34][71245337] = { id = 66, type = "Dungeon", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Blackrock Caverns
           end
 
 
@@ -221,7 +220,7 @@ if not db.activate.HideMapNote then
             nodes[469][32793702] = { mnID = 30, dnID = L["Way to the Instance Entrance"], id = 231, type = "PassageDungeon", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Gnomeregan
             nodes[27][31393804] = { mnID = 30, dnID = L["Way to the Instance Entrance"], id = 231, type = "PassageDungeon", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Gnomeregan     
             nodes[51][69675353] = { dnID = L["Way to the Instance Entrance"], id = 237, type = "PassageDungeon", showInZone = true, showOnContinent = false, showOnMinimap = false } -- The Temple of Atal'hakkar 
-            nodes[36][21063760] = { mnID = 33, id = { 741, 742, 66, 228, 229, 559 }, name = L["Way to the Instance Entrance"], type = "PassageDungeonRaidMulti", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Molten Core, Blackwing Lair, Blackrock Caverns, Blackrock Depths, Lower Blackrock Spire, Upper Blackrock Spire 
+            nodes[36][20643322] = { mnID = 33, id = { 741, 742, 66, 228, 229, 559 }, name = L["Way to the Instance Entrance"], type = "PassageDungeonRaidMulti", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Molten Core, Blackwing Lair, Blackrock Caverns, Blackrock Depths, Lower Blackrock Spire, Upper Blackrock Spire 
             nodes[32][35268404] = { mnID = 33, name = "", type = "PassageDungeon", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Molten Core, Blackwing Lair, Blackrock Caverns, Blackrock Depths, Lower Blackrock Spire, Upper Blackrock Spire 
             nodes[15][58543698] = { dnID = L["Way to the Instance Entrance"], id = 239, name = "", type = "PassageDungeon", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Uldaman (Secondary Entrance) 
             nodes[23][43251854] = { dnID = L["Way to the Instance Entrance"], id = 236, lfgid = 274, type = "PassageDungeon", showInZone = true, showOnContinent = false, showOnMinimap = false }-- Stratholme Service Entrance 
@@ -240,8 +239,8 @@ if not db.activate.HideMapNote then
           if db.activate.ClassicIcons then
 
             if self.db.profile.showZoneMultiple then
-              nodes[36][21063760] = { mnID = 33, id = { 741, 742, 66, 228, 229, 559 }, name = L["Way to the Instance Entrance"], type = "MultipleM", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Molten Core, Blackwing Lair, Blackrock Caverns, Blackrock Depths, Lower Blackrock Spire, Upper Blackrock Spire 
-              --nodes[36][21063760] = { mnID = 33, name = "", type = "MultipleM", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Molten Core, Blackwing Lair, Blackrock Caverns, Blackrock Depths, Lower Blackrock Spire, Upper Blackrock Spire 
+              nodes[36][20643322] = { mnID = 33, id = { 741, 742, 66, 228, 229, 559 }, name = L["Way to the Instance Entrance"], type = "MultipleM", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Molten Core, Blackwing Lair, Blackrock Caverns, Blackrock Depths, Lower Blackrock Spire, Upper Blackrock Spire 
+              --nodes[36][20643322] = { mnID = 33, name = "", type = "MultipleM", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Molten Core, Blackwing Lair, Blackrock Caverns, Blackrock Depths, Lower Blackrock Spire, Upper Blackrock Spire 
             end
 
             if self.db.profile.showZoneDungeons then
@@ -741,13 +740,13 @@ if not db.activate.HideMapNote then
             if self.db.profile.showZoneDungeons then
   
             -- Dungeon Nodes above Blizzards Icons to make it Clickable for maximized Maps
-              nodes[2215][41324933] = { id = 1267, type = "Dungeon", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Priory of the Sacred Flame
+              nodes[2215][36303529] = { id = 1267, type = "Dungeon", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Priory of the Sacred Flame
               nodes[2215][54906313] = { id = 1270, type = "Dungeon", showInZone = true, showOnContinent = false, showOnMinimap = false } -- The Dawnbreaker
               nodes[2214][46860856] = { id = 1269, type = "Dungeon", showInZone = true, showOnContinent = false, showOnMinimap = false } -- The Stonevault
               nodes[2248][45234108] = { id = 1268, type = "Dungeon", showInZone = true, showOnContinent = false, showOnMinimap = false } -- The Rookery
               nodes[2248][76584378] = { id = 1272, type = "Dungeon", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Cinderbrew Meadery
-              nodes[2255][48027144] = { id = 1274, type = "Dungeon", showInZone = true, showOnContinent = false, showOnMinimap = false } -- City of Threads
-              nodes[2255][50588229] = { id = 1271, type = "Dungeon", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Ara-Kara, City of Echoes
+              nodes[2255][46746345] = { id = 1274, type = "Dungeon", showInZone = true, showOnContinent = false, showOnMinimap = false } -- City of Threads
+              nodes[2255][49537528] = { id = 1271, type = "Dungeon", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Ara-Kara, City of Echoes
             end
   
   
@@ -755,7 +754,7 @@ if not db.activate.HideMapNote then
             if self.db.profile.showZoneRaids then
   
             -- Raid Nodes above Blizzards Icons to make it Clickable for maximized Maps
-              nodes[2255][45109080] = { id = 1273, type = "Raid", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Nerub-ar Palace
+              nodes[2255][43478451] = { id = 1273, type = "Raid", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Nerub-ar Palace
               nodes[2213][35047242] = { id = 1273, type = "Raid", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Nerub-ar Palace       
             end
   

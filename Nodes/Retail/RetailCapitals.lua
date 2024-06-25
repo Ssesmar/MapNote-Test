@@ -110,7 +110,7 @@ if not db.activate.HideMapNote then
                 if self.db.profile.activate.CapitalsTransporting then
 
                     if self.db.profile.showCapitalsPortals then
-                        nodes[85][57278961] = { name = "", type = "PassageHPortal", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = L["Portalroom"] .. "\n" .. "\n" .. " => " .. L["Silvermoon City"] .. "\n" .. " => " .. L["Valdrakken"] .. "\n" .. " => " .. L["Oribos"] .. "\n" .. " => " .. L["Azsuna"] .. "\n" .. " => " .. L["Zuldazar"] .. "\n" .. " => " .. DUNGEON_FLOOR_DALARANCITY1 .. "\n" .. " => " .. POSTMASTER_LETTER_HYJAL .. "\n" .. "\n" .. " => " .. DUNGEON_FLOOR_TANARIS18 .. " - " .. L["in the basement"] .. "\n" .. " => " .. L["Shattrath City"] .. " - " .. L["in the basement"] .. "\n" .. " => " .. L["Warspear"] .. " - " .. L["in the basement"] .. "\n" .. " => " .. L["Dornogal"] .. " " .. "(only PTR - Beta TWW)" .. " - " .. L["in the basement"]} -- Portalroom from Orgrimmar
+                        nodes[85][57278961] = { name = "", type = "PassageHPortal", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = L["Portalroom"] .. "\n" .. "\n" .. " => " .. L["Silvermoon City"] .. "\n" .. " => " .. L["Valdrakken"] .. "\n" .. " => " .. L["Oribos"] .. "\n" .. " => " .. L["Azsuna"] .. "\n" .. " => " .. L["Zuldazar"] .. "\n" .. " => " .. DUNGEON_FLOOR_DALARANCITY1 .. " - " .. POSTMASTER_PIPE_NORTHREND .. "\n" .. " => " .. POSTMASTER_LETTER_HYJAL .. "\n" .. "\n" .. " => " .. DUNGEON_FLOOR_TANARIS18 .. " - " .. L["in the basement"] .. "\n" .. " => " .. L["Shattrath City"] .. " - " .. L["in the basement"] .. "\n" .. " => " .. L["Warspear"] .. " - " .. L["in the basement"] .. "\n" .. " => " .. L["Dornogal"] .. " " .. "(only PTR - Beta TWW)" .. " - " .. L["in the basement"]} -- Portalroom from Orgrimmar
                         nodes[85][50765561] = { mnID = 18, name = "", type = "HPortal", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = L["Portal"] .. " => " .. L["Ruins of Lordaeron"] } -- Ruins of Lordaeron 
                         nodes[85][47393928] = { mnID = 245, name = "", type = "HPortalS", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = L["Portal"] .. " => " .. DUNGEON_FLOOR_TOLBARADWARLOCKSCENARIO0 } --  Portal to Tol Barad
                         nodes[85][48863851] = { mnID = 1527, name = "", type = "HPortalS", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = L["Portal"] .. " => " .. L["Uldum"] } -- Portal to Uldum
@@ -154,7 +154,7 @@ if not db.activate.HideMapNote then
                     if self.db.profile.showCapitalsPaths then
                         nodes[85][74800606] = { dnID = L["Exit"], name = "", mnID = 76, type = "PathRO", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Passage/Exit 
                         nodes[85][49529373] = { dnID = L["Exit"], name = "", mnID = 1, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Passage/Exit 
-                        nodes[85][23636814] = { dnID = L["Exit"], name = "", mnID = 10, type = "PathLU", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Passage/Exit 
+                        nodes[85][20187080] = { dnID = L["Exit"], name = "", mnID = 10, type = "PathLU", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Passage/Exit 
                         nodes[86][78691478] = { dnID = L["Passage"], name = "", mnID = 85, type = "PathR", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Passage/Exit 
                         nodes[86][34209104] = { dnID = L["Passage"], name = "", mnID = 85, type = "PathRU", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Passage/Exit 
                         nodes[86][22856905] = { dnID = L["Passage"], name = "", mnID = 85, type = "PathLO", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Passage/Exit 
@@ -294,6 +294,7 @@ if not db.activate.HideMapNote then
 
                     if self.db.profile.showCapitalsInscription then
                         nodes[88][28812071] = { name = INSCRIPTION, type = "Inscription", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                        nodes[88][30323012] = { name = L["Passage"] .. " " .. MINIMAP_TRACKING_TRAINER_PROFESSION, type = "PassageLeftL", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName =  INSCRIPTION }
                     end
 
                 end
@@ -311,9 +312,10 @@ if not db.activate.HideMapNote then
                 if self.db.profile.activate.CapitalsGeneral then
     
                     if self.db.profile.showCapitalsPaths then
-                        nodes[88][31886595] = { dnID = L["Exit"], name = "", mnID = 7, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                        nodes[88][31456256] = { dnID = L["Exit"], name = "", mnID = 7, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                        nodes[88][30323012] = { name = L["Passage"] .. " " .. MINIMAP_TRACKING_TRAINER_PROFESSION, type = "PathO", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName =  INSCRIPTION }
+                        nodes[88][52232561] = { dnID = L["Exit"], name = "", mnID = 7, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                        nodes[88][54632715] = { dnID = L["Exit"], name = "", mnID = 7, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                        nodes[88][31716595] = { dnID = L["Exit"], name = "", mnID = 7, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                        nodes[88][31236257] = { dnID = L["Exit"], name = "", mnID = 7, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     end
 
                     if self.db.profile.showCapitalsInnkeeper then
@@ -477,6 +479,8 @@ if not db.activate.HideMapNote then
 
                     if self.db.profile.showCapitalsAlchemy then
                         nodes[90][47757332] = { name = L["Alchemy"], type = "Alchemy", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                        nodes[90][52947737] = { name = L["Passage"] .. " " .. MINIMAP_TRACKING_TRAINER_PROFESSION, type = "PassageLeftL", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName =  L["Alchemy"] }
+                        nodes[90][44626639] = { name = L["Passage"] .. " " .. MINIMAP_TRACKING_TRAINER_PROFESSION, type = "PassageLeftL", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName =  L["Alchemy"] }
                     end
                 
                     if self.db.profile.showCapitalsLeatherworking then
@@ -552,8 +556,6 @@ if not db.activate.HideMapNote then
                         nodes[90][65865202] = { dnID = DUNGEON_FLOOR_GILNEAS3 .. " => " .. DUNGEON_FLOOR_GILNEAS2 .. "\n" ..  DUNGEON_FLOOR_GILNEAS2 .. " => " .. DUNGEON_FLOOR_GILNEAS3, name = "", type = "PathO", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Passage/Exit 
                         nodes[90][60584399] = { dnID = DUNGEON_FLOOR_GILNEAS3 .. " => " .. DUNGEON_FLOOR_GILNEAS2 .. "\n" ..  DUNGEON_FLOOR_GILNEAS2 .. " => " .. DUNGEON_FLOOR_GILNEAS3, name = "", type = "PathO", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Passage/Exit 
                         nodes[90][71294410] = { dnID = DUNGEON_FLOOR_GILNEAS3 .. " => " .. DUNGEON_FLOOR_GILNEAS2 .. "\n" ..  DUNGEON_FLOOR_GILNEAS2 .. " => " .. DUNGEON_FLOOR_GILNEAS3, name = "", type = "PathO", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Passage/Exit 
-                        nodes[90][52947737] = { name = L["Passage"] .. " " .. MINIMAP_TRACKING_TRAINER_PROFESSION, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName =  L["Alchemy"] }
-                        nodes[90][44626639] = { name = L["Passage"] .. " " .. MINIMAP_TRACKING_TRAINER_PROFESSION, type = "PathLU", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName =  L["Alchemy"] }
                     end
 
                     if self.db.profile.showCapitalsInnkeeper then
@@ -850,17 +852,18 @@ if not db.activate.HideMapNote then
                         nodes[1165][57851053] = { dnID = L["Exit"], name = "", mnID = 862, type = "PathO", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Passage/Exit 
                         nodes[1165][60526367] = { dnID = L["Exit"], name = "", mnID = 862, type = "PathRO", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Passage/Exit 
                         nodes[1165][44423697] = { name = L["Passage"] .. " " .. MINIMAP_TRACKING_TRAINER_PROFESSION, type = "PathR", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName =  L["Jewelcrafting"] .. "\n" .. L["Enchanting"] }
-                        nodes[1163][20962819] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS3, mnID = 1164, type = "PathO", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = PROFESSIONS_COOKING .. "\n" .. RAID_FINDER } -- Passage/Exit 
+                        nodes[1163][20962819] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS3, mnID = 1164, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = PROFESSIONS_COOKING .. "\n" .. RAID_FINDER } -- Passage/Exit 
+                        nodes[1163][76532819] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS3, mnID = 1164, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = PROFESSIONS_COOKING .. "\n" .. RAID_FINDER } -- Passage/Exit 
                         nodes[1163][43888227] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS3, mnID = 1164, type = "PathL", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = PROFESSIONS_COOKING .. "\n" .. RAID_FINDER } -- Passage/Exit 
                         nodes[1163][53458227] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS3, mnID = 1164, type = "PathR", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = PROFESSIONS_COOKING .. "\n" .. RAID_FINDER } -- Passage/Exit 
-                        nodes[1163][41524702] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS3, mnID = 1164, type = "PathO", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = PROFESSIONS_COOKING .. "\n" .. RAID_FINDER } -- Passage/Exit 
-                        nodes[1163][55184702] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS3, mnID = 1164, type = "PathO", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = PROFESSIONS_COOKING .. "\n" .. RAID_FINDER } -- Passage/Exit 
+                        nodes[1163][41524702] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS3, mnID = 1164, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = PROFESSIONS_COOKING .. "\n" .. RAID_FINDER } -- Passage/Exit 
+                        nodes[1163][55184702] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS3, mnID = 1164, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = PROFESSIONS_COOKING .. "\n" .. RAID_FINDER } -- Passage/Exit 
                         nodes[1164][42158227] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS2, mnID = 1163, type = "PathR", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = L["Portals"] .. "\n" .. BANK .. " / " .. GUILD_BANK .."\n" .. MINIMAP_TRACKING_INNKEEPER .."\n" .. INSCRIPTION .."\n" .. PROFESSIONS_ARCHAEOLOGY } -- Passage/Exit 
                         nodes[1164][54398227] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS2, mnID = 1163, type = "PathL", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = L["Portals"] .. "\n" .. BANK .. " / " .. GUILD_BANK .."\n" .. MINIMAP_TRACKING_INNKEEPER .."\n" .. INSCRIPTION .."\n" .. PROFESSIONS_ARCHAEOLOGY } -- Passage/Exit 
-                        nodes[1164][76683848] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS2, mnID = 1163, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = L["Portals"] .. "\n" .. BANK .. " / " .. GUILD_BANK .."\n" .. MINIMAP_TRACKING_INNKEEPER .."\n" .. INSCRIPTION .."\n" .. PROFESSIONS_ARCHAEOLOGY } -- Passage/Exit 
-                        nodes[1164][20803895] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS2, mnID = 1163, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = L["Portals"] .. "\n" .. BANK .. " / " .. GUILD_BANK .."\n" .. MINIMAP_TRACKING_INNKEEPER .."\n" .. INSCRIPTION .."\n" .. PROFESSIONS_ARCHAEOLOGY } -- Passage/Exit 
-                        nodes[1164][40905331] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS2, mnID = 1163, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = L["Portals"] .. "\n" .. BANK .. " / " .. GUILD_BANK .."\n" .. MINIMAP_TRACKING_INNKEEPER .."\n" .. INSCRIPTION .."\n" .. PROFESSIONS_ARCHAEOLOGY } -- Passage/Exit 
-                        nodes[1164][56435354] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS2, mnID = 1163, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = L["Portals"] .. "\n" .. BANK .. " / " .. GUILD_BANK .."\n" .. MINIMAP_TRACKING_INNKEEPER .."\n" .. INSCRIPTION .."\n" .. PROFESSIONS_ARCHAEOLOGY } -- Passage/Exit 
+                        nodes[1164][76683848] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS2, mnID = 1163, type = "PathO", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = L["Portals"] .. "\n" .. BANK .. " / " .. GUILD_BANK .."\n" .. MINIMAP_TRACKING_INNKEEPER .."\n" .. INSCRIPTION .."\n" .. PROFESSIONS_ARCHAEOLOGY } -- Passage/Exit 
+                        nodes[1164][20803895] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS2, mnID = 1163, type = "PathO", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = L["Portals"] .. "\n" .. BANK .. " / " .. GUILD_BANK .."\n" .. MINIMAP_TRACKING_INNKEEPER .."\n" .. INSCRIPTION .."\n" .. PROFESSIONS_ARCHAEOLOGY } -- Passage/Exit 
+                        nodes[1164][40905331] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS2, mnID = 1163, type = "PathO", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = L["Portals"] .. "\n" .. BANK .. " / " .. GUILD_BANK .."\n" .. MINIMAP_TRACKING_INNKEEPER .."\n" .. INSCRIPTION .."\n" .. PROFESSIONS_ARCHAEOLOGY } -- Passage/Exit 
+                        nodes[1164][56435354] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS2, mnID = 1163, type = "PathO", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = L["Portals"] .. "\n" .. BANK .. " / " .. GUILD_BANK .."\n" .. MINIMAP_TRACKING_INNKEEPER .."\n" .. INSCRIPTION .."\n" .. PROFESSIONS_ARCHAEOLOGY } -- Passage/Exit 
                         nodes[1164][22677175] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS3, mnID = 1165, type = "PathO", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Passage/Exit 
                         nodes[1164][74017175] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS3, mnID = 1165, type = "PathO", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Passage/Exit 
                     end
@@ -950,14 +953,14 @@ if not db.activate.HideMapNote then
                         nodes[391][26778156] = { name = L["Exit"], mnID = 390, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false }
                         nodes[391][53618846] = { name = L["Exit"], mnID = 390, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false }
                         nodes[391][77476963] = { name = L["Exit"], mnID = 390, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                        nodes[391][78084452] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS3, mnID = 392, type = "PathO", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = "\n" .. BANK .. "\n" .. GUILD_BANK .. "\n" .. L["Portal"] .. " => " .. ORGRIMMAR }
-                        nodes[391][22245623] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS3, mnID = 392, type = "PathO", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = "\n" .. BANK .. "\n" .. GUILD_BANK .. "\n" .. L["Portal"] .. " => " .. ORGRIMMAR }
+                        nodes[391][78084452] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS3, mnID = 392, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = "\n" .. BANK .. "\n" .. GUILD_BANK .. "\n" .. L["Portal"] .. " => " .. ORGRIMMAR }
+                        nodes[391][22245623] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS3, mnID = 392, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = "\n" .. BANK .. "\n" .. GUILD_BANK .. "\n" .. L["Portal"] .. " => " .. ORGRIMMAR }
                         nodes[391][36972301] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS3, mnID = 392, type = "PathO", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = "\n" .. BANK .. "\n" .. GUILD_BANK .. "\n" .. L["Portal"] .. " => " .. ORGRIMMAR }
                         nodes[391][57691948] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS3, mnID = 392, type = "PathO", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = "\n" .. BANK .. "\n" .. GUILD_BANK .. "\n" .. L["Portal"] .. " => " .. ORGRIMMAR }
                         nodes[392][55653047] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS2, mnID = 391, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = "\n" .. BUTTON_LAG_AUCTIONHOUSE .. " " .. REQUIRES_LABEL .. " " .. L["Engineer"] .. "\n" .. MINIMAP_TRACKING_INNKEEPER .. "\n" .. L["Engineer"] .. "\n" .. L["Blacksmithing"] }
                         nodes[392][37913400] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS2, mnID = 391, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = "\n" .. BUTTON_LAG_AUCTIONHOUSE .. " " .. REQUIRES_LABEL .. " " .. L["Engineer"] .. "\n" .. MINIMAP_TRACKING_INNKEEPER .. "\n" .. L["Engineer"] .. "\n" .. L["Blacksmithing"] }
-                        nodes[392][27407968] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS2, mnID = 391, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = "\n" .. BUTTON_LAG_AUCTIONHOUSE .. " " .. REQUIRES_LABEL .. " " .. L["Engineer"] .. "\n" .. MINIMAP_TRACKING_INNKEEPER .. "\n" .. L["Engineer"] .. "\n" .. L["Blacksmithing"] }
-                        nodes[392][74176908] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS2, mnID = 391, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = "\n" .. BUTTON_LAG_AUCTIONHOUSE .. " " .. REQUIRES_LABEL .. " " .. L["Engineer"] .. "\n" .. MINIMAP_TRACKING_INNKEEPER .. "\n" .. L["Engineer"] .. "\n" .. L["Blacksmithing"] }
+                        nodes[392][27407968] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS2, mnID = 391, type = "PathO", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = "\n" .. BUTTON_LAG_AUCTIONHOUSE .. " " .. REQUIRES_LABEL .. " " .. L["Engineer"] .. "\n" .. MINIMAP_TRACKING_INNKEEPER .. "\n" .. L["Engineer"] .. "\n" .. L["Blacksmithing"] }
+                        nodes[392][74176908] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS2, mnID = 391, type = "PathO", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = "\n" .. BUTTON_LAG_AUCTIONHOUSE .. " " .. REQUIRES_LABEL .. " " .. L["Engineer"] .. "\n" .. MINIMAP_TRACKING_INNKEEPER .. "\n" .. L["Engineer"] .. "\n" .. L["Blacksmithing"] }
                     end
 
                     if self.db.profile.showCapitalsInnkeeper then
@@ -1850,14 +1853,14 @@ if not db.activate.HideMapNote then
                         nodes[393][24265267] = { name = L["Exit"], mnID = 390, type = "PathLO", showInZone = true, showOnContinent = false, showOnMinimap = false }
                         nodes[393][60201547] = { name = L["Exit"], mnID = 390, type = "PathLO", showInZone = true, showOnContinent = false, showOnMinimap = false }
                         nodes[393][37762459] = { name = L["Exit"], mnID = 390, type = "PathLO", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                        nodes[393][70883384] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS3, mnID = 394, type = "PathO", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = "\n" .. BANK .. "\n" .. GUILD_BANK .. "\n" .. L["Portal"] .. " => " .. STORMWIND }
-                        nodes[393][54048271] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS3, mnID = 394, type = "PathO", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = "\n" .. BANK .. "\n" .. GUILD_BANK .. "\n" .. L["Portal"] .. " => " .. STORMWIND }
-                        nodes[393][67926633] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS3, mnID = 394, type = "PathO", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = "\n" .. BANK .. "\n" .. GUILD_BANK .. "\n" .. L["Portal"] .. " => " .. STORMWIND }
-                        nodes[393][32697602] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS3, mnID = 394, type = "PathO", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = "\n" .. BANK .. "\n" .. GUILD_BANK .. "\n" .. L["Portal"] .. " => " .. STORMWIND }
-                        nodes[394][55347175] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS2, mnID = 393, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = "\n" .. BUTTON_LAG_AUCTIONHOUSE .. " " .. REQUIRES_LABEL .. " " .. L["Engineer"] .. "\n" .. MINIMAP_TRACKING_INNKEEPER .. "\n" .. L["Blacksmithing"] }
-                        nodes[394][67115809] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS2, mnID = 393, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = "\n" .. BUTTON_LAG_AUCTIONHOUSE .. " " .. REQUIRES_LABEL .. " " .. L["Engineer"] .. "\n" .. MINIMAP_TRACKING_INNKEEPER .. "\n" .. L["Blacksmithing"] }
-                        nodes[394][31955456] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS2, mnID = 393, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = "\n" .. BUTTON_LAG_AUCTIONHOUSE .. " " .. REQUIRES_LABEL .. " " .. L["Engineer"] .. "\n" .. MINIMAP_TRACKING_INNKEEPER .. "\n" .. L["Blacksmithing"] }
-                        nodes[394][63182065] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS2, mnID = 393, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = "\n" .. BUTTON_LAG_AUCTIONHOUSE .. " " .. REQUIRES_LABEL .. " " .. L["Engineer"] .. "\n" .. MINIMAP_TRACKING_INNKEEPER .. "\n" .. L["Blacksmithing"] }
+                        nodes[393][70883384] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS3, mnID = 394, type = "PathLO", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = "\n" .. BANK .. "\n" .. GUILD_BANK .. "\n" .. L["Portal"] .. " => " .. STORMWIND }
+                        nodes[393][54048271] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS3, mnID = 394, type = "PathRU", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = "\n" .. BANK .. "\n" .. GUILD_BANK .. "\n" .. L["Portal"] .. " => " .. STORMWIND }
+                        nodes[393][67926633] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS3, mnID = 394, type = "PathRU", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = "\n" .. BANK .. "\n" .. GUILD_BANK .. "\n" .. L["Portal"] .. " => " .. STORMWIND }
+                        nodes[393][32697602] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS3, mnID = 394, type = "PathLO", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = "\n" .. BANK .. "\n" .. GUILD_BANK .. "\n" .. L["Portal"] .. " => " .. STORMWIND }
+                        nodes[394][55347175] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS2, mnID = 393, type = "PathLO", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = "\n" .. BUTTON_LAG_AUCTIONHOUSE .. " " .. REQUIRES_LABEL .. " " .. L["Engineer"] .. "\n" .. MINIMAP_TRACKING_INNKEEPER .. "\n" .. L["Blacksmithing"] }
+                        nodes[394][67115809] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS2, mnID = 393, type = "PathLO", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = "\n" .. BUTTON_LAG_AUCTIONHOUSE .. " " .. REQUIRES_LABEL .. " " .. L["Engineer"] .. "\n" .. MINIMAP_TRACKING_INNKEEPER .. "\n" .. L["Blacksmithing"] }
+                        nodes[394][31955456] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS2, mnID = 393, type = "PathRU", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = "\n" .. BUTTON_LAG_AUCTIONHOUSE .. " " .. REQUIRES_LABEL .. " " .. L["Engineer"] .. "\n" .. MINIMAP_TRACKING_INNKEEPER .. "\n" .. L["Blacksmithing"] }
+                        nodes[394][63182065] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS2, mnID = 393, type = "PathRU", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = "\n" .. BUTTON_LAG_AUCTIONHOUSE .. " " .. REQUIRES_LABEL .. " " .. L["Engineer"] .. "\n" .. MINIMAP_TRACKING_INNKEEPER .. "\n" .. L["Blacksmithing"] }
                     end
 
                     if self.db.profile.showCapitalsInnkeeper then
@@ -2117,10 +2120,10 @@ if not db.activate.HideMapNote then
 
                 if self.db.profile.showCapitalsPaths then
                     nodes[126][11648435] = { name = L["Exit"], mnID = 127, type = "PathLU", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                    nodes[126][25044295] = { name = "", mnID = 125, TransportName = L["Passage"] .. "\n" .. " => " .. DUNGEON_FLOOR_DALARAN1, type = "PathO", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                    nodes[126][66484766] = { name = "", mnID = 125, TransportName = L["Passage"] .. "\n" .. " => " .. DUNGEON_FLOOR_DALARAN1, type = "PathO", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                    nodes[125][35294528] = { name = "", mnID = 126, TransportName = L["Passage"] .. "\n" .. " => " .. DUNGEON_FLOOR_DALARAN2, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                    nodes[125][60294758] = { name = L["Passage"] .. " => " .. DUNGEON_FLOOR_DALARAN2, mnID = 126, TransportName = TRANSMOG_SET_PVP .. "" .. SLASH_EQUIP_SET1, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[126][25044295] = { name = "", mnID = 125, TransportName = L["Passage"] .. "\n" .. " => " .. DUNGEON_FLOOR_DALARAN1, type = "PathR", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[126][66484766] = { name = "", mnID = 125, TransportName = L["Passage"] .. "\n" .. " => " .. DUNGEON_FLOOR_DALARAN1, type = "PathLO", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[125][35294528] = { name = "", mnID = 126, TransportName = L["Passage"] .. "\n" .. " => " .. DUNGEON_FLOOR_DALARAN2, type = "PathL", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[125][60294758] = { name = L["Passage"] .. " => " .. DUNGEON_FLOOR_DALARAN2, mnID = 126, TransportName = TRANSMOG_SET_PVP .. "" .. SLASH_EQUIP_SET1, type = "PathRU", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[125][48343243] = { name = L["Passage"] .. " => " .. DUNGEON_FLOOR_DALARAN2, mnID = 126, TransportName = TRANSMOG_SET_PVP .. "" .. SLASH_EQUIP_SET1, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 end
 
@@ -2320,10 +2323,11 @@ if not db.activate.HideMapNote then
                 end
 
                 if self.db.profile.showCapitalsPaths then
-                    nodes[627][34664554] = { name = "", mnID = 628, TransportName = L["Passage"] .. "\n" .. " => " .. DUNGEON_FLOOR_DALARAN2, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                    nodes[627][59714771] = { name = "", mnID = 628, TransportName = L["Passage"] .. "\n" .. " => " .. DUNGEON_FLOOR_DALARAN2, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                    nodes[628][75586445] = { name = "", mnID = 627, TransportName = L["Passage"] .. "\n" .. " => " .. DUNGEON_FLOOR_DALARAN1, type = "PathO", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                    nodes[628][22375738] = { name = "", mnID = 627, TransportName = L["Passage"] .. "\n" .. " => " .. DUNGEON_FLOOR_DALARAN1, type = "PathO", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[627][34664554] = { name = "", mnID = 628, TransportName = L["Passage"] .. "\n" .. " => " .. DUNGEON_FLOOR_DALARAN2, type = "PathL", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[627][59714771] = { name = "", mnID = 628, TransportName = L["Passage"] .. "\n" .. " => " .. DUNGEON_FLOOR_DALARAN2, type = "PathRU", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[628][73076461] = { name = "", mnID = 627, TransportName = L["Passage"] .. "\n" .. " => " .. DUNGEON_FLOOR_DALARAN1, type = "PathRU", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[628][27815332] = { name = "", mnID = 627, TransportName = L["Passage"] .. "\n" .. " => " .. DUNGEON_FLOOR_DALARAN1, type = "PathL", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[627][48343243] = { name = L["Passage"] .. " => " .. DUNGEON_FLOOR_DALARAN2, mnID = 628, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 end
 
                 if self.db.profile.showCapitalsAuctioneer then
@@ -2937,8 +2941,8 @@ if not db.activate.HideMapNote then
                 if self.db.profile.showCapitalsPortals then
 
                     if db.activate.CapitalsEnemyFaction then
-                        nodes[407][51412247] = { name = L["Exit"], type = "Portal", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = FACTION_HORDE .. " => " .. DUNGEON_FLOOR_NIGHTMARERAID3 .. "\n" .. FACTION_ALLIANCE .. " => " .. POSTMASTER_LETTER_ELWYNNFOREST}
-                        nodes[407][50549077] = { name = L["Exit"], type = "Portal", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = FACTION_HORDE .. " => " .. DUNGEON_FLOOR_NIGHTMARERAID3 .. "\n" .. FACTION_ALLIANCE .. " => " .. POSTMASTER_LETTER_ELWYNNFOREST}
+                        nodes[407][51412247] = { name = L["Exit"], type = "Portal", mnID = 7, mnID2 = 37, showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = FACTION_HORDE .. " => " .. DUNGEON_FLOOR_NIGHTMARERAID3 .. "\n" .. FACTION_ALLIANCE .. " => " .. POSTMASTER_LETTER_ELWYNNFOREST }
+                        nodes[407][50549077] = { name = L["Exit"], type = "Portal", mnID = 7, mnID2 = 37, showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = FACTION_HORDE .. " => " .. DUNGEON_FLOOR_NIGHTMARERAID3 .. "\n" .. FACTION_ALLIANCE .. " => " .. POSTMASTER_LETTER_ELWYNNFOREST }
                     end
                 
                     if self.faction == "Horde" and not db.activate.CapitalsEnemyFaction then

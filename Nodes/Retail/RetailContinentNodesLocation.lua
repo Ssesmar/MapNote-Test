@@ -345,6 +345,7 @@ if not db.activate.HideMapNote then
 
         --Eastern Kingdom Ships
           if self.db.profile.showContinentShips then
+            nodes[13][41115043] = { mnID = 217, name = "", type = "Ship", showOnContinent = true, showInZone = false, showOnMinimap = false, TransportName = L["Ruins of Gilneas"] .. " " .. L["Ship"] .. "\n" .. " => " .. L["Bel'ameth, Amirdrassil"] } -- Ship from Gilneas to Bel ameth
             nodes[13][42379354] = { mnID = 210, name = "", type = "Ship", showOnContinent = true, showInZone = false, showOnMinimap = false, TransportName = POSTMASTER_LETTER_STRANGLETHORNVALE .. " " .. L["Ship"] .. "\n" .. " => " .. L["Ratchet"] } -- Ship from Booty Bay to Ratchet
             
             if self.faction == "Alliance" or db.activate.EnemyFaction then
@@ -998,7 +999,8 @@ if not db.activate.HideMapNote then
     
         -- Dragonflight Ships
           if self.db.profile.showContinentShips then
-    
+            nodes[1978][24105048] = { mnID = 217, name = "", type = "Ship", showOnContinent = true, showInZone = false, showOnMinimap = false, TransportName = L["Bel'ameth, Amirdrassil"] .. " " .. L["Ship"] .. "\n" .. " => " .. L["Ruins of Gilneas"] } -- Ship from Amirdrassil to Gilneas
+
             if self.faction == "Alliance" or db.activate.EnemyFaction then
               nodes[1978][59732701] = { mnID = 84, name = "", type = "AShip", showOnContinent = true, showInZone = false, showOnMinimap = false, TransportName = L["Ship"] .. " => " .. STORMWIND } -- Ship from The Waking Shores to Stormwind
             end
@@ -1014,26 +1016,26 @@ if not db.activate.HideMapNote then
     
           -- Khaz Algar Dungeons
             if self.db.profile.showContinentDungeons then
-              nodes[2274][53375179] = { id = 1267, type = "Dungeon", showOnContinent = true, showInZone = false, showOnMinimap = false } -- Priory of the Sacred Flame
-              nodes[2274][59115739] = { id = 1270, type = "Dungeon", showOnContinent = true, showInZone = false, showOnMinimap = false } -- The Dawnbreaker
-              nodes[2274][72314275] = { id = 1269, type = "Dungeon", showOnContinent = true, showInZone = false, showOnMinimap = false } -- The Stonevault
-              nodes[2274][38511952] = { id = 1268, type = "Dungeon", showOnContinent = true, showInZone = false, showOnMinimap = false } -- The Rookery
-              nodes[2274][51512088] = { id = 1272, type = "Dungeon", showOnContinent = true, showInZone = false, showOnMinimap = false } -- Cinderbrew Meadery
-              nodes[2274][62418027] = { id = 1274, type = "Dungeon", showOnContinent = true, showInZone = false, showOnMinimap = false } -- City of Threads
-              nodes[2274][63418429] = { id = 1271, type = "Dungeon", showOnContinent = true, showInZone = false, showOnMinimap = false } -- Ara-Kara, City of Echoes
+              nodes[2274][33294827] = { id = 1267, type = "Dungeon", showOnContinent = true, showInZone = true, showOnMinimap = false } -- Priory of the Sacred Flame
+              nodes[2274][40465803] = { id = 1270, type = "Dungeon", showOnContinent = true, showInZone = true, showOnMinimap = false } -- The Dawnbreaker
+              nodes[2274][52514448] = { id = 1269, type = "Dungeon", showOnContinent = true, showInZone = true, showOnMinimap = false } -- The Stonevault
+              nodes[2274][70301908] = { id = 1268, type = "Dungeon", showOnContinent = true, showInZone = true, showOnMinimap = false } -- The Rookery
+              nodes[2274][84362059] = { id = 1272, type = "Dungeon", showOnContinent = true, showInZone = true, showOnMinimap = false } -- Cinderbrew Meadery
+              nodes[2274][43337984] = { id = 1274, type = "Dungeon", showOnContinent = true, showInZone = true, showOnMinimap = false } -- City of Threads
+              nodes[2274][44338372] = { id = 1271, type = "Dungeon", showOnContinent = true, showInZone = true, showOnMinimap = false } -- Ara-Kara, City of Echoes
             end
       
       
           -- Khaz Algar Raids
             if self.db.profile.showContinentRaids then
-              nodes[2274][61128737] = { id = 1273, type = "Raid"}  -- Nerub-ar Palace
+              nodes[2274][42188673] = { id = 1273, type = "Raid"}  -- Nerub-ar Palace
               --nodes[2274][61268752] = { id = 1273, type = "Raid", showOnContinent = true, showInZone = false, showOnMinimap = false } -- Nerub-ar Palace     
             end
 
 
           -- Khaz Algar RemoveBlizzPOIs
             if db.activate.RemoveBlizzPOIs then
-              nodes[2274][40382138] = { mnID = 2339, name = "", type = "MNL", showOnContinent = true, showInZone = false, showOnMinimap = false, TransportName = L["Dornogal"] .. " - " .. FACTION_NEUTRAL .. "\n" .. "\n" .. L["Portals"] .. "\n" .. " => " .. ORGRIMMAR .. "\n" .. " => " .. STORMWIND .. "\n" .. "\n" .. CALENDAR_TYPE_DUNGEON .. "\n" .. " => " .. "The Rookery" } -- Dornogal
+              nodes[2274][72311951] = { mnID = 2339, name = "", type = "MNL", showOnContinent = true, showInZone = false, showOnMinimap = false, TransportName = L["Dornogal"] .. " - " .. FACTION_NEUTRAL .. "\n" .. "\n" .. L["Portals"] .. "\n" .. " => " .. ORGRIMMAR .. "\n" .. " => " .. STORMWIND .. "\n" .. "\n" .. CALENDAR_TYPE_DUNGEON .. "\n" .. " => " .. "The Rookery" } -- Dornogal
 
               if self.faction == "Horde" or db.activate.EnemyFaction then
 
@@ -1047,7 +1049,7 @@ if not db.activate.HideMapNote then
       
           -- Khaz Algar Portals
             if self.db.profile.showContinentPortals then
-              nodes[2274][39161861] = { mnID = 2339, name = "", type = "Portal", showOnContinent = true, showInZone = false, showOnMinimap = false, TransportName = L["Portals"] .. "\n" ..  "\n" .. " => " .. STORMWIND .. "\n" .. " => " .. ORGRIMMAR } --  Isle of Dorn Portals
+              nodes[2274][70881758] = { mnID = 2339, name = "", type = "Portal", showOnContinent = true, showInZone = false, showOnMinimap = false, TransportName = L["Portals"] .. "\n" ..  "\n" .. " => " .. STORMWIND .. "\n" .. " => " .. ORGRIMMAR } --  Isle of Dorn Portals
       
               if self.faction == "Horde" or db.activate.EnemyFaction then
   

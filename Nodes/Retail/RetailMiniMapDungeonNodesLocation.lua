@@ -38,7 +38,6 @@ if not db.activate.HideMapNote then
             minimap[10][40496868] = { id = 240, type = "Dungeon", showInZone = false, showOnContinent = false, showOnMinimap = true } -- Wailing Caverns
             minimap[7][79421794] = { id = 240, type = "Dungeon", showInZone = false, showOnContinent = false, showOnMinimap = true } -- Wailing Caverns
             minimap[199][46952074] = { id = 240, type = "Dungeon", showInZone = false, showOnContinent = false, showOnMinimap = true } -- Wailing Caverns
-            minimap[69][59514032] = { id = 230, type = "Dungeon", showInZone = false, showOnContinent = false, showOnMinimap = true } -- Dire Maul
             minimap[199][40779446] = { id = 234, type = "Dungeon", showInZone = false, showOnContinent = false, showOnMinimap = true } -- Razorfen Kraul
             minimap[199][51899825] = { id = 233, type = "Dungeon", showInZone = false, showOnContinent = false, showOnMinimap = true } -- Razorfen Downs
             minimap[70][13176945] = { id = 234, type = "Dungeon", showInZone = false, showOnContinent = false, showOnMinimap = true } -- Razorfen Kraul
@@ -62,6 +61,9 @@ if not db.activate.HideMapNote then
             minimap[1527][69095283] = { id = 70, type = "Dungeon", showInZone = false, showOnContinent = false, showOnMinimap = true } -- Halls of Origination
             minimap[71][24619233] = { id = 70, type = "Dungeon", showInZone = false, showOnContinent = false, showOnMinimap = true } -- Halls of Origination
             minimap[1527][76708435] = { id = 68, type = "Dungeon", showInZone = false, showOnContinent = false, showOnMinimap = true } -- The Vortex Pinnacle
+            minimap[69][76453593] = { id = 230, lfgid = 34, type = "Dungeon", showInZone = false, showOnContinent = false, showOnMinimap = true } -- Dire Maul - Warpwood Quarter - East above Camp Mojache -- only Minimap
+            minimap[69][66773483] = { id = 230, lfgid = 34, type = "Dungeon", showInZone = false, showOnContinent = false, showOnMinimap = true } -- Dire Maul - Warpwood Quarter - East above Camp Mojache -- only Minimap
+
           end
 
         -- Kalimdor Dungeons without ClassicIcons is activ
@@ -194,6 +196,7 @@ if not db.activate.HideMapNote then
             minimap[35][39281819] = { id = 228, type = "Dungeon", showInZone = false, showOnContinent = false, showOnMinimap = true } -- Blackrock Depths
             minimap[30][29507480] = { id = 231, type = "Dungeon", showInZone = false, showOnContinent = false, showOnMinimap = true } -- Gnomeregan
             minimap[30][42311288] = { id = 231, type = "Dungeon", showInZone = false, showOnContinent = false, showOnMinimap = true } -- Gnomeregan
+            minimap[30][71245337] = { id = 66, type = "Dungeon", showInZone = false, showOnContinent = false, showOnMinimap = true } -- Blackrock Caverns
           end
 
 
@@ -221,7 +224,7 @@ if not db.activate.HideMapNote then
             minimap[469][32793702] = { mnID = 30, dnID = L["Way to the Instance Entrance"], id = 231, type = "PassageDungeon", showInZone = false, showOnContinent = false, showOnMinimap = true } -- Gnomeregan
             minimap[27][31393804] = { mnID = 30, dnID = L["Way to the Instance Entrance"], id = 231, type = "PassageDungeon", showInZone = false, showOnContinent = false, showOnMinimap = true } -- Gnomeregan     
             minimap[51][69675353] = { dnID = L["Way to the Instance Entrance"], id = 237, type = "PassageDungeon", showInZone = false, showOnContinent = false, showOnMinimap = true } -- The Temple of Atal'hakkar 
-            minimap[36][21063760] = { mnID = 33, id = { 741, 742, 66, 228, 229, 559 }, name = L["Way to the Instance Entrance"], type = "PassageDungeonRaidMulti", showInZone = false, showOnContinent = false, showOnMinimap = true } -- Molten Core, Blackwing Lair, Blackrock Caverns, Blackrock Depths, Lower Blackrock Spire, Upper Blackrock Spire 
+            minimap[36][20643322] = { mnID = 33, id = { 741, 742, 66, 228, 229, 559 }, name = L["Way to the Instance Entrance"], type = "PassageDungeonRaidMulti", showInZone = false, showOnContinent = false, showOnMinimap = true } -- Molten Core, Blackwing Lair, Blackrock Caverns, Blackrock Depths, Lower Blackrock Spire, Upper Blackrock Spire 
             minimap[32][35268404] = { mnID = 33, name = "", type = "PassageDungeon", showInZone = false, showOnContinent = false, showOnMinimap = true } -- Molten Core, Blackwing Lair, Blackrock Caverns, Blackrock Depths, Lower Blackrock Spire, Upper Blackrock Spire 
             minimap[15][58543698] = { dnID = L["Way to the Instance Entrance"], id = 239, name = "", type = "PassageDungeon", showInZone = false, showOnContinent = false, showOnMinimap = true } -- Uldaman (Secondary Entrance) 
             minimap[23][43251854] = { dnID = L["Way to the Instance Entrance"], id = 236, lfgid = 274, type = "PassageDungeon", showInZone = false, showOnContinent = false, showOnMinimap = true }-- Stratholme Service Entrance 
@@ -240,8 +243,8 @@ if not db.activate.HideMapNote then
           if db.activate.ClassicIcons then
 
             if self.db.profile.showMiniMapMultiple then
-              minimap[36][21063760] = { mnID = 33, id = { 741, 742, 66, 228, 229, 559 }, name = L["Way to the Instance Entrance"], type = "MultipleM", showInZone = false, showOnContinent = false, showOnMinimap = true } -- Molten Core, Blackwing Lair, Blackrock Caverns, Blackrock Depths, Lower Blackrock Spire, Upper Blackrock Spire 
-              --minimap[36][21063760] = { mnID = 33, name = "", type = "MultipleM", showInZone = false, showOnContinent = false, showOnMinimap = true } -- Molten Core, Blackwing Lair, Blackrock Caverns, Blackrock Depths, Lower Blackrock Spire, Upper Blackrock Spire 
+              minimap[36][20643322] = { mnID = 33, id = { 741, 742, 66, 228, 229, 559 }, name = L["Way to the Instance Entrance"], type = "MultipleM", showInZone = false, showOnContinent = false, showOnMinimap = true } -- Molten Core, Blackwing Lair, Blackrock Caverns, Blackrock Depths, Lower Blackrock Spire, Upper Blackrock Spire 
+              --minimap[36][20643322] = { mnID = 33, name = "", type = "MultipleM", showInZone = false, showOnContinent = false, showOnMinimap = true } -- Molten Core, Blackwing Lair, Blackrock Caverns, Blackrock Depths, Lower Blackrock Spire, Upper Blackrock Spire 
             end
 
             if self.db.profile.showMiniMapDungeons then
@@ -716,13 +719,13 @@ if not db.activate.HideMapNote then
             if self.db.profile.showMiniMapDungeons then
   
             -- Dungeon minimap above Blizzards Icons to make it Clickable for maximized Maps
-            minimap[2215][41324933] = { id = 1267, type = "Dungeon", showInZone = false, showOnContinent = false, showOnMinimap = true } -- Priory of the Sacred Flame
+            minimap[2215][36303529] = { id = 1267, type = "Dungeon", showInZone = false, showOnContinent = false, showOnMinimap = true } -- Priory of the Sacred Flame
             minimap[2215][54906313] = { id = 1270, type = "Dungeon", showInZone = false, showOnContinent = false, showOnMinimap = true } -- The Dawnbreaker
             minimap[2214][46860856] = { id = 1269, type = "Dungeon", showInZone = false, showOnContinent = false, showOnMinimap = true } -- The Stonevault
             minimap[2248][45234108] = { id = 1268, type = "Dungeon", showInZone = false, showOnContinent = false, showOnMinimap = true } -- The Rookery
             minimap[2248][76584378] = { id = 1272, type = "Dungeon", showInZone = false, showOnContinent = false, showOnMinimap = true } -- Cinderbrew Meadery
-            minimap[2255][48027144] = { id = 1274, type = "Dungeon", showInZone = false, showOnContinent = false, showOnMinimap = true } -- City of Threads
-            minimap[2255][50588229] = { id = 1271, type = "Dungeon", showInZone = false, showOnContinent = false, showOnMinimap = true } -- Ara-Kara, City of Echoes
+            minimap[2255][46746345] = { id = 1274, type = "Dungeon", showInZone = false, showOnContinent = false, showOnMinimap = true } -- City of Threads
+            minimap[2255][49537528] = { id = 1271, type = "Dungeon", showInZone = false, showOnContinent = false, showOnMinimap = true } -- Ara-Kara, City of Echoes
             end
   
   
@@ -730,8 +733,8 @@ if not db.activate.HideMapNote then
             if self.db.profile.showMiniMapRaids then
   
             -- Raid minimap above Blizzards Icons to make it Clickable for maximized Maps
-              minimap[2255][45109080] = { id = 1207, type = "Raid", showInZone = false, showOnContinent = false, showOnMinimap = true } -- Nerub-ar Palace
-              minimap[2213][35047242] = { id = 1200, type = "Raid", showInZone = false, showOnContinent = false, showOnMinimap = true } -- Nerub-ar Palace           
+            minimap[2255][43478451] = { id = 1273, type = "Raid", showInZone = false, showOnContinent = false, showOnMinimap = true } -- Nerub-ar Palace
+            minimap[2213][35047242] = { id = 1273, type = "Raid", showInZone = false, showOnContinent = false, showOnMinimap = true } -- Nerub-ar Palace              
             end
   
   

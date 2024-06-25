@@ -285,7 +285,7 @@ if not db.activate.HideMapNote then
             nodes[947][87924933] = { mnID = 14, name = "", type = "Portal", showInZone = true, TransportName = L["Arathi Highlands"] .. " " .. L["Portals"] .. "\n" ..  "\n" .. " => " .. L["Zandalar"] .. "\n" .. " => " .. L["Boralus"] .. "\n" .. " " .. "(" .. L["This Arathi Highlands portal is only active if your faction is currently occupying Ar'gorok"] .. ")" } -- Portal from Arathi to Zandalar
           
             if self.faction == "Alliance" or db.activate.EnemyFaction then
-              nodes[947][85006539] = { mnID = 7, name = FACTION_ALLIANCE .. " " .. L["Portal"] .. " => " .. CALENDAR_FILTER_DARKMOON, TransportName = "\n" .. REQUIRES_LABEL .. " " .. CALENDAR_FILTER_DARKMOON .. "\n" .. L["Starting on the first Sunday of each month for one week"], type = "DarkMoon", showInZone = true } -- Elwynn Forest Portal to the Darkmoon
+              nodes[947][85006539] = { mnID = 37, name = FACTION_ALLIANCE .. " " .. L["Portal"] .. " => " .. CALENDAR_FILTER_DARKMOON, TransportName = "\n" .. REQUIRES_LABEL .. " " .. CALENDAR_FILTER_DARKMOON .. "\n" .. L["Starting on the first Sunday of each month for one week"], type = "DarkMoon", showInZone = true } -- Elwynn Forest Portal to the Darkmoon
             end
 
           end
@@ -326,6 +326,7 @@ if not db.activate.HideMapNote then
 
         -- Azeroth Eastern Kingdom Ships
           if self.db.profile.showAzerothShips then
+            nodes[947][83595164] = { mnID = 217, name = "", type = "Ship", showInZone = true, TransportName = L["Ruins of Gilneas"] .. " " .. L["Ship"] .. "\n" .. " => " .. L["Bel'ameth, Amirdrassil"] } -- Ship from Gilneas to Bel ameth
             nodes[947][84667504] = { mnID = 210, name = "", type = "Ship", showInZone = true, TransportName = POSTMASTER_LETTER_STRANGLETHORNVALE .. " " .. L["Ship"] .. "\n" .. " => " .. L["Ratchet"] } -- Ship from Booty Bay to Ratchet
     
             if self.faction == "Alliance" or db.activate.EnemyFaction then
@@ -759,6 +760,7 @@ if not db.activate.HideMapNote then
     
         -- Azeroth Dragon Isles Ships      
           if self.db.profile.showAzerothShips then
+            nodes[947][70942123] = { mnID = 2239, name = "", type = "Ship", showInZone = true, TransportName = L["Bel'ameth, Amirdrassil"] .. " " .. L["Ship"] .. "\n" .. " => " .. L["Ruins of Gilneas"] } -- Ship from Amirdrassil to Gilneas
     
             if self.faction == "Alliance" or db.activate.EnemyFaction then
               nodes[947][79021601] = { mnID = 2022, name = "", type = "AShip", showInZone = true, TransportName = L["Ship"] .. " => " .. STORMWIND } -- Ship to Stormwind from The Waking Shores - Dragonflight
