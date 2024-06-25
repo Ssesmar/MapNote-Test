@@ -86,6 +86,7 @@ if not db.activate.HideMapNote then
 
         end
 
+        --Eastern Kingdom
         if self.db.profile.showZoneEasternKingdom then
 
             if self.db.profile.showZonePaths then    
@@ -124,15 +125,15 @@ if not db.activate.HideMapNote then
                 nodes[1437][53696957] = { name = "", dnID = L["Path"], mnID = 1432, type = "PathLU", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[1437][80474796] = { name = "", dnID = L["Path"], mnID = 241, type = "PathRU", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[241][18353688] = { name = "", dnID = L["Path"], mnID = 1437, type = "PathL", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[1432][25180962] = { name = "", dnID = L["Path"], mnID = 1437, type = "PathRO", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1432][25561065] = { name = "", dnID = L["Path"], mnID = 1437, type = "PathO", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[1432][18591645] = { name = "", dnID = L["Path"], mnID = 1426, type = "PathL", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[1432][47108202] = { name = "", dnID = L["Path"], mnID = 1418, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1432][47457345] = { name = "", dnID = L["Path"], mnID = 1418, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[1432][20506318] = { name = "", dnID = L["Path"], mnID = 1426, type = "PathLO", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[1432][17188368] = { name = "", dnID = L["Path"], mnID = 1427, type = "PathLU", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1432][18128393] = { name = "", dnID = L["Path"], mnID = 1427, type = "PathLU", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[1426][58863355] = { name = "", dnID = L["Entrance"], mnID = 1455, type = "PathRO", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[1426][88164057] = { name = "", dnID = L["Path"], mnID = 1432, type = "PathRO", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1426][88404108] = { name = "", dnID = L["Path"], mnID = 1432, type = "PathRO", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[1426][89525165] = { name = "", dnID = L["Path"], mnID = 1432, type = "PathRO", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[1418][46970943] = { name = "", dnID = L["Path"], mnID = 1432, type = "PathO", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1418][45880821] = { name = "", dnID = L["Path"], mnID = 1432, type = "PathO", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[1418][04495986] = { name = "", dnID = L["Path"], mnID = 1427, type = "PathL", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[1427][78371682] = { name = "", dnID = L["Path"], mnID = 1432, type = "PathRO", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[1427][34178231] = { name = "", dnID = L["Path"], mnID = 1428, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false }
@@ -178,35 +179,38 @@ if not db.activate.HideMapNote then
 
         end
 
+        --Outland
         if self.db.profile.showZoneOutland then
 
             if self.db.profile.showZonePaths then
-                nodes[100][08724978] = { name = "", dnID = L["Path"], mnID = 102, type = "PathL", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[100][38078776] = { name = "", dnID = L["Path"], mnID = 108, type = "PathLU", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[102][85636485] = { name = "", dnID = L["Path"], mnID = 100, type = "PathR", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[102][82339239] = { name = "", dnID = L["Path"], mnID = 108, type = "PathRU", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[102][66798886] = { name = "", dnID = L["Path"], mnID = 107, type = "PathLU", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[102][21287968] = { name = "", dnID = L["Path"], mnID = 107, type = "PathRU", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[102][68992913] = { name = "", dnID = L["Path"], mnID = 105, type = "PathLO", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[105][51617680] = { name = "", dnID = L["Path"], mnID = 102, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[105][83592866] = { name = "", dnID = L["Path"], mnID = 109, type = "PathR", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[105][37018234] = { name = "", dnID = L["Path"], mnID = 102, type = "PathLU", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[102][46822505] = { name = "", dnID = L["Path"], mnID = 105, type = "PathRO", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[109][21685575] = { name = "", dnID = L["Path"], mnID = 105, type = "PathL", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[107][33831642] = { name = "", dnID = L["Path"], mnID = 102, type = "PathO", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[107][73393525] = { name = "", dnID = L["Entrance"], mnID = 111, type = "PathRO", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[107][77758299] = { name = "", dnID = L["Path"], mnID = 108, type = "PathRU", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[108][20655720] = { name = "", dnID = L["Path"], mnID = 107, type = "PathLO", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[108][70865015] = { name = "", dnID = L["Path"], mnID = 104, type = "PathRU", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[108][60991736] = { name = "", dnID = L["Path"], mnID = 100, type = "PathRO", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[108][34771285] = { name = "", dnID = L["Entrance"], mnID = 111, type = "PathLU", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[108][36083207] = { name = "", dnID = L["Entrance"], mnID = 111, type = "PathLO", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[108][38092341] = { name = "", dnID = L["Entrance"], mnID = 111, type = "PathL", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[104][22372748] = { name = "", dnID = L["Path"], mnID = 108, type = "PathLO", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1944][08724978] = { name = "", dnID = L["Path"], mnID = 1946, type = "PathL", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1944][38078776] = { name = "", dnID = L["Path"], mnID = 1952, type = "PathLU", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1946][85636485] = { name = "", dnID = L["Path"], mnID = 1944, type = "PathR", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1946][82339239] = { name = "", dnID = L["Path"], mnID = 1952, type = "PathRU", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1946][66798886] = { name = "", dnID = L["Path"], mnID = 1951, type = "PathLU", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1946][21287968] = { name = "", dnID = L["Path"], mnID = 1951, type = "PathRU", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1946][68992913] = { name = "", dnID = L["Path"], mnID = 1949, type = "PathLO", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1949][51617680] = { name = "", dnID = L["Path"], mnID = 1946, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1949][83592866] = { name = "", dnID = L["Path"], mnID = 1953, type = "PathR", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1949][37018234] = { name = "", dnID = L["Path"], mnID = 1946, type = "PathLU", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1946][46822505] = { name = "", dnID = L["Path"], mnID = 1949, type = "PathRO", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1953][21685575] = { name = "", dnID = L["Path"], mnID = 1949, type = "PathL", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1951][33831642] = { name = "", dnID = L["Path"], mnID = 1946, type = "PathO", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1951][73393525] = { name = "", dnID = L["Path"], mnID = 1946, type = "PathRO", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1951][77945461] = { name = "", dnID = L["Entrance"], mnID = 1955, type = "PathRO", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1951][77758299] = { name = "", dnID = L["Path"], mnID = 1952, type = "PathRU", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1952][20655720] = { name = "", dnID = L["Path"], mnID = 1951, type = "PathLO", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1952][70865015] = { name = "", dnID = L["Path"], mnID = 1948, type = "PathRU", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1952][60991736] = { name = "", dnID = L["Path"], mnID = 1944, type = "PathRO", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1952][34771285] = { name = "", dnID = L["Entrance"], mnID = 1955, type = "PathLU", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1952][36083207] = { name = "", dnID = L["Entrance"], mnID = 1955, type = "PathLO", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1952][38092341] = { name = "", dnID = L["Entrance"], mnID = 1955, type = "PathL", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1948][22372748] = { name = "", dnID = L["Path"], mnID = 1952, type = "PathLO", showInZone = true, showOnContinent = false, showOnMinimap = false }
             end
 
         end
 
+        --Northrend
         if self.db.profile.showZoneNorthrend then
 
             if self.db.profile.showZonePaths then
@@ -243,160 +247,7 @@ if not db.activate.HideMapNote then
 
         end
 
-        if self.db.profile.showZonePandaria then
-
-            if self.db.profile.showZonePaths then
-                nodes[371][34136352] = { name = "", dnID = L["Path"], mnID = 376, type = "PathLU", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[371][34136352] = { name = "", dnID = L["Path"], mnID = 376, type = "PathLU", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[376][87092083] = { name = "", dnID = L["Path"], mnID = 371, type = "PathRO", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[376][82655143] = { name = "", dnID = L["Path"], mnID = 418, type = "PathRU", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[379][55609165] = { name = "", dnID = L["Path"], mnID = 390, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[379][29936362] = { name = "", dnID = L["Path"], mnID = 388, type = "PathLU", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[379][73309428] = { name = "", dnID = L["Path"], mnID = 433, mnID2 = 371, type = "PathRU", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[388][70274335] = { name = "", dnID = L["Path"], mnID = 379, type = "PathRO", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[388][74178564] = { name = "", dnID = L["Path"], mnID = 422, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[390][44091437] = { name = "", dnID = L["Path"], mnID = 379, type = "PathO", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[388][59738703] = { name = "", dnID = L["Path"], mnID = 422, type = "PathLU", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[422][45140853] = { name = "", dnID = L["Path"], mnID = 379, type = "PathRO", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[422][63500935] = { name = "", dnID = L["Path"], mnID = 388, type = "PathLO", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[433][53149105] = { name = "", dnID = L["Path"], mnID = 376, type = "PathLU", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[433][59670743] = { name = "", dnID = L["Path"], mnID = 371, type = "PathRO", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[433][50314161] = { name = "", dnID = L["Path"], mnID = 379, mnID2 = 371, type = "PathLO", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[376][69931893] = { name = "", dnID = L["Path"], mnID = 433, type = "PathRO", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[376][13127951] = { name = "", dnID = L["Path"], mnID = 418, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[418][75980580] = { name = "", dnID = L["Path"], mnID = 376, type = "PathLO", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[418][13743212] = { name = "", dnID = L["Path"], mnID = 376, type = "PathRO", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[434][25511100] = { name = "", dnID = L["Passage"], mnID = 379, type = "PathLO", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[434][75743737] = { name = "", dnID = L["Passage"], mnID = 390, type = "PathRO", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[434][63188580] = { name = "", dnID = L["Passage"], mnID = 433, type = "PathRU", showInZone = true, showOnContinent = false, showOnMinimap = false }
-            end
-
-        end
-
-        if self.db.profile.showZoneDraenor then
-
-            if self.db.profile.showZonePaths then
-                nodes[525][55407524] = { name = "", dnID = L["Path"], mnID = 550, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[525][49676013] = { name = "", dnID = L["Entrance"], mnID = 590, type = "PathLU", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[525][87697265] = { name = "", dnID = L["Path"], mnID = 543, type = "PathRO", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[525][86997529] = { name = "", dnID = L["Path"], mnID = 543, mnID2 = 535, type = "PathRU", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[543][36717761] = { name = "", dnID = L["Path"], mnID = 525, type = "PathLU", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[543][42239401] = { name = "", dnID = L["Path"], mnID = 535, type = "PathLU", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[543][48199273] = { name = "", dnID = L["Path"], type = "PathRU", mnID = 534, showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[534][15634268] = { name = "", dnID = L["Path"], mnID = 543, type = "PathLO", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[534][07035272] = { name = "", dnID = L["Path"], mnID = 535, type = "PathL", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[535][72130859] = { name = "", dnID = L["Path"], mnID = 534, type = "PathR", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[535][66120189] = { name = "", dnID = L["Path"], mnID = 525, type = "PathO", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[535][68350202] = { name = "", dnID = L["Path"], mnID = 543, type = "PathRO", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[535][57229329] = { name = "", dnID = L["Path"], mnID = 542, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[535][30475779] = { name = "", dnID = L["Path"], mnID = 550, type = "PathLO", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[535][84816007] = { name = "", dnID = L["Path"], mnID = 539, type = "PathRU", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[535][40429694] = { name = "", dnID = L["Path"], mnID = 542, type = "PathRU", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[535][70778113] = { name = "", dnID = L["Path"], mnID = 542, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[539][19391194] = { name = "", dnID = L["Path"], mnID = 535, type = "PathLO", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[539][32422372] = { name = "", dnID = L["Entrance"], mnID = 582, type = "PathO", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[550][87366633] = { name = "", dnID = L["Path"], mnID = 535, type = "PathRU", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[550][87691535] = { name = "", dnID = L["Path"], mnID = 525, type = "PathO", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[542][23172214] = { name = "", dnID = L["Path"], mnID = 535, type = "PathLO", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[542][36971399] = { name = "", dnID = L["Path"], mnID = 535, type = "PathLO", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[542][50630699] = { name = "", dnID = L["Path"], mnID = 535, type = "PathO", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[542][62471259] = { name = "", dnID = L["Path"], mnID = 535, type = "PathLO", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[542][64112277] = { name = "", dnID = L["Path"], mnID = 535, mnID2 = 539, type = "PathRO", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[542][69512694] = { name = "", dnID = L["Path"], mnID = 539, type = "PathRU", showInZone = true, showOnContinent = false, showOnMinimap = false }
-            end
-
-        end
-
-        if self.db.profile.showZoneBrokenIsles then
-
-            if self.db.profile.showZonePaths then
-                nodes[630][66691977] = { name = "", dnID = L["Path"], mnID = 680, type = "PathO", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[630][52810822] = { name = "", dnID = L["Path"], mnID = 641, type = "PathO", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[680][22616344] = { name = "", dnID = L["Path"], mnID = 630, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[680][15542497] = { name = "", dnID = L["Path"], mnID = 641, type = "PathL", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[680][65542842] = { name = "", dnID = L["Path"], mnID = 634, type = "PathO", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[641][58569047] = { name = "", dnID = L["Path"], mnID = 630, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[641][67666636] = { name = "", dnID = L["Path"], mnID = 680, type = "PathR", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[641][68801996] = { name = "", dnID = L["Path"], mnID = 650, type = "PathRO", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[650][26406060] = { name = "", dnID = L["Path"], mnID = 641, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[650][58386411] = { name = "", dnID = L["Path"], mnID = 634, type = "PathRU", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[634][27023930] = { name = "", dnID = L["Path"], mnID = 650, type = "PathLO", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[634][32737787] = { name = "", dnID = L["Path"], mnID = 680, type = "PathLU", showInZone = true, showOnContinent = false, showOnMinimap = false }
-            end
-
-        end
-
-        if self.db.profile.showZoneZandalar then
-
-            if self.db.profile.showZonePaths then
-                nodes[862][57921715] = { name = "", dnID = L["Path"], mnID = 863, type = "PathO", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[862][53591704] = { name = "", dnID = L["Path"], mnID = 863, type = "PathO", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[862][46232046] = { name = "", dnID = L["Path"], mnID = 863, type = "PathLO", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[863][28698998] = { name = "", dnID = L["Path"], mnID = 862, type = "PathRU", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[863][43368745] = { name = "", dnID = L["Path"], mnID = 862, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[863][50268766] = { name = "", dnID = L["Path"], mnID = 862, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[863][19027147] = { name = "", dnID = L["Path"], mnID = 864, type = "PathLO", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[863][24833059] = { name = "", dnID = L["Path"], mnID = 864, type = "PathLO", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[863][24173389] = { name = "", dnID = L["Path"], mnID = 864, type = "PathL", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[864][59267027] = { name = "", dnID = L["Path"], mnID = 863, type = "PathRU", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[864][62095156] = { name = "", dnID = L["Path"], mnID = 863, type = "PathRU", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[864][66934132] = { name = "", dnID = L["Path"], mnID = 863, type = "PathRU", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[864][62534550] = { name = "", dnID = L["Path"], mnID = 863, type = "PathR", showInZone = true, showOnContinent = false, showOnMinimap = false }
-            end
-
-        end
-
-        if self.db.profile.showZoneKulTiras then
-
-            if self.db.profile.showZonePaths then
-                nodes[896][69814141] = { name = "", dnID = L["Path"], mnID = 895, type = "PathRU", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[896][60711551] = { name = "", dnID = L["Path"], mnID = 895, type = "PathRO", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[895][53055416] = { name = "", dnID = L["Path"], mnID = 896, type = "PathL", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[895][43543107] = { name = "", dnID = L["Path"], mnID = 896, type = "PathLU", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[895][66350874] = { name = "", dnID = L["Path"], mnID = 942, type = "PathO", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[895][93794719] = { name = "", dnID = L["Path"], mnID = 1169, type = "PathR", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[1169][08565967] = { name = "", dnID = L["Path"], mnID = 895, type = "PathL", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[942][58958917] = { name = "", dnID = L["Path"], mnID = 895, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false }
-            end
-
-        end
-
-        if self.db.profile.showZoneShadowlands then
-
-            if self.db.profile.showZonePaths then
-                nodes[1543][63747647] = { name = "", dnID = L["Path"], mnID = 1961, type = "PathRU", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[1543][51708980] = { name = "", dnID = L["Path"], mnID = 1961, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[1961][40002586] = { name = "", dnID = L["Path"], mnID = 1543, type = "PathO", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[1961][58700950] = { name = "", dnID = L["Path"], mnID = 1543, type = "PathLO", showInZone = true, showOnContinent = false, showOnMinimap = false }
-            end
-
-        end
-
-        if self.db.profile.showZoneDragonIsles then
-
-            if self.db.profile.showZonePaths then
-                nodes[2022][48878853] = { name = "", dnID = L["Path"], mnID = 2023, type = "PathRU", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[2022][28289215] = { name = "", dnID = L["Path"], mnID = 2023, type = "PathLU", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[2023][58802172] = { name = "", dnID = L["Path"], mnID = 2022, type = "PathL", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[2023][79971463] = { name = "", dnID = L["Path"], mnID = 2022, type = "PathO", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[2023][43426945] = { name = "", dnID = L["Path"], mnID = 2024, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[2023][69907861] = { name = "", dnID = L["Path"], mnID = 2024, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[2024][36452263] = { name = "", dnID = L["Path"], mnID = 2023, type = "PathO", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[2024][18041786] = { name = "", dnID = L["Path"], mnID = 2023, type = "PathO", showInZone = true, showOnContinent = false, showOnMinimap = false }
-            end
-
-        end
-
-        if self.db.profile.showZoneKhazAlgar then
-
-            if self.db.profile.showZonePaths then
-
-            end
-
-        end
-
     end
 
 end
-
 end

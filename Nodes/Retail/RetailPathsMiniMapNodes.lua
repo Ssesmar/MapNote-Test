@@ -258,7 +258,8 @@ if not db.activate.HideMapNote then
                 minimap[102][46822505] = { name = "", dnID = L["Path"], mnID = 105, type = "PathRO", showInZone = false, showOnContinent = false, showOnMinimap = true }
                 minimap[109][21685575] = { name = "", dnID = L["Path"], mnID = 105, type = "PathL", showInZone = false, showOnContinent = false, showOnMinimap = true }
                 minimap[107][33831642] = { name = "", dnID = L["Path"], mnID = 102, type = "PathO", showInZone = false, showOnContinent = false, showOnMinimap = true }
-                minimap[107][73393525] = { name = "", dnID = L["Entrance"], mnID = 111, type = "PathRO", showInZone = false, showOnContinent = false, showOnMinimap = true }
+                minimap[107][73393525] = { name = "", dnID = L["Path"], mnID = 102, type = "PathRO", showInZone = false, showOnContinent = false, showOnMinimap = true }
+                minimap[107][77945461] = { name = "", dnID = L["Entrance"], mnID = 111, type = "PathRO", showInZone = false, showOnContinent = false, showOnMinimap = true }
                 minimap[107][77758299] = { name = "", dnID = L["Path"], mnID = 108, type = "PathRU", showInZone = false, showOnContinent = false, showOnMinimap = true }
                 minimap[108][20655720] = { name = "", dnID = L["Path"], mnID = 107, type = "PathLO", showInZone = false, showOnContinent = false, showOnMinimap = true }
                 minimap[108][70865015] = { name = "", dnID = L["Path"], mnID = 104, type = "PathRU", showInZone = false, showOnContinent = false, showOnMinimap = true }
