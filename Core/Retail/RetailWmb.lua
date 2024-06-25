@@ -35,7 +35,8 @@ local info = C_Map.GetMapInfo(WorldMapFrame:GetMapID())
 
     if button == "RightButton" then 
 
-        if WorldMapFrame:GetMapID() == 946 then -- World Map
+        -- Cosmos
+        if info.mapType == 0 then 
         
             if not ns.Addon.db.profile.activate.CosmosMap then
                 ns.Addon.db.profile.activate.CosmosMap = true
@@ -47,7 +48,8 @@ local info = C_Map.GetMapInfo(WorldMapFrame:GetMapID())
 
         end
 
-        if WorldMapFrame:GetMapID() == 947 then-- Azeroth World Map
+        -- Azeroth World Map
+        if info.mapType == 1 then
 
             if not ns.Addon.db.profile.activate.Azeroth then
                 ns.Addon.db.profile.activate.Azeroth = true
@@ -58,15 +60,106 @@ local info = C_Map.GetMapInfo(WorldMapFrame:GetMapID())
             end
 
         end
-
-        if info.mapType == 2 then -- Continent Maps
         
-            if not ns.Addon.db.profile.activate.Continent then
-                ns.Addon.db.profile.activate.Continent = true
-                print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Continent map"], L["icons"], "|cff00ff00" .. L["are shown"])
-            else
-                ns.Addon.db.profile.activate.Continent = false
-                print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Continent map"], L["icons"], "|cffff0000" .. L["are hidden"])
+        -- Continent Maps
+        if info.mapType == 2 then 
+
+            if WorldMapFrame:GetMapID() == 12 or WorldMapFrame:GetMapID() == 948 then
+                if ns.Addon.db.profile.showContinentKalimdor then
+                    ns.Addon.db.profile.showContinentKalimdor = false
+                    print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Continent map"], L["Kalimdor"], L["icons"], "|cffff0000" .. L["are hidden"])
+                else
+                    ns.Addon.db.profile.showContinentKalimdor = true
+                    print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Continent map"], L["Kalimdor"], L["icons"], "|cff00ff00" .. L["are shown"])
+                end
+            elseif WorldMapFrame:GetMapID() == 13 then
+                if ns.Addon.db.profile.showContinentEasternKingdom then
+                    ns.Addon.db.profile.showContinentEasternKingdom = false
+                    print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Continent map"], L["Eastern Kingdom"], L["icons"], "|cffff0000" .. L["are hidden"])
+                else
+                    ns.Addon.db.profile.showContinentEasternKingdom = true
+                    print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Continent map"], L["Eastern Kingdom"], L["icons"], "|cff00ff00" .. L["are shown"])
+                end
+            elseif WorldMapFrame:GetMapID() == 101 then
+                if ns.Addon.db.profile.showContinentOutland then
+                    ns.Addon.db.profile.showContinentOutland = false
+                    print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Continent map"], L["Outland"], L["icons"], "|cffff0000" .. L["are hidden"])
+                else
+                    ns.Addon.db.profile.showContinentOutland = true
+                    print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Continent map"], L["Outland"], L["icons"], "|cff00ff00" .. L["are shown"])
+                end
+            elseif WorldMapFrame:GetMapID() == 113 then
+                if ns.Addon.db.profile.showContinentNorthrend then
+                    ns.Addon.db.profile.showContinentNorthrend = false
+                    print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Continent map"], L["Northrend"], L["icons"], "|cffff0000" .. L["are hidden"])
+                else
+                    ns.Addon.db.profile.showContinentNorthrend = true
+                    print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Continent map"], L["Northrend"], L["icons"], "|cff00ff00" .. L["are shown"])
+                end
+            elseif WorldMapFrame:GetMapID() == 424 then
+                if ns.Addon.db.profile.showContinentPandaria then
+                    ns.Addon.db.profile.showContinentPandaria = false
+                    print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Continent map"], L["Pandaria"], L["icons"], "|cffff0000" .. L["are hidden"])
+                else
+                    ns.Addon.db.profile.showContinentPandaria = true
+                    print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Continent map"], L["Pandaria"], L["icons"], "|cff00ff00" .. L["are shown"])
+                end
+            elseif WorldMapFrame:GetMapID() == 572 then
+                if ns.Addon.db.profile.showContinentDraenor then
+                    ns.Addon.db.profile.showContinentDraenor = false
+                    print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Continent map"], L["Draenor"], L["icons"], "|cffff0000" .. L["are hidden"])
+                else
+                    ns.Addon.db.profile.showContinentDraenor = true
+                    print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Continent map"], L["Draenor"], L["icons"], "|cff00ff00" .. L["are shown"])
+                end
+            elseif WorldMapFrame:GetMapID() == 619 then
+                if ns.Addon.db.profile.showContinentBrokenIsles then
+                    ns.Addon.db.profile.showContinentBrokenIsles = false
+                    print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Continent map"], L["Broken Isles"], L["icons"], "|cffff0000" .. L["are hidden"])
+                else
+                    ns.Addon.db.profile.showContinentBrokenIsles = true
+                    print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Continent map"], L["Broken Isles"], L["icons"], "|cff00ff00" .. L["are shown"])
+                end
+            elseif WorldMapFrame:GetMapID() == 875 then
+                if ns.Addon.db.profile.showContinentZandalar then
+                    ns.Addon.db.profile.showContinentZandalar = false
+                    print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Continent map"], L["Zandalar"], L["icons"], "|cffff0000" .. L["are hidden"])
+                else
+                    ns.Addon.db.profile.showContinentZandalar = true
+                    print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Continent map"], L["Zandalar"], L["icons"], "|cff00ff00" .. L["are shown"])
+                end
+            elseif WorldMapFrame:GetMapID() == 876 then
+                if ns.Addon.db.profile.showContinentKulTiras then
+                    ns.Addon.db.profile.showContinentKulTiras = false
+                    print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Continent map"], L["Kul Tiras"], L["icons"], "|cffff0000" .. L["are hidden"])
+                else
+                    ns.Addon.db.profile.showContinentKulTiras = true
+                    print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Continent map"], L["Kul Tiras"], L["icons"], "|cff00ff00" .. L["are shown"])
+                end
+            elseif WorldMapFrame:GetMapID() == 1550 then
+                if ns.Addon.db.profile.showContinentShadowlands then
+                    ns.Addon.db.profile.showContinentShadowlands = false
+                    print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Continent map"], L["Shadowlands"], L["icons"], "|cffff0000" .. L["are hidden"])
+                else
+                    ns.Addon.db.profile.showContinentShadowlands = true
+                    print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Continent map"], L["Shadowlands"], L["icons"], "|cff00ff00" .. L["are shown"])
+                end
+            elseif WorldMapFrame:GetMapID() == 1978 then
+                if ns.Addon.db.profile.showContinentDragonIsles then
+                    ns.Addon.db.profile.showContinentDragonIsles = false
+                    print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Continent map"], L["Dragon Isles"], L["icons"], "|cffff0000" .. L["are hidden"])
+                else
+                    ns.Addon.db.profile.showContinentDragonIsles = true
+                    print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Continent map"], L["Dragon Isles"], L["icons"], "|cff00ff00" .. L["are shown"])
+                end
+            elseif WorldMapFrame:GetMapID() == 2274 then
+                if ns.Addon.db.profile.showContinentKhazAlgar then
+                    ns.Addon.db.profile.showContinentKhazAlgar = false
+                    print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Continent map"], L["Khaz Algar"], L["icons"], "|cffff0000" .. L["are hidden"])
+                else
+                    ns.Addon.db.profile.showContinentKhazAlgar = true
+                    print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Continent map"], L["Khaz Algar"], L["icons"], "|cff00ff00" .. L["are shown"])
+                end
             end
 
         end
@@ -94,7 +187,7 @@ local info = C_Map.GetMapInfo(WorldMapFrame:GetMapID())
         end
 
         --Zones without Sync function
-        if not ns.Addon.db.profile.activate.SyncZoneAndMinimap and (info.mapType == 3 or WorldMapFrame:GetMapID() == 327 or WorldMapFrame:GetMapID() == 2266) and not 
+        if not ns.Addon.db.profile.activate.SyncZoneAndMinimap and (info.mapType == 3 or info.mapType == 5 or info.mapType == 6 or WorldMapFrame:GetMapID() == 327 or WorldMapFrame:GetMapID() == 2266) and not 
             (WorldMapFrame:GetMapID() == 1454 or WorldMapFrame:GetMapID() == 1456 -- Cata nodes
             or WorldMapFrame:GetMapID() == 84 or WorldMapFrame:GetMapID() == 87 or WorldMapFrame:GetMapID() == 89 or WorldMapFrame:GetMapID() == 103 or WorldMapFrame:GetMapID() == 85
             or WorldMapFrame:GetMapID() == 90 or WorldMapFrame:GetMapID() == 86 or WorldMapFrame:GetMapID() == 88 or WorldMapFrame:GetMapID() == 110 or WorldMapFrame:GetMapID() == 111
@@ -115,7 +208,7 @@ local info = C_Map.GetMapInfo(WorldMapFrame:GetMapID())
         end
 
         --Zones Sync function
-        if ns.Addon.db.profile.activate.SyncZoneAndMinimap and (info.mapType == 3 or WorldMapFrame:GetMapID() == 327 or WorldMapFrame:GetMapID() == 2266) and not 
+        if ns.Addon.db.profile.activate.SyncZoneAndMinimap and (info.mapType == 3 or info.mapType == 5 or info.mapType == 6 or WorldMapFrame:GetMapID() == 327 or WorldMapFrame:GetMapID() == 2266) and not 
             (WorldMapFrame:GetMapID() == 1454 or WorldMapFrame:GetMapID() == 1456 -- Cata nodes
             or WorldMapFrame:GetMapID() == 84 or WorldMapFrame:GetMapID() == 87 or WorldMapFrame:GetMapID() == 89 or WorldMapFrame:GetMapID() == 103 or WorldMapFrame:GetMapID() == 85
             or WorldMapFrame:GetMapID() == 90 or WorldMapFrame:GetMapID() == 86 or WorldMapFrame:GetMapID() == 88 or WorldMapFrame:GetMapID() == 110 or WorldMapFrame:GetMapID() == 111
@@ -189,24 +282,63 @@ local info = C_Map.GetMapInfo(WorldMapFrame:GetMapID())
     GameTooltip:AddLine(" ",1,1,1)
     GameTooltip:AddLine(L["Middle-Mouse-Button => Open/Close"] .. " => " .. "|cffffcc00" .. L["Disable MapNotes, all icons will be hidden on each map and all categories will be disabled"] .. " " .. SHOW .. " / " .. HIDE,1,1,1,1)
     GameTooltip:AddLine(" ",1,1,1)
-
-    if WorldMapFrame:GetMapID() == 946 then -- World Map
+    
+    -- Cosmos Map
+    if info.mapType == 0 then 
         GameTooltip:AddLine(HELPFRAME_REPORT_PLAYER_RIGHT_CLICK .. " => " .. "|cffff0000" .. WORLDMAP_BUTTON .. "|cffffcc00" .. " " .. L["icons"] .. " " .. SHOW .. " / " .. HIDE,1,1,1)
         GameTooltip:Show()
     end
 
-    if WorldMapFrame:GetMapID() == 947 then-- Azeroth World Map
+    if info.mapType == 1 then-- Azeroth World Map
         GameTooltip:AddLine(HELPFRAME_REPORT_PLAYER_RIGHT_CLICK .. " => " .. "|cffff0000" .. AZEROTH .. "|cffffcc00" .. " " .. L["icons"] .. " " .. SHOW .. " / " .. HIDE,1,1,1)
         GameTooltip:Show()
     end    
 
-    if info.mapType == 2 then -- Continent Maps
-        GameTooltip:AddLine(HELPFRAME_REPORT_PLAYER_RIGHT_CLICK .. " => " .. "|cffff0000" .. L["Continent map"] .. "|cffffcc00" .. " " .. L["icons"] .. " " .. SHOW .. " / " .. HIDE,1,1,1)
-        GameTooltip:Show()
+    -- Continent Maps
+    if info.mapType == 2 then 
+
+        if WorldMapFrame:GetMapID() == 12 or WorldMapFrame:GetMapID() == 948 then
+            GameTooltip:AddLine(HELPFRAME_REPORT_PLAYER_RIGHT_CLICK .. " => " .. "|cffff0000" .. L["Continent map"] .. " " .. L["Kalimdor"] .. "|cffffcc00" .. " " .. L["icons"] .. " " .. SHOW .. " / " .. HIDE,1,1,1)
+            GameTooltip:Show()
+        elseif WorldMapFrame:GetMapID() == 13 then
+            GameTooltip:AddLine(HELPFRAME_REPORT_PLAYER_RIGHT_CLICK .. " => " .. "|cffff0000" .. L["Continent map"] .. " " .. L["Eastern Kingdom"] .. "|cffffcc00" .. " " .. L["icons"] .. " " .. SHOW .. " / " .. HIDE,1,1,1)
+            GameTooltip:Show()
+        elseif WorldMapFrame:GetMapID() == 101 then
+            GameTooltip:AddLine(HELPFRAME_REPORT_PLAYER_RIGHT_CLICK .. " => " .. "|cffff0000" .. L["Continent map"] .. " " .. L["Outland"] .. "|cffffcc00" .. " " .. L["icons"] .. " " .. SHOW .. " / " .. HIDE,1,1,1)
+            GameTooltip:Show()
+        elseif WorldMapFrame:GetMapID() == 113 then
+            GameTooltip:AddLine(HELPFRAME_REPORT_PLAYER_RIGHT_CLICK .. " => " .. "|cffff0000" .. L["Continent map"] .. " " .. L["Northrend"] .. "|cffffcc00" .. " " .. L["icons"] .. " " .. SHOW .. " / " .. HIDE,1,1,1)
+            GameTooltip:Show()
+        elseif WorldMapFrame:GetMapID() == 424 then
+            GameTooltip:AddLine(HELPFRAME_REPORT_PLAYER_RIGHT_CLICK .. " => " .. "|cffff0000" .. L["Continent map"] .. " " .. L["Pandaria"] .. "|cffffcc00" .. " " .. L["icons"] .. " " .. SHOW .. " / " .. HIDE,1,1,1)
+            GameTooltip:Show()
+        elseif WorldMapFrame:GetMapID() == 573 then
+            GameTooltip:AddLine(HELPFRAME_REPORT_PLAYER_RIGHT_CLICK .. " => " .. "|cffff0000" .. L["Continent map"] .. " " .. L["Draenor"] .. "|cffffcc00" .. " " .. L["icons"] .. " " .. SHOW .. " / " .. HIDE,1,1,1)
+            GameTooltip:Show()
+        elseif WorldMapFrame:GetMapID() == 619 then
+            GameTooltip:AddLine(HELPFRAME_REPORT_PLAYER_RIGHT_CLICK .. " => " .. "|cffff0000" .. L["Continent map"] .. " " .. L["Broken Isles"] .. "|cffffcc00" .. " " .. L["icons"] .. " " .. SHOW .. " / " .. HIDE,1,1,1)
+            GameTooltip:Show()
+        elseif WorldMapFrame:GetMapID() == 875 then
+            GameTooltip:AddLine(HELPFRAME_REPORT_PLAYER_RIGHT_CLICK .. " => " .. "|cffff0000" .. L["Continent map"] .. " " .. L["Zandalar"] .. "|cffffcc00" .. " " .. L["icons"] .. " " .. SHOW .. " / " .. HIDE,1,1,1)
+            GameTooltip:Show()
+        elseif WorldMapFrame:GetMapID() == 876 then
+            GameTooltip:AddLine(HELPFRAME_REPORT_PLAYER_RIGHT_CLICK .. " => " .. "|cffff0000" .. L["Continent map"] .. " " .. L["Kul Tiras"] .. "|cffffcc00" .. " " .. L["icons"] .. " " .. SHOW .. " / " .. HIDE,1,1,1)
+            GameTooltip:Show()
+        elseif WorldMapFrame:GetMapID() == 1550 then
+            GameTooltip:AddLine(HELPFRAME_REPORT_PLAYER_RIGHT_CLICK .. " => " .. "|cffff0000" .. L["Continent map"] .. " " .. L["Shadowlands"] .. "|cffffcc00" .. " " .. L["icons"] .. " " .. SHOW .. " / " .. HIDE,1,1,1)
+            GameTooltip:Show()
+        elseif WorldMapFrame:GetMapID() == 1978 then
+            GameTooltip:AddLine(HELPFRAME_REPORT_PLAYER_RIGHT_CLICK .. " => " .. "|cffff0000" .. L["Continent map"] .. " " .. L["Dragon Isles"] .. "|cffffcc00" .. " " .. L["icons"] .. " " .. SHOW .. " / " .. HIDE,1,1,1)
+            GameTooltip:Show()
+        elseif WorldMapFrame:GetMapID() == 2274 then
+            GameTooltip:AddLine(HELPFRAME_REPORT_PLAYER_RIGHT_CLICK .. " => " .. "|cffff0000" .. L["Continent map"] .. " " .. L["Khaz Algar"] .. "|cffffcc00" .. " " .. L["icons"] .. " " .. SHOW .. " / " .. HIDE,1,1,1)
+            GameTooltip:Show()
+        end
+
     end
 
     --Zones without Sync function
-    if not ns.Addon.db.profile.activate.SyncZoneAndMinimap and (info.mapType == 3 or WorldMapFrame:GetMapID() == 327 or WorldMapFrame:GetMapID() == 2266) and not 
+    if not ns.Addon.db.profile.activate.SyncZoneAndMinimap and (info.mapType == 3 or info.mapType == 5 or info.mapType == 6 or WorldMapFrame:GetMapID() == 327 or WorldMapFrame:GetMapID() == 2266) and not 
         (WorldMapFrame:GetMapID() == 1454 or WorldMapFrame:GetMapID() == 1456 -- Cata nodes
         or WorldMapFrame:GetMapID() == 84 or WorldMapFrame:GetMapID() == 87 or WorldMapFrame:GetMapID() == 89 or WorldMapFrame:GetMapID() == 103 or WorldMapFrame:GetMapID() == 85
         or WorldMapFrame:GetMapID() == 90 or WorldMapFrame:GetMapID() == 86 or WorldMapFrame:GetMapID() == 88 or WorldMapFrame:GetMapID() == 110 or WorldMapFrame:GetMapID() == 111
@@ -220,7 +352,7 @@ local info = C_Map.GetMapInfo(WorldMapFrame:GetMapID())
     end
 
     --Zones Sync function
-    if ns.Addon.db.profile.activate.SyncZoneAndMinimap and (info.mapType == 3 or WorldMapFrame:GetMapID() == 327 or WorldMapFrame:GetMapID() == 2266) and not 
+    if ns.Addon.db.profile.activate.SyncZoneAndMinimap and (info.mapType == 3 or info.mapType == 5 or info.mapType == 6 or WorldMapFrame:GetMapID() == 327 or WorldMapFrame:GetMapID() == 2266) and not 
         (WorldMapFrame:GetMapID() == 1454 or WorldMapFrame:GetMapID() == 1456 -- Cata nodes
         or WorldMapFrame:GetMapID() == 84 or WorldMapFrame:GetMapID() == 87 or WorldMapFrame:GetMapID() == 89 or WorldMapFrame:GetMapID() == 103 or WorldMapFrame:GetMapID() == 85
         or WorldMapFrame:GetMapID() == 90 or WorldMapFrame:GetMapID() == 86 or WorldMapFrame:GetMapID() == 88 or WorldMapFrame:GetMapID() == 110 or WorldMapFrame:GetMapID() == 111
@@ -233,7 +365,8 @@ local info = C_Map.GetMapInfo(WorldMapFrame:GetMapID())
         GameTooltip:Show()
     end
 
-    if info.mapType == 4 and not --Dungeon Maps
+    --Dungeon Maps
+    if info.mapType == 4 and not 
         (WorldMapFrame:GetMapID() == 1454 or WorldMapFrame:GetMapID() == 1456 -- Cata nodes
         or WorldMapFrame:GetMapID() == 84 or WorldMapFrame:GetMapID() == 87 or WorldMapFrame:GetMapID() == 89 or WorldMapFrame:GetMapID() == 103 or WorldMapFrame:GetMapID() == 85
         or WorldMapFrame:GetMapID() == 90 or WorldMapFrame:GetMapID() == 86 or WorldMapFrame:GetMapID() == 88 or WorldMapFrame:GetMapID() == 110 or WorldMapFrame:GetMapID() == 111

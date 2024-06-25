@@ -42,6 +42,7 @@ ns.defaults = {
       showMiniMapTransport = true,
       showMiniMapOldVanilla = true,
       showMiniMapLFR = true,
+      showMiniMapPaths = true,
       showMiniMapFP = true,
       showMiniMapGhost = true,
       showMiniMapKalimdor = true,
@@ -72,6 +73,7 @@ ns.defaults = {
       showZoneTransport = true,
       showZoneOldVanilla = true,
       showZoneLFR = true,
+      showZonePaths = true,
       showZoneFP = true,
       showZoneGhost = true,
       showZoneKalimdor = true,
@@ -240,6 +242,7 @@ ns.defaults = {
       showCapitalsDragonFlyTransmog = true,
       showCapitalsCatalyst = true,
       showCapitalsMailbox = true,
+      showCapitalsGhost = true,
 
     --7 Capitals Minimap
       showMinimapCapitals = true,
@@ -319,6 +322,7 @@ ns.defaults = {
       showMinimapCapitalsDragonFlyTransmog = true,
       showMinimapCapitalsCatalyst = true,
       showMinimapCapitalsMailbox = true,
+      showMinimapCapitalsGhost = true,
 
     --10 ns.Addon.db.profile.activate.
       activate = {
@@ -371,10 +375,10 @@ ns.defaults = {
       ['*'] = {},
     },
     DungeonDeletedIcons = {
-        ['*'] = {},
+      ['*'] = {},
     },
     CapitalsDeletedIcons = {
-        ['*'] = {},
+      ['*'] = {},
     },
     MinimapCapitalsDeletedIcons = {
       ['*'] = {},

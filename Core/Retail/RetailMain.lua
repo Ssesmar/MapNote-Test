@@ -84,44 +84,79 @@ function pluginHandler:OnEnter(uiMapId, coord)
 	  else
 	    tooltip:AddLine(v, nil, nil, nil, false)
       if ns.DeveloperMode == true then
-        tooltip:AddLine("uiMapID: " .. uiMapId, nil, nil, false)
-        tooltip:AddLine("Coordinates: " .. coord, nil, nil, false)
-        if nodeData.mnID then
-          tooltip:AddLine("mnID: " .. nodeData.mnID, nil, nil, false)
-        elseif nodeData.id then
-          tooltip:AddLine("Instance-ID: " .. nodeData.id, nil, nil, false)
-        elseif nodeData.dnID then
-          tooltip:AddLine("Type: " .. nodeData.dnID, nil, nil, false)
-        elseif nodeData.type then
-          tooltip:AddLine("Type: " .. nodeData.type, nil, nil, false)
+        if nodeData.dnID then
+          tooltip:AddLine("Type:  " .. nodeData.dnID, nil, nil, false)
         end
+        if nodeData.type then
+          tooltip:AddLine("IconName:  " .. nodeData.type, nil, nil, false)
+        end
+        tooltip:AddDoubleLine("uiMapID:  " .. uiMapId, "Coord:  " .. coord, nil, nil, false)
+        tooltip:AddDoubleLine("uiMapID:  " .. uiMapId, "==>   " .. C_Map.GetMapInfo(uiMapId).name, nil, nil, false)
+        if nodeData.mnID then
+          tooltip:AddDoubleLine("mnID:  " .. nodeData.mnID,"==>   " .. C_Map.GetMapInfo(nodeData.mnID).name, nil, nil, false)
+        end
+        if nodeData.mnID2 then
+          tooltip:AddDoubleLine("mnID2:  " .. nodeData.mnID2, C_Map.GetMapInfo(nodeData.mnID2).name, nil, nil, false)
+        end
+        if nodeData.mnID3 then
+          tooltip:AddDoubleLine("mnID3:  " .. nodeData.mnID3, C_Map.GetMapInfo(nodeData.mnID3).name, nil, nil, false)
+        end
+        --if nodeData.id then
+        --  tooltip:AddLine("Instance-ID:  " .. nodeData.id, nil, nil, false)
+        --end
+        tooltip:AddLine(" ", nil, nil, false)
       end
 	  end
-
-    if nodeData.dnID then -- outputs the names we set and displays it in the tooltip
-      tooltip:AddDoubleLine(nodeData.dnID, nil, nil, false)
-    end
-    
-    if nodeData.dnID and nodeData.mnID then -- outputs the Zone or Dungeonmap name and displays it in the tooltip
-      local mnIDname = C_Map.GetMapInfo(nodeData.mnID).name
-      if mnIDname then
-        tooltip:AddDoubleLine(" => " .. mnIDname, nil, nil, false)
-      end 
-    end
-
-    if nodeData.www and nodeData.showWWW == true then
-      tooltip:AddDoubleLine(nodeData.www, nil, nil, false)
-    end
 
     if nodeData.TransportName then -- outputs transport name for TomTom to the tooltip
       tooltip:AddDoubleLine(nodeData.TransportName, nil, nil, false)
     end
 
-    if not nodeData.dnID and nodeData.mnID and not nodeData.id and not nodeData.TransportName then -- outputs the Zone or Dungeonmap name and displays it in the tooltip
+    if nodeData.dnID then -- outputs the names we set and displays it in the tooltip
+      tooltip:AddDoubleLine(nodeData.dnID, nil, nil, false)
+    end
+
+    if (nodeData.dnID and nodeData.mnID) and not nodeData.mnID2 and not nodeData.mnID3 then -- outputs the Zone or Dungeonmap name and displays it in the tooltip
       local mnIDname = C_Map.GetMapInfo(nodeData.mnID).name
       if mnIDname then
-        tooltip:AddDoubleLine("=> " .. mnIDname, nil, nil, false)
-      end 
+        tooltip:AddDoubleLine(" => " .. mnIDname, nil, nil, false)
+      end
+    end
+
+    if nodeData.mnID and nodeData.mnID2 or nodeData.mnID3 then -- outputs the Zone or Dungeonmap name and displays it in the tooltip
+      local mnIDname = C_Map.GetMapInfo(nodeData.mnID).name
+      if mnIDname then
+        tooltip:AddDoubleLine("\n" .. KEY_BUTTON1 .. " => " .. mnIDname, nil, nil, false)
+      end
+    end
+
+    if nodeData.mnID2 then
+      local mnID2name = C_Map.GetMapInfo(nodeData.mnID2).name
+      if mnID2name then 
+        tooltip:AddDoubleLine(KEY_BUTTON2 .. " => " .. mnID2name, nil, nil, false)
+      end
+    end
+
+    if nodeData.mnID3 then
+      local mnID3name = C_Map.GetMapInfo(nodeData.mnID3).name
+      if mnID3name then 
+        tooltip:AddDoubleLine(KEY_BUTTON3 .. " => " .. mnID3name, nil, nil, false)
+      end
+    end
+
+    if not nodeData.dnID and nodeData.mnID and not nodeData.id and not nodeData.TransportName and not nodeData.wwwName then -- outputs the Zone or Dungeonmap name and displays it in the tooltip
+      local mnIDname = C_Map.GetMapInfo(nodeData.mnID).name
+      if mnIDname then
+        tooltip:AddDoubleLine(" => " .. mnIDname, nil, nil, false)
+      end
+    end
+
+    if nodeData.wwwName then
+      tooltip:AddDoubleLine(nodeData.wwwName, nil, nil, false)
+    end
+
+    if nodeData.www and nodeData.showWWW == true then
+      tooltip:AddDoubleLine(nodeData.www, nil, nil, false)
     end
      	tooltip:Show()
   end
@@ -180,12 +215,14 @@ do
 
 		while value do
 			local alpha
-			local icon = ns.icons[value.type]
+		  local icon = ns.icons[value.type]
       local scale
       local mapInfo = C_Map.GetMapInfo(t.uiMapId)
 
 			local allLocked = true
 			local anyLocked = false
+
+      ns.paths = value.type == "PathO" or value.type == "PathRO" or value.type == "PathLO" or value.type == "PathU" or value.type == "PathLU" or value.type == "PathRU" or value.type == "PathL" or value.type == "PathR"
       
       ns.professions = value.type == "Alchemy" or value.type == "Engineer" or value.type == "Cooking" or value.type == "Fishing" or value.type == "Archaeology" or value.type == "Mining" or value.type == "Jewelcrafting" or value.type == "Blacksmith" or value.type == "Leatherworking" or value.type == "Skinning" or value.type == "Tailoring" or value.type == "Herbalism" or value.type == "Inscription" or value.type == "Enchanting" or value.type == "FishingClassic" or value.type == "ProfessionOrders"
 
@@ -193,7 +230,7 @@ do
 
       ns.transports = value.type == "Portal" or value.type == "HPortal" or value.type == "APortal" or value.type == "HPortalS" or value.type == "APortalS" or value.type == "PassageHPortal" or value.type == "PassageAPortal" or value.type == "PassagePortal" or value.type == "Zeppelin" or value.type == "HZeppelin" or value.type == "AZeppelin" or value.type == "Ship" or value.type == "AShip" or value.type == "HShip" or value.type == "Carriage" or value.type == "TravelL" or value.type == "TravelH" or value.type == "TravelA" or value.type == "GPortal" or value.type == "Tport2" or value.type == "TransportHelper" or value.type == "OgreWaygate" or value.type == "WayGateGreen" or value.type == "Ghost" or value.type == "DarkMoon"
 
-      ns.capitalgenerals = value.type == "Exit" or value.type == "PassageUpL" or value.type == "PassageDownL" or value.type == "PassageRightL" or value.type == "PassageLeftL" or value.type == "Innkeeper" or value.type == "Auctioneer" or value.type == "Bank" or value.type == "MNL" or value.type == "Barber" or value.type == "Transmogger" or value.type == "ItemUpgrade" or value.type == "PvPVendor" or value.type == "PvEVendor" or value.type == "MNL" or value.type == "DragonFlyTransmog" or value.type == "Catalyst" or value.type == "PathN" or value.type == "PathNO" or value.type == "PathO" or value.type == "PathSO" or value.type == "PathS" or value.type == "PathSW" or value.type == "PathW" or value.type == "PathNW" or value.type == "BlackMarket" or value.type == "Mailbox"
+      ns.capitalgenerals = value.type == "Exit" or value.type == "PassageUpL" or value.type == "PassageDownL" or value.type == "PassageRightL" or value.type == "PassageLeftL" or value.type == "Innkeeper" or value.type == "Auctioneer" or value.type == "Bank" or value.type == "MNL" or value.type == "Barber" or value.type == "Transmogger" or value.type == "ItemUpgrade" or value.type == "PvPVendor" or value.type == "PvEVendor" or value.type == "MNL" or value.type == "DragonFlyTransmog" or value.type == "Catalyst" or value.type == "PathO" or value.type == "PathRO" or value.type == "PathLO" or value.type == "PathU" or value.type == "PathLU" or value.type == "PathRU" or value.type == "PathL" or value.type == "PathR" or value.type == "BlackMarket" or value.type == "Mailbox"
 
       ns.CapitalIDs =
         --Retail
@@ -286,7 +323,7 @@ do
       end
 
       -- inside Dungeon
-      if mapInfo and mapInfo.mapType == 4 and not ns.CapitalIDs then 
+      if (mapInfo.mapType == 4 or mapInfo.mapType == 6) and not ns.CapitalIDs then 
           scale = db.dungeonScale
           alpha = db.dungeonAlpha
       end
@@ -356,18 +393,28 @@ do
         alpha = db.cosmosAlpha
       end
 
-      if t.uiMapId == 948 -- Mahlstrom Continent
-        or (mapInfo.mapType == 0 and (ns.dbChar.AzerothDeletedIcons[t.uiMapId] and not ns.dbChar.AzerothDeletedIcons[t.uiMapId][state] and value.showInZone)) -- Cosmos
-        or (mapInfo.mapType == 1 and (ns.dbChar.AzerothDeletedIcons[t.uiMapId] and not ns.dbChar.AzerothDeletedIcons[t.uiMapId][state] and value.showInZone)) -- Azeroth
-        or (not ns.CapitalIDs and mapInfo.mapType == 3 and (ns.dbChar.ZoneDeletedIcons[t.uiMapId] and not ns.dbChar.ZoneDeletedIcons[t.uiMapId][state] and value.showInZone)) -- Zone without Capitals
-        or (mapInfo.mapType == 4 and (ns.dbChar.DungeonDeletedIcons[t.uiMapId] and not ns.dbChar.DungeonDeletedIcons[t.uiMapId][state] and value.showInZone)) -- Dungeon
+      -- mapType == X
+      -- X = 0 =	Cosmic 	
+      -- X = 1 =	World 	
+      -- X = 2 =	Continent 	
+      -- X = 3 =	Zone 	
+      -- X = 4 =	Dungeon 	
+      -- X = 5 =	Micro 	
+      -- X = 6 =	Orphan 	
+
+      if t.uiMapId == 948 -- Mahlstrom Continent 
+        or WorldMapFrame:GetMapID() == 2274 -- PTR: Khaz Algar - The War Within. Continent Scale atm on Beta a Zone not a Continent!!
+        or (mapInfo.mapType == 0 and (ns.dbChar.AzerothDeletedIcons[t.uiMapId] and not ns.dbChar.AzerothDeletedIcons[t.uiMapId][state])) -- Cosmos
+        or (mapInfo.mapType == 1 and (ns.dbChar.AzerothDeletedIcons[t.uiMapId] and not ns.dbChar.AzerothDeletedIcons[t.uiMapId][state])) -- Azeroth
+        or ((mapInfo.mapType == 4 or mapInfo.mapType == 6) and (ns.dbChar.DungeonDeletedIcons[t.uiMapId] and not ns.dbChar.DungeonDeletedIcons[t.uiMapId][state])) -- Dungeon
+        or (not ns.CapitalIDs and (ns.dbChar.ZoneDeletedIcons[t.uiMapId] and not ns.dbChar.ZoneDeletedIcons[t.uiMapId][state] and value.showInZone) and (mapInfo.mapType == 3 or mapInfo.mapType == 5 )) -- Zone without Capitals
         or (ns.CapitalIDs and (ns.dbChar.CapitalsDeletedIcons[t.uiMapId] and not ns.dbChar.CapitalsDeletedIcons[t.uiMapId][state] and value.showInZone)) -- Capitals
         or (ns.CapitalIDs and ns.dbChar.MinimapCapitalsDeletedIcons[t.minimapId] and not ns.dbChar.MinimapCapitalsDeletedIcons[t.minimapId][state] and value.showOnMinimap) -- Minimap Capitals
         or (not ns.CapitalIDs and mapInfo.mapType == 3 and ns.dbChar.MinimapZoneDeletedIcons[t.minimapId] and not ns.dbChar.MinimapZoneDeletedIcons[t.minimapId][state] and value.showOnMinimap) -- Minimap Zones
       then
         return state, nil, icon, scale, alpha
       end
-
+      
 			state, value = next(data, state)
 		end
 		wipe(t)
@@ -378,10 +425,11 @@ do
 		if not t then return end
 
     local state, value
-  	local zone = t.C[t.Z]
-    local data = nodes[zone]
+  	local continent = t.C[t.Z]
+    local data = nodes[continent]
 
-		while zone do
+
+		while continent do
 
 			if data then -- Only if there is data for this continent
 				state, value = next(data, prestate)
@@ -389,7 +437,8 @@ do
 				while state do -- Have we reached the end of this continent?
           local alpha
           local icon = ns.icons[value.type]
-          
+          local mapInfo = C_Map.GetMapInfo(WorldMapFrame:GetMapID())
+
 					local allLocked = true
 					local anyLocked = false
           
@@ -424,8 +473,8 @@ do
             alpha = db.continentAlpha
           end
               
-          if ((ns.dbChar.ContinentDeletedIcons[t.contId] and not ns.dbChar.ContinentDeletedIcons[t.contId][state]) and value.showOnContinent) then -- Continent
-            return state, zone, icon, db.continentScale, alpha
+          if (mapInfo.mapType == 2 and (ns.dbChar.ContinentDeletedIcons[t.contId] and not ns.dbChar.ContinentDeletedIcons[t.contId][state]) and value.showOnContinent) then -- Continent
+            return state, continent, icon, db.continentScale, alpha
           end
 
 					state, value = next(data, state)  -- Get next data
@@ -433,8 +482,8 @@ do
 			end
       -- Get next continent
 			t.Z = next(t.C, t.Z)
-			zone = t.C[t.Z]
-			data = nodes[zone]
+			continent = t.C[t.Z]
+			data = nodes[continent]
 			prestate = nil
 		end
 		wipe(t)
@@ -489,6 +538,11 @@ local function setWaypoint(uiMapID, coord)
 end
 
 function pluginHandler:OnClick(button, pressed, uiMapId, coord, value)
+
+local mnID = nodes[uiMapId][coord].mnID
+local mnID2 = nodes[uiMapId][coord].mnID2
+local mnID3 = nodes[uiMapId][coord].mnID3
+local www = nodes[uiMapId][coord].www
 local mapInfo = C_Map.GetMapInfo(uiMapId)
 local CapitalIDs = WorldMapFrame:GetMapID() == 84 or WorldMapFrame:GetMapID() == 87  or WorldMapFrame:GetMapID() == 89 or WorldMapFrame:GetMapID() == 103 or WorldMapFrame:GetMapID() == 85
                 or WorldMapFrame:GetMapID() == 90 or WorldMapFrame:GetMapID() == 86 or WorldMapFrame:GetMapID() == 88 or WorldMapFrame:GetMapID() == 110  or WorldMapFrame:GetMapID() == 111
@@ -498,8 +552,9 @@ local CapitalIDs = WorldMapFrame:GetMapID() == 84 or WorldMapFrame:GetMapID() ==
                 or WorldMapFrame:GetMapID() == 1161 or WorldMapFrame:GetMapID() == 1163 or WorldMapFrame:GetMapID() == 1164 or WorldMapFrame:GetMapID() == 1165 or WorldMapFrame:GetMapID() == 1670
                 or WorldMapFrame:GetMapID() == 1671 or WorldMapFrame:GetMapID() == 1672 or WorldMapFrame:GetMapID() == 1673 or WorldMapFrame:GetMapID() == 2112 or WorldMapFrame:GetMapID() == 2339
 
+
   StaticPopupDialogs["Delete_Icon?"] = {
-    text = TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. ": " .. EMBLEM_SYMBOL .. " " .. SLASH_STOPWATCH_PARAM_STOP5 .. " ? " .. TextIconMNL4:GetIconString(),
+    text = TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. ": " .. L["Delete this icon"] .. " ? " .. TextIconMNL4:GetIconString(),
     button1 = YES,
     button2 = NO,
     showAlert = true,
@@ -527,35 +582,49 @@ local CapitalIDs = WorldMapFrame:GetMapID() == 84 or WorldMapFrame:GetMapID() ==
         print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00", L["Zones"] .. " & " .. MINIMAP_LABEL .. " - " .. "|cff00ff00" .. L["A icon has been deleted"])
       end
     
-      if mapInfo.mapType == 4 then -- Dungeon
+      if not CapitalIDs and (mapInfo.mapType == 4 or mapInfo.mapType == 6) then -- Dungeon
         ns.dbChar.DungeonDeletedIcons[uiMapId][coord] = true
         print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00", DUNGEONS .. " - " .. "|cff00ff00" .. L["A icon has been deleted"])
       end
       HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
     end,
     OnCancel = function()
-      print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. "|cffffff00 ".. EMBLEM_SYMBOL .. " " .. SLASH_STOPWATCH_PARAM_STOP5 .. " " .. "|cffff0000" .. CLUB_FINDER_CANCELED)
+      print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. "|cffffff00 ".. CALENDAR_DELETE_EVENT .. " " .. "|cffff0000" .. L["canceled"])
     end,
     timeout = 5,
     whileDead = true,
     hideOnEscape = true,
   }
 
+  if (not pressed) then return end
+
+  if (button == "RightButton" and db.tomtom and TomTom and IsShiftKeyDown()) then
+      setWaypoint(uiMapId, coord)
+      return
+  end
+
+  if (button == "LeftButton") and IsAltKeyDown() then
+    StaticPopup_Show ("Delete_Icon?")
+  end
+
+  if (button == "LeftButton" and mnID and mnID2 or mnID3 and not IsShiftKeyDown() and not IsAltKeyDown()) then
+    WorldMapFrame:SetMapID(mnID)
+  end
+
+  if (button == "RightButton" and mnID2 and not IsShiftKeyDown() and not IsAltKeyDown()) then
+    WorldMapFrame:SetMapID(mnID2)
+  end
+
+  if (button == "MiddleButton" and mnID3 and not IsShiftKeyDown() and not IsAltKeyDown()) then
+      WorldMapFrame:SetMapID(mnID3)
+  end
+
+
   if not ns.Addon.db.profile.activate.ShiftWorld then
 
     if (not pressed) then return end
 
-    if (button == "RightButton" and db.tomtom and TomTom) then
-        setWaypoint(uiMapId, coord)
-        return
-    end
-
-    if (button == "LeftButton") and IsAltKeyDown() then
-      StaticPopup_Show ("Delete_Icon?")
-    end
-
     if (button == "MiddleButton") then
-      local www = nodes[uiMapId][coord].www
       if www then
         print(www)
       end
@@ -563,7 +632,6 @@ local CapitalIDs = WorldMapFrame:GetMapID() == 84 or WorldMapFrame:GetMapID() ==
 
     if (button == "LeftButton" and db.journal and not IsAltKeyDown()) then
 
-      local mnID = nodes[uiMapId][coord].mnID
       if mnID then
         WorldMapFrame:SetMapID(mnID)
       if (not EncounterJournal_OpenJournal) then 
@@ -572,7 +640,7 @@ local CapitalIDs = WorldMapFrame:GetMapID() == 84 or WorldMapFrame:GetMapID() ==
         _G.EncounterJournal:SetScript("OnShow", nil)
         return
       end
-      
+
       if nodes[uiMapId][coord].mnID and nodes[uiMapId][coord].id then
         mnID = nodes[uiMapId][coord].mnID[1] --change id function to mnID function
       else
@@ -609,14 +677,6 @@ local CapitalIDs = WorldMapFrame:GetMapID() == 84 or WorldMapFrame:GetMapID() ==
 
     if (not pressed) then return end
 
-    if IsShiftKeyDown() and (button == "RightButton" and db.tomtom and TomTom) then
-        setWaypoint(uiMapId, coord)
-    return end
-
-    if (button == "LeftButton") and IsAltKeyDown() then
-      StaticPopup_Show ("Delete_Icon?")
-    end
-
     if IsShiftKeyDown() and (button == "MiddleButton") then
       local www = nodes[uiMapId][coord].www
       if www then
@@ -626,7 +686,6 @@ local CapitalIDs = WorldMapFrame:GetMapID() == 84 or WorldMapFrame:GetMapID() ==
 
     if IsShiftKeyDown() and (button == "LeftButton" and db.journal) then
 
-      local mnID = nodes[uiMapId][coord].mnID
       if mnID then
          WorldMapFrame:SetMapID(mnID)
       if (not EncounterJournal_OpenJournal) then 
@@ -719,25 +778,29 @@ function Addon:PLAYER_LOGIN()
   end
 
   --remove BlizzPOIs for MapNotes icons function
-  function RemoveBlizzPOIs()
+  function ns.RemoveBlizzPOIs()
     if (not ns.Addon.db.profile.activate.RemoveBlizzPOIs or ns.Addon.db.profile.activate.HideMapNote) then return end
     
     for pin in WorldMapFrame:EnumeratePinsByTemplate("AreaPOIPinTemplate") do
-        for _, poiID in pairs(ns.BlizzAreaPoisInfo) do
-            local poi = C_AreaPoiInfo.GetAreaPOIInfo(WorldMapFrame:GetMapID(), pin.areaPoiID)
-            if (poi ~= nil and poi.areaPoiID == poiID) then
-                WorldMapFrame:RemovePin(pin)
-            end
+      for _, poiID in pairs(ns.BlizzAreaPoisInfo) do
+        local poi = C_AreaPoiInfo.GetAreaPOIInfo(WorldMapFrame:GetMapID(), pin.areaPoiID)
+        if (poi ~= nil and poi.areaPoiID == poiID) then
+            WorldMapFrame:RemovePin(pin)
         end
+      end
     end
   end
     
   hooksecurefunc(WorldMapFrame, "OnMapChanged", function()
-    RemoveBlizzPOIs()
+    ns.RemoveBlizzPOIs()
   end)
+  
+  hooksecurefunc(WorldMapFrame, "IsShown", function()
+    ns.RemoveBlizzPOIs()
+  end)  
     
   WorldMapFrame:HookScript("OnShow", function()
-    RemoveBlizzPOIs()
+    ns.RemoveBlizzPOIs()
   end)
 
 end
@@ -773,14 +836,18 @@ function Addon:PopulateTable()
   ns.LoadContinentNodesLocationinfo(self) -- load nodes\Retail\RetailContinentNodesLocation.lua
 
   ns.LoadZoneMapNodesLocationinfo(self) -- load nodes\Retail\RetailZoneNodesLocation.lua
-  ns.LoadZoneDungeonMapNodesLocationinfo(self) -- load OnlyZoneDungeonNodesLocation.lua  
-  
+  ns.LoadZoneDungeonMapNodesLocationinfo(self) -- load OnlyZoneDungeonNodesLocation.lua
+   
+  ns.LoadPathsZoneLocationinfo(self) -- load nodes\Retail\RetailPathsZoneNodes.lua
+  ns.LoadPathsMiniMapLocationinfo(self) -- load nodes\Retail\RetailPathsMiniMapNodes.lua
+
   ns.LoadInsideDungeonNodesLocationInfo(self) -- load nodes\Retail\RetailInsideDungeonNodesLocation.lua
 
   ns.LoadWorldNodesLocationInfo(self) -- load nodes\Retail\RetailWorldNodesLocation.lua
 
   ns.LoadCapitalsLocationinfo(self) -- load nodes\Retail\RetailCapitals.lua
   ns.LoadMinimapCapitalsLocationinfo(self) -- load nodes\Retail\RetailMinimapCapitals.lua
+
 end
 
 function Addon:UpdateInstanceNames(node)
