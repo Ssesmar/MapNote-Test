@@ -117,7 +117,8 @@ if not db.activate.HideMapNote then
                         minimap[85][57479217] = { mnID = 862, name = "", type = "HPortalS", showInZone = false, showOnContinent = false, showOnMinimap = true, TransportName = L["Portal"] .. " => " .. L["Zuldazar"] } -- Zuldazar  
                         minimap[85][57479225] = { mnID = 371, name = "", type = "HPortalS", showInZone = false, showOnContinent = false, showOnMinimap = true, TransportName = L["Portal"] .. " => " .. L["Jade Forest"] } -- The Jade Forest 
                         minimap[85][56249171] = { mnID = 125, name = "", type = "HPortalS", showInZone = false, showOnContinent = false, showOnMinimap = true, TransportName = L["Portal"] .. " => " .. DUNGEON_FLOOR_DALARANCITY1 .. " - " .. POSTMASTER_PIPE_NORTHREND} -- Crystalsong Forest (Old Dalaran) Portalroom 
-                        minimap[85][57409153] = { mnID = 111, name =  L["Shattrath City"], TransportName = L["in the basement"], type = "HPortalS", showInZone = false, showOnContinent = false, showOnMinimap = true } -- Shattrath 
+                        minimap[85][57409153] = { mnID = 111, name = L["Shattrath City"], TransportName = L["in the basement"], type = "HPortalS", showInZone = false, showOnContinent = false, showOnMinimap = true } -- Shattrath 
+                        minimap[85][57179070] = { mnID = 17, name = "", TransportName = L["Blasted Lands"] .. "\n" .. "( " .. L["talk to"] .. ": " .. L["Thrallmar Mage"] .. " )" .. "\n" ..L["in the basement"], type = "HPortalS", showInZone = false, showOnContinent = false, showOnMinimap = true } -- Blasted Lands
                         minimap[85][56399252] = { mnID = 74, name = DUNGEON_FLOOR_TANARIS18, TransportName = L["in the basement"], type = "HPortalS", showInZone = false, showOnContinent = false, showOnMinimap = true } -- Caverns of Time 
                         minimap[85][55209201] = { mnID = 624, name = L["Warspear"], TransportName = L["in the basement"], type = "HPortalS", showInZone = false, showOnContinent = false, showOnMinimap = true } -- Warspear - Ashran 
                         minimap[85][57878985] = { mnID = 2339, name = L["Dornogal"] .. " " .. "(only PTR - Beta TWW)", TransportName = L["in the basement"], type = "HPortalS", showInZone = false, showOnContinent = false, showOnMinimap = true } -- Dornogal
@@ -231,6 +232,13 @@ if not db.activate.HideMapNote then
                         minimap[85][48037056] = { dnID = TRANSMOG_SET_PVE .. " " .. MERCHANT, name = "", TransportName = L["(on the tower)"],  type = "PvEVendor", showInZone = false, showOnContinent = false, showOnMinimap = true }
                     end
 
+                    if self.db.profile.showMinimapCapitalsStablemaster then
+                        minimap[85][40808060] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterH", showInZone = false, showOnContinent = false, showOnMinimap = true }
+                        minimap[85][32606480] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterH", showInZone = false, showOnContinent = false, showOnMinimap = true }
+                        minimap[85][39604840] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterH", showInZone = false, showOnContinent = false, showOnMinimap = true }
+                        minimap[85][62403560] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterH", showInZone = false, showOnContinent = false, showOnMinimap = true }
+                    end
+
                 end
             end
         end
@@ -317,33 +325,37 @@ if not db.activate.HideMapNote then
                 end
 
             --General Thunder Bluff
-            if self.db.profile.activate.MinimapCapitalsGeneral then
+                if self.db.profile.activate.MinimapCapitalsGeneral then
     
-                if self.db.profile.showMinimapCapitalsPaths then
-                    minimap[88][52232561] = { dnID = L["Exit"], name = "", mnID = 7, type = "PathU", showInZone = false, showOnContinent = false, showOnMinimap = true }
-                    minimap[88][54632715] = { dnID = L["Exit"], name = "", mnID = 7, type = "PathU", showInZone = false, showOnContinent = false, showOnMinimap = true }
-                    minimap[88][31716595] = { dnID = L["Exit"], name = "", mnID = 7, type = "PathU", showInZone = false, showOnContinent = false, showOnMinimap = true }
-                    minimap[88][31236257] = { dnID = L["Exit"], name = "", mnID = 7, type = "PathU", showInZone = false, showOnContinent = false, showOnMinimap = true }
-                end
+                    if self.db.profile.showMinimapCapitalsPaths then
+                        minimap[88][52232561] = { dnID = L["Exit"], name = "", mnID = 7, type = "PathU", showInZone = false, showOnContinent = false, showOnMinimap = true }
+                        minimap[88][54632715] = { dnID = L["Exit"], name = "", mnID = 7, type = "PathU", showInZone = false, showOnContinent = false, showOnMinimap = true }
+                        minimap[88][31716595] = { dnID = L["Exit"], name = "", mnID = 7, type = "PathU", showInZone = false, showOnContinent = false, showOnMinimap = true }
+                        minimap[88][31236257] = { dnID = L["Exit"], name = "", mnID = 7, type = "PathU", showInZone = false, showOnContinent = false, showOnMinimap = true }
+                    end
 
-                if self.db.profile.showMinimapCapitalsInnkeeper then
-                    minimap[88][45856477] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Innkeeper",  showInZone = false, showOnContinent = false, showOnMinimap = true }
-                end
+                    if self.db.profile.showMinimapCapitalsInnkeeper then
+                        minimap[88][45856477] = { dnID = MINIMAP_TRACKING_INNKEEPER, name = "", type = "Innkeeper",  showInZone = false, showOnContinent = false, showOnMinimap = true }
+                    end
 
-                if self.db.profile.showMinimapCapitalsAuctioneer then
-                    minimap[88][38875023] = { dnID = BUTTON_LAG_AUCTIONHOUSE, name = "", type = "Auctioneer",  showInZone = false, showOnContinent = false, showOnMinimap = true }
-                    minimap[88][40435169] = { dnID = BUTTON_LAG_AUCTIONHOUSE, name = "", type = "Auctioneer",  showInZone = false, showOnContinent = false, showOnMinimap = true }
-                end
+                    if self.db.profile.showMinimapCapitalsAuctioneer then
+                        minimap[88][38875023] = { dnID = BUTTON_LAG_AUCTIONHOUSE, name = "", type = "Auctioneer",  showInZone = false, showOnContinent = false, showOnMinimap = true }
+                        minimap[88][40435169] = { dnID = BUTTON_LAG_AUCTIONHOUSE, name = "", type = "Auctioneer",  showInZone = false, showOnContinent = false, showOnMinimap = true }
+                    end
 
-                if self.db.profile.showMinimapCapitalsBank then
-                    minimap[88][47175862] = { dnID = BANK, name = "", type = "Bank",  showInZone = false, showOnContinent = false, showOnMinimap = true }
-                end
+                    if self.db.profile.showMinimapCapitalsBank then
+                        minimap[88][47175862] = { dnID = BANK, name = "", type = "Bank",  showInZone = false, showOnContinent = false, showOnMinimap = true }
+                    end
 
-                if self.db.profile.showMinimapCapitalsMailbox then
-                    minimap[88][45505950] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, showOnContinent = false, showOnMinimap = true }
-                end
+                    if self.db.profile.showMinimapCapitalsMailbox then
+                        minimap[88][45505950] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, showOnContinent = false, showOnMinimap = true }
+                    end
 
-            end
+                    if self.db.profile.showMinimapCapitalsStablemaster then
+                        minimap[88][45006000] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterH", showInZone = false, showOnContinent = false, showOnMinimap = true }
+                    end
+
+                end
 
             end
 
@@ -465,6 +477,10 @@ if not db.activate.HideMapNote then
                         minimap[110][83206540] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, showOnContinent = false, showOnMinimap = true }
                         minimap[110][71607550] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, showOnContinent = false, showOnMinimap = true }
                         minimap[110][71607980] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, showOnContinent = false, showOnMinimap = true }
+                    end
+
+                    if self.db.profile.showMinimapCapitalsStablemaster then
+                        minimap[110][83403040] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterH", showInZone = false, showOnContinent = false, showOnMinimap = true }
                     end
 
                 end
@@ -604,6 +620,10 @@ if not db.activate.HideMapNote then
                         minimap[90][68003850] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, showOnContinent = false, showOnMinimap = true }
                     end
 
+                    if self.db.profile.showMinimapCapitalsStablemaster then
+                        minimap[90][67603800] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterH", showInZone = false, showOnContinent = false, showOnMinimap = true }
+                    end
+
                 end
 
             end
@@ -735,6 +755,10 @@ if not db.activate.HideMapNote then
                         minimap[624][65105270] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, showOnContinent = false, showOnMinimap = true}
                         minimap[624][68203930] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, showOnContinent = false, showOnMinimap = true}
                         minimap[624][77805210] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, showOnContinent = false, showOnMinimap = true}
+                    end
+
+                    if self.db.profile.showMinimapCapitalsStablemaster then
+                        minimap[624][77605900] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterH", showInZone = false, showOnContinent = false, showOnMinimap = true }
                     end
 
                 end
@@ -918,6 +942,10 @@ if not db.activate.HideMapNote then
                         minimap[1165][41200440] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, showOnContinent = false, showOnMinimap = true }
                     end
 
+                    if self.db.profile.showMinimapCapitalsStablemaster then
+                        minimap[1165][45803620] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterH", showInZone = false, showOnContinent = false, showOnMinimap = true }
+                    end
+
                 end
 
             end
@@ -963,7 +991,6 @@ if not db.activate.HideMapNote then
                 if self.db.profile.activate.MinimapCapitalsGeneral then
     
                     if self.db.profile.showMinimapCapitalsPaths then
-                        minimap[390][61481920] = { name = L["Entrance"], mnID = 391, type = "PathO", showInZone = false, showOnContinent = false, showOnMinimap = true }
                         minimap[391][26778156] = { name = L["Exit"], mnID = 390, type = "PathU", showInZone = false, showOnContinent = false, showOnMinimap = true }
                         minimap[391][53618846] = { name = L["Exit"], mnID = 390, type = "PathU", showInZone = false, showOnContinent = false, showOnMinimap = true }
                         minimap[391][77476963] = { name = L["Exit"], mnID = 390, type = "PathU", showInZone = false, showOnContinent = false, showOnMinimap = true }
@@ -1057,7 +1084,7 @@ if not db.activate.HideMapNote then
                         minimap[84][76211869] = { mnID = 198, name = "", type = "APortalS", showInZone = false, showOnContinent = false, showOnMinimap = true, TransportName = L["Portal"] .. " => " .. POSTMASTER_LETTER_HYJAL } -- Portal to Hyjal
                         minimap[84][73171966] = { mnID = 207, name = "", type = "APortalS", showInZone = false, showOnContinent = false, showOnMinimap = true, TransportName = L["Portal"] .. " => " .. ARTIFACT_SHAMAN_TITLECARD_DEEPHOLM } -- Portal to Deepholm
                         minimap[84][73301687] = { mnID = 203, name = "", type = "APortalS", showInZone = false, showOnContinent = false, showOnMinimap = true, TransportName = L["Portal"] .. " => " .. L["Vashj'ir"] } -- Portal to Vashjir
-                        minimap[84][48728798] = { name = "", type = "PassageAPortal", showInZone = false, showOnContinent = false, showOnMinimap = true, TransportName = STORMWIND .. " " .. L["Portalroom"] .. "\n" .. " => " .. L["Ashran"] .. "\n" .. " => " .. L["Valdrakken"] .. "\n" .. " => " .. L["Boralus, Tiragarde Sound"] .. "\n" .. " => " .. L["Oribos"] .. "\n" .. " => " .. L["Azsuna"] .. "\n" .. " => " .. L["Shattrath City"] .. "\n" .. " => " .. L["Jade Forest"] .. "\n" .. " => " .. DUNGEON_FLOOR_DALARANCITY1 .. "\n" .. " => " .. DUNGEON_FLOOR_TANARIS18 .. "\n" .. " => " .. L["Exodar"] .. "\n" ..  " => " .. L["Bel'ameth, Amirdrassil"] } -- Portalroom from Stormwind
+                        minimap[84][49118734] = { mnID = 17, name = "", TransportName = L["Blasted Lands"] .. "\n" .. "( " .. L["talk to"] .. ": " .. L["Honor Hold Mage"] .. " )", type = "APortalS", showInZone = false, showOnContinent = false, showOnMinimap = true } -- Blasted Lands
                         minimap[84][43748538] = { mnID = 74, name = "", type = "APortalS", showInZone = false, showOnContinent = false, showOnMinimap = true, TransportName = L["Portal"] .. " => " .. DUNGEON_FLOOR_TANARIS18} -- Portal to Caverns of Time 
                         minimap[84][44888577] = { mnID = 111, name = "", type = "APortalS", showInZone = false, showOnContinent = false, showOnMinimap = true, TransportName = L["Portal"] .. " => " .. L["Shattrath City"] } -- Portal to Shattrath 
                         minimap[84][43638719] = { mnID = 103, name = "", type = "APortalS", showInZone = false, showOnContinent = false, showOnMinimap = true, TransportName = L["Portal"] .. " => " .. L["Exodar"] } -- Portal to Exodar 
@@ -1213,6 +1240,11 @@ if not db.activate.HideMapNote then
                         minimap[84][62507470] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, showOnContinent = false, showOnMinimap = true }
                     end
 
+                    if self.db.profile.showMinimapCapitalsStablemaster then
+                        minimap[84][77806720] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterA", showInZone = false, showOnContinent = false, showOnMinimap = true }
+                        minimap[84][67003760] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterA", showInZone = false, showOnContinent = false, showOnMinimap = true }
+                    end
+
                 end
 
             end
@@ -1337,6 +1369,10 @@ if not db.activate.HideMapNote then
                         minimap[87][72504950] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, showOnContinent = false, showOnMinimap = true }
                     end
 
+                    if self.db.profile.showMinimapCapitalsStablemaster then
+                        minimap[87][69008460] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterA", showInZone = false, showOnContinent = false, showOnMinimap = true }
+                    end
+
                 end
 
             end
@@ -1391,6 +1427,10 @@ if not db.activate.HideMapNote then
                         minimap[89][57505990] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, showOnContinent = false, showOnMinimap = true }
                         minimap[89][54705320] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, showOnContinent = false, showOnMinimap = true }
                         minimap[89][44905040] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, showOnContinent = false, showOnMinimap = true }
+                    end
+
+                    if self.db.profile.showMinimapCapitalsStablemaster then
+                        minimap[89][43602940] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterA", showInZone = false, showOnContinent = false, showOnMinimap = true }
                     end
 
                 end
@@ -1503,6 +1543,10 @@ if not db.activate.HideMapNote then
                         minimap[103][60505190] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, showOnContinent = false, showOnMinimap = true }
                         minimap[103][51504320] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, showOnContinent = false, showOnMinimap = true }
                         minimap[103][59302760] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, showOnContinent = false, showOnMinimap = true }
+                    end
+
+                    if self.db.profile.showMinimapCapitalsStablemaster then
+                        minimap[103][59402440] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterA", showInZone = false, showOnContinent = false, showOnMinimap = true }
                     end
 
                 end
@@ -1637,6 +1681,10 @@ if not db.activate.HideMapNote then
                         minimap[622][42103790] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, showOnContinent = false, showOnMinimap = true }
                         minimap[622][51604450] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, showOnContinent = false, showOnMinimap = true }
                         minimap[622][63602250] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, showOnContinent = false, showOnMinimap = true }
+                    end
+
+                    if self.db.profile.showMinimapCapitalsStablemaster then
+                        minimap[622][34006420] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterA", showInZone = false, showOnContinent = false, showOnMinimap = true }
                     end
 
                 end
@@ -1784,6 +1832,10 @@ if not db.activate.HideMapNote then
                         minimap[1161][73801450] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, showOnContinent = false, showOnMinimap = true }
                     end
 
+                    if self.db.profile.showMinimapCapitalsStablemaster then
+                        minimap[1161][69001300] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterA", showInZone = false, showOnContinent = false, showOnMinimap = true }
+                    end
+
                 end
 
             --Transports Boralus
@@ -1882,7 +1934,6 @@ if not db.activate.HideMapNote then
                 if self.db.profile.activate.MinimapCapitalsGeneral then
     
                     if self.db.profile.showMinimapCapitalsPaths then
-                        minimap[390][86696414] = { name = L["Entrance"], mnID = 393, type = "PathRU", showInZone = false, showOnContinent = false, showOnMinimap = true }
                         minimap[393][24265267] = { name = L["Exit"], mnID = 390, type = "PathLO", showInZone = false, showOnContinent = false, showOnMinimap = true }
                         minimap[393][60201547] = { name = L["Exit"], mnID = 390, type = "PathLO", showInZone = false, showOnContinent = false, showOnMinimap = true }
                         minimap[393][37762459] = { name = L["Exit"], mnID = 390, type = "PathLO", showInZone = false, showOnContinent = false, showOnMinimap = true }
@@ -2013,6 +2064,11 @@ if not db.activate.HideMapNote then
                     minimap[111][74704840] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, showOnContinent = false, showOnMinimap = true }
                     minimap[111][73503460] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, showOnContinent = false, showOnMinimap = true }
                     minimap[111][47002570] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, showOnContinent = false, showOnMinimap = true }
+                end
+
+                if self.db.profile.showMinimapCapitalsStablemaster then
+                    minimap[111][28604760] = { dnID = MINIMAP_TRACKING_STABLEMASTER .. " - " .. L["The Aldor"], name = "", type = "StablemasterN", showInZone = false, showOnContinent = false, showOnMinimap = true }
+                    minimap[111][55808080] = { dnID = MINIMAP_TRACKING_STABLEMASTER .. " - " .. L["The Scryers"], name = "", type = "StablemasterN", showInZone = false, showOnContinent = false, showOnMinimap = true }
                 end
 
             end
@@ -2227,6 +2283,10 @@ if not db.activate.HideMapNote then
                     minimap[125][48902540] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, showOnContinent = false, showOnMinimap = true }
                 end
 
+                if self.db.profile.showMinimapCapitalsStablemaster then
+                    minimap[125][59003860] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterN", showInZone = false, showOnContinent = false, showOnMinimap = true }
+                end
+
             end
 
         --Transports Dalaran Northrend
@@ -2406,6 +2466,10 @@ if not db.activate.HideMapNote then
                     minimap[627][48902540] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, showOnContinent = false, showOnMinimap = true }
                 end
 
+                if self.db.profile.showMinimapCapitalsStablemaster then
+                    minimap[627][59003860] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterN", showInZone = false, showOnContinent = false, showOnMinimap = true }
+                end
+
             end
 
         --Transports Dalaran Legion
@@ -2564,6 +2628,10 @@ if not db.activate.HideMapNote then
                     minimap[1670][63505150] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = false, showOnContinent = false, showOnMinimap = true }
                 end
 
+                if self.db.profile.showMinimapCapitalsStablemaster then
+                    minimap[1670][59207500] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterN", showInZone = false, showOnContinent = false, showOnMinimap = true }
+                end
+
             end
 
         --Transports Oribos
@@ -2703,6 +2771,10 @@ if not db.activate.HideMapNote then
 
                 if self.db.profile.showMinimapCapitalsDragonFlyTransmog then
                     minimap[2112][25035064] = { dnID = MINIMAP_TRACKING_TRANSMOGRIFIER .. " " .. MOUNT_JOURNAL_FILTER_DRAGONRIDING, name = "",  type = "DragonFlyTransmog", showInZone = false, showOnContinent = false, showOnMinimap = true }
+                end
+
+                if self.db.profile.showMinimapCapitalsStablemaster then
+                    minimap[2112][46807880] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterN", showInZone = false, showOnContinent = false, showOnMinimap = true }
                 end
 
             end

@@ -30,6 +30,7 @@ if not db.activate.HideMapNote then
             minimap[948][51102882] = { id = 67, type = "Dungeon", showInZone = false, showOnContinent = false, showOnMinimap = true } -- The Stonecore
 
             -- Dungeon minimap above Blizzards Icons to make it Clickable for maximized Maps
+            minimap[1][03067458] = { id = 240, type = "Dungeon", showInZone = false, showOnContinent = false, showOnMinimap = true } -- Wailing Caverns
             minimap[1][46200001] = { id = 226, type = "Dungeon", showInZone = false, showOnContinent = false, showOnMinimap = true } -- Ragefire
             minimap[10][80190006] = { id = 226, type = "Dungeon", showInZone = false, showOnContinent = false, showOnMinimap = true } -- Ragefire
             minimap[76][18729718] = { id = 226, type = "Dungeon", showInZone = false, showOnContinent = false, showOnMinimap = true } -- Ragefire
@@ -539,7 +540,7 @@ if not db.activate.HideMapNote then
         --Zandalar Dungeons
           if self.db.profile.showMiniMapDungeons then
 
-            if self.faction == "Alliance" or db.activate.EnemyFaction then
+            if self.faction == "Alliance" or db.activate.MiniMapEnemyFaction then
               minimap[862][39307154] = { id = 1012, type = "Dungeon", showInZone = false, showOnContinent = false, showOnMinimap = true } -- The MOTHERLODe
             end
 
@@ -594,11 +595,11 @@ if not db.activate.HideMapNote then
             minimap[896][33671253] = { id = 1021, type = "Dungeon", showInZone = false, showOnContinent = false, showOnMinimap = true } -- Waycrest Manor 
             minimap[1169][38926976] = { id = 1002, type = "Dungeon", showInZone = false, showOnContinent = false, showOnMinimap = true } -- Tol Dagor
 
-            if self.faction == "Alliance" or db.activate.EnemyFaction then
+            if self.faction == "Alliance" or db.activate.MiniMapEnemyFaction then
               minimap[895][75632450] = { id = 1023, type = "Dungeon", showInZone = false, showOnContinent = false, showOnMinimap = true } -- Siege of Boralus
             end
 
-            if self.faction == "Horde" or db.activate.EnemyFaction then
+            if self.faction == "Horde" or db.activate.MiniMapEnemyFaction then
               minimap[895][88285102] = { id = 1023, type = "Dungeon", showInZone = false, showOnContinent = false, showOnMinimap = true  } -- Siege of Boralus
             end
           end
@@ -609,7 +610,7 @@ if not db.activate.HideMapNote then
           -- Raid minimap above Blizzards Icons to make it Clickable for maximized Maps
             minimap[942][83894693] = { id = 1036, type = "Raid",  showInZone = false, showOnContinent = false, showOnMinimap = true } -- Crucible of Storms
 
-            if self.faction == "Alliance" or db.activate.EnemyFaction then
+            if self.faction == "Alliance" or db.activate.MiniMapEnemyFaction then
               minimap[895][74382837] = { id = 1176, type = "Raid", showInZone = false, showOnContinent = false, showOnMinimap = true } -- Battle of Dazar'alor
             end
           end
@@ -618,7 +619,7 @@ if not db.activate.HideMapNote then
         -- Kul Tiras LFR
           if self.db.profile.showMiniMapLFR then
 
-            if self.faction == "Horde" or db.activate.EnemyFaction then
+            if self.faction == "Horde" or db.activate.MiniMapEnemyFaction then
               minimap[895][75112192] = { mnID = 1161, name = L["Kiku"] .. "\n" .. L["Registrant"] .. " - " .. RAID_FINDER .. "\n" .. " ", id = { 1176, 1031, 1179, 1036 }, type = "LFR", showInZone = false, showOnContinent = false, showOnMinimap = true }
             end
           end
@@ -724,8 +725,8 @@ if not db.activate.HideMapNote then
             minimap[2214][46860856] = { id = 1269, type = "Dungeon", showInZone = false, showOnContinent = false, showOnMinimap = true } -- The Stonevault
             minimap[2248][45234108] = { id = 1268, type = "Dungeon", showInZone = false, showOnContinent = false, showOnMinimap = true } -- The Rookery
             minimap[2248][76584378] = { id = 1272, type = "Dungeon", showInZone = false, showOnContinent = false, showOnMinimap = true } -- Cinderbrew Meadery
-            minimap[2255][46746345] = { id = 1274, type = "Dungeon", showInZone = false, showOnContinent = false, showOnMinimap = true } -- City of Threads
-            minimap[2255][49537528] = { id = 1271, type = "Dungeon", showInZone = false, showOnContinent = false, showOnMinimap = true } -- Ara-Kara, City of Echoes
+            minimap[2255][46746917] = { id = 1274, type = "Dungeon", showInZone = false, showOnContinent = false, showOnMinimap = true } -- City of Threads
+            minimap[2255][49538100] = { id = 1271, type = "Dungeon", showInZone = false, showOnContinent = false, showOnMinimap = true } -- Ara-Kara, City of Echoes
             end
   
   
@@ -733,7 +734,7 @@ if not db.activate.HideMapNote then
             if self.db.profile.showMiniMapRaids then
   
             -- Raid minimap above Blizzards Icons to make it Clickable for maximized Maps
-            minimap[2255][43478451] = { id = 1273, type = "Raid", showInZone = false, showOnContinent = false, showOnMinimap = true } -- Nerub-ar Palace
+            minimap[2255][43559029] = { id = 1273, type = "Raid", showInZone = false, showOnContinent = false, showOnMinimap = true } -- Nerub-ar Palace
             minimap[2213][35047242] = { id = 1273, type = "Raid", showInZone = false, showOnContinent = false, showOnMinimap = true } -- Nerub-ar Palace              
             end
   

@@ -146,7 +146,7 @@ if not db.activate.HideMapNote then
           if db.activate.RemoveBlizzPOIs then
 
             if self.faction == "Horde" or db.activate.EnemyFaction then
-              nodes[12][58214450] = { mnID = 85, name = "", type = "HIcon", showOnContinent = true, showInZone = false, showOnMinimap = false, TransportName = ORGRIMMAR .. " - " .. FACTION_HORDE .. "\n" .. "\n" .. L["Portalroom"] .. "\n" .. " => " .. L["Silvermoon City"] .. "\n" .. " => " .. L["Valdrakken"] .. "\n" .. " => " .. L["Oribos"] .. "\n" .. " => " .. L["Azsuna"] .. "\n" .. " => " .. L["Zuldazar"] .. "\n" .. " => " .. L["Shattrath City"] .. "\n" .. " => " .. DUNGEON_FLOOR_DALARANCITY1 .. "\n" .. " => " .. DUNGEON_FLOOR_TANARIS18 .. "\n" .. "\n" .. L["Portals"] .. "\n" .. " => " .. POSTMASTER_LETTER_HYJAL .. "\n" .. " => " .. L["Twilight Highlands"] .. "\n" .. " => " .. ARTIFACT_SHAMAN_TITLECARD_DEEPHOLM .. "\n" .. " => " .. L["Vashj'ir"] .. "\n" .. " => " .. L["Uldum"] .. "\n" .. " => " .. DUNGEON_FLOOR_TOLBARADWARLOCKSCENARIO0 .. "\n" .. "\n" .. L["Zeppelins"] .. "\n" .. " => " .. L["Thunder Bluff"] .. "\n" .. " => " .. L["Grom'gol, Stranglethorn Vale"] .. "\n" .. " => " .. POSTMASTER_LETTER_WARSONGHOLD .. "\n" .. "\n" .. CALENDAR_TYPE_DUNGEON .. "\n" .. " => " .. DUNGEON_FLOOR_RAGEFIRE1 } -- Portalroom from Dazar'alor
+              nodes[12][58214450] = { mnID = 85, name = "", type = "HIcon", showOnContinent = true, showInZone = false, showOnMinimap = false, TransportName = ORGRIMMAR .. " - " .. FACTION_HORDE .. "\n" .. "\n" .. L["Portalroom"] .. "\n" .. " => " .. L["Silvermoon City"] .. "\n" .. " => " .. L["Valdrakken"] .. "\n" .. " => " .. L["Oribos"] .. "\n" .. " => " .. L["Azsuna"] .. "\n" .. " => " .. L["Zuldazar"] .. "\n" .. " => " .. L["Shattrath City"] .. "\n" .. " => " .. DUNGEON_FLOOR_DALARANCITY1 .. "\n" .. " => " .. DUNGEON_FLOOR_TANARIS18 .. "\n" .. " => " .. L["Blasted Lands"] .. "\n" .. "\n" .. L["Portals"] .. "\n" .. " => " .. POSTMASTER_LETTER_HYJAL .. "\n" .. " => " .. L["Twilight Highlands"] .. "\n" .. " => " .. ARTIFACT_SHAMAN_TITLECARD_DEEPHOLM .. "\n" .. " => " .. L["Vashj'ir"] .. "\n" .. " => " .. L["Uldum"] .. "\n" .. " => " .. DUNGEON_FLOOR_TOLBARADWARLOCKSCENARIO0 .. "\n" .. "\n" .. L["Zeppelins"] .. "\n" .. " => " .. L["Thunder Bluff"] .. "\n" .. " => " .. L["Grom'gol, Stranglethorn Vale"] .. "\n" .. " => " .. POSTMASTER_LETTER_WARSONGHOLD .. "\n" .. "\n" .. CALENDAR_TYPE_DUNGEON .. "\n" .. " => " .. DUNGEON_FLOOR_RAGEFIRE1 } -- Portalroom from Dazar'alor
               nodes[12][46055495] = { mnID = 88, name = "", type = "HIcon", showOnContinent = true, showInZone = false, showOnMinimap = false, TransportName = L["Thunder Bluff"] .. " - " .. FACTION_HORDE .. "\n" .. "\n" .. L["Zeppelin"] .. "\n" .. " => " .. ORGRIMMAR } -- Zeppelin from Thunder Bluff to Orgrimmar
             end
 
@@ -193,6 +193,11 @@ if not db.activate.HideMapNote then
         -- Continent Kalimdor LFR
           if self.db.profile.showContinentLFR then
             nodes[12][60448275] = { mnID = 75, id = { 187 }, name = L["Auridormi"] .. "\n" .. L["Registrant"] .. " - " .. RAID_FINDER .. "\n" .. " ", showOnContinent = true, showInZone = false, showOnMinimap = false, type = "LFR"}
+          end
+
+        -- Kalimdor PvpandPveVendor
+          if self.db.profile.showContinentPvPandPvEVendor then
+            nodes[12][56607888] = { name = "", dnID = TRANSMOG_SET_PVP .. " " .. MERCHANT .. "\n" .. WORLD_QUEST_REWARD_FILTERS_EQUIPMENT .. "\n" .. AUCTION_CATEGORY_WEAPONS, mnID = 71, type = "PvPVendor", showInZone = false, showOnContinent = true, showOnMinimap = false }
           end
         end
     
@@ -338,7 +343,7 @@ if not db.activate.HideMapNote then
 
             if self.faction == "Alliance" or db.activate.EnemyFaction then
               nodes[13][47275888] = { mnID = 87, name = "", type = "AIcon", showOnContinent = true, showInZone = false, showOnMinimap = false, TransportName = L["Ironforge"] .. " - " .. FACTION_ALLIANCE .. "\n" .. "\n" .. DUNGEON_FLOOR_DEEPRUNTRAM1 .. "\n" .. " => " .. STORMWIND } -- Transport to Ironforge Carriage 
-              nodes[13][42937289] = { mnID = 84, name = "", type = "AIcon", showOnContinent = true, showInZone = false, showOnMinimap = false, TransportName = STORMWIND .. " - " .. FACTION_ALLIANCE .. "\n" .. "\n" .. L["Portalroom"] .. "\n" .. " => " .. L["Ashran"] .. "\n" .. " => " .. L["Valdrakken"] .. "\n" .. " => " .. L["Boralus, Tiragarde Sound"] .. "\n" .. " => " .. L["Oribos"] .. "\n" .. " => " .. L["Azsuna"] .. "\n" .. " => " .. L["Shattrath City"] .. "\n" .. " => " .. L["Jade Forest"] .. "\n" .. " => " .. DUNGEON_FLOOR_DALARANCITY1 .. "\n" .. " => " .. DUNGEON_FLOOR_TANARIS18 .. "\n" .. " => " .. L["Exodar"] .. "\n" ..  " => " .. L["Bel'ameth, Amirdrassil"] .. "\n" .. "\n" .. L["Portals"] .. "\n" ..  "\n" .. " => " .. L["Uldum"] .. "\n" .. " => " .. L["Vashj'ir"] .. "\n" .. " => " .. POSTMASTER_LETTER_HYJAL .. "\n" .. " => " .. ARTIFACT_SHAMAN_TITLECARD_DEEPHOLM .. "\n" .. " => " .. L["Twilight Highlands"] .. "\n" .. " => " .. DUNGEON_FLOOR_TOLBARADWARLOCKSCENARIO0 .. "\n" .. "\n" .. L["Ships"] .. "\n" .. " => " .. POSTMASTER_LETTER_VALIANCEKEEP .. "\n" .. " => " .. L["Boralus, Tiragarde Sound"] .. "\n" .. " => " .. L["The Waking Shores, Dragon Isles"] .. "\n" .. "\n" .. DUNGEON_FLOOR_DEEPRUNTRAM1 .. "\n" .. " => " .. L["Ironforge"] .. "\n" .. "\n" .. " => " .. CALENDAR_TYPE_DUNGEON .. "\n" .. " => " .. DUNGEON_FLOOR_THESTOCKADE1 } -- Portalroom from Stormwind
+              nodes[13][42937289] = { mnID = 84, name = "", type = "AIcon", showOnContinent = true, showInZone = false, showOnMinimap = false, TransportName = STORMWIND .. " - " .. FACTION_ALLIANCE .. "\n" .. "\n" .. L["Portalroom"] .. "\n" .. " => " .. L["Ashran"] .. "\n" .. " => " .. L["Valdrakken"] .. "\n" .. " => " .. L["Boralus, Tiragarde Sound"] .. "\n" .. " => " .. L["Oribos"] .. "\n" .. " => " .. L["Azsuna"] .. "\n" .. " => " .. L["Shattrath City"] .. "\n" .. " => " .. L["Jade Forest"] .. "\n" .. " => " .. DUNGEON_FLOOR_DALARANCITY1 .. "\n" .. " => " .. DUNGEON_FLOOR_TANARIS18 .. "\n" .. " => " .. L["Exodar"] .. "\n" ..  " => " .. L["Bel'ameth, Amirdrassil"] .. "\n" .. " => " .. L["Blasted Lands"] .. "\n" .. "\n" .. L["Portals"] .. "\n" ..  "\n" .. " => " .. L["Uldum"] .. "\n" .. " => " .. L["Vashj'ir"] .. "\n" .. " => " .. POSTMASTER_LETTER_HYJAL .. "\n" .. " => " .. ARTIFACT_SHAMAN_TITLECARD_DEEPHOLM .. "\n" .. " => " .. L["Twilight Highlands"] .. "\n" .. " => " .. DUNGEON_FLOOR_TOLBARADWARLOCKSCENARIO0 .. "\n" .. "\n" .. L["Ships"] .. "\n" .. " => " .. POSTMASTER_LETTER_VALIANCEKEEP .. "\n" .. " => " .. L["Boralus, Tiragarde Sound"] .. "\n" .. " => " .. L["The Waking Shores, Dragon Isles"] .. "\n" .. "\n" .. DUNGEON_FLOOR_DEEPRUNTRAM1 .. "\n" .. " => " .. L["Ironforge"] .. "\n" .. "\n" .. " => " .. CALENDAR_TYPE_DUNGEON .. "\n" .. " => " .. DUNGEON_FLOOR_THESTOCKADE1 } -- Portalroom from Stormwind
             end
           end
     
@@ -445,6 +450,11 @@ if not db.activate.HideMapNote then
             nodes[101][43186573] = { mnID = 108, name = "", type = "MNL", showOnContinent = true, showInZone = false, showOnMinimap = false, TransportName = L["Shattrath City"] .. "\n" .. "\n" .. L["Portals"] .. "\n" .. " => " .. ORGRIMMAR .. "\n" .. " => " .. STORMWIND .. "\n" .. " => " .. L["Isle of Quel'Danas"] } -- Portal from Shattrath to Orgrimmar
           end
 
+        -- Outland PvpandPveVendor
+          if self.db.profile.showContinentPvPandPvEVendor then
+            nodes[101][53442348] = { name = "", dnID = TRANSMOG_SET_PVP .. " " .. MERCHANT .. "\n" .. WORLD_QUEST_REWARD_FILTERS_EQUIPMENT .. "\n" .. AUCTION_CATEGORY_WEAPONS, mnID = 109, type = "PvPVendor", showInZone = false, showOnContinent = true, showOnMinimap = false }
+          end
+
         end
     
     
@@ -513,6 +523,13 @@ if not db.activate.HideMapNote then
               nodes[113][79788368] = { mnID = 117, name = "", type = "AShip", showOnContinent = true, showInZone = false, showOnMinimap = false, TransportName = L["Howling Fjord"] .. " " .. L["Ship"] .. "\n" .. " => " .. POSTMASTER_LETTER_WETLANDS } -- Ship from Howling Fjord to Wetlands
             end
           end
+
+        -- Northrend PvpandPveVendor
+          if self.db.profile.showContinentPvPandPvEVendor then
+            nodes[113][49032027] = { name = "", dnID = TRANSMOG_SET_PVE .. " " .. MERCHANT .. "\n" .. WORLD_QUEST_REWARD_FILTERS_EQUIPMENT .. "\n" .. AUCTION_CATEGORY_WEAPONS, mnID = 118, type = "PvEVendor", showInZone = false, showOnContinent = true, showOnMinimap = false }
+            nodes[113][41133952] = { name = "", dnID = TRANSMOG_SET_PVE .. " " .. MERCHANT, mnID = 118, type = "PvEVendor", showInZone = false, showOnContinent = true, showOnMinimap = false }
+          end
+
         end
     
     
@@ -568,6 +585,20 @@ if not db.activate.HideMapNote then
           if self.db.profile.showContinentLFR then
             nodes[424][53805057] = { mnID = 390, id = { 317, 330, 362, 320 }, name = L["Lorewalker Han"] .. "\n" .. L["Registrant"] .. " - " .. RAID_FINDER .. "\n" .. " ", showOnContinent = true, showInZone = false, showOnMinimap = false , type = "LFR"}
           end
+
+        -- Pandaria PvpandPveVendor
+          if self.db.profile.showContinentPvPandPvEVendor then
+            nodes[424][24574389] = { name = "", dnID = TRANSMOG_SET_PVE .. " " .. MERCHANT .. "\n" .. WORLD_QUEST_REWARD_FILTERS_EQUIPMENT .. "\n" .. AUCTION_CATEGORY_WEAPONS, mnID = 388, type = "PvEVendor", showInZone = false, showOnContinent = true, showOnMinimap = false }
+          
+            if self.faction == "Horde" or db.activate.EnemyFaction then
+              nodes[424][39394352] = { name = "", dnID = TRANSMOG_SET_PVP .. " " .. MERCHANT .. " " .. FACTION_HORDE .. "\n" .. WORLD_QUEST_REWARD_FILTERS_EQUIPMENT .. "\n" .. AUCTION_CATEGORY_WEAPONS, mnID = 379, type = "PvPVendor", showInZone = false, showOnContinent = true, showOnMinimap = false }
+            end
+
+            if self.faction == "Alliance" or db.activate.EnemyFaction then
+              nodes[424][42126238] = { name = "", dnID = TRANSMOG_SET_PVP .. " " .. MERCHANT .. " " .. FACTION_ALLIANCE .. "\n" .. WORLD_QUEST_REWARD_FILTERS_EQUIPMENT .. "\n" .. AUCTION_CATEGORY_WEAPONS, mnID = 376, type = "PvPVendor", showInZone = false, showOnContinent = true, showOnMinimap = false }
+            end
+          end
+
         end
     
     
@@ -645,9 +676,23 @@ if not db.activate.HideMapNote then
             end
             
             if self.faction == "Alliance" or db.activate.EnemyFaction then
-              nodes[539][29021652] = { mnID = 582, id = { 477, 457, 669 }, type = "LFR", showOnContinent = true, showInZone = false, showOnMinimap = false, name = L["Seer Kazal"] .. " - " .. REQUIRES_LABEL .. " " .. GARRISON_LOCATION_TOOLTIP .. " " .. LEVEL .. " " .. ACTION_SPELL_CAST_START_MASTER .. "\n" .. L["Registrant"] .. " - " .. RAID_FINDER .. "\n" .. " " }
+              nodes[572][51886044] = { mnID = 582, id = { 477, 457, 669 }, type = "LFR", showOnContinent = true, showInZone = false, showOnMinimap = false, name = L["Seer Kazal"] .. " - " .. REQUIRES_LABEL .. " " .. GARRISON_LOCATION_TOOLTIP .. " " .. LEVEL .. " " .. ACTION_SPELL_CAST_START_MASTER .. "\n" .. L["Registrant"] .. " - " .. RAID_FINDER .. "\n" .. " " }
             end
           end
+
+        -- Draenor PvpandPveVendor
+          if self.db.profile.showContinentPvPandPvEVendor then
+
+            if self.faction == "Horde" or db.activate.EnemyFaction then
+              nodes[572][71454121] = { name = "", dnID = TRANSMOG_SET_PVP .. " " .. MERCHANT .. " " .. FACTION_HORDE .. "\n" .. WORLD_QUEST_REWARD_FILTERS_EQUIPMENT .. "\n" .. AUCTION_CATEGORY_WEAPONS, mnID = 624, type = "PvPVendor", showInZone = false, showOnContinent = true, showOnMinimap = false }
+            end
+
+            if self.faction == "Alliance" or db.activate.EnemyFaction then
+              nodes[572][71524649] = { name = "", dnID = TRANSMOG_SET_PVP .. " " .. MERCHANT .. " " .. FACTION_ALLIANCE .. "\n" .. WORLD_QUEST_REWARD_FILTERS_EQUIPMENT .. "\n" .. AUCTION_CATEGORY_WEAPONS, mnID = 622, type = "PvPVendor", showInZone = false, showOnContinent = true, showOnMinimap = false }
+            end
+
+          end
+
         end
     
     
@@ -796,6 +841,11 @@ if not db.activate.HideMapNote then
               nodes[875][56886153] = { mnID = 1164, id = { 1176, 1031, 1179, 1036 }, type = "LFR", showOnContinent = true, showInZone = false, showOnMinimap = false, name = L["Eppu"] .. "\n" .. L["Registrant"] .. " - " .. RAID_FINDER .. "\n" .. " " }
             end
           end
+
+        -- Zandalar PvpandPveVendor
+          if self.db.profile.showContinentPvPandPvEVendor then
+            nodes[875][54017034] = { name = "", dnID = TRANSMOG_SET_PVP .. " " .. MERCHANT .. "\n" .. WORLD_QUEST_REWARD_FILTERS_EQUIPMENT .. "\n" .. AUCTION_CATEGORY_WEAPONS, mnID = 862, type = "PvPVendor", showInZone = false, showOnContinent = true, showOnMinimap = false }
+          end
         end
     
     
@@ -884,6 +934,11 @@ if not db.activate.HideMapNote then
               nodes[876][60244960] = { mnID = 895, id = { 1176, 1031, 1179, 1036 }, type = "LFR", showOnContinent = true, showInZone = false, showOnMinimap = false, name = L["Kiku"] .. "\n" .. L["Registrant"] .. " - " .. RAID_FINDER .. "\n" .. " " }
             end
           end
+
+        -- Kul Tiras PvpandPveVendor
+          if self.db.profile.showContinentPvPandPvEVendor then
+            nodes[876][58825106] = { name = "", dnID = TRANSMOG_SET_PVP .. " " .. MERCHANT .. "\n" .. WORLD_QUEST_REWARD_FILTERS_EQUIPMENT .. "\n" .. AUCTION_CATEGORY_WEAPONS, mnID = 1161, type = "PvPVendor", showInZone = false, showOnContinent = true, showOnMinimap = false }
+          end
         end
     
     
@@ -924,10 +979,16 @@ if not db.activate.HideMapNote then
           end
 
 
-          -- Shadowlands LFR
+        -- Shadowlands LFR
           if self.db.profile.showContinentLFR then
             nodes[1550][46704896] = { mnID = 1670, id = { 1190, 1193, 1195 }, type = "LFR", showOnContinent = true, showInZone = false, showOnMinimap = false, name = L["Ta'elfar"] .. "\n" .. L["Registrant"] .. " - " .. RAID_FINDER .. "\n" .. " " }
           end
+
+        -- Shadowlands PvpandPveVendor
+          if self.db.profile.showContinentPvPandPvEVendor then
+            nodes[1550][45135011] = { name = "", dnID = TRANSMOG_SET_PVP .. " / " .. TRANSMOG_SET_PVE .. " " .. MERCHANT .. "\n" .. WORLD_QUEST_REWARD_FILTERS_EQUIPMENT .. "\n" .. AUCTION_CATEGORY_WEAPONS, mnID = 1670, type = "PvPVendor", showInZone = false, showOnContinent = true, showOnMinimap = false }
+          end
+          
         end
     
     

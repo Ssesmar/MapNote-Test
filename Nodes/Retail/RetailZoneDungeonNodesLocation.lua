@@ -15,8 +15,9 @@ if not db.activate.HideMapNote then
     --################################         Continent / Zone Map        ################################
     --#####################################################################################################
 
-      if db.activate.ZoneMap then
+    if db.activate.ZoneMap then
 
+      if db.activate.ZoneInstances then
 
         --#############################
         --##### Continent Kalimdor ####
@@ -29,6 +30,7 @@ if not db.activate.HideMapNote then
             nodes[11][54916646] = { id = 240, type = "Dungeon", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Wailing Caverns 
 
             -- Dungeon Nodes above Blizzards Icons to make it Clickable for maximized Maps
+            nodes[1][03067458] = { id = 240, type = "Dungeon", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Wailing Caverns
             nodes[1][46200001] = { id = 226, type = "Dungeon", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Ragefire
             nodes[10][80190006] = { id = 226, type = "Dungeon", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Ragefire
             nodes[76][18729718] = { id = 226, type = "Dungeon", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Ragefire
@@ -472,11 +474,11 @@ if not db.activate.HideMapNote then
         --Draenor LFR
           if self.db.profile.showZoneLFR then
             
-            if self.faction == "Horde" or db.activate.EnemyFaction then
+            if self.faction == "Horde" or db.activate.ZoneEnemyFaction then
               nodes[525][47746482] = { mnID = 590, name = L["Seer Kazal"] .. " - " .. REQUIRES_LABEL .. " " .. GARRISON_LOCATION_TOOLTIP .. " " .. LEVEL .. " " .. ACTION_SPELL_CAST_START_MASTER .. "\n" .. L["Registrant"] .. " - " .. RAID_FINDER .. "\n" .. " ", id = { 477, 457, 669 }, type = "LFR", showInZone = true, showOnContinent = false, showOnMinimap = false }
             end
             
-            if self.faction == "Alliance" or db.activate.EnemyFaction then
+            if self.faction == "Alliance" or db.activate.ZoneEnemyFaction then
               nodes[539][29001638] = { mnID = 582, name = L["Seer Kazal"] .. " - " .. REQUIRES_LABEL .. " " .. GARRISON_LOCATION_TOOLTIP .. " " .. LEVEL .. " " .. ACTION_SPELL_CAST_START_MASTER .. "\n" .. L["Registrant"] .. " - " .. RAID_FINDER .. "\n" .. " ", id = { 477, 457, 669 }, type = "LFR", showInZone = true, showOnContinent = false, showOnMinimap = false }
             end
           end
@@ -548,11 +550,11 @@ if not db.activate.HideMapNote then
         --Zandalar Dungeons
           if self.db.profile.showZoneDungeons then
 
-            if self.faction == "Horde" or db.activate.EnemyFaction then
+            if self.faction == "Horde" or db.activate.ZoneEnemyFaction then
               nodes[862][56105984] = { id = 1012, type = "Dungeon", showInZone = true, showOnContinent = false, showOnMinimap = false } -- The Motherlode
             end
 
-            if self.faction == "Alliance" or db.activate.EnemyFaction then
+            if self.faction == "Alliance" or db.activate.ZoneEnemyFaction then
               nodes[862][39307154] = { id = 1012, type = "Dungeon", showInZone = true, showOnContinent = false, showOnMinimap = false } -- The MOTHERLODe
             end
 
@@ -592,7 +594,7 @@ if not db.activate.HideMapNote then
         -- Zandalar LFR
           if self.db.profile.showZoneLFR then
 
-            if self.faction == "Horde" or db.activate.EnemyFaction then
+            if self.faction == "Horde" or db.activate.ZoneEnemyFaction then
               nodes[862][57304305] = { mnID = 1164, name = L["Eppu"] .. "\n" .. L["Registrant"] .. " - " .. RAID_FINDER .. "\n" .. " ", id = { 1176, 1031, 1179, 1036 }, type = "LFR", showInZone = true, showOnContinent = false, showOnMinimap = false }
             end
           end
@@ -616,11 +618,11 @@ if not db.activate.HideMapNote then
             nodes[896][33671253] = { id = 1021, type = "Dungeon", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Waycrest Manor 
             nodes[1169][38926976] = { id = 1002, type = "Dungeon", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Tol Dagor
 
-            if self.faction == "Alliance" or db.activate.EnemyFaction then
+            if self.faction == "Alliance" or db.activate.ZoneEnemyFaction then
               nodes[895][75632450] = { id = 1023, type = "Dungeon", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Siege of Boralus
             end
 
-            if self.faction == "Horde" or db.activate.EnemyFaction then
+            if self.faction == "Horde" or db.activate.ZoneEnemyFaction then
               nodes[895][88285102] = { id = 1023, type = "Dungeon", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Siege of Boralus
             end
           end
@@ -631,7 +633,7 @@ if not db.activate.HideMapNote then
           -- Raid Nodes above Blizzards Icons to make it Clickable for maximized Maps
             nodes[942][83894693] = { id = 1036, type = "Raid",  showInZone = true, showOnContinent = false, showOnMinimap = false } -- Crucible of Storms
 
-            if self.faction == "Alliance" or db.activate.EnemyFaction then
+            if self.faction == "Alliance" or db.activate.ZoneEnemyFaction then
               nodes[895][74382837] = { id = 1176, type = "Raid", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Battle of Dazar'alor
             end
           end
@@ -640,7 +642,7 @@ if not db.activate.HideMapNote then
          -- Kul Tiras LFR
           if self.db.profile.showZoneLFR then
 
-            if self.faction == "Alliance" or db.activate.EnemyFaction then
+            if self.faction == "Alliance" or db.activate.ZoneEnemyFaction then
               nodes[895][75112192] = { mnID = 1161, name = L["Kiku"] .. "\n" .. L["Registrant"] .. " - " .. RAID_FINDER .. "\n" .. " ", id = { 1176, 1031, 1179, 1036 }, type = "LFR", showInZone = true, showOnContinent = false, showOnMinimap = false }
             end
           end
@@ -745,8 +747,8 @@ if not db.activate.HideMapNote then
               nodes[2214][46860856] = { id = 1269, type = "Dungeon", showInZone = true, showOnContinent = false, showOnMinimap = false } -- The Stonevault
               nodes[2248][45234108] = { id = 1268, type = "Dungeon", showInZone = true, showOnContinent = false, showOnMinimap = false } -- The Rookery
               nodes[2248][76584378] = { id = 1272, type = "Dungeon", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Cinderbrew Meadery
-              nodes[2255][46746345] = { id = 1274, type = "Dungeon", showInZone = true, showOnContinent = false, showOnMinimap = false } -- City of Threads
-              nodes[2255][49537528] = { id = 1271, type = "Dungeon", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Ara-Kara, City of Echoes
+              nodes[2255][46746917] = { id = 1274, type = "Dungeon", showInZone = true, showOnContinent = false, showOnMinimap = false } -- City of Threads
+              nodes[2255][49538100] = { id = 1271, type = "Dungeon", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Ara-Kara, City of Echoes
             end
   
   
@@ -754,7 +756,7 @@ if not db.activate.HideMapNote then
             if self.db.profile.showZoneRaids then
   
             -- Raid Nodes above Blizzards Icons to make it Clickable for maximized Maps
-              nodes[2255][43478451] = { id = 1273, type = "Raid", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Nerub-ar Palace
+              nodes[2255][43559029] = { id = 1273, type = "Raid", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Nerub-ar Palace
               nodes[2213][35047242] = { id = 1273, type = "Raid", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Nerub-ar Palace       
             end
   
@@ -775,7 +777,8 @@ if not db.activate.HideMapNote then
   
         end
 
-        
       end
+
+    end
   end
 end

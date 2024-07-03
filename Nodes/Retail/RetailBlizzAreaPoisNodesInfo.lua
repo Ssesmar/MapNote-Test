@@ -12,6 +12,7 @@ ns.BlizzAreaPoisInfo = {
     39, -- Ratchet
     1961, -- Shattrath
     2317, -- Dalaran City
+    2837, -- Tonlongstepps PvE Vendor
     5881, -- The Cape of Stranglethorn, Boat to Ratschet
     5882, -- Northern Barrens, Boat to Booty Bay
     7945, -- Ship Icon Gilneas to Bel Ameth
@@ -25,6 +26,7 @@ ns.BlizzAreaPoisInfo = {
     791, -- Theramore Isle
     1785, -- Exodar
     2704, -- Elwynn Forest Darkmoon Icon
+    2882, -- Pvp Vendor Valley of the Four Winds
     5793, -- Darnassus Überreste
 
     -- City Horde
@@ -35,6 +37,7 @@ ns.BlizzAreaPoisInfo = {
     1704, -- Silvermoon City
     5887, -- Echo Isles Ship Icon
     2705, -- Mulgore Darkmoon Icon
+    2884, -- Pvp Vendor Pandaria
     5883, -- Grom'gol Zeppelin Icon in Starnglethorn
     5884, -- Zeppelin Grom'gol in OG
     5885, -- Zeppelin Borean Tundra in OG

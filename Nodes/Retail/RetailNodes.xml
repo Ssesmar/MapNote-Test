@@ -10,7 +10,7 @@
     <Script file="RetailFogOfWarNodes.lua"/>
     <Script file="RetailCapitals.lua"/>
     <Script file="RetailCapitalsMinimap.lua"/>
-    <Script file="RetailPathsZoneNodes.lua"/>
-    <Script file="RetailPathsMiniMapNodes.lua"/>
+    <Script file="RetailGeneralZoneNodes.lua"/>
+    <Script file="RetailGeneralMiniMapNodes.lua"/>
     <Script file="RetailBlizzAreaPoisNodesInfo.lua"/>
 </Ui>

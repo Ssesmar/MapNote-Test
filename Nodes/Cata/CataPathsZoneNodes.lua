@@ -106,6 +106,7 @@ if not db.activate.HideMapNote then
                 nodes[1420][84287020] = { name = "", dnID = L["Path"], mnID = 1422, type = "PathR", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[1420][54987075] = { name = "", dnID = L["Path"], mnID = 1421, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[1420][62006207] = { name = "", dnID = L["Entrance"], mnID = 1458, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1420][67546707] = { name = "", dnID = L["Path"], mnID = 1424, type = "PathLU", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[1420][51017169] = { name = "", dnID = L["Entrance"], mnID = 1458, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[1421][67230574] = { name = "", dnID = L["Path"], mnID = 1420, type = "PathRO", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[1421][67178036] = { name = "", dnID = L["Path"], mnID = 1424, type = "PathR", showInZone = true, showOnContinent = false, showOnMinimap = false }
@@ -114,10 +115,13 @@ if not db.activate.HideMapNote then
                 nodes[1424][68162062] = { name = "", dnID = L["Path"], mnID = 1422, type = "PathO", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[1424][24503891] = { name = "", dnID = L["Path"], mnID = 1421, type = "PathLU", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[1424][71175479] = { name = "", dnID = L["Path"], mnID = 1425, type = "PathRO", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1424][41740527] = { name = "", dnID = L["Path"], mnID = 1420, type = "PathLO", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[1425][09545468] = { name = "", dnID = L["Path"], mnID = 1424, type = "PathLU", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[1425][23212809] = { name = "", dnID = L["Path"], mnID = 1422, type = "PathO", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1425][26176951] = { name = "", dnID = L["Path"], mnID = 1417, type = "PathLU", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[1424][69827049] = { name = "", dnID = L["Path"], mnID = 1417, type = "PathRU", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[1424][73516384] = { name = "", dnID = L["Path"], mnID = 1417, type = "PathRU", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1417][36972958] = { name = "", dnID = L["Path"], mnID = 1425, type = "PathO", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[1417][13303060] = { name = "", dnID = L["Path"], mnID = 1424, type = "PathLO", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[1417][18222155] = { name = "", dnID = L["Path"], mnID = 1424, type = "PathLO", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[1417][39529377] = { name = "", dnID = L["Path"], mnID = 1437, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false }
@@ -174,7 +178,13 @@ if not db.activate.HideMapNote then
                 nodes[245][66868158] = { name = "", dnID = L["Path"], mnID = 244, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[217][59891336] = { name = "", dnID = L["Path"], mnID = 1421, type = "PathO", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[217][80463751] = { name = "", dnID = L["Path"], mnID = 1424, type = "PathRO", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[217][52823799] = { name = "", dnID = L["Path"], mnID = 218, type = "PathRU", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[217][55165978] = { name = "", dnID = L["Path"], mnID = 218, type = "PathRO", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[217][67976070] = { name = "", dnID = L["Path"], mnID = 218, type = "PathLO", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[217][69084113] = { name = "", dnID = L["Path"], mnID = 218, type = "PathLU", showInZone = true, showOnContinent = false, showOnMinimap = false }
+
                 nodes[1424][28147677] = { name = "", dnID = L["Path"], mnID = 217, type = "PathLU", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1421][45328360] = { name = "", dnID = L["Path"], mnID = 217, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false }
             end
 
         end

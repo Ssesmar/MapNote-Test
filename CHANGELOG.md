@@ -1,42 +1,53 @@
 # MapNote
-## [2.0.4](https://github.com/Ssesmar/MapNote) (2024-06-17)
+## [2.0.5](https://github.com/Ssesmar/MapNote) (2024-06-26)
 - Note:
 
 -- MapNotes now works on every version of World of Warcraft. Classic Era / Cataclysm and Retail
 
-Version: 2.0.4
+Version: 2.0.5
 
 PTR:
-The positions on the continent map of Khaz Algar have been corrected
-changed the color from Path nodes from yellow to green for better visibility
+
 
 Retail:
-added Path icons to all zones maps and minimap in the Zone / Minimap tab
-added a new function for multi transport icons in a zone or capitals (e.g. portals, paths) with 2 to a maximum of 3 locations
-    Clicking left, right or middle mouse button now opens the corresponding map
-    These icons show which button opens which card
-    This function of these icons only works without holding down the Shift key
-    regardless of whether the MapNotes Shift function is activated or not
-    because the Shift + Right mouse button would now set a TomTom point and would not open the second displayed zone map
+the Capital and Capital - Minimap tabs have been moved together to the Capitals + tab
+The Capital area was divided into the following 5 sub-tabs
+• Capitals
+• Instance icons
+• Transportation icons
+• Profession icons
+• General icons
+Each of these submenus now has its own scaling and visibility slider
+The Capital Minimap area was divided into the following 5 sub-tabs
+• Capitals
+• Instance icons
+• Transportation icons
+• Profession icons
+• General icons
+Each of these submenus now has its own scaling and visibility slider
 
-changed the worldmapbutton function on Continents
-    rightclick on a Continent, did not longer hide all icons on EVERY continent, now its only hidding the icons on the actual opend continent at the Worldmap
-changed the TomTom function. Now u have to press Shift + Rightclick to set a TomTom waypoint
-    regardless of whether the MapNotes Shift function is activated or not
+the Zone and Minimap tabs have been moved together to the Zones+ tab
+The Zone area was divided into the following 4 sub-tabs
+• Continent maps
+• Instance icons
+• Transportation icons
+• General icons
+Each of these submenus now has its own scaling and visibility slider
+The Minimap area was divided into the following 4 sub-tabs
+• Continent maps
+• Instance icons
+• Transportation icons
+• General icons
+Each of these submenus now has its own scaling and visibility slider
 
 
-2.0.3
-added a new function for delete icons
-    Now it is possible to delete this specific icon with ALT + left click on an icon so that it is no longer displayed on this map type.
-    These deleted icons are saved individually for each character.
-    In the MapNotes menu in the gernal tab, these deleted icons can be shown again using the corresponding button (Zones/Continent/Azeroth/Dungeon/Capitals)
-    If you delete a symbol in a capital, it will also be deleted on the capital minimap. The same applies to the zone map and the minimap
-added Mailboxes in Capitals
-changed the Iconsytle from Paths
 
-Cataclysm:
+
+Cataclysm Classic:
+
 
 Classic Era & Hardcore:
+
 
 - Description:
 

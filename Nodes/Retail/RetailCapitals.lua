@@ -110,7 +110,7 @@ if not db.activate.HideMapNote then
                 if self.db.profile.activate.CapitalsTransporting then
 
                     if self.db.profile.showCapitalsPortals then
-                        nodes[85][57278961] = { name = "", type = "PassageHPortal", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = L["Portalroom"] .. "\n" .. "\n" .. " => " .. L["Silvermoon City"] .. "\n" .. " => " .. L["Valdrakken"] .. "\n" .. " => " .. L["Oribos"] .. "\n" .. " => " .. L["Azsuna"] .. "\n" .. " => " .. L["Zuldazar"] .. "\n" .. " => " .. DUNGEON_FLOOR_DALARANCITY1 .. " - " .. POSTMASTER_PIPE_NORTHREND .. "\n" .. " => " .. POSTMASTER_LETTER_HYJAL .. "\n" .. "\n" .. " => " .. DUNGEON_FLOOR_TANARIS18 .. " - " .. L["in the basement"] .. "\n" .. " => " .. L["Shattrath City"] .. " - " .. L["in the basement"] .. "\n" .. " => " .. L["Warspear"] .. " - " .. L["in the basement"] .. "\n" .. " => " .. L["Dornogal"] .. " " .. "(only PTR - Beta TWW)" .. " - " .. L["in the basement"]} -- Portalroom from Orgrimmar
+                        nodes[85][57278961] = { name = "", type = "PassageHPortal", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = L["Portalroom"] .. "\n" .. "\n" .. " => " .. L["Silvermoon City"] .. "\n" .. " => " .. L["Valdrakken"] .. "\n" .. " => " .. L["Oribos"] .. "\n" .. " => " .. L["Azsuna"] .. "\n" .. " => " .. L["Zuldazar"] .. "\n" .. " => " .. DUNGEON_FLOOR_DALARANCITY1 .. " - " .. POSTMASTER_PIPE_NORTHREND .. "\n" .. " => " .. POSTMASTER_LETTER_HYJAL .. "\n" .. "\n" .. " => " .. DUNGEON_FLOOR_TANARIS18 .. " - " .. L["in the basement"] .. "\n" .. " => " .. L["Shattrath City"] .. " - " .. L["in the basement"] .. "\n" .. " => " .. L["Warspear"] .. " - " .. L["in the basement"] .. "\n" .. " => " .. L["Blasted Lands"] .. " - " .. L["in the basement"] .. "\n" .. "      (" .. L["talk to"] .. ": " .. L["Thrallmar Mage"] .. " )" .. "\n" .. " => " .. L["Dornogal"] .. " " .. "(only PTR - Beta TWW)" .. " - " .. L["in the basement"]} -- Portalroom from Orgrimmar
                         nodes[85][50765561] = { mnID = 18, name = "", type = "HPortal", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = L["Portal"] .. " => " .. L["Ruins of Lordaeron"] } -- Ruins of Lordaeron 
                         nodes[85][47393928] = { mnID = 245, name = "", type = "HPortalS", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = L["Portal"] .. " => " .. DUNGEON_FLOOR_TOLBARADWARLOCKSCENARIO0 } --  Portal to Tol Barad
                         nodes[85][48863851] = { mnID = 1527, name = "", type = "HPortalS", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = L["Portal"] .. " => " .. L["Uldum"] } -- Portal to Uldum
@@ -220,6 +220,13 @@ if not db.activate.HideMapNote then
 
                     if self.db.profile.showCapitalsPvEVendor then
                         nodes[85][48037056] = { dnID = TRANSMOG_SET_PVE .. "" .. SLASH_EQUIP_SET1, name = "", TransportName = L["(on the tower)"],  type = "PvEVendor", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    end
+
+                    if self.db.profile.showCapitalsStablemaster then
+                        nodes[85][40808060] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                        nodes[85][32606480] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                        nodes[85][39604840] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                        nodes[85][62403560] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     end
 
                 end
@@ -333,6 +340,10 @@ if not db.activate.HideMapNote then
 
                     if self.db.profile.showCapitalsMailbox then
                         nodes[88][45505950] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    end
+
+                    if self.db.profile.showCapitalsStablemaster then
+                        nodes[88][45006000] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     end
 
                 end
@@ -456,6 +467,10 @@ if not db.activate.HideMapNote then
                         nodes[110][83206540] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
                         nodes[110][71607550] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
                         nodes[110][71607980] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    end
+
+                    if self.db.profile.showCapitalsStablemaster then
+                        nodes[110][83403040] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     end
 
                 end
@@ -595,6 +610,10 @@ if not db.activate.HideMapNote then
                         nodes[90][68003850] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     end
 
+                    if self.db.profile.showCapitalsStablemaster then
+                        nodes[90][67603800] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    end
+
                 end
 
             end
@@ -725,6 +744,10 @@ if not db.activate.HideMapNote then
                         nodes[624][65105270] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
                         nodes[624][68203930] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
                         nodes[624][77805210] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    end
+
+                    if self.db.profile.showCapitalsStablemaster then
+                        nodes[624][77605900] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     end
 
                 end
@@ -907,6 +930,10 @@ if not db.activate.HideMapNote then
                         nodes[1165][41200440] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     end
 
+                    if self.db.profile.showCapitalsStablemaster then
+                        nodes[1165][45803620] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    end
+
                 end
 
             end
@@ -949,7 +976,6 @@ if not db.activate.HideMapNote then
                 if self.db.profile.activate.CapitalsGeneral then
     
                     if self.db.profile.showCapitalsPaths then
-                        nodes[390][61481920] = { name = L["Entrance"], mnID = 391, type = "PathO", showInZone = true, showOnContinent = false, showOnMinimap = false }
                         nodes[391][26778156] = { name = L["Exit"], mnID = 390, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false }
                         nodes[391][53618846] = { name = L["Exit"], mnID = 390, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false }
                         nodes[391][77476963] = { name = L["Exit"], mnID = 390, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false }
@@ -1038,7 +1064,7 @@ if not db.activate.HideMapNote then
                         nodes[84][76211869] = { mnID = 198, name = "", type = "APortalS", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = L["Portal"] .. " => " .. POSTMASTER_LETTER_HYJAL } -- Portal to Hyjal
                         nodes[84][73171966] = { mnID = 207, name = "", type = "APortalS", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = L["Portal"] .. " => " .. ARTIFACT_SHAMAN_TITLECARD_DEEPHOLM } -- Portal to Deepholm
                         nodes[84][73301687] = { mnID = 203, name = "", type = "APortalS", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = L["Portal"] .. " => " .. L["Vashj'ir"] } -- Portal to Vashjir
-                        nodes[84][48728798] = { name = "", type = "PassageAPortal", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = STORMWIND .. " " .. L["Portalroom"] .. "\n" .. " => " .. L["Ashran"] .. "\n" .. " => " .. L["Valdrakken"] .. "\n" .. " => " .. L["Boralus, Tiragarde Sound"] .. "\n" .. " => " .. L["Oribos"] .. "\n" .. " => " .. L["Azsuna"] .. "\n" .. " => " .. L["Shattrath City"] .. "\n" .. " => " .. L["Jade Forest"] .. "\n" .. " => " .. DUNGEON_FLOOR_DALARANCITY1 .. "\n" .. " => " .. DUNGEON_FLOOR_TANARIS18 .. "\n" .. " => " .. L["Exodar"] .. "\n" ..  " => " .. L["Bel'ameth, Amirdrassil"] .. "\n" .. " => " .. L["Dornogal"] .. " " .. "(only PTR - Beta TWW)"} -- Portalroom from Stormwind
+                        nodes[84][48728798] = { name = "", type = "PassageAPortal", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = STORMWIND .. " " .. L["Portalroom"] .. "\n" .. " => " .. L["Ashran"] .. "\n" .. " => " .. L["Valdrakken"] .. "\n" .. " => " .. L["Boralus, Tiragarde Sound"] .. "\n" .. " => " .. L["Oribos"] .. "\n" .. " => " .. L["Azsuna"] .. "\n" .. " => " .. L["Shattrath City"] .. "\n" .. " => " .. L["Jade Forest"] .. "\n" .. " => " .. DUNGEON_FLOOR_DALARANCITY1 .. "\n" .. " => " .. DUNGEON_FLOOR_TANARIS18 .. "\n" .. " => " .. L["Exodar"] .. "\n" ..  " => " .. L["Bel'ameth, Amirdrassil"] .. "\n" .. " => " .. L["Blasted Lands"] .. "\n" .. "\n" .. L["Dornogal"] .. " " .. "(only PTR - Beta TWW)"} -- Portalroom from Stormwind
                         nodes[84][23865611] = { mnID = 89, name = "", type = "APortal", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = L["Portal"] .. " => " .. L["Darnassus"] } -- Portal to Darnassus 
                         nodes[84][63197339] = { mnID = 407, name = L["Transport"] .. " => " .. CALENDAR_FILTER_DARKMOON, TransportName = "\n" .. REQUIRES_LABEL .. " " .. CALENDAR_FILTER_DARKMOON .. "\n" .. L["Starting on the first Sunday of each month for one week"], type = "DarkMoon", showInZone = true, showOnContinent = false, showOnMinimap = false }
                         nodes[84][62043235] = { mnID = 407, name = L["Transport"] .. " => " .. CALENDAR_FILTER_DARKMOON, TransportName = "\n" .. REQUIRES_LABEL .. " " .. CALENDAR_FILTER_DARKMOON .. "\n" .. L["Starting on the first Sunday of each month for one week"], type = "DarkMoon", showInZone = true, showOnContinent = false, showOnMinimap = false }
@@ -1183,6 +1209,11 @@ if not db.activate.HideMapNote then
                         nodes[84][62507470] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     end
 
+                    if self.db.profile.showCapitalsStablemaster then
+                        nodes[84][77806720] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                        nodes[84][67003760] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    end
+
                 end
 
             end
@@ -1307,6 +1338,10 @@ if not db.activate.HideMapNote then
                         nodes[87][72504950] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     end
 
+                    if self.db.profile.showCapitalsStablemaster then
+                        nodes[87][69008460] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    end
+
                 end
 
             end
@@ -1361,6 +1396,10 @@ if not db.activate.HideMapNote then
                         nodes[89][57505990] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
                         nodes[89][54705320] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
                         nodes[89][44905040] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    end
+
+                    if self.db.profile.showCapitalsStablemaster then
+                        nodes[89][43602940] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterA", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     end
 
                 end
@@ -1473,6 +1512,10 @@ if not db.activate.HideMapNote then
                         nodes[103][60505190] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
                         nodes[103][51504320] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
                         nodes[103][59302760] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    end
+
+                    if self.db.profile.showCapitalsStablemaster then
+                        nodes[103][59402440] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterA", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     end
 
                 end
@@ -1607,6 +1650,10 @@ if not db.activate.HideMapNote then
                         nodes[622][42103790] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
                         nodes[622][51604450] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
                         nodes[622][63602250] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    end
+
+                    if self.db.profile.showCapitalsStablemaster then
+                        nodes[622][34006420] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterA", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     end
 
                 end
@@ -1754,6 +1801,10 @@ if not db.activate.HideMapNote then
                         nodes[1161][73801450] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     end
 
+                    if self.db.profile.showCapitalsStablemaster then
+                        nodes[1161][69001300] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    end
+
                 end
 
             --Transports Boralus
@@ -1849,7 +1900,6 @@ if not db.activate.HideMapNote then
                 if self.db.profile.activate.CapitalsGeneral then
     
                     if self.db.profile.showCapitalsPaths then
-                        nodes[390][86696414] = { name = L["Entrance"], mnID = 393, type = "PathRU", showInZone = true, showOnContinent = false, showOnMinimap = false }
                         nodes[393][24265267] = { name = L["Exit"], mnID = 390, type = "PathLO", showInZone = true, showOnContinent = false, showOnMinimap = false }
                         nodes[393][60201547] = { name = L["Exit"], mnID = 390, type = "PathLO", showInZone = true, showOnContinent = false, showOnMinimap = false }
                         nodes[393][37762459] = { name = L["Exit"], mnID = 390, type = "PathLO", showInZone = true, showOnContinent = false, showOnMinimap = false }
@@ -1979,6 +2029,11 @@ if not db.activate.HideMapNote then
                     nodes[111][74704840] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[111][73503460] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[111][47002570] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                end
+
+                if self.db.profile.showCapitalsStablemaster then
+                    nodes[111][28604760] = { dnID = MINIMAP_TRACKING_STABLEMASTER .. " - " .. L["The Aldor"], name = "", type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[111][55808080] = { dnID = MINIMAP_TRACKING_STABLEMASTER .. " - " .. L["The Scryers"], name = "", type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 end
 
             end
@@ -2193,6 +2248,10 @@ if not db.activate.HideMapNote then
                     nodes[125][48902540] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 end
 
+                if self.db.profile.showCapitalsStablemaster then
+                    nodes[125][59003860] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                end
+
             end
 
         --Transports Dalaran Northrend
@@ -2372,6 +2431,10 @@ if not db.activate.HideMapNote then
                     nodes[627][48902540] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 end
 
+                if self.db.profile.showCapitalsStablemaster then
+                    nodes[627][59003860] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                end
+
             end
 
         --Transports Dalaran Legion
@@ -2529,6 +2592,10 @@ if not db.activate.HideMapNote then
                     nodes[1670][63505150] = { dnID = MINIMAP_TRACKING_MAILBOX, name = "", type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 end
 
+                if self.db.profile.showCapitalsStablemaster then
+                    nodes[1670][59207500] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                end
+
             end
 
         --Transports Oribos
@@ -2668,6 +2735,10 @@ if not db.activate.HideMapNote then
 
                 if self.db.profile.showCapitalsDragonFlyTransmog then
                     nodes[2112][25235034] = { dnID = MINIMAP_TRACKING_TRANSMOGRIFIER .. " " .. MOUNT_JOURNAL_FILTER_DRAGONRIDING, name = "",  type = "DragonFlyTransmog", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                end
+
+                if self.db.profile.showCapitalsStablemaster then
+                    nodes[2112][46807880] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 end
 
             end
