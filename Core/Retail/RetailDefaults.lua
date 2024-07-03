@@ -27,24 +27,8 @@ ns.defaults = {
       RestoreDungeonDeletedIcons = false,
       RestoreCapitalsDeletedIcons = false,
 
-    --1 MiniMap map tab
-      minimapScale = 1,
-      minimapAlpha = 1,
-      instanceMiniMapScale = 2,
-      instanceMiniMapAlpha = 1,
-      showMiniMapRaids = true,
-      showMiniMapDungeons = true,
-      showMiniMapPassage = true,
-      showMiniMapMultiple = true,
-      showMiniMapPortals = true,
-      showMiniMapZeppelins = true,
-      showMiniMapShips = true,
-      showMiniMapTransport = true,
-      showMiniMapOldVanilla = true,
-      showMiniMapLFR = true,
-      showMiniMapPaths = true,
-      showMiniMapFP = true,
-      showMiniMapGhost = true,
+    --2 MiniMap tab
+    -- MiniMap Continent
       showMiniMapKalimdor = true,
       showMiniMapEasternKingdom = true,
       showMiniMapOutland = true,
@@ -57,25 +41,40 @@ ns.defaults = {
       showMiniMapShadowlands = true,
       showMiniMapDragonIsles = true,
       showMiniMapKhazAlgar = true,
+    -- MiniMap Instance
+      MiniMapInstanceScale = 2,
+      MiniMapInstanceAlpha = 1,
+      showMiniMapRaids = true,
+      showMiniMapDungeons = true,
+      showMiniMapMultiple = true,      
+      showMiniMapPassage = true,
+      showMiniMapOldVanilla = true,
+      showMiniMapLFR = true,
+    -- MiniMap Transport
+      MiniMapTransportScale = 1,
+      MiniMapTransportAlpha = 1,
+      showMiniMapPortals = true,
+      showMiniMapZeppelins = true,
+      showMiniMapShips = true,
+      showMiniMapTransport = true,
+    -- MiniMap General
+      MiniMapGeneralScale = 1,
+      MiniMapGeneralAlpha = 1,
+      showMiniMapFP = true, -- Classic+
+      showMiniMapGhost = true, -- Classic+
+      showMiniMapPaths = true,
+      showMiniMapInnkeeper = true,
+      showMiniMapAuctioneer = true,
+      showMiniMapBank = true,
+      showMiniMapBarber = true,
+      showMiniMapMailbox = true,
+      showMiniMapPvPVendor = true,
+      showMiniMapPvEVendor = true,
+      showMiniMapTransmogger = true,
+      showMiniMapStablemaster = true,
     
     --2 Zone map tab
-      zoneScale = 1,
-      zoneAlpha = 1,
-      instanceScale = 2,
-      instanceAlpha = 1,
-      showZoneRaids = true,
-      showZoneDungeons = true,
-      showZonePassage = true,
-      showZoneMultiple = true,
-      showZonePortals = true,
-      showZoneZeppelins = true,
-      showZoneShips = true,
-      showZoneTransport = true,
-      showZoneOldVanilla = true,
-      showZoneLFR = true,
-      showZonePaths = true,
-      showZoneFP = true,
-      showZoneGhost = true,
+    -- Zone Continent
       showZoneKalimdor = true,
       showZoneEasternKingdom = true,
       showZoneOutland = true,
@@ -88,6 +87,37 @@ ns.defaults = {
       showZoneShadowlands = true,
       showZoneDragonIsles = true,
       showZoneKhazAlgar = true,
+    -- Zone Instance
+      ZoneInstanceScale = 2,
+      ZoneInstanceAlpha = 1,
+      showZoneRaids = true,
+      showZoneDungeons = true,
+      showZoneMultiple = true,      
+      showZonePassage = true,
+      showZoneOldVanilla = true,
+      showZoneLFR = true,
+    -- Zone Transport
+      zoneTransportScale = 1,
+      zoneTransportAlpha = 1,
+      showZonePortals = true,
+      showZoneZeppelins = true,
+      showZoneShips = true,
+      showZoneTransport = true,
+    -- Zone General
+      ZonesGeneralScale = 1,
+      ZonesGeneralAlpha = 1,
+      showZoneFP = true, -- Classic+
+      showZoneGhost = true, -- Classic+
+      showZonePaths = true,
+      showZoneInnkeeper = true,
+      showZoneAuctioneer = true,
+      showZoneBank = true,
+      showZoneBarber = true,
+      showZoneMailbox = true,
+      showZonePvPVendor = true,
+      showZonePvEVendor = true,
+      showZoneTransmogger = true,
+      showZoneStablemaster = true,
 
     --3 Continent map tab
       continentScale = 1,
@@ -103,6 +133,7 @@ ns.defaults = {
       showContinentOldVanilla = true,
       showContinentLFR = true,
       showContinentFP = true, -- only Classic and Cataclym
+      showContinentPvPandPvEVendor = true,
       showContinentKalimdor = true,
       showContinentEasternKingdom = true,
       showContinentOutland = true,
@@ -197,7 +228,7 @@ ns.defaults = {
       showCapitalsMultiple = true,
 
     --Capital Transport
-      CapitalsTransportScale = 1.5,
+      CapitalsTransportScale = 1,
       CapitalsTransportAlpha = 1,
       showCapitalsPortals = true,
       showCapitalsZeppelins = true,
@@ -208,7 +239,7 @@ ns.defaults = {
       showCapitalsFP = true,
 
     -- Capital Professions
-      CapitalsProfessionsScale = 1.2,
+      CapitalsProfessionsScale = 1,
       CapitalsProfessionsAlpha = 1,
       showCapitalsProfessionOrders = true,
       showCapitalsAlchemy = true,
@@ -227,7 +258,7 @@ ns.defaults = {
       showCapitalsEnchanting = true,
 
     --Capital General
-      CapitalsGeneralScale = 1.2,
+      CapitalsGeneralScale = 1,
       CapitalsGeneralAlpha = 1,
       showCapitalsMapNotes = true,
       showCapitalsInnkeeper = true,
@@ -243,6 +274,7 @@ ns.defaults = {
       showCapitalsCatalyst = true,
       showCapitalsMailbox = true,
       showCapitalsGhost = true,
+      showCapitalsStablemaster = true,
 
     --7 Capitals Minimap
       showMinimapCapitals = true,
@@ -323,6 +355,7 @@ ns.defaults = {
       showMinimapCapitalsCatalyst = true,
       showMinimapCapitalsMailbox = true,
       showMinimapCapitalsGhost = true,
+      showMinimapCapitalsStablemaster = true,
 
     --10 ns.Addon.db.profile.activate.
       activate = {
@@ -336,6 +369,16 @@ ns.defaults = {
         FogOfWarAlphaReduce = true,
         SyncZoneAndMinimap = false,
         SyncCapitalsAndMinimap = false,
+      --MiniMap
+        MiniMapEnemyFaction = true,
+        MiniMapInstances = true,
+        MiniMapTransporting = true,
+        MiniMapGeneral = true,
+      --Zones
+        ZoneEnemyFaction = true,
+        ZoneInstances = true,
+        ZoneTransporting = true,
+        ZoneGeneral = true,
       --activate tab
         CosmosMap = true, -- activate tab
         Azeroth = true, -- activate tab

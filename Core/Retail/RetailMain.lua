@@ -224,13 +224,24 @@ do
 
       ns.paths = value.type == "PathO" or value.type == "PathRO" or value.type == "PathLO" or value.type == "PathU" or value.type == "PathLU" or value.type == "PathRU" or value.type == "PathL" or value.type == "PathR"
       
-      ns.professions = value.type == "Alchemy" or value.type == "Engineer" or value.type == "Cooking" or value.type == "Fishing" or value.type == "Archaeology" or value.type == "Mining" or value.type == "Jewelcrafting" or value.type == "Blacksmith" or value.type == "Leatherworking" or value.type == "Skinning" or value.type == "Tailoring" or value.type == "Herbalism" or value.type == "Inscription" or value.type == "Enchanting" or value.type == "FishingClassic" or value.type == "ProfessionOrders"
+      ns.professions = value.type == "Alchemy" or value.type == "Engineer" or value.type == "Cooking" or value.type == "Fishing" or value.type == "Archaeology" or value.type == "Mining" or value.type == "Jewelcrafting" 
+                      or value.type == "Blacksmith" or value.type == "Leatherworking" or value.type == "Skinning" or value.type == "Tailoring" or value.type == "Herbalism" or value.type == "Inscription"
+                      or value.type == "Enchanting" or value.type == "FishingClassic" or value.type == "ProfessionOrders"
 
-      ns.instances = value.type == "Dungeon" or value.type == "Raid" or value.type == "PassageDungeon" or value.type == "PassageDungeonRaidMulti" or value.type == "PassageRaid" or value.type == "VInstance" or value.type == "PassageDungeon" or value.type == "Multiple" or value.type == "LFR" or value.type == "Gray"
+      ns.instances = value.type == "Dungeon" or value.type == "Raid" or value.type == "PassageDungeon" or value.type == "PassageDungeonRaidMulti" or value.type == "PassageRaid" or value.type == "VInstance" 
+                      or value.type == "PassageDungeon" or value.type == "Multiple" or value.type == "LFR" or value.type == "Gray"
 
-      ns.transports = value.type == "Portal" or value.type == "HPortal" or value.type == "APortal" or value.type == "HPortalS" or value.type == "APortalS" or value.type == "PassageHPortal" or value.type == "PassageAPortal" or value.type == "PassagePortal" or value.type == "Zeppelin" or value.type == "HZeppelin" or value.type == "AZeppelin" or value.type == "Ship" or value.type == "AShip" or value.type == "HShip" or value.type == "Carriage" or value.type == "TravelL" or value.type == "TravelH" or value.type == "TravelA" or value.type == "GPortal" or value.type == "Tport2" or value.type == "TransportHelper" or value.type == "OgreWaygate" or value.type == "WayGateGreen" or value.type == "Ghost" or value.type == "DarkMoon"
+      ns.transports = value.type == "Portal" or value.type == "HPortal" or value.type == "APortal" or value.type == "HPortalS" or value.type == "APortalS" or value.type == "PassageHPortal" 
+                      or value.type == "PassageAPortal" or value.type == "PassagePortal" or value.type == "Zeppelin" or value.type == "HZeppelin" or value.type == "AZeppelin" or value.type == "Ship" 
+                      or value.type == "AShip" or value.type == "HShip" or value.type == "Carriage" or value.type == "TravelL" or value.type == "TravelH" or value.type == "TravelA" or value.type == "GPortal" 
+                      or value.type == "Tport2" or value.type == "TransportHelper" or value.type == "OgreWaygate" or value.type == "WayGateGreen" or value.type == "Ghost" or value.type == "DarkMoon"
 
-      ns.capitalgenerals = value.type == "Exit" or value.type == "PassageUpL" or value.type == "PassageDownL" or value.type == "PassageRightL" or value.type == "PassageLeftL" or value.type == "Innkeeper" or value.type == "Auctioneer" or value.type == "Bank" or value.type == "MNL" or value.type == "Barber" or value.type == "Transmogger" or value.type == "ItemUpgrade" or value.type == "PvPVendor" or value.type == "PvEVendor" or value.type == "MNL" or value.type == "DragonFlyTransmog" or value.type == "Catalyst" or value.type == "PathO" or value.type == "PathRO" or value.type == "PathLO" or value.type == "PathU" or value.type == "PathLU" or value.type == "PathRU" or value.type == "PathL" or value.type == "PathR" or value.type == "BlackMarket" or value.type == "Mailbox"
+      ns.capitalgenerals = value.type == "Exit" or value.type == "PassageUpL" or value.type == "PassageDownL" or value.type == "PassageRightL" or value.type == "PassageLeftL" or value.type == "Innkeeper" 
+                          or value.type == "Auctioneer" or value.type == "Bank" or value.type == "MNL" or value.type == "Barber" or value.type == "Transmogger" or value.type == "ItemUpgrade" or value.type == "PvPVendor" 
+                          or value.type == "PvEVendor" or value.type == "MNL" or value.type == "DragonFlyTransmog" or value.type == "Catalyst" or value.type == "PathO" or value.type == "PathRO" or value.type == "PathLO" 
+                          or value.type == "PathU" or value.type == "PathLU" or value.type == "PathRU" or value.type == "PathL" or value.type == "PathR" or value.type == "BlackMarket" or value.type == "Mailbox"
+                          or value.type == "StablemasterN" or value.type == "StablemasterH" or value.type == "StablemasterA" or value.type == "HIcon" or value.type == "AIcon" or value.type == "NT" or value.type == "InnkeeperN" 
+                          or value.type == "InnkeeperH" or value.type == "InnkeeperA"
 
       ns.CapitalIDs =
         --Retail
@@ -303,18 +314,32 @@ do
 				alpha = db.mapnoteAlpha
 			end
 
-      scale = db.zoneScale
-      alpha = db.zoneAlpha
-      if t.minimapUpdate then -- Minimap Zone
-          scale = db.minimapScale
-          alpha = db.minimapAlpha
+      --scale = db.zoneScale
+      --alpha = db.zoneAlpha
+      --if t.minimapUpdate then -- Minimap Zone
+      --    scale = db.minimapScale
+      --    alpha = db.minimapAlpha
+      --end
+
+      -- MiniMap Instance World
+      if ns.instances and (value.showOnMinimap == true) then
+        scale = db.MiniMapInstanceScale
+        alpha = db.MiniMapInstanceAlpha
       end
 
-      -- Instance Minimap icons
-      if ns.instances and (value.showOnMinimap == true) then
-        scale = db.instanceMiniMapScale
-        alpha = db.instanceMiniMapAlpha
+      -- MiniMap Transport (Zeppeline/Ship/Carriage) icons
+      if not ns.CapitalIDs and ns.transports and (value.showOnMinimap == true) then
+        scale = db.MiniMapTransportScale
+        alpha = db.MiniMapTransportAlpha
       end
+
+      -- MiniMap General (Innkeeper/Exit/Passage) icons
+      if not ns.CapitalIDs and ns.capitalgenerals and (value.showOnMinimap == true) then
+        scale = db.MiniMapGeneralScale
+        alpha = db.MiniMapGeneralAlpha
+      end
+
+
 
       -- Profession icons in Capitals
       if ns.professions and ns.CapitalIDs and (value.showOnMinimap == false) then
@@ -326,12 +351,6 @@ do
       if (mapInfo.mapType == 4 or mapInfo.mapType == 6) and not ns.CapitalIDs then 
           scale = db.dungeonScale
           alpha = db.dungeonAlpha
-      end
-
-      -- Instance icons World
-      if ns.instances and (not value.showOnMinimap == true) then
-        scale = db.instanceScale
-        alpha = db.instanceAlpha
       end
 
       -- Profession Minimap icons in Capitals
@@ -360,6 +379,24 @@ do
 
       ns.SyncWithMinimapScaleAlpha() -- sync Capitals with Capitals - Minimap and/or Zones with Minimap Alpha/Scale
 
+      -- Instance icons World
+      if ns.instances and (not value.showOnMinimap == true) then
+        scale = db.ZoneInstanceScale
+        alpha = db.ZoneInstanceAlpha
+      end
+
+      -- Zone Transport (Zeppeline/Ship/Carriage) icons
+      if not ns.CapitalIDs and ns.transports and (value.showOnMinimap == false) then
+        scale = db.ZoneTransportScale
+        alpha = db.ZoneTransportAlpha
+      end
+
+      -- Zones General (Innkeeper/Exit/Passage) icons
+      if not ns.CapitalIDs and ns.capitalgenerals and (value.showOnMinimap == false) then
+        scale = db.ZonesGeneralScale
+        alpha = db.ZonesGeneralAlpha
+      end
+
       -- Capitals General (Innkeeper/Exit/Passage) icons
       if ns.CapitalIDs and ns.capitalgenerals and (value.showOnMinimap == false) then
         scale = db.CapitalsGeneralScale
@@ -376,7 +413,7 @@ do
       if ns.CapitalIDs and ns.instances and (value.showOnMinimap == false) then
         scale = db.CapitalsInstanceScale
         alpha = db.CapitalsInstanceAlpha
-      end   
+      end
       
       if WorldMapFrame:GetMapID() == 2274 then -- PTR: Khaz Algar - The War Within. Continent Scale atm on Beta a Zone not a Continent!!
         scale = db.continentScale
@@ -406,7 +443,7 @@ do
         or WorldMapFrame:GetMapID() == 2274 -- PTR: Khaz Algar - The War Within. Continent Scale atm on Beta a Zone not a Continent!!
         or (mapInfo.mapType == 0 and (ns.dbChar.AzerothDeletedIcons[t.uiMapId] and not ns.dbChar.AzerothDeletedIcons[t.uiMapId][state])) -- Cosmos
         or (mapInfo.mapType == 1 and (ns.dbChar.AzerothDeletedIcons[t.uiMapId] and not ns.dbChar.AzerothDeletedIcons[t.uiMapId][state])) -- Azeroth
-        or ((mapInfo.mapType == 4 or mapInfo.mapType == 6) and (ns.dbChar.DungeonDeletedIcons[t.uiMapId] and not ns.dbChar.DungeonDeletedIcons[t.uiMapId][state])) -- Dungeon
+        or (not ns.CapitalIDs and (mapInfo.mapType == 4 or mapInfo.mapType == 6) and (ns.dbChar.DungeonDeletedIcons[t.uiMapId] and not ns.dbChar.DungeonDeletedIcons[t.uiMapId][state])) -- Dungeon
         or (not ns.CapitalIDs and (ns.dbChar.ZoneDeletedIcons[t.uiMapId] and not ns.dbChar.ZoneDeletedIcons[t.uiMapId][state] and value.showInZone) and (mapInfo.mapType == 3 or mapInfo.mapType == 5 )) -- Zone without Capitals
         or (ns.CapitalIDs and (ns.dbChar.CapitalsDeletedIcons[t.uiMapId] and not ns.dbChar.CapitalsDeletedIcons[t.uiMapId][state] and value.showInZone)) -- Capitals
         or (ns.CapitalIDs and ns.dbChar.MinimapCapitalsDeletedIcons[t.minimapId] and not ns.dbChar.MinimapCapitalsDeletedIcons[t.minimapId][state] and value.showOnMinimap) -- Minimap Capitals
@@ -838,8 +875,8 @@ function Addon:PopulateTable()
   ns.LoadZoneMapNodesLocationinfo(self) -- load nodes\Retail\RetailZoneNodesLocation.lua
   ns.LoadZoneDungeonMapNodesLocationinfo(self) -- load OnlyZoneDungeonNodesLocation.lua
    
-  ns.LoadPathsZoneLocationinfo(self) -- load nodes\Retail\RetailPathsZoneNodes.lua
-  ns.LoadPathsMiniMapLocationinfo(self) -- load nodes\Retail\RetailPathsMiniMapNodes.lua
+  ns.LoadGeneralZoneLocationinfo(self) -- load nodes\Retail\RetailGeneralZoneNodes.lua
+  ns.LoadGeneralMiniMapLocationinfo(self) -- load nodes\Retail\RetailGeneralMiniMapNodes.lua
 
   ns.LoadInsideDungeonNodesLocationInfo(self) -- load nodes\Retail\RetailInsideDungeonNodesLocation.lua
 

@@ -11,6 +11,9 @@ ns.icons = {
 ["DarkMoon"] = iconLink .. "DarkMoon",
 --General
 ["Innkeeper"] = "interface/minimap/tracking/innkeeper.blp",
+["InnkeeperN"] = iconLink .. "InnkeeperN",
+["InnkeeperA"] = iconLink .. "InnkeeperA",
+["InnkeeperH"] = iconLink .. "InnkeeperH",
 ["Auctioneer"] = "interface/minimap/tracking/auctioneer.blp",
 ["Bank"] = "interface/minimap/tracking/banker.blp",
 ["Barber"] = "interface/minimap/tracking/barbershop.blp",
@@ -22,6 +25,9 @@ ns.icons = {
 ["Catalyst"] = iconLink .. "Catalyst",
 ["BlackMarket"] = iconLink .. "BlackMarket",
 ["Mailbox"] = "interface/minimap/tracking/mailbox.blp",
+["StablemasterN"] = iconLink .. "StablemasterN",
+["StablemasterH"] = iconLink .. "StablemasterH",
+["StablemasterA"] = iconLink .. "StablemasterA",
 --Professions
 ["ProfessionOrders"] = "interface/minimap/tracking/profession.blp",
 ["Engineer"] = iconLink .. "Engineering",
@@ -130,6 +136,9 @@ TextIcon = IconClass
 TextIconMNL4 = TextIcon(iconLink .. "MNL4", 50, 50, 1, 50, 1, 50)
 --General
 TextIconInnkeeper = TextIcon("interface/minimap/tracking/innkeeper.blpp", 50, 50, 1, 50, 1, 50)
+TextIconInnkeeperN = TextIcon(iconLink .. "InnkeeperN", 50, 50, 1, 50, 1, 50)
+TextIconInnkeeperH = TextIcon(iconLink .. "InnkeeperH", 50, 50, 1, 50, 1, 50)
+TextIconInnkeeperA = TextIcon(iconLink .. "InnkeeperA", 50, 50, 1, 50, 1, 50)
 TextIconAuctioneer = TextIcon("interface/minimap/tracking/auctioneer.blp", 50, 50, 1, 50, 1, 50)
 TextIconBlackMarket = TextIcon(iconLink .. "BlackMarket", 50, 50, 1, 50, 1, 50)
 TextIconBank = TextIcon("interface/minimap/tracking/banker.blp", 50, 50, 1, 50, 1, 50)
@@ -141,6 +150,9 @@ TextIconItemUpgrade = TextIcon("interface/minimap/tracking/upgradeitem-32x32.blp
 TextIconDragonFlyTransmog = TextIcon(iconLink .. "DragonFlyTransmog", 50, 50, 1 ,50, 1, 50)
 TextIconCatalyst = TextIcon(iconLink .. "Catalyst", 50, 50, 1 ,50, 1, 50)
 TextIconMailbox = TextIcon("interface/minimap/tracking/mailbox.blp", 50, 50, 1 ,50, 1, 50)
+TextIconStablemasterN = TextIcon(iconLink .. "StablemasterN", 50, 50, 1 ,50, 1, 50)
+TextIconStablemasterH = TextIcon(iconLink .. "StablemasterH", 50, 50, 1 ,50, 1, 50)
+TextIconStablemasterA = TextIcon(iconLink .. "StablemasterA", 50, 50, 1 ,50, 1, 50)
 --Cities
 TextIconOrgrimmar = TextIcon("interface/icons/spell_arcane_teleportorgrimmar.blp", 50, 50, 1, 50, 1, 50)
 TextIconThunderBluff = TextIcon("interface/icons/spell_arcane_teleportthunderbluff.blp", 50, 50, 1, 50, 1, 50)
