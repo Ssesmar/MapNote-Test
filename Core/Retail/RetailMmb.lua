@@ -3,19 +3,20 @@ local ADDON_NAME, ns = ...
 local iconLink = "Interface\\Addons\\" .. ADDON_NAME .. "\\images\\"
 local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
 local MNMMBIcon = LibStub("LibDBIcon-1.0", true)
-local info = C_Map.GetMapInfo(WorldMapFrame:GetMapID())
 
 ns.miniButton = {
 text = ns.COLORED_ADDON_NAME,
 type = "data source",
 icon = iconLink .. "MNL4",
 OnTooltipShow = function(tooltip)
-if not tooltip or not tooltip.AddLine then return end
-  tooltip:AddLine(ns.COLORED_ADDON_NAME)
-  tooltip:AddLine(" ")
-  tooltip:AddLine(L["Left-click => Open/Close"] .. " " .. ns.COLORED_ADDON_NAME,1,1,1)
-  tooltip:AddLine(L["Shift + Right-click => hide"] .. " " .. "|cffffff00" .. L["-> MiniMapButton <-"],1,1,1)
-  tooltip:AddLine(L["Middle-Mouse-Button => Open/Close"] .. " " .. "|cff00ccff" .. "-> " .. WORLDMAP_BUTTON .." <-",1,1,1)
+local info = C_Map.GetMapInfo(WorldMapFrame:GetMapID())
+
+  if not tooltip or not tooltip.AddLine then return end
+    tooltip:AddLine(ns.COLORED_ADDON_NAME)
+    tooltip:AddLine(" ")
+    tooltip:AddLine(L["Left-click => Open/Close"] .. " " .. ns.COLORED_ADDON_NAME,1,1,1)
+    tooltip:AddLine(L["Shift + Right-click => hide"] .. " " .. "|cffffff00" .. L["-> MiniMapButton <-"],1,1,1)
+    tooltip:AddLine(L["Middle-Mouse-Button => Open/Close"] .. " " .. "|cff00ccff" .. "-> " .. WORLDMAP_BUTTON .." <-",1,1,1)
 
   -- Zone without Sync function
   if not ns.Addon.db.profile.activate.SyncZoneAndMinimap and (info.mapType == 3 or info.mapType == 5 or info.mapType == 6)
@@ -40,7 +41,7 @@ if not tooltip or not tooltip.AddLine then return end
       tooltip:AddLine(HELPFRAME_REPORT_PLAYER_RIGHT_CLICK .. " => " .. "|cffff0000".. L["Kalimdor"] .. " " .. MINIMAP_LABEL .. "|cffffcc00" .. " " .. L["icons"] .. " " .. SHOW .. " / " .. HIDE,1,1,1)
       tooltip:Show()
     --Eastern Kingdom
-    elseif (C_Map.GetBestMapForUnit("player") == 13 or  C_Map.GetBestMapForUnit("player") == 14 or  C_Map.GetBestMapForUnit("player") == 15 or  C_Map.GetBestMapForUnit("player") == 16 or  C_Map.GetBestMapForUnit("player") == 17 or  C_Map.GetBestMapForUnit("player") == 18 
+    elseif ( C_Map.GetBestMapForUnit("player") == 13 or  C_Map.GetBestMapForUnit("player") == 14 or  C_Map.GetBestMapForUnit("player") == 15 or  C_Map.GetBestMapForUnit("player") == 16 or  C_Map.GetBestMapForUnit("player") == 17 or  C_Map.GetBestMapForUnit("player") == 18 
       or  C_Map.GetBestMapForUnit("player") == 19 or  C_Map.GetBestMapForUnit("player") == 21 or  C_Map.GetBestMapForUnit("player") == 22 or  C_Map.GetBestMapForUnit("player") == 23 or  C_Map.GetBestMapForUnit("player") == 25 or  C_Map.GetBestMapForUnit("player") == 26 
       or  C_Map.GetBestMapForUnit("player") == 27 or  C_Map.GetBestMapForUnit("player") == 28 or  C_Map.GetBestMapForUnit("player") == 30 or  C_Map.GetBestMapForUnit("player") == 32 or  C_Map.GetBestMapForUnit("player") == 33 or  C_Map.GetBestMapForUnit("player") == 34 
       or  C_Map.GetBestMapForUnit("player") == 35 or  C_Map.GetBestMapForUnit("player") == 36 or  C_Map.GetBestMapForUnit("player") == 37 or  C_Map.GetBestMapForUnit("player") == 42 or  C_Map.GetBestMapForUnit("player") == 47 or  C_Map.GetBestMapForUnit("player") == 48 
@@ -238,8 +239,9 @@ if not tooltip or not tooltip.AddLine then return end
 end,
 
 OnClick = function(self, button)
-  if button == "RightButton" and not IsShiftKeyDown() then
+local info = C_Map.GetMapInfo(WorldMapFrame:GetMapID())
 
+  if button == "RightButton" and not IsShiftKeyDown() then
     -- Zone without Sync function
     if not ns.Addon.db.profile.activate.SyncZoneAndMinimap and (info.mapType == 3 or info.mapType == 5 or info.mapType == 6) 
       and not (C_Map.GetBestMapForUnit("player") == 1454 or C_Map.GetBestMapForUnit("player") == 1456 --Cata nodes

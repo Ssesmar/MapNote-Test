@@ -807,7 +807,6 @@ function Addon:PLAYER_ENTERING_WORLD()
 end
 
 function Addon:PLAYER_LOGIN()
-
   ns.LoadOptions(self)
   ns.Addon = Addon
 
