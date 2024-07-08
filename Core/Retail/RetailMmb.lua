@@ -3,8 +3,8 @@ local ADDON_NAME, ns = ...
 local iconLink = "Interface\\Addons\\" .. ADDON_NAME .. "\\images\\"
 local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
 local MNMMBIcon = LibStub("LibDBIcon-1.0", true)
+local info = C_Map.GetMapInfo(WorldMapFrame:GetMapID())
 
-local info = C_Map.GetMapInfo( C_Map.GetBestMapForUnit("player"))
 ns.miniButton = {
 text = ns.COLORED_ADDON_NAME,
 type = "data source",
