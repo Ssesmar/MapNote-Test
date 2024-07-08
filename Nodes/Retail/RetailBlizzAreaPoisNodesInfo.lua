@@ -11,6 +11,7 @@ ns.BlizzAreaPoisInfo = {
     -- Neutral
     39, -- Ratchet
     1961, -- Shattrath
+    2071, -- Area 52
     2317, -- Dalaran City
     2837, -- Tonlongstepps PvE Vendor
     5881, -- The Cape of Stranglethorn, Boat to Ratschet
@@ -28,6 +29,13 @@ ns.BlizzAreaPoisInfo = {
     2704, -- Elwynn Forest Darkmoon Icon
     2882, -- Pvp Vendor Valley of the Four Winds
     5793, -- Darnassus Überreste
+    5873, -- Dustwallow Ship
+    5874, -- Wetland Ship to Theramore
+    5875, -- Wetland Ship to Howling Fjord
+    5876, -- Howling Fjord Ship to Stormwind
+    5877, -- Borean Tundra Ship to Stormwind
+    5878, -- Stormwind Ship to Vallianz
+    5879, -- Stormwind Ship to Boralus
 
     -- City Horde
     18, -- Undercity
@@ -38,11 +46,17 @@ ns.BlizzAreaPoisInfo = {
     5887, -- Echo Isles Ship Icon
     2705, -- Mulgore Darkmoon Icon
     2884, -- Pvp Vendor Pandaria
+    5843, -- Drustvar to Zuldazar Travel
+    5844, -- Tiragardesund to Zuldazar Travel
+    5845, -- Stormsong Valley to Zuldazar Travel
+    5850, -- Pvp Vendor Zuldazar
     5883, -- Grom'gol Zeppelin Icon in Starnglethorn
     5884, -- Zeppelin Grom'gol in OG
     5885, -- Zeppelin Borean Tundra in OG
+    5886, -- Zeppelin Borean Tundra to OG
     5888, -- Ship Dazar'Alor / Zuldazar
     5890, -- Portal Og from Jade Forest
+    6138, -- Mechagon Zuldazar Travel
     7341, -- Zeppelin Durotar
     7339, -- Ship Icon The Waking Shores to OG
     

@@ -417,7 +417,7 @@ if not db.activate.HideMapNote then
           -- Raid Nodes above Blizzards Icons to make it Clickable for maximized Maps
             nodes[371][21595793] = { id = 320, type = "Raid", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Terrace of Endless Spring
             nodes[376][69680536] = { id = 320, type = "Raid", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Terrace of Endless Spring
-            nodes[433][48536352] = { id = 320, type = "Raid", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Terrace of Endless Spring
+            nodes[433][48456145] = { id = 320, type = "Raid", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Terrace of Endless Spring
             nodes[371][12005202] = { id = 369, type = "Raid", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Siege of Orgrimmar
             nodes[422][38923499] = { id = 330, type = "Raid", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Heart of Fear
             nodes[379][59603917] = { id = 317, type = "Raid", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Mogu'Shan Vaults

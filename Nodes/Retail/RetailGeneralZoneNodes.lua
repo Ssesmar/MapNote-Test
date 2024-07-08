@@ -23,6 +23,14 @@ if not db.activate.HideMapNote then
 
             if self.db.profile.showZonePvPVendor then
                 nodes[71][51602800] = { name = "", dnID = TRANSMOG_SET_PVP .. " " .. MERCHANT .. "\n" .. WORLD_QUEST_REWARD_FILTERS_EQUIPMENT .. "\n" .. AUCTION_CATEGORY_WEAPONS, type = "PvPVendor", showInZone = true, showOnContinent = false, showOnMinimap = false }
+            
+                if self.faction == "Horde" or db.activate.ZoneEnemyFaction then
+                    nodes[10][40151995] = { name = "", dnID = TRANSMOG_SET_PVP .. " " .. MERCHANT .. " " .. FACTION_HORDE .. "\n" .. WORLD_QUEST_REWARD_FILTERS_EQUIPMENT .. "\n" .. AUCTION_CATEGORY_WEAPONS, type = "PvPVendorH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                end
+
+                if self.faction == "Alliance" or db.activate.ZoneEnemyFaction then
+                    nodes[63][61488388] = { name = "", dnID = TRANSMOG_SET_PVP .. " " .. MERCHANT  .. " " .. FACTION_ALLIANCE ..  "\n" .. WORLD_QUEST_REWARD_FILTERS_EQUIPMENT .. "\n" .. AUCTION_CATEGORY_WEAPONS, type = "PvPVendorA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                end
             end
 
             if self.db.profile.showZonePaths then
@@ -122,13 +130,15 @@ if not db.activate.HideMapNote then
                 nodes[198][41804500] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER, type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[1527][54603380] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER, type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[1527][27000760] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER, type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[249][54723371] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER, type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[249][26970748] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER, type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[10][67607420] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER .. " - " .. FACTION_HORDE, type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
 
                 if self.faction == "Horde" or db.activate.ZoneEnemyFaction then
                     nodes[1][52004180] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER .. " - " .. FACTION_HORDE, type = "StablemasterH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[10][56403980] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER .. " - " .. FACTION_HORDE, type = "StablemasterH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[10][49005760] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER .. " - " .. FACTION_HORDE, type = "StablemasterH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[10][62401680] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER .. " - " .. FACTION_HORDE, type = "StablemasterH", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                    nodes[10][67607420] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER .. " - " .. FACTION_HORDE, type = "StablemasterH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[7][46985968] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER .. " - " .. FACTION_HORDE, type = "StablemasterH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[76][56805000] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER .. " - " .. FACTION_HORDE, type = "StablemasterH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[63][73206060] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER .. " - " .. FACTION_HORDE, type = "StablemasterH", showInZone = true, showOnContinent = false, showOnMinimap = false }
@@ -155,7 +165,7 @@ if not db.activate.HideMapNote then
                     nodes[66][65600780] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER .. " - " .. FACTION_ALLIANCE, type = "StablemasterA", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[69][51001800] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER .. " - " .. FACTION_ALLIANCE, type = "StablemasterA", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[69][46804560] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER .. " - " .. FACTION_ALLIANCE, type = "StablemasterA", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                    nodes[70][65805440] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER .. " - " .. FACTION_ALLIANCE, type = "StablemasterA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[70][65235140] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER .. " - " .. FACTION_ALLIANCE, type = "StablemasterA", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[207][47405160] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER .. " - " .. FACTION_ALLIANCE, type = "StablemasterA", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 end
 
@@ -177,68 +187,81 @@ if not db.activate.HideMapNote then
             end
 
             if self.db.profile.showZoneMailbox then
-                nodes[83][59805090] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[198][63502360] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[198][41904450] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[198][18703740] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[63][73606090] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[63][50206600] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[63][36505020] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[63][38704250] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[63][12703400] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[76][66002040] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[76][43002470] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[76][56805030] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[76][50307420] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[76][29006590] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[76][26507890] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[1527][24706470] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[1527][54503710] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[1527][55803430] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[1527][55003390] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[66][65500690] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[66][57204980] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[66][24806880] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[1][45401220] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[1][51904210] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[1][56107450] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[463][59506350] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[80][51604050] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[80][55903140] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[65][66306410] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[65][58905590] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[65][50806300] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[65][31806000] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[70][65904530] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[70][42007330] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[70][36603210] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[10][49605880] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[10][67507420] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[460][51506660] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[199][40806950] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[199][39302010] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[468][53003650] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[462][26802750] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[69][74904400] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[69][57005400] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[64][45905100] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[64][77707360] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[461][42006670] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[97][48905000] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[106][55105910] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[62][50701930] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX .. "\n" .. "\n" .. L["If you don't see this icon, it's probably in a different phase. \nChange the phase on Zidormi"], type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false } -- other Phase
-                nodes[7][47205970] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[71][52502730] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[57][55805100] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[83][59805090] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[198][63502360] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[198][41904450] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[198][18703740] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[76][66002040] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[76][43002470] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[76][50307420] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[76][29006590] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[66][57204980] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[80][51604050] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[80][55903140] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[70][42007330] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[10][67507420] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[77][44302870] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[64][77707360] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1527][24706470] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1527][54503710] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1527][55803430] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1527][55003390] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[69][46844514] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Alliance but can be used by Horde
+                nodes[249][54543355] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[249][26710783] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[81][55503570] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX .. "\n" .. "\n" .. L["If you don't see this icon, it's probably in a different phase. \nChange the phase on Zidormi"], type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[71][52502730] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                
+                if self.faction == "Horde" or db.activate.ZoneEnemyFaction then
+                    nodes[66][24806880] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[69][74904400] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[7][47205970] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[65][50806300] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[10][49605880] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[63][73606090] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[63][50206600] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[63][38704250] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[63][12703400] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[77][44006200] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[76][56805030] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[76][26507890] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[1][45401220] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[1][51904210] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[1][56107450] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[461][42006670] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[462][26802750] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[463][59506350] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[65][66306410] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[70][36603210] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[199][40806950] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[199][39302010] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[64][45905100] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                end
+
+                if self.faction == "Alliance" or db.activate.ZoneEnemyFaction then
+                    nodes[65][58905590] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[70][65904530] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[65][31806000] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[66][65500690] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[69][57005400] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[62][50701930] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX .. "\n" .. "\n" .. L["If you don't see this icon, it's probably in a different phase. \nChange the phase on Zidormi"], type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false } -- other Phase
+                    nodes[63][36505020] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[77][61602550] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[97][48905000] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[468][53003650] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[106][55105910] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[57][55805100] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[460][51506660] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                end
             end
 
             if self.db.profile.showZoneInnkeeper then
+                nodes[207][49205180] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[70][41807400] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[1527][54603280] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[1527][26600720] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[66][56805000] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[77][44802900] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[63][44006180] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[198][63002400] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[198][18603720] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[198][42604560] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
@@ -246,10 +269,18 @@ if not db.activate.HideMapNote then
                 nodes[64][76607480] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[78][55206220] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[71][52602700] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[10][67207460] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[71][55606080] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[10][67307466] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[83][59805120] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[249][54673294] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[249][21986447] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[249][26610725] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[81][55523676] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER .. "\n" .. "\n" .. L["If you don't see this icon, it's probably in a different phase. \nChange the phase on Zidormi"], type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
 
                 if self.faction == "Horde" or db.activate.ZoneEnemyFaction then
+                    nodes[65][66406420] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[199][40806920] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[199][39202000] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[70][36803220] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[63][38604220] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[63][50406700] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
@@ -259,7 +290,6 @@ if not db.activate.HideMapNote then
                     nodes[69][51804760] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[10][56204000] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[10][62401660] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }    
-                    nodes[64][46005120] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[63][74006060] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[1][51604160] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[66][24006820] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
@@ -267,28 +297,27 @@ if not db.activate.HideMapNote then
                     nodes[65][50406380] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[10][49605800] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[7][46806040] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[77][44006193] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 end
 
                 if self.faction == "Alliance" or db.activate.ZoneEnemyFaction then
+                    nodes[65][59005640] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[65][39403280] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[65][31406060] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[65][71007900] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[199][39001100] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false } 
+                    nodes[199][49006860] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[199][65604660] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[97][48404920] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[106][55605960] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[63][36804940] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[77][61802660] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER .. "\n" .. "\n" .. L["If you don't see this icon, it's probably in a different phase. \nChange the phase on Zidormi"], type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Phase 12608
                     nodes[69][46004520] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[69][51001780] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                    nodes[63][37004920] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[70][66404540] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[66][66200660] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[57][55405220] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[62][50951853] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER .. "\n" .. "\n" .. L["If you don't see this icon, it's probably in a different phase. \nChange the phase on Zidormi"], type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Phase 12608
-	                    
-                    -- if UnitPhaseReason("player") then    
-                        --     nodes[62][50951853] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER .. "\n" .. "\n" .. L["If you don't see this icon, it's probably in a different phase. \nChange the phase on Zidormi"], type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Phase 12608
-                        -- end
-
-                        -- if WorldMapFrame:GetMapArtID(1176) then
-                        --     nodes[62][50951853] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Phase 12608
-                        -- end
                 end
 
             end
@@ -423,9 +452,11 @@ if not db.activate.HideMapNote then
                 nodes[51][72001480] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER, type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[122][50203560] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER, type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[205][49404200] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER, type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[22][47203180] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER, type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
 
                 if self.faction == "Horde" or db.activate.ZoneEnemyFaction then
                     nodes[18][61805200] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER .. " - " .. FACTION_HORDE, type = "StablemasterH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[14][67993512] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER .. " - " .. FACTION_HORDE, type = "StablemasterH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[21][44602080] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER .. " - " .. FACTION_HORDE, type = "StablemasterH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[21][46004260] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER .. " - " .. FACTION_HORDE, type = "StablemasterH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[25][36206160] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER .. " - " .. FACTION_HORDE, type = "StablemasterH", showInZone = true, showOnContinent = false, showOnMinimap = false }
@@ -449,10 +480,12 @@ if not db.activate.HideMapNote then
                     nodes[241][45207640] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER .. " - " .. FACTION_HORDE, type = "StablemasterH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[204][53005920] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER .. " - " .. FACTION_HORDE, type = "StablemasterH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[205][51406260] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER .. " - " .. FACTION_HORDE, type = "StablemasterH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[2070][59255112] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER .. " - " .. FACTION_HORDE, type = "StablemasterH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 end
 
                 if self.faction == "Alliance" or db.activate.ZoneEnemyFaction then
                     nodes[37][42806580] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER .. " - " .. FACTION_ALLIANCE, type = "StablemasterA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[14][39314791] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER .. " - " .. FACTION_ALLIANCE, type = "StablemasterA", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[52][53005300] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER .. " - " .. FACTION_ALLIANCE, type = "StablemasterA", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[49][26204300] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER .. " - " .. FACTION_ALLIANCE, type = "StablemasterA", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[47][74004620] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER .. " - " .. FACTION_ALLIANCE, type = "StablemasterA", showInZone = true, showOnContinent = false, showOnMinimap = false }
@@ -465,7 +498,6 @@ if not db.activate.HideMapNote then
                     nodes[14][40004900] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER .. " - " .. FACTION_ALLIANCE, type = "StablemasterA", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[26][14404520] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER .. " - " .. FACTION_ALLIANCE, type = "StablemasterA", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[26][66404500] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER .. " - " .. FACTION_ALLIANCE, type = "StablemasterA", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                    nodes[22][47203180] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER .. " - " .. FACTION_ALLIANCE, type = "StablemasterA", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[15][21005660] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER .. " - " .. FACTION_ALLIANCE, type = "StablemasterA", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[51][28603360] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER .. " - " .. FACTION_ALLIANCE, type = "StablemasterA", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[17][46008540] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER .. " - " .. FACTION_ALLIANCE, type = "StablemasterA", showInZone = true, showOnContinent = false, showOnMinimap = false }
@@ -490,80 +522,75 @@ if not db.activate.HideMapNote then
             end
 
             if self.db.profile.showZoneMailbox then
-                nodes[27][54105090] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[27][39604870] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[27][26303180] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[241][80307700] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[241][75705290] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[241][53904300] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[241][49502990] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[241][74701750] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[15][18104320] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[15][66003650] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[15][90803750] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[427][62603270] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[37][42906560] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[51][29103330] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[51][47205530] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[51][71901490] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[210][41307400] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[210][40507220] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[210][35202760] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[22][47806380] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[22][39606850] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[22][43608450] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[17][45508630] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[17][66602860] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX .. "\n" .. "\n" .. L["If you don't see this icon, it's probably in a different phase. \nChange the phase on Zidormi"], type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[17][59901690] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX .. "\n" .. "\n" .. L["If you don't see this icon, it's probably in a different phase. \nChange the phase on Zidormi"], type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[77][44006200] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[77][44302870] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[77][61602550] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[425][32805250] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[26][78908050] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[26][66004520] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[26][14104570] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[204][55107220] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[204][51206070] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[465][51905860] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[205][51106300] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[205][49105700] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[205][49204190] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[21][46104230] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[21][44502100] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[52][53105330] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[52][55904850] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[14][69003400] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[14][69003280] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[94][44207070] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[94][47804700] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[95][47803150] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[217][37006550] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[48][34804780] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[30][37303860] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[32][39506800] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[81][55503570] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX .. "\n" .. "\n" .. L["If you don't see this icon, it's probably in a different phase. \nChange the phase on Zidormi"], type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[467][61404500] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[56][57604010] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[56][10805970] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[47][73804620] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[23][75305270] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[25][56904690] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[122][50003501] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[50][38905020] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[49][26004300] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[18][60705220] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[241][74701750] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[15][66003650] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[15][90803750] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[51][71901490] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[210][41307400] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[210][40507220] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[205][49204190] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[30][37303860] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[32][39506800] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[23][75305270] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[122][50003501] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[217][59949211] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+
+                if self.faction == "Horde" or db.activate.ZoneEnemyFaction then
+                    nodes[465][51905860] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[95][47803150] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[2070][60715215] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[18][60705220] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[25][56904690] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[94][47804700] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[94][44207070] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[467][61404500] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[26][78908050] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[21][46104230] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[21][44502100] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[14][69003280] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[241][53904300] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[241][75705290] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[15][18104320] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[51][47205530] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[50][38905020] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[210][35202760] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[205][51106300] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[204][51206070] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                end
+
+                if self.faction == "Alliance" or db.activate.ZoneEnemyFaction then
+                    nodes[22][43608450] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[26][66004520] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[56][57604010] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[56][10805970] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[27][54105090] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[427][62603270] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[48][34804780] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[241][49502990] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[241][80307700] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[49][26004300] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[51][29103330] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[17][59901690] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX .. "\n" .. "\n" .. L["If you don't see this icon, it's probably in a different phase. \nChange the phase on Zidormi"], type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[17][66602860] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX .. "\n" .. "\n" .. L["If you don't see this icon, it's probably in a different phase. \nChange the phase on Zidormi"], type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[17][45508630] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[47][73804620] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[37][42906560] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[52][55904850] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[52][53105330] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[425][32805250] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[205][49105700] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[204][55107220] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                end
             end
 
             if self.db.profile.showZoneInnkeeper then
                 nodes[122][51203340] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[217][60009160] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[217][60219169] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[15][65803560] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[204][57406000] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[207][49205180] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[32][39606600] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[71][55606080] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[51][71601380] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[23][75605240] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[23][75965223] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[210][40807380] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[224][37508015] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, mnID = 210, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
 
@@ -572,31 +599,30 @@ if not db.activate.HideMapNote then
                     nodes[25][58004720] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[204][51206060] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[17][40401140] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER .. "\n" .. "\n" .. L["If you don't see this icon, it's probably in a different phase. \nChange the phase on Zidormi"], type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                    nodes[25][60206400] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[25][60206400] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER .. "\n" .. ERR_USE_OBJECT_MOVING, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[25][35806120] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[205][51606260] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[21][44402040] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                    nodes[199][40806920] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                    nodes[199][39202000] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                    nodes[65][66406420] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[21][46434270] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[210][35002720] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[224][34295176] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, mnID = 210, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[224][42503277] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, mnID = 50, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[26][31805800] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                    nodes[18][83007480] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[18][83087198] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[241][53204280] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[241][75805260] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[241][75401660] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                    nodes[241][45007660] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[241][45087674] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[22][48206380] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                    nodes[14][69003340] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER .. "\n" .. "\n" .. L["If you don't see this icon, it's probably in a different phase. \nChange the phase on Zidormi"], type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Phase 11292
+                    nodes[14][69703245] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER .. "\n" .. "\n" .. L["If you don't see this icon, it's probably in a different phase. \nChange the phase on Zidormi"], type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Phase 11292
                     nodes[15][18204280] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[94][48004760] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[94][43607120] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[50][37205180] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                    nodes[51][46805640] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[51][46955686] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[26][78208120] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[18][60805160] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[2070][60875155] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 end
 
                 if self.faction == "Alliance" or db.activate.ZoneEnemyFaction then
@@ -609,13 +635,6 @@ if not db.activate.HideMapNote then
                     nodes[17][44408760] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[17][60601400] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER  .. "\n" .. "\n" .. L["If you don't see this icon, it's probably in a different phase. \nChange the phase on Zidormi"], type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[205][49605740] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                    nodes[199][39001100] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false } 
-                    nodes[199][49006860] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                    nodes[199][65604660] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                    nodes[65][59005640] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                    nodes[65][39403280] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                    nodes[65][31406060] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                    nodes[65][71007900] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[51][29003260] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[26][66204440] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[241][79407860] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false }
@@ -635,7 +654,22 @@ if not db.activate.HideMapNote then
                     nodes[26][14004480] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[52][52805360] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[56][10606080] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[49][26384143] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 end
+
+            end
+
+            if self.db.profile.showZonePvPVendor then
+
+                if self.faction == "Horde" or db.activate.ZoneEnemyFaction then
+                    nodes[25][58073359] = { name = "", dnID = TRANSMOG_SET_PVP .. " " .. MERCHANT .. " " .. FACTION_HORDE .. "\n" .. WORLD_QUEST_REWARD_FILTERS_EQUIPMENT .. "\n" .. AUCTION_CATEGORY_WEAPONS, type = "PvPVendorH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[14][68473035] = { name = "", dnID = TRANSMOG_SET_PVP .. " " .. MERCHANT .. " " .. FACTION_HORDE .. "\n" .. WORLD_QUEST_REWARD_FILTERS_EQUIPMENT .. "\n" .. AUCTION_CATEGORY_WEAPONS, type = "PvPVendorH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                end
+
+                if self.faction == "Alliance" or db.activate.ZoneEnemyFaction then
+                    nodes[25][44624633] = { name = "", dnID = TRANSMOG_SET_PVP .. " " .. MERCHANT .. " " .. FACTION_ALLIANCE .. "\n" .. WORLD_QUEST_REWARD_FILTERS_EQUIPMENT .. "\n" .. AUCTION_CATEGORY_WEAPONS, type = "PvPVendorA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[14][40114653] = { name = "", dnID = TRANSMOG_SET_PVP .. " " .. MERCHANT .. " " .. FACTION_ALLIANCE .. "\n" .. WORLD_QUEST_REWARD_FILTERS_EQUIPMENT .. "\n" .. AUCTION_CATEGORY_WEAPONS, type = "PvPVendorA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                end  
 
             end
 
@@ -709,30 +743,36 @@ if not db.activate.HideMapNote then
             end
 
             if self.db.profile.showZoneMailbox then
-                nodes[100][55006360] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[100][56503800] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[100][26806050] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[100][23503750] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[105][27605250] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[105][36306430] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[105][52705570] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[105][60806840] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[105][75706080] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[105][62603850] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[104][56305820] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[104][37205750] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[104][61402900] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[104][30102840] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[102][78906370] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[102][67504920] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[102][31905010] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[102][42102710] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[109][32206460] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[109][43603590] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[108][57005370] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[108][49504490] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[107][54507360] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[107][56473557] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[104][56305820] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[104][61402900] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[102][78906370] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[109][32206460] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[109][43603590] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[105][62603850] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[105][27605250] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+
+                if self.faction == "Horde" or db.activate.ZoneEnemyFaction then
+                    nodes[108][49504490] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[107][56473557] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[102][31905010] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[100][26806050] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[100][56503800] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[105][52705570] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[105][75706080] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                end
+
+                if self.faction == "Alliance" or db.activate.ZoneEnemyFaction then
+                    nodes[108][57005370] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[107][54507360] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[102][42102710] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[102][67504920] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[100][23503750] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[100][55006360] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[105][36306430] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[105][60806840] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[104][37205750] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[104][30102840] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                end
             end
 
             if self.db.profile.showZoneInnkeeper then
@@ -844,7 +884,6 @@ if not db.activate.HideMapNote then
                 end
 
                 if self.faction == "Alliance" or db.activate.ZoneEnemyFaction then
-                    nodes[114][48406860] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER .. " - " .. FACTION_ALLIANCE, type = "StablemasterA", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[114][56607300] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER .. " - " .. FACTION_ALLIANCE, type = "StablemasterA", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[114][57001900] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER .. " - " .. FACTION_ALLIANCE, type = "StablemasterA", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[117][58606300] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER .. " - " .. FACTION_ALLIANCE, type = "StablemasterA", showInZone = true, showOnContinent = false, showOnMinimap = false }
@@ -861,41 +900,48 @@ if not db.activate.HideMapNote then
             end
 
             if self.db.profile.showZoneMailbox then
-                nodes[114][42005480] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[114][58506860] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[114][78104930] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[114][77003750] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[114][57001910] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[114][49401030] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[116][65504730] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[116][59502620] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[116][32506050] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[116][21506500] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[117][25205900] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[117][30904210] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[117][52206650] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[117][58606320] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[117][79003040] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[117][60801600] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[117][49501090] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[115][48307450] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[115][28905610] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[115][37304670] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[115][60105670] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[115][59505190] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[115][77006280] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[115][77305090] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[120][67505040] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[120][40908590] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[120][28807430] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[120][30503700] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[118][43702410] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[118][75902350] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[118][75802000] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[121][40506770] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[121][40906560] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[121][40106640] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[119][26905950] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[114][78104930] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[117][25205900] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[115][48307450] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[115][60105670] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[115][59505190] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[120][40908590] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[120][30503700] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[118][43702410] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[118][79517232] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[121][40506770] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[121][40906560] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[121][40106640] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[119][26905950] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+
+                if self.faction == "Horde" or db.activate.ZoneEnemyFaction then
+                    nodes[114][42005480] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[114][77003750] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[114][49401030] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[120][67505040] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[118][75902350] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[116][21506500] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[116][65504730] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[117][79003040] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[117][52206650] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[117][49501090] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[115][77006280] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[115][37304670] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                end
+
+                if self.faction == "Alliance" or db.activate.ZoneEnemyFaction then
+                    nodes[114][58506860] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[114][57001910] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[120][28807430] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[118][75802000] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[116][32506050] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[116][59502620] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[117][58606320] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[117][30904210] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[117][60801600] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[115][28905610] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[115][77305090] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                end
             end
 
             if self.db.profile.showZoneInnkeeper then
@@ -909,13 +955,14 @@ if not db.activate.HideMapNote then
                 nodes[121][59205720] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[120][41008580] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[120][48806500] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[120][3080720] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[120][30903737] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
 
                 if self.faction == "Horde" or db.activate.ZoneEnemyFaction then
                     nodes[114][76203720] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[114][49601000] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[114][41805460] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[115][38204600] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[115][76866312] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[116][65404700] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[116][20806460] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[117][49401080] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
@@ -927,6 +974,7 @@ if not db.activate.HideMapNote then
                 end
 
                 if self.faction == "Alliance" or db.activate.ZoneEnemyFaction then
+                    nodes[114][57111864] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[114][58206800] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[144][57001860] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[115][77405160] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false }
@@ -954,13 +1002,13 @@ if not db.activate.HideMapNote then
             if self.db.profile.showZonePvPVendor then
 
                 if self.faction == "Horde" or db.activate.ZoneEnemyFaction then
-                    nodes[379][35408340] = { name = "", dnID = TRANSMOG_SET_PVP .. " " .. MERCHANT .. " " .. FACTION_HORDE .. "\n" .. WORLD_QUEST_REWARD_FILTERS_EQUIPMENT .. "\n" .. AUCTION_CATEGORY_WEAPONS, type = "PvPVendor", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                    nodes[388][77476296] = { name = "", dnID = TRANSMOG_SET_PVP .. " " .. MERCHANT .. " " .. FACTION_HORDE .. "\n" .. WORLD_QUEST_REWARD_FILTERS_EQUIPMENT .. "\n" .. AUCTION_CATEGORY_WEAPONS, type = "PvPVendor", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[379][35408340] = { name = "", dnID = TRANSMOG_SET_PVP .. " " .. MERCHANT .. " " .. FACTION_HORDE .. "\n" .. WORLD_QUEST_REWARD_FILTERS_EQUIPMENT .. "\n" .. AUCTION_CATEGORY_WEAPONS, type = "PvPVendorH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[388][77476296] = { name = "", dnID = TRANSMOG_SET_PVP .. " " .. MERCHANT .. " " .. FACTION_HORDE .. "\n" .. WORLD_QUEST_REWARD_FILTERS_EQUIPMENT .. "\n" .. AUCTION_CATEGORY_WEAPONS, type = "PvPVendorH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 end
 
                 if self.faction == "Alliance" or db.activate.ZoneEnemyFaction then
-                    nodes[376][12003400] = { name = "", dnID = TRANSMOG_SET_PVP .. " " .. MERCHANT .. " " .. FACTION_ALLIANCE .. "\n" .. WORLD_QUEST_REWARD_FILTERS_EQUIPMENT .. "\n" .. AUCTION_CATEGORY_WEAPONS, type = "PvPVendor", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                    nodes[422][73543407] = { name = "", dnID = TRANSMOG_SET_PVP .. " " .. MERCHANT .. " " .. FACTION_ALLIANCE .. "\n" .. WORLD_QUEST_REWARD_FILTERS_EQUIPMENT .. "\n" .. AUCTION_CATEGORY_WEAPONS, type = "PvPVendor", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[376][12003400] = { name = "", dnID = TRANSMOG_SET_PVP .. " " .. MERCHANT .. " " .. FACTION_ALLIANCE .. "\n" .. WORLD_QUEST_REWARD_FILTERS_EQUIPMENT .. "\n" .. AUCTION_CATEGORY_WEAPONS, type = "PvPVendorA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[422][73543407] = { name = "", dnID = TRANSMOG_SET_PVP .. " " .. MERCHANT .. " " .. FACTION_ALLIANCE .. "\n" .. WORLD_QUEST_REWARD_FILTERS_EQUIPMENT .. "\n" .. AUCTION_CATEGORY_WEAPONS, type = "PvPVendorA", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 end
 
             end
@@ -994,7 +1042,7 @@ if not db.activate.HideMapNote then
             end
 
             if self.db.profile.showZoneStablemaster then
-                nodes[371][46404380] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER, type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[371][46554376] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER, type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[371][54806300] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER, type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[376][55204960] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER, type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[433][55807580] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER, type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
@@ -1007,15 +1055,13 @@ if not db.activate.HideMapNote then
                 nodes[422][55806960] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER, type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[390][36007520] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER, type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[554][37204680] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER, type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
-
+                nodes[371][27804680] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER .. " - " .. FACTION_HORDE, type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
 
                 if self.faction == "Horde" or db.activate.ZoneEnemyFaction then
-                    nodes[371][27804680] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER .. " - " .. FACTION_HORDE, type = "StablemasterH", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                    nodes[371][28601300] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER .. " - " .. FACTION_HORDE, type = "StablemasterH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[371][28711310] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER .. " - " .. FACTION_HORDE, type = "StablemasterH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[418][59202440] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER .. " - " .. FACTION_HORDE, type = "StablemasterH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[390][60402260] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER .. " - " .. FACTION_HORDE, type = "StablemasterH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[504][32803260] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER .. " - " .. FACTION_HORDE, type = "StablemasterH", showInZone = true, showOnContinent = false, showOnMinimap = false }
-
                 end
 
                 if self.faction == "Alliance" or db.activate.ZoneEnemyFaction then
@@ -1023,7 +1069,6 @@ if not db.activate.HideMapNote then
                     nodes[418][67203220] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER .. " - " .. FACTION_ALLIANCE, type = "StablemasterA", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[390][84606320] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER .. " - " .. FACTION_ALLIANCE, type = "StablemasterA", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[504][63207380] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER .. " - " .. FACTION_ALLIANCE, type = "StablemasterA", showInZone = true, showOnContinent = false, showOnMinimap = false }
-
                 end
             end
 
@@ -1032,50 +1077,50 @@ if not db.activate.HideMapNote then
             end
 
             if self.db.profile.showZoneMailbox then
-                nodes[390][35607240] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[418][93503050] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[418][88703440] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[418][86803060] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[418][71504200] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[418][68004520] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[418][63502020] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[418][60702500] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[418][32006190] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[418][31506370] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[418][13705610] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[418][12905370] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[418][10605260] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[418][09504990] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[379][62602970] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[379][67605140] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[379][64506120] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[379][57606020] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[379][72309210] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[379][62708050] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[379][54108290] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[379][35908330] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[371][59208340] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[371][44908470] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[371][54806310] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[371][46504400] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[371][28104720] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[371][55602380] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[371][41602350] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[371][27801500] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[371][28601330] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[554][24806880] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[554][24806880] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[376][83902130] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[376][55604990] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[376][12303350] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[504][33303300] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[504][63207240] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[388][75908280] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[388][48907070] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[388][71105760] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[422][55803220] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[422][55407110] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[433][55907420] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[390][35607240] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[418][68004520] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[418][31506370] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[418][13705610] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[418][10605260] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[379][62602970] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[379][67605140] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[379][64506120] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[379][57606020] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[379][72309210] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[371][54806310] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[371][46454395] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[371][28104720] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[371][55602380] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[371][41602350] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[376][83902130] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[376][55604990] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[388][75908280] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[388][48907070] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[388][71105760] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[422][55803220] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[422][55407110] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[433][55907420] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+
+                if self.faction == "Horde" or db.activate.ZoneEnemyFaction then
+                    nodes[371][27801500] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[371][28601330] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[379][62708050] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[379][35908330] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[504][33303300] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[554][22144135] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[418][60702500] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                end
+
+                if self.faction == "Alliance" or db.activate.ZoneEnemyFaction then
+                    nodes[371][59208340] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[371][44908470] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[379][54108290] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[504][63207240] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[376][12303350] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[418][88703440] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[554][24806880] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[418][86803060] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                end
             end
 
             if self.db.profile.showZoneInnkeeper then
@@ -1104,6 +1149,11 @@ if not db.activate.HideMapNote then
                 nodes[376][55205060] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[376][19605620] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[376][83602020] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[371][41722315] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[371][55782443] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[371][45724370] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[371][54586322] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[371][27994743] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
 
                 if self.faction == "Horde" or db.activate.ZoneEnemyFaction then
                     nodes[504][33603260] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
@@ -1111,7 +1161,7 @@ if not db.activate.HideMapNote then
                     nodes[418][28205060] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[418][10805240] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[379][62608060] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                    nodes[371][28601320] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[371][28521334] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 end
 
                 if self.faction == "Alliance" or db.activate.ZoneEnemyFaction then
@@ -1170,7 +1220,7 @@ if not db.activate.HideMapNote then
                     nodes[550][45806980] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER .. " - " .. FACTION_HORDE, type = "StablemasterH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[535][70802960] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER .. " - " .. FACTION_HORDE, type = "StablemasterH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[534][59804560] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER .. " - " .. FACTION_HORDE, type = "StablemasterH", showInZone = true, showOnContinent = false, showOnMinimap = false }
-
+                    nodes[543][45806987] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER .. " - " .. FACTION_HORDE, type = "StablemasterH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 end
 
                 if self.faction == "Alliance" or db.activate.ZoneEnemyFaction then
@@ -1182,35 +1232,42 @@ if not db.activate.HideMapNote then
             end
 
             if self.db.profile.showZoneMailbox then
-                nodes[539][57505730] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[539][45903960] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[539][59802680] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[539][51903290] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[525][32001030] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[525][52604080] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[525][40605220] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[525][21105680] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[525][20004380] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[535][47704160] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[535][50904570] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[535][69704290] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[535][67803590] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[535][71802990] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[535][84903150] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[535][69702160] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[535][61901090] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[542][61707300] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[542][40106130] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[542][40504330] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[543][53205990] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[543][47109300] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[534][60804670] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[534][58005970] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[550][54701460] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[550][82904530] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[550][62104020] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[550][48804740] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[550][63506210] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[535][47704160] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[535][50904570] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[535][84903150] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[542][61707300] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[550][54621418] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[542][46514384] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+
+                if self.faction == "Horde" or db.activate.ZoneEnemyFaction then
+                    nodes[525][52604080] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[525][40605220] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[525][21105680] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[525][20004380] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[525][32001030] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[534][60804670] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[542][40404324] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[535][67803590] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[535][71802990] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[535][61901090] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[550][82904530] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[550][48754733] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                end
+
+                if self.faction == "Alliance" or db.activate.ZoneEnemyFaction then
+                    nodes[543][53205990] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[543][47109300] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[534][58005970] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[539][57505730] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[539][45903960] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[539][59802680] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[539][51903290] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[542][40106130] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[535][69704290] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[535][69702160] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[550][63376209] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[550][62104020] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                end
             end
 
             if self.db.profile.showZoneInnkeeper then
@@ -1218,7 +1275,7 @@ if not db.activate.HideMapNote then
                 nodes[535][85203180] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[535][77205740] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[542][61607340] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[542][46604400] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[542][46684402] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[543][46005480] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[543][40003640] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
 
@@ -1236,17 +1293,20 @@ if not db.activate.HideMapNote then
                     nodes[525][40605160] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[525][52203980] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[525][27003640] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[526][42914454] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[527][69376212] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[542][40414298] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 end
 
                 if self.faction == "Alliance" or db.activate.ZoneEnemyFaction then
                     nodes[534][58606020] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[535][69602180] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                    nodes[542][37605100] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                    nodes[542][36805700] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    --nodes[542][37605100] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    --nodes[542][36805700] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[539][56805740] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[539][60002720] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[539][46604080] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                    nodes[550][68406700] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    --nodes[550][68406700] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[550][62204000] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[550][63606240] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[543][53205980] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false }
@@ -1275,44 +1335,41 @@ if not db.activate.HideMapNote then
             end
 
             if self.db.profile.showZoneStablemaster then
-                nodes[646][43606300] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER, type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[650][52804520] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER, type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[650][53206400] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER, type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[830][64406260] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER, type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[830][62604760] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER, type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
-
-                if self.faction == "Horde" or db.activate.ZoneEnemyFaction then
-
-                end
-
-                if self.faction == "Alliance" or db.activate.ZoneEnemyFaction then
-
-                end
+                nodes[750][53694597] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER, type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
             end
 
             if self.db.profile.showZoneMailbox then
-                nodes[650][40506980] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[650][51406700] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[650][47606150] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[650][52704480] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[650][39503710] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[650][57802770] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[680][58108700] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[680][33604950] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[680][36504550] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[630][56505930] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[630][46904090] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[630][43504260] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[630][49002610] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[630][40700980] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[641][55007320] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[641][42605950] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[641][56605790] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[641][68805070] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[634][72106000] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[634][54207210] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[634][60505070] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[619][41205930] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[650][47606150] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[650][52704480] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[650][39503710] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[680][58108700] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[680][33604950] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[680][36504550] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[630][56505930] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[630][46904090] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[630][43504260] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[630][49002610] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[630][40700980] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[641][55007320] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[641][42605950] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[641][56605790] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[641][68805070] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[634][60505070] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[619][41205930] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[646][41255926] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[750][51315314] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+            
+                if self.faction == "Horde" or db.activate.ZoneEnemyFaction then
+                    nodes[634][54207210] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                end
+
+                if self.faction == "Alliance" or db.activate.ZoneEnemyFaction then
+                    nodes[634][72106000] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                end
             end
 
             if self.db.profile.showZoneInnkeeper then
@@ -1324,7 +1381,6 @@ if not db.activate.HideMapNote then
                 nodes[641][69404940] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[641][42605920] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[641][59208480] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[680][24808880] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[680][37404580] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[680][54206960] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[634][60605020] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
@@ -1334,13 +1390,17 @@ if not db.activate.HideMapNote then
                 nodes[650][54608480] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[650][43602380] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[650][38206840] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[650][58606520] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[650][40005240] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[630][43004260] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[630][56665958] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[630][47802332] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[646][41005880] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[750][44395385] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[680][59238475] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
 
                 if self.faction == "Horde" or db.activate.ZoneEnemyFaction then
                     nodes[634][54007220] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[634][36883109] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 end
 
                 if self.faction == "Alliance" or db.activate.ZoneEnemyFaction then
@@ -1403,47 +1463,49 @@ if not db.activate.HideMapNote then
             end
 
             if self.db.profile.showZoneMailbox then
-                nodes[862][44507210] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[862][40507070] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[862][35306670] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[862][51605830] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[862][58006270] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[862][51305060] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[862][77605460] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[862][66704250] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[862][44503660] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[862][44802760] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[862][55602510] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[862][71602920] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[862][76801630] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[864][52508990] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[864][43207620] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[864][27105300] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[864][56804980] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[864][53603790] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[864][47903550] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[864][39203560] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[864][61602120] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[863][39107850] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[863][40304370] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[863][62504120] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[863][67204220] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[1355][38705510] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[1355][49106250] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[864][43207620] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[864][27105300] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[864][56804980] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[864][47903550] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[864][61602120] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[862][71602920] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[863][67204220] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+
+                if self.faction == "Horde" or db.activate.ZoneEnemyFaction then
+                    nodes[862][44507210] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[862][51305060] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[862][66704250] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[862][58006270] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[862][35306670] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[862][76801630] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[862][51605830] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[863][39107850] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[863][40304370] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[864][43086096] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[864][52428989] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[1355][49106250] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                end
+
+                if self.faction == "Alliance" or db.activate.ZoneEnemyFaction then
+                    nodes[862][40507070] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[862][77605460] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[862][44503660] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[862][55602510] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[862][44802760] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[863][62504120] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[864][39203560] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[864][53613802] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[1355][38705510] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                end
             end
 
             if self.db.profile.showZoneInnkeeper then
                 nodes[862][71402900] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[864][26805220] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[864][52008980] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[864][43007640] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[864][56804980] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[864][61602060] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[863][67604180] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[863][43353614] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[863][43353614] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[863][43353614] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[863][43353614] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
 
                 if self.faction == "Horde" or db.activate.ZoneEnemyFaction then
                     nodes[862][44607180] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
@@ -1453,8 +1515,9 @@ if not db.activate.HideMapNote then
                     nodes[862][59802220] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[862][53205700] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[862][57405840] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[862][76421608] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[864][52008980] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                    nodes[864][43406020] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[864][43506023] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[863][40804360] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[863][38607860] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 end
@@ -1466,11 +1529,12 @@ if not db.activate.HideMapNote then
                     nodes[862][77205560] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[862][40607060] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[862][55002560] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                    nodes[864][53603780] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[864][53723801] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[864][36803520] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[863][34006340] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[863][62004080] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[863][51402160] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[1355][37805560] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 end
 
             end
@@ -1516,39 +1580,45 @@ if not db.activate.HideMapNote then
             end
 
             if self.db.profile.showZoneMailbox then
-                nodes[942][54107870] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[942][59007050] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[942][68806520] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[942][38906690] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[942][31106680] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[942][34804750] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[942][43505420] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[942][53904900] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[942][64704880] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[942][50803310] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[942][60702680] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[895][39501750] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[895][42102280] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[895][35302420] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[895][53102820] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[895][62801400] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[895][66502450] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[895][87405020] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[895][75705050] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[895][72005270] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[895][57706180] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[895][53306320] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[895][75906490] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[895][85408030] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[895][77508430] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[896][62001670] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[896][55203520] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[896][66505950] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[896][37504900] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[896][31503010] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[896][20204350] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[896][26607200] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[1462][71503600] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[895][85408030] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[896][20134340] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1462][71503600] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+
+                if self.faction == "Horde" or db.activate.ZoneEnemyFaction then
+                    nodes[895][87405020] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[895][72005270] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[895][53306320] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[895][62801400] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[895][39501750] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[942][54107870] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[942][38906690] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[942][53904900] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[942][60702680] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[942][50803310] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[896][62001670] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[896][66505950] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                end
+
+                if self.faction == "Alliance" or db.activate.ZoneEnemyFaction then
+                    nodes[895][75906490] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[895][75705050] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[895][77508430] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[895][57706180] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[895][66502450] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[895][53102820] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[895][42102280] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[895][35302420] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[942][34804750] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[942][64704880] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[942][31106680] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[942][59007050] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[942][43505420] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[942][68806520] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[896][55203520] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[896][37504900] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[896][26607200] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[896][31503010] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                end
             end
 
             if self.db.profile.showZoneInnkeeper then
@@ -1591,7 +1661,6 @@ if not db.activate.HideMapNote then
                     nodes[896][37404860] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[896][55403440] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[896][26607240] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                    nodes[1355][37805560] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperA", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 end
 
             end
@@ -1610,11 +1679,10 @@ if not db.activate.HideMapNote then
 
             if self.db.profile.showZoneStablemaster then
                 nodes[1525][49007000] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER, type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1525][70334140] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER, type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[1525][41204740] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER, type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[1525][53404000] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER, type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[1525][60403920] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER, type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[1525][63206180] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER, type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[1525][63603500] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER, type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[1533][44203300] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER, type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[1533][35202140] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER, type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[1533][52404800] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER, type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
@@ -1632,16 +1700,6 @@ if not db.activate.HideMapNote then
                 nodes[1565][37403820] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER, type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[1961][60602300] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER, type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[1970][34206620] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER, type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[1970][61504950] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[1970][35006400] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-
-                if self.faction == "Horde" or db.activate.ZoneEnemyFaction then
-
-                end
-
-                if self.faction == "Alliance" or db.activate.ZoneEnemyFaction then
-
-                end
             end
 
             if self.db.profile.showZoneAuctioneer then
@@ -1649,42 +1707,44 @@ if not db.activate.HideMapNote then
             end
 
             if self.db.profile.showZoneMailbox then
-                nodes[1536][37902910] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[1536][54503060] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[1536][67504510] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[1536][50605290] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[1536][39505540] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[1536][52506820] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[1536][58107200] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[1565][64601960] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[1565][62703590] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[1565][50803350] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[1565][48505120] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[1565][51207030] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[1565][36105310] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[1565][37103730] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[1525][71804060] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[1525][70307130] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[1525][62506320] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[1525][48506850] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[1525][47906990] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[1525][31104730] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[1533][48507360] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[1533][53204720] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[1533][43203280] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[1533][65501870] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[1961][60702390] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1536][37902910] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1536][54503060] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1536][67504510] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1536][50605290] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1536][39505540] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1536][52506820] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1536][58107200] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1565][64601960] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1565][62703590] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1565][50803350] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1565][48505120] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1565][51207030] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1565][36105310] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1565][37103730] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1565][60245356] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1525][71804060] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1525][62506320] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1525][47846990] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1525][31104730] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1525][70268142] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1533][48477356] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1533][53204720] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1533][43203280] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1533][65501870] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1961][60702390] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1970][61504950] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1970][35006400] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
             end
 
             if self.db.profile.showZoneInnkeeper then
                 nodes[1565][64601940] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1565][51826920] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[1565][50603380] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[1565][48405060] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[1565][36803700] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[1565][60405380] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[1565][36405320] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[1565][62603540] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[1533][57802960] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[1533][48007300] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[1533][53204680] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[1533][35402060] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
@@ -1699,7 +1759,8 @@ if not db.activate.HideMapNote then
                 nodes[1525][47407060] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[1525][62006440] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[1525][60203980] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[1533][72203980] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1525][72323986] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[1533][42923273] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[1970][61404920] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[1970][34806400] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
             end
@@ -1735,6 +1796,7 @@ if not db.activate.HideMapNote then
                 nodes[2023][45604060] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER, type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[2023][80605800] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER, type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[2023][83802580] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER, type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[2023][41826019] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER, type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[2024][63205840] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER, type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[2024][65201620] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER, type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[2024][47004040] = { name = "", dnID = MINIMAP_TRACKING_STABLEMASTER, type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
@@ -1752,49 +1814,50 @@ if not db.activate.HideMapNote then
             end
 
             if self.db.profile.showZoneMailbox then
-                nodes[2023][85202590] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[2023][85403590] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[2023][81205910] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[2023][72008060] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[2023][57007650] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[2023][62704080] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[2023][59503870] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[2023][62203590] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[2023][65802470] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[2023][46004080] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[2023][41906070] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[2023][28805920] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[2022][76203490] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[2022][75905460] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[2022][65205801] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[2022][57706690] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[2022][53903850] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[2022][47508280] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[2022][42806650] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[2022][25905530] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[2022][24608270] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[2024][65501620] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[2024][66002540] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[2024][62905800] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[2024][46604020] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[2024][37906180] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[2024][12804950] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[2024][18802430] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[2133][55905630] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[2133][56605670] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[2133][56805560] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[2133][56305510] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[2133][51602650] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[2025][35307950] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[2025][34806050] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[2025][52306870] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[2025][59808260] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[2025][50504220] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[2200][53002490] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[2200][36503320] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[2200][49906190] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[2026][14506060] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[2239][48305510] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "Mailbox", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[2023][85202590] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[2023][85403590] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[2023][81205910] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[2023][72008060] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[2023][57007650] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[2023][62704080] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[2023][59503870] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[2023][62203590] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[2023][65802470] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[2023][46004080] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[2023][41906070] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[2023][28805920] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[2022][76203490] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[2022][75905460] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[2022][65205801] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[2022][57706690] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[2022][53823840] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[2022][47508280] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[2022][42806650] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[2022][25905530] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[2022][24608270] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[2024][65501620] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[2024][66002540] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[2024][62905800] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[2024][46604020] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[2024][37906180] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[2024][12804950] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[2024][18802430] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[2133][55905630] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[2133][56605670] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[2133][56805560] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[2133][56305510] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[2133][51602650] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[2025][35307950] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[2025][34806050] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[2025][52306870] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[2025][59808260] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[2025][50504220] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[2200][53002490] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[2200][36503320] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[2200][49906190] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[2026][14506060] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[2239][48305510] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[2151][34225907] = { name = "", dnID = MINIMAP_TRACKING_MAILBOX, type = "MailboxN", showInZone = true, showOnContinent = false, showOnMinimap = false }
             end
 
             if self.db.profile.showZoneInnkeeper then
@@ -1816,6 +1879,7 @@ if not db.activate.HideMapNote then
                 nodes[2024][46804020] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[2024][65401620] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[2024][62805780] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[2024][37376243] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[2025][50204260] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[2025][35007920] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[2025][58608260] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
@@ -1825,13 +1889,14 @@ if not db.activate.HideMapNote then
                 nodes[2023][85803520] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[2023][62804060] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[2023][59603880] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                nodes[2023][41806060] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[2023][41936052] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[2023][62203580] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[2023][72008040] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[2023][57207660] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[2023][46004060] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[2023][66202440] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[2023][85002600] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[2151][33835906] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[2200][36603260] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[2200][69405320] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[2200][52402520] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }

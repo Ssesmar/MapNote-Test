@@ -2,6 +2,7 @@ local ADDON_NAME = ...
 local L = LibStub("AceLocale-3.0"):NewLocale(ADDON_NAME, "enUS", true)
 
 
+L["Number"] = true
 --0 Restore
 L["canceled"] = true
 L["Delete this icon"] = true
@@ -222,6 +223,7 @@ L["Right-click => Open/Close"] = true
 L["Shift + Right-click => hide"] = true
 L["Middle-Mouse-Button => Open/Close"] = true
 --9 transport
+L["Ever-Shifting Mirror"] = true
 L["icons"] = true
 L["Exit"] = true
 L["Entrance"] = true
@@ -248,6 +250,8 @@ L["(inside portal chamber)"] = true
 L["(inside building)"] = true
 L["talk to"] = true
 --10 places
+L["Sholazar Basin"] = true
+L["Un'Goro Crater"] = true
 L["Auberdine"] = true
 L["Ratchet"] = true
 L["Theramore Isle"] = true
@@ -297,6 +301,16 @@ L["Exodar"] = true
 L["Jade Forest"] = true
 L["Drustvar"] = true
 L["Gorgrond"] = true
+L["Talador"] = true
+L["Nagrand"] = true
+L["Frostfire Ridge"] = true
+L["Tanaan Jungle"] = true
+L["Shadowmoon Valley"] = true
+L["Spires of Arak"] = true
+L["Netherstorm"] = true
+L["Blade's Edge Mountains"] = true
+L["Zangarmarsh"] = true
+L["Terokkar Forest"] = true
 L["Ohn'ahran Plains"] = true
 L["Borean Tundra"] = true
 L["Tirisfal Glades"] = true
@@ -319,6 +333,7 @@ L["Korthia"] = true
 L["The Maw"] = true
 L["Zereth Mortis"] = true
 L["Icecrown"] = true
+L["Krasarang Wilds"] = true
 L["Townlong Steppes"] = true
 L["Kun-Lai Summit"] = true
 L["Valley of the Four Winds"] = true

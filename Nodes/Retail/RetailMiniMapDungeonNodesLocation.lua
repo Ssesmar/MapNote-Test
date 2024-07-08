@@ -1,7 +1,7 @@
 local ADDON_NAME, ns = ...
 local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
 
-function ns.LoadMiniMapDungeonNodesLocationinfo(self)
+function ns.LoadMiniMapDungeonLocationinfo(self)
 local db = ns.Addon.db.profile
 local minimap = ns.minimap
 
@@ -420,7 +420,7 @@ if not db.activate.HideMapNote then
           -- Raid minimap above Blizzards Icons to make it Clickable for maximized Maps
             minimap[371][21595793] = { id = 320, type = "Raid", showInZone = false, showOnContinent = false, showOnMinimap = true } -- Terrace of Endless Spring
             minimap[376][69680536] = { id = 320, type = "Raid", showInZone = false, showOnContinent = false, showOnMinimap = true } -- Terrace of Endless Spring
-            minimap[433][48536352] = { id = 320, type = "Raid", showInZone = false, showOnContinent = false, showOnMinimap = true } -- Terrace of Endless Spring
+            minimap[433][48456145] = { id = 320, type = "Raid", showInZone = false, showOnContinent = false, showOnMinimap = true } -- Terrace of Endless Spring
             minimap[371][12005202] = { id = 369, type = "Raid", showInZone = false, showOnContinent = false, showOnMinimap = true } -- Siege of Orgrimmar
             minimap[422][38923499] = { id = 330, type = "Raid", showInZone = false, showOnContinent = false, showOnMinimap = true } -- Heart of Fear
             minimap[379][59603917] = { id = 317, type = "Raid", showInZone = false, showOnContinent = false, showOnMinimap = true } -- Mogu'Shan Vaults
