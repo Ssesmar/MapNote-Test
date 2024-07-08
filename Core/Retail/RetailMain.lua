@@ -119,35 +119,35 @@ function pluginHandler:OnEnter(uiMapId, coord)
     if (nodeData.dnID and nodeData.mnID) and not nodeData.mnID2 and not nodeData.mnID3 then -- outputs the Zone or Dungeonmap name and displays it in the tooltip
       local mnIDname = C_Map.GetMapInfo(nodeData.mnID).name
       if mnIDname then
-        tooltip:AddDoubleLine(" => " .. mnIDname, nil, nil, false)
+        tooltip:AddDoubleLine(" ==> " .. mnIDname, nil, nil, false)
       end
     end
 
     if nodeData.mnID and nodeData.mnID2 or nodeData.mnID3 then -- outputs the Zone or Dungeonmap name and displays it in the tooltip
       local mnIDname = C_Map.GetMapInfo(nodeData.mnID).name
       if mnIDname then
-        tooltip:AddDoubleLine("\n" .. KEY_BUTTON1 .. " => " .. mnIDname, nil, nil, false)
+        tooltip:AddDoubleLine("\n" .. KEY_BUTTON1 .. " ==> " .. mnIDname, nil, nil, false)
       end
     end
 
     if nodeData.mnID2 then
       local mnID2name = C_Map.GetMapInfo(nodeData.mnID2).name
       if mnID2name then 
-        tooltip:AddDoubleLine(KEY_BUTTON2 .. " => " .. mnID2name, nil, nil, false)
+        tooltip:AddDoubleLine(KEY_BUTTON2 .. " ==> " .. mnID2name, nil, nil, false)
       end
     end
 
     if nodeData.mnID3 then
       local mnID3name = C_Map.GetMapInfo(nodeData.mnID3).name
       if mnID3name then 
-        tooltip:AddDoubleLine(KEY_BUTTON3 .. " => " .. mnID3name, nil, nil, false)
+        tooltip:AddDoubleLine(KEY_BUTTON3 .. " ==> " .. mnID3name, nil, nil, false)
       end
     end
 
     if not nodeData.dnID and nodeData.mnID and not nodeData.id and not nodeData.TransportName and not nodeData.wwwName then -- outputs the Zone or Dungeonmap name and displays it in the tooltip
       local mnIDname = C_Map.GetMapInfo(nodeData.mnID).name
       if mnIDname then
-        tooltip:AddDoubleLine(" => " .. mnIDname, nil, nil, false)
+        tooltip:AddDoubleLine(" ==> " .. mnIDname, nil, nil, false)
       end
     end
 
@@ -222,67 +222,96 @@ do
 			local allLocked = true
 			local anyLocked = false
 
-      ns.paths = value.type == "PathO" or value.type == "PathRO" or value.type == "PathLO" or value.type == "PathU" or value.type == "PathLU" or value.type == "PathRU" or value.type == "PathL" or value.type == "PathR"
+      ns.pathIcons = value.type == "PathO" or value.type == "PathRO" or value.type == "PathLO" or value.type == "PathU" or value.type == "PathLU" or value.type == "PathRU" or value.type == "PathL" or value.type == "PathR"
       
-      ns.professions = value.type == "Alchemy" or value.type == "Engineer" or value.type == "Cooking" or value.type == "Fishing" or value.type == "Archaeology" or value.type == "Mining" or value.type == "Jewelcrafting" 
-                      or value.type == "Blacksmith" or value.type == "Leatherworking" or value.type == "Skinning" or value.type == "Tailoring" or value.type == "Herbalism" or value.type == "Inscription"
-                      or value.type == "Enchanting" or value.type == "FishingClassic" or value.type == "ProfessionOrders"
+      ns.professionIcons = value.type == "Alchemy" or value.type == "Engineer" or value.type == "Cooking" or value.type == "Fishing" or value.type == "Archaeology" or value.type == "Mining" or value.type == "Jewelcrafting" 
+                            or value.type == "Blacksmith" or value.type == "Leatherworking" or value.type == "Skinning" or value.type == "Tailoring" or value.type == "Herbalism" or value.type == "Inscription"
+                            or value.type == "Enchanting" or value.type == "FishingClassic" or value.type == "ProfessionOrders"
 
-      ns.instances = value.type == "Dungeon" or value.type == "Raid" or value.type == "PassageDungeon" or value.type == "PassageDungeonRaidMulti" or value.type == "PassageRaid" or value.type == "VInstance" 
-                      or value.type == "PassageDungeon" or value.type == "Multiple" or value.type == "LFR" or value.type == "Gray"
+      ns.instanceIcons = value.type == "Dungeon" or value.type == "Raid" or value.type == "PassageDungeon" or value.type == "PassageDungeonRaidMulti" or value.type == "PassageRaid" or value.type == "VInstance" 
+                          or value.type == "PassageDungeon" or value.type == "Multiple" or value.type == "LFR" or value.type == "Gray"
 
-      ns.transports = value.type == "Portal" or value.type == "HPortal" or value.type == "APortal" or value.type == "HPortalS" or value.type == "APortalS" or value.type == "PassageHPortal" 
-                      or value.type == "PassageAPortal" or value.type == "PassagePortal" or value.type == "Zeppelin" or value.type == "HZeppelin" or value.type == "AZeppelin" or value.type == "Ship" 
-                      or value.type == "AShip" or value.type == "HShip" or value.type == "Carriage" or value.type == "TravelL" or value.type == "TravelH" or value.type == "TravelA" or value.type == "GPortal" 
-                      or value.type == "Tport2" or value.type == "TransportHelper" or value.type == "OgreWaygate" or value.type == "WayGateGreen" or value.type == "Ghost" or value.type == "DarkMoon"
+      ns.transportIcons = value.type == "Portal" or value.type == "HPortal" or value.type == "APortal" or value.type == "HPortalS" or value.type == "APortalS" or value.type == "PassageHPortal" 
+                          or value.type == "PassageAPortal" or value.type == "PassagePortal" or value.type == "Zeppelin" or value.type == "HZeppelin" or value.type == "AZeppelin" or value.type == "Ship" 
+                          or value.type == "AShip" or value.type == "HShip" or value.type == "Carriage" or value.type == "TravelL" or value.type == "TravelH" or value.type == "TravelA" or value.type == "GPortal" 
+                          or value.type == "Tport2" or value.type == "TransportHelper" or value.type == "OgreWaygate" or value.type == "WayGateGreen" or value.type == "Ghost" or value.type == "DarkMoon"
+                          or value.type == "Mirror" or value.type == "TravelM" or value.type == "B11M" or value.type == "MOrcF" or value.type == "UndeadF" or value.type == "GoblinF" or value.type == "GilneanF"
+                          or value.type == "KulM" or value.type == "DwarfF" or value.type == "OrcM"
 
-      ns.capitalgenerals = value.type == "Exit" or value.type == "PassageUpL" or value.type == "PassageDownL" or value.type == "PassageRightL" or value.type == "PassageLeftL" or value.type == "Innkeeper" 
-                          or value.type == "Auctioneer" or value.type == "Bank" or value.type == "MNL" or value.type == "Barber" or value.type == "Transmogger" or value.type == "ItemUpgrade" or value.type == "PvPVendor" 
-                          or value.type == "PvEVendor" or value.type == "MNL" or value.type == "DragonFlyTransmog" or value.type == "Catalyst" or value.type == "PathO" or value.type == "PathRO" or value.type == "PathLO" 
-                          or value.type == "PathU" or value.type == "PathLU" or value.type == "PathRU" or value.type == "PathL" or value.type == "PathR" or value.type == "BlackMarket" or value.type == "Mailbox"
-                          or value.type == "StablemasterN" or value.type == "StablemasterH" or value.type == "StablemasterA" or value.type == "HIcon" or value.type == "AIcon" or value.type == "NT" or value.type == "InnkeeperN" 
-                          or value.type == "InnkeeperH" or value.type == "InnkeeperA"
+      ns.generalIcons = value.type == "Exit" or value.type == "PassageUpL" or value.type == "PassageDownL" or value.type == "PassageRightL" or value.type == "PassageLeftL" or value.type == "Innkeeper" 
+                        or value.type == "Auctioneer" or value.type == "Bank" or value.type == "MNL" or value.type == "Barber" or value.type == "Transmogger" or value.type == "ItemUpgrade" or value.type == "PvPVendor" 
+                        or value.type == "PvEVendor" or value.type == "MNL" or value.type == "DragonFlyTransmog" or value.type == "Catalyst" or value.type == "PathO" or value.type == "PathRO" or value.type == "PathLO" 
+                        or value.type == "PathU" or value.type == "PathLU" or value.type == "PathRU" or value.type == "PathL" or value.type == "PathR" or value.type == "BlackMarket" or value.type == "Mailbox"
+                        or value.type == "StablemasterN" or value.type == "StablemasterH" or value.type == "StablemasterA" or value.type == "HIcon" or value.type == "AIcon" or value.type == "NT" or value.type == "InnkeeperN" 
+                        or value.type == "InnkeeperH" or value.type == "InnkeeperA" or value.type == "MailboxN" or value.type == "MailboxH" or value.type == "MailboxA" or value.type == "PvPVendorH" or value.type == "PvPVendorA" 
+                        or value.type == "PvEVendorH" or value.type == "PvEVendorA"
 
-      ns.CapitalIDs =
-        --Retail
-        WorldMapFrame:GetMapID() == 84 -- Stormwind
-        or WorldMapFrame:GetMapID() == 87  -- Ironforge
-        or WorldMapFrame:GetMapID() == 89  -- Darnassus
-        or WorldMapFrame:GetMapID() == 103 -- Exodar
-        or WorldMapFrame:GetMapID() == 85 -- Orgrimmar
-        or WorldMapFrame:GetMapID() == 90 -- Undercity
-        or WorldMapFrame:GetMapID() == 86 -- Ragefire Chasmn
-        or WorldMapFrame:GetMapID() == 88 -- Thunder Bluff
-        or WorldMapFrame:GetMapID() == 110 -- Silvermoon
-        or WorldMapFrame:GetMapID() == 111 -- Shattrath
-        or WorldMapFrame:GetMapID() == 125  -- Dalaran Northrend
-        or WorldMapFrame:GetMapID() == 126  -- Dalaran Northrend Basement
-        or WorldMapFrame:GetMapID() == 391  -- Pandaria Shrine of the two Moons first floor
-        or WorldMapFrame:GetMapID() == 392  -- Pandaria Shrine of the two Moons second floor
-        or WorldMapFrame:GetMapID() == 393  -- Pandaria Shrine of the seven Stars first floor
-        or WorldMapFrame:GetMapID() == 394  -- Pandaria Shrine of the seven Stars second floor
-        or WorldMapFrame:GetMapID() == 407  -- Darkmoon
-        or WorldMapFrame:GetMapID() == 582  -- Draenor Alliance Garrision
-        or WorldMapFrame:GetMapID() == 590  -- Draenor Horde Garrision
-        or WorldMapFrame:GetMapID() == 622  -- Draenor Stormshield
-        or WorldMapFrame:GetMapID() == 624  -- Draenor Warspear
-        or WorldMapFrame:GetMapID() == 626  -- Dalaran Legion Basement
-        or WorldMapFrame:GetMapID() == 627  -- Dalaran Legion
-        or WorldMapFrame:GetMapID() == 628  -- Dalaran Legion Shadowside
-        or WorldMapFrame:GetMapID() == 629  -- Dalaran Legion Aeqwynns Galarie
-        or WorldMapFrame:GetMapID() == 1161 -- Boralus
-        or WorldMapFrame:GetMapID() == 1163 -- Dazar'alor first floor
-        or WorldMapFrame:GetMapID() == 1164 -- Dazar'alor second floor
-        or WorldMapFrame:GetMapID() == 1165 -- Dazar'alor Area
-        or WorldMapFrame:GetMapID() == 1670 -- Oribos
-        or WorldMapFrame:GetMapID() == 1671 -- Oribos second floor
-        or WorldMapFrame:GetMapID() == 1672 -- Oribos Basement
-        or WorldMapFrame:GetMapID() == 1673 -- Oribos melting pot
-        or WorldMapFrame:GetMapID() == 2112 -- Valdrakken
-        or WorldMapFrame:GetMapID() == 2339 -- Dornogal
-      
+      ns.AllZoneIDs = ns.KalimdorIDs 
+                      or ns.EasternKingdomIDs 
+                      or ns.OutlandIDs 
+                      or ns.NorthrendIDs 
+                      or ns.PandariaIDs 
+                      or ns.BrokenIslesIDs
+                      or ns.ZandalarIDs 
+                      or ns.KulTirasIDs 
+                      or ns.ShadowlandIDs 
+                      or ns.DragonIsleIDs
+
+      ns.CapitalIDs = WorldMapFrame:GetMapID() == 84 or WorldMapFrame:GetMapID() == 87 or WorldMapFrame:GetMapID() == 89 or WorldMapFrame:GetMapID() == 103 or WorldMapFrame:GetMapID() == 85 or WorldMapFrame:GetMapID() == 90 
+                      or WorldMapFrame:GetMapID() == 86 or WorldMapFrame:GetMapID() == 88 or WorldMapFrame:GetMapID() == 110 or WorldMapFrame:GetMapID() == 111 or WorldMapFrame:GetMapID() == 125 or WorldMapFrame:GetMapID() == 126 
+                      or WorldMapFrame:GetMapID() == 391 or WorldMapFrame:GetMapID() == 392 or WorldMapFrame:GetMapID() == 393 or WorldMapFrame:GetMapID() == 394 or WorldMapFrame:GetMapID() == 407 or WorldMapFrame:GetMapID() == 503 
+                      or WorldMapFrame:GetMapID() == 582 or WorldMapFrame:GetMapID() == 590 or WorldMapFrame:GetMapID() == 622 or WorldMapFrame:GetMapID() == 624 or WorldMapFrame:GetMapID() == 626 or WorldMapFrame:GetMapID() == 627 
+                      or WorldMapFrame:GetMapID() == 628 or WorldMapFrame:GetMapID() == 629 or WorldMapFrame:GetMapID() == 1161 or WorldMapFrame:GetMapID() == 1163 or WorldMapFrame:GetMapID() == 1164 or WorldMapFrame:GetMapID() == 1165 
+                      or WorldMapFrame:GetMapID() == 1670 or WorldMapFrame:GetMapID() == 1671 or WorldMapFrame:GetMapID() == 1672 or WorldMapFrame:GetMapID() == 1673 or WorldMapFrame:GetMapID() == 2112 or WorldMapFrame:GetMapID() == 2339
+                      or WorldMapFrame:GetMapID() == 499 or WorldMapFrame:GetMapID() == 500
+
+      ns.KalimdorIDs = WorldMapFrame:GetMapID() == 1 or WorldMapFrame:GetMapID() == 7 or WorldMapFrame:GetMapID() == 10 or WorldMapFrame:GetMapID() == 11 or WorldMapFrame:GetMapID() == 57 or WorldMapFrame:GetMapID() == 62 
+                      or WorldMapFrame:GetMapID() == 63 or WorldMapFrame:GetMapID() == 64 or WorldMapFrame:GetMapID() == 65 or WorldMapFrame:GetMapID() == 66 or WorldMapFrame:GetMapID() == 67 or WorldMapFrame:GetMapID() == 68 
+                      or WorldMapFrame:GetMapID() == 69 or WorldMapFrame:GetMapID() == 70 or WorldMapFrame:GetMapID() == 71 or WorldMapFrame:GetMapID() == 74 or WorldMapFrame:GetMapID() == 75 or WorldMapFrame:GetMapID() == 76 
+                      or WorldMapFrame:GetMapID() == 77 or WorldMapFrame:GetMapID() == 78 or WorldMapFrame:GetMapID() == 80 or WorldMapFrame:GetMapID() == 81 or WorldMapFrame:GetMapID() == 83 or WorldMapFrame:GetMapID() == 97 
+                      or WorldMapFrame:GetMapID() == 106 or WorldMapFrame:GetMapID() == 199 or WorldMapFrame:GetMapID() == 327 or WorldMapFrame:GetMapID() == 460 or WorldMapFrame:GetMapID() == 461 or WorldMapFrame:GetMapID() == 462 
+                      or WorldMapFrame:GetMapID() == 468 or WorldMapFrame:GetMapID() == 1527 or WorldMapFrame:GetMapID() == 198 or WorldMapFrame:GetMapID() == 249
+          
+      ns.EasternKingdomIDs = WorldMapFrame:GetMapID() == 13 or WorldMapFrame:GetMapID() == 14 or WorldMapFrame:GetMapID() == 15 or WorldMapFrame:GetMapID() == 16 or WorldMapFrame:GetMapID() == 17 or WorldMapFrame:GetMapID() == 18 
+                      or WorldMapFrame:GetMapID() == 19 or WorldMapFrame:GetMapID() == 21 or WorldMapFrame:GetMapID() == 22 or WorldMapFrame:GetMapID() == 23 or WorldMapFrame:GetMapID() == 25 or WorldMapFrame:GetMapID() == 26 
+                      or WorldMapFrame:GetMapID() == 27 or WorldMapFrame:GetMapID() == 28 or WorldMapFrame:GetMapID() == 30 or WorldMapFrame:GetMapID() == 32 or WorldMapFrame:GetMapID() == 33 or WorldMapFrame:GetMapID() == 34 
+                      or WorldMapFrame:GetMapID() == 35 or WorldMapFrame:GetMapID() == 36 or WorldMapFrame:GetMapID() == 37 or WorldMapFrame:GetMapID() == 42 or WorldMapFrame:GetMapID() == 47 or WorldMapFrame:GetMapID() == 48 
+                      or WorldMapFrame:GetMapID() == 49 or WorldMapFrame:GetMapID() == 50 or WorldMapFrame:GetMapID() == 51 or WorldMapFrame:GetMapID() == 52 or WorldMapFrame:GetMapID() == 55 or WorldMapFrame:GetMapID() == 56 
+                      or WorldMapFrame:GetMapID() == 94 or WorldMapFrame:GetMapID() == 210 or WorldMapFrame:GetMapID() == 224 or WorldMapFrame:GetMapID() == 245 or WorldMapFrame:GetMapID() == 425 or WorldMapFrame:GetMapID() == 427 
+                      or WorldMapFrame:GetMapID() == 465 or WorldMapFrame:GetMapID() == 467 or WorldMapFrame:GetMapID() == 469 or WorldMapFrame:GetMapID() == 499 or WorldMapFrame:GetMapID() == 500 or WorldMapFrame:GetMapID() == 2070 
+                      or WorldMapFrame:GetMapID() == 241 or WorldMapFrame:GetMapID() == 203 or WorldMapFrame:GetMapID() == 204 or WorldMapFrame:GetMapID() == 205 or WorldMapFrame:GetMapID() == 241 or WorldMapFrame:GetMapID() == 244 
+                      or WorldMapFrame:GetMapID() == 245 or WorldMapFrame:GetMapID() == 201 or WorldMapFrame:GetMapID() == 95 or WorldMapFrame:GetMapID() == 122 or WorldMapFrame:GetMapID() == 217 or WorldMapFrame:GetMapID() == 226
+          
+      ns.OutlandIDs = WorldMapFrame:GetMapID() == 100 or WorldMapFrame:GetMapID() == 102 or WorldMapFrame:GetMapID() == 104 or WorldMapFrame:GetMapID() == 105 or WorldMapFrame:GetMapID() == 107 or WorldMapFrame:GetMapID() == 108
+                      or WorldMapFrame:GetMapID() == 109
+          
+      ns.NorthrendIDs = WorldMapFrame:GetMapID() == 114 or WorldMapFrame:GetMapID() == 115 or WorldMapFrame:GetMapID() == 116 or WorldMapFrame:GetMapID() == 117 or WorldMapFrame:GetMapID() == 118 or WorldMapFrame:GetMapID() == 119
+                      or WorldMapFrame:GetMapID() == 120 or WorldMapFrame:GetMapID() == 121 or WorldMapFrame:GetMapID() == 123 or WorldMapFrame:GetMapID() == 127 or WorldMapFrame:GetMapID() == 170
+          
+      ns.PandariaIDs = WorldMapFrame:GetMapID() == 371 or WorldMapFrame:GetMapID() == 376 or WorldMapFrame:GetMapID() == 379 or WorldMapFrame:GetMapID() == 388 or WorldMapFrame:GetMapID() == 390 or WorldMapFrame:GetMapID() == 418
+                      or WorldMapFrame:GetMapID() == 422 or WorldMapFrame:GetMapID() == 433 or WorldMapFrame:GetMapID() == 434 or WorldMapFrame:GetMapID() == 504 or WorldMapFrame:GetMapID() == 554 or WorldMapFrame:GetMapID() == 1530
+                      or WorldMapFrame:GetMapID() == 507
+          
+      ns.DraenorIDs = WorldMapFrame:GetMapID() == 525 or WorldMapFrame:GetMapID() == 534 or WorldMapFrame:GetMapID() == 535 or WorldMapFrame:GetMapID() == 539 or WorldMapFrame:GetMapID() == 542 or WorldMapFrame:GetMapID() == 543
+                      or WorldMapFrame:GetMapID() == 550 or WorldMapFrame:GetMapID() == 588
+          
+      ns.BrokenIslesIDs = WorldMapFrame:GetMapID() == 630 or WorldMapFrame:GetMapID() == 634 or WorldMapFrame:GetMapID() == 641 or WorldMapFrame:GetMapID() == 646 or WorldMapFrame:GetMapID() == 650 or WorldMapFrame:GetMapID() == 652
+                      or WorldMapFrame:GetMapID() == 750 or WorldMapFrame:GetMapID() == 680 or WorldMapFrame:GetMapID() == 830 or WorldMapFrame:GetMapID() == 882 or WorldMapFrame:GetMapID() == 885 or WorldMapFrame:GetMapID() == 905
+                      or WorldMapFrame:GetMapID() == 941 or WorldMapFrame:GetMapID() == 790
+          
+      ns.ZandalarIDs = WorldMapFrame:GetMapID() == 862 or WorldMapFrame:GetMapID() == 863 or WorldMapFrame:GetMapID() == 864 or WorldMapFrame:GetMapID() == 1355 or WorldMapFrame:GetMapID() == 1528
+          
+      ns.KulTirasIDs = WorldMapFrame:GetMapID() == 895 or WorldMapFrame:GetMapID() == 896 or WorldMapFrame:GetMapID() == 942 or WorldMapFrame:GetMapID() == 1462 or WorldMapFrame:GetMapID() == 1169
+          
+      ns.ShadowlandIDs = WorldMapFrame:GetMapID() == 1525 or WorldMapFrame:GetMapID() == 1533 or WorldMapFrame:GetMapID() == 1536 or WorldMapFrame:GetMapID() == 1543 or WorldMapFrame:GetMapID() == 1565 or WorldMapFrame:GetMapID() == 1961
+                      or WorldMapFrame:GetMapID() == 1970 or WorldMapFrame:GetMapID() == 2016
+          
+      ns.DragonIsleIDs = WorldMapFrame:GetMapID() == 2022 or WorldMapFrame:GetMapID() == 2023 or WorldMapFrame:GetMapID() == 2024 or WorldMapFrame:GetMapID() == 2025 or WorldMapFrame:GetMapID() == 2026 or WorldMapFrame:GetMapID() == 2133
+                      or WorldMapFrame:GetMapID() == 2151 or WorldMapFrame:GetMapID() == 2200 or WorldMapFrame:GetMapID() == 2239 or WorldMapFrame:GetMapID() == 2266
+          
+      ns.ZoneIDs = WorldMapFrame:GetMapID() == 750 or WorldMapFrame:GetMapID() == 652
 			if value.name == nil then value.name = value.id or value.mnID end
-      
+
 			local instances = { strsplit("\n", value.name) }
 			for i, v in pairs(instances) do
 				if (not extraInformations[v] and not extraInformations[lfgIDs[v]]) then
@@ -314,65 +343,56 @@ do
 				alpha = db.mapnoteAlpha
 			end
 
-      --scale = db.zoneScale
-      --alpha = db.zoneAlpha
-      --if t.minimapUpdate then -- Minimap Zone
-      --    scale = db.minimapScale
-      --    alpha = db.minimapAlpha
-      --end
-
       -- MiniMap Instance World
-      if ns.instances and (value.showOnMinimap == true) then
+      if ns.instanceIcons and (value.showOnMinimap == true) then
         scale = db.MiniMapInstanceScale
         alpha = db.MiniMapInstanceAlpha
       end
 
       -- MiniMap Transport (Zeppeline/Ship/Carriage) icons
-      if not ns.CapitalIDs and ns.transports and (value.showOnMinimap == true) then
+      if not ns.CapitalIDs and ns.transportIcons and (value.showOnMinimap == true) then
         scale = db.MiniMapTransportScale
         alpha = db.MiniMapTransportAlpha
       end
 
       -- MiniMap General (Innkeeper/Exit/Passage) icons
-      if not ns.CapitalIDs and ns.capitalgenerals and (value.showOnMinimap == true) then
+      if not ns.CapitalIDs and ns.generalIcons and (value.showOnMinimap == true) or ns.ZoneIDs and not value.showInZone then
         scale = db.MiniMapGeneralScale
         alpha = db.MiniMapGeneralAlpha
       end
 
-
-
       -- Profession icons in Capitals
-      if ns.professions and ns.CapitalIDs and (value.showOnMinimap == false) then
+      if ns.professionIcons and ns.CapitalIDs and (value.showOnMinimap == false) then
         scale = db.CapitalsProfessionsScale
         alpha = db.CapitalsProfessionsAlpha
       end
 
       -- inside Dungeon
-      if (mapInfo.mapType == 4 or mapInfo.mapType == 6) and not ns.CapitalIDs then 
+      if (mapInfo.mapType == 4 or mapInfo.mapType == 6) and not ns.CapitalIDs and not ns.ZoneIDs then 
           scale = db.dungeonScale
           alpha = db.dungeonAlpha
       end
 
       -- Profession Minimap icons in Capitals
-      if ns.professions and ns.CapitalIDs and (value.showOnMinimap == true) then
+      if ns.professionIcons and ns.CapitalIDs and (value.showOnMinimap == true) then
         scale = db.MinimapCapitalsProfessionsScale
         alpha = db.MinimapCapitalsProfessionsAlpha
       end
 
       -- Capitals Minimap Transport (Zeppeline/Ship/Carriage) icons
-      if ns.CapitalIDs and ns.transports and (value.showOnMinimap == true) then
+      if ns.CapitalIDs and ns.transportIcons and (value.showOnMinimap == true) then
         scale = db.MinimapCapitalsTransportScale
         alpha = db.MinimapCapitalsTransportAlpha
       end
 
       -- Capitals Minimap Instance (Dungeon/Raid/Passage/Multi) icons
-      if ns.CapitalIDs and ns.instances and (value.showOnMinimap == true) then
+      if ns.CapitalIDs and ns.instanceIcons and (value.showOnMinimap == true) then
         scale = db.MinimapCapitalsInstanceScale
         alpha = db.MinimapCapitalsInstanceAlpha
       end
 
       -- Capitals Minimap General (Innkeeper/Exit/Passage) icons
-      if ns.CapitalIDs and ns.capitalgenerals and (value.showOnMinimap == true) then
+      if ns.CapitalIDs and ns.generalIcons and (value.showOnMinimap == true) then
         scale = db.MinimapCapitalsGeneralScale
         alpha = db.MinimapCapitalsGeneralAlpha
       end
@@ -380,37 +400,37 @@ do
       ns.SyncWithMinimapScaleAlpha() -- sync Capitals with Capitals - Minimap and/or Zones with Minimap Alpha/Scale
 
       -- Instance icons World
-      if ns.instances and (not value.showOnMinimap == true) then
+      if ns.instanceIcons and (not value.showOnMinimap == true) then
         scale = db.ZoneInstanceScale
         alpha = db.ZoneInstanceAlpha
       end
 
       -- Zone Transport (Zeppeline/Ship/Carriage) icons
-      if not ns.CapitalIDs and ns.transports and (value.showOnMinimap == false) then
+      if not ns.CapitalIDs and ns.transportIcons and (value.showOnMinimap == false) then
         scale = db.ZoneTransportScale
         alpha = db.ZoneTransportAlpha
       end
 
       -- Zones General (Innkeeper/Exit/Passage) icons
-      if not ns.CapitalIDs and ns.capitalgenerals and (value.showOnMinimap == false) then
+      if not ns.CapitalIDs and ns.generalIcons and (value.showOnMinimap == false) then
         scale = db.ZonesGeneralScale
         alpha = db.ZonesGeneralAlpha
       end
 
       -- Capitals General (Innkeeper/Exit/Passage) icons
-      if ns.CapitalIDs and ns.capitalgenerals and (value.showOnMinimap == false) then
+      if ns.CapitalIDs and ns.generalIcons and (value.showOnMinimap == false) then
         scale = db.CapitalsGeneralScale
         alpha = db.CapitalsGeneralAlpha
       end
 
       -- Capitals Transport (Zeppeline/Ship/Carriage) icons
-      if ns.CapitalIDs and ns.transports and (value.showOnMinimap == false) then
+      if ns.CapitalIDs and ns.transportIcons and (value.showOnMinimap == false) then
         scale = db.CapitalsTransportScale
         alpha = db.CapitalsTransportAlpha
       end
 
       -- Capitals Instance (Dungeon/Raid/Passage/Multi) icons
-      if ns.CapitalIDs and ns.instances and (value.showOnMinimap == false) then
+      if ns.CapitalIDs and ns.instanceIcons and (value.showOnMinimap == false) then
         scale = db.CapitalsInstanceScale
         alpha = db.CapitalsInstanceAlpha
       end
@@ -451,7 +471,6 @@ do
       then
         return state, nil, icon, scale, alpha
       end
-      
 			state, value = next(data, state)
 		end
 		wipe(t)
@@ -588,6 +607,7 @@ local CapitalIDs = WorldMapFrame:GetMapID() == 84 or WorldMapFrame:GetMapID() ==
                 or WorldMapFrame:GetMapID() == 624  or WorldMapFrame:GetMapID() == 626  or WorldMapFrame:GetMapID() == 627  or WorldMapFrame:GetMapID() == 628  or WorldMapFrame:GetMapID() == 629
                 or WorldMapFrame:GetMapID() == 1161 or WorldMapFrame:GetMapID() == 1163 or WorldMapFrame:GetMapID() == 1164 or WorldMapFrame:GetMapID() == 1165 or WorldMapFrame:GetMapID() == 1670
                 or WorldMapFrame:GetMapID() == 1671 or WorldMapFrame:GetMapID() == 1672 or WorldMapFrame:GetMapID() == 1673 or WorldMapFrame:GetMapID() == 2112 or WorldMapFrame:GetMapID() == 2339
+                or WorldMapFrame:GetMapID() == 503
 
 
   StaticPopupDialogs["Delete_Icon?"] = {
@@ -866,8 +886,8 @@ function Addon:PopulateTable()
   ns.LoadMapNotesNodesInfo() -- load nodes\Retail\RetailMapNotesNodesInfo.lua
   ns.LoadMapNotesMinimapInfo() -- load nodes\Retail\RetailMapNotesMinimapNodesInfo.lua
 
-  ns.LoadMiniMapNodesLocationinfo(self) -- load nodes\Retail\RetailMiniMapNodes.lua
-  ns.LoadMiniMapDungeonNodesLocationinfo(self) -- load nodes\Retail\RetailMiniMapDungeonNodes.lua
+  ns.LoadMiniMapLocationinfo(self) -- load nodes\Retail\RetailMiniMapNodes.lua
+  ns.LoadMiniMapDungeonLocationinfo(self) -- load nodes\Retail\RetailMiniMapDungeonNodes.lua
   
   ns.LoadAzerothNodesLocationInfo(self) -- load nodes\Retail\RetailAzerothNodeslocation.lua
   ns.LoadContinentNodesLocationinfo(self) -- load nodes\Retail\RetailContinentNodesLocation.lua

@@ -29,8 +29,8 @@ local db = ns.Addon.db.profile
         db.MiniMapInstanceScale = db.ZoneInstanceScale
         db.MiniMapInstanceAlpha = db.ZoneInstanceAlpha
         -- Transport Scale/Alpha
-        db.MiniMapTransportScale = db.zoneTransportScale
-        db.MiniMapTransportAlpha = db.zoneTransportAlpha
+        db.MiniMapTransportScale = db.ZoneTransportScale
+        db.MiniMapTransportAlpha = db.ZoneTransportAlpha
         -- General Scale/Alpha
         db.MiniMapGeneralScale = db.ZonesGeneralScale
         db.MiniMapGeneralAlpha = db.ZonesGeneralAlpha
@@ -136,6 +136,10 @@ local db = ns.Addon.db.profile
         self.db.profile.showMiniMapZeppelins = self.db.profile.showZoneZeppelins
         self.db.profile.showMiniMapShips = self.db.profile.showZoneShips
         self.db.profile.showMiniMapTransport = self.db.profile.showZoneTransport
+        self.db.profile.showMiniMapOgreWaygate = self.db.profile.showZoneOgreWaygate
+        self.db.profile.showMiniMapTeleporter = self.db.profile.showZoneTeleporter
+        self.db.profile.showMiniMapToyTransport = self.db.profile.showZoneToyTransport
+        self.db.profile.showMiniMapTravel = self.db.profile.showZoneTravel
         self.db.profile.showMiniMapOldVanilla = self.db.profile.showZoneOldVanilla
         self.db.profile.showMiniMapLFR = self.db.profile.showZoneLFR
         self.db.profile.showMiniMapFP = self.db.profile.showZoneFP

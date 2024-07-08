@@ -57,6 +57,10 @@ ns.defaults = {
       showMiniMapZeppelins = true,
       showMiniMapShips = true,
       showMiniMapTransport = true,
+      showMiniMapOgreWaygate = true,
+      showMiniMapTeleporter = true,
+      showMiniMapToyTransport = true,
+      showMiniMapTravel = true,
     -- MiniMap General
       MiniMapGeneralScale = 1,
       MiniMapGeneralAlpha = 1,
@@ -103,6 +107,10 @@ ns.defaults = {
       showZoneZeppelins = true,
       showZoneShips = true,
       showZoneTransport = true,
+      showZoneOgreWaygate = true,
+      showZoneTeleporter = true,
+      showZoneToyTransport = true,
+      showZoneTravel = true,
     -- Zone General
       ZonesGeneralScale = 1,
       ZonesGeneralAlpha = 1,
