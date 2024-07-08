@@ -4,7 +4,7 @@ local iconLink = "Interface\\Addons\\" .. ADDON_NAME .. "\\images\\"
 local L = LibStub("AceLocale-3.0"):GetLocale(ADDON_NAME)
 local MNMMBIcon = LibStub("LibDBIcon-1.0", true)
 
-local info = C_Map.GetMapInfo(WorldMapFrame:GetMapID())
+local info = C_Map.GetMapInfo( C_Map.GetBestMapForUnit("player"))
 ns.miniButton = {
 text = ns.COLORED_ADDON_NAME,
 type = "data source",
@@ -40,69 +40,69 @@ if not tooltip or not tooltip.AddLine then return end
       tooltip:AddLine(HELPFRAME_REPORT_PLAYER_RIGHT_CLICK .. " => " .. "|cffff0000".. L["Kalimdor"] .. " " .. MINIMAP_LABEL .. "|cffffcc00" .. " " .. L["icons"] .. " " .. SHOW .. " / " .. HIDE,1,1,1)
       tooltip:Show()
     --Eastern Kingdom
-    elseif (WorldMapFrame:GetMapID() == 13 or WorldMapFrame:GetMapID() == 14 or WorldMapFrame:GetMapID() == 15 or WorldMapFrame:GetMapID() == 16 or WorldMapFrame:GetMapID() == 17 or WorldMapFrame:GetMapID() == 18 
-      or WorldMapFrame:GetMapID() == 19 or WorldMapFrame:GetMapID() == 21 or WorldMapFrame:GetMapID() == 22 or WorldMapFrame:GetMapID() == 23 or WorldMapFrame:GetMapID() == 25 or WorldMapFrame:GetMapID() == 26 
-      or WorldMapFrame:GetMapID() == 27 or WorldMapFrame:GetMapID() == 28 or WorldMapFrame:GetMapID() == 30 or WorldMapFrame:GetMapID() == 32 or WorldMapFrame:GetMapID() == 33 or WorldMapFrame:GetMapID() == 34 
-      or WorldMapFrame:GetMapID() == 35 or WorldMapFrame:GetMapID() == 36 or WorldMapFrame:GetMapID() == 37 or WorldMapFrame:GetMapID() == 42 or WorldMapFrame:GetMapID() == 47 or WorldMapFrame:GetMapID() == 48 
-      or WorldMapFrame:GetMapID() == 49 or WorldMapFrame:GetMapID() == 50 or WorldMapFrame:GetMapID() == 51 or WorldMapFrame:GetMapID() == 52 or WorldMapFrame:GetMapID() == 55 or WorldMapFrame:GetMapID() == 56 
-      or WorldMapFrame:GetMapID() == 94 or WorldMapFrame:GetMapID() == 210 or WorldMapFrame:GetMapID() == 224 or WorldMapFrame:GetMapID() == 245 or WorldMapFrame:GetMapID() == 425 or WorldMapFrame:GetMapID() == 427 
-      or WorldMapFrame:GetMapID() == 465 or WorldMapFrame:GetMapID() == 467 or WorldMapFrame:GetMapID() == 469 or WorldMapFrame:GetMapID() == 499 or WorldMapFrame:GetMapID() == 500 or WorldMapFrame:GetMapID() == 2070 
-      or WorldMapFrame:GetMapID() == 241 or WorldMapFrame:GetMapID() == 203 or WorldMapFrame:GetMapID() == 204 or WorldMapFrame:GetMapID() == 205 or WorldMapFrame:GetMapID() == 241 or WorldMapFrame:GetMapID() == 244 
-      or WorldMapFrame:GetMapID() == 245 or WorldMapFrame:GetMapID() == 201 or WorldMapFrame:GetMapID() == 95 or WorldMapFrame:GetMapID() == 122 or WorldMapFrame:GetMapID() == 217  or WorldMapFrame:GetMapID() == 226)
+    elseif ( C_Map.GetBestMapForUnit("player") == 13 or  C_Map.GetBestMapForUnit("player") == 14 or  C_Map.GetBestMapForUnit("player") == 15 or  C_Map.GetBestMapForUnit("player") == 16 or  C_Map.GetBestMapForUnit("player") == 17 or  C_Map.GetBestMapForUnit("player") == 18 
+      or  C_Map.GetBestMapForUnit("player") == 19 or  C_Map.GetBestMapForUnit("player") == 21 or  C_Map.GetBestMapForUnit("player") == 22 or  C_Map.GetBestMapForUnit("player") == 23 or  C_Map.GetBestMapForUnit("player") == 25 or  C_Map.GetBestMapForUnit("player") == 26 
+      or  C_Map.GetBestMapForUnit("player") == 27 or  C_Map.GetBestMapForUnit("player") == 28 or  C_Map.GetBestMapForUnit("player") == 30 or  C_Map.GetBestMapForUnit("player") == 32 or  C_Map.GetBestMapForUnit("player") == 33 or  C_Map.GetBestMapForUnit("player") == 34 
+      or  C_Map.GetBestMapForUnit("player") == 35 or  C_Map.GetBestMapForUnit("player") == 36 or  C_Map.GetBestMapForUnit("player") == 37 or  C_Map.GetBestMapForUnit("player") == 42 or  C_Map.GetBestMapForUnit("player") == 47 or  C_Map.GetBestMapForUnit("player") == 48 
+      or  C_Map.GetBestMapForUnit("player") == 49 or  C_Map.GetBestMapForUnit("player") == 50 or  C_Map.GetBestMapForUnit("player") == 51 or  C_Map.GetBestMapForUnit("player") == 52 or  C_Map.GetBestMapForUnit("player") == 55 or  C_Map.GetBestMapForUnit("player") == 56 
+      or  C_Map.GetBestMapForUnit("player") == 94 or  C_Map.GetBestMapForUnit("player") == 210 or  C_Map.GetBestMapForUnit("player") == 224 or  C_Map.GetBestMapForUnit("player") == 245 or  C_Map.GetBestMapForUnit("player") == 425 or  C_Map.GetBestMapForUnit("player") == 427 
+      or  C_Map.GetBestMapForUnit("player") == 465 or  C_Map.GetBestMapForUnit("player") == 467 or  C_Map.GetBestMapForUnit("player") == 469 or  C_Map.GetBestMapForUnit("player") == 499 or  C_Map.GetBestMapForUnit("player") == 500 or  C_Map.GetBestMapForUnit("player") == 2070 
+      or  C_Map.GetBestMapForUnit("player") == 241 or  C_Map.GetBestMapForUnit("player") == 203 or  C_Map.GetBestMapForUnit("player") == 204 or  C_Map.GetBestMapForUnit("player") == 205 or  C_Map.GetBestMapForUnit("player") == 241 or  C_Map.GetBestMapForUnit("player") == 244 
+      or  C_Map.GetBestMapForUnit("player") == 245 or  C_Map.GetBestMapForUnit("player") == 201 or  C_Map.GetBestMapForUnit("player") == 95 or  C_Map.GetBestMapForUnit("player") == 122 or  C_Map.GetBestMapForUnit("player") == 217  or  C_Map.GetBestMapForUnit("player") == 226)
     then
       tooltip:AddLine(HELPFRAME_REPORT_PLAYER_RIGHT_CLICK .. " => " .. "|cffff0000".. L["Eastern Kingdom"] .. " " .. MINIMAP_LABEL .. "|cffffcc00" .. " " .. L["icons"] .. " " .. SHOW .. " / " .. HIDE,1,1,1)
       tooltip:Show()
     --Outland
-    elseif (WorldMapFrame:GetMapID() == 100 or WorldMapFrame:GetMapID() == 102 or WorldMapFrame:GetMapID() == 104 or WorldMapFrame:GetMapID() == 105 or WorldMapFrame:GetMapID() == 107 or WorldMapFrame:GetMapID() == 108
-      or WorldMapFrame:GetMapID() == 109)
+    elseif ( C_Map.GetBestMapForUnit("player") == 100 or  C_Map.GetBestMapForUnit("player") == 102 or  C_Map.GetBestMapForUnit("player") == 104 or  C_Map.GetBestMapForUnit("player") == 105 or  C_Map.GetBestMapForUnit("player") == 107 or  C_Map.GetBestMapForUnit("player") == 108
+      or  C_Map.GetBestMapForUnit("player") == 109)
     then
       tooltip:AddLine(HELPFRAME_REPORT_PLAYER_RIGHT_CLICK .. " => " .. "|cffff0000".. L["Outland"] .. " " .. MINIMAP_LABEL .. "|cffffcc00" .. " " .. L["icons"] .. " " .. SHOW .. " / " .. HIDE,1,1,1)
       tooltip:Show()
     --Northrend
-    elseif (WorldMapFrame:GetMapID() == 114 or WorldMapFrame:GetMapID() == 115 or WorldMapFrame:GetMapID() == 116 or WorldMapFrame:GetMapID() == 117 or WorldMapFrame:GetMapID() == 118 or WorldMapFrame:GetMapID() == 119
-      or WorldMapFrame:GetMapID() == 120 or WorldMapFrame:GetMapID() == 121 or WorldMapFrame:GetMapID() == 123 or WorldMapFrame:GetMapID() == 127 or WorldMapFrame:GetMapID() == 170)
+    elseif ( C_Map.GetBestMapForUnit("player") == 114 or  C_Map.GetBestMapForUnit("player") == 115 or  C_Map.GetBestMapForUnit("player") == 116 or  C_Map.GetBestMapForUnit("player") == 117 or  C_Map.GetBestMapForUnit("player") == 118 or  C_Map.GetBestMapForUnit("player") == 119
+      or  C_Map.GetBestMapForUnit("player") == 120 or  C_Map.GetBestMapForUnit("player") == 121 or  C_Map.GetBestMapForUnit("player") == 123 or  C_Map.GetBestMapForUnit("player") == 127 or  C_Map.GetBestMapForUnit("player") == 170)
     then
       tooltip:AddLine(HELPFRAME_REPORT_PLAYER_RIGHT_CLICK .. " => " .. "|cffff0000".. L["Northrend"] .. " " .. MINIMAP_LABEL .. "|cffffcc00" .. " " .. L["icons"] .. " " .. SHOW .. " / " .. HIDE,1,1,1)
       tooltip:Show()
     --Pandaria
-    elseif (WorldMapFrame:GetMapID() == 371 or WorldMapFrame:GetMapID() == 376 or WorldMapFrame:GetMapID() == 379 or WorldMapFrame:GetMapID() == 388 or WorldMapFrame:GetMapID() == 390 or WorldMapFrame:GetMapID() == 418
-      or WorldMapFrame:GetMapID() == 422 or WorldMapFrame:GetMapID() == 433 or WorldMapFrame:GetMapID() == 434 or WorldMapFrame:GetMapID() == 504 or WorldMapFrame:GetMapID() == 554  or WorldMapFrame:GetMapID() == 1530
-      or WorldMapFrame:GetMapID() == 507)
+    elseif ( C_Map.GetBestMapForUnit("player") == 371 or  C_Map.GetBestMapForUnit("player") == 376 or  C_Map.GetBestMapForUnit("player") == 379 or  C_Map.GetBestMapForUnit("player") == 388 or  C_Map.GetBestMapForUnit("player") == 390 or  C_Map.GetBestMapForUnit("player") == 418
+      or  C_Map.GetBestMapForUnit("player") == 422 or  C_Map.GetBestMapForUnit("player") == 433 or  C_Map.GetBestMapForUnit("player") == 434 or  C_Map.GetBestMapForUnit("player") == 504 or  C_Map.GetBestMapForUnit("player") == 554  or  C_Map.GetBestMapForUnit("player") == 1530
+      or  C_Map.GetBestMapForUnit("player") == 507)
     then
       tooltip:AddLine(HELPFRAME_REPORT_PLAYER_RIGHT_CLICK .. " => " .. "|cffff0000".. L["Pandaria"] .. " " .. MINIMAP_LABEL .. "|cffffcc00" .. " " .. L["icons"] .. " " .. SHOW .. " / " .. HIDE,1,1,1)
       tooltip:Show()
     --Draenor
-    elseif (WorldMapFrame:GetMapID() == 525 or WorldMapFrame:GetMapID() == 534 or WorldMapFrame:GetMapID() == 535 or WorldMapFrame:GetMapID() == 539 or WorldMapFrame:GetMapID() == 542 or WorldMapFrame:GetMapID() == 543
-      or WorldMapFrame:GetMapID() == 550 or WorldMapFrame:GetMapID() == 588)
+    elseif ( C_Map.GetBestMapForUnit("player") == 525 or  C_Map.GetBestMapForUnit("player") == 534 or  C_Map.GetBestMapForUnit("player") == 535 or  C_Map.GetBestMapForUnit("player") == 539 or  C_Map.GetBestMapForUnit("player") == 542 or  C_Map.GetBestMapForUnit("player") == 543
+      or  C_Map.GetBestMapForUnit("player") == 550 or  C_Map.GetBestMapForUnit("player") == 588)
     then
       tooltip:AddLine(HELPFRAME_REPORT_PLAYER_RIGHT_CLICK .. " => " .. "|cffff0000".. L["Draenor"] .. " " .. MINIMAP_LABEL .. "|cffffcc00" .. " " .. L["icons"] .. " " .. SHOW .. " / " .. HIDE,1,1,1)
       tooltip:Show()
     --Broken Isles
-    elseif (WorldMapFrame:GetMapID() == 630 or WorldMapFrame:GetMapID() == 634 or WorldMapFrame:GetMapID() == 641 or WorldMapFrame:GetMapID() == 646 or WorldMapFrame:GetMapID() == 650 or WorldMapFrame:GetMapID() == 652
-      or WorldMapFrame:GetMapID() == 750 or WorldMapFrame:GetMapID() == 680 or WorldMapFrame:GetMapID() == 830 or WorldMapFrame:GetMapID() == 882 or WorldMapFrame:GetMapID() == 885 or WorldMapFrame:GetMapID() == 905
-      or WorldMapFrame:GetMapID() == 941 or WorldMapFrame:GetMapID() == 790)
+    elseif ( C_Map.GetBestMapForUnit("player") == 630 or  C_Map.GetBestMapForUnit("player") == 634 or  C_Map.GetBestMapForUnit("player") == 641 or  C_Map.GetBestMapForUnit("player") == 646 or  C_Map.GetBestMapForUnit("player") == 650 or  C_Map.GetBestMapForUnit("player") == 652
+      or  C_Map.GetBestMapForUnit("player") == 750 or  C_Map.GetBestMapForUnit("player") == 680 or  C_Map.GetBestMapForUnit("player") == 830 or  C_Map.GetBestMapForUnit("player") == 882 or  C_Map.GetBestMapForUnit("player") == 885 or  C_Map.GetBestMapForUnit("player") == 905
+      or  C_Map.GetBestMapForUnit("player") == 941 or  C_Map.GetBestMapForUnit("player") == 790)
     then
       tooltip:AddLine(HELPFRAME_REPORT_PLAYER_RIGHT_CLICK .. " => " .. "|cffff0000".. L["Broken Isles"] .. " " .. MINIMAP_LABEL .. "|cffffcc00" .. " " .. L["icons"] .. " " .. SHOW .. " / " .. HIDE,1,1,1)
       tooltip:Show()
     --Zandalar
-    elseif (WorldMapFrame:GetMapID() == 862 or WorldMapFrame:GetMapID() == 863 or WorldMapFrame:GetMapID() == 864 or WorldMapFrame:GetMapID() == 1355 or WorldMapFrame:GetMapID() == 1528)
+    elseif ( C_Map.GetBestMapForUnit("player") == 862 or  C_Map.GetBestMapForUnit("player") == 863 or  C_Map.GetBestMapForUnit("player") == 864 or  C_Map.GetBestMapForUnit("player") == 1355 or  C_Map.GetBestMapForUnit("player") == 1528)
     then
       tooltip:AddLine(HELPFRAME_REPORT_PLAYER_RIGHT_CLICK .. " => " .. "|cffff0000".. L["Zandalar"] .. " " .. MINIMAP_LABEL .. "|cffffcc00" .. " " .. L["icons"] .. " " .. SHOW .. " / " .. HIDE,1,1,1)
       tooltip:Show()
     --Kul Tiras
-    elseif (WorldMapFrame:GetMapID() == 895 or WorldMapFrame:GetMapID() == 896 or WorldMapFrame:GetMapID() == 942 or WorldMapFrame:GetMapID() == 1462 or WorldMapFrame:GetMapID() == 1169)
+    elseif ( C_Map.GetBestMapForUnit("player") == 895 or  C_Map.GetBestMapForUnit("player") == 896 or  C_Map.GetBestMapForUnit("player") == 942 or  C_Map.GetBestMapForUnit("player") == 1462 or  C_Map.GetBestMapForUnit("player") == 1169)
     then
       tooltip:AddLine(HELPFRAME_REPORT_PLAYER_RIGHT_CLICK .. " => " .. "|cffff0000".. L["Kul Tiras"] .. " " .. MINIMAP_LABEL .. "|cffffcc00" .. " " .. L["icons"] .. " " .. SHOW .. " / " .. HIDE,1,1,1)
       tooltip:Show()
     --Shadowlands
-    elseif (WorldMapFrame:GetMapID() == 1525 or WorldMapFrame:GetMapID() == 1533 or WorldMapFrame:GetMapID() == 1536 or WorldMapFrame:GetMapID() == 1543 or WorldMapFrame:GetMapID() == 1565 or WorldMapFrame:GetMapID() == 1961
-      or WorldMapFrame:GetMapID() == 1970 or WorldMapFrame:GetMapID() == 2016)
+    elseif ( C_Map.GetBestMapForUnit("player") == 1525 or  C_Map.GetBestMapForUnit("player") == 1533 or  C_Map.GetBestMapForUnit("player") == 1536 or  C_Map.GetBestMapForUnit("player") == 1543 or  C_Map.GetBestMapForUnit("player") == 1565 or  C_Map.GetBestMapForUnit("player") == 1961
+      or  C_Map.GetBestMapForUnit("player") == 1970 or  C_Map.GetBestMapForUnit("player") == 2016)
     then
       tooltip:AddLine(HELPFRAME_REPORT_PLAYER_RIGHT_CLICK .. " => " .. "|cffff0000".. L["Shadowlands"] .. " " .. MINIMAP_LABEL .. "|cffffcc00" .. " " .. L["icons"] .. " " .. SHOW .. " / " .. HIDE,1,1,1)
       tooltip:Show()
     --Dragon Isles
-    elseif (WorldMapFrame:GetMapID() == 2022 or WorldMapFrame:GetMapID() == 2023 or WorldMapFrame:GetMapID() == 2024 or WorldMapFrame:GetMapID() == 2025 or WorldMapFrame:GetMapID() == 2026 or WorldMapFrame:GetMapID() == 2133
-      or WorldMapFrame:GetMapID() == 2151 or WorldMapFrame:GetMapID() == 2200 or WorldMapFrame:GetMapID() == 2239 or WorldMapFrame:GetMapID() == 2266)
+    elseif ( C_Map.GetBestMapForUnit("player") == 2022 or  C_Map.GetBestMapForUnit("player") == 2023 or  C_Map.GetBestMapForUnit("player") == 2024 or  C_Map.GetBestMapForUnit("player") == 2025 or  C_Map.GetBestMapForUnit("player") == 2026 or  C_Map.GetBestMapForUnit("player") == 2133
+      or  C_Map.GetBestMapForUnit("player") == 2151 or  C_Map.GetBestMapForUnit("player") == 2200 or  C_Map.GetBestMapForUnit("player") == 2239 or  C_Map.GetBestMapForUnit("player") == 2266)
     then
       tooltip:AddLine(HELPFRAME_REPORT_PLAYER_RIGHT_CLICK .. " => " .. "|cffff0000".. L["Dragon Isles"] .. " " .. MINIMAP_LABEL .. "|cffffcc00" .. " " .. L["icons"] .. " " .. SHOW .. " / " .. HIDE,1,1,1)
       tooltip:Show()
@@ -132,69 +132,69 @@ if not tooltip or not tooltip.AddLine then return end
       tooltip:AddLine(HELPFRAME_REPORT_PLAYER_RIGHT_CLICK .. " => " .. "|cffff0000".. L["Kalimdor"] .. " " .. L["Zones"] .. " & " .. MINIMAP_LABEL .. "|cffffcc00" .. " " .. L["icons"] .. " " .. SHOW .. " / " .. HIDE,1,1,1)
       tooltip:Show()
     --Eastern Kingdom
-    elseif (WorldMapFrame:GetMapID() == 13 or WorldMapFrame:GetMapID() == 14 or WorldMapFrame:GetMapID() == 15 or WorldMapFrame:GetMapID() == 16 or WorldMapFrame:GetMapID() == 17 or WorldMapFrame:GetMapID() == 18 
-      or WorldMapFrame:GetMapID() == 19 or WorldMapFrame:GetMapID() == 21 or WorldMapFrame:GetMapID() == 22 or WorldMapFrame:GetMapID() == 23 or WorldMapFrame:GetMapID() == 25 or WorldMapFrame:GetMapID() == 26 
-      or WorldMapFrame:GetMapID() == 27 or WorldMapFrame:GetMapID() == 28 or WorldMapFrame:GetMapID() == 30 or WorldMapFrame:GetMapID() == 32 or WorldMapFrame:GetMapID() == 33 or WorldMapFrame:GetMapID() == 34 
-      or WorldMapFrame:GetMapID() == 35 or WorldMapFrame:GetMapID() == 36 or WorldMapFrame:GetMapID() == 37 or WorldMapFrame:GetMapID() == 42 or WorldMapFrame:GetMapID() == 47 or WorldMapFrame:GetMapID() == 48 
-      or WorldMapFrame:GetMapID() == 49 or WorldMapFrame:GetMapID() == 50 or WorldMapFrame:GetMapID() == 51 or WorldMapFrame:GetMapID() == 52 or WorldMapFrame:GetMapID() == 55 or WorldMapFrame:GetMapID() == 56 
-      or WorldMapFrame:GetMapID() == 94 or WorldMapFrame:GetMapID() == 210 or WorldMapFrame:GetMapID() == 224 or WorldMapFrame:GetMapID() == 245 or WorldMapFrame:GetMapID() == 425 or WorldMapFrame:GetMapID() == 427 
-      or WorldMapFrame:GetMapID() == 465 or WorldMapFrame:GetMapID() == 467 or WorldMapFrame:GetMapID() == 469 or WorldMapFrame:GetMapID() == 499 or WorldMapFrame:GetMapID() == 500 or WorldMapFrame:GetMapID() == 2070 
-      or WorldMapFrame:GetMapID() == 241 or WorldMapFrame:GetMapID() == 203 or WorldMapFrame:GetMapID() == 204 or WorldMapFrame:GetMapID() == 205 or WorldMapFrame:GetMapID() == 241 or WorldMapFrame:GetMapID() == 244 
-      or WorldMapFrame:GetMapID() == 245 or WorldMapFrame:GetMapID() == 201 or WorldMapFrame:GetMapID() == 95 or WorldMapFrame:GetMapID() == 122 or WorldMapFrame:GetMapID() == 217  or WorldMapFrame:GetMapID() == 226)
+    elseif ( C_Map.GetBestMapForUnit("player") == 13 or  C_Map.GetBestMapForUnit("player") == 14 or  C_Map.GetBestMapForUnit("player") == 15 or  C_Map.GetBestMapForUnit("player") == 16 or  C_Map.GetBestMapForUnit("player") == 17 or  C_Map.GetBestMapForUnit("player") == 18 
+      or  C_Map.GetBestMapForUnit("player") == 19 or  C_Map.GetBestMapForUnit("player") == 21 or  C_Map.GetBestMapForUnit("player") == 22 or  C_Map.GetBestMapForUnit("player") == 23 or  C_Map.GetBestMapForUnit("player") == 25 or  C_Map.GetBestMapForUnit("player") == 26 
+      or  C_Map.GetBestMapForUnit("player") == 27 or  C_Map.GetBestMapForUnit("player") == 28 or  C_Map.GetBestMapForUnit("player") == 30 or  C_Map.GetBestMapForUnit("player") == 32 or  C_Map.GetBestMapForUnit("player") == 33 or  C_Map.GetBestMapForUnit("player") == 34 
+      or  C_Map.GetBestMapForUnit("player") == 35 or  C_Map.GetBestMapForUnit("player") == 36 or  C_Map.GetBestMapForUnit("player") == 37 or  C_Map.GetBestMapForUnit("player") == 42 or  C_Map.GetBestMapForUnit("player") == 47 or  C_Map.GetBestMapForUnit("player") == 48 
+      or  C_Map.GetBestMapForUnit("player") == 49 or  C_Map.GetBestMapForUnit("player") == 50 or  C_Map.GetBestMapForUnit("player") == 51 or  C_Map.GetBestMapForUnit("player") == 52 or  C_Map.GetBestMapForUnit("player") == 55 or  C_Map.GetBestMapForUnit("player") == 56 
+      or  C_Map.GetBestMapForUnit("player") == 94 or  C_Map.GetBestMapForUnit("player") == 210 or  C_Map.GetBestMapForUnit("player") == 224 or  C_Map.GetBestMapForUnit("player") == 245 or  C_Map.GetBestMapForUnit("player") == 425 or  C_Map.GetBestMapForUnit("player") == 427 
+      or  C_Map.GetBestMapForUnit("player") == 465 or  C_Map.GetBestMapForUnit("player") == 467 or  C_Map.GetBestMapForUnit("player") == 469 or  C_Map.GetBestMapForUnit("player") == 499 or  C_Map.GetBestMapForUnit("player") == 500 or  C_Map.GetBestMapForUnit("player") == 2070 
+      or  C_Map.GetBestMapForUnit("player") == 241 or  C_Map.GetBestMapForUnit("player") == 203 or  C_Map.GetBestMapForUnit("player") == 204 or  C_Map.GetBestMapForUnit("player") == 205 or  C_Map.GetBestMapForUnit("player") == 241 or  C_Map.GetBestMapForUnit("player") == 244 
+      or  C_Map.GetBestMapForUnit("player") == 245 or  C_Map.GetBestMapForUnit("player") == 201 or  C_Map.GetBestMapForUnit("player") == 95 or  C_Map.GetBestMapForUnit("player") == 122 or  C_Map.GetBestMapForUnit("player") == 217  or  C_Map.GetBestMapForUnit("player") == 226)
     then
       tooltip:AddLine(HELPFRAME_REPORT_PLAYER_RIGHT_CLICK .. " => " .. "|cffff0000".. L["Eastern Kingdom"] .. " " .. L["Zones"] .. " & " .. MINIMAP_LABEL .. "|cffffcc00" .. " " .. L["icons"] .. " " .. SHOW .. " / " .. HIDE,1,1,1)
       tooltip:Show()
     --Outland
-    elseif (WorldMapFrame:GetMapID() == 100 or WorldMapFrame:GetMapID() == 102 or WorldMapFrame:GetMapID() == 104 or WorldMapFrame:GetMapID() == 105 or WorldMapFrame:GetMapID() == 107 or WorldMapFrame:GetMapID() == 108
-      or WorldMapFrame:GetMapID() == 109)
+    elseif ( C_Map.GetBestMapForUnit("player") == 100 or  C_Map.GetBestMapForUnit("player") == 102 or  C_Map.GetBestMapForUnit("player") == 104 or  C_Map.GetBestMapForUnit("player") == 105 or  C_Map.GetBestMapForUnit("player") == 107 or  C_Map.GetBestMapForUnit("player") == 108
+      or  C_Map.GetBestMapForUnit("player") == 109)
     then
       tooltip:AddLine(HELPFRAME_REPORT_PLAYER_RIGHT_CLICK .. " => " .. "|cffff0000".. L["Outland"] .. " " .. L["Zones"] .. " & " .. MINIMAP_LABEL .. "|cffffcc00" .. " " .. L["icons"] .. " " .. SHOW .. " / " .. HIDE,1,1,1)
       tooltip:Show()
     --Northrend
-    elseif (WorldMapFrame:GetMapID() == 114 or WorldMapFrame:GetMapID() == 115 or WorldMapFrame:GetMapID() == 116 or WorldMapFrame:GetMapID() == 117 or WorldMapFrame:GetMapID() == 118 or WorldMapFrame:GetMapID() == 119
-      or WorldMapFrame:GetMapID() == 120 or WorldMapFrame:GetMapID() == 121 or WorldMapFrame:GetMapID() == 123 or WorldMapFrame:GetMapID() == 127 or WorldMapFrame:GetMapID() == 170)
+    elseif ( C_Map.GetBestMapForUnit("player") == 114 or  C_Map.GetBestMapForUnit("player") == 115 or  C_Map.GetBestMapForUnit("player") == 116 or  C_Map.GetBestMapForUnit("player") == 117 or  C_Map.GetBestMapForUnit("player") == 118 or  C_Map.GetBestMapForUnit("player") == 119
+      or  C_Map.GetBestMapForUnit("player") == 120 or  C_Map.GetBestMapForUnit("player") == 121 or  C_Map.GetBestMapForUnit("player") == 123 or  C_Map.GetBestMapForUnit("player") == 127 or  C_Map.GetBestMapForUnit("player") == 170)
     then
       tooltip:AddLine(HELPFRAME_REPORT_PLAYER_RIGHT_CLICK .. " => " .. "|cffff0000".. L["Northrend"] .. " " .. L["Zones"] .. " & " .. MINIMAP_LABEL .. "|cffffcc00" .. " " .. L["icons"] .. " " .. SHOW .. " / " .. HIDE,1,1,1)
       tooltip:Show()
     --Pandaria
-    elseif (WorldMapFrame:GetMapID() == 371 or WorldMapFrame:GetMapID() == 376 or WorldMapFrame:GetMapID() == 379 or WorldMapFrame:GetMapID() == 388 or WorldMapFrame:GetMapID() == 390 or WorldMapFrame:GetMapID() == 418
-      or WorldMapFrame:GetMapID() == 422 or WorldMapFrame:GetMapID() == 433 or WorldMapFrame:GetMapID() == 434 or WorldMapFrame:GetMapID() == 504 or WorldMapFrame:GetMapID() == 554  or WorldMapFrame:GetMapID() == 1530
-      or WorldMapFrame:GetMapID() == 507)
+    elseif ( C_Map.GetBestMapForUnit("player") == 371 or  C_Map.GetBestMapForUnit("player") == 376 or  C_Map.GetBestMapForUnit("player") == 379 or  C_Map.GetBestMapForUnit("player") == 388 or  C_Map.GetBestMapForUnit("player") == 390 or  C_Map.GetBestMapForUnit("player") == 418
+      or  C_Map.GetBestMapForUnit("player") == 422 or  C_Map.GetBestMapForUnit("player") == 433 or  C_Map.GetBestMapForUnit("player") == 434 or  C_Map.GetBestMapForUnit("player") == 504 or  C_Map.GetBestMapForUnit("player") == 554  or  C_Map.GetBestMapForUnit("player") == 1530
+      or  C_Map.GetBestMapForUnit("player") == 507)
     then
       tooltip:AddLine(HELPFRAME_REPORT_PLAYER_RIGHT_CLICK .. " => " .. "|cffff0000".. L["Pandaria"] .. " " .. L["Zones"] .. " & " .. MINIMAP_LABEL .. "|cffffcc00" .. " " .. L["icons"] .. " " .. SHOW .. " / " .. HIDE,1,1,1)
       tooltip:Show()
     --Draenor
-    elseif (WorldMapFrame:GetMapID() == 525 or WorldMapFrame:GetMapID() == 534 or WorldMapFrame:GetMapID() == 535 or WorldMapFrame:GetMapID() == 539 or WorldMapFrame:GetMapID() == 542 or WorldMapFrame:GetMapID() == 543
-      or WorldMapFrame:GetMapID() == 550 or WorldMapFrame:GetMapID() == 588)
+    elseif ( C_Map.GetBestMapForUnit("player") == 525 or  C_Map.GetBestMapForUnit("player") == 534 or  C_Map.GetBestMapForUnit("player") == 535 or  C_Map.GetBestMapForUnit("player") == 539 or  C_Map.GetBestMapForUnit("player") == 542 or  C_Map.GetBestMapForUnit("player") == 543
+      or  C_Map.GetBestMapForUnit("player") == 550 or  C_Map.GetBestMapForUnit("player") == 588)
     then
       tooltip:AddLine(HELPFRAME_REPORT_PLAYER_RIGHT_CLICK .. " => " .. "|cffff0000".. L["Draenor"] .. " " .. L["Zones"] .. " & " .. MINIMAP_LABEL .. "|cffffcc00" .. " " .. L["icons"] .. " " .. SHOW .. " / " .. HIDE,1,1,1)
       tooltip:Show()
     --Broken Isles
-    elseif (WorldMapFrame:GetMapID() == 630 or WorldMapFrame:GetMapID() == 634 or WorldMapFrame:GetMapID() == 641 or WorldMapFrame:GetMapID() == 646 or WorldMapFrame:GetMapID() == 650 or WorldMapFrame:GetMapID() == 652
-      or WorldMapFrame:GetMapID() == 750 or WorldMapFrame:GetMapID() == 680 or WorldMapFrame:GetMapID() == 830 or WorldMapFrame:GetMapID() == 882 or WorldMapFrame:GetMapID() == 885 or WorldMapFrame:GetMapID() == 905
-      or WorldMapFrame:GetMapID() == 941 or WorldMapFrame:GetMapID() == 790)
+    elseif ( C_Map.GetBestMapForUnit("player") == 630 or  C_Map.GetBestMapForUnit("player") == 634 or  C_Map.GetBestMapForUnit("player") == 641 or  C_Map.GetBestMapForUnit("player") == 646 or  C_Map.GetBestMapForUnit("player") == 650 or  C_Map.GetBestMapForUnit("player") == 652
+      or  C_Map.GetBestMapForUnit("player") == 750 or  C_Map.GetBestMapForUnit("player") == 680 or  C_Map.GetBestMapForUnit("player") == 830 or  C_Map.GetBestMapForUnit("player") == 882 or  C_Map.GetBestMapForUnit("player") == 885 or  C_Map.GetBestMapForUnit("player") == 905
+      or  C_Map.GetBestMapForUnit("player") == 941 or  C_Map.GetBestMapForUnit("player") == 790)
     then
       tooltip:AddLine(HELPFRAME_REPORT_PLAYER_RIGHT_CLICK .. " => " .. "|cffff0000".. L["Broken Isles"] .. " " .. L["Zones"] .. " & " .. MINIMAP_LABEL .. "|cffffcc00" .. " " .. L["icons"] .. " " .. SHOW .. " / " .. HIDE,1,1,1)
       tooltip:Show()
     --Zandalar
-    elseif (WorldMapFrame:GetMapID() == 862 or WorldMapFrame:GetMapID() == 863 or WorldMapFrame:GetMapID() == 864 or WorldMapFrame:GetMapID() == 1355 or WorldMapFrame:GetMapID() == 1528)
+    elseif ( C_Map.GetBestMapForUnit("player") == 862 or  C_Map.GetBestMapForUnit("player") == 863 or  C_Map.GetBestMapForUnit("player") == 864 or  C_Map.GetBestMapForUnit("player") == 1355 or  C_Map.GetBestMapForUnit("player") == 1528)
     then
       tooltip:AddLine(HELPFRAME_REPORT_PLAYER_RIGHT_CLICK .. " => " .. "|cffff0000".. L["Zandalar"] .. " " .. L["Zones"] .. " & " .. MINIMAP_LABEL .. "|cffffcc00" .. " " .. L["icons"] .. " " .. SHOW .. " / " .. HIDE,1,1,1)
       tooltip:Show()
     --Kul Tiras
-    elseif (WorldMapFrame:GetMapID() == 895 or WorldMapFrame:GetMapID() == 896 or WorldMapFrame:GetMapID() == 942 or WorldMapFrame:GetMapID() == 1462 or WorldMapFrame:GetMapID() == 1169)
+    elseif ( C_Map.GetBestMapForUnit("player") == 895 or  C_Map.GetBestMapForUnit("player") == 896 or  C_Map.GetBestMapForUnit("player") == 942 or  C_Map.GetBestMapForUnit("player") == 1462 or  C_Map.GetBestMapForUnit("player") == 1169)
     then
       tooltip:AddLine(HELPFRAME_REPORT_PLAYER_RIGHT_CLICK .. " => " .. "|cffff0000".. L["Kul Tiras"] .. " " .. L["Zones"] .. " & " .. MINIMAP_LABEL .. "|cffffcc00" .. " " .. L["icons"] .. " " .. SHOW .. " / " .. HIDE,1,1,1)
       tooltip:Show()
     --Shadowlands
-    elseif (WorldMapFrame:GetMapID() == 1525 or WorldMapFrame:GetMapID() == 1533 or WorldMapFrame:GetMapID() == 1536 or WorldMapFrame:GetMapID() == 1543 or WorldMapFrame:GetMapID() == 1565 or WorldMapFrame:GetMapID() == 1961
-      or WorldMapFrame:GetMapID() == 1970 or WorldMapFrame:GetMapID() == 2016)
+    elseif ( C_Map.GetBestMapForUnit("player") == 1525 or  C_Map.GetBestMapForUnit("player") == 1533 or  C_Map.GetBestMapForUnit("player") == 1536 or  C_Map.GetBestMapForUnit("player") == 1543 or  C_Map.GetBestMapForUnit("player") == 1565 or  C_Map.GetBestMapForUnit("player") == 1961
+      or  C_Map.GetBestMapForUnit("player") == 1970 or  C_Map.GetBestMapForUnit("player") == 2016)
     then
       tooltip:AddLine(HELPFRAME_REPORT_PLAYER_RIGHT_CLICK .. " => " .. "|cffff0000".. L["Shadowlands"] .. " " .. L["Zones"] .. " & " .. MINIMAP_LABEL .. "|cffffcc00" .. " " .. L["icons"] .. " " .. SHOW .. " / " .. HIDE,1,1,1)
       tooltip:Show()
     --Dragon Isles
-    elseif (WorldMapFrame:GetMapID() == 2022 or WorldMapFrame:GetMapID() == 2023 or WorldMapFrame:GetMapID() == 2024 or WorldMapFrame:GetMapID() == 2025 or WorldMapFrame:GetMapID() == 2026 or WorldMapFrame:GetMapID() == 2133
-      or WorldMapFrame:GetMapID() == 2151 or WorldMapFrame:GetMapID() == 2200 or WorldMapFrame:GetMapID() == 2239 or WorldMapFrame:GetMapID() == 2266)
+    elseif ( C_Map.GetBestMapForUnit("player") == 2022 or  C_Map.GetBestMapForUnit("player") == 2023 or  C_Map.GetBestMapForUnit("player") == 2024 or  C_Map.GetBestMapForUnit("player") == 2025 or  C_Map.GetBestMapForUnit("player") == 2026 or  C_Map.GetBestMapForUnit("player") == 2133
+      or  C_Map.GetBestMapForUnit("player") == 2151 or  C_Map.GetBestMapForUnit("player") == 2200 or  C_Map.GetBestMapForUnit("player") == 2239 or  C_Map.GetBestMapForUnit("player") == 2266)
     then
       tooltip:AddLine(HELPFRAME_REPORT_PLAYER_RIGHT_CLICK .. " => " .. "|cffff0000".. L["Dragon Isles"] .. " " .. L["Zones"] .. " & " .. MINIMAP_LABEL .. "|cffffcc00" .. " " .. L["icons"] .. " " .. SHOW .. " / " .. HIDE,1,1,1)
       tooltip:Show()
@@ -268,15 +268,15 @@ OnClick = function(self, button)
           print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Kalimdor"] .. " " .. MINIMAP_LABEL, L["icons"], "|cffff0000" .. L["are hidden"])
         end
       --Eastern Kingdom
-      elseif (WorldMapFrame:GetMapID() == 13 or WorldMapFrame:GetMapID() == 14 or WorldMapFrame:GetMapID() == 15 or WorldMapFrame:GetMapID() == 16 or WorldMapFrame:GetMapID() == 17 or WorldMapFrame:GetMapID() == 18 
-        or WorldMapFrame:GetMapID() == 19 or WorldMapFrame:GetMapID() == 21 or WorldMapFrame:GetMapID() == 22 or WorldMapFrame:GetMapID() == 23 or WorldMapFrame:GetMapID() == 25 or WorldMapFrame:GetMapID() == 26 
-        or WorldMapFrame:GetMapID() == 27 or WorldMapFrame:GetMapID() == 28 or WorldMapFrame:GetMapID() == 30 or WorldMapFrame:GetMapID() == 32 or WorldMapFrame:GetMapID() == 33 or WorldMapFrame:GetMapID() == 34 
-        or WorldMapFrame:GetMapID() == 35 or WorldMapFrame:GetMapID() == 36 or WorldMapFrame:GetMapID() == 37 or WorldMapFrame:GetMapID() == 42 or WorldMapFrame:GetMapID() == 47 or WorldMapFrame:GetMapID() == 48 
-        or WorldMapFrame:GetMapID() == 49 or WorldMapFrame:GetMapID() == 50 or WorldMapFrame:GetMapID() == 51 or WorldMapFrame:GetMapID() == 52 or WorldMapFrame:GetMapID() == 55 or WorldMapFrame:GetMapID() == 56 
-        or WorldMapFrame:GetMapID() == 94 or WorldMapFrame:GetMapID() == 210 or WorldMapFrame:GetMapID() == 224 or WorldMapFrame:GetMapID() == 245 or WorldMapFrame:GetMapID() == 425 or WorldMapFrame:GetMapID() == 427 
-        or WorldMapFrame:GetMapID() == 465 or WorldMapFrame:GetMapID() == 467 or WorldMapFrame:GetMapID() == 469 or WorldMapFrame:GetMapID() == 499 or WorldMapFrame:GetMapID() == 500 or WorldMapFrame:GetMapID() == 2070 
-        or WorldMapFrame:GetMapID() == 241 or WorldMapFrame:GetMapID() == 203 or WorldMapFrame:GetMapID() == 204 or WorldMapFrame:GetMapID() == 205 or WorldMapFrame:GetMapID() == 241 or WorldMapFrame:GetMapID() == 244 
-        or WorldMapFrame:GetMapID() == 245 or WorldMapFrame:GetMapID() == 201 or WorldMapFrame:GetMapID() == 95 or WorldMapFrame:GetMapID() == 122 or WorldMapFrame:GetMapID() == 217  or WorldMapFrame:GetMapID() == 226)
+      elseif ( C_Map.GetBestMapForUnit("player") == 13 or  C_Map.GetBestMapForUnit("player") == 14 or  C_Map.GetBestMapForUnit("player") == 15 or  C_Map.GetBestMapForUnit("player") == 16 or  C_Map.GetBestMapForUnit("player") == 17 or  C_Map.GetBestMapForUnit("player") == 18 
+        or  C_Map.GetBestMapForUnit("player") == 19 or  C_Map.GetBestMapForUnit("player") == 21 or  C_Map.GetBestMapForUnit("player") == 22 or  C_Map.GetBestMapForUnit("player") == 23 or  C_Map.GetBestMapForUnit("player") == 25 or  C_Map.GetBestMapForUnit("player") == 26 
+        or  C_Map.GetBestMapForUnit("player") == 27 or  C_Map.GetBestMapForUnit("player") == 28 or  C_Map.GetBestMapForUnit("player") == 30 or  C_Map.GetBestMapForUnit("player") == 32 or  C_Map.GetBestMapForUnit("player") == 33 or  C_Map.GetBestMapForUnit("player") == 34 
+        or  C_Map.GetBestMapForUnit("player") == 35 or  C_Map.GetBestMapForUnit("player") == 36 or  C_Map.GetBestMapForUnit("player") == 37 or  C_Map.GetBestMapForUnit("player") == 42 or  C_Map.GetBestMapForUnit("player") == 47 or  C_Map.GetBestMapForUnit("player") == 48 
+        or  C_Map.GetBestMapForUnit("player") == 49 or  C_Map.GetBestMapForUnit("player") == 50 or  C_Map.GetBestMapForUnit("player") == 51 or  C_Map.GetBestMapForUnit("player") == 52 or  C_Map.GetBestMapForUnit("player") == 55 or  C_Map.GetBestMapForUnit("player") == 56 
+        or  C_Map.GetBestMapForUnit("player") == 94 or  C_Map.GetBestMapForUnit("player") == 210 or  C_Map.GetBestMapForUnit("player") == 224 or  C_Map.GetBestMapForUnit("player") == 245 or  C_Map.GetBestMapForUnit("player") == 425 or  C_Map.GetBestMapForUnit("player") == 427 
+        or  C_Map.GetBestMapForUnit("player") == 465 or  C_Map.GetBestMapForUnit("player") == 467 or  C_Map.GetBestMapForUnit("player") == 469 or  C_Map.GetBestMapForUnit("player") == 499 or  C_Map.GetBestMapForUnit("player") == 500 or  C_Map.GetBestMapForUnit("player") == 2070 
+        or  C_Map.GetBestMapForUnit("player") == 241 or  C_Map.GetBestMapForUnit("player") == 203 or  C_Map.GetBestMapForUnit("player") == 204 or  C_Map.GetBestMapForUnit("player") == 205 or  C_Map.GetBestMapForUnit("player") == 241 or  C_Map.GetBestMapForUnit("player") == 244 
+        or  C_Map.GetBestMapForUnit("player") == 245 or  C_Map.GetBestMapForUnit("player") == 201 or  C_Map.GetBestMapForUnit("player") == 95 or  C_Map.GetBestMapForUnit("player") == 122 or  C_Map.GetBestMapForUnit("player") == 217  or  C_Map.GetBestMapForUnit("player") == 226)
       then
         if not ns.Addon.db.profile.showMiniMapEasternKingdom then
           ns.Addon.db.profile.showMiniMapEasternKingdom = true
@@ -286,8 +286,8 @@ OnClick = function(self, button)
           print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Eastern Kingdom"] .. " " .. MINIMAP_LABEL, L["icons"], "|cffff0000" .. L["are hidden"])
         end
       --Outland
-      elseif (WorldMapFrame:GetMapID() == 100 or WorldMapFrame:GetMapID() == 102 or WorldMapFrame:GetMapID() == 104 or WorldMapFrame:GetMapID() == 105 or WorldMapFrame:GetMapID() == 107 or WorldMapFrame:GetMapID() == 108
-        or WorldMapFrame:GetMapID() == 109)
+      elseif ( C_Map.GetBestMapForUnit("player") == 100 or  C_Map.GetBestMapForUnit("player") == 102 or  C_Map.GetBestMapForUnit("player") == 104 or  C_Map.GetBestMapForUnit("player") == 105 or  C_Map.GetBestMapForUnit("player") == 107 or  C_Map.GetBestMapForUnit("player") == 108
+        or  C_Map.GetBestMapForUnit("player") == 109)
       then
         if not ns.Addon.db.profile.showMiniMapOutland then
           ns.Addon.db.profile.showMiniMapOutland = true
@@ -297,8 +297,8 @@ OnClick = function(self, button)
           print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Outland"] .. " " .. MINIMAP_LABEL, L["icons"], "|cffff0000" .. L["are hidden"])
         end
       --Northrend
-      elseif (WorldMapFrame:GetMapID() == 114 or WorldMapFrame:GetMapID() == 115 or WorldMapFrame:GetMapID() == 116 or WorldMapFrame:GetMapID() == 117 or WorldMapFrame:GetMapID() == 118 or WorldMapFrame:GetMapID() == 119
-        or WorldMapFrame:GetMapID() == 120 or WorldMapFrame:GetMapID() == 121 or WorldMapFrame:GetMapID() == 123 or WorldMapFrame:GetMapID() == 127 or WorldMapFrame:GetMapID() == 170)
+      elseif ( C_Map.GetBestMapForUnit("player") == 114 or  C_Map.GetBestMapForUnit("player") == 115 or  C_Map.GetBestMapForUnit("player") == 116 or  C_Map.GetBestMapForUnit("player") == 117 or  C_Map.GetBestMapForUnit("player") == 118 or  C_Map.GetBestMapForUnit("player") == 119
+        or  C_Map.GetBestMapForUnit("player") == 120 or  C_Map.GetBestMapForUnit("player") == 121 or  C_Map.GetBestMapForUnit("player") == 123 or  C_Map.GetBestMapForUnit("player") == 127 or  C_Map.GetBestMapForUnit("player") == 170)
       then
         if not ns.Addon.db.profile.showMiniMapNorthrend then
           ns.Addon.db.profile.showMiniMapNorthrend = true
@@ -308,9 +308,9 @@ OnClick = function(self, button)
           print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Northrend"] .. " " .. MINIMAP_LABEL, L["icons"], "|cffff0000" .. L["are hidden"])
         end
       --Pandaria
-      elseif (WorldMapFrame:GetMapID() == 371 or WorldMapFrame:GetMapID() == 376 or WorldMapFrame:GetMapID() == 379 or WorldMapFrame:GetMapID() == 388 or WorldMapFrame:GetMapID() == 390 or WorldMapFrame:GetMapID() == 418
-        or WorldMapFrame:GetMapID() == 422 or WorldMapFrame:GetMapID() == 433 or WorldMapFrame:GetMapID() == 434 or WorldMapFrame:GetMapID() == 504 or WorldMapFrame:GetMapID() == 554  or WorldMapFrame:GetMapID() == 1530
-        or WorldMapFrame:GetMapID() == 507)
+      elseif ( C_Map.GetBestMapForUnit("player") == 371 or  C_Map.GetBestMapForUnit("player") == 376 or  C_Map.GetBestMapForUnit("player") == 379 or  C_Map.GetBestMapForUnit("player") == 388 or  C_Map.GetBestMapForUnit("player") == 390 or  C_Map.GetBestMapForUnit("player") == 418
+        or  C_Map.GetBestMapForUnit("player") == 422 or  C_Map.GetBestMapForUnit("player") == 433 or  C_Map.GetBestMapForUnit("player") == 434 or  C_Map.GetBestMapForUnit("player") == 504 or  C_Map.GetBestMapForUnit("player") == 554  or  C_Map.GetBestMapForUnit("player") == 1530
+        or  C_Map.GetBestMapForUnit("player") == 507)
       then
         if not ns.Addon.db.profile.showMiniMapPandaria then
           ns.Addon.db.profile.showMiniMapPandaria = true
@@ -320,8 +320,8 @@ OnClick = function(self, button)
           print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Pandaria"] .. " " .. MINIMAP_LABEL, L["icons"], "|cffff0000" .. L["are hidden"])
         end
       --Draenor
-      elseif (WorldMapFrame:GetMapID() == 525 or WorldMapFrame:GetMapID() == 534 or WorldMapFrame:GetMapID() == 535 or WorldMapFrame:GetMapID() == 539 or WorldMapFrame:GetMapID() == 542 or WorldMapFrame:GetMapID() == 543
-        or WorldMapFrame:GetMapID() == 550 or WorldMapFrame:GetMapID() == 588)
+      elseif ( C_Map.GetBestMapForUnit("player") == 525 or  C_Map.GetBestMapForUnit("player") == 534 or  C_Map.GetBestMapForUnit("player") == 535 or  C_Map.GetBestMapForUnit("player") == 539 or  C_Map.GetBestMapForUnit("player") == 542 or  C_Map.GetBestMapForUnit("player") == 543
+        or  C_Map.GetBestMapForUnit("player") == 550 or  C_Map.GetBestMapForUnit("player") == 588)
       then
         if not ns.Addon.db.profile.showMiniMapDraenor then
           ns.Addon.db.profile.showMiniMapDraenor = true
@@ -331,9 +331,9 @@ OnClick = function(self, button)
           print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Draenor"] .. " " .. MINIMAP_LABEL, L["icons"], "|cffff0000" .. L["are hidden"])
         end
       --Broken Isles
-      elseif (WorldMapFrame:GetMapID() == 630 or WorldMapFrame:GetMapID() == 634 or WorldMapFrame:GetMapID() == 641 or WorldMapFrame:GetMapID() == 646 or WorldMapFrame:GetMapID() == 650 or WorldMapFrame:GetMapID() == 652
-        or WorldMapFrame:GetMapID() == 750 or WorldMapFrame:GetMapID() == 680 or WorldMapFrame:GetMapID() == 830 or WorldMapFrame:GetMapID() == 882 or WorldMapFrame:GetMapID() == 885 or WorldMapFrame:GetMapID() == 905
-        or WorldMapFrame:GetMapID() == 941 or WorldMapFrame:GetMapID() == 790)
+      elseif ( C_Map.GetBestMapForUnit("player") == 630 or  C_Map.GetBestMapForUnit("player") == 634 or  C_Map.GetBestMapForUnit("player") == 641 or  C_Map.GetBestMapForUnit("player") == 646 or  C_Map.GetBestMapForUnit("player") == 650 or  C_Map.GetBestMapForUnit("player") == 652
+        or  C_Map.GetBestMapForUnit("player") == 750 or  C_Map.GetBestMapForUnit("player") == 680 or  C_Map.GetBestMapForUnit("player") == 830 or  C_Map.GetBestMapForUnit("player") == 882 or  C_Map.GetBestMapForUnit("player") == 885 or  C_Map.GetBestMapForUnit("player") == 905
+        or  C_Map.GetBestMapForUnit("player") == 941 or  C_Map.GetBestMapForUnit("player") == 790)
       then
         if not ns.Addon.db.profile.showMiniMapBrokenIsles then
           ns.Addon.db.profile.showMiniMapBrokenIsles = true
@@ -343,7 +343,7 @@ OnClick = function(self, button)
           print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Broken Isles"] .. " " .. MINIMAP_LABEL, L["icons"], "|cffff0000" .. L["are hidden"])
         end
       --Zandalar
-      elseif (WorldMapFrame:GetMapID() == 862 or WorldMapFrame:GetMapID() == 863 or WorldMapFrame:GetMapID() == 864 or WorldMapFrame:GetMapID() == 1355 or WorldMapFrame:GetMapID() == 1528)
+      elseif ( C_Map.GetBestMapForUnit("player") == 862 or  C_Map.GetBestMapForUnit("player") == 863 or  C_Map.GetBestMapForUnit("player") == 864 or  C_Map.GetBestMapForUnit("player") == 1355 or  C_Map.GetBestMapForUnit("player") == 1528)
       then
         if not ns.Addon.db.profile.showMiniMapZandalar then
           ns.Addon.db.profile.showMiniMapZandalar = true
@@ -353,7 +353,7 @@ OnClick = function(self, button)
           print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Zandalar"] .. " " .. MINIMAP_LABEL, L["icons"], "|cffff0000" .. L["are hidden"])
         end
       --Kul Tiras
-      elseif (WorldMapFrame:GetMapID() == 895 or WorldMapFrame:GetMapID() == 896 or WorldMapFrame:GetMapID() == 942 or WorldMapFrame:GetMapID() == 1462 or WorldMapFrame:GetMapID() == 1169)
+      elseif ( C_Map.GetBestMapForUnit("player") == 895 or  C_Map.GetBestMapForUnit("player") == 896 or  C_Map.GetBestMapForUnit("player") == 942 or  C_Map.GetBestMapForUnit("player") == 1462 or  C_Map.GetBestMapForUnit("player") == 1169)
       then
         if not ns.Addon.db.profile.showMiniMapKulTiras then
           ns.Addon.db.profile.showMiniMapKulTiras = true
@@ -363,8 +363,8 @@ OnClick = function(self, button)
           print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Kul Tiras"] .. " " .. MINIMAP_LABEL, L["icons"], "|cffff0000" .. L["are hidden"])
         end
       --Shadowlands
-      elseif (WorldMapFrame:GetMapID() == 1525 or WorldMapFrame:GetMapID() == 1533 or WorldMapFrame:GetMapID() == 1536 or WorldMapFrame:GetMapID() == 1543 or WorldMapFrame:GetMapID() == 1565 or WorldMapFrame:GetMapID() == 1961
-        or WorldMapFrame:GetMapID() == 1970 or WorldMapFrame:GetMapID() == 2016)
+      elseif ( C_Map.GetBestMapForUnit("player") == 1525 or  C_Map.GetBestMapForUnit("player") == 1533 or  C_Map.GetBestMapForUnit("player") == 1536 or  C_Map.GetBestMapForUnit("player") == 1543 or  C_Map.GetBestMapForUnit("player") == 1565 or  C_Map.GetBestMapForUnit("player") == 1961
+        or  C_Map.GetBestMapForUnit("player") == 1970 or  C_Map.GetBestMapForUnit("player") == 2016)
       then
         if not ns.Addon.db.profile.showMiniMapShadowlands then
           ns.Addon.db.profile.showMiniMapShadowlands = true
@@ -374,8 +374,8 @@ OnClick = function(self, button)
           print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["Shadowlands"] .. " " .. MINIMAP_LABEL, L["icons"], "|cffff0000" .. L["are hidden"])
         end
       --Dragon Isles
-      elseif (WorldMapFrame:GetMapID() == 2022 or WorldMapFrame:GetMapID() == 2023 or WorldMapFrame:GetMapID() == 2024 or WorldMapFrame:GetMapID() == 2025 or WorldMapFrame:GetMapID() == 2026 or WorldMapFrame:GetMapID() == 2133
-        or WorldMapFrame:GetMapID() == 2151 or WorldMapFrame:GetMapID() == 2200 or WorldMapFrame:GetMapID() == 2239 or WorldMapFrame:GetMapID() == 2266)
+      elseif ( C_Map.GetBestMapForUnit("player") == 2022 or  C_Map.GetBestMapForUnit("player") == 2023 or  C_Map.GetBestMapForUnit("player") == 2024 or  C_Map.GetBestMapForUnit("player") == 2025 or  C_Map.GetBestMapForUnit("player") == 2026 or  C_Map.GetBestMapForUnit("player") == 2133
+        or  C_Map.GetBestMapForUnit("player") == 2151 or  C_Map.GetBestMapForUnit("player") == 2200 or  C_Map.GetBestMapForUnit("player") == 2239 or  C_Map.GetBestMapForUnit("player") == 2266)
       then
         if not ns.Addon.db.profile.showMiniMapDragonIsles then
           ns.Addon.db.profile.showMiniMapDragonIsles = true
@@ -415,15 +415,15 @@ OnClick = function(self, button)
           print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["synchronizes"] .. " " .. L["Kalimdor"] .. " " .. L["Zones"] .. " & " .. MINIMAP_LABEL, L["icons"], "|cffff0000" .. L["are hidden"])
         end
       --Eastern Kingdom
-      elseif (WorldMapFrame:GetMapID() == 13 or WorldMapFrame:GetMapID() == 14 or WorldMapFrame:GetMapID() == 15 or WorldMapFrame:GetMapID() == 16 or WorldMapFrame:GetMapID() == 17 or WorldMapFrame:GetMapID() == 18 
-        or WorldMapFrame:GetMapID() == 19 or WorldMapFrame:GetMapID() == 21 or WorldMapFrame:GetMapID() == 22 or WorldMapFrame:GetMapID() == 23 or WorldMapFrame:GetMapID() == 25 or WorldMapFrame:GetMapID() == 26 
-        or WorldMapFrame:GetMapID() == 27 or WorldMapFrame:GetMapID() == 28 or WorldMapFrame:GetMapID() == 30 or WorldMapFrame:GetMapID() == 32 or WorldMapFrame:GetMapID() == 33 or WorldMapFrame:GetMapID() == 34 
-        or WorldMapFrame:GetMapID() == 35 or WorldMapFrame:GetMapID() == 36 or WorldMapFrame:GetMapID() == 37 or WorldMapFrame:GetMapID() == 42 or WorldMapFrame:GetMapID() == 47 or WorldMapFrame:GetMapID() == 48 
-        or WorldMapFrame:GetMapID() == 49 or WorldMapFrame:GetMapID() == 50 or WorldMapFrame:GetMapID() == 51 or WorldMapFrame:GetMapID() == 52 or WorldMapFrame:GetMapID() == 55 or WorldMapFrame:GetMapID() == 56 
-        or WorldMapFrame:GetMapID() == 94 or WorldMapFrame:GetMapID() == 210 or WorldMapFrame:GetMapID() == 224 or WorldMapFrame:GetMapID() == 245 or WorldMapFrame:GetMapID() == 425 or WorldMapFrame:GetMapID() == 427 
-        or WorldMapFrame:GetMapID() == 465 or WorldMapFrame:GetMapID() == 467 or WorldMapFrame:GetMapID() == 469 or WorldMapFrame:GetMapID() == 499 or WorldMapFrame:GetMapID() == 500 or WorldMapFrame:GetMapID() == 2070 
-        or WorldMapFrame:GetMapID() == 241 or WorldMapFrame:GetMapID() == 203 or WorldMapFrame:GetMapID() == 204 or WorldMapFrame:GetMapID() == 205 or WorldMapFrame:GetMapID() == 241 or WorldMapFrame:GetMapID() == 244 
-        or WorldMapFrame:GetMapID() == 245 or WorldMapFrame:GetMapID() == 201 or WorldMapFrame:GetMapID() == 95 or WorldMapFrame:GetMapID() == 122 or WorldMapFrame:GetMapID() == 217  or WorldMapFrame:GetMapID() == 226)
+      elseif ( C_Map.GetBestMapForUnit("player") == 13 or  C_Map.GetBestMapForUnit("player") == 14 or  C_Map.GetBestMapForUnit("player") == 15 or  C_Map.GetBestMapForUnit("player") == 16 or  C_Map.GetBestMapForUnit("player") == 17 or  C_Map.GetBestMapForUnit("player") == 18 
+        or  C_Map.GetBestMapForUnit("player") == 19 or  C_Map.GetBestMapForUnit("player") == 21 or  C_Map.GetBestMapForUnit("player") == 22 or  C_Map.GetBestMapForUnit("player") == 23 or  C_Map.GetBestMapForUnit("player") == 25 or  C_Map.GetBestMapForUnit("player") == 26 
+        or  C_Map.GetBestMapForUnit("player") == 27 or  C_Map.GetBestMapForUnit("player") == 28 or  C_Map.GetBestMapForUnit("player") == 30 or  C_Map.GetBestMapForUnit("player") == 32 or  C_Map.GetBestMapForUnit("player") == 33 or  C_Map.GetBestMapForUnit("player") == 34 
+        or  C_Map.GetBestMapForUnit("player") == 35 or  C_Map.GetBestMapForUnit("player") == 36 or  C_Map.GetBestMapForUnit("player") == 37 or  C_Map.GetBestMapForUnit("player") == 42 or  C_Map.GetBestMapForUnit("player") == 47 or  C_Map.GetBestMapForUnit("player") == 48 
+        or  C_Map.GetBestMapForUnit("player") == 49 or  C_Map.GetBestMapForUnit("player") == 50 or  C_Map.GetBestMapForUnit("player") == 51 or  C_Map.GetBestMapForUnit("player") == 52 or  C_Map.GetBestMapForUnit("player") == 55 or  C_Map.GetBestMapForUnit("player") == 56 
+        or  C_Map.GetBestMapForUnit("player") == 94 or  C_Map.GetBestMapForUnit("player") == 210 or  C_Map.GetBestMapForUnit("player") == 224 or  C_Map.GetBestMapForUnit("player") == 245 or  C_Map.GetBestMapForUnit("player") == 425 or  C_Map.GetBestMapForUnit("player") == 427 
+        or  C_Map.GetBestMapForUnit("player") == 465 or  C_Map.GetBestMapForUnit("player") == 467 or  C_Map.GetBestMapForUnit("player") == 469 or  C_Map.GetBestMapForUnit("player") == 499 or  C_Map.GetBestMapForUnit("player") == 500 or  C_Map.GetBestMapForUnit("player") == 2070 
+        or  C_Map.GetBestMapForUnit("player") == 241 or  C_Map.GetBestMapForUnit("player") == 203 or  C_Map.GetBestMapForUnit("player") == 204 or  C_Map.GetBestMapForUnit("player") == 205 or  C_Map.GetBestMapForUnit("player") == 241 or  C_Map.GetBestMapForUnit("player") == 244 
+        or  C_Map.GetBestMapForUnit("player") == 245 or  C_Map.GetBestMapForUnit("player") == 201 or  C_Map.GetBestMapForUnit("player") == 95 or  C_Map.GetBestMapForUnit("player") == 122 or  C_Map.GetBestMapForUnit("player") == 217  or  C_Map.GetBestMapForUnit("player") == 226)
       then
         if not ns.Addon.db.profile.showZoneEasternKingdom then
           ns.Addon.db.profile.showZoneEasternKingdom = true
@@ -433,8 +433,8 @@ OnClick = function(self, button)
           print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["synchronizes"] .. " " .. L["Eastern Kingdom"] .. " " .. L["Zones"] .. " & " .. MINIMAP_LABEL, L["icons"], "|cffff0000" .. L["are hidden"])
         end
       --Outland
-      elseif (WorldMapFrame:GetMapID() == 100 or WorldMapFrame:GetMapID() == 102 or WorldMapFrame:GetMapID() == 104 or WorldMapFrame:GetMapID() == 105 or WorldMapFrame:GetMapID() == 107 or WorldMapFrame:GetMapID() == 108
-        or WorldMapFrame:GetMapID() == 109)
+      elseif ( C_Map.GetBestMapForUnit("player") == 100 or  C_Map.GetBestMapForUnit("player") == 102 or  C_Map.GetBestMapForUnit("player") == 104 or  C_Map.GetBestMapForUnit("player") == 105 or  C_Map.GetBestMapForUnit("player") == 107 or  C_Map.GetBestMapForUnit("player") == 108
+        or  C_Map.GetBestMapForUnit("player") == 109)
       then
         if not ns.Addon.db.profile.showZoneOutland then
           ns.Addon.db.profile.showZoneOutland = true
@@ -444,8 +444,8 @@ OnClick = function(self, button)
           print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["synchronizes"] .. " " .. L["Outland"] .. " " .. L["Zones"] .. " & " .. MINIMAP_LABEL, L["icons"], "|cffff0000" .. L["are hidden"])
         end
       --Northrend
-      elseif (WorldMapFrame:GetMapID() == 114 or WorldMapFrame:GetMapID() == 115 or WorldMapFrame:GetMapID() == 116 or WorldMapFrame:GetMapID() == 117 or WorldMapFrame:GetMapID() == 118 or WorldMapFrame:GetMapID() == 119
-        or WorldMapFrame:GetMapID() == 120 or WorldMapFrame:GetMapID() == 121 or WorldMapFrame:GetMapID() == 123 or WorldMapFrame:GetMapID() == 127 or WorldMapFrame:GetMapID() == 170)
+      elseif ( C_Map.GetBestMapForUnit("player") == 114 or  C_Map.GetBestMapForUnit("player") == 115 or  C_Map.GetBestMapForUnit("player") == 116 or  C_Map.GetBestMapForUnit("player") == 117 or  C_Map.GetBestMapForUnit("player") == 118 or  C_Map.GetBestMapForUnit("player") == 119
+        or  C_Map.GetBestMapForUnit("player") == 120 or  C_Map.GetBestMapForUnit("player") == 121 or  C_Map.GetBestMapForUnit("player") == 123 or  C_Map.GetBestMapForUnit("player") == 127 or  C_Map.GetBestMapForUnit("player") == 170)
       then
         if not ns.Addon.db.profile.showZoneNorthrend then
           ns.Addon.db.profile.showZoneNorthrend = true
@@ -455,9 +455,9 @@ OnClick = function(self, button)
           print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["synchronizes"] .. " " .. L["Northrend"] .. " " .. L["Zones"] .. " & " .. MINIMAP_LABEL, L["icons"], "|cffff0000" .. L["are hidden"])
         end
       --Pandaria
-      elseif (WorldMapFrame:GetMapID() == 371 or WorldMapFrame:GetMapID() == 376 or WorldMapFrame:GetMapID() == 379 or WorldMapFrame:GetMapID() == 388 or WorldMapFrame:GetMapID() == 390 or WorldMapFrame:GetMapID() == 418
-        or WorldMapFrame:GetMapID() == 422 or WorldMapFrame:GetMapID() == 433 or WorldMapFrame:GetMapID() == 434 or WorldMapFrame:GetMapID() == 504 or WorldMapFrame:GetMapID() == 554  or WorldMapFrame:GetMapID() == 1530
-        or WorldMapFrame:GetMapID() == 507)
+      elseif ( C_Map.GetBestMapForUnit("player") == 371 or  C_Map.GetBestMapForUnit("player") == 376 or  C_Map.GetBestMapForUnit("player") == 379 or  C_Map.GetBestMapForUnit("player") == 388 or  C_Map.GetBestMapForUnit("player") == 390 or  C_Map.GetBestMapForUnit("player") == 418
+        or  C_Map.GetBestMapForUnit("player") == 422 or  C_Map.GetBestMapForUnit("player") == 433 or  C_Map.GetBestMapForUnit("player") == 434 or  C_Map.GetBestMapForUnit("player") == 504 or  C_Map.GetBestMapForUnit("player") == 554  or  C_Map.GetBestMapForUnit("player") == 1530
+        or  C_Map.GetBestMapForUnit("player") == 507)
       then
         if not ns.Addon.db.profile.showZonePandaria then
           ns.Addon.db.profile.showZonePandaria = true
@@ -467,8 +467,8 @@ OnClick = function(self, button)
           print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["synchronizes"] .. " " .. L["Pandaria"] .. " " .. L["Zones"] .. " & " .. MINIMAP_LABEL, L["icons"], "|cffff0000" .. L["are hidden"])
         end
       --Draenor
-      elseif (WorldMapFrame:GetMapID() == 525 or WorldMapFrame:GetMapID() == 534 or WorldMapFrame:GetMapID() == 535 or WorldMapFrame:GetMapID() == 539 or WorldMapFrame:GetMapID() == 542 or WorldMapFrame:GetMapID() == 543
-        or WorldMapFrame:GetMapID() == 550 or WorldMapFrame:GetMapID() == 588)
+      elseif ( C_Map.GetBestMapForUnit("player") == 525 or  C_Map.GetBestMapForUnit("player") == 534 or  C_Map.GetBestMapForUnit("player") == 535 or  C_Map.GetBestMapForUnit("player") == 539 or  C_Map.GetBestMapForUnit("player") == 542 or  C_Map.GetBestMapForUnit("player") == 543
+        or  C_Map.GetBestMapForUnit("player") == 550 or  C_Map.GetBestMapForUnit("player") == 588)
       then
         if not ns.Addon.db.profile.showZoneDraenor then
           ns.Addon.db.profile.showZoneDraenor = true
@@ -478,9 +478,9 @@ OnClick = function(self, button)
           print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["synchronizes"] .. " " .. L["Draenor"] .. " " .. L["Zones"] .. " & " .. MINIMAP_LABEL, L["icons"], "|cffff0000" .. L["are hidden"])
         end
       --Broken Isles
-      elseif (WorldMapFrame:GetMapID() == 630 or WorldMapFrame:GetMapID() == 634 or WorldMapFrame:GetMapID() == 641 or WorldMapFrame:GetMapID() == 646 or WorldMapFrame:GetMapID() == 650 or WorldMapFrame:GetMapID() == 652
-        or WorldMapFrame:GetMapID() == 750 or WorldMapFrame:GetMapID() == 680 or WorldMapFrame:GetMapID() == 830 or WorldMapFrame:GetMapID() == 882 or WorldMapFrame:GetMapID() == 885 or WorldMapFrame:GetMapID() == 905
-        or WorldMapFrame:GetMapID() == 941 or WorldMapFrame:GetMapID() == 790)
+      elseif ( C_Map.GetBestMapForUnit("player") == 630 or  C_Map.GetBestMapForUnit("player") == 634 or  C_Map.GetBestMapForUnit("player") == 641 or  C_Map.GetBestMapForUnit("player") == 646 or  C_Map.GetBestMapForUnit("player") == 650 or  C_Map.GetBestMapForUnit("player") == 652
+        or  C_Map.GetBestMapForUnit("player") == 750 or  C_Map.GetBestMapForUnit("player") == 680 or  C_Map.GetBestMapForUnit("player") == 830 or  C_Map.GetBestMapForUnit("player") == 882 or  C_Map.GetBestMapForUnit("player") == 885 or  C_Map.GetBestMapForUnit("player") == 905
+        or  C_Map.GetBestMapForUnit("player") == 941 or  C_Map.GetBestMapForUnit("player") == 790)
       then
         if not ns.Addon.db.profile.showZoneBrokenIsles then
           ns.Addon.db.profile.showZoneBrokenIsles = true
@@ -490,7 +490,7 @@ OnClick = function(self, button)
           print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["synchronizes"] .. " " .. L["Broken Isles"] .. " " .. L["Zones"] .. " & " .. MINIMAP_LABEL, L["icons"], "|cffff0000" .. L["are hidden"])
         end
       --Zandalar
-      elseif (WorldMapFrame:GetMapID() == 862 or WorldMapFrame:GetMapID() == 863 or WorldMapFrame:GetMapID() == 864 or WorldMapFrame:GetMapID() == 1355 or WorldMapFrame:GetMapID() == 1528)
+      elseif ( C_Map.GetBestMapForUnit("player") == 862 or  C_Map.GetBestMapForUnit("player") == 863 or  C_Map.GetBestMapForUnit("player") == 864 or  C_Map.GetBestMapForUnit("player") == 1355 or  C_Map.GetBestMapForUnit("player") == 1528)
       then
         if not ns.Addon.db.profile.showZoneZandalar then
           ns.Addon.db.profile.showZoneZandalar = true
@@ -500,7 +500,7 @@ OnClick = function(self, button)
           print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["synchronizes"] .. " " .. L["Zandalar"] .. " " .. L["Zones"] .. " & " .. MINIMAP_LABEL, L["icons"], "|cffff0000" .. L["are hidden"])
         end
       --Kul Tiras
-      elseif (WorldMapFrame:GetMapID() == 895 or WorldMapFrame:GetMapID() == 896 or WorldMapFrame:GetMapID() == 942 or WorldMapFrame:GetMapID() == 1462 or WorldMapFrame:GetMapID() == 1169)
+      elseif ( C_Map.GetBestMapForUnit("player") == 895 or  C_Map.GetBestMapForUnit("player") == 896 or  C_Map.GetBestMapForUnit("player") == 942 or  C_Map.GetBestMapForUnit("player") == 1462 or  C_Map.GetBestMapForUnit("player") == 1169)
       then
         if not ns.Addon.db.profile.showZoneKulTiras then
           ns.Addon.db.profile.showZoneKulTiras = true
@@ -510,8 +510,8 @@ OnClick = function(self, button)
           print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["synchronizes"] .. " " .. L["Kul Tiras"] .. " " .. L["Zones"] .. " & " .. MINIMAP_LABEL, L["icons"], "|cffff0000" .. L["are hidden"])
         end
       --Shadowlands
-      elseif (WorldMapFrame:GetMapID() == 1525 or WorldMapFrame:GetMapID() == 1533 or WorldMapFrame:GetMapID() == 1536 or WorldMapFrame:GetMapID() == 1543 or WorldMapFrame:GetMapID() == 1565 or WorldMapFrame:GetMapID() == 1961
-        or WorldMapFrame:GetMapID() == 1970 or WorldMapFrame:GetMapID() == 2016)
+      elseif ( C_Map.GetBestMapForUnit("player") == 1525 or  C_Map.GetBestMapForUnit("player") == 1533 or  C_Map.GetBestMapForUnit("player") == 1536 or  C_Map.GetBestMapForUnit("player") == 1543 or  C_Map.GetBestMapForUnit("player") == 1565 or  C_Map.GetBestMapForUnit("player") == 1961
+        or  C_Map.GetBestMapForUnit("player") == 1970 or  C_Map.GetBestMapForUnit("player") == 2016)
       then
         if not ns.Addon.db.profile.showZoneShadowlands then
           ns.Addon.db.profile.showZoneShadowlands = true
@@ -521,8 +521,8 @@ OnClick = function(self, button)
           print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00 ".. L["synchronizes"] .. " " .. L["Shadowlands"] .. " " .. L["Zones"] .. " & " .. MINIMAP_LABEL, L["icons"], "|cffff0000" .. L["are hidden"])
         end
       --Dragon Isles
-      elseif (WorldMapFrame:GetMapID() == 2022 or WorldMapFrame:GetMapID() == 2023 or WorldMapFrame:GetMapID() == 2024 or WorldMapFrame:GetMapID() == 2025 or WorldMapFrame:GetMapID() == 2026 or WorldMapFrame:GetMapID() == 2133
-        or WorldMapFrame:GetMapID() == 2151 or WorldMapFrame:GetMapID() == 2200 or WorldMapFrame:GetMapID() == 2239 or WorldMapFrame:GetMapID() == 2266)
+      elseif ( C_Map.GetBestMapForUnit("player") == 2022 or  C_Map.GetBestMapForUnit("player") == 2023 or  C_Map.GetBestMapForUnit("player") == 2024 or  C_Map.GetBestMapForUnit("player") == 2025 or  C_Map.GetBestMapForUnit("player") == 2026 or  C_Map.GetBestMapForUnit("player") == 2133
+        or  C_Map.GetBestMapForUnit("player") == 2151 or  C_Map.GetBestMapForUnit("player") == 2200 or  C_Map.GetBestMapForUnit("player") == 2239 or  C_Map.GetBestMapForUnit("player") == 2266)
       then
         if not ns.Addon.db.profile.showZoneDragonIsles then
           ns.Addon.db.profile.showZoneDragonIsles = true
