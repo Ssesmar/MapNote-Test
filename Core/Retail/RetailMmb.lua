@@ -40,7 +40,7 @@ if not tooltip or not tooltip.AddLine then return end
       tooltip:AddLine(HELPFRAME_REPORT_PLAYER_RIGHT_CLICK .. " => " .. "|cffff0000".. L["Kalimdor"] .. " " .. MINIMAP_LABEL .. "|cffffcc00" .. " " .. L["icons"] .. " " .. SHOW .. " / " .. HIDE,1,1,1)
       tooltip:Show()
     --Eastern Kingdom
-    elseif ( C_Map.GetBestMapForUnit("player") == 13 or  C_Map.GetBestMapForUnit("player") == 14 or  C_Map.GetBestMapForUnit("player") == 15 or  C_Map.GetBestMapForUnit("player") == 16 or  C_Map.GetBestMapForUnit("player") == 17 or  C_Map.GetBestMapForUnit("player") == 18 
+    elseif (C_Map.GetBestMapForUnit("player") == 13 or  C_Map.GetBestMapForUnit("player") == 14 or  C_Map.GetBestMapForUnit("player") == 15 or  C_Map.GetBestMapForUnit("player") == 16 or  C_Map.GetBestMapForUnit("player") == 17 or  C_Map.GetBestMapForUnit("player") == 18 
       or  C_Map.GetBestMapForUnit("player") == 19 or  C_Map.GetBestMapForUnit("player") == 21 or  C_Map.GetBestMapForUnit("player") == 22 or  C_Map.GetBestMapForUnit("player") == 23 or  C_Map.GetBestMapForUnit("player") == 25 or  C_Map.GetBestMapForUnit("player") == 26 
       or  C_Map.GetBestMapForUnit("player") == 27 or  C_Map.GetBestMapForUnit("player") == 28 or  C_Map.GetBestMapForUnit("player") == 30 or  C_Map.GetBestMapForUnit("player") == 32 or  C_Map.GetBestMapForUnit("player") == 33 or  C_Map.GetBestMapForUnit("player") == 34 
       or  C_Map.GetBestMapForUnit("player") == 35 or  C_Map.GetBestMapForUnit("player") == 36 or  C_Map.GetBestMapForUnit("player") == 37 or  C_Map.GetBestMapForUnit("player") == 42 or  C_Map.GetBestMapForUnit("player") == 47 or  C_Map.GetBestMapForUnit("player") == 48 
