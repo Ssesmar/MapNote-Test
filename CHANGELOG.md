@@ -1,8 +1,8 @@
 # MapNote
-## [2.0.5](https://github.com/Ssesmar/MapNote) (2024-06-26)
+## [2.0.5](https://github.com/Ssesmar/MapNote) (2024-07-09)
 - Note:
 
--- MapNotes now works on every version of World of Warcraft. Classic Era / Cataclysm and Retail
+-- MapNotes now works on every version of World of Warcraft. Classic Era / Cataclysm / Retail / PTR
 
 Version: 2.0.5
 
@@ -10,6 +10,28 @@ PTR:
 
 
 Retail:
+added PvP & PvE Vendor icons on the Continent Tab
+
+added on Zone & Minimap Tab new icons for:
+• Paths
+• Innkeepers
+• Auctioneer
+• Bank
+• Barber
+• Mailboxes
+• Pvp Vendor
+• PvE Vendor
+• Stablemaster
+• Transmog
+
+In the Zone and Minimap tabs, the functions in the Transport sub tab for Transport have been divided into 5 separate units
+So you can hide or show these as you wish
+• Transport
+• Ogre Waygates
+• Teleporters
+• Toys (Travel) currently only: Ever-Shifting Mirror for Draenor to Outland and back portals
+• Travel
+
 the Capital and Capital - Minimap tabs have been moved together to the Capitals + tab
 The Capital area was divided into the following 5 sub-tabs
 • Capitals
