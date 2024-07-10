@@ -14,7 +14,7 @@ ns.icons = {
 ["InnkeeperN"] = iconLink .. "InnkeeperN",
 ["InnkeeperA"] = iconLink .. "InnkeeperA",
 ["InnkeeperH"] = iconLink .. "InnkeeperH",
-["Auctioneer"] = "interface/minimap/tracking/auctioneer.blp",
+["Auctioneer"] = iconLink .. "Auctioneer",
 ["Bank"] = "interface/minimap/tracking/banker.blp",
 ["Barber"] = "interface/minimap/tracking/barbershop.blp",
 ["Transmogger"] = "interface/minimap/tracking/transmogrifier.blp",
@@ -75,6 +75,7 @@ ns.icons = {
 ["Dungeon"] = iconLink .. "Dungeon", 
 ["Raid"] = iconLink .. "Raid", 
 ["VInstance"] = iconLink .. "vanillaInstance",
+["MultiVInstance"] = iconLink .. "multivanillaInstance",
 ["VKey1"] = iconLink .. "vkey1",
 ["MultipleM"] = iconLink .. "multipleM",
 ["MultipleD"] = iconLink .. "multipleD",
@@ -92,6 +93,24 @@ ns.icons = {
 ["PassagePortal"] = iconLink .. "passagePortal",
 ["PassageHPortal"] = iconLink .. "passageHPortal",
 ["PassageAPortal"] = iconLink .. "passageAPortal",
+--portal Old
+["PortalOld"] = iconLink .. "portalOld",
+["HPortalOld"] = iconLink .. "hportalOld",
+["HPortalSOld"] = iconLink .. "hportalSOld",
+["APortalOld"] = iconLink .. "aportalOld",
+["APortalSOld"] = iconLink .. "aportalSOld",
+["PassagePortalOld"] = iconLink .. "passagePortalOld",
+["PassageHPortalOld"] = iconLink .. "passageHPortalOld",
+["PassageAPortalOld"] = iconLink .. "passageAPortalOld",
+--portal restore nodes
+["PortalNew"] = iconLink .. "portal", -- nodes for Classic Icon Style function to get new the new icons back
+["HPortalNew"] = iconLink .. "hportal", -- nodes for Classic Icon Style function to get new the new icons back
+["HPortalSNew"] = iconLink .. "hportalS", -- nodes for Classic Icon Style function to get new the new icons back
+["APortalNew"] = iconLink .. "aportal", -- nodes for Classic Icon Style function to get new the new icons back
+["APortalSNew"] = iconLink .. "aportalS", -- nodes for Classic Icon Style function to get new the new icons back
+["PassagePortalNew"] = iconLink .. "passagePortal", -- nodes for Classic Icon Style function to get new the new icons back
+["PassageHPortalNew"] = iconLink .. "passageHPortal", -- nodes for Classic Icon Style function to get new the new icons back
+["PassageAPortalNew"] = iconLink .. "passageAPortal", -- nodes for Classic Icon Style function to get new the new icons back
 --ship
 ["Ship"] = iconLink .. "ship",
 ["HShip"] = iconLink .. "shipH",
@@ -110,13 +129,11 @@ ns.icons = {
 ["PassageRightL"] = iconLink .. "passagerightL",
 ["PassageLeftL"] = iconLink .. "passageleftL",
 --transport
-["TransportHelper"] = iconLink .. "tport",
 ["Tport2"] = iconLink .. "tport2",
 ["OgreWaygate"] = iconLink .. "ogreWaygate",
 ["Mirror"] = iconLink .. "mirror",
 ["WayGateGolden"] = iconLink .. "WayGateGolden",
 ["WayGateGreen"] = iconLink .. "WayGateGreen",
-["GPortal"] = iconLink .. "GPortal",
 ["Carriage"] = iconLink .. "Carriage",
 --travel
 ["TravelL"] = iconLink .. "travelL",
@@ -127,7 +144,6 @@ ns.icons = {
 --special icons
 ["HIcon"] = iconLink .. "HIcon",
 ["AIcon"] = iconLink .. "AIcon",
-["NT"] = iconLink .. "NeutralTower",
 ["Ghost"] = iconLink .. "Ghost",
 --portrait icons
 ["B11M"] = "interface/characterframe/temporaryportrait-male-bloodelf",
@@ -147,7 +163,7 @@ TextIconInnkeeper = TextIcon("interface/minimap/tracking/innkeeper.blpp", 50, 50
 TextIconInnkeeperN = TextIcon(iconLink .. "InnkeeperN", 50, 50, 1, 50, 1, 50)
 TextIconInnkeeperH = TextIcon(iconLink .. "InnkeeperH", 50, 50, 1, 50, 1, 50)
 TextIconInnkeeperA = TextIcon(iconLink .. "InnkeeperA", 50, 50, 1, 50, 1, 50)
-TextIconAuctioneer = TextIcon("interface/minimap/tracking/auctioneer.blp", 50, 50, 1, 50, 1, 50)
+TextIconAuctioneer = TextIcon(iconLink .. "Auctioneer", 50, 50, 1, 50, 1, 50)
 TextIconBlackMarket = TextIcon(iconLink .. "BlackMarket", 50, 50, 1, 50, 1, 50)
 TextIconBank = TextIcon("interface/minimap/tracking/banker.blp", 50, 50, 1, 50, 1, 50)
 TextIconBarber = TextIcon("interface/minimap/tracking/barbershop.blp", 50, 50, 1, 50, 1, 50)
@@ -210,8 +226,18 @@ TextIconEnchanting = TextIcon(iconLink .. "Enchanting", 50, 50, 1, 50, 1, 50)
 TextIconPortal = TextIcon(iconLink .. "portal", 50, 50, 1, 50, 1, 50) 
 TextIconHPortal = TextIcon(iconLink .. "hportal", 50, 50, 1, 50, 1, 50)
 TextIconAPortal = TextIcon(iconLink .. "aportal", 50, 50, 1, 50, 1, 50)
+TextIconPassagePortal = TextIcon(iconLink .. "passagePortal", 50, 50, 1, 50, 1, 50) 
+TextIconPassageHPortal = TextIcon(iconLink .. "passageHPortal", 50, 50, 1, 50, 1, 50)
+TextIconPassageAPortal = TextIcon(iconLink .. "passageAPortal", 50, 50, 1, 50, 1, 50)
 TextIconWayGateGolden = TextIcon(iconLink .. "WayGateGolden", 50, 50, 1, 50, 1, 50)
 TextIconWayGateGreen = TextIcon(iconLink .. "WayGateGreen", 50, 50, 1, 50, 1, 50)
+--portal Old
+TextIconPortalOld = TextIcon(iconLink .. "portalOld", 50, 50, 1, 50, 1, 50) 
+TextIconHPortalOld = TextIcon(iconLink .. "hportalOld", 50, 50, 1, 50, 1, 50)
+TextIconAPortalOld = TextIcon(iconLink .. "aportalOld", 50, 50, 1, 50, 1, 50)
+TextIconPassagePortalOld = TextIcon(iconLink .. "passagePortalOld", 50, 50, 1, 50, 1, 50) 
+TextIconPassageHPortalOld = TextIcon(iconLink .. "passageHPortalOld", 50, 50, 1, 50, 1, 50)
+TextIconPassageAPortalOld = TextIcon(iconLink .. "passageAPortalOld", 50, 50, 1, 50, 1, 50)
 --paths
 TextIconPathO = TextIcon(iconLink .. "PathO", 50, 50, 1, 50, 1, 50)
 TextIconPathR = TextIcon(iconLink .. "PathR", 50, 50, 1, 50, 1, 50)
@@ -222,6 +248,7 @@ TextIconLFR = TextIcon(iconLink .. "LFR", 50, 50, 1, 50, 1, 50)
 TextIconDungeon = TextIcon(iconLink .. "Dungeon", 50, 50, 1, 50, 1, 50)
 TextIconRaid = TextIcon(iconLink .. "Raid", 50, 50, 1, 50, 1, 50)
 TextIconVInstance = TextIcon(iconLink .. "vanillaInstance", 50, 50, 1, 50, 1, 50)
+TextIconMultiVInstance = TextIcon(iconLink .. "multivanillaInstance", 50, 50, 1, 50, 1, 50)
 TextIconVKey1 = TextIcon(iconLink .. "vkey1", 50, 50, 1, 50, 1, 50)
 TextIconMultipleM = TextIcon(iconLink .. "multipleM", 50, 50, 1, 50, 1, 50)
 TextIconMultipleD = TextIcon(iconLink .. "multipleD", 50, 50, 1, 50, 1, 50)
@@ -251,7 +278,6 @@ TextIconPassagedown = TextIcon(iconLink .. "PassageDownL", 50, 50, 1, 50, 1, 50)
 TextIconPassageright = TextIcon(iconLink .. "PassageRightL", 50, 50, 1, 50, 1, 50)
 TextIconPassageleft = TextIcon(iconLink .. "PassageLeftL", 50, 50, 1, 50, 1, 50)
 --special icon
-TextIconNT = TextIcon("iconLink" .. "NeutralTower", 50, 50, 1, 50, 1, 50)
 TextIconTravel = TextIcon(iconLink .. "travel", 50, 50, 1, 50, 1, 50)
 TextIconTravelA = TextIcon(iconLink .. "travelA", 50, 50, 1, 50, 1, 50)
 TextIconTravelH = TextIcon(iconLink .. "travelH", 50, 50, 1, 50, 1, 50)
@@ -260,7 +286,6 @@ TextIconAIcon = TextIcon(iconLink .. "AIcon", 50, 50, 1, 50, 1, 50)
 TextIconHIcon = TextIcon(iconLink .. "HIcon", 50, 50, 1, 50, 1, 50)
 TextIconGhost = TextIcon(iconLink .. "Ghost", 50, 50, 1, 50, 1, 50)
 --transport
-TextIconTransportHelper = TextIcon(iconLink .. "tport", 60, 60, 1, 50, 1, 50)
 TextIconTransport = TextIcon(iconLink .. "tport2", 60, 60, 1, 50, 1, 50)
 TextIconOgreWaygate = TextIcon("Interface/Minimap/Vehicle-AllianceWarlockPortal", 60, 60, 1, 50, 1, 50)
 TextIconToyTransport = TextIcon("interface/icons/inv_tailoring_elekkplushie.blp", 50, 50, 1, 50, 1, 50)

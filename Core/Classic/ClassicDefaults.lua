@@ -9,10 +9,10 @@ ns.defaults = {
       colorG = 1,
       colorB = 1,
       colorA = 1,
-      colorR_Reduce = 0.75,
-      colorG_Reduce = 0.75,
-      colorB_Reduce = 0.75,
-      colorA_Reduce = 0.75,
+      colorR_Reduce = 0.50,
+      colorG_Reduce = 0.50,
+      colorB_Reduce = 0.50,
+      colorA_Reduce = 0.50,
 
     --0 General tab
       journal = true,

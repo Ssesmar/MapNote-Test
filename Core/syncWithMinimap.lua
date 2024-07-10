@@ -34,6 +34,9 @@ local db = ns.Addon.db.profile
         -- General Scale/Alpha
         db.MiniMapGeneralScale = db.ZonesGeneralScale
         db.MiniMapGeneralAlpha = db.ZonesGeneralAlpha
+        -- General Scale/Alpha
+        db.MiniMapPathsScale = db.ZonesPathsScale
+        db.MiniMapPathsAlpha = db.ZonesPathsAlpha
     end
 
 end
@@ -127,6 +130,7 @@ local db = ns.Addon.db.profile
         db.activate.MiniMapInstances = db.activate.ZoneInstances
         db.activate.MiniMapTransporting = db.activate.ZoneTransporting
         db.activate.MiniMapGeneral = db.activate.ZoneGeneral
+        db.activate.MiniMapPaths = db.activate.ZonePaths
         -- Icons
         self.db.profile.showMiniMapRaids = self.db.profile.showZoneRaids
         self.db.profile.showMiniMapDungeons = self.db.profile.showZoneDungeons

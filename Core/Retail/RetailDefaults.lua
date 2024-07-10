@@ -9,10 +9,10 @@ ns.defaults = {
       colorG = 1,
       colorB = 1,
       colorA = 1,
-      colorR_Reduce = 0.75,
-      colorG_Reduce = 0.75,
-      colorB_Reduce = 0.75,
-      colorA_Reduce = 0.75,
+      colorR_Reduce = 0.50,
+      colorG_Reduce = 0.50,
+      colorB_Reduce = 0.50,
+      colorA_Reduce = 0.50,
 
     --0 General tab
       journal = true,
@@ -66,7 +66,6 @@ ns.defaults = {
       MiniMapGeneralAlpha = 1,
       showMiniMapFP = true, -- Classic+
       showMiniMapGhost = true, -- Classic+
-      showMiniMapPaths = true,
       showMiniMapInnkeeper = true,
       showMiniMapAuctioneer = true,
       showMiniMapBank = true,
@@ -76,7 +75,11 @@ ns.defaults = {
       showMiniMapPvEVendor = true,
       showMiniMapTransmogger = true,
       showMiniMapStablemaster = true,
-    
+    -- MiniMap Paths
+      MiniMapPathsScale = 1,
+      MiniMapPathsAlpha = 1,
+      showMiniMapPaths = true,
+      
     --2 Zone map tab
     -- Zone Continent
       showZoneKalimdor = true,
@@ -116,7 +119,6 @@ ns.defaults = {
       ZonesGeneralAlpha = 1,
       showZoneFP = true, -- Classic+
       showZoneGhost = true, -- Classic+
-      showZonePaths = true,
       showZoneInnkeeper = true,
       showZoneAuctioneer = true,
       showZoneBank = true,
@@ -126,7 +128,11 @@ ns.defaults = {
       showZonePvEVendor = true,
       showZoneTransmogger = true,
       showZoneStablemaster = true,
-
+    -- Zone Path
+      ZonesPathsScale = 1,
+      ZonesPathsAlpha = 1,
+      showZonePaths = true,
+      
     --3 Continent map tab
       continentScale = 1,
       continentAlpha = 1,
@@ -372,6 +378,7 @@ ns.defaults = {
         EnemyFaction = true,
         ShiftWorld = false,
         ClassicIcons = false,
+        ClassicImages = false,
         RemoveBlizzPOIs = true,
         FogOfWar = true,
         FogOfWarAlphaReduce = true,
@@ -382,11 +389,13 @@ ns.defaults = {
         MiniMapInstances = true,
         MiniMapTransporting = true,
         MiniMapGeneral = true,
+        MiniMapPaths = true,
       --Zones
         ZoneEnemyFaction = true,
         ZoneInstances = true,
         ZoneTransporting = true,
         ZoneGeneral = true,
+        ZonePaths = true,
       --activate tab
         CosmosMap = true, -- activate tab
         Azeroth = true, -- activate tab

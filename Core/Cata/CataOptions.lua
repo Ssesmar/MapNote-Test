@@ -1202,7 +1202,7 @@ ns.options = {
           showDungeonTransport = {
           disabled = function() return ns.Addon.db.profile.activate.HideMapNote or not ns.Addon.db.profile.activate.DungeonMap end,
           type = "toggle",
-          name = TextIconTravelL:GetIconString() .. " " .. TextIconTransportHelper:GetIconString() .. " " .. TextIconTransport:GetIconString() .. " " .. L["Transport"],
+          name = TextIconTravelL:GetIconString() .. " " .. TextIconTransport:GetIconString() .. " " .. L["Transport"],
           desc = L["Shows special transport icons like"],
           order = 62.4,
           set = function(info, v) ns.Addon.db.profile[info[#info]] = v self:FullUpdate() HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes") 

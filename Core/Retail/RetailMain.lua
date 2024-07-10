@@ -228,21 +228,20 @@ do
                             or value.type == "Blacksmith" or value.type == "Leatherworking" or value.type == "Skinning" or value.type == "Tailoring" or value.type == "Herbalism" or value.type == "Inscription"
                             or value.type == "Enchanting" or value.type == "FishingClassic" or value.type == "ProfessionOrders"
 
-      ns.instanceIcons = value.type == "Dungeon" or value.type == "Raid" or value.type == "PassageDungeon" or value.type == "PassageDungeonRaidMulti" or value.type == "PassageRaid" or value.type == "VInstance" 
-                          or value.type == "PassageDungeon" or value.type == "Multiple" or value.type == "LFR" or value.type == "Gray"
+      ns.instanceIcons = value.type == "Dungeon" or value.type == "Raid" or value.type == "PassageDungeon" or value.type == "PassageDungeonRaidMulti" or value.type == "PassageRaid" or value.type == "VInstance"  or value.type == "MultiVInstance" 
+                          or value.type == "PassageDungeon" or value.type == "Multiple" or value.type == "LFR" or value.type == "Gray" or value.type == "VKey1"
 
       ns.transportIcons = value.type == "Portal" or value.type == "HPortal" or value.type == "APortal" or value.type == "HPortalS" or value.type == "APortalS" or value.type == "PassageHPortal" 
                           or value.type == "PassageAPortal" or value.type == "PassagePortal" or value.type == "Zeppelin" or value.type == "HZeppelin" or value.type == "AZeppelin" or value.type == "Ship" 
-                          or value.type == "AShip" or value.type == "HShip" or value.type == "Carriage" or value.type == "TravelL" or value.type == "TravelH" or value.type == "TravelA" or value.type == "GPortal" 
-                          or value.type == "Tport2" or value.type == "TransportHelper" or value.type == "OgreWaygate" or value.type == "WayGateGreen" or value.type == "Ghost" or value.type == "DarkMoon"
-                          or value.type == "Mirror" or value.type == "TravelM" or value.type == "B11M" or value.type == "MOrcF" or value.type == "UndeadF" or value.type == "GoblinF" or value.type == "GilneanF"
-                          or value.type == "KulM" or value.type == "DwarfF" or value.type == "OrcM" or value.type == "WayGateGolden"
+                          or value.type == "AShip" or value.type == "HShip" or value.type == "Carriage" or value.type == "TravelL" or value.type == "TravelH" or value.type == "TravelA" or value.type == "Tport2" 
+                          or value.type == "OgreWaygate" or value.type == "WayGateGreen" or value.type == "Ghost" or value.type == "DarkMoon" or value.type == "Mirror" or value.type == "TravelM" or value.type == "B11M" 
+                          or value.type == "MOrcF" or value.type == "UndeadF" or value.type == "GoblinF" or value.type == "GilneanF" or value.type == "KulM" or value.type == "DwarfF" or value.type == "OrcM" or value.type == "WayGateGolden"
 
       ns.generalIcons = value.type == "Exit" or value.type == "PassageUpL" or value.type == "PassageDownL" or value.type == "PassageRightL" or value.type == "PassageLeftL" or value.type == "Innkeeper" 
                         or value.type == "Auctioneer" or value.type == "Bank" or value.type == "MNL" or value.type == "Barber" or value.type == "Transmogger" or value.type == "ItemUpgrade" or value.type == "PvPVendor" 
                         or value.type == "PvEVendor" or value.type == "MNL" or value.type == "DragonFlyTransmog" or value.type == "Catalyst" or value.type == "PathO" or value.type == "PathRO" or value.type == "PathLO" 
                         or value.type == "PathU" or value.type == "PathLU" or value.type == "PathRU" or value.type == "PathL" or value.type == "PathR" or value.type == "BlackMarket" or value.type == "Mailbox"
-                        or value.type == "StablemasterN" or value.type == "StablemasterH" or value.type == "StablemasterA" or value.type == "HIcon" or value.type == "AIcon" or value.type == "NT" or value.type == "InnkeeperN" 
+                        or value.type == "StablemasterN" or value.type == "StablemasterH" or value.type == "StablemasterA" or value.type == "HIcon" or value.type == "AIcon" or value.type == "InnkeeperN" 
                         or value.type == "InnkeeperH" or value.type == "InnkeeperA" or value.type == "MailboxN" or value.type == "MailboxH" or value.type == "MailboxA" or value.type == "PvPVendorH" or value.type == "PvPVendorA" 
                         or value.type == "PvEVendorH" or value.type == "PvEVendorA"
 
@@ -309,7 +308,7 @@ do
       ns.DragonIsleIDs = WorldMapFrame:GetMapID() == 2022 or WorldMapFrame:GetMapID() == 2023 or WorldMapFrame:GetMapID() == 2024 or WorldMapFrame:GetMapID() == 2025 or WorldMapFrame:GetMapID() == 2026 or WorldMapFrame:GetMapID() == 2133
                       or WorldMapFrame:GetMapID() == 2151 or WorldMapFrame:GetMapID() == 2200 or WorldMapFrame:GetMapID() == 2239
           
-      ns.KhazAlgar = WorldMapFrame:GetMapID() == 2248 or WorldMapFrame:GetMapID() == 2214 or WorldMapFrame:GetMapID() == 2215 or WorldMapFrame:GetMapID() == 2255
+      ns.KhazAlgar = WorldMapFrame:GetMapID() == 2248 or WorldMapFrame:GetMapID() == 2214 or WorldMapFrame:GetMapID() == 2215 or WorldMapFrame:GetMapID() == 2255 or WorldMapFrame:GetMapID() == 2213 or WorldMapFrame:GetMapID() == 2216
 
       ns.ZoneIDs = WorldMapFrame:GetMapID() == 750 or WorldMapFrame:GetMapID() == 652 or WorldMapFrame:GetMapID() == 2266
 
@@ -364,6 +363,12 @@ do
         alpha = db.MiniMapGeneralAlpha
       end
 
+      -- MiniMap Path icons
+      if not ns.CapitalIDs and ns.pathIcons and (value.showOnMinimap == true) or ns.ZoneIDs and not value.showInZone then
+        scale = db.MiniMapPathsScale
+        alpha = db.MiniMapPathsAlpha
+      end
+
       -- Profession icons in Capitals
       if ns.professionIcons and ns.CapitalIDs and (value.showOnMinimap == false) then
         scale = db.CapitalsProfessionsScale
@@ -402,6 +407,8 @@ do
 
       ns.SyncWithMinimapScaleAlpha() -- sync Capitals with Capitals - Minimap and/or Zones with Minimap Alpha/Scale
 
+      ns.ChangeToClassicImages() -- function to change the icon style from new images to old images
+
       -- Instance icons World
       if ns.instanceIcons and (not value.showOnMinimap == true) then
         scale = db.ZoneInstanceScale
@@ -418,6 +425,12 @@ do
       if not ns.CapitalIDs and ns.generalIcons and (value.showOnMinimap == false) then
         scale = db.ZonesGeneralScale
         alpha = db.ZonesGeneralAlpha
+      end
+
+      -- Zones Path (Innkeeper/Exit/Passage) icons
+      if not ns.CapitalIDs and ns.pathIcons and (value.showOnMinimap == false) then
+        scale = db.ZonesPathsScale
+        alpha = db.ZonesPathsAlpha
       end
 
       -- Capitals General (Innkeeper/Exit/Passage) icons
@@ -899,6 +912,9 @@ function Addon:PopulateTable()
    
   ns.LoadGeneralZoneLocationinfo(self) -- load nodes\Retail\RetailGeneralZoneNodes.lua
   ns.LoadGeneralMiniMapLocationinfo(self) -- load nodes\Retail\RetailGeneralMiniMapNodes.lua
+
+  ns.LoadPathsZoneLocationinfo(self) -- load nodes\Retail\RetailPathsZoneNodes.lua
+  ns.LoadPathsMiniMapLocationinfo(self) -- load nodes\Retail\RetailPathsMiniMapNodes.lua
 
   ns.LoadInsideDungeonNodesLocationInfo(self) -- load nodes\Retail\RetailInsideDungeonNodesLocation.lua
 
