@@ -1,5 +1,5 @@
 # MapNote
-## [2.0.5](https://github.com/Ssesmar/MapNote) (2024-07-09)
+## [2.0.5](https://github.com/Ssesmar/MapNote) (2024-07-10)
 - Note:
 
 -- MapNotes now works on every version of World of Warcraft. Classic Era / Cataclysm / Retail / PTR
@@ -10,7 +10,10 @@ PTR:
 
 
 Retail:
+added a new option to Change Portal icon Style to the Old Version from MapNotes
 added PvP & PvE Vendor icons on the Continent Tab
+
+moved the Path icons from the General tab to the new tab called Oriantation
 
 added on Zone & Minimap Tab new icons for:
 • Paths
@@ -49,17 +52,19 @@ The Capital Minimap area was divided into the following 5 sub-tabs
 Each of these submenus now has its own scaling and visibility slider
 
 the Zone and Minimap tabs have been moved together to the Zones+ tab
-The Zone area was divided into the following 4 sub-tabs
+The Zone area was divided into the following 5 sub-tabs
 • Continent maps
 • Instance icons
 • Transportation icons
 • General icons
+• Oriantation
 Each of these submenus now has its own scaling and visibility slider
-The Minimap area was divided into the following 4 sub-tabs
+The Minimap area was divided into the following 5 sub-tabs
 • Continent maps
 • Instance icons
 • Transportation icons
 • General icons
+• Oriantation
 Each of these submenus now has its own scaling and visibility slider
 
 

@@ -223,10 +223,10 @@ if not db.activate.HideMapNote then
                     end
 
                     if self.db.profile.showCapitalsStablemaster then
-                        nodes[85][40808060] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterH", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                        nodes[85][32606480] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterH", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                        nodes[85][39604840] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterH", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                        nodes[85][62403560] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                        nodes[85][40808060] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                        nodes[85][32606480] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                        nodes[85][39604840] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                        nodes[85][62403560] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     end
 
                 end
@@ -343,7 +343,7 @@ if not db.activate.HideMapNote then
                     end
 
                     if self.db.profile.showCapitalsStablemaster then
-                        nodes[88][45006000] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                        nodes[88][45006000] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     end
 
                 end
@@ -470,7 +470,7 @@ if not db.activate.HideMapNote then
                     end
 
                     if self.db.profile.showCapitalsStablemaster then
-                        nodes[110][83403040] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                        nodes[110][83403040] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     end
 
                 end
@@ -611,7 +611,7 @@ if not db.activate.HideMapNote then
                     end
 
                     if self.db.profile.showCapitalsStablemaster then
-                        nodes[90][67603800] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                        nodes[90][67603800] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     end
 
                 end
@@ -747,7 +747,7 @@ if not db.activate.HideMapNote then
                     end
 
                     if self.db.profile.showCapitalsStablemaster then
-                        nodes[624][77605900] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                        nodes[624][77605900] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     end
 
                 end
@@ -931,7 +931,7 @@ if not db.activate.HideMapNote then
                     end
 
                     if self.db.profile.showCapitalsStablemaster then
-                        nodes[1165][45803620] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                        nodes[1165][45803620] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     end
 
                 end
@@ -1213,8 +1213,8 @@ if not db.activate.HideMapNote then
                     end
 
                     if self.db.profile.showCapitalsStablemaster then
-                        nodes[84][77806720] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterA", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                        nodes[84][67003760] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                        nodes[84][77806720] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                        nodes[84][67003760] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     end
 
                 end
@@ -1342,7 +1342,7 @@ if not db.activate.HideMapNote then
                     end
 
                     if self.db.profile.showCapitalsStablemaster then
-                        nodes[87][69008460] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                        nodes[87][69008460] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     end
 
                 end
@@ -1402,7 +1402,7 @@ if not db.activate.HideMapNote then
                     end
 
                     if self.db.profile.showCapitalsStablemaster then
-                        nodes[89][43602940] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                        nodes[89][43602940] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     end
 
                 end
@@ -1518,7 +1518,7 @@ if not db.activate.HideMapNote then
                     end
 
                     if self.db.profile.showCapitalsStablemaster then
-                        nodes[103][59402440] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                        nodes[103][59402440] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     end
 
                 end
@@ -1656,7 +1656,7 @@ if not db.activate.HideMapNote then
                     end
 
                     if self.db.profile.showCapitalsStablemaster then
-                        nodes[622][34006420] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                        nodes[622][34006420] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     end
 
                 end
@@ -1805,7 +1805,7 @@ if not db.activate.HideMapNote then
                     end
 
                     if self.db.profile.showCapitalsStablemaster then
-                        nodes[1161][69001300] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                        nodes[1161][69001300] = { dnID = MINIMAP_TRACKING_STABLEMASTER, name = "", type = "StablemasterN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     end
 
                 end
@@ -2828,6 +2828,110 @@ if not db.activate.HideMapNote then
         end
 
     --################
+    --### Darkmoon ###
+    --################
+        if self.db.profile.showCapitalsDarkmoon then
+
+        --General Darkmoon
+            if self.db.profile.activate.CapitalsGeneral then
+    
+                if self.db.profile.showCapitalsPvEVendor then
+                    nodes[407][48246955] = { dnID = TRANSMOG_SET_PVE .. " " .. MERCHANT, name = "", TransportName = ACCESSIBILITY_MOUNT_LABEL .. "\n" .. PERKS_VENDOR_CATEGORY_PET,  type = "PvEVendor", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[407][51447510] = { dnID = TRANSMOG_SET_PVE .. " " .. MERCHANT, name = "", TransportName = PERKS_VENDOR_CATEGORY_TRANSMOG_SET,  type = "PvEVendor", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[407][48096567] = { dnID = TRANSMOG_SET_PVE .. " " .. MERCHANT, name = "", TransportName = HEIRLOOMS .. "\n" ..  BAG_FILTER_EQUIPMENT .. "\n" .. TOY,  type = "PvEVendor", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                end
+
+            end
+
+        --Transports Darkmoon
+            if self.db.profile.activate.CapitalsTransporting then
+
+                if self.db.profile.showCapitalsPortals then
+
+                    if db.activate.CapitalsEnemyFaction then
+                        nodes[407][51412247] = { name = L["Exit"], type = "Portal", mnID = 7, mnID2 = 37, showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = FACTION_HORDE .. " ==> " .. DUNGEON_FLOOR_NIGHTMARERAID3 .. "\n" .. FACTION_ALLIANCE .. " ==> " .. POSTMASTER_LETTER_ELWYNNFOREST }
+                        nodes[407][50549077] = { name = L["Exit"], type = "Portal", mnID = 7, mnID2 = 37, showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = FACTION_HORDE .. " ==> " .. DUNGEON_FLOOR_NIGHTMARERAID3 .. "\n" .. FACTION_ALLIANCE .. " ==> " .. POSTMASTER_LETTER_ELWYNNFOREST }
+                    end
+                
+                    if self.faction == "Horde" and not db.activate.CapitalsEnemyFaction then
+                        nodes[407][51412247] = { mnID = 7, name = L["Portal"], type = "HPortal", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                        nodes[407][50549077] = { mnID = 7, name = L["Portal"], type = "HPortal", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    end
+
+                    if self.faction == "Alliance" and not db.activate.CapitalsEnemyFaction then
+                        nodes[407][51412247] = { mnID = 37, name = L["Portal"], type = "APortal", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                        nodes[407][50549077] = { mnID = 37, name = L["Portal"], type = "APortal", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    end
+
+                end
+
+            end
+
+        --Professions Darkmoon
+            if self.db.profile.activate.CapitalsProfessions then
+
+                if self.db.profile.showCapitalsAlchemy then
+                    nodes[407][50206940] = { name = L["Alchemy"], type = "Alchemy", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = TUTORIAL_TITLE1 }
+                end
+            
+                if self.db.profile.showCapitalsLeatherworking then
+                    nodes[407][49406080] = { name = L["Leatherworking"], type = "Leatherworking", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = TUTORIAL_TITLE1 }
+                end
+
+                if self.db.profile.showCapitalsEngineer then
+                    nodes[407][49406081] = { name = L["Engineer"], type = "Engineer", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = TUTORIAL_TITLE1 }
+                end
+
+                if self.db.profile.showCapitalsSkinning then
+                    nodes[407][48197805] = { name = L["Skinning"], type = "Skinning", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = TUTORIAL_TITLE1 }
+                end
+
+                if self.db.profile.showCapitalsTailoring then
+                    nodes[407][55805440] = { name = L["Tailoring"], type = "Tailoring", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = TUTORIAL_TITLE1 }
+                end
+
+                if self.db.profile.showCapitalsJewelcrafting then
+                    nodes[407][55007060] = { name = L["Jewelcrafting"], type = "Jewelcrafting", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = TUTORIAL_TITLE1 }
+                end
+
+                if self.db.profile.showCapitalsBlacksmith then
+                    nodes[407][51008180] = { name = L["Blacksmithing"], type = "Blacksmith", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = TUTORIAL_TITLE1 }
+                end
+
+                if self.db.profile.showCapitalsMining then
+                    nodes[407][49446141] = { name = L["Mining"], type = "Mining", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = TUTORIAL_TITLE1 }
+                end
+
+                if self.db.profile.showCapitalsFishing then
+                    nodes[407][52608860] = { name = PROFESSIONS_FISHING, type = "Fishing", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                    nodes[407][52606800] = { name = PROFESSIONS_FISHING, type = "Fishing", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = TUTORIAL_TITLE1 }
+                end
+
+                if self.db.profile.showCapitalsCooking then
+                    nodes[407][52606800] = { name = PROFESSIONS_COOKING, type = "Cooking", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = TUTORIAL_TITLE1 }
+                end
+
+                if self.db.profile.showCapitalsHerbalism then
+                    nodes[407][55017052] = { name = L["Herbalism"], type = "Herbalism", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = TUTORIAL_TITLE1 }
+                end
+
+                if self.db.profile.showCapitalsInscription then
+                    nodes[407][53007580] = { name = INSCRIPTION, type = "Inscription", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = TUTORIAL_TITLE1 }
+                end
+
+                if self.db.profile.showCapitalsEnchanting then
+                    nodes[407][53007580] = { name = L["Enchanting"], type = "Enchanting", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = TUTORIAL_TITLE1 }
+                end
+
+                if self.db.profile.showCapitalsArchaeology then
+                    nodes[407][51836072] = { name = PROFESSIONS_ARCHAEOLOGY, type = "Archaeology", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = TUTORIAL_TITLE1 }
+                end
+
+            end
+
+        end
+
+    --################
     --### Dornogal ###
     --################
         if self.db.profile.showCapitalsDornogal then
@@ -2846,7 +2950,8 @@ if not db.activate.HideMapNote then
 
                 if self.db.profile.showCapitalsPaths then
                     nodes[2339][81782819] = { dnID = L["Exit"], name = "", mnID = 2248, type = "PathR", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Passage/Exit 
-                    nodes[2339][68588953] = { dnID = L["Exit"], name = "", mnID = 2248, type = "PathRU", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Passage/Exit 
+                    nodes[2339][68588953] = { dnID = L["Exit"], name = "", mnID = 2248, type = "PathRU", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Passage/Exit
+                    nodes[2339][35875875] = { dnID = L["Passage"], name = "", mnID = 2214, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Passage/Exit
                 end
     
                 if self.db.profile.showCapitalsInnkeeper then
@@ -2996,112 +3101,6 @@ if not db.activate.HideMapNote then
             end
 
         end
-
-
-    --################
-    --### Darkmoon ###
-    --################
-        if self.db.profile.showCapitalsDarkmoon then
-
-        --General Darkmoon
-            if self.db.profile.activate.CapitalsGeneral then
-    
-                if self.db.profile.showCapitalsPvEVendor then
-                    nodes[407][48246955] = { dnID = TRANSMOG_SET_PVE .. " " .. MERCHANT, name = "", TransportName = ACCESSIBILITY_MOUNT_LABEL .. "\n" .. PERKS_VENDOR_CATEGORY_PET,  type = "PvEVendor", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                    nodes[407][51447510] = { dnID = TRANSMOG_SET_PVE .. " " .. MERCHANT, name = "", TransportName = PERKS_VENDOR_CATEGORY_TRANSMOG_SET,  type = "PvEVendor", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                    nodes[407][48096567] = { dnID = TRANSMOG_SET_PVE .. " " .. MERCHANT, name = "", TransportName = HEIRLOOMS .. "\n" ..  BAG_FILTER_EQUIPMENT .. "\n" .. TOY,  type = "PvEVendor", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                end
-
-            end
-
-        --Transports Darkmoon
-            if self.db.profile.activate.CapitalsTransporting then
-
-                if self.db.profile.showCapitalsPortals then
-
-                    if db.activate.CapitalsEnemyFaction then
-                        nodes[407][51412247] = { name = L["Exit"], type = "Portal", mnID = 7, mnID2 = 37, showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = FACTION_HORDE .. " ==> " .. DUNGEON_FLOOR_NIGHTMARERAID3 .. "\n" .. FACTION_ALLIANCE .. " ==> " .. POSTMASTER_LETTER_ELWYNNFOREST }
-                        nodes[407][50549077] = { name = L["Exit"], type = "Portal", mnID = 7, mnID2 = 37, showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = FACTION_HORDE .. " ==> " .. DUNGEON_FLOOR_NIGHTMARERAID3 .. "\n" .. FACTION_ALLIANCE .. " ==> " .. POSTMASTER_LETTER_ELWYNNFOREST }
-                    end
-                
-                    if self.faction == "Horde" and not db.activate.CapitalsEnemyFaction then
-                        nodes[407][51412247] = { mnID = 7, name = L["Portal"], type = "HPortal", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                        nodes[407][50549077] = { mnID = 7, name = L["Portal"], type = "HPortal", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                    end
-
-                    if self.faction == "Alliance" and not db.activate.CapitalsEnemyFaction then
-                        nodes[407][51412247] = { mnID = 37, name = L["Portal"], type = "APortal", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                        nodes[407][50549077] = { mnID = 37, name = L["Portal"], type = "APortal", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                    end
-
-                end
-
-            end
-
-        --Professions Darkmoon
-            if self.db.profile.activate.CapitalsProfessions then
-
-                if self.db.profile.showCapitalsAlchemy then
-                    nodes[407][50206940] = { name = L["Alchemy"], type = "Alchemy", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = TUTORIAL_TITLE1 }
-                end
-            
-                if self.db.profile.showCapitalsLeatherworking then
-                    nodes[407][49406080] = { name = L["Leatherworking"], type = "Leatherworking", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = TUTORIAL_TITLE1 }
-                end
-
-                if self.db.profile.showCapitalsEngineer then
-                    nodes[407][49406081] = { name = L["Engineer"], type = "Engineer", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = TUTORIAL_TITLE1 }
-                end
-
-                if self.db.profile.showCapitalsSkinning then
-                    nodes[407][48197805] = { name = L["Skinning"], type = "Skinning", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = TUTORIAL_TITLE1 }
-                end
-
-                if self.db.profile.showCapitalsTailoring then
-                    nodes[407][55805440] = { name = L["Tailoring"], type = "Tailoring", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = TUTORIAL_TITLE1 }
-                end
-
-                if self.db.profile.showCapitalsJewelcrafting then
-                    nodes[407][55007060] = { name = L["Jewelcrafting"], type = "Jewelcrafting", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = TUTORIAL_TITLE1 }
-                end
-
-                if self.db.profile.showCapitalsBlacksmith then
-                    nodes[407][51008180] = { name = L["Blacksmithing"], type = "Blacksmith", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = TUTORIAL_TITLE1 }
-                end
-
-                if self.db.profile.showCapitalsMining then
-                    nodes[407][49446141] = { name = L["Mining"], type = "Mining", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = TUTORIAL_TITLE1 }
-                end
-
-                if self.db.profile.showCapitalsFishing then
-                    nodes[407][52608860] = { name = PROFESSIONS_FISHING, type = "Fishing", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
-                    nodes[407][52606800] = { name = PROFESSIONS_FISHING, type = "Fishing", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = TUTORIAL_TITLE1 }
-                end
-
-                if self.db.profile.showCapitalsCooking then
-                    nodes[407][52606800] = { name = PROFESSIONS_COOKING, type = "Cooking", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = TUTORIAL_TITLE1 }
-                end
-
-                if self.db.profile.showCapitalsHerbalism then
-                    nodes[407][55017052] = { name = L["Herbalism"], type = "Herbalism", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = TUTORIAL_TITLE1 }
-                end
-
-                if self.db.profile.showCapitalsInscription then
-                    nodes[407][53007580] = { name = INSCRIPTION, type = "Inscription", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = TUTORIAL_TITLE1 }
-                end
-
-                if self.db.profile.showCapitalsEnchanting then
-                    nodes[407][53007580] = { name = L["Enchanting"], type = "Enchanting", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = TUTORIAL_TITLE1 }
-                end
-
-                if self.db.profile.showCapitalsArchaeology then
-                    nodes[407][51836072] = { name = PROFESSIONS_ARCHAEOLOGY, type = "Archaeology", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = TUTORIAL_TITLE1 }
-                end
-
-            end
-
-        end
-
 
     end
 end

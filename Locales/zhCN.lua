@@ -3,6 +3,9 @@ local L = LibStub("AceLocale-3.0"):NewLocale(ADDON_NAME, "zhCN")
 if not L then return end
 
 L["Number"] = "数字"
+L["Orientation"] = "方向"
+L["Old icon style"] = "旧符号样式"
+L["Changes the appearance of the icons. When activated, the listed icons will be changed with the previous style of these icons"] = "更改图标的外观。激活后，列出的图标将更改为这些图标之前的样式"
 --0 Restore
 L["canceled"] = "取消"
 L["Delete this icon"] = "删除此图标"

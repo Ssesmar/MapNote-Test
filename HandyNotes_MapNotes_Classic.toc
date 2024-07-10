@@ -1,4 +1,4 @@
-## Interface: 11502
+## Interface: 11503
 ## Version: 2.0.5
 ## Title: HandyNotes: |cffff0000Map|r|cff00ccffNotes|r
 ## Notes: Displays instance entrances, ships and zeppelin icons

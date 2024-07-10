@@ -3,6 +3,9 @@ local L = LibStub("AceLocale-3.0"):NewLocale(ADDON_NAME, "itIT")
 if not L then return end
 
 L["Number"] = "Numero"
+L["Orientation"] = "Orientamento"
+L["Old icon style"] = "vecchio stile simbolo"
+L["Changes the appearance of the icons. When activated, the listed icons will be changed with the previous style of these icons"] = "Cambia l'aspetto delle icone. Una volta attivate, le icone elencate verranno modificate con lo stile precedente di queste icone"
 --0 Restore
 L["canceled"] = "annullata"
 L["Delete this icon"] = "Elimina questa icona"

@@ -3,6 +3,9 @@ local L = LibStub("AceLocale-3.0"):NewLocale(ADDON_NAME, "enUS", true)
 
 
 L["Number"] = true
+L["Orientation"] = true
+L["Old icon style"] = true
+L["Changes the appearance of the icons. When activated, the listed icons will be changed with the previous style of these icons"] = true
 --0 Restore
 L["canceled"] = true
 L["Delete this icon"] = true

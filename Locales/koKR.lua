@@ -3,6 +3,9 @@ local L = LibStub("AceLocale-3.0"):NewLocale(ADDON_NAME, "koKR")
 if not L then return end
 
 L["Number"] = "숫자"
+L["Orientation"] = "정위"
+L["Old icon style"] = "오래된 기호 스타일"
+L["Changes the appearance of the icons. When activated, the listed icons will be changed with the previous style of these icons"] = "아이콘의 모양을 변경합니다. 활성화되면 나열된 아이콘이 해당 아이콘의 이전 스타일로 변경됩니다"
 --0 Restore
 L["canceled"] = "취소 된"
 L["Delete this icon"] = "이 아이콘을 삭제하십시오"
