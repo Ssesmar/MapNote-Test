@@ -1,5 +1,11 @@
 local ADDON_NAME, ns = ...
 
+local version, build, date, tocversion = GetBuildInfo()
+ns.tocversion = tocversion
+ns.date = date
+ns.build = build
+ns.version = version
+
 local HandyNotes = LibStub("AceAddon-3.0"):GetAddon("HandyNotes", true)
 if not HandyNotes then return end
 
@@ -39,6 +45,7 @@ end
 
 local pluginHandler = { }
 function pluginHandler:OnEnter(uiMapId, coord)
+ns.nodes[uiMapId][coord] = nodes[uiMapId][coord]
   local nodeData = nil
 
   if (minimap[uiMapId] and minimap[uiMapId][coord]) then
@@ -222,6 +229,9 @@ do
 			local allLocked = true
 			local anyLocked = false
 
+      ns.SyncWithMinimapScaleAlpha() -- sync Capitals with Capitals - Minimap and/or Zones with Minimap Alpha/Scale
+      ns.ChangeToClassicImagesRetail() -- function to change the icon style from new images to old images
+
       ns.pathIcons = value.type == "PathO" or value.type == "PathRO" or value.type == "PathLO" or value.type == "PathU" or value.type == "PathLU" or value.type == "PathRU" or value.type == "PathL" or value.type == "PathR"
       
       ns.professionIcons = value.type == "Alchemy" or value.type == "Engineer" or value.type == "Cooking" or value.type == "Fishing" or value.type == "Archaeology" or value.type == "Mining" or value.type == "Jewelcrafting" 
@@ -231,7 +241,7 @@ do
       ns.instanceIcons = value.type == "Dungeon" or value.type == "Raid" or value.type == "PassageDungeon" or value.type == "PassageDungeonRaidMulti" or value.type == "PassageRaid" or value.type == "VInstance"  or value.type == "MultiVInstance" 
                           or value.type == "PassageDungeon" or value.type == "Multiple" or value.type == "LFR" or value.type == "Gray" or value.type == "VKey1"
 
-      ns.transportIcons = value.type == "Portal" or value.type == "HPortal" or value.type == "APortal" or value.type == "HPortalS" or value.type == "APortalS" or value.type == "PassageHPortal" 
+      ns.transportIcons = value.type == "Portal" or value.type == "PortalS" or value.type == "HPortal" or value.type == "APortal" or value.type == "HPortalS" or value.type == "APortalS" or value.type == "PassageHPortal" 
                           or value.type == "PassageAPortal" or value.type == "PassagePortal" or value.type == "Zeppelin" or value.type == "HZeppelin" or value.type == "AZeppelin" or value.type == "Ship" 
                           or value.type == "AShip" or value.type == "HShip" or value.type == "Carriage" or value.type == "TravelL" or value.type == "TravelH" or value.type == "TravelA" or value.type == "Tport2" 
                           or value.type == "OgreWaygate" or value.type == "WayGateGreen" or value.type == "Ghost" or value.type == "DarkMoon" or value.type == "Mirror" or value.type == "TravelM" or value.type == "B11M" 
@@ -243,7 +253,9 @@ do
                         or value.type == "PathU" or value.type == "PathLU" or value.type == "PathRU" or value.type == "PathL" or value.type == "PathR" or value.type == "BlackMarket" or value.type == "Mailbox"
                         or value.type == "StablemasterN" or value.type == "StablemasterH" or value.type == "StablemasterA" or value.type == "HIcon" or value.type == "AIcon" or value.type == "InnkeeperN" 
                         or value.type == "InnkeeperH" or value.type == "InnkeeperA" or value.type == "MailboxN" or value.type == "MailboxH" or value.type == "MailboxA" or value.type == "PvPVendorH" or value.type == "PvPVendorA" 
-                        or value.type == "PvEVendorH" or value.type == "PvEVendorA"
+                        or value.type == "PvEVendorH" or value.type == "PvEVendorA" or value.type == "MMInnkeeperH" or value.type == "MMInnkeeperA" or value.type == "MMStablemasterH" or value.type == "MMStablemasterA"
+                        or value.type == "MMMailboxH" or value.type == "MMMailboxA" or value.type == "MMPvPVendorH" or value.type == "MMPvPVendorA" or value.type == "MMPvEVendorH" or value.type == "MMPvEVendorA" 
+                        or value.type == "ZonePvEVendorH" or value.type == "ZonePvPVendorH" or value.type == "ZonePvEVendorA" or value.type == "ZonePvPVendorA"
 
       ns.AllZoneIDs = ns.KalimdorIDs 
                       or ns.EasternKingdomIDs 
@@ -263,6 +275,14 @@ do
                       or WorldMapFrame:GetMapID() == 628 or WorldMapFrame:GetMapID() == 629 or WorldMapFrame:GetMapID() == 1161 or WorldMapFrame:GetMapID() == 1163 or WorldMapFrame:GetMapID() == 1164 or WorldMapFrame:GetMapID() == 1165 
                       or WorldMapFrame:GetMapID() == 1670 or WorldMapFrame:GetMapID() == 1671 or WorldMapFrame:GetMapID() == 1672 or WorldMapFrame:GetMapID() == 1673 or WorldMapFrame:GetMapID() == 2112 or WorldMapFrame:GetMapID() == 2339
                       or WorldMapFrame:GetMapID() == 499 or WorldMapFrame:GetMapID() == 500 or WorldMapFrame:GetMapID() == 2266
+
+      ns.CapitalMiniMapIDs = C_Map.GetBestMapForUnit("player") == 84 or C_Map.GetBestMapForUnit("player") == 87 or C_Map.GetBestMapForUnit("player") == 89 or C_Map.GetBestMapForUnit("player") == 103 or C_Map.GetBestMapForUnit("player") == 85 or C_Map.GetBestMapForUnit("player") == 90 
+                      or C_Map.GetBestMapForUnit("player") == 86 or C_Map.GetBestMapForUnit("player") == 88 or C_Map.GetBestMapForUnit("player") == 110 or C_Map.GetBestMapForUnit("player") == 111 or C_Map.GetBestMapForUnit("player") == 125 or C_Map.GetBestMapForUnit("player") == 126 
+                      or C_Map.GetBestMapForUnit("player") == 391 or C_Map.GetBestMapForUnit("player") == 392 or C_Map.GetBestMapForUnit("player") == 393 or C_Map.GetBestMapForUnit("player") == 394 or C_Map.GetBestMapForUnit("player") == 407 or C_Map.GetBestMapForUnit("player") == 503 
+                      or C_Map.GetBestMapForUnit("player") == 582 or C_Map.GetBestMapForUnit("player") == 590 or C_Map.GetBestMapForUnit("player") == 622 or C_Map.GetBestMapForUnit("player") == 624 or C_Map.GetBestMapForUnit("player") == 626 or C_Map.GetBestMapForUnit("player") == 627 
+                      or C_Map.GetBestMapForUnit("player") == 628 or C_Map.GetBestMapForUnit("player") == 629 or C_Map.GetBestMapForUnit("player") == 1161 or C_Map.GetBestMapForUnit("player") == 1163 or C_Map.GetBestMapForUnit("player") == 1164 or C_Map.GetBestMapForUnit("player") == 1165 
+                      or C_Map.GetBestMapForUnit("player") == 1670 or C_Map.GetBestMapForUnit("player") == 1671 or C_Map.GetBestMapForUnit("player") == 1672 or C_Map.GetBestMapForUnit("player") == 1673 or C_Map.GetBestMapForUnit("player") == 2112 or C_Map.GetBestMapForUnit("player") == 2339
+                      or C_Map.GetBestMapForUnit("player") == 499 or C_Map.GetBestMapForUnit("player") == 500 or C_Map.GetBestMapForUnit("player") == 2266
 
       ns.KalimdorIDs = WorldMapFrame:GetMapID() == 1 or WorldMapFrame:GetMapID() == 7 or WorldMapFrame:GetMapID() == 10 or WorldMapFrame:GetMapID() == 11 or WorldMapFrame:GetMapID() == 57 or WorldMapFrame:GetMapID() == 62 
                       or WorldMapFrame:GetMapID() == 63 or WorldMapFrame:GetMapID() == 64 or WorldMapFrame:GetMapID() == 65 or WorldMapFrame:GetMapID() == 66 or WorldMapFrame:GetMapID() == 67 or WorldMapFrame:GetMapID() == 68 
@@ -296,7 +316,7 @@ do
           
       ns.BrokenIslesIDs = WorldMapFrame:GetMapID() == 630 or WorldMapFrame:GetMapID() == 634 or WorldMapFrame:GetMapID() == 641 or WorldMapFrame:GetMapID() == 646 or WorldMapFrame:GetMapID() == 650 or WorldMapFrame:GetMapID() == 652
                       or WorldMapFrame:GetMapID() == 750 or WorldMapFrame:GetMapID() == 680 or WorldMapFrame:GetMapID() == 830 or WorldMapFrame:GetMapID() == 882 or WorldMapFrame:GetMapID() == 885 or WorldMapFrame:GetMapID() == 905
-                      or WorldMapFrame:GetMapID() == 941 or WorldMapFrame:GetMapID() == 790
+                      or WorldMapFrame:GetMapID() == 941 or WorldMapFrame:GetMapID() == 790 or WorldMapFrame:GetMapID() == 971
           
       ns.ZandalarIDs = WorldMapFrame:GetMapID() == 862 or WorldMapFrame:GetMapID() == 863 or WorldMapFrame:GetMapID() == 864 or WorldMapFrame:GetMapID() == 1355 or WorldMapFrame:GetMapID() == 1528
           
@@ -308,7 +328,7 @@ do
       ns.DragonIsleIDs = WorldMapFrame:GetMapID() == 2022 or WorldMapFrame:GetMapID() == 2023 or WorldMapFrame:GetMapID() == 2024 or WorldMapFrame:GetMapID() == 2025 or WorldMapFrame:GetMapID() == 2026 or WorldMapFrame:GetMapID() == 2133
                       or WorldMapFrame:GetMapID() == 2151 or WorldMapFrame:GetMapID() == 2200 or WorldMapFrame:GetMapID() == 2239
           
-      ns.KhazAlgar = WorldMapFrame:GetMapID() == 2248 or WorldMapFrame:GetMapID() == 2214 or WorldMapFrame:GetMapID() == 2215 or WorldMapFrame:GetMapID() == 2255 or WorldMapFrame:GetMapID() == 2213 or WorldMapFrame:GetMapID() == 2216
+      ns.KhazAlgar = WorldMapFrame:GetMapID() == 2248 or WorldMapFrame:GetMapID() == 2214 or WorldMapFrame:GetMapID() == 2215 or WorldMapFrame:GetMapID() == 2255 or  WorldMapFrame:GetMapID() == 2256 or WorldMapFrame:GetMapID() == 2213 or WorldMapFrame:GetMapID() == 2216
 
       ns.ZoneIDs = WorldMapFrame:GetMapID() == 750 or WorldMapFrame:GetMapID() == 652 or WorldMapFrame:GetMapID() == 2266
 
@@ -352,25 +372,25 @@ do
       end
 
       -- MiniMap Transport (Zeppeline/Ship/Carriage) icons
-      if not ns.CapitalIDs and ns.transportIcons and (value.showOnMinimap == true) then
+      if not ns.CapitalMiniMapIDs and ns.transportIcons and (value.showOnMinimap == true) then
         scale = db.MiniMapTransportScale
         alpha = db.MiniMapTransportAlpha
       end
 
       -- MiniMap General (Innkeeper/Exit/Passage) icons
-      if not ns.CapitalIDs and ns.generalIcons and (value.showOnMinimap == true) or ns.ZoneIDs and not value.showInZone then
+      if not ns.CapitalMiniMapIDs and ns.generalIcons and (value.showOnMinimap == true) or ns.ZoneIDs and not value.showInZone then
         scale = db.MiniMapGeneralScale
         alpha = db.MiniMapGeneralAlpha
       end
 
       -- MiniMap Path icons
-      if not ns.CapitalIDs and ns.pathIcons and (value.showOnMinimap == true) or ns.ZoneIDs and not value.showInZone then
+      if not ns.CapitalMiniMapIDs and ns.pathIcons and (value.showOnMinimap == true) or ns.ZoneIDs and not value.showInZone then
         scale = db.MiniMapPathsScale
         alpha = db.MiniMapPathsAlpha
       end
 
       -- Profession icons in Capitals
-      if ns.professionIcons and ns.CapitalIDs and (value.showOnMinimap == false) then
+      if ns.professionIcons and ns.CapitalMiniMapIDs and (value.showOnMinimap == false) then
         scale = db.CapitalsProfessionsScale
         alpha = db.CapitalsProfessionsAlpha
       end
@@ -382,32 +402,28 @@ do
       end
 
       -- Profession Minimap icons in Capitals
-      if ns.professionIcons and ns.CapitalIDs and (value.showOnMinimap == true) then
+      if ns.professionIcons and ns.CapitalMiniMapIDs and (value.showOnMinimap == true) then
         scale = db.MinimapCapitalsProfessionsScale
         alpha = db.MinimapCapitalsProfessionsAlpha
       end
 
       -- Capitals Minimap Transport (Zeppeline/Ship/Carriage) icons
-      if ns.CapitalIDs and ns.transportIcons and (value.showOnMinimap == true) then
+      if ns.CapitalMiniMapIDs and ns.transportIcons and (value.showOnMinimap == true) then
         scale = db.MinimapCapitalsTransportScale
         alpha = db.MinimapCapitalsTransportAlpha
       end
 
       -- Capitals Minimap Instance (Dungeon/Raid/Passage/Multi) icons
-      if ns.CapitalIDs and ns.instanceIcons and (value.showOnMinimap == true) then
+      if ns.CapitalMiniMapIDs and ns.instanceIcons and (value.showOnMinimap == true) then
         scale = db.MinimapCapitalsInstanceScale
         alpha = db.MinimapCapitalsInstanceAlpha
       end
 
       -- Capitals Minimap General (Innkeeper/Exit/Passage) icons
-      if ns.CapitalIDs and ns.generalIcons and (value.showOnMinimap == true) then
+      if ns.CapitalMiniMapIDs and ns.generalIcons and (value.showOnMinimap == true) then
         scale = db.MinimapCapitalsGeneralScale
         alpha = db.MinimapCapitalsGeneralAlpha
       end
-
-      ns.SyncWithMinimapScaleAlpha() -- sync Capitals with Capitals - Minimap and/or Zones with Minimap Alpha/Scale
-
-      ns.ChangeToClassicImages() -- function to change the icon style from new images to old images
 
       -- Instance icons World
       if ns.instanceIcons and (not value.showOnMinimap == true) then
@@ -615,6 +631,7 @@ local mnID = nodes[uiMapId][coord].mnID
 local mnID2 = nodes[uiMapId][coord].mnID2
 local mnID3 = nodes[uiMapId][coord].mnID3
 local www = nodes[uiMapId][coord].www
+
 local mapInfo = C_Map.GetMapInfo(uiMapId)
 local CapitalIDs = WorldMapFrame:GetMapID() == 84 or WorldMapFrame:GetMapID() == 87  or WorldMapFrame:GetMapID() == 89 or WorldMapFrame:GetMapID() == 103 or WorldMapFrame:GetMapID() == 85
                 or WorldMapFrame:GetMapID() == 90 or WorldMapFrame:GetMapID() == 86 or WorldMapFrame:GetMapID() == 88 or WorldMapFrame:GetMapID() == 110  or WorldMapFrame:GetMapID() == 111
@@ -802,6 +819,7 @@ local CapitalIDs = WorldMapFrame:GetMapID() == 84 or WorldMapFrame:GetMapID() ==
   end
 end
 
+
 local Addon = CreateFrame("Frame")
 Addon:RegisterEvent("PLAYER_LOGIN")
 Addon:SetScript("OnEvent", function(self, event, ...) return self[event](self, ...)end)
@@ -809,6 +827,64 @@ Addon:SetScript("OnEvent", function(self, event, ...) return self[event](self, .
 local function updateStuff()
   updateextraInformation()
   HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
+end
+
+function Addon:ZONE_CHANGED_NEW_AREA()
+  local mapID = C_Map.GetBestMapForUnit("player")
+  if mapID then
+    if ns.Addon.db.profile.activate.ZoneChanged then
+      print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00" .. " " .. L["Location"] .. ": ", "|cff00ff00" .. "==>  " .. C_Map.GetMapInfo(mapID).name .. "  <==")
+    end
+  end
+end
+
+local subzone = GetSubZoneText()
+function Addon:ZONE_CHANGED_INDOORS()
+    if ns.Addon.db.profile.activate.ZoneChanged and ns.Addon.db.profile.activate.ZoneChangedDetail and not ns.CapitalMiniMapIDs then
+      print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00" .. " " .. L["Location"] .. ": ", "|cff00ff00" .. "==>  " .. "|cff00ff00" .. GetZoneText() .. " " .. "|cff00ccff" .. GetSubZoneText().. "|cff00ff00" .. "  <==")
+    end
+end
+
+function Addon:ZONE_CHANGED()
+  local mapID = C_Map.GetBestMapForUnit("player")
+  if mapID then
+    if ns.Addon.db.profile.activate.ZoneChanged and ns.Addon.db.profile.activate.ZoneChangedDetail and not ns.CapitalMiniMapIDs then
+      print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. "|cffffff00" .. " " .. L["Location"] .. ": ", "|cff00ff00" .. "==>  " .. GetZoneText() .. " " .. "|cff00ccff" .. GetSubZoneText() .. "|cff00ff00" .. "  <==")
+    end
+  end
+end
+
+function Addon:OnProfileChanged(event, database, newProfileKey)
+	db = database.profile
+  ns.Addon:FullUpdate()
+  --ReloadUI();
+  HandyNotes:GetModule("FogOfWarButton"):Refresh()
+  HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
+  print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Profile has been changed"])
+end
+
+function Addon:OnProfileReset(event, database, newProfileKey)
+	db = database.profile
+  ns.Addon:FullUpdate()
+  HandyNotes:GetModule("FogOfWarButton"):Refresh()
+  HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
+  print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Profile has been reset to default"])
+end
+
+function Addon:OnProfileCopied(event, database, newProfileKey)
+	db = database.profile
+  ns.Addon:FullUpdate()
+  HandyNotes:GetModule("FogOfWarButton"):Refresh()
+  HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
+  print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Profile has been adopted"])
+end
+
+function Addon:OnProfileDeleted (event, database, newProfileKey)
+	db = database.profile
+  ns.Addon:FullUpdate()
+  HandyNotes:GetModule("FogOfWarButton"):Refresh()
+  HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
+  print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Profile has been deleted"])
 end
 
 function Addon:PLAYER_ENTERING_WORLD()
@@ -822,21 +898,42 @@ function Addon:PLAYER_ENTERING_WORLD()
     updateStuff()
 end
 
-function Addon:PLAYER_LOGIN()
+function Addon:PLAYER_LOGIN() -- OnInitialize()
   ns.LoadOptions(self)
   ns.Addon = Addon
 
   -- Register Database Profile
   self.db = LibStub("AceDB-3.0"):New("HandyNotes_MapNotesRetailDB", ns.defaults)
+  self.db = LibStub("AceDB-3.0"):New("FogOfWarColorDB", ns.defaults)
+  self.db.RegisterCallback(self, "OnProfileChanged", "OnProfileChanged")
+	self.db.RegisterCallback(self, "OnProfileCopied", "OnProfileCopied")
+	self.db.RegisterCallback(self, "OnProfileReset", "OnProfileReset")
+  self.db.RegisterCallback(self, "OnProfileDeleted", "OnProfileDeleted")
+
   db = self.db.profile
   ns.dbChar = self.db.char
 
   -- Register options 
   HandyNotes:RegisterPluginDB("MapNotes", pluginHandler, ns.options)
-  LibStub("AceConfigRegistry-3.0"):RegisterOptionsTable("MapNotes", ns.options) -- MiniMapButton
+  LibStub("AceConfigRegistry-3.0"):RegisterOptionsTable("MapNotes", ns.options)
+
+  -- Get the option table for profiles
+  ns.options.args.profiles = LibStub("AceDBOptions-3.0"):GetOptionsTable(self.db)
 
   -- Check for any lockout changes when we zone
-  Addon:RegisterEvent("PLAYER_ENTERING_WORLD") 
+  Addon:RegisterEvent("PLAYER_ENTERING_WORLD")
+
+  -- Check if we changed the Zone
+  Addon:RegisterEvent("ZONE_CHANGED_NEW_AREA")
+  Addon:RegisterEvent("ZONE_CHANGED")
+  Addon:RegisterEvent("ZONE_CHANGED_INDOORS")
+
+  -- Check if MapNotes vs Blizzard is true then remove Blizzard Pins
+  if ns.Addon.db.profile.activate.RemoveBlizzPOIs then
+    SetCVar("showDungeonEntrancesOnMap", 0)
+  elseif not ns.Addon.db.profile.activate.RemoveBlizzPOIs then
+      SetCVar("showDungeonEntrancesOnMap", 1)
+  end
 
   if ns.Addon.db.profile.activate.HideMMB then -- minimap button
     MNMMBIcon:Hide("MNMiniMapButton")
@@ -852,7 +949,7 @@ function Addon:PLAYER_LOGIN()
   --remove BlizzPOIs for MapNotes icons function
   function ns.RemoveBlizzPOIs()
     if (not ns.Addon.db.profile.activate.RemoveBlizzPOIs or ns.Addon.db.profile.activate.HideMapNote) then return end
-    
+
     for pin in WorldMapFrame:EnumeratePinsByTemplate("AreaPOIPinTemplate") do
       for _, poiID in pairs(ns.BlizzAreaPoisInfo) do
         local poi = C_AreaPoiInfo.GetAreaPOIInfo(WorldMapFrame:GetMapID(), pin.areaPoiID)
@@ -862,17 +959,14 @@ function Addon:PLAYER_LOGIN()
       end
     end
   end
-    
-  hooksecurefunc(WorldMapFrame, "OnMapChanged", function()
+
+  hooksecurefunc(WorldMapFrame,"OnMapChanged", function()
     ns.RemoveBlizzPOIs()
   end)
-  
-  hooksecurefunc(WorldMapFrame, "IsShown", function()
-    ns.RemoveBlizzPOIs()
-  end)  
-    
+
   WorldMapFrame:HookScript("OnShow", function()
     ns.RemoveBlizzPOIs()
+    HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
   end)
 
 end

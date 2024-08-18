@@ -4,15 +4,19 @@ ns.defaults = {
 
   profile = {
 
-    --FogOfWar
+    --FogOfWarr
       colorR = 1,
       colorG = 1,
       colorB = 1,
       colorA = 1,
-      colorR_Reduce = 0.50,
-      colorG_Reduce = 0.50,
-      colorB_Reduce = 0.50,
-      colorA_Reduce = 0.50,
+      FogOfWarColorR = 1,
+      FogOfWarColorG = 0,
+      FogOfWarColorB = 0,
+      FogOfWarColorA = 1,
+      colorR_Reduce = 0.65,
+      colorG_Reduce = 0.65,
+      colorB_Reduce = 0.65,
+      colorA_Reduce = 0.65,
 
     --0 General tab
       journal = true,
@@ -27,7 +31,15 @@ ns.defaults = {
       RestoreDungeonDeletedIcons = false,
       RestoreCapitalsDeletedIcons = false,
 
-    --2 MiniMap tab
+    -- 2.0 MiniMap Classic
+      minimapScale = 1,
+      minimapAlpha = 1,
+      zoneScale = 1,
+      zoneAlpha = 1,
+      instanceScale = 1,
+      instanceAlpha = 1,
+
+    --2.1 MiniMap tab
     -- MiniMap Continent
       showMiniMapKalimdor = true,
       showMiniMapEasternKingdom = true,
@@ -51,7 +63,7 @@ ns.defaults = {
       showMiniMapOldVanilla = true,
       showMiniMapLFR = true,
     -- MiniMap Transport
-      MiniMapTransportScale = 1,
+      MiniMapTransportScale = 1.5,
       MiniMapTransportAlpha = 1,
       showMiniMapPortals = true,
       showMiniMapZeppelins = true,
@@ -62,7 +74,7 @@ ns.defaults = {
       showMiniMapToyTransport = true,
       showMiniMapTravel = true,
     -- MiniMap General
-      MiniMapGeneralScale = 1,
+      MiniMapGeneralScale = 1.5,
       MiniMapGeneralAlpha = 1,
       showMiniMapFP = true, -- Classic+
       showMiniMapGhost = true, -- Classic+
@@ -75,8 +87,9 @@ ns.defaults = {
       showMiniMapPvEVendor = true,
       showMiniMapTransmogger = true,
       showMiniMapStablemaster = true,
+      showMiniMapItemUpgrade = true,
     -- MiniMap Paths
-      MiniMapPathsScale = 1,
+      MiniMapPathsScale = 1.5,
       MiniMapPathsAlpha = 1,
       showMiniMapPaths = true,
       
@@ -104,8 +117,8 @@ ns.defaults = {
       showZoneOldVanilla = true,
       showZoneLFR = true,
     -- Zone Transport
-      zoneTransportScale = 1,
-      zoneTransportAlpha = 1,
+      ZoneTransportScale = 1.5,
+      ZoneTransportAlpha = 1,
       showZonePortals = true,
       showZoneZeppelins = true,
       showZoneShips = true,
@@ -115,7 +128,7 @@ ns.defaults = {
       showZoneToyTransport = true,
       showZoneTravel = true,
     -- Zone General
-      ZonesGeneralScale = 1,
+      ZonesGeneralScale = 1.5,
       ZonesGeneralAlpha = 1,
       showZoneFP = true, -- Classic+
       showZoneGhost = true, -- Classic+
@@ -128,13 +141,14 @@ ns.defaults = {
       showZonePvEVendor = true,
       showZoneTransmogger = true,
       showZoneStablemaster = true,
+      showZoneItemUpgrade = true,
     -- Zone Path
-      ZonesPathsScale = 1,
+      ZonesPathsScale = 1.5,
       ZonesPathsAlpha = 1,
       showZonePaths = true,
       
     --3 Continent map tab
-      continentScale = 1,
+      continentScale = 1.5,
       continentAlpha = 1,
       showContinentRaids = true,
       showContinentDungeons = true,
@@ -162,7 +176,7 @@ ns.defaults = {
       showContinentKhazAlgar = true,
 
       --4 Azeroth map tab
-      azerothScale = 1,
+      azerothScale = 1.5,
       azerothAlpha = 1,
       showAzerothRaids = true,
       showAzerothDungeons = true,
@@ -186,7 +200,7 @@ ns.defaults = {
       showAzerothKhazAlgar = true,
 
     --5 Cosmos map tab
-      cosmosScale = 1,
+      cosmosScale = 1.5,
       cosmosAlpha = 1,
       showCosmosKalimdor = true,
       showCosmosEasternKingdom = true,
@@ -202,7 +216,7 @@ ns.defaults = {
       showCosmosKhazAlgar = true,
 
     --6 Inside Dungeon Map tab
-      dungeonScale = 1,
+      dungeonScale = 2,
       dungeonAlpha = 1,
       showDungeonExit = true,
       showDungeonPassage = true,
@@ -378,12 +392,20 @@ ns.defaults = {
         EnemyFaction = true,
         ShiftWorld = false,
         ClassicIcons = false,
-        ClassicImages = false,
+        ClassicPortals = true,
+        ClassicShips = true,
+        ClassicZeppelin = true,
+        ClassicBank = true,
+        ClassicProfession = false,
+        ClassicClassicProfession = false,
         RemoveBlizzPOIs = true,
         FogOfWar = true,
-        FogOfWarAlphaReduce = true,
+        MistOfTheUnexplored = true,
+        FogOfWarAlphaReduce = false,
         SyncZoneAndMinimap = false,
         SyncCapitalsAndMinimap = false,
+        ZoneChanged = true,
+        ZoneChangedDetail = false,
       --MiniMap
         MiniMapEnemyFaction = true,
         MiniMapInstances = true,
@@ -445,4 +467,3 @@ ns.defaults = {
     },
   },
 }
-

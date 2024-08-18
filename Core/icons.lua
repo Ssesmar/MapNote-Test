@@ -15,7 +15,9 @@ ns.icons = {
 ["InnkeeperA"] = iconLink .. "InnkeeperA",
 ["InnkeeperH"] = iconLink .. "InnkeeperH",
 ["Auctioneer"] = iconLink .. "Auctioneer",
-["Bank"] = "interface/minimap/tracking/banker.blp",
+["Bank"] = "interface/worldmap/treasurechest_64.blp",
+["BankOld"] = "interface/minimap/tracking/banker.blp",
+["BankNew"] = "interface/worldmap/treasurechest_64.blp",
 ["Barber"] = "interface/minimap/tracking/barbershop.blp",
 ["Transmogger"] = "interface/minimap/tracking/transmogrifier.blp",
 ["PvPVendor"] = iconLink .. "PvPVendor",
@@ -24,7 +26,7 @@ ns.icons = {
 ["PvEVendor"] = iconLink .. "PvEVendor",
 ["PvEVendorH"] = iconLink .. "PvEVendorH",
 ["PvEVendorA"] = iconLink .. "PvEVendorA",
-["ItemUpgrade"] = "interface/minimap/tracking/upgradeitem-32x32.blp",
+["ItemUpgrade"] = iconLink .. "ItemUpgrade",
 ["DragonFlyTransmog"] = iconLink .. "DragonFlyTransmog",
 ["Catalyst"] = iconLink .. "Catalyst",
 ["BlackMarket"] = iconLink .. "BlackMarket",
@@ -35,7 +37,33 @@ ns.icons = {
 ["StablemasterN"] = iconLink .. "StablemasterN",
 ["StablemasterH"] = iconLink .. "StablemasterH",
 ["StablemasterA"] = iconLink .. "StablemasterA",
---Professions
+-- Icons if enemy faction is disabled for General zone icons
+["OriginalInnkeeperA"] = iconLink .. "InnkeeperA",
+["OriginalInnkeeperH"] = iconLink .. "InnkeeperH",
+["OriginalStablemasterH"] = iconLink .. "StablemasterH",
+["OriginalStablemasterA"] = iconLink .. "StablemasterA",
+["OriginalMailboxH"] = iconLink .. "MailboxH",
+["OriginalMailboxA"] = iconLink .. "MailboxA",
+["OriginalPvPVendorH"] = iconLink .. "PvPVendorH",
+["OriginalPvPVendorA"] = iconLink .. "PvPVendorA",
+["OriginalPvEVendorH"] = iconLink .. "PvEVendorH",
+["OriginalPvEVendorA"] = iconLink .. "PvEVendorA",
+-- Icons if enemy faction is disabled for General zone icons
+["MMInnkeeperA"] = iconLink .. "InnkeeperA",
+["MMInnkeeperH"] = iconLink .. "InnkeeperH",
+["MMStablemasterH"] = iconLink .. "StablemasterH",
+["MMStablemasterA"] = iconLink .. "StablemasterA",
+["MMMailboxH"] = iconLink .. "MailboxH",
+["MMMailboxA"] = iconLink .. "MailboxA",
+["MMPvPVendorH"] = iconLink .. "PvPVendorH",
+["MMPvPVendorA"] = iconLink .. "PvPVendorA",
+["MMPvEVendorH"] = iconLink .. "PvEVendorH",
+["MMPvEVendorA"] = iconLink .. "PvEVendorA",
+["ZonePvEVendorH"] = iconLink .. "PvEVendorH",
+["ZonePvPVendorH"] = iconLink .. "PvPVendorH",
+["ZonePvEVendorA"] = iconLink .. "PvEVendorA",
+["ZonePvPVendorA"] = iconLink .. "PvPVendorA",
+--Professions MN New
 ["ProfessionOrders"] = "interface/minimap/tracking/profession.blp",
 ["Engineer"] = iconLink .. "Engineering",
 ["Alchemy"] = iconLink .. "Alchemy",
@@ -51,6 +79,53 @@ ns.icons = {
 ["Archaeology"] = "interface/archeology/arch-icon-marker.blp",
 ["Fishing"] = iconLink .. "Fishing",
 ["Cooking"] = iconLink .. "Cooking",
+["FirstAid"] ="interface/icons/spell_holy_sealofsacrifice.blp",
+--Professions Original
+["OriginalEngineer"] = "interface/icons/ui_profession_engineering.blp",
+["OriginalAlchemy"] = "interface/icons/ui_profession_alchemy.blp",
+["OriginalBlacksmith"] = "interface/icons/ui_profession_blacksmithing.blp",
+["OriginalSkinning"] = "interface/icons/ui_profession_skinning.blp",
+["OriginalEnchanting"] = "interface/icons/ui_profession_enchanting.blp",
+["OriginalTailoring"] = "interface/icons/ui_profession_tailoring.blp",
+["OriginalJewelcrafting"] = "interface/icons/ui_profession_jewelcrafting.blp",
+["OriginalLeatherworking"] = "interface/icons/ui_profession_leatherworking.blp",
+["OriginalHerbalism"] = "interface/icons/ui_profession_herbalism.blp",
+["OriginalMining"] = "interface/icons/ui_profession_mining.blp",
+["OriginalInscription"] = "interface/icons/ui_profession_inscription.blp",
+["OriginalArchaeology"] = "interface/archeology/arch-icon-marker.blp",
+["OriginalFishing"] = "interface/icons/ui_profession_fishing.blp",
+["OriginalCooking"] = "interface/icons/ui_profession_cooking.blp",
+--Professions Classic Original
+["ClassicOriginalEngineer"] = "interface/icons/trade_engineering.blp",
+["ClassicOriginalAlchemy"] = "interface/icons/trade_alchemy.blp",
+["ClassicOriginalBlacksmith"] = "interface/icons/trade_blacksmithing.blp",
+["ClassicOriginalSkinning"] = "interface/icons/inv_misc_pelt_wolf_01.blp",
+["ClassicOriginalEnchanting"] = "interface/icons/trade_engraving.blp",
+["ClassicOriginalTailoring"] = "interface/icons/trade_tailoring.blp",
+["ClassicOriginalJewelcrafting"] = "interface/icons/inv_misc_gem_02.blp",
+["ClassicOriginalLeatherworking"] = "interface/icons/trade_leatherworking.blp",
+["ClassicOriginalHerbalism"] = "interface/icons/trade_herbalism.blp",
+["ClassicOriginalMining"] = "interface/icons/trade_mining.blp",
+["ClassicOriginalInscription"] = "interface/icons/inv_inscription_tradeskill01.blp",
+["ClassicOriginalArchaeology"] = "interface/archeology/arch-icon-marker.blp",
+["ClassicOriginalFishing"] = "interface/icons/trade_fishing.blp",
+["ClassicOriginalCooking"] = "interface/icons/inv_misc_food_15.blp",
+--Professions New
+["ProfessionOrdersNew"] = "interface/minimap/tracking/profession.blp",
+["EngineerNew"] = iconLink .. "Engineering",
+["AlchemyNew"] = iconLink .. "Alchemy",
+["BlacksmithNew"] = iconLink .. "Blacksmithing",
+["SkinningNew"] = iconLink .. "Skinning",
+["EnchantingNew"] = iconLink .. "Enchanting",
+["TailoringNew"] = iconLink .. "Tailoring",
+["JewelcraftingNew"] = iconLink .. "Jewelcrafting",
+["LeatherworkingNew"] = iconLink .. "Leatherworking",
+["HerbalismNew"] = iconLink .. "Herbalism",
+["MiningNew"] = iconLink .. "Mining",
+["InscriptionNew"] = iconLink .. "Inscription",
+["ArchaeologyNew"] = "interface/archeology/arch-icon-marker.blp",
+["FishingNew"] = iconLink .. "Fishing",
+["CookingNew"] = iconLink .. "Cooking",
 --expansion 
 ["LKalimdor"] = "interface/characterframe/temporaryportrait-male-orc.blp",
 ["LEK"] = "Interface/CharacterFrame/TemporaryPortrait-Female-Human",
@@ -61,6 +136,7 @@ ns.icons = {
 ["LLG"] = "Interface/Icons/artifactability_HavocDemonHunter_AnguishoftheDeceiver",
 ["LMOP"] = "Interface/CharacterFrame/TEMPORARYPORTRAIT-FEMALE-PANDAREN",
 ["LWotlk"] = "interface/lfgframe/ui-lfr-portrait",
+["TWW"] = "interface/icons/inv_achievement_raid_progenitorraid_anduin.blp",
 --paths
 ["PathO"] = iconLink .. "PathO",
 ["PathRO"] = iconLink .. "PathRO",
@@ -82,10 +158,17 @@ ns.icons = {
 ["MultipleR"] = iconLink .. "multipleR",
 ["Gray"] = iconLink .. "gray",
 --zeppelin
-["Zeppelin"] = iconLink .. "zeppelin",
-["HZeppelin"] = iconLink .. "zeppelinH",
+["Zeppelin"] = iconLink .. "portal",
+["HZeppelin"] = iconLink .. "hportal",
+--zeppelin Old
+["ZeppelinOld"] = iconLink .. "zeppelin",
+["HZeppelinOld"] = iconLink .. "zeppelinH",
+--zeppelin restore
+["ZeppelinNew"] = iconLink .. "portal",
+["HZeppelinNew"] = iconLink .. "hportal",
 --portal
 ["Portal"] = iconLink .. "portal",
+["PortalS"] = iconLink .. "portalS",
 ["HPortal"] = iconLink .. "hportal",
 ["HPortalS"] = iconLink .. "hportalS",
 ["APortal"] = iconLink .. "aportal",
@@ -95,6 +178,7 @@ ns.icons = {
 ["PassageAPortal"] = iconLink .. "passageAPortal",
 --portal Old
 ["PortalOld"] = iconLink .. "portalOld",
+["PortalSOld"] = iconLink .. "portalSOld",
 ["HPortalOld"] = iconLink .. "hportalOld",
 ["HPortalSOld"] = iconLink .. "hportalSOld",
 ["APortalOld"] = iconLink .. "aportalOld",
@@ -104,6 +188,7 @@ ns.icons = {
 ["PassageAPortalOld"] = iconLink .. "passageAPortalOld",
 --portal restore nodes
 ["PortalNew"] = iconLink .. "portal", -- nodes for Classic Icon Style function to get new the new icons back
+["PortalSNew"] = iconLink .. "portalS", -- nodes for Classic Icon Style function to get new the new icons back
 ["HPortalNew"] = iconLink .. "hportal", -- nodes for Classic Icon Style function to get new the new icons back
 ["HPortalSNew"] = iconLink .. "hportalS", -- nodes for Classic Icon Style function to get new the new icons back
 ["APortalNew"] = iconLink .. "aportal", -- nodes for Classic Icon Style function to get new the new icons back
@@ -112,9 +197,17 @@ ns.icons = {
 ["PassageHPortalNew"] = iconLink .. "passageHPortal", -- nodes for Classic Icon Style function to get new the new icons back
 ["PassageAPortalNew"] = iconLink .. "passageAPortal", -- nodes for Classic Icon Style function to get new the new icons back
 --ship
-["Ship"] = iconLink .. "ship",
-["HShip"] = iconLink .. "shipH",
-["AShip"] = iconLink .. "shipA",
+["Ship"] = iconLink .. "portal",
+["HShip"] = iconLink .. "hportal",
+["AShip"] = iconLink .. "aportal",
+--ship Old
+["ShipOld"] = iconLink .. "shipOld",
+["HShipOld"] = iconLink .. "shipHOld",
+["AShipOld"] = iconLink .. "shipAOld",
+--ship restore nodes
+["ShipNew"] = iconLink .. "portal", -- nodes for Classic Icon Style function to get new the new icons back
+["HShipNew"] = iconLink .. "hportal", -- nodes for Classic Icon Style function to get new the new icons back
+["AShipNew"] = iconLink .. "aportal", -- nodes for Classic Icon Style function to get new the new icons back
 --world passage
 ["PassageDungeonRaid"] = iconLink .. "PassageDungeon",
 ["PassageDungeon"] = iconLink .. "PassageDungeon", 
@@ -123,7 +216,7 @@ ns.icons = {
 ["PassageRaidMulti"] = iconLink .. "passageRaidMulti",
 ["PassageDungeonMulti"] = iconLink .. "PassageDungeonMulti",
 --inside dungeon icons
-["Exit"] = "interface/TARGETINGFRAME/UI-RaidTargetingIcon_7",
+["Exit"] = "interface/glues/login/glues-checkbox-check.blp",
 ["PassageUpL"] = iconLink .. "passageupL",
 ["PassageDownL"] = iconLink .. "passagedownL",
 ["PassageRightL"] = iconLink .. "passagerightL",
@@ -165,7 +258,9 @@ TextIconInnkeeperH = TextIcon(iconLink .. "InnkeeperH", 50, 50, 1, 50, 1, 50)
 TextIconInnkeeperA = TextIcon(iconLink .. "InnkeeperA", 50, 50, 1, 50, 1, 50)
 TextIconAuctioneer = TextIcon(iconLink .. "Auctioneer", 50, 50, 1, 50, 1, 50)
 TextIconBlackMarket = TextIcon(iconLink .. "BlackMarket", 50, 50, 1, 50, 1, 50)
-TextIconBank = TextIcon("interface/minimap/tracking/banker.blp", 50, 50, 1, 50, 1, 50)
+TextIconBank = TextIcon("interface/worldmap/treasurechest_64.blp", 50, 50, 1, 50, 1, 50)
+TextIconBankOld = TextIcon("interface/minimap/tracking/banker.blp", 50, 50, 1, 50, 1, 50)
+TextIconBankNew = TextIcon("interface/worldmap/treasurechest_64.blp", 50, 50, 1, 50, 1, 50)
 TextIconBarber = TextIcon("interface/minimap/tracking/barbershop.blp", 50, 50, 1, 50, 1, 50)
 TextIconTransmogger = TextIcon("interface/minimap/tracking/transmogrifier.blp", 50, 50, 1 ,50, 1, 50)
 TextIconPvPVendor = TextIcon(iconLink .. "PvPVendor", 50, 50, 1 ,50, 1, 50)
@@ -222,6 +317,37 @@ TextIconFishing = TextIcon(iconLink .. "Fishing", 50, 50, 1, 50, 1, 50)
 TextIconCooking = TextIcon(iconLink .. "Cooking", 50, 50, 1, 50, 1, 50)
 TextIconInscription = TextIcon(iconLink .. "Inscription", 50, 50, 1, 50, 1, 50)
 TextIconEnchanting = TextIcon(iconLink .. "Enchanting", 50, 50, 1, 50, 1, 50)
+TextIconFirstAid = TextIcon("interface/icons/spell_holy_sealofsacrifice.blp", 50, 50, 1, 50, 1, 50)
+--profession Original
+TextIconOriginalEngineer = TextIcon("interface/icons/ui_profession_engineering.blp", 50, 50, 1, 50, 1, 50)
+TextIconOriginalAlchemy = TextIcon("interface/icons/ui_profession_alchemy.blp", 50, 50, 1, 50, 1, 50)
+TextIconOriginalBlacksmith = TextIcon("interface/icons/ui_profession_blacksmithing.blp", 50, 50, 1, 50, 1, 50)
+TextIconOriginalSkinning = TextIcon("interface/icons/ui_profession_skinning.blp", 50, 50, 1, 50, 1, 50)
+TextIconOriginalTailoring = TextIcon("interface/icons/ui_profession_tailoring.blp", 50, 50, 1, 50, 1, 50)
+TextIconOriginalJewelcrafting = TextIcon("interface/icons/ui_profession_jewelcrafting.blp", 50, 50, 1, 50, 1, 50)
+TextIconOriginalLeatherworking = TextIcon("interface/icons/ui_profession_leatherworking.blp", 50, 50, 1, 50, 1, 50)
+TextIconOriginalHerbalism = TextIcon("interface/icons/ui_profession_herbalism.blp", 50, 50, 1, 50, 1, 50)
+TextIconOriginalMining = TextIcon("interface/icons/ui_profession_mining.blp", 50, 50, 1, 50, 1, 50)
+TextIconOriginalArchaeology = TextIcon("interface/archeology/arch-icon-marker.blp", 50, 50, 1, 50, 1, 50)
+TextIconOriginalFishing = TextIcon("interface/icons/ui_profession_fishing.blp", 50, 50, 1, 50, 1, 50)
+TextIconOriginalCooking = TextIcon("interface/icons/ui_profession_cooking.blp", 50, 50, 1, 50, 1, 50)
+TextIconOriginalInscription = TextIcon("interface/icons/ui_profession_inscription.blp", 50, 50, 1, 50, 1, 50)
+TextIconOriginalEnchanting = TextIcon("interface/icons/ui_profession_enchanting.blp", 50, 50, 1, 50, 1, 50)
+--profession ClassicOriginal
+TextIconClassicOriginalEngineer = TextIcon("interface/icons/trade_engineering.blp", 50, 50, 1, 50, 1, 50)
+TextIconClassicOriginalAlchemy = TextIcon("interface/icons/trade_alchemy.blp", 50, 50, 1, 50, 1, 50)
+TextIconClassicOriginalBlacksmith = TextIcon("interface/icons/trade_blacksmithing.blp", 50, 50, 1, 50, 1, 50)
+TextIconClassicOriginalSkinning = TextIcon("interface/icons/inv_misc_pelt_wolf_01.blp", 50, 50, 1, 50, 1, 50)
+TextIconClassicOriginalTailoring = TextIcon("interface/icons/trade_tailoring.blp", 50, 50, 1, 50, 1, 50)
+TextIconClassicOriginalJewelcrafting = TextIcon("interface/icons/inv_misc_gem_02.blp", 50, 50, 1, 50, 1, 50)
+TextIconClassicOriginalLeatherworking = TextIcon("interface/icons/trade_leatherworking.blp", 50, 50, 1, 50, 1, 50)
+TextIconClassicOriginalHerbalism = TextIcon("interface/icons/trade_herbalism.blp", 50, 50, 1, 50, 1, 50)
+TextIconClassicOriginalMining = TextIcon("interface/icons/trade_mining.blp", 50, 50, 1, 50, 1, 50)
+TextIconClassicOriginalArchaeology = TextIcon("interface/archeology/arch-icon-marker.blp", 50, 50, 1, 50, 1, 50)
+TextIconClassicOriginalFishing = TextIcon("interface/icons/trade_fishing.blp", 50, 50, 1, 50, 1, 50)
+TextIconClassicOriginalCooking = TextIcon("interface/icons/inv_misc_food_15.blp", 50, 50, 1, 50, 1, 50)
+TextIconClassicOriginalInscription = TextIcon("interface/icons/inv_inscription_tradeskill01.blp", 50, 50, 1, 50, 1, 50)
+TextIconClassicOriginalEnchanting = TextIcon("interface/icons/trade_engraving.blp", 50, 50, 1, 50, 1, 50)
 --portal
 TextIconPortal = TextIcon(iconLink .. "portal", 50, 50, 1, 50, 1, 50) 
 TextIconHPortal = TextIcon(iconLink .. "hportal", 50, 50, 1, 50, 1, 50)
@@ -264,15 +390,21 @@ TextIconPassageDungeonMultiM = TextIcon(iconLink .. "PassageDungeonMulti", 50, 5
 TextIconPassageRaidMultiM = TextIcon(iconLink .. "PassageRaidMulti", 50, 50, 1, 50, 1, 50)
 TextIconLocked = TextIcon(iconLink .. "gray", 50, 50, 1, 50, 1, 50)
 --zeppelin
-TextIconZeppelin = TextIcon(iconLink .. "zeppelin", 50, 50, 1, 50, 1, 50)
-TextIconHZeppelin = TextIcon(iconLink .. "zeppelinH", 50, 50, 1, 50, 1, 50)
-TextIconAZeppelin = TextIcon(iconLink .. "zeppelinA", 50, 50, 1, 50, 1, 50)
+TextIconZeppelin = TextIcon(iconLink .. "portal", 70, 70, 1, 50, 1, 50)
+TextIconHZeppelin = TextIcon(iconLink .. "hportal", 70, 70, 1, 50, 1, 50)
+--zeppelin Old
+TextIconZeppelinOld = TextIcon(iconLink .. "zeppelin", 70, 70, 1, 50, 1, 50)
+TextIconHZeppelinOld = TextIcon(iconLink .. "zeppelinH", 70, 70, 1, 50, 1, 50)
 --ship
-TextIconShip = TextIcon(iconLink .. "ship", 50, 50, 1, 50, 1, 50)
-TextIconHShip = TextIcon(iconLink .. "shipH", 50, 50, 1, 50, 1, 50)
-TextIconAShip = TextIcon(iconLink .. "shipA", 70, 70, 1, 50, 1, 50)
+TextIconShip = TextIcon(iconLink .. "portal", 70, 70, 1, 50, 1, 50)
+TextIconHShip = TextIcon(iconLink .. "hportal", 70, 70, 1, 50, 1, 50)
+TextIconAShip = TextIcon(iconLink .. "aportal", 70, 70, 1, 50, 1, 50)
+--ship Old
+TextIconShipOld = TextIcon(iconLink .. "shipOld", 70, 70, 1, 50, 1, 50)
+TextIconHShipOld = TextIcon(iconLink .. "shipHOld", 70, 70, 1, 50, 1, 50)
+TextIconAShipOld = TextIcon(iconLink .. "shipAOld", 70, 70, 1, 50, 1, 50)
 --inside dungeon icons
-TextIconExit = TextIcon("interface/TARGETINGFRAME/UI-RaidTargetingIcon_7", 50, 50, 1, 50, 1, 50)
+TextIconExit = TextIcon("interface/glues/login/glues-checkbox-check.blp", 50, 50, 1, 50, 1, 50)
 TextIconPassageup = TextIcon(iconLink .. "PassageUpL", 50, 50, 1, 50, 1, 50)
 TextIconPassagedown = TextIcon(iconLink .. "PassageDownL", 50, 50, 1, 50, 1, 50)
 TextIconPassageright = TextIcon(iconLink .. "PassageRightL", 50, 50, 1, 50, 1, 50)
