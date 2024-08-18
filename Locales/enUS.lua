@@ -2,11 +2,25 @@ local ADDON_NAME = ...
 local L = LibStub("AceLocale-3.0"):NewLocale(ADDON_NAME, "enUS", true)
 
 
+--0.1 profiles
+L["Profile has been changed"] = true
+L["Profile has been reset to default"] = true
+L["Profile has been adopted"] = true
+L["Profile has been deleted"] = true
+--0.2 Change Zones
+L["Location"] = true
+L["Show joined zone names in chat"] = true
+L["Capital cities are excluded from this because there would be too much chat spam"] = true
+L["Show Zone Names"] = true
+L["In addition to the zone names, it also displays the names of specific locations within a zone. Disabling the Show Zone Names feature will also disable this feature"] = true
+L["You are now in"] = true
+L["When entering a new zone, the name of the new zone will be displayed in the chat"] = true
+--0.3 Classic function Change
 L["Number"] = true
 L["Orientation"] = true
 L["Old icon style"] = true
 L["Changes the appearance of the icons. When activated, the listed icons will be changed with the previous style of these icons"] = true
---0 Restore
+--0.4 Restore
 L["canceled"] = true
 L["Delete this icon"] = true
 L["A icon has been deleted"] = true
@@ -14,7 +28,7 @@ L["Restore all deleted icons for different types of maps"] = true
 L["Restore all deleted icons"] = true
 L["which you removed with the function"] = true
 L["All deleted icons have been restored"] = true
---0.1 Sync function
+--0.5 Sync function
 L["synchronizes"] = true
 L["Synchronizes the Zones tab with the Minimap tab"] = true
 L["Which deactivates the functions from the Minimap tab and is now controlled together by the Zones tab"] = true
@@ -55,8 +69,6 @@ L["Zones"] = true
 L["Continents"] = true
 --2 Unexplored Areas function
 L["Unexplored Areas"] = true
-L["Unexplored Areas visibility"] = true
-L["Changes the visibility of unexplored Areas"] = true
 L["Fog"] = true
 L["Mist of the Unexplored"] = true
 L["Leaves the unexplored areas revealed but adds a slight fog so you can still see which ones you haven't explored yet"] = true
@@ -153,7 +165,6 @@ L["Dungeon map"] = true
 --6 Map Tabs together
 L["Instance Entrance"] = true
 L["switches weekly between"] = true
-L["Dungeon Entrance"] = true
 L["switches weekly between"] = true
 L["Activate icons"] = true
 L["Show individual icons"] = true
@@ -253,6 +264,7 @@ L["(inside portal chamber)"] = true
 L["(inside building)"] = true
 L["talk to"] = true
 --10 places
+L["Telogrus Rift"] = true
 L["Sholazar Basin"] = true
 L["Un'Goro Crater"] = true
 L["Auberdine"] = true

@@ -2,11 +2,25 @@
 local L = LibStub("AceLocale-3.0"):NewLocale(ADDON_NAME, "koKR")
 if not L then return end
 
+--0.1 profiles
+L["Profile has been changed"] = "프로필이 변경되었습니다"
+L["Profile has been reset to default"] = "프로필이 기본 설정으로 재설정되었습니다"
+L["Profile has been adopted"] = "프로필이 인수되었습니다"
+L["Profile has been deleted"] = "프로파일이 삭제되었습니다"
+--0.2 Change Zones
+L["Location"] = "위치"
+L["Show joined zone names in chat"] = "채팅에 가입된 영역 이름 표시"
+L["Capital cities are excluded from this because there would be too much chat spam"] = "대도시는 채팅 스팸이 너무 많아 제외됩니다"
+L["Show Zone Names"] = "영역 이름 표시"
+L["In addition to the zone names, it also displays the names of specific locations within a zone. Disabling the Show Zone Names feature will also disable this feature"] = "구역 이름 외에도 구역 내 특정 위치의 이름도 표시됩니다. 영역 이름 표시 기능을 비활성화하면 이 기능도 비활성화됩니다"
+L["You are now in"] = "당신은 지금"
+L["When entering a new zone, the name of the new zone will be displayed in the chat"] = "새로운 구역에 입장하면 채팅창에 해당 구역의 이름이 표시됩니다"
+--0.3 Classic function Change
 L["Number"] = "숫자"
 L["Orientation"] = "정위"
 L["Old icon style"] = "오래된 기호 스타일"
 L["Changes the appearance of the icons. When activated, the listed icons will be changed with the previous style of these icons"] = "아이콘의 모양을 변경합니다. 활성화되면 나열된 아이콘이 해당 아이콘의 이전 스타일로 변경됩니다"
---0 Restore
+--0.4 Restore
 L["canceled"] = "취소 된"
 L["Delete this icon"] = "이 아이콘을 삭제하십시오"
 L["A icon has been deleted"] = "기호가 삭제되었습니다"
@@ -14,7 +28,7 @@ L["Restore all deleted icons for different types of maps"] = "다양한 유형�
 L["Restore all deleted icons"] = "삭제된 아이콘 모두 복원"
 L["which you removed with the function"] = "기능으로 제거했습니다"
 L["All deleted icons have been restored"] = "삭제된 아이콘은 모두 복원되었습니다"
---0.1 Sync function
+--0.5 Sync function
 L["synchronizes"] = "동기화하다"
 L["Synchronizes the Zones tab with the Minimap tab"] = "구역 탭을 미니맵 탭과 동기화합니다"
 L["Which deactivates the functions from the Minimap tab and is now controlled together by the Zones tab"] = "이렇게 하면 미니맵 탭의 기능이 비활성화되고 이제 구역 탭을 통해 전체적으로 제어됩니다"
@@ -55,8 +69,6 @@ L["Zones"] = "구역"
 L["Continents"] = "대륙"
 --2 Unexplored Areas function
 L["Unexplored Areas"] = "미개척 지역"
-L["Unexplored Areas visibility"] = "가시성 미개척 지역"
-L["Changes the visibility of unexplored Areas"] = "탐구되지 않은 지역의 가시성을 변경합니다"
 L["Fog"] = "안개"
 L["Mist of the Unexplored"] = "탐험되지 않은 안개"
 L["Leaves the unexplored areas revealed but adds a slight fog so you can still see which ones you haven't explored yet"] = "탐험되지 않은 영역을 드러내지 만 약간의 안개가 추가되어 아직 탐색하지 않은 지역을 여전히 볼 수 있습니다"
@@ -251,6 +263,7 @@ L["(inside portal chamber)"] = "(포탈실 내부)"
 L["(inside building)"] = "(건물 내부)"
 L["talk to"] = "이야기하십시오"
 --10 places
+L["Telogrus Rift"] = "텔로그러스 균열"
 L["Sholazar Basin"] = "숄라자르 분지"
 L["Un'Goro Crater"] = "운고로 분화구"
 L["Auberdine"] = "아우버다인"
@@ -393,13 +406,13 @@ L["Sethekk Halls"] = "세데크 전당"
 L["The Arcatraz"] = "알카트라즈"
 L["Reforge"] = "재련"
 --13 The War Within
-L["Khaz Algar"] = "Khaz Algar"
-L["Dornogal"] = "Dornogal"
-L["Catalyst"] = "Catalyst"
-L["Merchant for Renown items"] = "Merchant for Renown items"
-L["Council of Dornogal"] = "Council of Dornogal"
-L["The Assembly of the Deeps"] = "The Assembly of the Deeps"
-L["Hallowfall Arathi"] = "Hallowfall Arathi"
+L["Khaz Algar"] = "카즈 알가르"
+L["Dornogal"] = "도르노갈"
+L["Catalyst"] = "촉매"
+L["Merchant for Renown items"] = "유명한 품목에 대한 상인"
+L["Council of Dornogal"] = "도르노갈 의회"
+L["The Assembly of the Deeps"] = "심연의 회합"
+L["Hallowfall Arathi"] = "신성한 협곡 아라시"
 -- 14
 L["Displays zone icons on a specific continent"] = "특정 대륙에 영역 아이콘을 표시합니다"
 L["If you don't see this icon, it's probably in a different phase. \nChange the phase on Zidormi"] = "이 아이콘이 보이지 않으면 아마도 다른 단계 일 것입니다. \nZidormi의 단계를 변경하십시오"

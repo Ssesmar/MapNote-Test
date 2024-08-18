@@ -1,80 +1,13 @@
 # MapNote
-## [2.0.5](https://github.com/Ssesmar/MapNote) (2024-07-10)
+## [2.2.1](https://github.com/Ssesmar/MapNote) (2024-08-17)
 - Note:
 
 -- MapNotes now works on every version of World of Warcraft. Classic Era / Cataclysm / Retail / PTR
 
-Version: 2.0.5
-
-PTR:
-
-
+Version 2.2.1
 Retail:
-added a new option to Change Portal icon Style to the Old Version from MapNotes
-added PvP & PvE Vendor icons on the Continent Tab
 
-moved the Path icons from the General tab to the new tab called Oriantation
-
-added on Zone & Minimap Tab new icons for:
-• Paths
-• Innkeepers
-• Auctioneer
-• Bank
-• Barber
-• Mailboxes
-• Pvp Vendor
-• PvE Vendor
-• Stablemaster
-• Transmog
-
-In the Zone and Minimap tabs, the functions in the Transport sub tab for Transport have been divided into 5 separate units
-So you can hide or show these as you wish
-• Transport
-• Ogre Waygates
-• Teleporters
-• Toys (Travel) currently only: Ever-Shifting Mirror for Draenor to Outland and back portals
-• Travel
-
-the Capital and Capital - Minimap tabs have been moved together to the Capitals + tab
-The Capital area was divided into the following 5 sub-tabs
-• Capitals
-• Instance icons
-• Transportation icons
-• Profession icons
-• General icons
-Each of these submenus now has its own scaling and visibility slider
-The Capital Minimap area was divided into the following 5 sub-tabs
-• Capitals
-• Instance icons
-• Transportation icons
-• Profession icons
-• General icons
-Each of these submenus now has its own scaling and visibility slider
-
-the Zone and Minimap tabs have been moved together to the Zones+ tab
-The Zone area was divided into the following 5 sub-tabs
-• Continent maps
-• Instance icons
-• Transportation icons
-• General icons
-• Oriantation
-Each of these submenus now has its own scaling and visibility slider
-The Minimap area was divided into the following 5 sub-tabs
-• Continent maps
-• Instance icons
-• Transportation icons
-• General icons
-• Oriantation
-Each of these submenus now has its own scaling and visibility slider
-
-
-
-
-Cataclysm Classic:
-
-
-Classic Era & Hardcore:
-
+• some updates for TWW
 
 - Description:
 

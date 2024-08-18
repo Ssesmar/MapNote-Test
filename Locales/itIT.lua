@@ -2,11 +2,25 @@
 local L = LibStub("AceLocale-3.0"):NewLocale(ADDON_NAME, "itIT")
 if not L then return end
 
+--0.1 profiles
+L["Profile has been changed"] = "Il profilo è stato modificato"
+L["Profile has been reset to default"] = "Il profilo è stato ripristinato alle impostazioni predefinite"
+L["Profile has been adopted"] = "Il profilo è stato preso in considerazione"
+L["Profile has been deleted"] = "Il profilo è stato eliminato"
+--0.2 Change Zones
+L["Location"] = "Posizione"
+L["Show joined zone names in chat"] = "Mostra i nomi delle zone unite nella chat"
+L["Capital cities are excluded from this because there would be too much chat spam"] = "Le capitali sono escluse da questo perché ci sarebbe troppo spam nelle chat"
+L["Show Zone Names"] = "Mostra nomi di zone"
+L["In addition to the zone names, it also displays the names of specific locations within a zone. Disabling the Show Zone Names feature will also disable this feature"] = "Oltre ai nomi delle zone, vengono visualizzati anche i nomi di posizioni specifiche all'interno di una zona. Disabilitare la funzione Mostra nomi zone disabiliterà anche questa funzione"
+L["You are now in"] = "Adesso sei dentro"
+L["When entering a new zone, the name of the new zone will be displayed in the chat"] = "Quando entri in una nuova zona, il nome della nuova zona verrà visualizzato nella chat"
+--0.3 Classic function Change
 L["Number"] = "Numero"
 L["Orientation"] = "Orientamento"
 L["Old icon style"] = "vecchio stile simbolo"
 L["Changes the appearance of the icons. When activated, the listed icons will be changed with the previous style of these icons"] = "Cambia l'aspetto delle icone. Una volta attivate, le icone elencate verranno modificate con lo stile precedente di queste icone"
---0 Restore
+--0.4 Restore
 L["canceled"] = "annullata"
 L["Delete this icon"] = "Elimina questa icona"
 L["A icon has been deleted"] = "È stato eliminato un simbolo"
@@ -14,7 +28,7 @@ L["Restore all deleted icons for different types of maps"] = "Ripristina tutte l
 L["Restore all deleted icons"] = "Ripristina tutte le icone cancellate"
 L["which you removed with the function"] = "che hai rimosso con la funzione"
 L["All deleted icons have been restored"] = "Tutte le icone cancellate sono state ripristinate"
---0.1 Sync function
+--0.5 Sync function
 L["synchronizes"] = "sincronizza"
 L["Synchronizes the Zones tab with the Minimap tab"] = "Sincronizza la scheda Zone con la scheda Minimappa"
 L["Which deactivates the functions from the Minimap tab and is now controlled together by the Zones tab"] = "Ciò disabilita le funzionalità nella scheda Minimappa e ora è controllata collettivamente tramite la scheda Zone"
@@ -55,8 +69,6 @@ L["Zones"] = "Zone"
 L["Continents"] = "Continenti"
 --2 Unexplored Areas function
 L["Unexplored Areas"] = "Unerforschte Gebiete"
-L["Unexplored Areas visibility"] = "Visibilità Aree inesplorate"
-L["Changes the visibility of unexplored Areas"] = "Cambia la visibilità delle aree inesplorate"
 L["Fog"] = "Nebbia"
 L["Mist of the Unexplored"] = "Nebbia del inesplorato"
 L["Leaves the unexplored areas revealed but adds a slight fog so you can still see which ones you haven't explored yet"] = "Lascia le aree inesplorate rivelate ma aggiunge una leggera nebbia in modo da poter ancora vedere quali non hai ancora esplorato"
@@ -251,6 +263,7 @@ L["(inside portal chamber)"] = "(all'interno della camera del portale)"
 L["(inside building)"] = "(all'interno dell'edificio)"
 L["talk to"] = "parlare a"
 --10 places
+L["Telogrus Rift"] = "Fenditura di Telogrus"
 L["Sholazar Basin"] = "Sholazar Basin"
 L["Un'Goro Crater"] = "Un'Goro Crater"
 L["Auberdine"] = "Auberdine"
@@ -396,10 +409,10 @@ L["Reforge"] = "Riforgiare"
 L["Khaz Algar"] = "Khaz Algar"
 L["Dornogal"] = "Dornogal"
 L["Catalyst"] = "Catalyst"
-L["Merchant for Renown items"] = "Merchant for Renown items"
-L["Council of Dornogal"] = "Council of Dornogal"
-L["The Assembly of the Deeps"] = "The Assembly of the Deeps"
-L["Hallowfall Arathi"] = "Hallowfall Arathi"
+L["Merchant for Renown items"] = "Commerciante per articoli di fama"
+L["Council of Dornogal"] = "Concilio di Dornogal"
+L["The Assembly of the Deeps"] = "Adunanza delle Profondità"
+L["Hallowfall Arathi"] = "Arathi dei Precipizi Sacri"
 -- 14
 L["Displays zone icons on a specific continent"] = "Visualizza icone della zona in un continente specifico"
 L["If you don't see this icon, it's probably in a different phase. \nChange the phase on Zidormi"] = "Se non vedi questa icona, è probabilmente in una fase diversa. \nCambia la fase su zidormi"

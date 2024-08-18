@@ -34,6 +34,11 @@ if not db.activate.HideMapNote then
             --Professions Orgrimmar
                 if self.db.profile.activate.MinimapCapitalsProfessions then
 
+                    if self.db.profile.showMinimapCapitalsFirstAid then
+                        minimap[1454][37608720] = { name = PROFESSIONS_FIRST_AID, type = "FirstAid", showInZone = false, showOnContinent = false, showOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                        minimap[1454][34008440] = { name = PROFESSIONS_FIRST_AID, type = "FirstAid", showInZone = false, showOnContinent = false, showOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                    end
+
                     if self.db.profile.showMinimapCapitalsAlchemy then
                         minimap[1454][55684575] = { name = L["Alchemy"], type = "Alchemy", showInZone = false, showOnContinent = false, showOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
@@ -140,7 +145,7 @@ if not db.activate.HideMapNote then
                 if self.db.profile.activate.MinimapCapitalsInstances then
     
                     if self.db.profile.showMinimapCapitalsDungeons then
-                        minimap[1454][56615109] = { mnID = 86, name = DUNGEON_FLOOR_RAGEFIRE1 .. " " .. "[" .. GARRISON_TIER .. ": " .. "13-18]", dnID = REQUIRES_LABEL .. " " .. MINIMUM .. " " .. GARRISON_TIER .. " " .. "8", type = "PassageDungeon", showInZone = false, showOnContinent = false, showOnMinimap = true }
+                        minimap[1454][56615109] = { mnID = 86, name = DUNGEON_FLOOR_RAGEFIRE1 .. " " .. "[" .. LEVEL .. ": " .. "13-18]", dnID = REQUIRES_LABEL .. " " .. MINIMUM .. " " .. LEVEL .. " " .. "8", type = "PassageDungeon", showInZone = false, showOnContinent = false, showOnMinimap = true }
                     end
 
                 end
@@ -203,6 +208,10 @@ if not db.activate.HideMapNote then
 
             --Professions Thunder Bluff
                 if self.db.profile.activate.MinimapCapitalsProfessions then
+
+                    if self.db.profile.showMinimapCapitalsFirstAid then
+                        minimap[1456][29602160] = { name = PROFESSIONS_FIRST_AID, type = "FirstAid", showInZone = false, showOnContinent = false, showOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                    end
 
                     if self.db.profile.showMinimapCapitalsAlchemy then
                         minimap[1456][46643317] = { name = L["Alchemy"], type = "Alchemy", showInZone = false, showOnContinent = false, showOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
@@ -314,6 +323,10 @@ if not db.activate.HideMapNote then
             --Professions Silvermoon
                 if self.db.profile.activate.MinimapCapitalsProfessions then
 
+                    if self.db.profile.showMinimapCapitalsFirstAid then
+                        minimap[1954][78007040] = { name = PROFESSIONS_FIRST_AID, type = "FirstAid", showInZone = false, showOnContinent = false, showOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                    end
+
                     if self.db.profile.showMinimapCapitalsAlchemy then
                         minimap[1954][66701673] = { name = L["Alchemy"], type = "Alchemy", showInZone = false, showOnContinent = false, showOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
@@ -424,6 +437,10 @@ if not db.activate.HideMapNote then
 
             --Professions Undercity
                 if self.db.profile.activate.MinimapCapitalsProfessions then
+
+                    if self.db.profile.showMinimapCapitalsFirstAid then
+                        minimap[1458][73605560] = { name = PROFESSIONS_FIRST_AID, type = "FirstAid", showInZone = false, showOnContinent = false, showOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                    end
 
                     if self.db.profile.showMinimapCapitalsAlchemy then
                         minimap[1458][47757332] = { name = L["Alchemy"], type = "Alchemy", showInZone = false, showOnContinent = false, showOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
@@ -560,7 +577,7 @@ if not db.activate.HideMapNote then
                 if self.db.profile.activate.MinimapCapitalsInstances then
     
                     if self.db.profile.showMinimapCapitalsDungeons then
-                        minimap[1453][50356644] = { mnID = 1453, name = DUNGEON_FLOOR_THESTOCKADE1 .. " " .. "[" .. GARRISON_TIER .. ": " .. "22-30]", dnID = REQUIRES_LABEL .. " " .. MINIMUM .. " " .. GARRISON_TIER .. " " .. "15", type = "Dungeon", showInZone = false, showOnContinent = false, showOnMinimap = true }
+                        minimap[1453][50356644] = { mnID = 1453, name = DUNGEON_FLOOR_THESTOCKADE1 .. " " .. "[" .. LEVEL .. ": " .. "22-30]", dnID = REQUIRES_LABEL .. " " .. MINIMUM .. " " .. LEVEL .. " " .. "15", type = "Dungeon", showInZone = false, showOnContinent = false, showOnMinimap = true }
                     end
 
                 end
@@ -599,6 +616,11 @@ if not db.activate.HideMapNote then
 
             --Professions Stormwind
                 if self.db.profile.activate.MinimapCapitalsProfessions then
+
+                    if self.db.profile.showMinimapCapitalsFirstAid then
+                        minimap[1453][52204560] = { name = PROFESSIONS_FIRST_AID, type = "FirstAid", showInZone = false, showOnContinent = false, showOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                        minimap[1453][52804480] = { name = PROFESSIONS_FIRST_AID, type = "FirstAid", showInZone = false, showOnContinent = false, showOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                    end
 
                     if self.db.profile.showMinimapCapitalsAlchemy then
                         minimap[1453][55668610] = { name = L["Alchemy"], type = "Alchemy", showInZone = false, showOnContinent = false, showOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
@@ -724,6 +746,10 @@ if not db.activate.HideMapNote then
 
             --Professions ironforge
                 if self.db.profile.activate.MinimapCapitalsProfessions then
+
+                    if self.db.profile.showMiniMapCapitalsFirstAid then
+                        minimap[1455][54805860] = { name = PROFESSIONS_FIRST_AID, type = "FirstAid", showInZone = false, showOnContinent = false, showOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                    end
 
                     if self.db.profile.showMinimapCapitalsAlchemy then
                         minimap[1455][66615566] = { name = L["Alchemy"], type = "Alchemy", showInZone = false, showOnContinent = false, showOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
@@ -874,6 +900,10 @@ if not db.activate.HideMapNote then
             --Professions Darnassus
                 if self.db.profile.activate.MinimapCapitalsProfessions then
 
+                    if self.db.profile.showMinimapCapitalsFirstAid then
+                        minimap[1457][51601360] = { name = PROFESSIONS_FIRST_AID, type = "FirstAid", showInZone = false, showOnContinent = false, showOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                    end
+
                     if self.db.profile.showMinimapCapitalsAlchemy then
                         minimap[1457][53913853] = { name = L["Alchemy"], type = "Alchemy", showInZone = false, showOnContinent = false, showOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     end
@@ -983,6 +1013,10 @@ if not db.activate.HideMapNote then
 
             --Professions Exodar
                 if self.db.profile.activate.MinimapCapitalsProfessions then
+
+                    if self.db.profile.showMinimapCapitalsFirstAid then
+                        minimap[1947][39602260] = { name = PROFESSIONS_FIRST_AID, type = "FirstAid", showInZone = false, showOnContinent = false, showOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION .. "\n" .. ERR_USE_OBJECT_MOVING }
+                    end
 
                     if self.db.profile.showMinimapCapitalsAlchemy then
                         minimap[1947][27766078] = { name = L["Alchemy"], type = "Alchemy", showInZone = false, showOnContinent = false, showOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
@@ -1117,6 +1151,11 @@ if not db.activate.HideMapNote then
         --Professions Shattrath
             if self.db.profile.activate.MinimapCapitalsProfessions then
 
+                if self.db.profile.showMinimapCapitalsFirstAid then
+                    minimap[1955][66601360] = { name = PROFESSIONS_FIRST_AID, type = "FirstAid", showInZone = false, showOnContinent = false, showOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                    minimap[1955][43809040] = { name = PROFESSIONS_FIRST_AID .. " - " .. L["The Scryers"], type = "FirstAid", showInZone = false, showOnContinent = false, showOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                end
+
                 if self.db.profile.showMinimapCapitalsAlchemy then
                     minimap[1955][37977048] = { name = L["Alchemy"] .. " - " .. L["The Scryers"], type = "Alchemy", showInZone = false, showOnContinent = false, showOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
                     minimap[1955][38892992] = { name = L["Alchemy"] .. " - " .. L["The Aldor"], type = "Alchemy", showInZone = false, showOnContinent = false, showOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
@@ -1204,7 +1243,7 @@ if not db.activate.HideMapNote then
             if self.db.profile.activate.MinimapCapitalsInstances then
 
                 if self.db.profile.showMinimapCapitalsDungeons then
-                    minimap[125][66976828] = { mnID = 125, showInZone = false, showOnContinent = false, showOnMinimap = true, name = DUNGEON_FLOOR_VIOLETHOLD1 .. " " .. "[" .. GARRISON_TIER .. ": " .. "75-77]", type = "Dungeon" } -- Violet Hold
+                    minimap[125][66976828] = { mnID = 125, showInZone = false, showOnContinent = false, showOnMinimap = true, name = DUNGEON_FLOOR_VIOLETHOLD1 .. " " .. "[" .. LEVEL .. ": " .. "75-77]", type = "Dungeon" } -- Violet Hold
                 end
 
             end
@@ -1284,6 +1323,10 @@ if not db.activate.HideMapNote then
 
         --Professions Dalaran Northrend
             if self.db.profile.activate.MinimapCapitalsProfessions then
+
+                if self.db.profile.showMinimapCapitalsFirstAid then
+                    minimap[125][36803720] = { name = PROFESSIONS_FIRST_AID, type = "FirstAid", showInZone = false, showOnContinent = false, showOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }
+                end
 
                 if self.db.profile.showMinimapCapitalsAlchemy then
                     minimap[125][42633205] = { name = L["Alchemy"], type = "Alchemy", showInZone = false, showOnContinent = false, showOnMinimap = true, TransportName = MINIMAP_TRACKING_TRAINER_PROFESSION }

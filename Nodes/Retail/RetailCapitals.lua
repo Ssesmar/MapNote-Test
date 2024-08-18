@@ -110,7 +110,8 @@ if not db.activate.HideMapNote then
                 if self.db.profile.activate.CapitalsTransporting then
 
                     if self.db.profile.showCapitalsPortals then
-                        nodes[85][57278961] = { name = "", type = "PassageHPortal", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = L["Portalroom"] .. "\n" .. "\n" .. " ==> " .. L["Silvermoon City"] .. "\n" .. " ==> " .. L["Valdrakken"] .. "\n" .. " ==> " .. L["Oribos"] .. "\n" .. " ==> " .. L["Azsuna"] .. "\n" .. " ==> " .. L["Zuldazar"] .. "\n" .. " ==> " .. DUNGEON_FLOOR_DALARANCITY1 .. " - " .. POSTMASTER_PIPE_NORTHREND .. "\n" .. " ==> " .. POSTMASTER_LETTER_HYJAL .. "\n" .. "\n" .. " ==> " .. DUNGEON_FLOOR_TANARIS18 .. " - " .. L["in the basement"] .. "\n" .. " ==> " .. L["Shattrath City"] .. " - " .. L["in the basement"] .. "\n" .. " ==> " .. L["Warspear"] .. " - " .. L["in the basement"] .. "\n" .. " ==> " .. L["Blasted Lands"] .. " - " .. L["in the basement"] .. "\n" .. "      (" .. L["talk to"] .. ": " .. L["Thrallmar Mage"] .. " )" .. "\n" .. " ==> " .. L["Dornogal"] .. " " .. "(only PTR - Beta TWW)" .. " - " .. L["in the basement"]} -- Portalroom from Orgrimmar
+                        nodes[85][53757658] = { mnID = 627, name = "", type = "HPortal", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = L["Portal"] .. " ==> " .. DUNGEON_FLOOR_DALARANCITY1 } -- Portal near AH to Dalaran
+                        nodes[85][57278961] = { name = "", type = "PassageHPortal", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = L["Portalroom"] .. "\n" .. "\n" .. " ==> " .. L["Silvermoon City"] .. "\n" .. " ==> " .. L["Valdrakken"] .. "\n" .. " ==> " .. L["Oribos"] .. "\n" .. " ==> " .. L["Azsuna"] .. "\n" .. " ==> " .. L["Zuldazar"] .. "\n" .. " ==> " .. DUNGEON_FLOOR_DALARANCITY1 .. " - " .. POSTMASTER_PIPE_NORTHREND .. "\n" .. " ==> " .. POSTMASTER_LETTER_HYJAL .. "\n" .. "\n" .. " ==> " .. DUNGEON_FLOOR_TANARIS18 .. " - " .. L["in the basement"] .. "\n" .. " ==> " .. L["Shattrath City"] .. " - " .. L["in the basement"] .. "\n" .. " ==> " .. L["Warspear"] .. " - " .. L["in the basement"] .. "\n" .. " ==> " .. L["Blasted Lands"] .. " - " .. L["in the basement"] .. "\n" .. "      (" .. L["talk to"] .. ": " .. L["Thrallmar Mage"] .. " )" .. "\n" .. " ==> " .. L["Dornogal"] .. " - " .. L["in the basement"]} -- Portalroom from Orgrimmar
                         nodes[85][50765561] = { mnID = 18, name = "", type = "HPortal", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = L["Portal"] .. " ==> " .. L["Ruins of Lordaeron"] } -- Ruins of Lordaeron 
                         nodes[85][47393928] = { mnID = 245, name = "", type = "HPortalS", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = L["Portal"] .. " ==> " .. DUNGEON_FLOOR_TOLBARADWARLOCKSCENARIO0 } --  Portal to Tol Barad
                         nodes[85][48863851] = { mnID = 1527, name = "", type = "HPortalS", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = L["Portal"] .. " ==> " .. L["Uldum"] } -- Portal to Uldum
@@ -118,16 +119,19 @@ if not db.activate.HideMapNote then
                         nodes[85][51203832] = { mnID = 198, name = "", type = "HPortalS", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = L["Portal"] .. " ==> " .. POSTMASTER_LETTER_HYJAL } -- Portal to Hyjal
                         nodes[85][50863628] = { mnID = 207, name = "", type = "HPortalS", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = L["Portal"] .. " ==> " .. ARTIFACT_SHAMAN_TITLECARD_DEEPHOLM } -- Portal to Deepholm
                         nodes[85][49203647] = { mnID = 203, name = "", type = "HPortalS", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = L["Portal"] .. " ==> " .. L["Vashj'ir"] } -- Portal to Vashjir
-                        nodes[85][70583097] = { mnID = 503, name = "", type = "HPortal", showInZone = true, showOnContinent = false, showOnMinimap = false} -- Portal to Shlae'gararena
-                        nodes[503][57431229] = { mnID = 85, name = "", type = "HPortal", showInZone = true, showOnContinent = false, showOnMinimap = false} -- Portal to Shlae'gararena
                         nodes[85][48236216] = { mnID = 407, name = L["Transport"] .. " ==> " .. CALENDAR_FILTER_DARKMOON, TransportName = "\n" .. REQUIRES_LABEL .. " " .. CALENDAR_FILTER_DARKMOON .. "\n" .. L["Starting on the first Sunday of each month for one week"], type = "DarkMoon", showInZone = true, showOnContinent = false, showOnMinimap = false }
-                        nodes[85][40097681] = { mnID = 680, name = L["Portal"] .. " ==> " .. DUNGEON_FLOOR_SURAMARRAID3, type = "HPortal", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Portal to Night Fortress
+                        nodes[85][38607586] = { mnID = 680, name = L["Portal"] .. " ==> " .. DUNGEON_FLOOR_SURAMARRAID3, type = "HPortalS", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Portal to Night Fortress
+                        nodes[85][38167527] = { mnID = 652, name = L["Portal"] .. " ==> " .. POSTMASTER_LETTER_THUNDERTOTEM, type = "HPortalS", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Portal to Night Fortress
                     end
 
                     if self.db.profile.showCapitalsZeppelins then
                         nodes[85][44496228] = { mnID = 114, name = "", type = "HZeppelin", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = L["Zeppelin"] .. " ==> " .. POSTMASTER_LETTER_WARSONGHOLD } -- Zeppelin from OG to Borean Tundra - Northrend
                         nodes[85][42796534] = { mnID = 88, name = "", type = "HZeppelin", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = L["Zeppelin"] .. " ==> " ..  L["Thunder Bluff"]} -- Zeppelin from OG to Thunder Bluff
                         nodes[85][52275315] = { mnID = 50, name = "", type = "HZeppelin", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = L["Zeppelin"] .. " ==> " .. L["Grom'gol, Stranglethorn Vale"] } -- Zeppelin from OG to Stranglethorn
+                    end
+
+                    if self.db.profile.showCapitalsFP then
+                        nodes[85][49705919] = { name = MINIMAP_TRACKING_FLIGHTMASTER, type = "TravelH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     end
     
                 end
@@ -152,6 +156,8 @@ if not db.activate.HideMapNote then
                 if self.db.profile.activate.CapitalsGeneral then
     
                     if self.db.profile.showCapitalsPaths then
+                        nodes[85][70583097] = { dnID = L["Entrance"], mnID = 503, name = "", type = "PathRO", showInZone = true, showOnContinent = false, showOnMinimap = false} -- Portal to Shlae'gararena
+                        nodes[503][57431229] = { dnID = L["Exit"], mnID = 85, name = "", type = "PathRO", showInZone = true, showOnContinent = false, showOnMinimap = false} -- Portal to Shlae'gararena
                         nodes[85][74800606] = { dnID = L["Exit"], name = "", mnID = 76, type = "PathRO", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Passage/Exit 
                         nodes[85][49529373] = { dnID = L["Exit"], name = "", mnID = 1, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Passage/Exit 
                         nodes[85][20187080] = { dnID = L["Exit"], name = "", mnID = 10, type = "PathLU", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Passage/Exit 
@@ -313,6 +319,10 @@ if not db.activate.HideMapNote then
                         nodes[88][14292570] = { mnID = 85, name = "", type = "HZeppelin", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = L["Zeppelin"] .. " ==> " .. ORGRIMMAR } -- Zeppelin from Thunder Bluff to OG
                     end
 
+                    if self.db.profile.showCapitalsFP then
+                        nodes[88][46654989] = { name = MINIMAP_TRACKING_FLIGHTMASTER, type = "TravelH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    end
+
                 end
 
             --General Thunder Bluff
@@ -430,6 +440,10 @@ if not db.activate.HideMapNote then
                     if self.db.profile.showCapitalsPortals then
                         nodes[110][58511859] = { mnID = 85, name = "", type = "HPortal", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = L["Portal"] .. " ==> " .. ORGRIMMAR } -- Portal to Orgrimmar from Silvermoon 
                         nodes[110][49491509] = { mnID = 18, name = "", type = "HPortal", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = L["Portal"] .. " ==> " .. L["Ruins of Lordaeron"] } -- Portal to Undercity from Silvermoon 
+                    end
+
+                    if self.db.profile.showCapitalsFP then
+                        nodes[110][63159649] = { name = MINIMAP_TRACKING_FLIGHTMASTER, type = "TravelH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     end
 
                 end
@@ -556,6 +570,10 @@ if not db.activate.HideMapNote then
 
                     if self.db.profile.showCapitalsPortals then
                         nodes[90][85181711] = { mnID = 100, name = "", type = "HPortal", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Portal from Old Undercity to Hellfire
+                    end
+
+                    if self.db.profile.showCapitalsFP then
+                        nodes[90][63084832] = { name = MINIMAP_TRACKING_FLIGHTMASTER, type = "TravelH", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     end
 
                 end
@@ -708,6 +726,11 @@ if not db.activate.HideMapNote then
                         nodes[590][75184879] = { mnID = 624, name = L["Ashran"], type = "HPortal", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Portal from Garrison to Ashran
                     end
 
+                    if self.db.profile.showCapitalsFP then
+                        nodes[590][45665027] = { name = MINIMAP_TRACKING_FLIGHTMASTER, type = "TravelH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                        nodes[624][44133387] = { name = MINIMAP_TRACKING_FLIGHTMASTER, type = "TravelH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    end
+
                 end
 
             --General Warspear
@@ -847,6 +870,12 @@ if not db.activate.HideMapNote then
                         nodes[1165][41838761] = { mnID = 1462, name = L["Captain Krooz"] .. " " .. L["Travel"], type = "GoblinF", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Transport from Dazar'alor to Mechagon
                     end
 
+                    if self.db.profile.showCapitalsFP then
+                        nodes[1165][52098994] = { name = MINIMAP_TRACKING_FLIGHTMASTER, type = "TravelH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                        nodes[1165][51654120] = { name = MINIMAP_TRACKING_FLIGHTMASTER, type = "TravelH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                        nodes[1165][53121928] = { name = MINIMAP_TRACKING_FLIGHTMASTER, type = "TravelH", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    end
+
                 end
 
             --Instances DazarAlor
@@ -854,6 +883,10 @@ if not db.activate.HideMapNote then
     
                     if self.db.profile.showCapitalsDungeons then
                         nodes[1165][44049256] = { id = 1012, type = "Dungeon", showInZone = true, showOnContinent = false, showOnMinimap = false } -- The MOTHERLODE HORDE
+                    end
+
+                    if self.db.profile.showCapitalsRaids then
+                        nodes[1165][38920289] = { id = 1176, type = "Raid", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Battle of Dazar Alor
                     end
 
                     if self.db.profile.showCapitalsLFR then
@@ -875,12 +908,13 @@ if not db.activate.HideMapNote then
                         nodes[1165][57851053] = { dnID = L["Exit"], name = "", mnID = 862, type = "PathO", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Passage/Exit 
                         nodes[1165][60526367] = { dnID = L["Exit"], name = "", mnID = 862, type = "PathRO", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Passage/Exit 
                         nodes[1165][44423697] = { name = L["Passage"] .. " " .. MINIMAP_TRACKING_TRAINER_PROFESSION, type = "PathR", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName =  L["Jewelcrafting"] .. "\n" .. L["Enchanting"] }
-                        nodes[1163][20962819] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS3, mnID = 1164, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = PROFESSIONS_COOKING .. "\n" .. RAID_FINDER } -- Passage/Exit 
-                        nodes[1163][76532819] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS3, mnID = 1164, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = PROFESSIONS_COOKING .. "\n" .. RAID_FINDER } -- Passage/Exit 
-                        nodes[1163][43888227] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS3, mnID = 1164, type = "PathL", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = PROFESSIONS_COOKING .. "\n" .. RAID_FINDER } -- Passage/Exit 
-                        nodes[1163][53458227] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS3, mnID = 1164, type = "PathR", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = PROFESSIONS_COOKING .. "\n" .. RAID_FINDER } -- Passage/Exit 
-                        nodes[1163][41524702] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS3, mnID = 1164, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = PROFESSIONS_COOKING .. "\n" .. RAID_FINDER } -- Passage/Exit 
-                        nodes[1163][55184702] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS3, mnID = 1164, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = PROFESSIONS_COOKING .. "\n" .. RAID_FINDER } -- Passage/Exit 
+                        nodes[1163][57117058] = { name = "", TransportName = L["Passage"] .. " " .. L["Portalroom"], mnID = 1163, type = "PathR", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Passage/Exit 
+                        nodes[1163][20962819] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS3, mnID = 1164, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = PROFESSIONS_COOKING .. "\n" .. INSCRIPTION .. "\n" .. RAID_FINDER } -- Passage/Exit 
+                        nodes[1163][76532819] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS3, mnID = 1164, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = PROFESSIONS_COOKING .. "\n" .. INSCRIPTION .. "\n" .. RAID_FINDER } -- Passage/Exit 
+                        nodes[1163][43888227] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS3, mnID = 1164, type = "PathL", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = PROFESSIONS_COOKING .. "\n" .. INSCRIPTION .. "\n" .. RAID_FINDER } -- Passage/Exit 
+                        nodes[1163][53458227] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS3, mnID = 1164, type = "PathR", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = PROFESSIONS_COOKING .. "\n" .. INSCRIPTION .. "\n" .. RAID_FINDER } -- Passage/Exit 
+                        nodes[1163][41524702] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS3, mnID = 1164, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = PROFESSIONS_COOKING .. "\n" .. INSCRIPTION .. "\n" .. RAID_FINDER } -- Passage/Exit 
+                        nodes[1163][55184702] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS3, mnID = 1164, type = "PathU", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = PROFESSIONS_COOKING .. "\n" .. INSCRIPTION .. "\n" .. RAID_FINDER } -- Passage/Exit 
                         nodes[1164][42158227] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS2, mnID = 1163, type = "PathR", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = L["Portals"] .. "\n" .. BANK .. " / " .. GUILD_BANK .."\n" .. MINIMAP_TRACKING_INNKEEPER .."\n" .. INSCRIPTION .."\n" .. PROFESSIONS_ARCHAEOLOGY } -- Passage/Exit 
                         nodes[1164][54398227] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS2, mnID = 1163, type = "PathL", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = L["Portals"] .. "\n" .. BANK .. " / " .. GUILD_BANK .."\n" .. MINIMAP_TRACKING_INNKEEPER .."\n" .. INSCRIPTION .."\n" .. PROFESSIONS_ARCHAEOLOGY } -- Passage/Exit 
                         nodes[1164][76683848] = { name = L["Passage"] .. " " .. DUNGEON_FLOOR_GILNEAS2, mnID = 1163, type = "PathO", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = L["Portals"] .. "\n" .. BANK .. " / " .. GUILD_BANK .."\n" .. MINIMAP_TRACKING_INNKEEPER .."\n" .. INSCRIPTION .."\n" .. PROFESSIONS_ARCHAEOLOGY } -- Passage/Exit 
@@ -1058,17 +1092,18 @@ if not db.activate.HideMapNote then
                 if self.db.profile.activate.CapitalsTransporting then
 
                     if self.db.profile.showCapitalsPortals then
+                        nodes[84][50710826] = { mnID = 971, name = "", type = "APortal", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = L["Portal"] .. " ==> " .. L["Telogrus Rift"] } -- Portal to Telogrus
+                        nodes[84][62186855] = { mnID = 627, name = "", type = "APortal", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = L["Portal"] .. " ==> " .. DUNGEON_FLOOR_DALARANCITY1 } -- Portal near AH to Dalaran
                         nodes[84][73221836] = { mnID = 245, name = "", type = "APortalS", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = L["Portal"] .. " ==> " .. DUNGEON_FLOOR_TOLBARADWARLOCKSCENARIO0 } --  Portal to Tol Barad
                         nodes[84][75232055] = { mnID = 1527, name = "", type = "APortalS", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = L["Portal"] .. " ==> " .. L["Uldum"] } -- Portal to Uldum
                         nodes[84][75351649] = { mnID = 241, name = "", type = "APortalS", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = L["Portal"] .. " ==> " .. L["Twilight Highlands"] } -- Portal to Twilight Highlands
                         nodes[84][76211869] = { mnID = 198, name = "", type = "APortalS", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = L["Portal"] .. " ==> " .. POSTMASTER_LETTER_HYJAL } -- Portal to Hyjal
                         nodes[84][73171966] = { mnID = 207, name = "", type = "APortalS", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = L["Portal"] .. " ==> " .. ARTIFACT_SHAMAN_TITLECARD_DEEPHOLM } -- Portal to Deepholm
                         nodes[84][73301687] = { mnID = 203, name = "", type = "APortalS", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = L["Portal"] .. " ==> " .. L["Vashj'ir"] } -- Portal to Vashjir
-                        nodes[84][48728798] = { name = "", type = "PassageAPortal", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = STORMWIND .. " " .. L["Portalroom"] .. "\n" .. " ==> " .. L["Ashran"] .. "\n" .. " ==> " .. L["Valdrakken"] .. "\n" .. " ==> " .. L["Boralus, Tiragarde Sound"] .. "\n" .. " ==> " .. L["Oribos"] .. "\n" .. " ==> " .. L["Azsuna"] .. "\n" .. " ==> " .. L["Shattrath City"] .. "\n" .. " ==> " .. L["Jade Forest"] .. "\n" .. " ==> " .. DUNGEON_FLOOR_DALARANCITY1 .. "\n" .. " ==> " .. DUNGEON_FLOOR_TANARIS18 .. "\n" .. " ==> " .. L["Exodar"] .. "\n" ..  " ==> " .. L["Bel'ameth, Amirdrassil"] .. "\n" .. " ==> " .. L["Blasted Lands"] .. "\n" .. "\n" .. L["Dornogal"] .. " " .. "(only PTR - Beta TWW)"} -- Portalroom from Stormwind
+                        nodes[84][48728798] = { name = "", type = "PassageAPortal", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = STORMWIND .. " " .. L["Portalroom"] .. "\n" .. " ==> " .. L["Ashran"] .. "\n" .. " ==> " .. L["Valdrakken"] .. "\n" .. " ==> " .. L["Boralus, Tiragarde Sound"] .. "\n" .. " ==> " .. L["Oribos"] .. "\n" .. " ==> " .. L["Azsuna"] .. "\n" .. " ==> " .. L["Shattrath City"] .. "\n" .. " ==> " .. L["Jade Forest"] .. "\n" .. " ==> " .. DUNGEON_FLOOR_DALARANCITY1 .. "\n" .. " ==> " .. DUNGEON_FLOOR_TANARIS18 .. "\n" .. " ==> " .. L["Exodar"] .. "\n" ..  " ==> " .. L["Bel'ameth, Amirdrassil"] .. "\n" .. " ==> " .. L["Blasted Lands"] .. "\n" .. " ==> " .. L["Dornogal"] } -- Portalroom from Stormwind
                         nodes[84][23865611] = { mnID = 89, name = "", type = "APortal", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = L["Portal"] .. " ==> " .. L["Darnassus"] } -- Portal to Darnassus 
                         nodes[84][63197339] = { mnID = 407, name = L["Transport"] .. " ==> " .. CALENDAR_FILTER_DARKMOON, TransportName = "\n" .. REQUIRES_LABEL .. " " .. CALENDAR_FILTER_DARKMOON .. "\n" .. L["Starting on the first Sunday of each month for one week"], type = "DarkMoon", showInZone = true, showOnContinent = false, showOnMinimap = false }
                         nodes[84][62043235] = { mnID = 407, name = L["Transport"] .. " ==> " .. CALENDAR_FILTER_DARKMOON, TransportName = "\n" .. REQUIRES_LABEL .. " " .. CALENDAR_FILTER_DARKMOON .. "\n" .. L["Starting on the first Sunday of each month for one week"], type = "DarkMoon", showInZone = true, showOnContinent = false, showOnMinimap = false }
-
                     end
    
                     if self.db.profile.showCapitalsShips then
@@ -1079,6 +1114,10 @@ if not db.activate.HideMapNote then
 
                     if self.db.profile.showCapitalsTransport then
                         nodes[84][66783455] = { mnID = 499, name = "", type = "Carriage", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = DUNGEON_FLOOR_DEEPRUNTRAM1 .. " ==> " .. L["Ironforge"] } -- Transport to Ironforge Carriage
+                    end
+
+                    if self.db.profile.showCapitalsFP then
+                        nodes[84][71977195] = { name = MINIMAP_TRACKING_FLIGHTMASTER, type = "TravelA", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     end
 
                 end
@@ -1238,6 +1277,10 @@ if not db.activate.HideMapNote then
 
                     if self.db.profile.showCapitalsTransport then
                         nodes[87][72545022] = { mnID = 84, name = "", type = "Carriage", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = DUNGEON_FLOOR_DEEPRUNTRAM1 .. " ==> " .. STORMWIND } -- Transport to Stormwind Carriage
+                    end
+
+                    if self.db.profile.showCapitalsFP then
+                        nodes[87][55884786] = { name = MINIMAP_TRACKING_FLIGHTMASTER, type = "TravelA", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     end
 
                 end
@@ -1414,6 +1457,10 @@ if not db.activate.HideMapNote then
                         nodes[89][44127840] = { name = "", type = "APortal", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = L["Portals"] .. "\n" .. " ==> " .. L["Exodar"] .. "\n" .. " ==> " .. L["Hellfire Peninsula"] } -- Portal To Darnassus from Teldrassil
                     end
 
+                    if self.db.profile.showCapitalsFP then
+                        nodes[89][36724827] = { name = MINIMAP_TRACKING_FLIGHTMASTER, type = "TravelA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    end
+
                 end
 
             --Professions Darnassus
@@ -1528,6 +1575,10 @@ if not db.activate.HideMapNote then
 
                     if self.db.profile.showCapitalsPortals then
                         nodes[103][48326264] = { mnID = 84, name = "", type = "APortal", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = L["Portal"] .. " ==> " .. STORMWIND } -- Portal Exodar to Stormwind
+                    end
+
+                    if self.db.profile.showCapitalsFP then
+                        nodes[103][54383659] = { name = MINIMAP_TRACKING_FLIGHTMASTER, type = "TravelA", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     end
 
                 end
@@ -1668,6 +1719,11 @@ if not db.activate.HideMapNote then
                         nodes[582][69692706] = { mnID = 622, name = L["Ashran"], type = "APortal", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Portal from Garison to Ashran
                         nodes[622][36234113] = { mnID = 534, name = "", type = "APortal", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = L["Portal"] .. " ==> " .. SPLASH_NEW_6_2_FEATURE1_TITLE } -- Portal from Ashran to Lion's Watch
                         nodes[622][60813785] = { mnID = 84,  name = "" , type = "APortal", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = L["Portal"] .. " ==> " .. STORMWIND } -- Portal from Ashran to Stormwind
+                    end
+                    
+                    if self.db.profile.showCapitalsFP then
+                        nodes[662][30554842] = { name = MINIMAP_TRACKING_FLIGHTMASTER, type = "TravelA", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                        nodes[582][47764933] = { name = MINIMAP_TRACKING_FLIGHTMASTER, type = "TravelA", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     end
 
                 end
@@ -1821,6 +1877,10 @@ if not db.activate.HideMapNote then
 
                     if self.db.profile.showCapitalsTransport then
                         nodes[1161][67952670] = { mnID = 862, mnID2 = 864, mnID3 = 863, name = L["(Grand Admiral Jes-Tereth) will take you to Vol'Dun, Nazmir or Zuldazar"], dnID = " " .. ITEM_REQ_ALLIANCE, type = "GilneanF", showInZone = true, showOnContinent = false, showOnMinimap = false } -- Portal from Dazar'alor to Mechagon
+                    end
+
+                    if self.db.profile.showCapitalsFP then
+                        nodes[1161][47916532] = { name = MINIMAP_TRACKING_FLIGHTMASTER, type = "TravelA", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     end
 
                 end
@@ -2056,6 +2116,10 @@ if not db.activate.HideMapNote then
                     end
                 end
 
+                if self.db.profile.showCapitalsFP then
+                    nodes[111][63794171] = { name = MINIMAP_TRACKING_FLIGHTMASTER, type = "TravelL", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                end
+
             end
 
         --Professions Shattrath
@@ -2272,6 +2336,10 @@ if not db.activate.HideMapNote then
                     end
                 end
 
+                if self.db.profile.showCapitalsFP then
+                    nodes[125][72164583] = { name = MINIMAP_TRACKING_FLIGHTMASTER, type = "TravelL", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                end
+
             end
 
         --Professions Dalaran Northrend
@@ -2453,12 +2521,17 @@ if not db.activate.HideMapNote then
                     nodes[627][49324758] = { mnID = 629, name = L["Portal"], TransportName = DUNGEON_FLOOR_DALARAN7012, type = "Portal", showInZone = true, showOnContinent = false, showOnMinimap = false }
 
                     if self.faction == "Horde" or db.activate.CapitalsEnemyFaction then
+                        nodes[629][33557905] = { mnID = 971, name = L["Portal"], type = "HPortal", showInZone = true, showOnContinent = false, showOnMinimap = false }
                         nodes[627][55242392] = { mnID = 85, name = "", type = "HPortal", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = L["Portal"] .. " ==> " .. ORGRIMMAR } -- Dalaran to Orgrimmar Portal
                     end
 
                     if self.faction == "Alliance" or db.activate.CapitalsEnemyFaction then
                         nodes[627][40416378] = { mnID = 84,  name = "" , type = "APortal", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = L["Portal"] .. " ==> " .. STORMWIND } --  Dalaran to Stormwind City Portal
                     end
+                end
+
+                if self.db.profile.showCapitalsFP then
+                    nodes[627][69825114] = { name = MINIMAP_TRACKING_FLIGHTMASTER, type = "TravelL", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 end
 
             end
@@ -2629,6 +2702,10 @@ if not db.activate.HideMapNote then
                     nodes[1671][49554241] = { mnID = 1670, name = "", type = "Tport2", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = L["Transport"] .. " ==> " .. DUNGEON_FLOOR_GILNEAS2  } -- Oribos to The Maw
                 end
 
+                if self.db.profile.showCapitalsFP then
+                    nodes[1671][60196756] = { name = MINIMAP_TRACKING_FLIGHTMASTER, type = "TravelL", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                end
+
             end
 
         --Professions Oribos
@@ -2760,6 +2837,10 @@ if not db.activate.HideMapNote then
                     if self.faction == "Alliance" or db.activate.CapitalsEnemyFaction then
                         nodes[2112][59804169] = { mnID = 84,  name = L["(inside building)"], type = "APortal", showInZone = true, showOnContinent = false, showOnMinimap = false, TransportName = L["Portal"] .. " ==> " .. STORMWIND } -- Valdrakken to Stormwind City Portal
                     end
+                end
+
+                if self.db.profile.showCapitalsFP then
+                    nodes[2112][44476790] = { name = MINIMAP_TRACKING_FLIGHTMASTER, type = "TravelL", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 end
 
             end
@@ -2984,7 +3065,8 @@ if not db.activate.HideMapNote then
                 end
 
                 if self.db.profile.showCapitalsPvEVendor then
-                    nodes[2339][39092418] = { dnID = L["Merchant for Renown items"], name = "", TransportName = L["Council of Dornogal"] .. "\n" .. L["The Assembly of the Deeps"] .. "\n" .. L["Hallowfall Arathi"], type = "PvEVendor", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    nodes[2339][39092418] = { dnID = L["Merchant for Renown items"], name = "", type = "PvEVendor", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                    --nodes[2339][39092418] = { dnID = L["Merchant for Renown items"], name = "", TransportName = L["Council of Dornogal"] .. "\n" .. L["The Assembly of the Deeps"] .. "\n" .. L["Hallowfall Arathi"], type = "PvEVendor", showInZone = true, showOnContinent = false, showOnMinimap = false }
                     nodes[2339][47834448] = { dnID = TRANSMOG_SET_PVE .. " " .. MERCHANT, name = "", TransportName = L["Quartermaster"],  type = "PvEVendor", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 end
 
@@ -3034,7 +3116,7 @@ if not db.activate.HideMapNote then
                 end
 
                 if self.db.profile.showCapitalsFP then
-                    nodes[2339][44695114] = { name = MINIMAP_TRACKING_FLIGHTMASTER, type = "TravelL", showInZone = true, showOnContinent = false, showOnMinimap = false } -- test 
+                    nodes[2339][44695114] = { name = MINIMAP_TRACKING_FLIGHTMASTER, type = "TravelL", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 end
 
             end

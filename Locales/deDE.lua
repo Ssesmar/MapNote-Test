@@ -2,11 +2,25 @@ local ADDON_NAME = ...
 local L = LibStub("AceLocale-3.0"):NewLocale(ADDON_NAME, "deDE")
 if not L then return end
 
+--0.1 profiles
+L["Profile has been changed"] = "Profil wurde gewechselt"
+L["Profile has been reset to default"] = "Profil wurde auf die Standardeinstellungen zurückgesetzt"
+L["Profile has been adopted"] = "Profil wurde übernommen"
+L["Profile has been deleted"] = "Profil wurde gelöscht"
+--0.2 Change Zones
+L["Location"] = "Standort"
+L["Show joined zone names in chat"] = "Zeige beigetretenen Zonen namen im Chat"
+L["Capital cities are excluded from this because there would be too much chat spam"] = "Hauptstädte sind hiervon ausgenommen, da es zu viel Chat-Spam geben würde"
+L["Show Zone Names"] = "Zeige Zonen Namen"
+L["In addition to the zone names, it also displays the names of specific locations within a zone. Disabling the Show Zone Names feature will also disable this feature"] = "Zusätzlich zu den Zonennamen werden auch die Namen bestimmter Orte innerhalb einer Zone angezeigt. Durch Deaktivieren der Funktion „Zonennamen anzeigen“ wird auch diese Funktion deaktiviert"
+L["You are now in"] = "Du bist in/im"
+L["When entering a new zone, the name of the new zone will be displayed in the chat"] = "Beim betreten einer neuen Zone wird der Name der neuen Zone im Chat angezeigt"
+--0.3 Classic function Change
 L["Number"] = "Nummer"
 L["Orientation"] = "Orientierung"
 L["Old icon style"] = "Alter Symbol Stil"
 L["Changes the appearance of the icons. When activated, the listed icons will be changed with the previous style of these icons"] = "Ändert das Aussehen der Symbole. Bei aktivierung werden die aufgelisteten Icons mit dem vorherigen Style dieser Icons geändert"
---0 Restore
+--0.4 Restore
 L["canceled"] = "abgebrochen"
 L["Delete this icon"] = "Dieses Symbol löschen"
 L["A icon has been deleted"] = "Ein Symbol wurde gelöscht"
@@ -14,7 +28,7 @@ L["Restore all deleted icons for different types of maps"] = "Stellen Sie alle g
 L["Restore all deleted icons"] = "Stellen Sie alle gelöschten Symbole wieder her"
 L["which you removed with the function"] = "die Sie entfernt haben mit der Funktion"
 L["All deleted icons have been restored"] = "Alle gelöschten Symbole wurden wiederhergestellt"
---0.1 Sync function
+--0.5 Sync function
 L["synchronizes"] = "synchronisiert"
 L["Synchronizes the Zones tab with the Minimap tab"] = "Synchronisiert die Registerkarte „Zonen“ mit der Registerkarte „Minikarte“"
 L["Which deactivates the functions from the Minimap tab and is now controlled together by the Zones tab"] = "Dadurch werden die Funktionen auf der Registerkarte „Minikarte“ deaktiviert und jetzt gemeinsam über die Registerkarte „Zonen“ gesteuert"
@@ -55,8 +69,6 @@ L["Zones"] = "Zonen"
 L["Continents"] = "Kontinente"
 --2 Unexplored Areas function
 L["Unexplored Areas"] = "Unerforschte Gebiete"
-L["Unexplored Areas visibility"] = "Sichtbarkeit Unerforschte Gebiete"
-L["Changes the visibility of unexplored areas"] = "Ändert die Sichtbarkeit unerforschter Gebiete"
 L["Fog"] = "Nebel"
 L["Mist of the Unexplored"] = "Nebel des Unerforschten"
 L["Leaves the unexplored areas revealed but adds a slight fog so you can still see which ones you haven't explored yet"] = "Lässt die unerforschten Gebiete aufgedeckt aber fügt einen leichten Nebel  hinzu, damit man trotzdem sehen kann, welche man noch nicht erforscht hat"
@@ -251,6 +263,7 @@ L["(inside portal chamber)"] = "(in der Portalkammer)"
 L["(inside building)"] = "(im Gebäude)"
 L["talk to"] = "rede mit"
 --10 places
+L["Telogrus Rift"] = "Der Telogrusriss"
 L["Sholazar Basin"] = "Sholazarbecken"
 L["Un'Goro Crater"] = "Un'Goro-Krater"
 L["Auberdine"] = "Auberdine"
