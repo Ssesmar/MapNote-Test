@@ -3,5 +3,7 @@
     <Include file="LibDBIcon-1.0\lib.xml"/>
     <Include file="AceHook-3.0\AceHook-3.0.xml"/>
     <Include file="AceEvent-3.0\AceEvent-3.0.xml"/>
+    <Include file="AceDB-3.0\AceDB-3.0.xml"/>
+    <Include file="AceDBOptions-3.0\AceDBOptions-3.0.xml"/>
     <Include file="Krowi_WorldMapButtons\Krowi_WorldMapButtons-1.4.xml"/>
 </Ui>

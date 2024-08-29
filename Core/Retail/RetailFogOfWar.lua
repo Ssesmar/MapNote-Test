@@ -1,6 +1,6 @@
 local ADDON_NAME, ns = ...
 
-local HandyNotes = LibStub("AceAddon-3.0"):GetAddon("HandyNotes")
+local HandyNotes = LibStub("AceAddon-3.0"):GetAddon("HandyNotes", true)
 ns.FogOfWar = HandyNotes:NewModule("FogOfWarButton", "AceHook-3.0", "AceEvent-3.0")
 
 local mod, floor, ceil, tonumber = math.fmod, math.floor, math.ceil, tonumber
@@ -8,11 +8,12 @@ local ipairs, pairs = ipairs, pairs
 local db
 
 function ns.FogOfWar:OnInitialize()
-	self.db = LibStub("AceDB-3.0"):New("FogOfWarColorDB", ns.defaults)
+	self.db = LibStub("AceDB-3.0"):New("HandyNotes_MapNotesRetailDB", ns.defaults)
 	db = self.db.profile
 	self.db.global.errata = nil
 
 	self:SetEnabledState(HandyNotes:GetModule("FogOfWarButton"))
+	--HandyNotes:RegisterModuleOptions("FogOfWarButton", ns.options)
 end
 
 function ns.FogOfWar:OnEnable()

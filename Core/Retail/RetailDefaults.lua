@@ -4,7 +4,7 @@ ns.defaults = {
 
   profile = {
 
-    --FogOfWarr
+    --FogOfWar
       colorR = 1,
       colorG = 1,
       colorB = 1,
@@ -25,6 +25,7 @@ ns.defaults = {
       assignedgray = true,
       graymultipleID = true,
       ChatMassage = false,
+      RestoreAllIcons = false,
       RestoreZoneDeletedIcons = false,
       RestoreContinentDeletedIcons = false,
       RestoreAzerothDeletedIcons = false,
@@ -303,6 +304,7 @@ ns.defaults = {
       showCapitalsMailbox = true,
       showCapitalsGhost = true,
       showCapitalsStablemaster = true,
+      showCapitalsTradingPost = true,
 
     --7 Capitals Minimap
       showMinimapCapitals = true,
@@ -384,6 +386,7 @@ ns.defaults = {
       showMinimapCapitalsMailbox = true,
       showMinimapCapitalsGhost = true,
       showMinimapCapitalsStablemaster = true,
+      showMinimapCapitalsTradingPost = true,
 
     --10 ns.Addon.db.profile.activate.
       activate = {
@@ -398,7 +401,9 @@ ns.defaults = {
         ClassicBank = true,
         ClassicProfession = false,
         ClassicClassicProfession = false,
+        MapNotesIcons = true,
         RemoveBlizzPOIs = true,
+        RemoveBlizzInstances = true,
         FogOfWar = true,
         MistOfTheUnexplored = true,
         FogOfWarAlphaReduce = false,
@@ -440,30 +445,32 @@ ns.defaults = {
         MinimapCapitalsProfessions = true,
         MinimapCapitalsGeneral = true,
       },
-
-    },
-  char = {
-
-    AzerothDeletedIcons = {
-      ['*'] = {},
-    },
-    ContinentDeletedIcons = {
-      ['*'] = {},
-    },
-    ZoneDeletedIcons = {
-      ['*'] = {},
-    },
-    MinimapZoneDeletedIcons = {
-      ['*'] = {},
-    },
-    DungeonDeletedIcons = {
-      ['*'] = {},
-    },
-    CapitalsDeletedIcons = {
-      ['*'] = {},
-    },
-    MinimapCapitalsDeletedIcons = {
-      ['*'] = {},
-    },
   },
+
+      char = {
+    -- deleted icons function
+      AzerothDeletedIcons = {
+        ['*'] = {},
+      },
+      ContinentDeletedIcons = {
+        ['*'] = {},
+      },
+      ZoneDeletedIcons = {
+        ['*'] = {},
+      },
+      MinimapZoneDeletedIcons = {
+        ['*'] = {},
+      },
+      DungeonDeletedIcons = {
+        ['*'] = {},
+      },
+      CapitalsDeletedIcons = {
+        ['*'] = {},
+      },
+      MinimapCapitalsDeletedIcons = {
+        ['*'] = {},
+      },
+
+    },
+
 }
