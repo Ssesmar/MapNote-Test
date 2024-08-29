@@ -1607,6 +1607,11 @@ if not db.activate.HideMapNote then
                 nodes[2214][47993217] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[2214][61764617] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
                 nodes[2214][59106395] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+                nodes[2214][63357887] = { name = "", dnID = MINIMAP_TRACKING_INNKEEPER, type = "InnkeeperN", showInZone = true, showOnContinent = false, showOnMinimap = false }
+            end
+
+            if self.db.profile.showZonePvEVendor then
+                nodes[2214][47303293] = { dnID = L["Merchant for Renown items"], name = "", type = "PvEVendor", showInZone = true, showOnContinent = false, showOnMinimap = false }
             end
 
         end

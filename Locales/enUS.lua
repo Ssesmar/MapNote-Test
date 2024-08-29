@@ -36,6 +36,10 @@ L["This will delete all Minimap settings and replace them with those from Zones 
 L["Synchronizes the Capitals tab with the Capitals - Minimap tab"] = true
 L["Which deactivates the functions from the Capitals - Minimap tab and is now controlled together by the Capitals tab"] = true
 L["This will delete all Capitals - Minimap settings and replace them with those from Capitals tab"] = true
+--0.6 MapNotes icons and hide blizzard POIs
+L["Displays special MapNotes summary icons containing several different pieces of information (dungeons/raids/portals, etc.)"] = true
+L["Points of interests"] = true
+L["Disables the display of all Blizzard Dungeon and Raid icons on the zone map"] = true
 --1 Capitals
 L["Leather Armor"] = true
 L["Heavy Armor"] = true
