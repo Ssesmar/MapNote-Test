@@ -913,7 +913,6 @@ function Addon:PLAYER_LOGIN() -- OnInitialize()
 	self.db.RegisterCallback(self, "OnProfileCopied", "OnProfileCopied")
 	self.db.RegisterCallback(self, "OnProfileReset", "OnProfileReset")
   self.db.RegisterCallback(self, "OnProfileDeleted", "OnProfileDeleted")
-  self.db.char = ns.dbChar
 
   db = self.db.profile
   -- deleted icons database+
