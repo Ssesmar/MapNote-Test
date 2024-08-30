@@ -849,10 +849,10 @@ function Addon:ZONE_CHANGED()
   end
 end
 
-function Addon:OnProfileChanged(event, database)
+function Addon:OnProfileChanged(event, database, profileKeys)
   db = database.profile
-  ns.dbChar = database.char
-  --ReloadUI();
+  ns.dbChar = database.profile.deletedIcons
+  ns.FogOfWar = database.profile.FogOfWarColor
   HandyNotes:GetModule("FogOfWarButton"):Refresh()
   print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Profile has been changed"])
   ns.Addon:FullUpdate()
@@ -861,6 +861,8 @@ end
 
 function Addon:OnProfileReset(event, database, profileKeys)
 	db = database.profile
+  ns.dbChar = database.profile.deletedIcons
+  ns.FogOfWar = database.profile.FogOfWarColor
   wipe(ns.dbChar.CapitalsDeletedIcons)
   wipe(ns.dbChar.MinimapCapitalsDeletedIcons)
   wipe(ns.dbChar.CapitalsDeletedIcons)
@@ -876,16 +878,20 @@ function Addon:OnProfileReset(event, database, profileKeys)
   HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
 end
 
-function Addon:OnProfileCopied(event, database)
+function Addon:OnProfileCopied(event, database, profileKeys)
 	db = database.profile
+  ns.dbChar = database.profile.deletedIcons
+  ns.FogOfWar = database.profile.FogOfWarColor
   HandyNotes:GetModule("FogOfWarButton"):Refresh()
   print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Profile has been adopted"])
   ns.Addon:FullUpdate()
   HandyNotes:SendMessage("HandyNotes_NotifyUpdate", "MapNotes")
 end
 
-function Addon:OnProfileDeleted(event, database)
+function Addon:OnProfileDeleted(event, database, profileKeys)
 	db = database.profile
+  ns.dbChar = database.profile.deletedIcons
+  ns.FogOfWar = database.profile.FogOfWarColor
   HandyNotes:GetModule("FogOfWarButton"):Refresh()
   print(TextIconMNL4:GetIconString() .. " " .. ns.COLORED_ADDON_NAME .. " " .. TextIconMNL4:GetIconString() .. " " .. "|cffffff00" .. L["Profile has been deleted"])
   ns.Addon:FullUpdate()
@@ -914,9 +920,12 @@ function Addon:PLAYER_LOGIN() -- OnInitialize()
 	self.db.RegisterCallback(self, "OnProfileReset", "OnProfileReset")
   self.db.RegisterCallback(self, "OnProfileDeleted", "OnProfileDeleted")
 
+  -- default profile database
   db = self.db.profile
-  -- deleted icons database+
-  ns.dbChar = self.db.char
+  -- deleted icons database
+  ns.dbChar = self.db.profile.deletedIcons
+  -- FogOfWar color database
+  ns.FogOfWar = self.db.profile.FogOfWarColor
 
   -- Register options 
   HandyNotes:RegisterPluginDB("MapNotes", pluginHandler, ns.options)
@@ -937,7 +946,7 @@ function Addon:PLAYER_LOGIN() -- OnInitialize()
   if ns.Addon.db.profile.activate.RemoveBlizzInstances then
     SetCVar("showDungeonEntrancesOnMap", 0)
   elseif not ns.Addon.db.profile.activate.RemoveBlizzInstances then
-      SetCVar("showDungeonEntrancesOnMap", 1)
+    SetCVar("showDungeonEntrancesOnMap", 1)
   end
 
   if ns.Addon.db.profile.activate.HideMMB then -- minimap button
