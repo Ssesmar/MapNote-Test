@@ -146,6 +146,7 @@ L["gray all"] = true
 L["Colors EVERYONE! Assigned dungeons and raids also have multiple points in gray (if you have an ID)"] = true
 L["enemy faction"] = true
 L["Shows enemy faction (horde/alliance) icons"] = true
+L["However, this only applies to the Azeroth & continent map. Not for Zones + & Capital + category. These have their own activation option for opposing players"] = true
 L["chat message"] = true
 L["Disables MapNotes status chat messages excluding core information"] = true
 L["Shows special transport icons like"] = true
