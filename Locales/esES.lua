@@ -2,6 +2,24 @@
 local L = LibStub("AceLocale-3.0"):NewLocale(ADDON_NAME, "esES")
 if not L then return end
 
+--0.01
+L["Profiles"] = "Perfiles"
+L["Tooltip"] = "información sobre herramientas"
+L["< Left Click to show map >"] = "< Para mostrar la tarjeta a la izquierda >"
+L["< Left Click to show delve map >"] = "< Clic izquierdo para mostrar el mapa de profundización >"
+L["< Shift Left Click to show map >"] = "< Para mostrar el botón de desplazamiento de la tarjeta + clic en la izquierda >"
+L["< Left Click to open Adventure Guide >"] = "< Para mostrar la guía de aventura a la izquierda, haga clic en >"
+L["< Shift + Right Click add TomTom waypoint >"] = "< Shift + Haga clic con el botón derecho en TomTom Waypoint Agregar >"
+L["< Alt + Right click to delete this icon >"] = "< Alt + Haga clic derecho para eliminar este icono >"
+L["This applies to the following tabs"] = "Esto se aplica a las siguientes pestañas"
+L["Adds an additional tooltip to icons, which lists the functions of the icons"] = "Agrega información sobre herramientas adicional a los íconos, que enumera las funciones de los íconos"
+L["Disables the display of all Blizzard Delves entrances on the zone map"] = "Desactiva la visualización de todas las entradas de profundidad de Blizzard en el mapa de zona"
+L["If you press 'YES', the current run is over and you will be placed outside the entrance"] = "Si presiona 'sí', la ejecución actual ha terminado y se lo colocará fuera de la entrada"
+L["An exception is the feedback in the chat from the function for deleting or restoring icons. These are always displayed!"] = "Una excepción es la retroalimentación en el chat desde la función para eliminar o restaurar iconos. ¡Estos siempre se muestran!"
+L["Here you can enable or disable all chat messages sent by MapNotes Minimap and Worldmap buttons when you hide or show icons over them"] = "Aquí puede habilitar o deshabilitar todos los mensajes de chat enviados por los botones Minimapa y Mapa mundial de MapNotes cuando oculta o muestra íconos sobre ellos"
+L["Here you can enable or disable all chat messages sent from one of these MapNotes tabs when you change the settings"] = "Aquí puede habilitar o deshabilitar todos los mensajes de chat enviados desde una de estas pestañas de MapNotes cuando cambia la configuración"
+L["Only affects passage icons to instances and not path icons to zones"] = "Solo afecta los íconos del pasaje a instancias y no a los íconos de ruta a las zonas"
+L["By deactivating it, the border of the zone icons of your own factions is also removed, as the displayed icons are automatically only for your own faction"] = "Al desactivarlo, también se elimina el borde de los iconos de zona de sus propias facciones, ya que los iconos mostrados son automáticamente solo para su propia facción"
 --0.1 profiles
 L["Profile has been changed"] = "El perfil fue cambiado"
 L["Profile has been reset to default"] = "El perfil se restableció a la configuración predeterminada"
@@ -418,6 +436,7 @@ L["Merchant for Renown items"] = "Comerciante para artículos de renombre"
 L["Council of Dornogal"] = "Consejo de Dornogal"
 L["The Assembly of the Deeps"] = "La Asamblea de las Profundidades"
 L["Hallowfall Arathi"] = "Arathi de Santificación"
+L["The Severed Threads"] = "Los Hilos Cortados"
 -- 14
 L["Displays zone icons on a specific continent"] = "Muestra íconos de zona en un continente específico"
 L["If you don't see this icon, it's probably in a different phase. \nChange the phase on Zidormi"] = "Si no ve este ícono, probablemente esté en una fase diferente.\nCambiar la fase en Zidormi"

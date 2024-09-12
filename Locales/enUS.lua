@@ -1,7 +1,24 @@
 local ADDON_NAME = ...
 local L = LibStub("AceLocale-3.0"):NewLocale(ADDON_NAME, "enUS", true)
 
-
+--0.01
+L["Profiles"] = true
+L["Tooltip"] = true
+L["< Left Click to show map >"] = true
+L["< Left Click to show delve map >"] = true
+L["< Shift Left Click to show map >"] = true
+L["< Left Click to open Adventure Guide >"] = true
+L["< Shift + Right Click add TomTom waypoint >"] = true
+L["< Alt + Right click to delete this icon >"] = true
+L["This applies to the following tabs"] = true
+L["Adds an additional tooltip to icons, which lists the functions of the icons"] = true
+L["Disables the display of all Blizzard Delves entrances on the zone map"] = true
+L["If you press 'YES', the current run is over and you will be placed outside the entrance"] = true
+L["An exception is the feedback in the chat from the function for deleting or restoring icons. These are always displayed!"] = true
+L["Here you can enable or disable all chat messages sent by MapNotes Minimap and Worldmap buttons when you hide or show icons over them"] = true
+L["Here you can enable or disable all chat messages sent from one of these MapNotes tabs when you change the settings"] = true
+L["Only affects passage icons to instances and not path icons to zones"] = true
+L["By deactivating it, the border of the zone icons of your own factions is also removed, as the displayed icons are automatically only for your own faction"] = true
 --0.1 profiles
 L["Profile has been changed"] = true
 L["Profile has been reset to default"] = true
@@ -419,6 +436,7 @@ L["Merchant for Renown items"] = true
 L["Council of Dornogal"] = true
 L["The Assembly of the Deeps"] = true
 L["Hallowfall Arathi"] = true
+L["The Severed Threads"] = true
 -- 14
 L["Displays zone icons on a specific continent"] = true
 L["If you don't see this icon, it's probably in a different phase. \nChange the phase on Zidormi"] = true

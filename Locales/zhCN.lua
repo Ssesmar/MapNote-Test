@@ -2,6 +2,24 @@
 local L = LibStub("AceLocale-3.0"):NewLocale(ADDON_NAME, "zhCN")
 if not L then return end
 
+--0.01
+L["Profiles"] = "概况"
+L["Tooltip"] = "工具提示"
+L["< Left Click to show map >"] = "< 在左侧显示卡 >"
+L["< Left Click to show delve map >"] = "< 左键单击显示探索地图 >"
+L["< Shift Left Click to show map >"] = "< 用于显示卡移位按钮 +左键字符 >"
+L["< Left Click to open Adventure Guide >"] = "< 显示左键的冒险指南 >"
+L["< Shift + Right Click add TomTom waypoint >"] = "< Shift +右键单击TomTom Waypoint添加 >"
+L["< Alt + Right click to delete this icon >"] = "< alt +右键单击以删除此图标 >"
+L["This applies to the following tabs"] = "这适用于以下选项卡"
+L["Adds an additional tooltip to icons, which lists the functions of the icons"] = "为图标添加额外的工具提示，其中列出了图标的功能"
+L["Disables the display of all Blizzard Delves entrances on the zone map"] = "禁用区域地图上所有暴雪洞穴入口的显示"
+L["If you press 'YES', the current run is over and you will be placed outside the entrance"]= "如果按“是”，当前运行已经结束，您将被放置在入口外"
+L["An exception is the feedback in the chat from the function for deleting or restoring icons. These are always displayed!"] = "聊天中的反馈是删除或还原图标的函数中的反馈。 这些总是显示！"
+L["Here you can enable or disable all chat messages sent by MapNotes Minimap and Worldmap buttons when you hide or show icons over them"] = "在这里，当您隐藏或显示 MapNotes 小地图和世界地图按钮上的图标时，您可以启用或禁用它们发送的所有聊天消息"
+L["Here you can enable or disable all chat messages sent from one of these MapNotes tabs when you change the settings"] = "更改设置时，您可以在此处启用或禁用从这些 MapNotes 选项卡之一发送的所有聊天消息"
+L["Only affects passage icons to instances and not path icons to zones"] = "仅影响实例的段落图标，而不影响到区域的图标"
+L["By deactivating it, the border of the zone icons of your own factions is also removed, as the displayed icons are automatically only for your own faction"] = "通过停用它，您自己派系的区域图标的边界也被删除，因为显示的图标仅适用于您自己的派系"
 --0.1 profiles
 L["Profile has been changed"] = "个人资料已更改"
 L["Profile has been reset to default"] = "配置文件已重置为默认设置"
@@ -418,6 +436,7 @@ L["Merchant for Renown items"] = "名望军需官"
 L["Council of Dornogal"] = "多恩诺嘉尔议会"
 L["The Assembly of the Deeps"] = "邃渊协盟"
 L["Hallowfall Arathi"] = "陨圣峪阿拉希人"
+L["The Severed Threads"] = "斩离之丝"
 -- 14
 L["Displays zone icons on a specific continent"] = "在特定大陆上显示区域图标"
 L["If you don't see this icon, it's probably in a different phase. \nChange the phase on Zidormi"] = "如果您看不到此图标，则可能处于不同的阶段。 \n更改Zidormi上的相位"

@@ -1,13 +1,13 @@
 # MapNote
-## [2.2.3](https://github.com/Ssesmar/MapNote) (2024-08-30)
+## [2.3.0](https://github.com/Ssesmar/MapNote) (2024-09-10)
 - Note:
 
 -- MapNotes now works on every version of World of Warcraft. Classic Era / Cataclysm / Retail / PTR
 
 Retail:
 
-• some updates for TWW
-• some bugfixes
+add devle entrances to the Zone, Continent and Azeroth map
+Exit icons within devles have a special function, middle mouse click on an exit icon of MapNotes, will end the current run and teleport you to the entrance of this instance
 
 - Description:
 

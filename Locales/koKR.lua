@@ -2,6 +2,24 @@
 local L = LibStub("AceLocale-3.0"):NewLocale(ADDON_NAME, "koKR")
 if not L then return end
 
+--0.01
+L["Profiles"] = "프로필"
+L["Tooltip"] = "툴팁"
+L["< Left Click to show map >"] = "< 왼쪽에 카드를 표시합니다 >"
+L["< Left Click to show delve map >"] = "< 탐색 지도를 표시하려면 왼쪽 클릭하세요 >"
+L["< Shift Left Click to show map >"] = "< 카드 전환 버튼 + 왼쪽 클릭을 표시합니다 >"
+L["< Left Click to open Adventure Guide >"] = "< Adventure Guide를 표시하려면 왼쪽으로 클릭합니다 >"
+L["< Shift + Right Click add TomTom waypoint >"] = "< Shift + Tomtom Waypoint Add를 마우스 오른쪽 버튼으로 클릭하십시오 >"
+L["< Alt + Right click to delete this icon >"] = "< Alt + 마우스 오른쪽 버튼을 클릭 하여이 아이콘을 삭제하십시오 >"
+L["This applies to the following tabs"] = "다음 탭에 적용됩니다"
+L["Adds an additional tooltip to icons, which lists the functions of the icons"] = "아이콘의 기능을 나열하는 추가 도구 설명을 아이콘에 추가합니다"
+L["Disables the display of all Blizzard Delves entrances on the zone map"] = "구역 지도에서 모든 블리자드 탐험 입구 표시를 비활성화합니다"
+L["If you press 'YES', the current run is over and you will be placed outside the entrance"] = "'예'를 누르면 현재 실행이 끝나고 입구 외부에 배치됩니다"
+L["An exception is the feedback in the chat from the function for deleting or restoring icons. These are always displayed!"] = "아이콘을 삭제하거나 복원하기위한 함수의 채팅의 피드백은 예외입니다. 이것들은 항상 표시됩니다!"
+L["Here you can enable or disable all chat messages sent by MapNotes Minimap and Worldmap buttons when you hide or show icons over them"] = "여기에서 MapNotes 미니맵 및 월드맵 버튼 위에 아이콘을 숨기거나 표시할 때 전송되는 모든 채팅 메시지를 활성화하거나 비활성화할 수 있습니다"
+L["Here you can enable or disable all chat messages sent from one of these MapNotes tabs when you change the settings"] = "여기에서 설정을 변경할 때 이러한 MapNotes 탭 중 하나에서 전송된 모든 채팅 메시지를 활성화하거나 비활성화할 수 있습니다"
+L["Only affects passage icons to instances and not path icons to zones"] = "구역에 대한 경로 아이콘이 아닌 인스턴스에 대한 구절 아이콘에만 영향을 미칩니다"
+L["By deactivating it, the border of the zone icons of your own factions is also removed, as the displayed icons are automatically only for your own faction"] = "이를 비활성화함으로써, 자신의 파벌의 구역 아이콘의 경계도 제거됩니다"
 --0.1 profiles
 L["Profile has been changed"] = "프로필이 변경되었습니다"
 L["Profile has been reset to default"] = "프로필이 기본 설정으로 재설정되었습니다"
@@ -418,6 +436,7 @@ L["Merchant for Renown items"] = "유명한 품목에 대한 상인"
 L["Council of Dornogal"] = "도르노갈 의회"
 L["The Assembly of the Deeps"] = "심연의 회합"
 L["Hallowfall Arathi"] = "신성한 협곡 아라시"
+L["The Severed Threads"] = "단절된 실톳"
 -- 14
 L["Displays zone icons on a specific continent"] = "특정 대륙에 영역 아이콘을 표시합니다"
 L["If you don't see this icon, it's probably in a different phase. \nChange the phase on Zidormi"] = "이 아이콘이 보이지 않으면 아마도 다른 단계 일 것입니다. \nZidormi의 단계를 변경하십시오"
